@@ -1,2 +1,52 @@
 .Banner {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  height: calc(100% - 100px);
+  .infoBox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    .title {
+      font-size: calc(5rem + 2vw);
+    }
+    .subTitle {
+      font-family: var(--font-main);
+      font-style: normal;
+      font-weight: 400;
+      font-size: calc(0.5rem + 1vw);
+      margin-top: 1rem;
+    }
+    .mainBox {
+      display: flex;
+      flex-direction: column;
+      .inputContainer {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        input[type="text"] {
+          background: rgba(21, 21, 29, 0.6);
+          border: none;
+          padding: 16px 16px 16px 15px;
+          gap: 10px;
+          color: white;
+          height: 50px;
+          flex: 1;
+        }
+        button {
+          color: white;
+          width: 25%;
+          height: 50px;
+        }
+      }
+    }
+  }
+
+  .globeBox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }

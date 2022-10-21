@@ -1,0 +1,58 @@
+.FeatureCompare {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-family: var(--font-main);
+  gap: 4rem;
+  .imageContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    .title {
+      font-size: 3rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 0rem;
+    }
+    .subTitle {
+      font-size: 1.5rem;
+      letter-spacing: 0.02;
+    }
+  }
+  .tableContainer {
+    flex: 1;
+    table {
+      margin-top: 3rem;
+      width: -webkit-fill-available;
+      border-collapse: separate;
+      border-spacing: 1rem;
+      thead > th {
+        background: rgba(21, 21, 29, 0.6);
+        text-align: left;
+        padding: 1rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+
+        &:nth-of-type(1) {
+          border-left: 1px solid #00e5ff;
+        }
+        &:nth-of-type(2) {
+          border-left: 1px solid #ff83b7;
+        }
+      }
+
+      tbody > tr > td {
+        background: rgba(21, 21, 29, 0.6);
+        text-align: left;
+        padding: 1rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+        &:nth-child(1) {
+          border-top: 1px solid #00e5ff;
+        }
+        &:nth-child(2) {
+          border-top: 1px solid #ff83b7;
+        }
+      }
+    }
+  }
+}

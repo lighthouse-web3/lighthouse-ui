@@ -1,0 +1,44 @@
+.PartnerCarousel {
+  color: white;
+  .title {
+    font-weight: 500;
+    font-size: 3rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  hr {
+    width: 10%;
+    margin-top: 1.5rem;
+  }
+
+  .carouselContainer {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+
+    .bgContainer {
+      width: 90%;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      left: 5%;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 69, 129, 0.8) -5.44%,
+        rgba(67, 136, 221, 0) 54.42%
+      );
+      border-radius: 8px;
+    }
+    .contentContainer {
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      top: 30px;
+      left: 0;
+      background: white;
+      border-radius: 8px;
+    }
+  }
+}

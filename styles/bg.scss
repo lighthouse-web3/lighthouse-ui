@@ -1,0 +1,41 @@
+.sectionContainer {
+  width: -webkit-fill-available;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+
+  .bigShadow {
+    position: absolute;
+    width: 70vw;
+    height: 50%;
+    left: -25vw;
+    top: -25%;
+    background: radial-gradient(
+      50% 50% at 49.97% 48.13%,
+      rgba(255, 69, 129, 0.3) 0%,
+      rgba(67, 136, 221, 0.3) 100%
+    );
+    filter: blur(225px);
+    transform: matrix(1, 0, 0, -1, 0, 0);
+  }
+
+  .smallShadow {
+    position: absolute;
+    width: 50vw;
+    height: 50%;
+    right: -25vw;
+    bottom: -25%;
+    background: radial-gradient(
+      50% 50% at 49.97% 48.13%,
+      #ff4581 0%,
+      #4388dd 100%
+    );
+    filter: blur(225px);
+    transform: matrix(1, 0, 0, -1, 0, 0);
+    opacity: 0.5;
+  }
+
+  .contentContainer {
+    width: 100%;
+  }
+}
