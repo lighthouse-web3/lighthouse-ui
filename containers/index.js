@@ -11,3 +11,4 @@ export { default as ReachUs } from "./ReachUs/ReachUs";
 export { default as EventBlogBanner } from "./EventBlogBanner/EventBlogBanner";
 export { default as FeaturedArticle } from "./FeaturedArticle/FeaturedArticle";
 export { default as MostPopularBlogs } from "./MostPopularBlogs/MostPopularBlogs";
+export { default as BlogView } from "./BlogView/BlogView";

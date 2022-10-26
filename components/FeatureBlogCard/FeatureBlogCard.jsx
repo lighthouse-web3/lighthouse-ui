@@ -3,7 +3,15 @@ import Style from "./FeatureBlogCard.module.scss";
 
 function FeatureBlogCard() {
   return (
-    <div className={Style.FeatureBlogCard}>
+    <div
+      className={Style.FeatureBlogCard}
+      onClick={() => {
+        window.open(
+          `/blog/6/Encryption-and-Access-Control-for-Web3-using-Lighthouse`,
+          "_blank"
+        );
+      }}
+    >
       <div
         className={Style.bg}
         style={{

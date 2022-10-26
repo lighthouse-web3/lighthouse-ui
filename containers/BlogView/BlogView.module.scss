@@ -1,0 +1,75 @@
+.BlogView {
+  width: 100%;
+  background: #15151d;
+  border-radius: 1rem;
+  height: 100%;
+  color: white;
+  padding: 1rem;
+  .TopContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 40vh;
+    .imageContainer {
+      width: 50%;
+      height: 40vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .infoContainer {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      .title {
+        font-weight: 500;
+        font-size: 2.5rem;
+        margin: 10px;
+      }
+      .data {
+        font-weight: 400;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .ContentContainer {
+    margin-top: 4rem;
+    font-size: 1.3rem;
+    p {
+      letter-spacing: 1px;
+      line-height: 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .BlogView {
+    .TopContainer {
+      flex-direction: column;
+      height: auto;
+      .imageContainer {
+        width: 100%;
+      }
+
+      .infoContainer {
+        .title {
+        }
+        .data {
+        }
+      }
+    }
+
+    .ContentContainer {
+      p {
+      }
+    }
+  }
+}
