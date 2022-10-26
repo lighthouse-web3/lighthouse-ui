@@ -24,12 +24,14 @@ function FeatureCompare() {
       <div className={Styles.tableContainer}>
         <table>
           <thead>
-            <th>
-              Other Storage <br /> System
-            </th>
-            <th>
-              Lighthouse Storage <br /> System
-            </th>
+            <tr>
+              <th>
+                Other Storage <br /> System
+              </th>
+              <th>
+                Lighthouse Storage <br /> System
+              </th>
+            </tr>
           </thead>
           <tbody>
             <tr>

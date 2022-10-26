@@ -112,3 +112,46 @@
     filter: blur(225px);
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .Footer {
+    .upperBox {
+      flex-direction: column-reverse;
+      .infoBox {
+        .title {
+        }
+        .subTitle {
+        }
+
+        .emailBox {
+          .title {
+          }
+          .subTitle {
+          }
+
+          .inputBox {
+            input[type="text"] {
+            }
+
+            button {
+            }
+          }
+        }
+      }
+
+      .socialBox {
+        margin: 1rem 0px;
+        .card {
+          width: 100%;
+        }
+      }
+    }
+    .lowerBox {
+      height: 150px;
+      flex-direction: column;
+    }
+
+    .ellipseSmall {
+    }
+  }
+}

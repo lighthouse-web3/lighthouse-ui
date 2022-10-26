@@ -1,0 +1,45 @@
+.MainEventSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  .contentBlock {
+    background: black;
+    width: 45%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1.5rem;
+    .title {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+    .subTitle {
+      font-size: 1rem;
+    }
+  }
+  .imageBlock {
+    width: 45%;
+    height: 60vh;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .MainEventSection {
+    flex-direction: column-reverse;
+    .contentBlock {
+      width: 100%;
+      .title {
+      }
+      .subTitle {
+      }
+    }
+    .imageBlock {
+      width: 100%;
+    }
+  }
+}

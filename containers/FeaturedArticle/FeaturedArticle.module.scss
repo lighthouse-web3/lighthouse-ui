@@ -1,0 +1,46 @@
+.FeaturedArticle {
+  width: 100%;
+  color: white;
+  .title {
+    font-size: 3rem;
+  }
+
+  .subTitle {
+    font-size: 1;
+    margin-top: 0px;
+  }
+
+  .blogContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .cardContainer {
+      width: 30%;
+      border-radius: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .FeaturedArticle {
+    .title {
+    }
+
+    .subTitle {
+    }
+
+    .blogContainer {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+
+      .cardContainer {
+        width: 100%;
+      }
+    }
+  }
+}

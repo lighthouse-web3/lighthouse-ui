@@ -1,0 +1,115 @@
+.Roadmap {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 10px;
+  color: white;
+
+  .milestoneContainer {
+    flex: 1;
+    font-family: var(--font-main);
+    padding-top: 2rem;
+
+    .leftContainer,
+    .rightContainer {
+      width: 50%;
+      height: 100px;
+      position: relative;
+      z-index: 1;
+
+      .number {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #392e3d;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+      }
+
+      .quater {
+        color: #00e5ff;
+        font-weight: 500;
+      }
+      .title {
+        font-weight: 500;
+        font-size: 1.5rem;
+      }
+    }
+
+    .rightContainer {
+      margin-left: 50%;
+      text-align: left;
+      border-left: 1px solid #00e5ff;
+      padding-left: 10%;
+      .number {
+        top: -20px;
+        left: -20px;
+      }
+    }
+
+    .leftContainer {
+      text-align: right;
+      border-right: 1px solid #00e5ff;
+      padding-right: 10%;
+      .number {
+        top: -20px;
+        right: -20px;
+      }
+    }
+  }
+
+  .informationContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .subTitle {
+      font-size: 1rem;
+      line-height: normal;
+      letter-spacing: 0.1rem;
+      width: 70%;
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Roadmap {
+    flex-direction: column;
+
+    .milestoneContainer {
+      .leftContainer,
+      .rightContainer {
+        .number {
+        }
+
+        .quater {
+        }
+        .title {
+        }
+      }
+
+      .rightContainer {
+      }
+
+      .leftContainer {
+      }
+    }
+
+    .informationContainer {
+    }
+  }
+}

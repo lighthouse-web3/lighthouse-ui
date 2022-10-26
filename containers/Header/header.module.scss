@@ -61,7 +61,7 @@
   .navbarMobileMenu {
     display: none;
     position: relative;
-    z-index: 2;
+    z-index: 200;
   }
 
   .MobileMenu {
@@ -70,7 +70,7 @@
     align-items: flex-end;
     flex-direction: column;
     text-align: end;
-    background-color: var(--bg-clr);
+    background-color: #08060b;
     padding: 1em;
     position: absolute;
     top: 20px;

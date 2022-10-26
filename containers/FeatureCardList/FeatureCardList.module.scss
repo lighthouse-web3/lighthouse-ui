@@ -1,2 +1,7 @@
 .FeatureCardList {
+  display: flex;
+  flex-direction: column;
+  .card {
+    margin: 1rem 0rem;
+  }
 }

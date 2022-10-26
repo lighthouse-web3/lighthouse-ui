@@ -1,15 +1,18 @@
 import {
+  EventBlogBanner,
   FeatureCardList,
   FeatureCompare,
   Footer,
   Header,
   HomeBanner,
+  MainEventSection,
+  OurTeam,
   PartnerCarousel,
+  ReachUs,
+  Roadmap,
 } from "../containers";
 
-import Styles from "../styles/Home.module.scss";
-
-export default function Home() {
+export default function About() {
   return (
     <div className={"bodyContainer"}>
       <Header />
@@ -17,28 +20,35 @@ export default function Home() {
         <div className="smallShadow__set1"></div>
         <div className="bigShadow__set1"></div>
         <div className="contentContainer container">
-          <HomeBanner />
+          <MainEventSection />
         </div>
       </div>
       <div className="sectionContainer">
         <div className="smallShadow__set2"></div>
         <div className="bigShadow__set2"></div>
         <div className="contentContainer container">
-          <FeatureCompare />
+          <Roadmap />
         </div>
       </div>
       <div className="sectionContainer" style={{ minHeight: "50vh" }}>
         <div className="smallShadow__set1"></div>
         <div className="bigShadow__set1"></div>
         <div className="contentContainer container">
-          <PartnerCarousel />
+          <OurTeam />
         </div>
       </div>
       <div className="sectionContainer">
         <div className="smallShadow__set2"></div>
         <div className="bigShadow__set2"></div>
         <div className="contentContainer container">
-          <FeatureCardList />
+          <ReachUs />
+        </div>
+      </div>
+      <div className="sectionContainer">
+        <div className="smallShadow__set1"></div>
+        <div className="bigShadow__set1"></div>
+        <div className="contentContainer">
+          <EventBlogBanner />
         </div>
       </div>
       <Footer />
