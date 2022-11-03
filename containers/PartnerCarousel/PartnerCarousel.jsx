@@ -5,7 +5,7 @@ function PartnerCarousel() {
   return (
     <div className={Styles.PartnerCarousel}>
       <div className={Styles.title}>
-        Our Trusted <span className="gradient__Text">Partners</span>
+        Trusted <span className="gradient__Text">By</span>
       </div>
       <hr />
       <div className={Styles.carouselContainer}>

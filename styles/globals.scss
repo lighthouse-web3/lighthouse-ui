@@ -47,6 +47,22 @@ body {
   border: 2px solid transparent;
 }
 
+.gradient__Button {
+  background: linear-gradient(black, black) padding-box,
+    linear-gradient(116.43deg, #01f3fd -6.46%, #ff6dc1 85.93%) border-box;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(116.43deg, #01f3fd -6.46%, #ff6dc1 85.93%);
+    font-size: 1rem;
+    font-weight: 500;
+    color: black !important;
+    border: 2px solid black;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

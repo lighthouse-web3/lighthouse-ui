@@ -5,6 +5,7 @@ import { MdOutlineArrowForwardIos } from "react-icons/md";
 
 import Image from "next/image";
 import { useRouter } from "next/router";
+import NewsBar from "../NewsBar/NewsBar";
 
 const links = [
   {

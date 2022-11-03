@@ -12,3 +12,5 @@ export { default as EventBlogBanner } from "./EventBlogBanner/EventBlogBanner";
 export { default as FeaturedArticle } from "./FeaturedArticle/FeaturedArticle";
 export { default as MostPopularBlogs } from "./MostPopularBlogs/MostPopularBlogs";
 export { default as BlogView } from "./BlogView/BlogView";
+export { default as NewsBar } from "./NewsBar/NewsBar";
+export { default as SupportedBlockchain } from "./SupportedBlockchain/SupportedBlockchain";

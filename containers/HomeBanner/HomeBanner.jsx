@@ -15,7 +15,7 @@ function HomeBanner() {
           <p>Enter your email to get the latest news</p>
           <div className={Styles.inputContainer}>
             <input type="text" placeholder="Email" />
-            <button className={Styles.button + " gradient__Border"}>
+            <button className={Styles.button + " gradient__Button"}>
               Submit
             </button>
           </div>

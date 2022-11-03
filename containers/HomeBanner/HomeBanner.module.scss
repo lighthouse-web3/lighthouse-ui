@@ -9,7 +9,9 @@
     flex-direction: column;
     justify-content: space-evenly;
     .title {
-      font-size: calc(5rem + 2vw);
+      font-size: calc(5rem + 4vw);
+      text-transform: capitalize;
+      font-weight: 500;
     }
     .subTitle {
       font-family: var(--font-main);
@@ -17,10 +19,17 @@
       font-weight: 400;
       font-size: calc(1rem + 1vw);
       margin-top: 1rem;
+      letter-spacing: 2px;
+      text-align: left;
+      line-height: 3.5rem;
     }
     .mainBox {
       display: flex;
       flex-direction: column;
+      p {
+        font-size: 1.3rem;
+        padding-left: 10px;
+      }
       .inputContainer {
         display: flex;
         gap: 20px;
@@ -32,7 +41,10 @@
           gap: 10px;
           color: white;
           height: 50px;
-          flex: 1;
+          flex: 1 1;
+          border: 1px solid #2f2f2f;
+          border-radius: 10px;
+          font-size: 1rem;
         }
         button {
           color: white;

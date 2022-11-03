@@ -4,7 +4,9 @@ import {
   Footer,
   Header,
   HomeBanner,
+  NewsBar,
   PartnerCarousel,
+  SupportedBlockchain,
 } from "../containers";
 
 import Styles from "../styles/Home.module.scss";
@@ -12,6 +14,7 @@ import Styles from "../styles/Home.module.scss";
 export default function Home() {
   return (
     <div className={"bodyContainer"}>
+      <NewsBar />
       <Header />
       <div className="sectionContainer">
         <div className="smallShadow__set1"></div>
@@ -39,6 +42,13 @@ export default function Home() {
         <div className="bigShadow__set2"></div>
         <div className="contentContainer container">
           <FeatureCardList />
+        </div>
+      </div>
+      <div className="sectionContainer">
+        <div className="smallShadow__set1"></div>
+        <div className="bigShadow__set1"></div>
+        <div className="contentContainer">
+          <SupportedBlockchain />
         </div>
       </div>
       <Footer />
