@@ -1,0 +1,54 @@
+
+
+.pagination {
+    list-style: none;
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1rem;
+    font-family: var(--font-primary);
+
+    li {
+      margin: 0rem 0.5rem;
+      &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    }
+
+    .selected {
+      background: var(--clr-blue);
+      color: white;
+      font-weight: 600;
+      padding: 0rem 0.3rem;
+      border-radius: 5px;
+    }
+
+    .previous,
+    .next {
+      font-weight: 600;
+      margin: 0rem 1rem;
+
+      a > svg > polyline{
+        stroke: white;
+
+      }
+
+    }
+
+    .previous.disabled,
+    .next.disabled {
+
+      color: var(--clr-roadmap-text);
+
+    }
+  }
+
+
+  @media screen and (max-width: 800px) {
+    .pagination  {
+      padding: 0;
+    }
+  }

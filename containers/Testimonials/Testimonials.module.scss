@@ -1,0 +1,48 @@
+.Testimonials {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin: 4rem 0rem;
+
+  .titleContainer {
+    flex: 1;
+    height: inherit;
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+  }
+
+  .carouselContainer {
+    width: 70%;
+    height: 100%;
+    .testimonialCrousel {
+      width: 100%;
+      .slide {
+        padding: 2rem 4rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Testimonials {
+    flex-direction: column;
+
+    .titleContainer {
+      width: 100%;
+      text-align: center;
+    }
+
+    .carouselContainer {
+      width: 100%;
+      height: 100%;
+      .testimonialCrousel {
+        width: 100%;
+        .slide {
+          padding: 1rem 1rem;
+        }
+      }
+    }
+  }
+}

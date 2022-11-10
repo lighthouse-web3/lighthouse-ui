@@ -30,6 +30,7 @@
     .linksContainer {
       display: flex;
       justify-content: center;
+      align-items: center;
       font-weight: 300;
       p {
         a {
@@ -54,6 +55,20 @@
         text-decoration: none;
         cursor: pointer;
         margin: 0rem 1rem;
+      }
+    }
+    button {
+      color: white;
+      font-size: 1rem;
+      height: fit-content;
+      padding: 0.5rem;
+      font-family: var(--font-title);
+      margin: 0rem 1rem;
+
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
       }
     }
   }

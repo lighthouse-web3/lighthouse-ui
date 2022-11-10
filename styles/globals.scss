@@ -32,6 +32,13 @@ body {
   padding: 1rem 6rem;
 }
 
+.sectionTitle {
+  font-weight: 500;
+  font-size: 3rem;
+  font-family: var(--font-main);
+  color: white;
+}
+
 .gradient__Text {
   background: linear-gradient(116.43deg, #01f3fd -6.46%, #ff6dc1 85.93%);
   -webkit-background-clip: text;

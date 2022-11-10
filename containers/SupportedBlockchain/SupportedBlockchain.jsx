@@ -6,9 +6,7 @@ function SupportedBlockchain() {
   return (
     <div className={Styles.SupportedBlockchain}>
       <div className={Styles.title}>
-        Build On Any <span className="gradient__Text">Blockchain</span> <br />{" "}
-        using
-        <span className="gradient__Text"> Lighthouse</span>
+        Build On Any <span className="gradient__Text">Blockchain</span>
       </div>
       <hr />
       <div className={Styles.BlockchainContainer}>

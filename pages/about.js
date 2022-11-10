@@ -1,15 +1,12 @@
 import {
   EventBlogBanner,
-  FeatureCardList,
-  FeatureCompare,
   Footer,
   Header,
-  HomeBanner,
   MainEventSection,
   OurTeam,
-  PartnerCarousel,
   ReachUs,
   Roadmap,
+  Testimonials,
 } from "../containers";
 
 export default function About() {
@@ -37,16 +34,23 @@ export default function About() {
           <OurTeam />
         </div>
       </div>
-      <div className="sectionContainer">
+      <div className="sectionContainer" style={{ minHeight: "50vh" }}>
         <div className="smallShadow__set2"></div>
         <div className="bigShadow__set2"></div>
         <div className="contentContainer container">
-          <ReachUs />
+          <Testimonials />
         </div>
       </div>
       <div className="sectionContainer">
         <div className="smallShadow__set1"></div>
         <div className="bigShadow__set1"></div>
+        <div className="contentContainer container">
+          <ReachUs />
+        </div>
+      </div>
+      <div className="sectionContainer">
+        <div className="smallShadow__set2"></div>
+        <div className="bigShadow__set2"></div>
         <div className="contentContainer">
           <EventBlogBanner />
         </div>

@@ -23,6 +23,16 @@ const links = [
     path: "/blogs",
     href: "",
   },
+  {
+    title: "FAQ",
+    path: "/faq",
+    href: "",
+  },
+  {
+    title: "Documentation",
+    path: "/documentation",
+    href: "",
+  },
 
   {
     title: "Contact us",
@@ -75,6 +85,14 @@ function Header() {
               )}
             </p>
           ))}
+          <button
+            onClick={() =>
+              window.open("https://files.lighthouse.storage/", "_blank")
+            }
+            className="gradient__Border"
+          >
+            File Storage Dapp
+          </button>
         </div>
       </div>
 
@@ -117,15 +135,14 @@ function Header() {
               </p>
             ))}
 
-            {/* <p className={Styles.navbarMobileButton}>
-              <button
-                onClick={() =>
-                  window.open("https://files.lighthouse.storage/", "_blank")
-                }
-              >
-                File Storage Dapp
-              </button>
-            </p> */}
+            <button
+              onClick={() =>
+                window.open("https://files.lighthouse.storage/", "_blank")
+              }
+              className="gradient__Border"
+            >
+              File Storage Dapp
+            </button>
           </div>
         )}
       </div>

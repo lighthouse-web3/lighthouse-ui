@@ -14,3 +14,7 @@ export { default as MostPopularBlogs } from "./MostPopularBlogs/MostPopularBlogs
 export { default as BlogView } from "./BlogView/BlogView";
 export { default as NewsBar } from "./NewsBar/NewsBar";
 export { default as SupportedBlockchain } from "./SupportedBlockchain/SupportedBlockchain";
+export { default as DocContainer } from "./Doc-container/DocContainer";
+export { default as DocContainer2 } from "./Doc-container2/DocContainer";
+export { default as Testimonials } from "./Testimonials/Testimonials";
+export { default as FAQContainer } from "./Faq-container/FaqContainer";

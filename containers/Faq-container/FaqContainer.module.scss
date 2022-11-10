@@ -1,0 +1,109 @@
+.FAQContainer {
+  min-height: 100vh;
+  width: 100%;
+
+  .faq {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-weight: 600;
+      width: 100%;
+      .titleText {
+        font-size: 2.5rem;
+        text-align: left;
+        padding-left: 10px;
+      }
+    }
+
+    &SearchBox {
+      padding: 10px 20px;
+
+      .searchbox {
+        color: white;
+        width: 100%;
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+        .icon {
+          padding: 0px 10px;
+        }
+        input[type="text"] {
+          flex: 1;
+          background: transparent;
+          border: none;
+          color: white;
+          font-size: 1rem;
+          padding: 0 10px;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    &ContentContainer {
+      display: flex;
+      flex-direction: row;
+
+      .questionsContainer {
+        flex: 1;
+        padding: 0px 20px;
+      }
+
+      .contextContainer {
+        width: 30%;
+        padding: 25px;
+        border-radius: 15px;
+        border: 1px solid #dddd;
+        display: flex;
+        flex-direction: column;
+
+        .title {
+          font-size: 1rem;
+          font-weight: 500;
+          padding: 20px 0px;
+        }
+
+        .contexts {
+          flex: 1;
+          padding: 10px 0px;
+          p {
+            padding: 10px 0px;
+          }
+          p:not(:last-child) {
+            border-bottom: 1px solid #dddd;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .FAQContainer {
+    .faq {
+      &Title {
+        margin: 2rem 0rem;
+      }
+
+      &SearchBox {
+        padding: 0px;
+      }
+
+      &ContentContainer {
+        display: flex;
+        flex-direction: column-reverse;
+
+        .questionsContainer {
+          padding: 0px 0px;
+        }
+
+        .contextContainer {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
