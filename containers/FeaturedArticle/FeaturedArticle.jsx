@@ -11,13 +11,25 @@ function FeaturedArticle() {
         Read about the latest updates and technology behind ligthouse
       </p>
       <div className={Style.blogContainer}>
-        <div className={Style.cardContainer}>
+        <div
+          className={Style.cardContainer}
+          data-aos="fade-up"
+          data-aos-delay={200}
+        >
           <FeatureBlogCard />
         </div>
-        <div className={Style.cardContainer}>
+        <div
+          className={Style.cardContainer}
+          data-aos="fade-up"
+          data-aos-delay={400}
+        >
           <FeatureBlogCard />
         </div>
-        <div className={Style.cardContainer}>
+        <div
+          className={Style.cardContainer}
+          data-aos="fade-up"
+          data-aos-delay={600}
+        >
           <FeatureBlogCard />
         </div>
       </div>

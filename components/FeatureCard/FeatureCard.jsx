@@ -4,7 +4,11 @@ import Style from "./FeatureCard.module.scss";
 
 function FeatureCard({ feature, index }) {
   return (
-    <div className={Style.FeatureCard}>
+    <div
+      className={Style.FeatureCard}
+      data-aos="fade-up"
+      data-aos-delay={100 * index + 1}
+    >
       <div className={Style.bgImage}>
         <ImageBox
           src={"/cmd.png"}

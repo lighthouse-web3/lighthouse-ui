@@ -7,10 +7,10 @@ function MostPopularBlogs() {
     <div className={Style.MostPopularBlogs}>
       <div className={Style.title}>Most Popular</div>
       <div className={Style.container}>
-        <div className={Style.div1}>
+        <div className={Style.div1} data-aos="fade-up" data-aos-delay={200}>
           <FeatureBlogCard />
         </div>
-        <div className={Style.div2}>
+        <div className={Style.div2} data-aos="fade-up" data-aos-delay={400}>
           <div
             className={Style.imgBox}
             style={{
@@ -29,7 +29,7 @@ function MostPopularBlogs() {
             </p>
           </div>
         </div>
-        <div className={Style.div3}>
+        <div className={Style.div3} data-aos="fade-up" data-aos-delay={600}>
           <div
             className={Style.imgBox}
             style={{

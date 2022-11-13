@@ -2,9 +2,13 @@ import React from "react";
 import ImageBox from "../ImageBox/ImageBox";
 import Style from "./TeamCard.module.scss";
 
-function TeamCard() {
+function TeamCard({ index }) {
   return (
-    <div className={Style.TeamCard}>
+    <div
+      className={Style.TeamCard}
+      data-aos="fade-up"
+      data-aos-delay={100 * index}
+    >
       <div className="imageContainer">
         <ImageBox src={"/sphere.png"} layout={"fill"} />
       </div>

@@ -10,13 +10,25 @@ function SupportedBlockchain() {
       </div>
       <hr />
       <div className={Styles.BlockchainContainer}>
-        <span className={Styles.Scroller}>
+        <span
+          className={Styles.Scroller}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <MarqueeScroller logos={[]} direction="right" speed={6} />
         </span>
-        <span className={Styles.Scroller}>
+        <span
+          className={Styles.Scroller}
+          data-aos="fade-up"
+          data-aos-duration="1200"
+        >
           <MarqueeScroller logos={[]} direction="left" speed={8} />
         </span>
-        <span className={Styles.Scroller}>
+        <span
+          className={Styles.Scroller}
+          data-aos="fade-up"
+          data-aos-duration="1400"
+        >
           <MarqueeScroller logos={[]} direction="right" speed={10} />
         </span>
       </div>

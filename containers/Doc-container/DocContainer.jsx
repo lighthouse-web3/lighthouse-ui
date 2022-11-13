@@ -32,6 +32,8 @@ function DocContainer({ contentData }) {
           <div
             className={Styles.card}
             key={index}
+            data-aos="fade-up"
+            data-aos-delay={200 * index}
             onClick={() => {
               window.open(card.link);
             }}

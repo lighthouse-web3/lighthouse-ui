@@ -3,7 +3,7 @@ import Style from "./MainEventSection.module.scss";
 
 function MainEventSection() {
   return (
-    <div className={Style.MainEventSection}>
+    <div className={Style.MainEventSection} data-aos="fade-up">
       <div className={Style.contentBlock}>
         <div className={Style.title}>
           Hackathon at

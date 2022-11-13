@@ -48,33 +48,37 @@ function DocContainer2({ contentData }) {
       <div className={Styles.listContainer + " " + Styles.left}>
         <div className={Styles.title}>Developers Links</div>
 
-        {contentData?.developerLinks.map((repo, index) => (
+        {repos.map((repo, index) => (
           <div
             className={Styles.box + " ptr"}
             key={index}
             onClick={() => {
               window.open(repo.link, "_blank");
             }}
+            data-aos="fade-up"
+            data-aos-delay={100 * index}
           >
             <div className={Styles.icon}>
               <AiFillGithub />
             </div>
-            <div className={Styles.link}>{repo.title}</div>
+            <div className={Styles.link}>{repo.name}</div>
           </div>
         ))}
       </div>
       <div className={Styles.seprator}></div>
       <div className={Styles.listContainer + " " + Styles.right}>
         <div className={Styles.title}>Resources</div>
-        {contentData?.resources.map((resource, index) => (
+        {resources.map((resource, index) => (
           <div
             className={Styles.box + " ptr"}
             key={index}
             onClick={() => {
               window.open(resource.link, "_blank");
             }}
+            data-aos="fade-up"
+            data-aos-delay={100 * index}
           >
-            <div className={Styles.link}>{resource.title}</div>
+            <div className={Styles.link}>{resource.name}</div>
             <div className={Styles.icon} style={{ marginLeft: "10px" }}>
               {getResourceTypeLogo(resource.type)}
             </div>

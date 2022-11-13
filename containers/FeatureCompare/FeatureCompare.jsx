@@ -19,6 +19,7 @@ function FeatureCompare() {
           width={"80%"}
           height={"80%"}
           layout="fill"
+          data-aos="fade-up"
         />
       </div>
       <div className={Styles.tableContainer}>
@@ -35,8 +36,12 @@ function FeatureCompare() {
           </thead>
           <tbody>
             <tr>
-              <td>sss</td>
-              <td>ss</td>
+              <td data-aos="fade-up" data-aos-delay="100">
+                sss
+              </td>
+              <td data-aos="fade-up" data-aos-delay="300">
+                ss
+              </td>
             </tr>
             <tr></tr>
           </tbody>

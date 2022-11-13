@@ -32,7 +32,11 @@ function EventBlogBanner() {
             >
               {blogs.map((blog, index) => (
                 <SwiperSlide key={index}>
-                  <div className={Style.blogCard}>
+                  <div
+                    className={Style.blogCard}
+                    data-aos="fade-up"
+                    data-aos-delay={100 * index}
+                  >
                     <div className={Style.imgBlock}>
                       <ImageBox
                         src={

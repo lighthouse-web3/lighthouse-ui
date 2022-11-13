@@ -5,7 +5,11 @@ import Style from "./ReachUs.module.scss";
 function ReachUs() {
   return (
     <div className={Style.ReachUs}>
-      <div className={Style.infoContainer}>
+      <div
+        className={Style.infoContainer}
+        data-aos="fade-up"
+        data-aos-delay={200}
+      >
         <div className={Style.top}>
           <div className={Style.title}>
             Reach Us <span className="gradient__Text">Out</span>
@@ -17,7 +21,11 @@ function ReachUs() {
           <span className={Style.email}>Support@lighthouse.storage</span>
         </div>
       </div>
-      <div className={Style.mapContainer}>
+      <div
+        className={Style.mapContainer}
+        data-aos="fade-up"
+        data-aos-delay={400}
+      >
         <ImageBox src={"/worldMap.png"} layout="fill" />
       </div>
     </div>

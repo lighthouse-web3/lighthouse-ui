@@ -9,8 +9,16 @@ function PartnerCarousel() {
       </div>
       <hr />
       <div className={Styles.carouselContainer}>
-        <div className={Styles.bgContainer}></div>
-        <div className={Styles.contentContainer}></div>
+        <div
+          className={Styles.bgContainer}
+          data-aos="fade-up"
+          data-aos-delay="100"
+        ></div>
+        <div
+          className={Styles.contentContainer}
+          data-aos="fade-up"
+          data-aos-delay="200"
+        ></div>
       </div>
     </div>
   );
