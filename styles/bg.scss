@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   position: relative;
-  overflow: hidden;
+  overflow-y: visible;
   z-index: 0;
 
   .bigShadow__set1 {

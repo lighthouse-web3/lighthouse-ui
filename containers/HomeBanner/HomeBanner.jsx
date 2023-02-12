@@ -6,12 +6,12 @@ function HomeBanner() {
   return (
     <div className={Styles.Banner}>
       <div className={Styles.infoBox} data-aos="fade-up">
-        <div className={Styles.title}>The Future is now</div>
+        <div className={Styles.title}>Store Files Perpetually</div>
         <div className={Styles.subTitle}>
-          Store Files Perpetually on IPFS and Filecoin : Store Files Perpetually
-          on IPFS and Filecoin
+          Lighthouse allows users to store their files on the decentralized
+          network for lifetime at a fixed price
         </div>
-        <div className={Styles.mainBox}>
+        {/* <div className={Styles.mainBox}>
           <p>Enter your email to get the latest news</p>
           <div className={Styles.inputContainer}>
             <input type="text" placeholder="Email" />
@@ -19,7 +19,7 @@ function HomeBanner() {
               Submit
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className={Styles.globeBox} data-aos="fade-up">
         <ImageBox

@@ -1,64 +1,47 @@
 import React, { useEffect, useState } from "react";
 import Styles from "./FaqContainer.module.scss";
-import { BsSearch } from "react-icons/bs";
-import { Pagination, QuestionBox } from "../../components";
+import { AiOutlineMinusCircle } from "react-icons/ai";
 
-function FAQContainer({ contentData }) {
-  const questions = contentData;
-  console.log(questions);
-  const [searchWord, setSearchWord] = useState("");
-  const [currentQuestions, setCurrentQuestions] = useState(questions);
-  const [filteredQuestions, setFilteredQuestions] = useState(questions);
-
-  useEffect(() => {
-    if (searchWord.length > 0) {
-      let filteredQuestions = questions?.filter((item) =>
-        item?.["attributes"]?.question?.includes(searchWord)
-      );
-      setCurrentQuestions(filteredQuestions);
-    } else {
-      setCurrentQuestions(questions);
-    }
-  }, [searchWord]);
-
+function FAQContainer() {
   return (
-    <div className={Styles.FAQContainer + " section__padding"} id="faq">
-      <div className={Styles.faq}>
-        <div className={Styles.title}>
-          <p className="gradient__text mainTitle">Frequently Asked Questions</p>
-        </div>
+    <div className={Styles.FAQContainer}>
+      <p className={Styles.FAQContainer__title}>
+        FAQ<small>s</small>
+      </p>
 
-        <div className={Styles.faqSearchBox}>
-          <div className={Styles.searchbox}>
-            <span className={Styles.icon}>
-              <BsSearch />
-            </span>
-            <input
-              type="text"
-              value={searchWord}
-              onChange={(e) => {
-                setSearchWord(e.target.value);
-              }}
-              placeholder="Search FAQ"
-            />
+      <div className={Styles.FAQContainer__Container}>
+        <div className={Styles.FAQbox}>
+          <div className={Styles.questionBox}>
+            <p>Is there a free trial available?</p>
+            <div className={Styles.icon}>
+              <AiOutlineMinusCircle />
+            </div>
+          </div>
+          <div className={Styles.answerBox}>
+            <p>
+              Yes, you can try us for free for 30 days. If you want, we’ll
+              provide you with a free, personalized 30-minute onboarding call to
+              get you up and running as soon as possible.
+            </p>
           </div>
         </div>
-
-        <div className={Styles.faqContentContainer}>
-          <div className={Styles.questionsContainer}>
-            {currentQuestions?.length > 0 &&
-              currentQuestions.map((question, key) => (
-                <QuestionBox question={question} key={key} />
-              ))}
+        <div className={Styles.FAQbox}>
+          <div className={Styles.questionBox}>
+            <p>Is there a free trial available?</p>
+            <div className={Styles.icon}>
+              <AiOutlineMinusCircle />
+            </div>
+          </div>
+          <div className={Styles.answerBox}>
+            <p>
+              Yes, you can try us for free for 30 days. If you want, we’ll
+              provide you with a free, personalized 30-minute onboarding call to
+              get you up and running as soon as possible.
+            </p>
           </div>
         </div>
       </div>
-
-      <Pagination
-        data={filteredQuestions}
-        setCurrentData={setCurrentQuestions}
-        itemsPerPage={3}
-      />
+      <div className={Styles.FAQContainer__QuestionBox}></div>
     </div>
   );
 }

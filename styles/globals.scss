@@ -4,20 +4,23 @@
 @import "./bg.scss";
 
 :root {
-  --font-title: "Raleway";
-  --font-main: "Encode Sans";
+  --font-title: "Helvetica";
+  --font-main: "Helvetica";
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, "Raleway", "Encode Sans", Droid Sans,
+  font-family: -apple-system, "Helvetica", "Encode Sans", Droid Sans,
     Helvetica Neue, sans-serif;
+  background: url("/bg_gradient.png");
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
 }
 
 .bodyContainer {
-  background: #08060b;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -37,6 +40,20 @@ body {
   font-size: 3rem;
   font-family: var(--font-main);
   color: white;
+}
+
+.border_btn {
+  cursor: pointer;
+  width: fit-content;
+  border: 1px solid #ffffff;
+  filter: drop-shadow(0px 4px 31px rgba(0, 0, 0, 0.15));
+  border-radius: 10px;
+  height: fit-content;
+  align-items: center;
+  padding: 10px 30px;
+  background: none;
+  color: white;
+  font-size: 1.2rem;
 }
 
 .gradient__Text {

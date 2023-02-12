@@ -1,42 +1,31 @@
 import React from "react";
-import { FeatureCard } from "../../components";
+import { FeatureCard, ImageBox } from "../../components";
+import { LandingPageData } from "../../utils/Data/SiteContent";
 import Style from "./FeatureCardList.module.scss";
 
-const featuresList = [
-  {
-    title: `Lighthouse <span classname="gradient__Text">CLI</span>`,
-    content:
-      "Lighthouse allows users to store their files on the decentralized network for lifetime at a fixed price",
-    bgImg: "/cmd.png",
-  },
-  {
-    title: `Lighthouse <span classname="gradient__Text">CLI</span>`,
-    content:
-      "Lighthouse allows users to store their files on the decentralized network for lifetime at a fixed price",
-    bgImg: "/cmd.png",
-  },
-  {
-    title: `Lighthouse <span classname="gradient__Text">CLI</span>`,
-    content:
-      "Lighthouse allows users to store their files on the decentralized network for lifetime at a fixed price",
-    bgImg: "/cmd.png",
-  },
-  {
-    title: `Lighthouse <span classname="gradient__Text">CLI</span>`,
-    content:
-      "Lighthouse allows users to store their files on the decentralized network for lifetime at a fixed price",
-    bgImg: "/cmd.png",
-  },
-];
+const featuresList = [];
 
 function FeatureCardList() {
   return (
     <div className={Style.FeatureCardList}>
-      {featuresList.map((feature, key) => (
-        <div className={Style.card} key={key}>
-          <FeatureCard index={key} feature={feature} />
+      <p className={Style.FeatureCardList__Title}>Lighthouse Storage System</p>
+      <div className={Style.FeatureCardList__FeatureContainer}>
+        {LandingPageData?.StorageFeature.map((item, index) => (
+          <div className={Style.featureBox} key={index}>
+            <div className={Style.featureBox__icon}>
+              <ImageBox src={item?.icon} />
+            </div>
+            <p className={Style.featureBox__title}>{item?.title}</p>
+            <p className={Style.featureBox__description}>{item?.description}</p>
+          </div>
+        ))}
+      </div>
+      <div className={Style.FeatureCardList__BannerContainer}>
+        <div className={Style.Banner}>
+          <p>Come change the way people make music</p>
+          <button className="border_btn">Join Now</button>
         </div>
-      ))}
+      </div>
     </div>
   );
 }

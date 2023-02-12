@@ -1,51 +1,30 @@
 import React from "react";
+import { ImageBox } from "../../components";
 import Style from "./Testimonials.module.scss";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import { Pagination } from "swiper";
-import { TestimonialCard } from "../../components";
 
 function Testimonials() {
   return (
     <div className={Style.Testimonials}>
-      <div
-        className={Style.titleContainer}
-        data-aos="fade-up"
-        data-aos-delay={200}
-      >
-        <div className={Style.title + " sectionTitle"}>
-          Our <span className="gradient__Text">TESTIMONIAL</span> From <br />{" "}
-          Best Clients
-        </div>
+      <div className={Style.Testimonials__titleContainer}>
+        <p className={Style.title}>What creators are saying about Lighthouse</p>
+        <p className={Style.subTitle}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue tellus
+          urna, mi velit diam. Turpis diam amet massa id.
+        </p>
+        <button className={Style.button}>Try it Now</button>
       </div>
-      <div
-        className={Style.carouselContainer}
-        data-aos="fade-up"
-        data-aos-delay={400}
-      >
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={1}
-          pagination={true}
-          modules={[Pagination]}
-          className={Style.testimonialCrousel}
-        >
-          <SwiperSlide>
-            <div className={Style.slide}>
-              <TestimonialCard />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={Style.slide}>
-              <TestimonialCard />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={Style.slide}>
-              <TestimonialCard />
-            </div>
-          </SwiperSlide>
-        </Swiper>
+      <div className={Style.Testimonials__testimonialContainer}>
+        <div className={Style.Box1}>
+          <div className={Style.testimonialBox}>s</div>
+          <div className={Style.testimonialBox}>s</div>
+        </div>
+        <div className={Style.Box2}>
+          <div className={Style.testimonialBox}></div>
+          <div className={Style.testimonialBox}></div>
+        </div>
+        <div className={Style.GlobeBox}>
+          <ImageBox src={"/globe2.png"} />
+        </div>
       </div>
     </div>
   );
