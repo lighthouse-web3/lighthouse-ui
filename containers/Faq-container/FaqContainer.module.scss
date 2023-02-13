@@ -88,5 +88,19 @@
 
 @media only screen and (max-width: 600px) {
   .FAQContainer {
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__Container {
+      margin: 1rem 5%;
+    }
+
+    &__QuestionBox {
+      .icon {
+        width: 30%;
+        height: auto;
+      }
+    }
   }
 }

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   FAQContainer,
   FeatureCardList,
@@ -14,17 +15,41 @@ import {
 import Styles from "../styles/Home.module.scss";
 
 export default function Home() {
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    console.log(window.innerHeight, window.innerWidth);
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div className={"bodyContainer"}>
       <NewsBar />
-      <Header />
+      <Header style={{ background: "#1e0f2c" }} />
       <div className="sectionContainer">
         <div
           className="contentContainer container"
-          style={{
-            padding: "1rem 0rem 1rem 6rem",
-            background: "#000",
-          }}
+          style={
+            windowSize.width > 600
+              ? {
+                  padding: "1rem 0rem 1rem 6rem",
+                  background: "#000",
+                }
+              : {
+                  padding: "1rem",
+                  background: "#000",
+                }
+          }
         >
           <HomeBanner />
         </div>

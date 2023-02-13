@@ -64,28 +64,52 @@
       width: 100%;
       text-align: center;
       margin-top: 3rem;
-      .btn {
-        cursor: pointer;
-        width: fit-content;
-        border: 1px solid #ffffff;
-        filter: drop-shadow(0px 4px 31px rgba(0, 0, 0, 0.15));
-        border-radius: 10px;
-        height: 60px;
-        align-items: center;
-        padding: 10px 30px;
-        background: none;
-        color: white;
-        font-size: 1.2rem;
-      }
     }
   }
 }
 
 @media only screen and (max-width: 600px) {
   .FeatureCompare {
-    flex-direction: column;
+    gap: 2rem;
 
     &__title {
+      font-size: 2rem;
+    }
+    &__featureContainer {
+      .featureCard {
+        width: 100%;
+
+        gap: 1rem;
+        .imgBox {
+        }
+        .title {
+        }
+      }
+    }
+
+    &__clientBox {
+      width: 100%;
+      padding: 5% 15%;
+      background: #1e0f2c;
+      border-radius: 10px;
+      min-height: 200px;
+      margin-bottom: 10vh;
+      .logoBox {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        gap: 2rem;
+        .logo {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .ButtonBox {
+        width: 100%;
+        text-align: center;
+        margin-top: 3rem;
+      }
     }
   }
 }

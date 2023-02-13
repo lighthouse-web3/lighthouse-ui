@@ -68,23 +68,13 @@
   .Banner {
     flex-direction: column;
     .infoBox {
+      gap: 1rem;
       .title {
       }
       .subTitle {
+        font-size: calc(1rem + 1.1vw);
+        line-height: 2.5rem;
       }
-      .mainBox {
-        margin-top: 2rem;
-        .inputContainer {
-          margin-top: 1rem;
-          input[type="text"] {
-          }
-          button {
-          }
-        }
-      }
-    }
-
-    .globeBox {
     }
   }
 }

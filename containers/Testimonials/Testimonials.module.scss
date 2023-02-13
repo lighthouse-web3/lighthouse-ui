@@ -74,10 +74,44 @@
 
 @media only screen and (max-width: 600px) {
   .Testimonials {
+    flex-direction: column;
+    margin-top: 0rem;
+    gap: 10%;
     &__titleContainer {
+      width: 100%;
+
+      .title {
+        font-size: 2rem;
+      }
+
+      .subTitle {
+        font-size: 1.2rem;
+      }
+      .button {
+      }
     }
 
     &__testimonialContainer {
+      width: 100%;
+      .GlobeBox {
+        display: none;
+      }
+
+      .Box1,
+      .Box2 {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        width: 100%;
+        margin: 0;
+
+        .testimonialBox {
+          background: #202020;
+          border-radius: 3px;
+          flex: 1;
+          min-height: 250px;
+        }
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import ImageBox from "../ImageBox/ImageBox";
 import Style from "./FeatureBlogCard.module.scss";
 
 function FeatureBlogCard() {
@@ -12,16 +13,19 @@ function FeatureBlogCard() {
         );
       }}
     >
-      <div
-        className={Style.bg}
-        style={{
-          background:
-            'url("https://images.unsplash.com/photo-1516245834210-c4c142787335?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80")',
-        }}
-      ></div>
-      <div className={Style.content}>
-        <p className={Style.title}>Lighthouse is partnering up with Stack OS</p>
+      <div className={Style.FeatureBlogCard__imageContainer}>
+        <ImageBox
+          src={"/blogImage.png"}
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+        />
       </div>
+      <p className={Style.FeatureBlogCard__title}>
+        Most popular design systems to learn from in 2022
+      </p>
+      <p className={Style.FeatureBlogCard__category}>Design Systems</p>
     </div>
   );
 }

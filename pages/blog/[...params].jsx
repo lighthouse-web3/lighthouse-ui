@@ -3,7 +3,13 @@ import { useRouter } from "next/router";
 import Style from "../../styles/Blog.module.scss";
 import axios from "axios";
 import { baseUrl } from "../../utils/Data/config";
-import { BlogView, FeaturedArticle, Footer, Header } from "../../containers";
+import {
+  BlogView,
+  FeaturedArticle,
+  Footer,
+  Header,
+  MostPopularBlogs,
+} from "../../containers";
 
 export const getStaticPaths = async () => {
   const res = await axios.get(`${baseUrl}/blogs?populate=*`);
@@ -57,19 +63,18 @@ function Blog({ blogData }) {
   }, [params]);
   return (
     <div className={"bodyContainer"}>
-      <Header />
+      <Header style={{ backgroundColor: "#000" }} />
       <div className="sectionContainer">
-        <div className="smallShadow__set1"></div>
-        <div className="bigShadow__set1"></div>
-        <div className="contentContainer container">
+        <div className="contentContainer">
           <BlogView />
         </div>
       </div>
       <div className="sectionContainer">
-        <div className="smallShadow__set2"></div>
-        <div className="bigShadow__set2"></div>
-        <div className="contentContainer container">
-          <FeaturedArticle />
+        <div
+          className="contentContainer container"
+          style={{ maxHeight: "50vh", marginBottom: "2rem" }}
+        >
+          <MostPopularBlogs />
         </div>
       </div>
 

@@ -9,17 +9,27 @@ import {
 function blogs() {
   return (
     <div className={"bodyContainer"}>
-      <Header />
-      <div className="sectionContainer">
-        <div className="smallShadow__set1"></div>
-        <div className="bigShadow__set1"></div>
+      <Header style={{ background: "#000" }} />
+      <div
+        className="sectionContainer"
+        style={{
+          background: "#1E0F2C",
+          paddingTop: "3rem",
+        }}
+      >
         <div className="contentContainer container">
           <FeaturedArticle />
         </div>
       </div>
-      <div className="sectionContainer">
-        <div className="smallShadow__set2"></div>
-        <div className="bigShadow__set2"></div>
+      <div
+        className="sectionContainer"
+        style={{
+          background: "#1E0F2C",
+          paddingTop: "3rem",
+          marginTop: "4rem",
+          minHeight: "50vh",
+        }}
+      >
         <div className="contentContainer container">
           <MostPopularBlogs />
         </div>

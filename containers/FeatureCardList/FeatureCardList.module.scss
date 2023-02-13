@@ -70,3 +70,41 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .FeatureCardList {
+    &__Title {
+      width: 100%;
+      font-size: 2rem;
+    }
+
+    &__FeatureContainer {
+      display: flex;
+      flex-direction: column;
+      .featureBox {
+        flex: 1;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__icon {
+          width: 20%;
+          height: auto;
+        }
+
+        &__title {
+          font-size: 1.2rem;
+        }
+
+        &__description {
+          text-align: center;
+        }
+      }
+    }
+
+    &__BannerContainer {
+      margin-bottom: 2rem;
+    }
+  }
+}

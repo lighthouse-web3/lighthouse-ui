@@ -13,11 +13,11 @@ const links = [
     path: "/",
     href: "",
   },
-  {
-    title: "About Us",
-    path: "/about",
-    href: "",
-  },
+  // {
+  //   title: "About Us",
+  //   path: "/about",
+  //   href: "",
+  // },
   {
     title: "Blogs",
     path: "/blogs",
@@ -41,7 +41,7 @@ const links = [
   },
 ];
 
-function Header() {
+function Header({ style }) {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [scrollTop, setScrollTop] = useState();
   const [scrolling, setScrolling] = useState();
@@ -59,7 +59,7 @@ function Header() {
     setToggleMenu(false);
   }, [scrolling]);
   return (
-    <div className={Styles.Header + " container"}>
+    <div className={Styles.Header + " container"} style={style}>
       <div className={Styles.infoContainer}>
         <div className={Styles.logoContainer}>
           <div className={Styles.imageBox}>
