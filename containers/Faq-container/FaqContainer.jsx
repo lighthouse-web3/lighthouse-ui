@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Styles from "./FaqContainer.module.scss";
 import { AiOutlineMinusCircle } from "react-icons/ai";
+import { LandingPageData } from "../../utils/Data/SiteContent";
+import { ImageBox } from "../../components";
 
 function FAQContainer() {
+  const [isOpen, setIsOpen] = useState(0);
   return (
     <div className={Styles.FAQContainer}>
       <p className={Styles.FAQContainer__title}>
@@ -10,38 +13,39 @@ function FAQContainer() {
       </p>
 
       <div className={Styles.FAQContainer__Container}>
-        <div className={Styles.FAQbox}>
-          <div className={Styles.questionBox}>
-            <p>Is there a free trial available?</p>
-            <div className={Styles.icon}>
-              <AiOutlineMinusCircle />
+        {LandingPageData?.FAQs.map((item, index) => (
+          <div className={Styles.FAQbox} key={index}>
+            <div className={Styles.questionBox}>
+              <p>{item?.question}</p>
+              <div
+                className={Styles.icon + " ptr"}
+                onClick={() => {
+                  setIsOpen(index);
+                }}
+              >
+                <AiOutlineMinusCircle />
+              </div>
             </div>
+            {isOpen === index && (
+              <div className={Styles.answerBox}>
+                <p dangerouslySetInnerHTML={{ __html: item?.answer }}></p>
+              </div>
+            )}
           </div>
-          <div className={Styles.answerBox}>
-            <p>
-              Yes, you can try us for free for 30 days. If you want, we’ll
-              provide you with a free, personalized 30-minute onboarding call to
-              get you up and running as soon as possible.
-            </p>
-          </div>
-        </div>
-        <div className={Styles.FAQbox}>
-          <div className={Styles.questionBox}>
-            <p>Is there a free trial available?</p>
-            <div className={Styles.icon}>
-              <AiOutlineMinusCircle />
-            </div>
-          </div>
-          <div className={Styles.answerBox}>
-            <p>
-              Yes, you can try us for free for 30 days. If you want, we’ll
-              provide you with a free, personalized 30-minute onboarding call to
-              get you up and running as soon as possible.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
-      <div className={Styles.FAQContainer__QuestionBox}></div>
+      <div className={Styles.FAQContainer__QuestionBox}>
+        <div className={Styles.icon}>
+          <ImageBox src={"/groupIcon.png"} />
+        </div>
+
+        <p className={Styles.title}>Still have questions?</p>
+        <p className={Styles.subTitle}>
+          Can’t find the answer you’re looking for? Please chat to our friendly
+          team.
+        </p>
+        <button className={"fillBtn__purple"}>View More</button>
+      </div>
     </div>
   );
 }

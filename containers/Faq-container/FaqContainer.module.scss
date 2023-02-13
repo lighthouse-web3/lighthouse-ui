@@ -17,6 +17,8 @@
   &__Container {
     margin: 1rem 15%;
     .FAQbox {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
       &:not(:last-of-type) {
         border-bottom: 1px solid white;
       }
@@ -48,6 +50,38 @@
         font-size: 1rem;
         line-height: 24px;
       }
+    }
+  }
+
+  &__QuestionBox {
+    margin: 0rem 1.5rem 4rem 1.5rem;
+    background: rgba(28, 49, 99, 0.5);
+    border-radius: 16px;
+    min-height: 300px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .icon {
+      width: 15%;
+      height: auto;
+    }
+
+    .title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 30px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .subTitle {
+      font-size: 1.1rem;
+      line-height: 1.5rem;
+      text-align: center;
+      color: #667085;
+      margin-top: 0px;
     }
   }
 }
