@@ -98,4 +98,16 @@ export const LandingPageData = {
         "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.",
     },
   ],
+
+  Documentation: {
+    title: "Lighthouse Documentation",
+    subtitle:
+      "Lighthouse is a perpetual decentralized file storage protocol that allows the ability to pay once and store forever",
+    bannerImage:
+      "https://gateway.lighthouse.storage/ipfs/QmSdS3Zxk64vC28LhNy4jJrcYzD4ziqPB69UaR1ufNXib7",
+    videURL: "",
+    cardTitle: "",
+    cardSubtitle: "",
+    cards: [{ title: "", subtitle: "", link: "" }],
+  },
 };
