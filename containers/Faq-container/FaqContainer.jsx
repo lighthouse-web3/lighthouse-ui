@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Styles from "./FaqContainer.module.scss";
 import { AiOutlineMinusCircle } from "react-icons/ai";
-import { LandingPageData } from "../../utils/Data/SiteContent";
+import { LandingPageData, socialLinks } from "../../utils/Data/SiteContent";
 import { ImageBox } from "../../components";
 
 function FAQContainer() {
@@ -41,10 +41,16 @@ function FAQContainer() {
 
         <p className={Styles.title}>Still have questions?</p>
         <p className={Styles.subTitle}>
-          Can’t find the answer you’re looking for? Please chat to our friendly
-          team.
+          Can’t find the answer you’re looking for? Get in touch with our team.
         </p>
-        <button className={"fillBtn__purple"}>View More</button>
+        <button
+          className={"fillBtn__purple ptr"}
+          onClick={() => {
+            window.location.href = `mailto:${socialLinks?.contactMail}`;
+          }}
+        >
+          Contact Us
+        </button>
       </div>
     </div>
   );

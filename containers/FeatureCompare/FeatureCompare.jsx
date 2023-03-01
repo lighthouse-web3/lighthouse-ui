@@ -31,9 +31,9 @@ function FeatureCompare() {
             </div>
           ))}
         </div>
-        <div className={Styles?.ButtonBox}>
+        {/* <div className={Styles?.ButtonBox}>
           <button className={"border_btn"}>All Partners</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

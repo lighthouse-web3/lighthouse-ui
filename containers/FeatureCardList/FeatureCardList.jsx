@@ -8,7 +8,7 @@ const featuresList = [];
 function FeatureCardList() {
   return (
     <div className={Style.FeatureCardList}>
-      <p className={Style.FeatureCardList__Title}>Lighthouse Storage System</p>
+      <p className={Style.FeatureCardList__Title}>Lighthouse Suits</p>
       <div className={Style.FeatureCardList__FeatureContainer}>
         {LandingPageData?.StorageFeature.map((item, index) => (
           <div className={Style.featureBox} key={index}>

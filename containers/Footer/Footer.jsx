@@ -2,73 +2,112 @@ import React from "react";
 import Styles from "./Footer.module.scss";
 
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { BsTelegram, BsDiscord, BsTwitter } from "react-icons/bs";
+import { BsTelegram, BsDiscord, BsTwitter, BsLinkedin } from "react-icons/bs";
 import { ImageBox } from "../../components";
-
-const socialCards = [
-  {
-    icon: <BsTwitter />,
-    link: "@lighthouse/web3",
-    showText: "@lighthouse/web3",
-  },
-  {
-    icon: <BsDiscord />,
-    link: "@lighthouse/web3",
-    showText: "@lighthouse/web3",
-  },
-  {
-    icon: <BsTelegram />,
-    link: "@lighthouse/web3",
-    showText: "@lighthouse/web3",
-  },
-];
+import { footerData, socialLinks } from "../../utils/Data/SiteContent";
+import { useRouter } from "next/router";
 
 function Footer() {
+  const _navigate = useRouter();
+
   return (
     <div className={Styles.Footer}>
-      <div className={Styles.upperBox + " container"}>
-        <div className={Styles.infoBox}>
-          <div className={Styles.title + " gradient__Text"}>Get In Touch</div>
-          <div className={Styles.subTitle}>
-            with out team, to use lighthouse for all your storage needs.
+      <div className={Styles.Footer__upperFooter + " container"}>
+        <div className={Styles.brandBox}>
+          <div className={Styles.logo}>
+            <ImageBox src={"/logo.svg"} width="60%" />
           </div>
-
-          <div className={Styles.emailBox}>
-            <div className={Styles.title}>
-              Stay Always <span className="gradient__Text">Updated</span>{" "}
-            </div>
-            <div className={Styles.subTitle}>
-              Enter your Email to get updates from lighthouse Team
-            </div>
-            <div className={Styles.inputBox}>
-              <input type={"text"}></input>
-              <button>
-                <HiOutlineArrowNarrowRight />
-              </button>
+          <div className={Styles.socialBox}>
+            <p>Find us on social</p>
+            <div className={Styles.icons}>
+              <span
+                className={Styles.icon}
+                onClick={() => {
+                  window.open(socialLinks?.telegram, "_blank");
+                }}
+              >
+                <BsTelegram />
+              </span>
+              <span
+                className={Styles.icon}
+                onClick={() => {
+                  window.open(socialLinks?.discord, "_blank");
+                }}
+              >
+                <BsDiscord />
+              </span>
+              <span
+                className={Styles.icon}
+                onClick={() => {
+                  window.open(socialLinks?.twitter, "_blank");
+                }}
+              >
+                <BsTwitter />
+              </span>
+              <span
+                className={Styles.icon}
+                onClick={() => {
+                  window.open(socialLinks?.linkedin, "_blank");
+                }}
+              >
+                <BsLinkedin />
+              </span>
             </div>
           </div>
         </div>
-        <div className={Styles.socialBox}>
-          {socialCards.map((data, index) => (
-            <div className={Styles.card + " gradient__Border"} key={index}>
-              {data.icon}
-              {data.showText}
-            </div>
+        <div className={Styles.siteMap}>
+          <p className={Styles.siteMap__title}>Sitemap</p>
+
+          {footerData?.sitemap.map((item, index) => (
+            <p
+              className={Styles.siteMap__link + " ptr"}
+              key={index}
+              onClick={() => {
+                item?.path
+                  ? _navigate.push(item?.path)
+                  : window.open(item?.link, "_blank");
+              }}
+            >
+              {item?.text}
+            </p>
           ))}
         </div>
+        <div className={Styles.siteMap}>
+          <p className={Styles.siteMap__title}>Help</p>
+          {footerData?.otherLinks.map((item, index) => (
+            <p
+              className={Styles.siteMap__link + " ptr"}
+              key={index}
+              onClick={() => {
+                item?.path
+                  ? _navigate.push(item?.path)
+                  : window.open(item?.link, "_blank");
+              }}
+            >
+              {item?.text}
+            </p>
+          ))}
+        </div>
+
+        <div className={Styles.newsLetterBox}>
+          <p className={Styles.newsLetterBox__title}>Newsletter</p>
+          <input type="text" placeholder="user@mail.com" />
+          <button
+            className="fillBtn__purple"
+            style={{
+              width: "100%",
+              background: "#2563EB",
+              border: "1px solid #2563EB",
+              marginTop: "1rem",
+            }}
+          >
+            Subscribe Now
+          </button>
+        </div>
       </div>
-      <div className={Styles.lowerBox + " container"}>
-        <p>LighthouseWeb3</p>
-        <ImageBox
-          src={"/logo.png"}
-          layout="fill"
-          height={"40px"}
-          width={"40px"}
-        />
-        <p>@2022 | All Rights Reserved</p>
+      <div className={Styles.Footer__lowerFooter}>
+        <p>© Copyright 2023, All Rights Reserved by Lighhouse Storage</p>
       </div>
-      <div className={Styles.ellipseSmall}></div>
-      <div className={Styles.ellipseBig}></div>
     </div>
   );
 }
