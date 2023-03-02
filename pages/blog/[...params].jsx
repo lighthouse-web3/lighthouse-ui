@@ -52,6 +52,7 @@ function Blog({ blogData }) {
   const { params } = router.query;
   const [showBlog, setShowBlog] = useState(blogData);
   const [similarBlogs, setSimilarBlogs] = useState([]);
+  console.log(blogData);
   useEffect(() => {
     (async () => {
       try {
@@ -66,7 +67,7 @@ function Blog({ blogData }) {
       <Header style={{ backgroundColor: "#000" }} />
       <div className="sectionContainer">
         <div className="contentContainer">
-          <BlogView />
+          <BlogView blogData={blogData} />
         </div>
       </div>
       <div className="sectionContainer">
@@ -74,7 +75,7 @@ function Blog({ blogData }) {
           className="contentContainer container"
           style={{ maxHeight: "50vh", marginBottom: "2rem" }}
         >
-          <MostPopularBlogs />
+          {/* <MostPopularBlogs /> */}
         </div>
       </div>
 

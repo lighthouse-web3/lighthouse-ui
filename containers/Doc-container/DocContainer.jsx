@@ -26,6 +26,7 @@ function DocContainer({}) {
         <ImageBox
           src={LandingPageData?.Documentation?.bannerImage}
           style={{ paddingTop: "2rem" }}
+          width="80%"
         />
       </div>
     </div>

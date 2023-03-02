@@ -10,27 +10,27 @@ export const LandingPageData = {
   },
   KeyFeatures: [
     {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmVKMRFnd11JwkMBSB9uuUEzs3s7RRUSKfDDdnbrcXMnQx",
+      icon: "/featureIcon/feature6.png",
       title: "Pay once and store forever",
     },
     {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmVKMRFnd11JwkMBSB9uuUEzs3s7RRUSKfDDdnbrcXMnQx",
+      icon: "/featureIcon/feature5.png",
       title: "Store files on IPFS and Filecoin",
     },
     {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmVKMRFnd11JwkMBSB9uuUEzs3s7RRUSKfDDdnbrcXMnQx",
+      icon: "/featureIcon/feature1.png",
       title: "Encryption & Access control functionality",
     },
     {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmVKMRFnd11JwkMBSB9uuUEzs3s7RRUSKfDDdnbrcXMnQx",
+      icon: "/featureIcon/feature4.png",
       title: "Dedicated IPFS gateways for fast retrievals",
     },
     {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmVKMRFnd11JwkMBSB9uuUEzs3s7RRUSKfDDdnbrcXMnQx",
+      icon: "/featureIcon/feature3.png",
       title: "Image resize to save bandwidth",
     },
     {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmVKMRFnd11JwkMBSB9uuUEzs3s7RRUSKfDDdnbrcXMnQx",
+      icon: "/featureIcon/feature2.png",
       title: "Fast Gateway that streams even 4k videos",
     },
   ],
@@ -48,26 +48,26 @@ export const LandingPageData = {
   StorageFeature: [
     {
       icon: "/icons/Volume Up.png",
-      title: "Pay once and store forever  ",
+      title: "Lighthouse Files",
       description:
         "Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols. ",
     },
     {
       icon: "/icons/Unlock.png",
-      title: "Pay once and store forever  ",
+      title: "Lighthouse SDK",
       description:
         "Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols. ",
     },
 
     {
       icon: "/icons/Download.png",
-      title: "Pay once and store forever  ",
+      title: "Lighthouse CLI",
       description:
         "Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols. ",
     },
     {
       icon: "/icons/Play.png",
-      title: "Pay once and store forever  ",
+      title: "Lighthouse Kavach",
       description:
         "Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols. ",
     },
@@ -220,3 +220,27 @@ export const testimonialSection = {
     },
   ],
 };
+
+export const documentationCards = [
+  {
+    title: "Introduction",
+    subTitle: "Learn about lighthouse and how it is diffrent",
+    link: "https://docs.lighthouse.storage/lighthouse-1/",
+  },
+  {
+    title: "CLI Commands",
+    subTitle:
+      "Learn to install the package globally on your system using our npm package",
+    link: "https://docs.lighthouse.storage/lighthouse-1/cli-tool/cli-commands",
+  },
+  {
+    title: "Code Examples",
+    subTitle: "Go through our detailed code examples",
+    link: "https://docs.lighthouse.storage/lighthouse-1/cli-tool/cli-commands",
+  },
+  {
+    title: "Developers Link",
+    subTitle: "Explore all our public repositories",
+    link: "https://github.com/lighthouse-web3",
+  },
+];

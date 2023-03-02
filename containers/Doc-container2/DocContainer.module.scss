@@ -1,7 +1,89 @@
 .DocContainer2 {
+  width: 100%;
+  color: white;
+  padding: 4rem 0rem;
+  &__title {
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 2rem;
+    letter-spacing: 0.3px;
+    color: #fafaf9;
+  }
+
+  &__subTitle {
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    color: rgba(239, 237, 232, 0.65);
+  }
+
+  &__cardContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+
+    .card {
+      flex: 1;
+      background: rgba(29, 32, 71, 0.6);
+      border-radius: 12px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.01);
+      }
+      &__title {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 105%;
+        letter-spacing: 0.5px;
+        color: #fafaf9;
+        margin-top: 10px;
+        min-height: 70px;
+      }
+
+      &__subTitle {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        p {
+          flex: 1;
+          margin: 0;
+          font-weight: 400;
+          font-size: 1rem;
+          line-height: 1.5rem;
+          letter-spacing: 0.3px;
+          color: rgba(239, 237, 232, 0.65);
+        }
+        span {
+          font-size: 2rem;
+          color: white;
+          font-weight: 700;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 700px) {
   .DocContainer2 {
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__subTitle {
+      font-size: 1rem;
+    }
+
+    &__cardContainer {
+      flex-direction: column;
+    }
   }
 }

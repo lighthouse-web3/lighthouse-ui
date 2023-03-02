@@ -9,14 +9,13 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
 
-function MostPopularBlogs() {
+function MostPopularBlogs({ blogsData }) {
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
   });
 
   useEffect(() => {
-    console.log(window.innerHeight, window.innerWidth);
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,
@@ -29,10 +28,16 @@ function MostPopularBlogs() {
   }, []);
   return (
     <div className={Style.MostPopularBlogs}>
-      <p className={Style.MostPopularBlogs__title}>Recent Blogs</p>
+      <p className={Style.MostPopularBlogs__title}>Our Blogs</p>
       <div className={Style.MostPopularBlogs__carouselContainer}>
         <Swiper
-          slidesPerView={windowSize.width > 600 ? 4 : 1}
+          slidesPerView={
+            windowSize.width > 600
+              ? blogsData?.length < 4
+                ? blogsData?.length
+                : 4
+              : 1
+          }
           spaceBetween={30}
           pagination={{
             clickable: true,
@@ -40,26 +45,13 @@ function MostPopularBlogs() {
           modules={[Pagination]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <div className={Style.blogCard}>
-              <FeatureBlogCard />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={Style.blogCard}>
-              <FeatureBlogCard />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={Style.blogCard}>
-              <FeatureBlogCard />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={Style.blogCard}>
-              <FeatureBlogCard />
-            </div>
-          </SwiperSlide>
+          {blogsData?.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className={Style.blogCard}>
+                <FeatureBlogCard blog={item} />
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>

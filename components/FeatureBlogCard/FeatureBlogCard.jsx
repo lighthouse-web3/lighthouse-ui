@@ -2,13 +2,13 @@ import React from "react";
 import ImageBox from "../ImageBox/ImageBox";
 import Style from "./FeatureBlogCard.module.scss";
 
-function FeatureBlogCard() {
+function FeatureBlogCard({ blog }) {
   return (
     <div
       className={Style.FeatureBlogCard}
       onClick={() => {
         window.open(
-          `/blog/6/Encryption-and-Access-Control-for-Web3-using-Lighthouse`,
+          `/blog/${blog?.id}/${blog?.attributes?.title?.replaceAll(" ", "-")}`,
           "_blank"
         );
       }}
@@ -22,10 +22,10 @@ function FeatureBlogCard() {
           }}
         />
       </div>
-      <p className={Style.FeatureBlogCard__title}>
-        Most popular design systems to learn from in 2022
+      <p className={Style.FeatureBlogCard__title}>{blog?.attributes?.title}</p>
+      <p className={Style.FeatureBlogCard__category}>
+        {blog?.attributes?.author}
       </p>
-      <p className={Style.FeatureBlogCard__category}>Design Systems</p>
     </div>
   );
 }

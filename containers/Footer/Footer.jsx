@@ -15,7 +15,7 @@ function Footer() {
       <div className={Styles.Footer__upperFooter + " container"}>
         <div className={Styles.brandBox}>
           <div className={Styles.logo}>
-            <ImageBox src={"/logo.svg"} width="60%" />
+            <ImageBox src={"/logo.svg"} width="100%" />
           </div>
           <div className={Styles.socialBox}>
             <p>Find us on social</p>
