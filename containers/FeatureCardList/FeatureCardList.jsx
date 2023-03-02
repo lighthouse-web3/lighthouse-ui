@@ -22,8 +22,15 @@ function FeatureCardList() {
       </div>
       <div className={Style.FeatureCardList__BannerContainer}>
         <div className={Style.Banner}>
-          <p>Come change the way people make music</p>
-          <button className="border_btn">Join Now</button>
+          <p>Come change the way we store data on blockchain</p>
+          <button
+            className="border_btn"
+            onClick={() => {
+              window.open("https://files.lighthouse.storage/", "__blank");
+            }}
+          >
+            Try Now
+          </button>
         </div>
       </div>
     </div>

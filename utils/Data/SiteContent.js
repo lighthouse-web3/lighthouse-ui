@@ -47,26 +47,26 @@ export const LandingPageData = {
   ],
   StorageFeature: [
     {
-      icon: "/icons/Volume Up.png",
+      icon: "/suitsIcon/suitsIcon1.png",
       title: "Lighthouse Files",
       description:
         "Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols. ",
     },
     {
-      icon: "/icons/Unlock.png",
+      icon: "/suitsIcon/suitsIcon2.png",
       title: "Lighthouse SDK",
       description:
         "Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols. ",
     },
 
     {
-      icon: "/icons/Download.png",
+      icon: "/suitsIcon/suitsIcon3.png",
       title: "Lighthouse CLI",
       description:
         "Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols. ",
     },
     {
-      icon: "/icons/Play.png",
+      icon: "/suitsIcon/suitsIcon4.png",
       title: "Lighthouse Kavach",
       description:
         "Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols. ",

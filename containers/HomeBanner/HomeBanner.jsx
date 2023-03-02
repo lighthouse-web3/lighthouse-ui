@@ -18,12 +18,12 @@ function HomeBanner() {
         ></div>
       </div>
       <div className={Styles.globeBox} data-aos="fade-up">
-        <ImageBox
-          src={LandingPageData?.HeroSection?.sideImage}
+        {/* <ImageBox
+          src={"/test/globe.gif"}
           alt="BannerImage"
           layout={"fill"}
           width={"100%"}
-        />
+        /> */}
       </div>
     </div>
   );
