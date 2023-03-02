@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Style from "../../styles/Blog.module.scss";
 import axios from "axios";
-import { baseUrl } from "../../utils/Data/config";
+import { baseUrl, mediaUrl } from "../../utils/Data/config";
 import {
   BlogView,
   FeaturedArticle,
@@ -10,6 +10,7 @@ import {
   Header,
   MostPopularBlogs,
 } from "../../containers";
+import { Metadata } from "../../components";
 
 export const getStaticPaths = async () => {
   const res = await axios.get(`${baseUrl}/blogs?populate=*`);
@@ -69,24 +70,32 @@ function Blog({ blogData, allBlogs }) {
     })();
   }, [params]);
   return (
-    <div className={"bodyContainer"}>
-      <Header style={{ backgroundColor: "#000" }} />
-      <div className="sectionContainer">
-        <div className="contentContainer">
-          <BlogView blogData={blogData} />
+    <>
+      <Metadata
+        title={blogData?.Seo?.metaTitle}
+        description={blogData?.Seo?.metaDiscription?.slice(0, 100) + "..."}
+        image={mediaUrl + blogData?.coverImage?.data?.attributes?.url}
+        url={"https://www.lighthouse.storage/"}
+      />
+      <div className={"bodyContainer"}>
+        <Header style={{ backgroundColor: "#000" }} />
+        <div className="sectionContainer">
+          <div className="contentContainer">
+            <BlogView blogData={blogData} />
+          </div>
         </div>
-      </div>
-      <div className="">
-        <div
-          className="contentContainer container"
-          style={{ maxHeight: "50vh", marginBottom: "2rem" }}
-        >
-          <MostPopularBlogs blogsData={allBlogs} />
+        <div className="">
+          <div
+            className="contentContainer container"
+            style={{ maxHeight: "50vh", marginBottom: "2rem" }}
+          >
+            <MostPopularBlogs blogsData={allBlogs} />
+          </div>
         </div>
-      </div>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }
 
