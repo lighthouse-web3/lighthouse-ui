@@ -37,20 +37,7 @@ export default function Home() {
       <NewsBar />
       <Header style={{ background: "#1e0f2c" }} />
       <div className="sectionContainer">
-        <div
-          className="contentContainer container"
-          style={
-            windowSize.width > 600
-              ? {
-                  padding: "1rem 0rem 1rem 6rem",
-                  background: "#000",
-                }
-              : {
-                  padding: "1rem",
-                  background: "#000",
-                }
-          }
-        >
+        <div className="contentContainer">
           <HomeBanner />
         </div>
       </div>
