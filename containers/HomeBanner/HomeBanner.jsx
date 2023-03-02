@@ -26,7 +26,7 @@ function HomeBanner() {
           width={"100%"}
         /> */}
 
-        <video src="/test/globe_1.mp4" autoPlay loop muted></video>
+        <video src="/globe_1.mp4" autoPlay loop muted></video>
       </div>
       <div className={Styles.overlay}></div>
     </div>
