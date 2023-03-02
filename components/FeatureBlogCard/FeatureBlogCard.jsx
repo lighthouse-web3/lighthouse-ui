@@ -1,8 +1,10 @@
 import React from "react";
+import { mediaUrl } from "../../utils/Data/config";
 import ImageBox from "../ImageBox/ImageBox";
 import Style from "./FeatureBlogCard.module.scss";
 
 function FeatureBlogCard({ blog }) {
+  console.log(blog, "===");
   return (
     <div
       className={Style.FeatureBlogCard}
@@ -15,7 +17,7 @@ function FeatureBlogCard({ blog }) {
     >
       <div className={Style.FeatureBlogCard__imageContainer}>
         <ImageBox
-          src={"/blogImage.png"}
+          src={mediaUrl + blog?.attributes?.coverImage?.data?.attributes?.url}
           style={{
             objectFit: "cover",
             objectPosition: "center",

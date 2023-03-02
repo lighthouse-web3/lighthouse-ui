@@ -4,7 +4,11 @@ const nextConfig = {
   swcMinify: true,
   images: {
     dangerouslyAllowSVG: false,
-    domains: ["images.unsplash.com", "gateway.lighthouse.storage"],
+    domains: [
+      "images.unsplash.com",
+      "gateway.lighthouse.storage",
+      "cms.lighthouse.storage",
+    ],
   },
 };
 

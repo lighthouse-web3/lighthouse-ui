@@ -16,6 +16,7 @@ function BlogView({ blogData }) {
             }")`,
             backgroundPosition: "center",
             backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
           }}
         ></div>
         <div className={Style.overlay}></div>

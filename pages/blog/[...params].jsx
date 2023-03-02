@@ -35,19 +35,25 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const id = context.params.params[0];
   let blogData = "null";
+  let allBlogs = [];
   try {
     const res = await axios.get(`${baseUrl}/blogs/${id}?populate=*`);
     blogData =
       res["status"] === 200 ? res["data"]?.["data"]?.["attributes"] : null;
+
+    const allBlogsRes = await axios.get(`${baseUrl}/blogs?populate=*`);
+    allBlogs =
+      allBlogsRes["status"] === 200 ? allBlogsRes["data"]?.["data"] : [];
   } catch (error) {}
   return {
     props: {
       blogData,
+      allBlogs,
     },
   };
 };
 
-function Blog({ blogData }) {
+function Blog({ blogData, allBlogs }) {
   const router = useRouter();
   const { params } = router.query;
   const [showBlog, setShowBlog] = useState(blogData);
@@ -70,12 +76,12 @@ function Blog({ blogData }) {
           <BlogView blogData={blogData} />
         </div>
       </div>
-      <div className="sectionContainer">
+      <div className="">
         <div
           className="contentContainer container"
           style={{ maxHeight: "50vh", marginBottom: "2rem" }}
         >
-          {/* <MostPopularBlogs /> */}
+          <MostPopularBlogs blogsData={allBlogs} />
         </div>
       </div>
 
