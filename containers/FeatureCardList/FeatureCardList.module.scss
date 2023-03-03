@@ -18,16 +18,23 @@
     flex-direction: row;
     .featureBox {
       flex: 1;
-      padding: 1rem;
+      padding: 1.5rem;
+      margin: 2rem;
       display: flex;
       flex-direction: column;
+      border: 5px solid #1e0f2c;
+      border-radius: 10px;
+      &:hover {
+        transform: scale(1.01);
+        cursor: pointer;
+      }
       &__icon {
-        width: 20%;
+        width: 30%;
         height: auto;
       }
 
       &__title {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         color: white;
         font-weight: 600;
       }
@@ -35,7 +42,8 @@
       &__description {
         letter-spacing: 0.02em;
         color: #958a8a;
-        font-size: 1rem;
+        font-size: 1.2rem;
+        line-height: 130%;
       }
     }
   }
@@ -46,6 +54,7 @@
     align-items: center;
     display: flex;
     .Banner {
+      padding: 1.5rem;
       background: linear-gradient(
         95.31deg,
         #a659ff -28.73%,
@@ -75,7 +84,7 @@
   .FeatureCardList {
     &__Title {
       width: 100%;
-      font-size: 2rem;
+      font-size: 3rem;
     }
 
     &__FeatureContainer {
@@ -83,18 +92,19 @@
       flex-direction: column;
       .featureBox {
         flex: 1;
-        padding: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
+
         &__icon {
-          width: 20%;
+          width: 30%;
           height: auto;
         }
 
         &__title {
-          font-size: 1.2rem;
+          font-size: 1.5rem;
         }
 
         &__description {

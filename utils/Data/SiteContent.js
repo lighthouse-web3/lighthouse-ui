@@ -3,7 +3,7 @@ export const disclaimerText =
 
 export const LandingPageData = {
   HeroSection: {
-    title: "Store Files Perpetually",
+    title: "Store Files Permanently",
     subTitle:
       "Lighthouse allows the users to store on Filecoin for a lifetime at a fixed price",
     sideImage: "/globe.png",
@@ -49,27 +49,30 @@ export const LandingPageData = {
     {
       icon: "/suitsIcon/suitsIcon1.png",
       title: "Lighthouse Files",
-      description:
-        "Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols. ",
+      description: "Explore the working of Lighthouse using our DAPP.",
+      link: "https://files.lighthouse.storage/",
     },
     {
       icon: "/suitsIcon/suitsIcon2.png",
       title: "Lighthouse SDK",
       description:
-        "Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols. ",
+        "Lighthouse Software Developer Kit comprises of all the tools developers need to integrate Lighthouse.",
+      link: "https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/overview",
     },
 
     {
       icon: "/suitsIcon/suitsIcon3.png",
       title: "Lighthouse CLI",
       description:
-        "Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols. ",
+        "All lighthouse features available through the convinience of the Command Line Interface ",
+      link: "https://docs.lighthouse.storage/lighthouse-1/cli-tool/overview",
     },
     {
       icon: "/suitsIcon/suitsIcon4.png",
       title: "Lighthouse Kavach",
       description:
-        "Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols. ",
+        "Store private files on the distributed web with secure encryption and access control features through Lighthouse Kavach",
+      link: "https://github.com/lighthouse-web3/encryption-sdk",
     },
   ],
 
@@ -129,7 +132,7 @@ export const LandingPageData = {
   Documentation: {
     title: "Lighthouse Documentation",
     subtitle:
-      "Lighthouse is a perpetual decentralized file storage protocol that allows the ability to pay once and store forever",
+      "Lighthouse is a perpetual file storage protocol that allows the ability to pay once and store forever",
     bannerImage:
       "https://gateway.lighthouse.storage/ipfs/QmSdS3Zxk64vC28LhNy4jJrcYzD4ziqPB69UaR1ufNXib7",
     videURL: "",
@@ -190,7 +193,7 @@ export const footerData = {
 };
 
 export const testimonialSection = {
-  title: "What creators are saying about Lighthouse",
+  title: "What builders are saying about Lighthouse",
   subTitle:
     "Testimonials from creative professionals who rely on Lighthouse to shine a light on their work.",
   testimonials: [

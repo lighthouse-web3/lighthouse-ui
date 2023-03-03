@@ -8,7 +8,7 @@ function Testimonials() {
     <div className={Style.Testimonials}>
       <div className={Style.Testimonials__titleContainer}>
         <p className={Style.title}>{testimonialSection?.title}</p>
-        <p className={Style.subTitle}>{testimonialSection?.subTitle}</p>
+        {/* <p className={Style.subTitle}>{testimonialSection?.subTitle}</p> */}
         {/* <button className={Style.button}>Try it Now</button> */}
       </div>
       <div className={Style.Testimonials__testimonialContainer}>

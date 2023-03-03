@@ -8,20 +8,18 @@ function BlogView({ blogData }) {
   return (
     <div className={Style.BlogView}>
       <div className={Style.BlogView__BannerImage}>
-        <div
-          className={Style.image}
-          style={{
-            background: `url("${
-              mediaUrl + blogData?.coverImage?.data?.attributes?.url
-            }")`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        ></div>
-        <div className={Style.overlay}></div>
+        {blogData && (
+          <ImageBox
+            src={mediaUrl + blogData?.coverImage?.data?.attributes?.url}
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+            maxHeight={"100%"}
+          />
+        )}
       </div>
-      <div className={Style.BlogView__contentContainer + " container"}>
+      <div className={Style.BlogView__contentContainer}>
         <p className={Style.title}>{blogData?.title}</p>
 
         <div className={Style.contentBox}>

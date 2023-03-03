@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Styles from "./FaqContainer.module.scss";
-import { AiOutlineMinusCircle } from "react-icons/ai";
+import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { LandingPageData, socialLinks } from "../../utils/Data/SiteContent";
 import { ImageBox } from "../../components";
 
@@ -15,15 +15,19 @@ function FAQContainer() {
       <div className={Styles.FAQContainer__Container}>
         {LandingPageData?.FAQs.map((item, index) => (
           <div className={Styles.FAQbox} key={index}>
-            <div className={Styles.questionBox}>
+            <div
+              className={Styles.questionBox + " ptr"}
+              onClick={() => {
+                isOpen === index ? setIsOpen(null) : setIsOpen(index);
+              }}
+            >
               <p>{item?.question}</p>
-              <div
-                className={Styles.icon + " ptr"}
-                onClick={() => {
-                  setIsOpen(index);
-                }}
-              >
-                <AiOutlineMinusCircle />
+              <div className={Styles.icon}>
+                {isOpen === index ? (
+                  <AiOutlineMinusCircle />
+                ) : (
+                  <AiOutlinePlusCircle />
+                )}
               </div>
             </div>
             {isOpen === index && (

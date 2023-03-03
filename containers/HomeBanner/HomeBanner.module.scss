@@ -4,9 +4,10 @@
   color: white;
   height: calc(100% - 100px);
   position: relative;
-
+  background: black;
   .infoBox {
-    flex: 1;
+    z-index: 1;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,9 +64,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
+    width: 60%;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
     filter: brightness(0.5) contrast(1.2) opacity(0.8);
 
     video {
@@ -86,8 +87,11 @@
   .Banner {
     flex-direction: column;
     .infoBox {
+      width: 100%;
+      flex: 1;
       gap: 1rem;
       padding: 1rem;
+      background: transparent;
 
       .title {
       }
@@ -95,6 +99,10 @@
         font-size: calc(1rem + 1.1vw);
         line-height: 2.5rem;
       }
+    }
+
+    .globeBox {
+      width: 100%;
     }
   }
 }

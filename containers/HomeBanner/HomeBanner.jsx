@@ -19,13 +19,6 @@ function HomeBanner() {
         ></div>
       </div>
       <div className={Styles.globeBox} data-aos="fade-up">
-        {/* <ImageBox
-          src={"/test/globe2.gif"}
-          alt="BannerImage"
-          layout={"fill"}
-          width={"100%"}
-        /> */}
-
         <video src="/globe_1.mp4" autoPlay loop muted></video>
       </div>
       <div className={Styles.overlay}></div>

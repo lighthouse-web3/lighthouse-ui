@@ -37,7 +37,7 @@ function blogs({ blogsData }) {
           }}
         >
           <div className="contentContainer container">
-            <FeaturedArticle />
+            <FeaturedArticle blogsData={blogsData} />
           </div>
         </div>
         <div

@@ -7,31 +7,12 @@
   &__BannerImage {
     position: relative;
     width: 100%;
-    height: 60vh;
-
-    .image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: inherit;
-      height: inherit;
-      width: 100%;
-      height: 100%;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: inherit;
-      height: inherit;
-      background: #000;
-      opacity: 0.6;
-    }
+    height: auto;
   }
 
   &__contentContainer {
     width: 100%;
+    padding: 1rem 25%;
 
     .title {
       font-size: 3rem;
@@ -62,5 +43,21 @@
 
 @media only screen and (max-width: 600px) {
   .BlogView {
+    &__BannerImage {
+    }
+
+    &__contentContainer {
+      width: 100%;
+      padding: 1rem 5%;
+      .title {
+      }
+      .contentBox {
+        p {
+        }
+
+        img {
+        }
+      }
+    }
   }
 }

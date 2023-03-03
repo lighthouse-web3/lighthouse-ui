@@ -8,10 +8,16 @@ const featuresList = [];
 function FeatureCardList() {
   return (
     <div className={Style.FeatureCardList}>
-      <p className={Style.FeatureCardList__Title}>Lighthouse Suits</p>
+      <p className={Style.FeatureCardList__Title}>Lighthouse Suite</p>
       <div className={Style.FeatureCardList__FeatureContainer}>
         {LandingPageData?.StorageFeature.map((item, index) => (
-          <div className={Style.featureBox} key={index}>
+          <div
+            className={Style.featureBox}
+            key={index}
+            onClick={() => {
+              window.open(item?.link, "__blank");
+            }}
+          >
             <div className={Style.featureBox__icon}>
               <ImageBox src={item?.icon} />
             </div>

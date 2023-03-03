@@ -4,7 +4,6 @@ import ImageBox from "../ImageBox/ImageBox";
 import Style from "./FeatureBlogCard.module.scss";
 
 function FeatureBlogCard({ blog }) {
-  console.log(blog, "===");
   return (
     <div
       className={Style.FeatureBlogCard}
