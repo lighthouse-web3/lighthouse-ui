@@ -9,8 +9,7 @@ function DocContainer2() {
     <div className={Styles.DocContainer2}>
       <p className={Styles.DocContainer2__title}>Not sure where to start?</p>
       <p className={Styles.DocContainer2__subTitle}>
-        Programs offer day-to-day guidance on an interactive calendar to keep
-        you on track.
+        Everything builders need to start using Lighthouse.
       </p>
       <div className={Styles.DocContainer2__cardContainer}>
         {documentationCards.map((item, index) => (
@@ -20,6 +19,8 @@ function DocContainer2() {
             onClick={() => {
               window.open(item?.link, "__blank");
             }}
+            data-aos="fade-up"
+            data-aos-delay={100 * index}
           >
             <p className={Styles.card__title}>{item?.title}</p>
             <div className={Styles.card__subTitle}>

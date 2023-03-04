@@ -1,8 +1,6 @@
 import React from "react";
-import { ImageBox } from "../../components";
 import { LandingPageData } from "../../utils/Data/SiteContent";
 import Styles from "./HomeBanner.module.scss";
-// import { globe_1 } from "../../public/test/globe_1.mp4";
 
 function HomeBanner() {
   return (

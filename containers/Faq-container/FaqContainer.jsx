@@ -14,7 +14,12 @@ function FAQContainer() {
 
       <div className={Styles.FAQContainer__Container}>
         {LandingPageData?.FAQs.map((item, index) => (
-          <div className={Styles.FAQbox} key={index}>
+          <div
+            className={Styles.FAQbox}
+            key={index}
+            data-aos="fade-up"
+            data-aos-delay={100 * index}
+          >
             <div
               className={Styles.questionBox + " ptr"}
               onClick={() => {
@@ -38,7 +43,7 @@ function FAQContainer() {
           </div>
         ))}
       </div>
-      <div className={Styles.FAQContainer__QuestionBox}>
+      <div className={Styles.FAQContainer__QuestionBox} data-aos="fade-up">
         <div className={Styles.icon}>
           <ImageBox src={"/groupIcon.png"} />
         </div>

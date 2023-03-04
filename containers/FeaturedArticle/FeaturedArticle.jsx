@@ -20,7 +20,7 @@ function FeaturedArticle({ blogsData }) {
   return (
     <div className={Style.FeaturedArticle}>
       <p className={Style.title}>Read our latest blog</p>
-      <div className={Style.blogContainer}>
+      <div className={Style.blogContainer} data-aos="fade-up">
         <div className={Style.blogContainer__contentBox}>
           <p className={Style.title}>{latestBlog?.attributes?.title}</p>
           <p

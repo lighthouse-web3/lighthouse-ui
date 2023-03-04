@@ -6,14 +6,12 @@ import Style from "./Testimonials.module.scss";
 function Testimonials() {
   return (
     <div className={Style.Testimonials}>
-      <div className={Style.Testimonials__titleContainer}>
+      <div className={Style.Testimonials__titleContainer} data-aos="fade-up">
         <p className={Style.title}>{testimonialSection?.title}</p>
-        {/* <p className={Style.subTitle}>{testimonialSection?.subTitle}</p> */}
-        {/* <button className={Style.button}>Try it Now</button> */}
       </div>
       <div className={Style.Testimonials__testimonialContainer}>
         <div className={Style.Box1}>
-          <div className={Style.testimonialBox}>
+          <div className={Style.testimonialBox} data-aos="fade-up">
             <p className={Style.testimonialBox__quote}>
               {testimonialSection?.testimonials[0]?.quote}
             </p>
@@ -23,7 +21,7 @@ function Testimonials() {
               <span>{testimonialSection?.testimonials[0]?.designation}</span>
             </p>
           </div>
-          <div className={Style.testimonialBox}>
+          <div className={Style.testimonialBox} data-aos="fade-up">
             <p className={Style.testimonialBox__quote}>
               {testimonialSection?.testimonials[1]?.quote}
             </p>
@@ -35,7 +33,7 @@ function Testimonials() {
           </div>
         </div>
         <div className={Style.Box2}>
-          <div className={Style.testimonialBox}>
+          <div className={Style.testimonialBox} data-aos="fade-up">
             <p className={Style.testimonialBox__quote}>
               {testimonialSection?.testimonials[2]?.quote}
             </p>
@@ -45,7 +43,7 @@ function Testimonials() {
               <span>{testimonialSection?.testimonials[2]?.designation}</span>
             </p>
           </div>
-          <div className={Style.testimonialBox}>
+          <div className={Style.testimonialBox} data-aos="fade-up">
             <p className={Style.testimonialBox__quote}>
               {testimonialSection?.testimonials[3]?.quote}
             </p>
@@ -56,7 +54,7 @@ function Testimonials() {
             </p>
           </div>
         </div>
-        <div className={Style.GlobeBox}>
+        <div className={Style.GlobeBox} data-aos="fade-up">
           <ImageBox src={"/globe2.png"} />
         </div>
       </div>

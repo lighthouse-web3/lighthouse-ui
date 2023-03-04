@@ -8,7 +8,7 @@ import Styles from "./DocContainer.module.scss";
 function DocContainer({}) {
   return (
     <div className={Styles.DocContainer} id="doc">
-      <div className={Styles.DocContainer__titleBox}>
+      <div className={Styles.DocContainer__titleBox} data-aos="fade-up">
         <p
           className={Styles.title}
           dangerouslySetInnerHTML={{
@@ -22,7 +22,7 @@ function DocContainer({}) {
           }}
         ></p>
       </div>
-      <div className={Styles.DocContainer__imageBox}>
+      <div className={Styles.DocContainer__imageBox} data-aos="fade-up">
         <ImageBox
           src={LandingPageData?.Documentation?.bannerImage}
           style={{ paddingTop: "2rem" }}

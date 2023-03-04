@@ -10,7 +10,7 @@ function FeatureCompare() {
       <p className={Styles.FeatureCompare__title}>Key Features</p>
       <div className={Styles.FeatureCompare__featureContainer}>
         {LandingPageData.KeyFeatures.map((item, index) => (
-          <div className={Styles.featureCard} key={index}>
+          <div className={Styles.featureCard} key={index} data-aos="fade-up">
             <div className={Styles.imgBox}>
               <ImageBox src={item?.icon} />
             </div>
@@ -19,11 +19,15 @@ function FeatureCompare() {
         ))}
       </div>
 
-      <p className={Styles.FeatureCompare__title}>
-        We Help Client Around The World
+      <br />
+      <br />
+      <br />
+
+      <p className={Styles.FeatureCompare__title} data-aos="fade-up">
+        Teams Who Trust Us Around The World
       </p>
 
-      <div className={Styles.FeatureCompare__clientBox}>
+      <div className={Styles.FeatureCompare__clientBox} data-aos="fade-up">
         <div className={Styles.logoBox}>
           {LandingPageData?.clientsLogo.map((item, index) => (
             <div className={Styles.logo} key={index}>

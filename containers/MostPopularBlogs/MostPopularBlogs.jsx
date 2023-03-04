@@ -27,7 +27,7 @@ function MostPopularBlogs({ blogsData }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <div className={Style.MostPopularBlogs}>
+    <div className={Style.MostPopularBlogs} data-aos="fade-up">
       <p className={Style.MostPopularBlogs__title}>Our Blogs</p>
       <div className={Style.MostPopularBlogs__carouselContainer}>
         <Swiper
