@@ -5,9 +5,11 @@
   gap: 1rem;
 
   &__BannerImage {
-    position: relative;
     width: 100%;
     height: auto;
+    max-height: 60vh;
+    overflow: hidden;
+    object-position: center;
   }
 
   &__contentContainer {

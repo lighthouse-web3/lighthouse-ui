@@ -27,6 +27,7 @@ function ImageBox({
         className={Styles.image}
         {...rest}
         style={style}
+        fill
         alt={alt ? alt : "icon"}
         src={src}
         layout={layout ? layout : "fill"}

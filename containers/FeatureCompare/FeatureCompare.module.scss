@@ -92,20 +92,17 @@
     }
 
     &__clientBox {
-      width: 100%;
-      padding: 5% 15%;
+      padding: 10% 15%;
       background: #1e0f2c;
-      border-radius: 10px;
-      min-height: 200px;
-      margin-bottom: 10vh;
+
       .logoBox {
         width: 100%;
         height: auto;
         flex-direction: column;
         gap: 2rem;
         .logo {
-          width: 100px;
-          height: 100px;
+          width: 200px;
+          height: auto;
         }
       }
 

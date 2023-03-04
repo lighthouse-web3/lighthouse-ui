@@ -44,6 +44,14 @@ export const LandingPageData = {
       icon: "https://gateway.lighthouse.storage/ipfs/QmNwGq4kLHHrdCvW2EPH4e3nXvadHGpAnkjLA5ZoGUWB8R",
       link: "",
     },
+    {
+      icon: "https://gateway.lighthouse.storage/ipfs/QmbN1Y6K6932CEekSDAiKkV4rmiuRrG9DHpVCLCFnv9EwE",
+      link: "",
+    },
+    {
+      icon: "https://gateway.lighthouse.storage/ipfs/Qmf3QKQasp4U1FcafBk5rzt4craEjAjZXfpsYR6joBFCA4",
+      link: "",
+    },
   ],
   StorageFeature: [
     {
