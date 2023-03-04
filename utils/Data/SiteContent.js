@@ -52,6 +52,14 @@ export const LandingPageData = {
       icon: "https://gateway.lighthouse.storage/ipfs/Qmf3QKQasp4U1FcafBk5rzt4craEjAjZXfpsYR6joBFCA4",
       link: "",
     },
+    {
+      icon: "https://gateway.lighthouse.storage/ipfs/QmW8JmiyLmbpTfeqtzoCYQ9qd4AQsdGtaHhXACcUhzHMt7",
+      link: "",
+    },
+    {
+      icon: "https://gateway.lighthouse.storage/ipfs/QmNUyLh1XDU8R84PGep1zUbjqJzYV4dayMcdM6ZmA4m3Tk",
+      link: "",
+    },
   ],
   StorageFeature: [
     {
@@ -189,12 +197,7 @@ export const footerData = {
     },
     {
       text: "Terms & Conditions",
-      path: null,
-      link: null,
-    },
-    {
-      text: "Private Policy",
-      path: null,
+      path: "/terms-condition",
       link: null,
     },
   ],

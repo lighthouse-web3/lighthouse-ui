@@ -22,10 +22,6 @@ function FeaturedArticle({ blogsData }) {
       <p className={Style.title}>Read our latest blog</p>
       <div className={Style.blogContainer}>
         <div className={Style.blogContainer__contentBox}>
-          {/* <div className={Style.apostrophy}>
-            <ImageBox src={"/apostrophy.png"} />
-          </div> */}
-
           <p className={Style.title}>{latestBlog?.attributes?.title}</p>
           <p
             className={Style.subTitle}
