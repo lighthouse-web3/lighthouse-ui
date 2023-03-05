@@ -52,12 +52,16 @@ export const LandingPageData = {
       icon: "https://gateway.lighthouse.storage/ipfs/Qmf3QKQasp4U1FcafBk5rzt4craEjAjZXfpsYR6joBFCA4",
       link: "",
     },
+    // {
+    //   icon: "https://gateway.lighthouse.storage/ipfs/QmW8JmiyLmbpTfeqtzoCYQ9qd4AQsdGtaHhXACcUhzHMt7",
+    //   link: "",
+    // },
+    // {
+    //   icon: "https://gateway.lighthouse.storage/ipfs/QmNUyLh1XDU8R84PGep1zUbjqJzYV4dayMcdM6ZmA4m3Tk",
+    //   link: "",
+    // },
     {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmW8JmiyLmbpTfeqtzoCYQ9qd4AQsdGtaHhXACcUhzHMt7",
-      link: "",
-    },
-    {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmNUyLh1XDU8R84PGep1zUbjqJzYV4dayMcdM6ZmA4m3Tk",
+      icon: "https://gateway.lighthouse.storage/ipfs/QmUQFC7WPgdqDB6RY3tEgw21HxfB5i9gZNrxPxjWTyTsaN",
       link: "",
     },
   ],
@@ -80,7 +84,7 @@ export const LandingPageData = {
       icon: "/suitsIcon/suitsIcon3.png",
       title: "Lighthouse CLI",
       description:
-        "All lighthouse features available through the convinience of the Command Line Interface ",
+        "All lighthouse features available through the convenience of the Command Line Interface ",
       link: "https://docs.lighthouse.storage/lighthouse-1/cli-tool/overview",
     },
     {

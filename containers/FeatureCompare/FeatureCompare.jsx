@@ -24,7 +24,7 @@ function FeatureCompare() {
       <br />
 
       <p className={Styles.FeatureCompare__title} data-aos="fade-up">
-        Teams Who Trust Us Around The World
+        Trusted By Teams Around The World
       </p>
 
       <div className={Styles.FeatureCompare__clientBox} data-aos="fade-up">

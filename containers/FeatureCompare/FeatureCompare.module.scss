@@ -44,7 +44,7 @@
   }
   &__clientBox {
     width: 100%;
-    padding: 5% 15%;
+    padding: 5% 8%;
     background: #1e0f2c;
     border-radius: 10px;
     min-height: 200px;
@@ -54,7 +54,7 @@
       width: 100%;
       height: auto;
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: no-wrap;
       justify-content: space-between;
       align-items: center;
       gap: 1.5rem;
@@ -91,7 +91,7 @@
       }
     }
     &__clientBox {
-      padding: 10% 15%;
+      padding: 10%;
       background: #1e0f2c;
 
       .logoBox {
