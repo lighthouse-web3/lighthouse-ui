@@ -1,157 +1,163 @@
 .Footer {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  color: white;
-  .upperBox {
+  margin-top: 2rem;
+  color: #fff;
+  font-family: var(--font-title);
+  &__upperFooter {
+    background: #1e0f2c;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    height: auto;
-    gap: 25%;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 
-    .infoBox {
+    .brandBox {
+      flex: 1;
       display: flex;
       flex-direction: column;
-      .title {
-        font-size: 2rem;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 1rem;
+      .logo {
+        width: 60%;
       }
-      .subTitle {
-        letter-spacing: 0.01em;
-        font-size: 1.5rem;
-      }
+      .socialBox {
+        p {
+          font-style: normal;
+          font-weight: 700;
+          font-size: 1.1rem;
+          text-transform: uppercase;
+        }
 
-      .emailBox {
-        margin-top: 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        .title {
+        .icons {
+          display: flex;
+          flex-direction: row;
+          gap: 15px;
           font-size: 1.5rem;
         }
-        .subTitle {
-          font-size: 1rem;
-        }
-
-        .inputBox {
-          display: flex;
-          flex: row;
-          align-items: center;
-          input[type="text"] {
-            width: 100%;
-            max-width: 300px;
-            height: 50px;
-            border: none;
-            padding: 10px;
-            font-size: 1.5rem;
-            padding-right: 60px;
-
-            &:focus {
-              outline: none;
-            }
-          }
-
-          button {
-            width: 50px;
-            margin-left: -50px;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            font-weight: 300;
-          }
-        }
       }
     }
-
-    .socialBox {
+    .siteMap {
+      flex: 1;
+      font-size: 1rem;
+      margin-top: 1rem;
       display: flex;
       flex-direction: column;
+      gap: 2rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      p {
+        margin: 0px;
+      }
+      &__title {
+        color: #94a3b8;
+      }
+
+      &__link {
+        text-transform: capitalize;
+        color: #fff;
+      }
+    }
+
+    .newsLetterBox {
       flex: 1;
-      align-items: flex-end;
-      .card {
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      &__title {
+        color: #94a3b8;
+      }
+
+      input[type="text"] {
+        background: #ffffff;
+        border: 1px solid #e4e4e7;
+        border-radius: 10px;
+        width: 100%;
+        height: 40px;
         padding: 10px;
-        width: 25vw;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1.2rem;
-        svg {
-          font-size: 2rem;
+        font-weight: 400;
+        font-size: 0.9rem;
+        line-height: 26px;
+        color: #a1a1aa;
+        &:focus {
+          outline: none;
         }
-        margin: 10px 0px;
       }
     }
   }
-  .lowerBox {
-    background: black;
-    height: 50px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    z-index: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  background: #08060b;
 
-  .ellipseSmall {
-    position: absolute;
-    width: 50vw;
-    height: 50vh;
-    right: -25vw;
-    bottom: -25vh;
-    background: radial-gradient(
-      50% 50% at 49.97% 48.13%,
-      rgba(255, 69, 129, 0.3) 0%,
-      rgba(67, 136, 221, 0.3) 100%
-    );
-    filter: blur(225px);
+  &__lowerFooter {
+    background: #000;
+    text-align: center;
+    padding: 1rem;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .Footer {
-    .upperBox {
-      flex-direction: column-reverse;
-      .infoBox {
-        .title {
-        }
-        .subTitle {
-        }
+    &__upperFooter {
+      flex-direction: column;
+      text-align: center;
 
-        .emailBox {
-          .title {
-          }
-          .subTitle {
-          }
-
-          .inputBox {
-            input[type="text"] {
-            }
-
-            button {
-            }
-          }
-        }
-      }
-
-      .socialBox {
-        margin: 1rem 0px;
-        .card {
+      .brandBox {
+        flex: 1;
+        width: 100%;
+        .logo {
           width: 100%;
         }
+        .socialBox {
+          width: 100%;
+          .icons {
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+      .siteMap {
+        width: 100%;
+        p {
+          margin: 0px;
+        }
+        &__title {
+          color: #94a3b8;
+        }
+
+        &__link {
+          text-transform: capitalize;
+          color: #fff;
+        }
+      }
+
+      .newsLetterBox {
+        width: 100%;
+        &__title {
+          color: #94a3b8;
+        }
+
+        input[type="text"] {
+          background: #ffffff;
+          border: 1px solid #e4e4e7;
+          border-radius: 10px;
+          width: 100%;
+          height: 40px;
+          padding: 10px;
+          font-weight: 400;
+          font-size: 0.9rem;
+          line-height: 26px;
+          color: #a1a1aa;
+          &:focus {
+            outline: none;
+          }
+        }
       }
     }
-    .lowerBox {
-      height: 150px;
-      flex-direction: column;
-    }
 
-    .ellipseSmall {
+    &__lowerFooter {
+      background: #000;
+      text-align: center;
+      padding: 1rem;
     }
   }
 }

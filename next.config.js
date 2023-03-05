@@ -3,7 +3,12 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["images.unsplash.com"],
+    dangerouslyAllowSVG: false,
+    domains: [
+      "images.unsplash.com",
+      "gateway.lighthouse.storage",
+      "cms.lighthouse.storage",
+    ],
   },
 };
 

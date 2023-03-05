@@ -3,24 +3,59 @@
   color: white;
   .title {
     font-size: 3rem;
-  }
-
-  .subTitle {
-    font-size: 1;
-    margin-top: 0px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 62px;
+    letter-spacing: -2px;
   }
 
   .blogContainer {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2rem;
 
-    .cardContainer {
-      width: 30%;
-      border-radius: 10px;
-      height: 50vh;
+    &__contentBox {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: center;
+      .apostrophy {
+        width: 100px;
+        height: 100px;
+      }
+
+      .title {
+        font-family: "Helvetica";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3rem;
+        line-height: 150%;
+        letter-spacing: 0.1rem;
+      }
+
+      .subTitle {
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 2rem;
+        color: #c5c5c6;
+      }
+
+      .btn {
+        background: #1d2047;
+        border: 1px solid #1d2047;
+        width: fit-content;
+        border-radius: 50px;
+        font-size: 1rem;
+        letter-spacing: -0.2px;
+        padding: 0.3rem 1rem;
+        color: #2563eb;
+      }
+    }
+    &__imageBox {
+      flex: 1;
+      padding: 2rem;
+      width: 100%;
     }
   }
 }
@@ -30,17 +65,14 @@
     .title {
     }
 
-    .subTitle {
-    }
-
     .blogContainer {
-      flex-direction: column;
+      flex-direction: column-reverse;
       justify-content: center;
       align-items: center;
-      gap: 1.5rem;
-
-      .cardContainer {
-        width: 100%;
+      gap: 0rem;
+      padding-bottom: 3rem;
+      &__imageBox {
+        padding: 0rem;
       }
     }
   }

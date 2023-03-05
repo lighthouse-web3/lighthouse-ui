@@ -1,27 +1,32 @@
 import React from "react";
+import { mediaUrl } from "../../utils/Data/config";
+import ImageBox from "../ImageBox/ImageBox";
 import Style from "./FeatureBlogCard.module.scss";
 
-function FeatureBlogCard() {
+function FeatureBlogCard({ blog }) {
   return (
     <div
       className={Style.FeatureBlogCard}
       onClick={() => {
         window.open(
-          `/blog/6/Encryption-and-Access-Control-for-Web3-using-Lighthouse`,
+          `/blog/${blog?.id}/${blog?.attributes?.title?.replaceAll(" ", "-")}`,
           "_blank"
         );
       }}
     >
-      <div
-        className={Style.bg}
-        style={{
-          background:
-            'url("https://images.unsplash.com/photo-1516245834210-c4c142787335?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80")',
-        }}
-      ></div>
-      <div className={Style.content}>
-        <p className={Style.title}>Lighthouse is partnering up with Stack OS</p>
+      <div className={Style.FeatureBlogCard__imageContainer}>
+        <ImageBox
+          src={mediaUrl + blog?.attributes?.coverImage?.data?.attributes?.url}
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+        />
       </div>
+      <p className={Style.FeatureBlogCard__title}>{blog?.attributes?.title}</p>
+      <p className={Style.FeatureBlogCard__category}>
+        {blog?.attributes?.author}
+      </p>
     </div>
   );
 }

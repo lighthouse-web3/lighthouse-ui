@@ -1,21 +1,43 @@
+import { Metadata } from "../components";
 import { DocContainer, DocContainer2, Footer, Header } from "../containers";
 
 import Styles from "../styles/Home.module.scss";
 
 export default function Documentation() {
   return (
-    <div className={"bodyContainer"}>
-      <Header />
-      <div className="sectionContainer">
-        <div className="smallShadow__set1"></div>
-        <div className="bigShadow__set1"></div>
-        <div className="contentContainer container">
-          <DocContainer />
-          <DocContainer2 />
-        </div>
-      </div>
+    <>
+      <Metadata title="Lighthouse Storage | Documentation" />
 
-      <Footer />
-    </div>
+      <div className={"bodyContainer"}>
+        <Header style={{ background: "#000" }} />
+
+        <div
+          className="sectionContainer"
+          style={{
+            background: "#1E0F2C",
+            marginTop: "2rem",
+            minHeight: "auto",
+          }}
+        >
+          <div className="contentContainer container">
+            <DocContainer />
+          </div>
+        </div>
+        <div
+          className="sectionContainer"
+          style={{
+            background: "#1E0F2C",
+            marginTop: "2rem",
+            minHeight: "auto",
+          }}
+        >
+          <div className="contentContainer container">
+            <DocContainer2 />
+          </div>
+        </div>
+
+        <Footer />
+      </div>
+    </>
   );
 }

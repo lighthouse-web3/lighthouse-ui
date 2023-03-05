@@ -44,3 +44,21 @@
 .NewsBarClosed {
   display: none;
 }
+
+@media only screen and (max-width: 600px) {
+  .NewsBar {
+    min-height: 50px;
+
+    .bgClr {
+    }
+    .contentBox {
+      gap: 10px;
+      p {
+        font-size: 0.8rem;
+      }
+
+      span {
+      }
+    }
+  }
+}

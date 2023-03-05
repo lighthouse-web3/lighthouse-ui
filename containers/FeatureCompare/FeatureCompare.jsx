@@ -1,51 +1,40 @@
 import React from "react";
 import { ImageBox } from "../../components";
+import { LandingPageData } from "../../utils/Data/SiteContent";
 import Styles from "./FeatureCompare.module.scss";
 
 function FeatureCompare() {
+  // LandingPageData.KeyFeatures;
   return (
     <div className={Styles.FeatureCompare}>
-      <div className={Styles.imageContainer}>
-        <p className={Styles.title}>
-          We are <span className="gradient__Text">Different</span>
-        </p>
-        <p className={Styles.subTitle}>
-          Lighthouse allows users to store their files on the decentralized
-          network for lifetime at a fixed price
-        </p>
-
-        <ImageBox
-          src={"/cube.png"}
-          width={"80%"}
-          height={"80%"}
-          layout="fill"
-          data-aos="fade-up"
-        />
+      <p className={Styles.FeatureCompare__title}>Key Features</p>
+      <div className={Styles.FeatureCompare__featureContainer}>
+        {LandingPageData.KeyFeatures.map((item, index) => (
+          <div className={Styles.featureCard} key={index} data-aos="fade-up">
+            <div className={Styles.imgBox}>
+              <ImageBox src={item?.icon} />
+            </div>
+            <p className={Styles.title}>{item?.title}</p>
+          </div>
+        ))}
       </div>
-      <div className={Styles.tableContainer}>
-        <table>
-          <thead>
-            <tr>
-              <th>
-                Other Storage <br /> System
-              </th>
-              <th>
-                Lighthouse Storage <br /> System
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-aos="fade-up" data-aos-delay="100">
-                sss
-              </td>
-              <td data-aos="fade-up" data-aos-delay="300">
-                ss
-              </td>
-            </tr>
-            <tr></tr>
-          </tbody>
-        </table>
+
+      <br />
+      <br />
+      <br />
+
+      <p className={Styles.FeatureCompare__title} data-aos="fade-up">
+        Trusted By Teams Around The World
+      </p>
+
+      <div className={Styles.FeatureCompare__clientBox} data-aos="fade-up">
+        <div className={Styles.logoBox}>
+          {LandingPageData?.clientsLogo.map((item, index) => (
+            <div className={Styles.logo} key={index}>
+              <ImageBox src={item?.icon} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

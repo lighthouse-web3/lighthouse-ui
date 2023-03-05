@@ -6,6 +6,13 @@ import "swiper/css/pagination";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {
+  load as loadIntercom,
+  boot as bootIntercom,
+  update as updateIntercom,
+} from "../utils/services/Intercom";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -27,9 +34,16 @@ function MyApp({ Component, pageProps }) {
       mirror: false,
       anchorPlacement: "top-center",
     });
+    loadIntercom();
+    bootIntercom();
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />
+      <ToastContainer />
+    </>
+  );
 }
 
 export default MyApp;

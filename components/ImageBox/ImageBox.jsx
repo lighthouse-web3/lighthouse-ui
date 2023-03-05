@@ -10,6 +10,7 @@ function ImageBox({
   alt,
   src,
   style,
+  layout,
   ...rest
 }) {
   let dimensions = {};
@@ -26,8 +27,9 @@ function ImageBox({
         className={Styles.image}
         {...rest}
         style={style}
-        alt={alt}
+        alt={alt ? alt : "icon"}
         src={src}
+        layout={layout ? layout : "fill"}
       />
     </div>
   );

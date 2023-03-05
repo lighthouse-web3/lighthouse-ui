@@ -6,3 +6,4 @@ export { default as MarqueeScroller } from "./MarqueeScroller/MarqueeScroller";
 export { default as TestimonialCard } from "./TestimonialCard/TestimonialCard";
 export { default as QuestionBox } from "./QuestionBox/QuestionBox";
 export { default as Pagination } from "./Pagination/Pagination";
+export { default as Metadata } from "./metadata/Metadata";

@@ -1,42 +1,37 @@
 import React from "react";
 import { ImageBox } from "../../components";
+import { mediaUrl } from "../../utils/Data/config";
 import Style from "./BlogView.module.scss";
+import ReactMarkdown from "react-markdown";
 
-function BlogView() {
+function BlogView({ blogData }) {
   return (
     <div className={Style.BlogView}>
-      <div className={Style.TopContainer}>
-        <div
-          className={Style.imageContainer}
-          style={{
-            background: `url('https://images.unsplash.com/photo-1666808982292-501b1e002171?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-        ></div>
-
-        <div className={Style.infoContainer}>
-          <p className={Style.title}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, dolor.
-          </p>
-          <p className={Style.data}>22 October 2022 | Author Name</p>
-        </div>
+      <div className={Style.BlogView__BannerImage}>
+        {blogData && (
+          <ImageBox
+            src={mediaUrl + blogData?.coverImage?.data?.attributes?.url}
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+            maxHeight={"100%"}
+          />
+        )}
       </div>
-      <div className={Style.ContentContainer}>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
-          deserunt totam recusandae ipsum libero consequuntur nihil, laborum
-          atque doloribus nostrum, optio asperiores repellat architecto qui eum
-          consequatur quam nam sunt et necessitatibus soluta tenetur aspernatur.
-          Temporibus modi omnis excepturi consequuntur ducimus sapiente, illum
-          harum architecto alias voluptates commodi voluptate minima dolorem
-          ullam provident quam nisi totam eveniet cum est, quis perferendis
-          obcaecati laudantium? Veniam voluptatibus ad ab quaerat. Facilis sequi
-          mollitia doloribus in adipisci, necessitatibus, veritatis perspiciatis
-          aliquam eos ad quisquam id doloremque ullam error recusandae,
-          aspernatur nihil. Qui corporis esse reprehenderit voluptate. Dolorum
-          exercitationem, minus dolores necessitatibus ratione iusto.
-        </p>
+      <div className={Style.BlogView__contentContainer}>
+        <p className={Style.title}>{blogData?.title}</p>
+
+        <div className={Style.contentBox}>
+          <ReactMarkdown
+            linkTarget={"_blank"}
+            // eslint-disable-next-line react/no-children-prop
+            children={blogData?.description?.replaceAll(
+              "/uploads/",
+              `${mediaUrl}/uploads/`
+            )}
+          />
+        </div>
       </div>
     </div>
   );

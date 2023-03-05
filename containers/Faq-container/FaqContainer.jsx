@@ -1,64 +1,66 @@
 import React, { useEffect, useState } from "react";
 import Styles from "./FaqContainer.module.scss";
-import { BsSearch } from "react-icons/bs";
-import { Pagination, QuestionBox } from "../../components";
+import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
+import { LandingPageData, socialLinks } from "../../utils/Data/SiteContent";
+import { ImageBox } from "../../components";
 
-function FAQContainer({ contentData }) {
-  const questions = contentData;
-  console.log(questions);
-  const [searchWord, setSearchWord] = useState("");
-  const [currentQuestions, setCurrentQuestions] = useState(questions);
-  const [filteredQuestions, setFilteredQuestions] = useState(questions);
-
-  useEffect(() => {
-    if (searchWord.length > 0) {
-      let filteredQuestions = questions?.filter((item) =>
-        item?.["attributes"]?.question?.includes(searchWord)
-      );
-      setCurrentQuestions(filteredQuestions);
-    } else {
-      setCurrentQuestions(questions);
-    }
-  }, [searchWord]);
-
+function FAQContainer() {
+  const [isOpen, setIsOpen] = useState(0);
   return (
-    <div className={Styles.FAQContainer + " section__padding"} id="faq">
-      <div className={Styles.faq}>
-        <div className={Styles.title}>
-          <p className="gradient__text mainTitle">Frequently Asked Questions</p>
-        </div>
+    <div className={Styles.FAQContainer}>
+      <p className={Styles.FAQContainer__title}>
+        FAQ<small>s</small>
+      </p>
 
-        <div className={Styles.faqSearchBox}>
-          <div className={Styles.searchbox}>
-            <span className={Styles.icon}>
-              <BsSearch />
-            </span>
-            <input
-              type="text"
-              value={searchWord}
-              onChange={(e) => {
-                setSearchWord(e.target.value);
+      <div className={Styles.FAQContainer__Container}>
+        {LandingPageData?.FAQs.map((item, index) => (
+          <div
+            className={Styles.FAQbox}
+            key={index}
+            data-aos="fade-up"
+            data-aos-delay={100 * index}
+          >
+            <div
+              className={Styles.questionBox + " ptr"}
+              onClick={() => {
+                isOpen === index ? setIsOpen(null) : setIsOpen(index);
               }}
-              placeholder="Search FAQ"
-            />
+            >
+              <p>{item?.question}</p>
+              <div className={Styles.icon}>
+                {isOpen === index ? (
+                  <AiOutlineMinusCircle />
+                ) : (
+                  <AiOutlinePlusCircle />
+                )}
+              </div>
+            </div>
+            {isOpen === index && (
+              <div className={Styles.answerBox}>
+                <p dangerouslySetInnerHTML={{ __html: item?.answer }}></p>
+              </div>
+            )}
           </div>
-        </div>
-
-        <div className={Styles.faqContentContainer}>
-          <div className={Styles.questionsContainer}>
-            {currentQuestions?.length > 0 &&
-              currentQuestions.map((question, key) => (
-                <QuestionBox question={question} key={key} />
-              ))}
-          </div>
-        </div>
+        ))}
       </div>
+      <div className={Styles.FAQContainer__QuestionBox} data-aos="fade-up">
+        <div className={Styles.icon}>
+          <ImageBox src={"/groupIcon.png"} />
+        </div>
 
-      <Pagination
-        data={filteredQuestions}
-        setCurrentData={setCurrentQuestions}
-        itemsPerPage={3}
-      />
+        <p className={Styles.title}>Still have questions?</p>
+        <p className={Styles.subTitle}>
+          Can’t find the answer you’re looking for? Get in touch with our team.
+        </p>
+        <button
+          className={"fillBtn__purple ptr"}
+          onClick={() => {
+            window.location.href = `mailto:${socialLinks?.contactMail}`;
+          }}
+        >
+          Contact Us
+        </button>
+      </div>
     </div>
   );
 }

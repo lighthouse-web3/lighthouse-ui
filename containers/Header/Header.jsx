@@ -13,11 +13,11 @@ const links = [
     path: "/",
     href: "",
   },
-  {
-    title: "About Us",
-    path: "/about",
-    href: "",
-  },
+  // {
+  //   title: "About Us",
+  //   path: "/about",
+  //   href: "",
+  // },
   {
     title: "Blogs",
     path: "/blogs",
@@ -41,7 +41,7 @@ const links = [
   },
 ];
 
-function Header() {
+function Header({ style }) {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [scrollTop, setScrollTop] = useState();
   const [scrolling, setScrolling] = useState();
@@ -59,13 +59,12 @@ function Header() {
     setToggleMenu(false);
   }, [scrolling]);
   return (
-    <div className={Styles.Header + " container"}>
+    <div className={Styles.Header + " container"} style={style}>
       <div className={Styles.infoContainer}>
         <div className={Styles.logoContainer}>
           <div className={Styles.imageBox}>
-            <Image src="/logo.png" layout="fill" alt="brandLogo" />
+            <Image src="/logo.svg" layout="fill" alt="brandLogo" />
           </div>
-          <p className="logo_text">Lighthouse</p>
         </div>
         <div className={Styles.linksContainer}>
           {links.map((link, index) => (
@@ -90,8 +89,9 @@ function Header() {
               window.open("https://files.lighthouse.storage/", "_blank")
             }
             className="gradient__Border"
+            style={{ padding: "0.5rem 2rem" }}
           >
-            File Storage Dapp
+            Login
           </button>
         </div>
       </div>
@@ -140,8 +140,9 @@ function Header() {
                 window.open("https://files.lighthouse.storage/", "_blank")
               }
               className="gradient__Border"
+              style={{ padding: "0.5rem 2rem" }}
             >
-              File Storage Dapp
+              Login
             </button>
           </div>
         )}
