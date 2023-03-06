@@ -214,7 +214,7 @@ export const testimonialSection = {
   testimonials: [
     {
       quote:
-        "Filecoin/Lighthouse incentivized storage promotes data availability market competition for modular blockchains like Syscoin/Ethereum. Cheaper and secure than cloud storage, ensuring long-term data liveness guarantees for network participants.",
+        "Lighthouse incentivized storage promotes data availability market competition for modular blockchains like Syscoin. Cheaper and secure than cloud storage, ensuring long-term data liveness guarantees for network participants.",
       person: "Jagdeep sidhu",
       designation: "syscoin",
     },
