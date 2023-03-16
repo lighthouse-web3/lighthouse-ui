@@ -28,6 +28,10 @@
           font-weight: 700;
           font-size: 1.1rem;
           text-transform: uppercase;
+          &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+          }
         }
 
         .icons {
@@ -35,6 +39,11 @@
           flex-direction: row;
           gap: 15px;
           font-size: 1.5rem;
+          margin-top: 1rem;
+        }
+
+        .mail {
+          font-size: 0.9rem;
         }
       }
     }

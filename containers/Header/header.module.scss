@@ -33,6 +33,22 @@
           font-size: 1.1rem;
         }
       }
+
+      .loginButton {
+        &:hover {
+          background: #ff6dc1;
+          // background: linear-gradient(
+          //   116.43deg,
+          //   #01f3fd -6.46%,
+          //   #ff6dc1 85.93%
+          // );
+          // background-color: #ff6dc1;
+          color: white;
+          font-weight: 500;
+          transition-duration: 2000ms;
+          transition-property: background;
+        }
+      }
     }
   }
 

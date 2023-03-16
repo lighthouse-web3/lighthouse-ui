@@ -167,7 +167,8 @@ export const socialLinks = {
   twitter: "https://twitter.com/lighthouseweb3",
   telegram: "https://t.me/LighthouseStorage",
   discord: "https://discord.com/invite/c4a4CGCdJG",
-  contactMail: "mail@lighthouse.storage",
+  instagram: "https://www.instagram.com/lighthouseweb3/?igshid=MDM4ZDc5MmU%3D",
+  contactMail: "nandit@lighthouse.storage",
 };
 
 export const footerData = {
@@ -199,11 +200,11 @@ export const footerData = {
       path: null,
       link: "https://airtable.com/shrPFC2TgojuOAYO4",
     },
-    {
-      text: "Terms & Conditions",
-      path: "/terms-condition",
-      link: null,
-    },
+    // {
+    //   text: "Terms & Conditions",
+    //   path: "/terms-condition",
+    //   link: null,
+    // },
   ],
 };
 
@@ -216,7 +217,7 @@ export const testimonialSection = {
       quote:
         "Lighthouse incentivized storage promotes data availability market competition for modular blockchains like Syscoin. Cheaper and secure than cloud storage, ensuring long-term data liveness guarantees for network participants.",
       person: "Jagdeep sidhu",
-      designation: "syscoin",
+      designation: "Syscoin",
     },
     {
       quote:

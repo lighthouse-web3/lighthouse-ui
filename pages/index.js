@@ -32,7 +32,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <Metadata title="Lighthouse Storage | Home" />
+      <Metadata title="Lighthouse Perpetual Storage" />
       <div className={"bodyContainer"}>
         <NewsBar />
         <Header style={{ background: "#1e0f2c" }} />

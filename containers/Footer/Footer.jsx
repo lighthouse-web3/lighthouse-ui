@@ -3,6 +3,7 @@ import Styles from "./Footer.module.scss";
 
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { BsTelegram, BsDiscord, BsTwitter, BsLinkedin } from "react-icons/bs";
+import { FaInstagramSquare } from "react-icons/fa";
 import { ImageBox } from "../../components";
 import { footerData, socialLinks } from "../../utils/Data/SiteContent";
 import { useRouter } from "next/router";
@@ -32,7 +33,7 @@ function Footer() {
             <ImageBox src={"/logo.svg"} width="100%" />
           </div>
           <div className={Styles.socialBox}>
-            <p>Find us on social</p>
+            {/* <p>Find us on social</p> */}
             <div className={Styles.icons}>
               <span
                 className={Styles.icon}
@@ -66,7 +67,23 @@ function Footer() {
               >
                 <BsLinkedin />
               </span>
+              <span
+                className={Styles.icon}
+                onClick={() => {
+                  window.open(socialLinks?.instagram, "_blank");
+                }}
+              >
+                <FaInstagramSquare />
+              </span>
             </div>
+            <p
+              className={Styles.mail}
+              onClick={() => {
+                window.open(`mailto:${socialLinks?.contactMail}`, "_blank");
+              }}
+            >
+              {socialLinks?.contactMail}
+            </p>
           </div>
         </div>
         <div className={Styles.siteMap}>

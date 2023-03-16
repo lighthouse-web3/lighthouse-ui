@@ -88,7 +88,7 @@ function Header({ style }) {
             onClick={() =>
               window.open("https://files.lighthouse.storage/", "_blank")
             }
-            className="gradient__Border"
+            className={Styles.loginButton + " gradient__Border"}
             style={{ padding: "0.5rem 2rem" }}
           >
             Login
@@ -139,7 +139,7 @@ function Header({ style }) {
               onClick={() =>
                 window.open("https://files.lighthouse.storage/", "_blank")
               }
-              className="gradient__Border"
+              className="gradient__Border loginButton"
               style={{ padding: "0.5rem 2rem" }}
             >
               Login
