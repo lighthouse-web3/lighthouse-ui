@@ -46,6 +46,7 @@ function Header({ style }) {
   const [scrollTop, setScrollTop] = useState();
   const [scrolling, setScrolling] = useState();
   const _navigate = useRouter();
+
   useEffect(() => {
     const onScroll = (e) => {
       setScrollTop(e.target.documentElement.scrollTop);
@@ -58,6 +59,7 @@ function Header({ style }) {
   useEffect(() => {
     setToggleMenu(false);
   }, [scrolling]);
+
   return (
     <div className={Styles.Header + " container"} style={style}>
       <div className={Styles.infoContainer}>

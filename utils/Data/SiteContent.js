@@ -255,7 +255,7 @@ export const documentationCards = [
   {
     title: "Code Examples",
     subTitle: "Go through our detailed code examples",
-    link: "https://docs.lighthouse.storage/lighthouse-1/cli-tool/cli-commands",
+    link: "https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/functions",
   },
   {
     title: "Developers Link",
