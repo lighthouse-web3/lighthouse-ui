@@ -138,7 +138,7 @@ function Footer() {
         </div>
       </div>
       <div className={Styles.Footer__lowerFooter}>
-        <p>© Copyright 2023, All Rights Reserved by Lighhouse Storage</p>
+        <p>© Copyright 2023, All Rights Reserved by Lighthouse Storage</p>
       </div>
     </div>
   );
