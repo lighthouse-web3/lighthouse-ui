@@ -28,7 +28,7 @@ function FeaturedArticle({ blogsData }) {
             dangerouslySetInnerHTML={{
               __html:
                 latestBlog?.attributes?.Seo?.metaDiscription?.slice(0, 100) ||
-                "" + "...",
+                "",
             }}
           ></p>
 
