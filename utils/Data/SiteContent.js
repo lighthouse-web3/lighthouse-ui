@@ -6,31 +6,31 @@ export const LandingPageData = {
     title: "Store Files Permanently",
     subTitle:
       "Lighthouse allows the users to store on Filecoin for a lifetime at a fixed price",
-    sideImage: "/globe.png",
+    sideImage: "/globe.webp",
   },
   KeyFeatures: [
     {
-      icon: "/featureIcon/feature6.png",
+      icon: "/featureIcon/feature6.webp",
       title: "Pay once and store forever",
     },
     {
-      icon: "/featureIcon/feature5.png",
+      icon: "/featureIcon/feature5.webp",
       title: "Store files on IPFS and Filecoin",
     },
     {
-      icon: "/featureIcon/feature1.png",
+      icon: "/featureIcon/feature1.webp",
       title: "Encryption & Access control functionality",
     },
     {
-      icon: "/featureIcon/feature4.png",
+      icon: "/featureIcon/feature4.webp",
       title: "Dedicated IPFS gateways for fast retrievals",
     },
     {
-      icon: "/featureIcon/feature3.png",
+      icon: "/featureIcon/feature3.webp",
       title: "Image resize to save bandwidth",
     },
     {
-      icon: "/featureIcon/feature2.png",
+      icon: "/featureIcon/feature2.webp",
       title: "Fast Gateway that streams even 4k videos",
     },
   ],
@@ -67,13 +67,13 @@ export const LandingPageData = {
   ],
   StorageFeature: [
     {
-      icon: "/suitsIcon/suitsIcon1.png",
+      icon: "/suitsIcon/suitsIcon1.webp",
       title: "Lighthouse Files",
       description: "Explore the working of Lighthouse using our DAPP.",
       link: "https://files.lighthouse.storage/",
     },
     {
-      icon: "/suitsIcon/suitsIcon2.png",
+      icon: "/suitsIcon/suitsIcon2.webp",
       title: "Lighthouse SDK",
       description:
         "Lighthouse Software Developer Kit comprises of all the tools developers need to integrate Lighthouse.",
@@ -81,14 +81,14 @@ export const LandingPageData = {
     },
 
     {
-      icon: "/suitsIcon/suitsIcon3.png",
+      icon: "/suitsIcon/suitsIcon3.webp",
       title: "Lighthouse CLI",
       description:
         "All lighthouse features available through the convenience of the Command Line Interface ",
       link: "https://docs.lighthouse.storage/lighthouse-1/cli-tool/overview",
     },
     {
-      icon: "/suitsIcon/suitsIcon4.png",
+      icon: "/suitsIcon/suitsIcon4.webp",
       title: "Lighthouse Kavach",
       description:
         "Store private files on the distributed web with secure encryption and access control features through Lighthouse Kavach",

@@ -5,11 +5,14 @@ import {
   FeatureCardList,
   FeatureCompare,
   Footer,
-  Header,
+  // Header,
   HomeBanner,
   NewsBar,
   Testimonials,
 } from "../containers";
+
+import dynamic from "next/dynamic";
+const Header = dynamic(() => import("../containers/Header/Header"));
 
 import Styles from "../styles/Home.module.scss";
 

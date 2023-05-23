@@ -55,7 +55,7 @@ function Testimonials() {
           </div>
         </div>
         <div className={Style.GlobeBox} data-aos="fade-up">
-          <ImageBox src={"/globe2.png"} />
+          <ImageBox src={"/globe2.webp"} />
         </div>
       </div>
     </div>

@@ -1,20 +1,47 @@
-export { default as Footer } from "./Footer/Footer";
-export { default as Header } from "./Header/Header";
-export { default as HomeBanner } from "./HomeBanner/HomeBanner";
-export { default as FeatureCompare } from "./FeatureCompare/FeatureCompare";
-export { default as PartnerCarousel } from "./PartnerCarousel/PartnerCarousel";
-export { default as FeatureCardList } from "./FeatureCardList/FeatureCardList";
-export { default as MainEventSection } from "./MainEventSection/MainEventSection";
-export { default as Roadmap } from "./Roadmap/Roadmap";
-export { default as OurTeam } from "./OurTeam/OurTeam";
-export { default as ReachUs } from "./ReachUs/ReachUs";
-export { default as EventBlogBanner } from "./EventBlogBanner/EventBlogBanner";
-export { default as FeaturedArticle } from "./FeaturedArticle/FeaturedArticle";
-export { default as MostPopularBlogs } from "./MostPopularBlogs/MostPopularBlogs";
-export { default as BlogView } from "./BlogView/BlogView";
-export { default as NewsBar } from "./NewsBar/NewsBar";
-export { default as SupportedBlockchain } from "./SupportedBlockchain/SupportedBlockchain";
-export { default as DocContainer } from "./Doc-container/DocContainer";
-export { default as DocContainer2 } from "./Doc-container2/DocContainer";
-export { default as Testimonials } from "./Testimonials/Testimonials";
-export { default as FAQContainer } from "./Faq-container/FaqContainer";
+import dynamic from "next/dynamic";
+
+export const Footer = dynamic(() => import("./Footer/Footer"));
+export const Header = dynamic(() => import("./Header/Header"));
+export const HomeBanner = dynamic(() => import("./HomeBanner/HomeBanner"));
+export const FeatureCompare = dynamic(() =>
+  import("./FeatureCompare/FeatureCompare")
+);
+export const PartnerCarousel = dynamic(() =>
+  import("./PartnerCarousel/PartnerCarousel")
+);
+
+export const FeatureCardList = dynamic(() =>
+  import("./FeatureCardList/FeatureCardList")
+);
+export const MainEventSection = dynamic(() =>
+  import("./MainEventSection/MainEventSection")
+);
+export const Roadmap = dynamic(() => import("./Roadmap/Roadmap"));
+export const OurTeam = dynamic(() => import("./OurTeam/OurTeam"));
+export const ReachUs = dynamic(() => import("./ReachUs/ReachUs"));
+export const EventBlogBanner = dynamic(() =>
+  import("./EventBlogBanner/EventBlogBanner")
+);
+export const FeaturedArticle = dynamic(() =>
+  import("./FeaturedArticle/FeaturedArticle")
+);
+export const MostPopularBlogs = dynamic(() =>
+  import("./MostPopularBlogs/MostPopularBlogs")
+);
+export const BlogView = dynamic(() => import("./BlogView/BlogView"));
+export const NewsBar = dynamic(() => import("./NewsBar/NewsBar"));
+export const SupportedBlockchain = dynamic(() =>
+  import("./SupportedBlockchain/SupportedBlockchain")
+);
+export const DocContainer = dynamic(() =>
+  import("./Doc-container/DocContainer")
+);
+export const DocContainer2 = dynamic(() =>
+  import("./Doc-container2/DocContainer")
+);
+export const Testimonials = dynamic(() =>
+  import("./Testimonials/Testimonials")
+);
+export const FAQContainer = dynamic(() =>
+  import("./Faq-container/FaqContainer")
+);
