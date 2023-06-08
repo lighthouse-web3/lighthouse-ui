@@ -45,7 +45,7 @@ function FAQContainer() {
       </div>
       <div className={Styles.FAQContainer__QuestionBox} data-aos="fade-up">
         <div className={Styles.icon}>
-          <ImageBox src={"/groupIcon.png"} />
+          <ImageBox src={"/groupIcon.webp"} />
         </div>
 
         <p className={Styles.title}>Still have questions?</p>
