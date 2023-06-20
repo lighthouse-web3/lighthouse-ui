@@ -3,8 +3,10 @@
 @import "./bg.scss";
 
 :root {
-  --font-title: "Helvetica";
   --font-main: "Helvetica";
+  --clr-blue: #2563eb;
+  --clr-bg-black: #000000;
+  --gradient: linear-gradient(90.23deg, #6079b8 1.12%, #c54477 102.79%);
 }
 
 html,
@@ -13,7 +15,6 @@ body {
   margin: 0;
   font-family: -apple-system, "Helvetica", "Encode Sans", Droid Sans,
     Helvetica Neue, sans-serif;
-  // background: url("/bg_gradient.webp");
   background-size: cover;
   background-position: center;
   overflow-x: hidden;
@@ -67,6 +68,25 @@ body {
   padding: 10px 30px;
 }
 
+.fillBtn__blue {
+  cursor: pointer;
+  width: fit-content;
+  background: var(--clr-blue);
+  box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  height: fit-content;
+  align-items: center;
+  padding: 10px 30px;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  font-weight: 400;
+
+  &:hover {
+    font-weight: 500;
+  }
+}
+
 .ptr {
   cursor: pointer;
 }
@@ -106,9 +126,10 @@ body {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
-    background: #08060b;
+    background: var(--clr-bg-black);
   }
 }
 

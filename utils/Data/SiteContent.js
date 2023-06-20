@@ -10,28 +10,34 @@ export const LandingPageData = {
   },
   KeyFeatures: [
     {
-      icon: "/featureIcon/feature6.webp",
+      icon: "/featureIcon/feature6.svg",
       title: "Pay once and store forever",
+      subTitle: "Get video recommendations beyond what you usually watch",
     },
     {
-      icon: "/featureIcon/feature5.webp",
+      icon: "/featureIcon/feature5.svg",
       title: "Store files on IPFS and Filecoin",
+      subTitle: "Get video recommendations beyond what you usually watch",
     },
     {
-      icon: "/featureIcon/feature1.webp",
+      icon: "/featureIcon/feature1.svg",
       title: "Encryption & Access control functionality",
+      subTitle: "Get video recommendations beyond what you usually watch",
     },
     {
-      icon: "/featureIcon/feature4.webp",
+      icon: "/featureIcon/feature4.svg",
       title: "Dedicated IPFS gateways for fast retrievals",
+      subTitle: "Get video recommendations beyond what you usually watch",
     },
     {
-      icon: "/featureIcon/feature3.webp",
+      icon: "/featureIcon/feature3.svg",
       title: "Image resize to save bandwidth",
+      subTitle: "Get video recommendations beyond what you usually watch",
     },
     {
-      icon: "/featureIcon/feature2.webp",
+      icon: "/featureIcon/feature2.svg",
       title: "Fast Gateway that streams even 4k videos",
+      subTitle: "Get video recommendations beyond what you usually watch",
     },
   ],
 

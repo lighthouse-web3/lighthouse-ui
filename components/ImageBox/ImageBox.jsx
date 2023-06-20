@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import Styles from "./ImageBox.module.scss";
 
 function ImageBox({
@@ -11,6 +11,7 @@ function ImageBox({
   src,
   style,
   layout,
+  aspectRatio,
   ...rest
 }) {
   let dimensions = {};
@@ -19,16 +20,20 @@ function ImageBox({
   height ? (dimensions["height"] = height) : "unset";
   maxHeight ? (dimensions["maxHeight"] = maxHeight) : "unset";
 
-  const [source, setSource] = useState(src);
-
   return (
-    <div className={Styles.imageContainer} style={dimensions}>
+    <div
+      className={
+        aspectRatio ? Styles.imageRatioContainer : Styles.imageContainer
+      }
+      style={dimensions}
+    >
       <Image
         className={Styles.image}
         {...rest}
         style={style}
         alt={alt ? alt : "icon"}
         src={src}
+        objectFit={"contain"}
         layout={layout ? layout : "fill"}
       />
     </div>

@@ -4,17 +4,33 @@ import { LandingPageData } from "../../utils/Data/SiteContent";
 import Styles from "./FeatureCompare.module.scss";
 
 function FeatureCompare() {
-  // LandingPageData.KeyFeatures;
   return (
     <div className={Styles.FeatureCompare}>
-      <p className={Styles.FeatureCompare__title}>Key Features</p>
+      <p className={Styles.FeatureCompare__title}>
+        Elevate Your Storage Experience:
+        <br /> Key Features of Lighthouse
+      </p>
       <div className={Styles.FeatureCompare__featureContainer}>
         {LandingPageData.KeyFeatures.map((item, index) => (
           <div className={Styles.featureCard} key={index} data-aos="fade-up">
-            <div className={Styles.imgBox}>
-              <ImageBox src={item?.icon} />
+            <div className={Styles.featureCard__gradientBorder}></div>
+            <div className={Styles.featureCard__mainCard}>
+              <div className={Styles.iconContainer}>
+                <div className={Styles.icon}>
+                  <ImageBox
+                    src={item?.icon}
+                    width={"100px"}
+                    height={"100px"}
+                    maxHeight={"80px"}
+                    style={{ height: "100px !important" }}
+                    aspectRatio={true}
+                  />
+                </div>
+              </div>
+
+              <p className={Styles.title}>{item?.title}</p>
+              <p className={Styles.subTitle}>{item?.subTitle}</p>
             </div>
-            <p className={Styles.title}>{item?.title}</p>
           </div>
         ))}
       </div>

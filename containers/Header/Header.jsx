@@ -61,7 +61,7 @@ function Header({ style }) {
   }, [scrolling]);
 
   return (
-    <div className={Styles.Header + " container"} style={style}>
+    <div className={Styles.Header + " container"}>
       <div className={Styles.infoContainer}>
         <div className={Styles.logoContainer}>
           <div className={Styles.imageBox}>
@@ -86,16 +86,17 @@ function Header({ style }) {
               )}
             </p>
           ))}
-          <button
-            onClick={() =>
-              window.open("https://files.lighthouse.storage/", "_blank")
-            }
-            className={Styles.loginButton + " gradient__Border"}
-            style={{ padding: "0.5rem 2rem" }}
-          >
-            Login
-          </button>
+
         </div>
+        <button
+          onClick={() =>
+            window.open("https://files.lighthouse.storage/", "_blank")
+          }
+          className={"fillBtn__blue"}
+          style={{ padding: "0.5rem 2rem" }}
+        >
+          LOGIN
+        </button>
       </div>
 
       <div className={Styles.navbarMobileMenu}>
