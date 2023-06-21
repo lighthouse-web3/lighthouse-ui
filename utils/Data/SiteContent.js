@@ -215,7 +215,7 @@ export const footerData = {
 };
 
 export const testimonialSection = {
-  title: "What builders are saying about Lighthouse",
+  title: "What <span>builders</span> are saying about <span>Lighthouse</span>",
   subTitle:
     "Testimonials from creative professionals who rely on Lighthouse to shine a light on their work.",
   testimonials: [

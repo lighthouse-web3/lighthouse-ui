@@ -7,7 +7,10 @@ function Testimonials() {
   return (
     <div className={Style.Testimonials}>
       <div className={Style.Testimonials__titleContainer} data-aos="fade-up">
-        <p className={Style.title}>{testimonialSection?.title}</p>
+        <p
+          className={Style.title}
+          dangerouslySetInnerHTML={{ __html: testimonialSection?.title }}
+        ></p>
       </div>
       <div className={Style.Testimonials__testimonialContainer}>
         <div className={Style.Box1}>

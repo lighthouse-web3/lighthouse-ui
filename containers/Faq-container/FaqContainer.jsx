@@ -8,7 +8,8 @@ function FAQContainer() {
   const [isOpen, setIsOpen] = useState(0);
   return (
     <div className={Styles.FAQContainer}>
-      <p className={Styles.FAQContainer__title}>
+      <p className={Styles.FAQContainer__title}>Frequently asked questions</p>
+      <p className={Styles.FAQContainer__subTitle}>
         FAQ<small>s</small>
       </p>
 
@@ -44,10 +45,6 @@ function FAQContainer() {
         ))}
       </div>
       <div className={Styles.FAQContainer__QuestionBox} data-aos="fade-up">
-        <div className={Styles.icon}>
-          <ImageBox src={"/groupIcon.webp"} />
-        </div>
-
         <p className={Styles.title}>Still have questions?</p>
         <p className={Styles.subTitle}>
           Can’t find the answer you’re looking for? Get in touch with our team.

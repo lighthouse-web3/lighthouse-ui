@@ -34,24 +34,6 @@ function FeatureCompare() {
           </div>
         ))}
       </div>
-
-      <br />
-      <br />
-      <br />
-
-      <p className={Styles.FeatureCompare__title} data-aos="fade-up">
-        Trusted By Teams Around The World
-      </p>
-
-      <div className={Styles.FeatureCompare__clientBox} data-aos="fade-up">
-        <div className={Styles.logoBox}>
-          {LandingPageData?.clientsLogo.map((item, index) => (
-            <div className={Styles.logo} key={index}>
-              <ImageBox src={item?.icon} />
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }

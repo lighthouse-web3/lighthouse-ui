@@ -8,6 +8,7 @@ import {
   // Header,
   HomeBanner,
   NewsBar,
+  PartnerCarousel,
   Testimonials,
 } from "../containers";
 
@@ -49,6 +50,11 @@ export default function Home() {
             <FeatureCompare />
           </div>
         </div>
+        <div className="sectionContainer" style={{ minHeight: "auto" }}>
+          <div className="contentContainer container">
+            <PartnerCarousel />
+          </div>
+        </div>
         <div className="sectionContainer">
           <div className="contentContainer container">
             <Testimonials />
@@ -59,13 +65,7 @@ export default function Home() {
             <FeatureCardList />
           </div>
         </div>
-        <div
-          className="sectionContainer"
-          style={{
-            background: "#1E0F2C",
-            paddingTop: "3rem",
-          }}
-        >
+        <div className="sectionContainer">
           <div className="contentContainer container">
             <FAQContainer />
           </div>

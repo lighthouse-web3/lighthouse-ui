@@ -93,36 +93,6 @@
       }
     }
   }
-
-  &__clientBox {
-    width: 100%;
-    padding: 5% 8%;
-    background: #1e0f2c;
-    border-radius: 10px;
-    min-height: 200px;
-    margin-bottom: 40vh;
-
-    .logoBox {
-      width: 100%;
-      height: auto;
-      display: flex;
-      flex-wrap: no-wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
-
-      .logo {
-        width: max(20%, 200px);
-        height: auto;
-      }
-    }
-
-    .ButtonBox {
-      width: 100%;
-      text-align: center;
-      margin-top: 3rem;
-    }
-  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -144,29 +114,6 @@
 
         .title {
         }
-      }
-    }
-
-    &__clientBox {
-      padding: 10%;
-      background: #1e0f2c;
-
-      .logoBox {
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-        gap: 3.5rem;
-
-        .logo {
-          width: 200px;
-          height: auto;
-        }
-      }
-
-      .ButtonBox {
-        width: 100%;
-        text-align: center;
-        margin-top: 3rem;
       }
     }
   }

@@ -23,17 +23,17 @@ function FeaturedArticle({ blogsData }) {
       <div className={Style.blogContainer} data-aos="fade-up">
         <div className={Style.blogContainer__contentBox}>
           <p className={Style.title}>{latestBlog?.attributes?.title}</p>
-          <p
+          {/* <p
             className={Style.subTitle}
             dangerouslySetInnerHTML={{
               __html:
                 latestBlog?.attributes?.Seo?.metaDiscription?.slice(0, 100) ||
                 "",
             }}
-          ></p>
+          ></p> */}
 
           <button
-            className={Style.btn + " ptr"}
+            className={"fillBtn__blue ptr"}
             onClick={() => {
               window.open(
                 `/blog/${
@@ -53,7 +53,10 @@ function FeaturedArticle({ blogsData }) {
                 mediaUrl +
                 latestBlog?.attributes?.coverImage?.data?.attributes?.url
               }
-              style={{ borderRadius: "10px" }}
+              width={"100%"}
+              height={"30vh"}
+              aspectRatio={true}
+              style={{ borderRadius: "10px", objectFit: "cover" }}
             />
           )}
         </div>

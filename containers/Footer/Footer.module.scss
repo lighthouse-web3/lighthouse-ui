@@ -1,10 +1,9 @@
 .Footer {
-  margin-top: 2rem;
   color: #fff;
   font-family: var(--font-main);
 
   &__upperFooter {
-    background: #1e0f2c;
+    background: var(--clr-bg-black);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -107,7 +106,7 @@
   }
 
   &__lowerFooter {
-    background: #000;
+    background: #171717;
     text-align: center;
     padding: 1rem;
   }

@@ -108,7 +108,8 @@
     }
 
     .infoContainer {
-      .linksContainer {
+      .linksContainer,
+      button {
         display: none;
       }
     }

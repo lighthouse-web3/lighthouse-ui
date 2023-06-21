@@ -14,8 +14,6 @@ export default function Documentation() {
         <div
           className="sectionContainer"
           style={{
-            background: "#1E0F2C",
-            marginTop: "2rem",
             minHeight: "auto",
           }}
         >
@@ -26,8 +24,6 @@ export default function Documentation() {
         <div
           className="sectionContainer"
           style={{
-            background: "#1E0F2C",
-            marginTop: "2rem",
             minHeight: "auto",
           }}
         >

@@ -29,14 +29,19 @@ function Footer() {
     <div className={Styles.Footer}>
       <div className={Styles.Footer__upperFooter + " container"}>
         <div className={Styles.brandBox}>
-          <div className={Styles.logo}>
+          <div
+            className={Styles.logo + " ptr"}
+            onClick={() => {
+              _navigate.push("/");
+            }}
+          >
             <ImageBox src={"/logo.svg"} width="100%" />
           </div>
           <div className={Styles.socialBox}>
             {/* <p>Find us on social</p> */}
             <div className={Styles.icons}>
               <span
-                className={Styles.icon}
+                className={Styles.icon + " ptr"}
                 onClick={() => {
                   window.open(socialLinks?.telegram, "_blank");
                 }}
@@ -44,7 +49,7 @@ function Footer() {
                 <BsTelegram />
               </span>
               <span
-                className={Styles.icon}
+                className={Styles.icon + " ptr"}
                 onClick={() => {
                   window.open(socialLinks?.discord, "_blank");
                 }}
@@ -52,7 +57,7 @@ function Footer() {
                 <BsDiscord />
               </span>
               <span
-                className={Styles.icon}
+                className={Styles.icon + " ptr"}
                 onClick={() => {
                   window.open(socialLinks?.twitter, "_blank");
                 }}
@@ -60,7 +65,7 @@ function Footer() {
                 <BsTwitter />
               </span>
               <span
-                className={Styles.icon}
+                className={Styles.icon + " ptr"}
                 onClick={() => {
                   window.open(socialLinks?.linkedin, "_blank");
                 }}
@@ -68,7 +73,7 @@ function Footer() {
                 <BsLinkedin />
               </span>
               <span
-                className={Styles.icon}
+                className={Styles.icon + " ptr"}
                 onClick={() => {
                   window.open(socialLinks?.instagram, "_blank");
                 }}
