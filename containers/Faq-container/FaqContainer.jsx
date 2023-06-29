@@ -47,7 +47,7 @@ function FAQContainer() {
           Can’t find the answer you’re looking for? Get in touch with our team.
         </p>
         <button
-          className={"fillBtn__purple ptr"}
+          className={"fillBtn__blue ptr"}
           onClick={() => {
             window.location.href = `mailto:${socialLinks?.contactMail}`;
           }}

@@ -55,7 +55,7 @@ export default function Home() {
             <PartnerCarousel />
           </div>
         </div>
-        <div className="sectionContainer">
+        <div className="sectionContainer" style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
             <Testimonials />
           </div>

@@ -125,6 +125,24 @@ body {
   }
 }
 
+.testimonialSwipper {
+  width: 100% !important;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+  .swiper-pagination {
+    display: none;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

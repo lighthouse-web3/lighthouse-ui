@@ -1,27 +1,10 @@
 .Testimonials {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 100%;
   align-items: flex-start;
-  margin-top: 10vh;
+  margin: 0 0 12vh 0;
   gap: 5%;
-  .swiper {
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
-  .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 300px;
-    height: 300px;
-  }
-
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-  }
 }
 
 @media only screen and (max-width: 900px) {

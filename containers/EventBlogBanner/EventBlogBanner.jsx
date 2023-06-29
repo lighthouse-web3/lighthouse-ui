@@ -2,7 +2,7 @@ import React from "react";
 import { ImageBox } from "../../components";
 import Style from "./EventBlogBanner.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import useWindowSize from "../../utils/windowSize";
+import useWindowSize from "../../utils/Hooks/windowSize";
 
 function EventBlogBanner() {
   let blogs = [1, 1, 1, 1];

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FeatureBlogCard, ImageBox } from "../../components";
 import blogs from "../../pages/blogs";
 import { mediaUrl } from "../../utils/Data/config";
-import useWindowSize from "../../utils/windowSize";
+import useWindowSize from "../../utils/Hooks/windowSize";
 import Style from "./FeaturedArticle.module.scss";
 
 function FeaturedArticle({ blogsData }) {
