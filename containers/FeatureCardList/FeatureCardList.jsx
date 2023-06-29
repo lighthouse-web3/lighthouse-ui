@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { FeatureCard, ImageBox } from "../../components";
+import { FeatureCard, ImageBox, TitleSeprator } from "../../components";
 import { LandingPageData } from "../../utils/Data/SiteContent";
 import Style from "./FeatureCardList.module.scss";
 
@@ -36,9 +36,7 @@ function FeatureCardList() {
 
   return (
     <div className={Style.FeatureCardList}>
-      <p className={Style.FeatureCardList__Title} data-aos="fade-up">
-        Lighthouse Suite
-      </p>
+      <TitleSeprator data-aos="fade-up" title={"Lighthouse Suite"} />
       <div className={Style.FeatureCardList__FeatureContainer}>
         {LandingPageData?.StorageFeature.map((item, index) => (
           <div

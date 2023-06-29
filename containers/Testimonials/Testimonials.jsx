@@ -1,66 +1,42 @@
 import React from "react";
-import { ImageBox } from "../../components";
+import { ImageBox, TestimonialCard } from "../../components";
 import { testimonialSection } from "../../utils/Data/SiteContent";
 import Style from "./Testimonials.module.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+
+// import required modules
+import { EffectCoverflow, Pagination } from "swiper";
 
 function Testimonials() {
   return (
     <div className={Style.Testimonials}>
-      <div className={Style.Testimonials__titleContainer} data-aos="fade-up">
-        <p
-          className={Style.title}
-          dangerouslySetInnerHTML={{ __html: testimonialSection?.title }}
-        ></p>
-      </div>
-      <div className={Style.Testimonials__testimonialContainer}>
-        <div className={Style.Box1}>
-          <div className={Style.testimonialBox} data-aos="fade-up">
-            <p className={Style.testimonialBox__quote}>
-              {testimonialSection?.testimonials[0]?.quote}
-            </p>
-
-            <p className={Style.testimonialBox__designation}>
-              {testimonialSection?.testimonials[0]?.person} <br />
-              <span>{testimonialSection?.testimonials[0]?.designation}</span>
-            </p>
-          </div>
-          <div className={Style.testimonialBox} data-aos="fade-up">
-            <p className={Style.testimonialBox__quote}>
-              {testimonialSection?.testimonials[1]?.quote}
-            </p>
-
-            <p className={Style.testimonialBox__designation}>
-              {testimonialSection?.testimonials[1]?.person} <br />
-              <span>{testimonialSection?.testimonials[1]?.designation}</span>
-            </p>
-          </div>
-        </div>
-        <div className={Style.Box2}>
-          <div className={Style.testimonialBox} data-aos="fade-up">
-            <p className={Style.testimonialBox__quote}>
-              {testimonialSection?.testimonials[2]?.quote}
-            </p>
-
-            <p className={Style.testimonialBox__designation}>
-              {testimonialSection?.testimonials[2]?.person} <br />
-              <span>{testimonialSection?.testimonials[2]?.designation}</span>
-            </p>
-          </div>
-          <div className={Style.testimonialBox} data-aos="fade-up">
-            <p className={Style.testimonialBox__quote}>
-              {testimonialSection?.testimonials[3]?.quote}
-            </p>
-
-            <p className={Style.testimonialBox__designation}>
-              {testimonialSection?.testimonials[3]?.person} <br />
-              <span>{testimonialSection?.testimonials[3]?.designation}</span>
-            </p>
-          </div>
-        </div>
-        <div className={Style.GlobeBox} data-aos="fade-up">
-          <ImageBox src={"/globe2.webp"} />
-        </div>
-      </div>
+      <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={"3"}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
+      >
+        {testimonialSection?.["testimonials"]?.map((item, key) => (
+          <SwiperSlide key={key}>
+            <TestimonialCard {...item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }

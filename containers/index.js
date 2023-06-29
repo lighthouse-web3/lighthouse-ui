@@ -13,15 +13,7 @@ export const PartnerCarousel = dynamic(() =>
 export const FeatureCardList = dynamic(() =>
   import("./FeatureCardList/FeatureCardList")
 );
-export const MainEventSection = dynamic(() =>
-  import("./MainEventSection/MainEventSection")
-);
-export const Roadmap = dynamic(() => import("./Roadmap/Roadmap"));
-export const OurTeam = dynamic(() => import("./OurTeam/OurTeam"));
-export const ReachUs = dynamic(() => import("./ReachUs/ReachUs"));
-export const EventBlogBanner = dynamic(() =>
-  import("./EventBlogBanner/EventBlogBanner")
-);
+
 export const FeaturedArticle = dynamic(() =>
   import("./FeaturedArticle/FeaturedArticle")
 );
@@ -30,9 +22,7 @@ export const MostPopularBlogs = dynamic(() =>
 );
 export const BlogView = dynamic(() => import("./BlogView/BlogView"));
 export const NewsBar = dynamic(() => import("./NewsBar/NewsBar"));
-export const SupportedBlockchain = dynamic(() =>
-  import("./SupportedBlockchain/SupportedBlockchain")
-);
+
 export const DocContainer = dynamic(() =>
   import("./Doc-container/DocContainer")
 );

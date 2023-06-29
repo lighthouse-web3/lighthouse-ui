@@ -1,15 +1,16 @@
 import React from "react";
-import { ImageBox } from "../../components";
+import { ImageBox, TitleSeprator } from "../../components";
 import { LandingPageData } from "../../utils/Data/SiteContent";
 import Styles from "./FeatureCompare.module.scss";
 
 function FeatureCompare() {
   return (
     <div className={Styles.FeatureCompare}>
-      <p className={Styles.FeatureCompare__title}>
+      <TitleSeprator title={"Key Features"} />
+      {/* <p className={Styles.FeatureCompare__title}>
         Elevate Your Storage Experience:
         <br /> Key Features of Lighthouse
-      </p>
+      </p> */}
       <div className={Styles.FeatureCompare__featureContainer}>
         {LandingPageData.KeyFeatures.map((item, index) => (
           <div className={Styles.featureCard} key={index} data-aos="fade-up">
@@ -31,6 +32,7 @@ function FeatureCompare() {
               <p className={Styles.title}>{item?.title}</p>
               <p className={Styles.subTitle}>{item?.subTitle}</p>
             </div>
+            <div className={Styles.featureCard__gradientCard}></div>
           </div>
         ))}
       </div>

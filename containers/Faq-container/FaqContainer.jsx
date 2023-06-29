@@ -2,16 +2,13 @@ import React, { useEffect, useState } from "react";
 import Styles from "./FaqContainer.module.scss";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { LandingPageData, socialLinks } from "../../utils/Data/SiteContent";
-import { ImageBox } from "../../components";
+import { ImageBox, TitleSeprator } from "../../components";
 
 function FAQContainer() {
   const [isOpen, setIsOpen] = useState(0);
   return (
     <div className={Styles.FAQContainer}>
-      <p className={Styles.FAQContainer__title}>Frequently asked questions</p>
-      <p className={Styles.FAQContainer__subTitle}>
-        FAQ<small>s</small>
-      </p>
+      <TitleSeprator data-aos="fade-up" title={"FAQs"} />
 
       <div className={Styles.FAQContainer__Container}>
         {LandingPageData?.FAQs.map((item, index) => (
