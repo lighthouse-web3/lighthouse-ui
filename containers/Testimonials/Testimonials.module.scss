@@ -5,6 +5,27 @@
   align-items: flex-start;
   margin: 0 0 12vh 0;
   gap: 5%;
+
+  &__navigationBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    gap: 2rem;
+    font-weight: 600;
+
+    span {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:nth-of-type(1) {
+        transform: rotate(180deg);
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 900px) {

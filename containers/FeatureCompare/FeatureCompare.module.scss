@@ -136,24 +136,43 @@
         height: 0px;
         background: linear-gradient(
               to bottom right,
-              #ff8983 0%,
+              #fb574e 0%,
               #470e47 25%,
-              #0f6e68 50%
+              #451248 32%,
+              #451248 50%
             )
             bottom right / 50% 50% no-repeat,
-          linear-gradient(to bottom left, #ff8983 0%, #470e47 25%, #0f6e68 50%)
+          linear-gradient(
+              to bottom left,
+              #fb574e 0%,
+              #470e47 25%,
+              #451248 32%,
+              #451248 50%
+            )
             bottom left / 50% 50% no-repeat,
-          linear-gradient(to top left, #ff8983 0%, #470e47 25%, #0f6e68 50%) top
-            left / 50% 50% no-repeat,
-          linear-gradient(to top right, #ff8983 0%, #470e47 25%, #0f6e68 50%)
+          linear-gradient(
+              to top left,
+              #fb574e 0%,
+              #470e47 25%,
+              #451248 32%,
+              #451248 50%
+            )
+            top left / 50% 50% no-repeat,
+          linear-gradient(
+              to top right,
+              #fb574e 0%,
+              #470e47 25%,
+              #451248 32%,
+              #451248 50%
+            )
             top right / 50% 50% no-repeat;
         filter: blur(51.650001525878906px);
       }
 
       &:hover {
         .featureCard__gradientCard {
-          width: 250px;
-          height: 250px;
+          width: 300px;
+          height: 300px;
         }
       }
     }

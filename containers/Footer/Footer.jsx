@@ -3,7 +3,14 @@ import Styles from "./Footer.module.scss";
 
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { BsTelegram, BsDiscord, BsTwitter, BsLinkedin } from "react-icons/bs";
-import { FaInstagramSquare } from "react-icons/fa";
+// import { BiLogoDiscordAlt } from "react-icons/bi";
+import {
+  FaDiscord,
+  FaInstagram,
+  FaInstagramSquare,
+  FaLinkedinIn,
+  FaTelegramPlane,
+} from "react-icons/fa";
 import { ImageBox } from "../../components";
 import { footerData, socialLinks } from "../../utils/Data/SiteContent";
 import { useRouter } from "next/router";
@@ -46,7 +53,7 @@ function Footer() {
                   window.open(socialLinks?.telegram, "_blank");
                 }}
               >
-                <BsTelegram />
+                <FaTelegramPlane />
               </span>
               <span
                 className={Styles.icon + " ptr"}
@@ -54,7 +61,7 @@ function Footer() {
                   window.open(socialLinks?.discord, "_blank");
                 }}
               >
-                <BsDiscord />
+                <FaDiscord />
               </span>
               <span
                 className={Styles.icon + " ptr"}
@@ -70,7 +77,7 @@ function Footer() {
                   window.open(socialLinks?.linkedin, "_blank");
                 }}
               >
-                <BsLinkedin />
+                <FaLinkedinIn />
               </span>
               <span
                 className={Styles.icon + " ptr"}
@@ -78,7 +85,7 @@ function Footer() {
                   window.open(socialLinks?.instagram, "_blank");
                 }}
               >
-                <FaInstagramSquare />
+                <FaInstagram />
               </span>
             </div>
             <p
