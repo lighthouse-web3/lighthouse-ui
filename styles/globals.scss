@@ -13,10 +13,9 @@ body {
   margin: 0;
   font-family: -apple-system, "Helvetica", "Encode Sans", Droid Sans,
     Helvetica Neue, sans-serif;
-  // background: url("/bg_gradient.webp");
-  background-size: cover;
-  background-position: center;
+
   overflow-x: hidden;
+  background: #08060b !important;
 }
 
 .bodyContainer {
@@ -108,7 +107,6 @@ body {
   }
   body {
     color: white;
-    background: #08060b;
   }
 }
 
