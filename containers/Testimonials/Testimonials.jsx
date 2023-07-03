@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ImageBox, TestimonialCard, TitleSeprator } from "../../components";
 import { testimonialSection } from "../../utils/Data/SiteContent";
 import useWindowSize from "../../utils/Hooks/windowSize";
@@ -14,13 +14,16 @@ import "swiper/css/navigation";
 // import required modules
 import { EffectCoverflow, Navigation } from "swiper";
 import { MdOutlineNavigateNext } from "react-icons/md";
-import { GrFormPrevious } from "react-icons/gr";
 
 function Testimonials() {
   const windowSize = useWindowSize();
+  const [currentSlide, setCurrentSlide] = useState();
   const swiperRef = useRef();
 
-  console.log(windowSize.width, swiperRef);
+  useEffect(() => {
+    swiperRef?.current?.slideNext();
+  }, []);
+
   return (
     <div className={Style.Testimonials}>
       <TitleSeprator title={"Testimonials"} />
@@ -32,6 +35,10 @@ function Testimonials() {
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={"auto"}
+        onSlideChange={(e) => {
+          console.log(e);
+          setCurrentSlide(e?.activeIndex);
+        }}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -63,6 +70,7 @@ function Testimonials() {
           onClick={() => {
             swiperRef?.current?.slidePrev();
           }}
+          style={currentSlide === 0 ? { opacity: "0.5", cursor: "auto" } : {}}
         >
           <MdOutlineNavigateNext />
         </span>
@@ -70,6 +78,11 @@ function Testimonials() {
           onClick={() => {
             swiperRef?.current?.slideNext();
           }}
+          style={
+            currentSlide === testimonialSection?.["testimonials"]?.length - 1
+              ? { opacity: "0.5", cursor: "auto" }
+              : {}
+          }
         >
           <MdOutlineNavigateNext />
         </span>

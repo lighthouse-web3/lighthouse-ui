@@ -4,7 +4,7 @@ import Styles from "./HomeBanner.module.scss";
 
 function HomeBanner() {
   return (
-    <div className={Styles.Banner}>
+    <div className={Styles.Banner + " container"}>
       <div className={Styles.infoBox} data-aos="fade-up">
         <div className={Styles.title}>
           {LandingPageData?.HeroSection?.title}

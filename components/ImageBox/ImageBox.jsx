@@ -30,7 +30,7 @@ function ImageBox({
       <Image
         className={Styles.image}
         {...rest}
-        style={{ objectFit: "cover" }}
+        style={{ objectFit: "cover", ...style }}
         // style={style}
         alt={alt ? alt : "icon"}
         src={src}
