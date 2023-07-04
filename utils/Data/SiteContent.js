@@ -76,7 +76,7 @@ export const LandingPageData = {
       link: "",
     },
     {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmUQFC7WPgdqDB6RY3tEgw21HxfB5i9gZNrxPxjWTyTsaN",
+      icon: "/client/filecoin.svg",
       link: "",
     },
     {
@@ -253,8 +253,8 @@ export const testimonialSection = {
         "Implementing Lighthouse Protocol was a breeze! Clear documentation and step-by-step instructions made integration fast. Kudos to the team for great Devrel support. Excited to use it again and recommend it to others.",
       person: "Akashya",
       designation: "Strive",
-      img: "/testimonial/client.png",
-      link: "",
+      img: "/testimonial/akshaya.jpeg",
+      link: "https://www.linkedin.com/in/akshayacodified",
     },
     {
       quote:
