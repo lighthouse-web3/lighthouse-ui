@@ -21,6 +21,7 @@ body {
   background-size: cover;
   background-position: center;
   overflow-x: hidden;
+  background: #08060b !important;
 }
 
 .bodyContainer {
@@ -153,7 +154,9 @@ body {
 
   body {
     color: white;
+
     background: var(--clr-bg-black);
+
   }
 }
 
