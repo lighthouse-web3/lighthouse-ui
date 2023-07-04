@@ -1,6 +1,7 @@
 .FeaturedArticle {
   width: 100%;
   color: white;
+  font-family: var(--font-main);
   .title {
     font-size: 3rem;
     font-style: normal;
@@ -14,42 +15,23 @@
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    min-height: 300px;
+    padding-bottom: 7%;
+    border-bottom: 1px solid white;
 
     &__contentBox {
       display: flex;
       flex-direction: column;
       flex: 1;
       justify-content: center;
-      .apostrophy {
-        width: 100px;
-        height: 100px;
-      }
 
       .title {
-        font-family: "Helvetica";
         font-style: normal;
         font-weight: 700;
         font-size: 3rem;
         line-height: 150%;
         letter-spacing: 0.1rem;
-      }
-
-      .subTitle {
-        font-weight: 400;
-        font-size: 1.2rem;
-        line-height: 2rem;
-        color: #c5c5c6;
-      }
-
-      .btn {
-        background: #1d2047;
-        border: 1px solid #1d2047;
-        width: fit-content;
-        border-radius: 50px;
-        font-size: 1rem;
-        letter-spacing: -0.2px;
-        padding: 0.3rem 1rem;
-        color: #2563eb;
+        margin-bottom: 12px;
       }
     }
     &__imageBox {

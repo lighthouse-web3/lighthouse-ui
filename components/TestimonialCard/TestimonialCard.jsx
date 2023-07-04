@@ -1,17 +1,28 @@
 import React from "react";
 import Style from "./TestimonialCard.module.scss";
+import ImageBox from "../ImageBox/ImageBox";
 
-function TestimonialCard() {
+function TestimonialCard({ quote, person, designation, img, link }) {
   return (
     <div className={Style.TestimonialCard}>
-      <div className={Style.container + " gradient__Border"}>
-        <div className={Style.titleContainer}>
-          <p className={Style.title}>John Doe</p>
-          <p className={Style.designation}>Designation</p>
-        </div>
-        <p className={Style.testimonialContent}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-          magni expedita dolor fugiat rem labore aut vel soluta, iusto repellat!
+      <ImageBox src={"/icons/apostrophy.svg"} width={80} height={100} />
+      <p className={Style.TestimonialCard__testimonial}>{quote}</p>
+
+      <div
+        className={Style.TestimonialCard__userBox}
+        onClick={() => {
+          window.open(`${link}`, `__blank`);
+        }}
+      >
+        <ImageBox
+          src={img}
+          width={50}
+          height={50}
+          style={{ borderRadius: "50%" }}
+        />
+
+        <p>
+          {person} <br /> <small>{designation}</small>
         </p>
       </div>
     </div>

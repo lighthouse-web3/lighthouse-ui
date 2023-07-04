@@ -8,6 +8,7 @@ import {
   // Header,
   HomeBanner,
   NewsBar,
+  PartnerCarousel,
   Testimonials,
 } from "../containers";
 
@@ -38,7 +39,7 @@ export default function Home() {
       <Metadata title="Lighthouse Perpetual Storage" />
       <div className={"bodyContainer"}>
         <NewsBar />
-        <Header style={{ background: "#1e0f2c" }} />
+        <Header />
         <div className="sectionContainer">
           <div className="contentContainer">
             <HomeBanner />
@@ -49,34 +50,22 @@ export default function Home() {
             <FeatureCompare />
           </div>
         </div>
-        <div
-          className="sectionContainer"
-          style={{
-            background: "#000",
-          }}
-        >
+        <div className="sectionContainer" style={{ minHeight: "auto" }}>
+          <div className="contentContainer container">
+            <PartnerCarousel />
+          </div>
+        </div>
+        <div className="sectionContainer" style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
             <Testimonials />
           </div>
         </div>
-        <div
-          className="sectionContainer"
-          style={{
-            background: "#000",
-            paddingTop: "3rem",
-          }}
-        >
+        <div className="sectionContainer">
           <div className="contentContainer container">
             <FeatureCardList />
           </div>
         </div>
-        <div
-          className="sectionContainer"
-          style={{
-            background: "#1E0F2C",
-            paddingTop: "3rem",
-          }}
-        >
+        <div className="sectionContainer">
           <div className="contentContainer container">
             <FAQContainer />
           </div>

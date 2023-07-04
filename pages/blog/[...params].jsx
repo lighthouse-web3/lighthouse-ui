@@ -84,7 +84,7 @@ function Blog({ blogData, allBlogs }) {
             <BlogView blogData={blogData} />
           </div>
         </div>
-        <div className="">
+        <div className="sectionContainer" style={{ minHeight: "auto" }}>
           <div
             className="contentContainer container"
             style={{ maxHeight: "50vh", marginBottom: "2rem" }}

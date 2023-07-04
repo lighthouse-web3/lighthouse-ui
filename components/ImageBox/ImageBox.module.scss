@@ -11,3 +11,16 @@
     height: unset !important;
   }
 }
+
+.imageRatioContainer {
+  position: relative;
+  span {
+  }
+
+  .image {
+    object-fit: contain !important;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+}

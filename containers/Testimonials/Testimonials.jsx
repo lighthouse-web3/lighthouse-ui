@@ -1,62 +1,91 @@
-import React from "react";
-import { ImageBox } from "../../components";
+import React, { useEffect, useRef, useState } from "react";
+import { ImageBox, TestimonialCard, TitleSeprator } from "../../components";
 import { testimonialSection } from "../../utils/Data/SiteContent";
+import useWindowSize from "../../utils/Hooks/windowSize";
+
 import Style from "./Testimonials.module.scss";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
+
+// import required modules
+import { EffectCoverflow, Navigation } from "swiper";
+import { MdOutlineNavigateNext } from "react-icons/md";
 
 function Testimonials() {
+  const windowSize = useWindowSize();
+  const [currentSlide, setCurrentSlide] = useState();
+  const swiperRef = useRef();
+
+  useEffect(() => {
+    swiperRef?.current?.slideNext();
+  }, []);
+
   return (
     <div className={Style.Testimonials}>
-      <div className={Style.Testimonials__titleContainer} data-aos="fade-up">
-        <p className={Style.title}>{testimonialSection?.title}</p>
-      </div>
-      <div className={Style.Testimonials__testimonialContainer}>
-        <div className={Style.Box1}>
-          <div className={Style.testimonialBox} data-aos="fade-up">
-            <p className={Style.testimonialBox__quote}>
-              {testimonialSection?.testimonials[0]?.quote}
-            </p>
-
-            <p className={Style.testimonialBox__designation}>
-              {testimonialSection?.testimonials[0]?.person} <br />
-              <span>{testimonialSection?.testimonials[0]?.designation}</span>
-            </p>
-          </div>
-          <div className={Style.testimonialBox} data-aos="fade-up">
-            <p className={Style.testimonialBox__quote}>
-              {testimonialSection?.testimonials[1]?.quote}
-            </p>
-
-            <p className={Style.testimonialBox__designation}>
-              {testimonialSection?.testimonials[1]?.person} <br />
-              <span>{testimonialSection?.testimonials[1]?.designation}</span>
-            </p>
-          </div>
-        </div>
-        <div className={Style.Box2}>
-          <div className={Style.testimonialBox} data-aos="fade-up">
-            <p className={Style.testimonialBox__quote}>
-              {testimonialSection?.testimonials[2]?.quote}
-            </p>
-
-            <p className={Style.testimonialBox__designation}>
-              {testimonialSection?.testimonials[2]?.person} <br />
-              <span>{testimonialSection?.testimonials[2]?.designation}</span>
-            </p>
-          </div>
-          <div className={Style.testimonialBox} data-aos="fade-up">
-            <p className={Style.testimonialBox__quote}>
-              {testimonialSection?.testimonials[3]?.quote}
-            </p>
-
-            <p className={Style.testimonialBox__designation}>
-              {testimonialSection?.testimonials[3]?.person} <br />
-              <span>{testimonialSection?.testimonials[3]?.designation}</span>
-            </p>
-          </div>
-        </div>
-        <div className={Style.GlobeBox} data-aos="fade-up">
-          <ImageBox src={"/globe2.webp"} />
-        </div>
+      <TitleSeprator title={"Testimonials"} />
+      <Swiper
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        onSlideChange={(e) => {
+          console.log(e);
+          setCurrentSlide(e?.activeIndex);
+        }}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 200,
+          modifier: 1,
+          slideShadows: false,
+        }}
+        breakpoints={{
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        }}
+        modules={[EffectCoverflow, Navigation]}
+        className={"testimonialSwipper"}
+      >
+        {testimonialSection?.["testimonials"]?.map((item, key) => (
+          <SwiperSlide key={key}>
+            <TestimonialCard {...item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className={Style.Testimonials__navigationBox}>
+        <span
+          onClick={() => {
+            swiperRef?.current?.slidePrev();
+          }}
+          style={currentSlide === 0 ? { opacity: "0.5", cursor: "auto" } : {}}
+        >
+          <MdOutlineNavigateNext />
+        </span>
+        <span
+          onClick={() => {
+            swiperRef?.current?.slideNext();
+          }}
+          style={
+            currentSlide === testimonialSection?.["testimonials"]?.length - 1
+              ? { opacity: "0.5", cursor: "auto" }
+              : {}
+          }
+        >
+          <MdOutlineNavigateNext />
+        </span>
       </div>
     </div>
   );

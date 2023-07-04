@@ -5,70 +5,11 @@
   position: relative;
   overflow-y: visible;
   z-index: 0;
-
-  .bigShadow__set1 {
-    position: absolute;
-    width: 70vw;
-    height: 50vh;
-    left: -25vw;
-    bottom: -25vh;
-    background: radial-gradient(
-      50% 50% at 49.97% 48.13%,
-      rgba(255, 69, 129, 0.3) 0%,
-      rgba(67, 136, 221, 0.3) 100%
-    );
-    filter: blur(225px);
-    transform: matrix(1, 0, 0, -1, 0, 0);
-  }
-
-  .smallShadow__set1 {
-    position: absolute;
-    width: 50vw;
-    height: 50vh;
-    right: -25vw;
-    top: -25vh;
-    background: radial-gradient(
-      50% 50% at 49.97% 48.13%,
-      #ff4581 0%,
-      #4388dd 100%
-    );
-    filter: blur(225px);
-    transform: matrix(1, 0, 0, -1, 0, 0);
-    opacity: 0.5;
-  }
-  .bigShadow__set2 {
-    position: absolute;
-    width: 70vw;
-    height: 50vh;
-    left: -25vw;
-    top: -25vh;
-    background: radial-gradient(
-      50% 50% at 49.97% 48.13%,
-      rgba(255, 69, 129, 0.3) 0%,
-      rgba(67, 136, 221, 0.3) 100%
-    );
-    filter: blur(225px);
-    transform: matrix(1, 0, 0, -1, 0, 0);
-  }
-
-  .smallShadow__set2 {
-    position: absolute;
-    width: 50vw;
-    height: 50vh;
-    right: -25vw;
-    bottom: -25vh;
-    background: radial-gradient(
-      50% 50% at 49.97% 48.13%,
-      #ff4581 0%,
-      #4388dd 100%
-    );
-    filter: blur(225px);
-    transform: matrix(1, 0, 0, -1, 0, 0);
-    opacity: 0.5;
-  }
+  background: var(--clr-bg-black);
 
   .contentContainer {
     width: 100%;
     z-index: 2;
+    background: var(--clr-bg-black);
   }
 }

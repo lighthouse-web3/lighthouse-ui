@@ -1,0 +1,23 @@
+.TitleSeprator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+  p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 150%;
+    letter-spacing: 0.2px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .TitleSeprator {
+    &__iconContainer {
+      display: none;
+    }
+  }
+}

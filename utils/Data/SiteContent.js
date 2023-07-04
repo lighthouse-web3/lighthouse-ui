@@ -10,28 +10,38 @@ export const LandingPageData = {
   },
   KeyFeatures: [
     {
-      icon: "/featureIcon/feature6.webp",
+      icon: "/featureIcon/feature6.svg",
       title: "Pay once and store forever",
+      subTitle: `Never worry about recurring payments with our "Pay once and store forever" feature.`,
     },
     {
-      icon: "/featureIcon/feature5.webp",
+      icon: "/featureIcon/feature5.svg",
       title: "Store files on IPFS and Filecoin",
+      subTitle: `Harness the power of IPFS and Filecoin to securely store your files on a decentralized network.`,
     },
     {
-      icon: "/featureIcon/feature1.webp",
+      icon: "/featureIcon/feature1.svg",
       title: "Encryption & Access control functionality",
+      subTitle:
+        "Keep your data safe and with token gated access on a public network.",
     },
     {
-      icon: "/featureIcon/feature4.webp",
+      icon: "/featureIcon/feature4.svg",
       title: "Dedicated IPFS gateways for fast retrievals",
+      subTitle:
+        "Experience lightning-fast retrievals with our dedicated IPFS Gateways.",
     },
     {
-      icon: "/featureIcon/feature3.webp",
+      icon: "/featureIcon/feature3.svg",
       title: "Image resize to save bandwidth",
+      subTitle:
+        "Save bandwidth without sacrificing image quality with our automatic image resize feature.",
     },
     {
-      icon: "/featureIcon/feature2.webp",
+      icon: "/featureIcon/feature2.svg",
       title: "Fast Gateway that streams even 4k videos",
+      subTitle:
+        "Enjoy seamless streaming of 4K videos with our ultra-fast gateways.",
     },
   ],
 
@@ -44,24 +54,33 @@ export const LandingPageData = {
       icon: "https://gateway.lighthouse.storage/ipfs/QmNwGq4kLHHrdCvW2EPH4e3nXvadHGpAnkjLA5ZoGUWB8R",
       link: "",
     },
-    {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmbN1Y6K6932CEekSDAiKkV4rmiuRrG9DHpVCLCFnv9EwE",
-      link: "",
-    },
+
     {
       icon: "https://gateway.lighthouse.storage/ipfs/Qmf3QKQasp4U1FcafBk5rzt4craEjAjZXfpsYR6joBFCA4",
       link: "",
     },
-    // {
-    //   icon: "https://gateway.lighthouse.storage/ipfs/QmW8JmiyLmbpTfeqtzoCYQ9qd4AQsdGtaHhXACcUhzHMt7",
-    //   link: "",
-    // },
+    {
+      icon: "https://gateway.lighthouse.storage/ipfs/QmW8JmiyLmbpTfeqtzoCYQ9qd4AQsdGtaHhXACcUhzHMt7",
+      link: "",
+    },
     // {
     //   icon: "https://gateway.lighthouse.storage/ipfs/QmNUyLh1XDU8R84PGep1zUbjqJzYV4dayMcdM6ZmA4m3Tk",
     //   link: "",
     // },
     {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmUQFC7WPgdqDB6RY3tEgw21HxfB5i9gZNrxPxjWTyTsaN",
+      icon: "/client/mask.svg",
+      link: "",
+    },
+    {
+      icon: "/client/filemarket.svg",
+      link: "",
+    },
+    {
+      icon: "/client/filecoin.svg",
+      link: "",
+    },
+    {
+      icon: "https://gateway.lighthouse.storage/ipfs/QmbN1Y6K6932CEekSDAiKkV4rmiuRrG9DHpVCLCFnv9EwE",
       link: "",
     },
   ],
@@ -209,7 +228,7 @@ export const footerData = {
 };
 
 export const testimonialSection = {
-  title: "What builders are saying about Lighthouse",
+  title: "What <span>builders</span> are saying about <span>Lighthouse</span>",
   subTitle:
     "Testimonials from creative professionals who rely on Lighthouse to shine a light on their work.",
   testimonials: [
@@ -218,24 +237,32 @@ export const testimonialSection = {
         "Lighthouse incentivized storage promotes data availability market competition for modular blockchains like Syscoin. Cheaper and secure than cloud storage, ensuring long-term data liveness guarantees for network participants.",
       person: "Jagdeep sidhu",
       designation: "Syscoin",
+      img: "/testimonial/jagdeep.jpg",
+      link: "https://twitter.com/realSidhuJag",
     },
     {
       quote:
         "Using Lighthouse Storage has been a game changer for our projects. Its exceptional speed and reliability have surpassed all other storage solutions we've tried, making it our go-to choice for our storage needs.",
       person: "Vivek pal",
       designation: "Shastra OS",
+      img: "/testimonial/vivek.jpg",
+      link: "https://twitter.com/vivekpal0x",
     },
     {
       quote:
         "Implementing Lighthouse Protocol was a breeze! Clear documentation and step-by-step instructions made integration fast. Kudos to the team for great Devrel support. Excited to use it again and recommend it to others.",
       person: "Akashya",
       designation: "Strive",
+      img: "/testimonial/akshaya.jpeg",
+      link: "https://www.linkedin.com/in/akshayacodified",
     },
     {
       quote:
         "Lighthouse is the missing piece in the web3 ecosystem that enables OKcontract users to directly upload and pin to IPFS transparently and permanently.",
       person: "Henri",
       designation: "OKContract",
+      img: "/testimonial/henri.jpg",
+      link: "https://twitter.com/henri__OK",
     },
   ],
 };

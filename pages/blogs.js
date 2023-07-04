@@ -29,26 +29,12 @@ function blogs({ blogsData }) {
 
       <div className={"bodyContainer"}>
         <Header style={{ background: "#000" }} />
-        <div
-          className="sectionContainer"
-          style={{
-            background: "#1E0F2C",
-            paddingTop: "3rem",
-          }}
-        >
+        <div className="sectionContainer" style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
             <FeaturedArticle blogsData={blogsData} />
           </div>
         </div>
-        <div
-          className="sectionContainer"
-          style={{
-            background: "#1E0F2C",
-            paddingTop: "3rem",
-            marginTop: "4rem",
-            minHeight: "50vh",
-          }}
-        >
+        <div className="sectionContainer" style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
             <MostPopularBlogs blogsData={blogsData} />
           </div>

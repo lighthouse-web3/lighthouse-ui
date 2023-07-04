@@ -3,7 +3,14 @@ import Styles from "./Footer.module.scss";
 
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { BsTelegram, BsDiscord, BsTwitter, BsLinkedin } from "react-icons/bs";
-import { FaInstagramSquare } from "react-icons/fa";
+// import { BiLogoDiscordAlt } from "react-icons/bi";
+import {
+  FaDiscord,
+  FaInstagram,
+  FaInstagramSquare,
+  FaLinkedinIn,
+  FaTelegramPlane,
+} from "react-icons/fa";
 import { ImageBox } from "../../components";
 import { footerData, socialLinks } from "../../utils/Data/SiteContent";
 import { useRouter } from "next/router";
@@ -29,30 +36,35 @@ function Footer() {
     <div className={Styles.Footer}>
       <div className={Styles.Footer__upperFooter + " container"}>
         <div className={Styles.brandBox}>
-          <div className={Styles.logo}>
+          <div
+            className={Styles.logo + " ptr"}
+            onClick={() => {
+              _navigate.push("/");
+            }}
+          >
             <ImageBox src={"/logo.svg"} width="100%" />
           </div>
           <div className={Styles.socialBox}>
             {/* <p>Find us on social</p> */}
             <div className={Styles.icons}>
               <span
-                className={Styles.icon}
+                className={Styles.icon + " ptr"}
                 onClick={() => {
                   window.open(socialLinks?.telegram, "_blank");
                 }}
               >
-                <BsTelegram />
+                <FaTelegramPlane />
               </span>
               <span
-                className={Styles.icon}
+                className={Styles.icon + " ptr"}
                 onClick={() => {
                   window.open(socialLinks?.discord, "_blank");
                 }}
               >
-                <BsDiscord />
+                <FaDiscord />
               </span>
               <span
-                className={Styles.icon}
+                className={Styles.icon + " ptr"}
                 onClick={() => {
                   window.open(socialLinks?.twitter, "_blank");
                 }}
@@ -60,20 +72,20 @@ function Footer() {
                 <BsTwitter />
               </span>
               <span
-                className={Styles.icon}
+                className={Styles.icon + " ptr"}
                 onClick={() => {
                   window.open(socialLinks?.linkedin, "_blank");
                 }}
               >
-                <BsLinkedin />
+                <FaLinkedinIn />
               </span>
               <span
-                className={Styles.icon}
+                className={Styles.icon + " ptr"}
                 onClick={() => {
                   window.open(socialLinks?.instagram, "_blank");
                 }}
               >
-                <FaInstagramSquare />
+                <FaInstagram />
               </span>
             </div>
             <p

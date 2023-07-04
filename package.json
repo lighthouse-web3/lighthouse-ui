@@ -21,7 +21,7 @@
     "react-pagination": "^1.0.0",
     "react-toastify": "^9.1.1",
     "sass": "^1.55.0",
-    "swiper": "^8.4.4"
+    "swiper": "^8.4.7"
   },
   "devDependencies": {
     "eslint": "8.25.0",

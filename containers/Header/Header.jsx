@@ -61,10 +61,15 @@ function Header({ style }) {
   }, [scrolling]);
 
   return (
-    <div className={Styles.Header + " container"} style={style}>
+    <div className={Styles.Header + " container"}>
       <div className={Styles.infoContainer}>
         <div className={Styles.logoContainer}>
-          <div className={Styles.imageBox}>
+          <div
+            className={Styles.imageBox + " ptr"}
+            onClick={() => {
+              _navigate.push("/");
+            }}
+          >
             <Image src="/logo.svg" layout="fill" alt="brandLogo" />
           </div>
         </div>
@@ -86,16 +91,16 @@ function Header({ style }) {
               )}
             </p>
           ))}
-          <button
-            onClick={() =>
-              window.open("https://files.lighthouse.storage/", "_blank")
-            }
-            className={Styles.loginButton + " gradient__Border"}
-            style={{ padding: "0.5rem 2rem" }}
-          >
-            Login
-          </button>
         </div>
+        <button
+          onClick={() =>
+            window.open("https://files.lighthouse.storage/", "_blank")
+          }
+          className={"fillBtn__blue"}
+          style={{ padding: "0.5rem 2rem" }}
+        >
+          LOGIN
+        </button>
       </div>
 
       <div className={Styles.navbarMobileMenu}>
@@ -141,8 +146,12 @@ function Header({ style }) {
               onClick={() =>
                 window.open("https://files.lighthouse.storage/", "_blank")
               }
-              className="gradient__Border loginButton"
-              style={{ padding: "0.5rem 2rem" }}
+              className="fillBtn__blue"
+              style={{
+                padding: "0.5rem 2rem",
+                marginTop: "1rem",
+                width: "80%",
+              }}
             >
               Login
             </button>

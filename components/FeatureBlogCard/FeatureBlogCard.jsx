@@ -17,6 +17,10 @@ function FeatureBlogCard({ blog }) {
       <div className={Style.FeatureBlogCard__imageContainer}>
         <ImageBox
           src={mediaUrl + blog?.attributes?.coverImage?.data?.attributes?.url}
+          width={"100%"}
+          height={"200px"}
+          aspectRatio={true}
+          layout={"fill"}
           style={{
             objectFit: "cover",
             objectPosition: "center",

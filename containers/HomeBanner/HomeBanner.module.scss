@@ -5,6 +5,8 @@
   height: calc(100% - 100px);
   position: relative;
   background: black;
+  padding: 1rem 8%;
+
   .infoBox {
     z-index: 1;
     width: 50%;
@@ -12,9 +14,9 @@
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
-    padding: 1rem 0rem 1rem 6rem;
+    padding: 1rem 0rem 1rem 0rem;
     .title {
-      font-size: calc(3rem + 3vw);
+      font-size: calc(2.5rem + 3vw);
       text-transform: capitalize;
       font-weight: 700;
     }
@@ -77,10 +79,16 @@
     }
   }
 
-  // .overlay{
-  //   position: absolute;
-
-  // }
+  .overlay {
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(
+      0deg,
+      rgb(0, 0, 0) 0%,
+      rgba(0, 212, 255, 0) 57%
+    );
+    height: 100%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
