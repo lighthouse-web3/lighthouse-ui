@@ -234,6 +234,14 @@ export const testimonialSection = {
   testimonials: [
     {
       quote:
+        "Using lighthouse for Macha was the best choice to store things on IPFS and Filecoin. The integration process was remarkably simple and efficient, making it the ultimate storage solution due to its exceptional speed and reliability. Lighthouse would unquestionably be our preferred recommendation for Storage Infra of Web3",
+      person: "Saksham",
+      designation: "MetaWork Labs",
+      img: "/testimonial/saksham.jpg",
+      link: "https://twitter.com/saxmjain?s=21&t=nUsbImMLxK72iJU2a3rdjQ",
+    },
+    {
+      quote:
         "Lighthouse incentivized storage promotes data availability market competition for modular blockchains like Syscoin. Cheaper and secure than cloud storage, ensuring long-term data liveness guarantees for network participants.",
       person: "Jagdeep sidhu",
       designation: "Syscoin",
