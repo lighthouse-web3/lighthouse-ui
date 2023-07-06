@@ -6,33 +6,44 @@ function Metadata({
   title = "Lighthouse",
   description = "Store Files Perpetually on IPFS and Filecoin",
   url = "lighthouse.storage",
-  image = "https://www.lighthouse.storage/_next/image?url=%2Flogo.png&w=1920&q=75",
+  image = "https://gateway.lighthouse.storage/ipfs/Qmd7rR9EPKomhmoRUw2WB7FJAeSWAtC8c1nkKgGZL39LpB",
 }) {
   const router = useRouter();
 
   return (
     <Head>
-      {/* Primary Meta Tags  */}
-      <title>{title}</title>
-      <meta name="title" content={title} />
-      <meta name="description" content={description} />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="color-scheme" content="dark" />
-      <meta name="author" content="Lighthouse" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@LighthouseWeb3" />
-      <meta name="twitter:creator" content="@LighthouseWeb3" />
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Lighthouse Storage" />
-
+      <title>Lighthouse Perpetual Storage</title>
+      <meta name="title" content="Lighthouse Perpetual Storage" />
       <meta
-        property="og:url"
-        content={`https://www.lighthouse.storage${router?.asPath}`}
-        key="og-url"
+        name="description"
+        content="Store Files Perpetually on IPFS and Filecoin"
       />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+
+      {/* <!-- Open Graph / Facebook --> */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.lighthouse.storage/" />
+      <meta property="og:title" content="Lighthouse Perpetual Storage" />
+      <meta
+        property="og:description"
+        content="Store Files Perpetually on IPFS and Filecoin"
+      />
+      <meta
+        property="og:image"
+        content="https://gateway.lighthouse.storage/ipfs/Qmd7rR9EPKomhmoRUw2WB7FJAeSWAtC8c1nkKgGZL39LpB"
+      />
+
+      {/* <!-- Twitter --> */}
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="https://www.lighthouse.storage/" />
+      <meta property="twitter:title" content="Lighthouse Perpetual Storage" />
+      <meta
+        property="twitter:description"
+        content="Store Files Perpetually on IPFS and Filecoin"
+      />
+      <meta
+        property="twitter:image"
+        content="https://gateway.lighthouse.storage/ipfs/Qmd7rR9EPKomhmoRUw2WB7FJAeSWAtC8c1nkKgGZL39LpB"
+      />
     </Head>
   );
 }
