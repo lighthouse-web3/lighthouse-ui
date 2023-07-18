@@ -10,7 +10,7 @@ function PartnerCarousel() {
 
       <div className={Styles.PartnerCarousel__brandLogoContainer}>
         {LandingPageData?.clientsLogo?.map((item, index) => (
-          <span key={index}>
+          <span key={index} data-aos="fade-up" data-aos-delay={100 * index}>
             <ImageBox
               src={item?.icon}
               width={"200px"}

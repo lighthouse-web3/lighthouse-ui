@@ -45,7 +45,12 @@ function Header({ style }) {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [scrollTop, setScrollTop] = useState();
   const [scrolling, setScrolling] = useState();
+  const [currentRoute, setCurrentRoute] = useState();
   const _navigate = useRouter();
+
+  useEffect(() => {
+    setCurrentRoute(_navigate?.route);
+  }, [_navigate]);
 
   useEffect(() => {
     const onScroll = (e) => {
@@ -78,6 +83,7 @@ function Header({ style }) {
             <p key={index}>
               {link.path.length > 0 ? (
                 <a
+                  className={currentRoute === link.path && Styles.active}
                   onClick={() => {
                     _navigate.push(link.path);
                   }}
