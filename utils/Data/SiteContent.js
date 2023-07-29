@@ -221,8 +221,13 @@ export const footerData = {
     },
     {
       text: "Report Online Abuse",
-      path: "",
+      path: null,
       link: "https://docs.google.com/forms/d/16STP-KPftGBCaF5MjQuXBVBOqShIxScFtuPhCAlQJM8/viewform?ts=64a7c2b5&edit_requested=true",
+    },
+    {
+      text: "Talk to Expert",
+      path: null,
+      link: "https://calendly.com/aditya-lighthouse/30min?month=2023-07",
     },
   ],
 };
