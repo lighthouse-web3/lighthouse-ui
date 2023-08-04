@@ -27,6 +27,8 @@
 
     .contentBox {
       color: #ffffff;
+      ol,
+      ul,
       p {
         font-family: "Helvetica";
         font-style: normal;
@@ -34,6 +36,16 @@
         font-size: 1.3rem;
         line-height: 2rem;
         color: #ffffff;
+      }
+
+      pre {
+        border-radius: 3px;
+        text-align: left;
+        padding: 1.5rem;
+        background: rgb(216 216 216 / 17%);
+        white-space: pre-wrap;
+        word-break: break-all;
+        line-height: 200%;
       }
 
       img {

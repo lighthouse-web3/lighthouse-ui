@@ -9,7 +9,7 @@ import {
 } from "../containers";
 import { baseUrl } from "../utils/Data/config";
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   let blogsData = null;
   try {
     const res = await axios.get(`${baseUrl}/blogs?populate=*`);
