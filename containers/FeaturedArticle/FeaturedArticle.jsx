@@ -14,6 +14,8 @@ function FeaturedArticle({ blogsData }) {
         new Date(a?.attributes?.publishedAt)
       );
     });
+    console.log(sorted[0]);
+
     setLatestBlog(sorted[0]);
   }, []);
 
@@ -23,14 +25,6 @@ function FeaturedArticle({ blogsData }) {
       <div className={Style.blogContainer} data-aos="fade-up">
         <div className={Style.blogContainer__contentBox}>
           <p className={Style.title}>{latestBlog?.attributes?.title}</p>
-          {/* <p
-            className={Style.subTitle}
-            dangerouslySetInnerHTML={{
-              __html:
-                latestBlog?.attributes?.Seo?.metaDiscription?.slice(0, 100) ||
-                "",
-            }}
-          ></p> */}
 
           <button
             className={"fillBtn__blue ptr"}

@@ -5,8 +5,7 @@ export const LandingPageData = {
   HeroSection: {
     title: "Store Files Permanently",
     subTitle:
-      "Lighthouse allows the users to store on Filecoin for a lifetime at a fixed price",
-    sideImage: "/globe.webp",
+      "Perpetual storage powered by decentralized web. Easily store and secure your data",
   },
   KeyFeatures: [
     {

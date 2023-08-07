@@ -1,5 +1,5 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Metadata } from "../components";
 import {
   FeaturedArticle,
@@ -9,20 +9,19 @@ import {
 } from "../containers";
 import { baseUrl } from "../utils/Data/config";
 
-export const getStaticProps = async () => {
-  let blogsData = null;
-  try {
-    const res = await axios.get(`${baseUrl}/blogs?populate=*`);
-    blogsData = res["status"] === 200 ? res["data"]?.["data"] : null;
-  } catch (error) {}
-  return {
-    props: {
-      blogsData,
-    },
-  };
-};
+function Blogs() {
+  const [blogsData, setBlogsData] = useState(null);
 
-function blogs({ blogsData }) {
+  useEffect(() => {
+    (async () => {
+      const res = await axios.get(`${baseUrl}/blogs?populate=*`);
+      let blogsData = res["status"] === 200 ? res["data"]?.["data"] : null;
+      setBlogsData(blogsData);
+    })();
+
+    return () => {};
+  }, []);
+
   return (
     <>
       <Metadata title="Lighthouse Storage | Blogs" />
@@ -31,12 +30,12 @@ function blogs({ blogsData }) {
         <Header style={{ background: "#000" }} />
         <div className="sectionContainer" style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
-            <FeaturedArticle blogsData={blogsData} />
+            {blogsData && <FeaturedArticle blogsData={blogsData} />}
           </div>
         </div>
         <div className="sectionContainer" style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
-            <MostPopularBlogs blogsData={blogsData} />
+            {blogsData && <MostPopularBlogs blogsData={blogsData} />}
           </div>
         </div>
 
@@ -46,4 +45,4 @@ function blogs({ blogsData }) {
   );
 }
 
-export default blogs;
+export default Blogs;
