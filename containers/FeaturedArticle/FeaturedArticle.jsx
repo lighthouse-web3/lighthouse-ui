@@ -14,6 +14,8 @@ function FeaturedArticle({ blogsData }) {
         new Date(a?.attributes?.publishedAt)
       );
     });
+    console.log(sorted[0]);
+
     setLatestBlog(sorted[0]);
   }, []);
 
@@ -21,6 +23,7 @@ function FeaturedArticle({ blogsData }) {
     <div className={Style.FeaturedArticle}>
       <p className={Style.title}>Read our latest blog</p>
       <div className={Style.blogContainer} data-aos="fade-up">
+
         <div
           className={Style.blogContainer__contentBox}
           onClick={() => {
@@ -36,6 +39,7 @@ function FeaturedArticle({ blogsData }) {
             {latestBlog?.attributes?.title}
           </p>
           <button className={"fillBtn__blue ptr"}>Read Full Story</button>
+
         </div>
         <div
           className={Style.blogContainer__imageBox}

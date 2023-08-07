@@ -22,6 +22,8 @@ function BlogView({ blogData }) {
       <div className={Style.BlogView__contentContainer}>
         <p className={Style.title}>{blogData?.title}</p>
 
+        <div className={Style.fontContainer}></div>
+
         <div className={Style.contentBox}>
           <ReactMarkdown
             linkTarget={"_blank"}

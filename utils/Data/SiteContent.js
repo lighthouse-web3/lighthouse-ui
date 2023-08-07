@@ -5,8 +5,7 @@ export const LandingPageData = {
   HeroSection: {
     title: "Store Files Permanently",
     subTitle:
-      "Lighthouse allows the users to store on Filecoin for a lifetime at a fixed price",
-    sideImage: "/globe.webp",
+      "Perpetual storage powered by decentralized web. Easily store and secure your data",
   },
   KeyFeatures: [
     {
@@ -221,8 +220,13 @@ export const footerData = {
     },
     {
       text: "Report Online Abuse",
-      path: "",
+      path: null,
       link: "https://docs.google.com/forms/d/16STP-KPftGBCaF5MjQuXBVBOqShIxScFtuPhCAlQJM8/viewform?ts=64a7c2b5&edit_requested=true",
+    },
+    {
+      text: "Talk to Expert",
+      path: null,
+      link: "https://calendly.com/aditya-lighthouse/30min?month=2023-07",
     },
   ],
 };

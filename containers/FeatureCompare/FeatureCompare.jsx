@@ -7,10 +7,6 @@ function FeatureCompare() {
   return (
     <div className={Styles.FeatureCompare}>
       <TitleSeprator title={"Key Features"} />
-      {/* <p className={Styles.FeatureCompare__title}>
-        Elevate Your Storage Experience:
-        <br /> Key Features of Lighthouse
-      </p> */}
       <div className={Styles.FeatureCompare__featureContainer}>
         {LandingPageData.KeyFeatures.map((item, index) => (
           <div className={Styles.featureCard} key={index} data-aos="fade-up">
