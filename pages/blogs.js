@@ -9,6 +9,7 @@ import {
 } from "../containers";
 import { baseUrl } from "../utils/Data/config";
 
+
 function Blogs() {
   const [blogsData, setBlogsData] = useState(null);
 
@@ -21,6 +22,7 @@ function Blogs() {
 
     return () => {};
   }, []);
+
 
   return (
     <>
