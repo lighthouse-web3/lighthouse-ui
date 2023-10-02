@@ -87,7 +87,7 @@ function Blog({ blogData, allBlogs }) {
         <div className="sectionContainer" style={{ minHeight: "auto" }}>
           <div
             className="contentContainer container"
-            style={{ maxHeight: "50vh", marginBottom: "2rem" }}
+            style={{ paddingBottom: "2rem" }}
           >
             <MostPopularBlogs blogsData={allBlogs} />
           </div>

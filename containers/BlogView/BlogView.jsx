@@ -7,7 +7,7 @@ import ReactMarkdown from "react-markdown";
 function BlogView({ blogData }) {
   return (
     <div className={Style.BlogView}>
-      <div className={Style.BlogView__BannerImage}>
+      <div className={Style.BlogView__BannerImage + " container"}>
         {blogData && (
           <ImageBox
             src={mediaUrl + blogData?.coverImage?.data?.attributes?.url}
@@ -21,6 +21,8 @@ function BlogView({ blogData }) {
       </div>
       <div className={Style.BlogView__contentContainer}>
         <p className={Style.title}>{blogData?.title}</p>
+
+        <div className={Style.fontContainer}></div>
 
         <div className={Style.contentBox}>
           <ReactMarkdown

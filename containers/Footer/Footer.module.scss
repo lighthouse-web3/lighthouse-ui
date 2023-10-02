@@ -69,6 +69,10 @@
       &__link {
         text-transform: capitalize;
         color: #fff;
+        &:hover {
+          text-decoration: underline;
+          text-underline-position: under;
+        }
       }
     }
 

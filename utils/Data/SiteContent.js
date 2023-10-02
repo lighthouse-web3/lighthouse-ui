@@ -5,8 +5,7 @@ export const LandingPageData = {
   HeroSection: {
     title: "Store Files Permanently",
     subTitle:
-      "Lighthouse allows the users to store on Filecoin for a lifetime at a fixed price",
-    sideImage: "/globe.webp",
+      "Perpetual storage powered by decentralized web. Easily store and secure your data",
   },
   KeyFeatures: [
     {
@@ -219,11 +218,16 @@ export const footerData = {
       path: null,
       link: "https://airtable.com/shrPFC2TgojuOAYO4",
     },
-    // {
-    //   text: "Terms & Conditions",
-    //   path: "/terms-condition",
-    //   link: null,
-    // },
+    {
+      text: "Report Online Abuse",
+      path: null,
+      link: "https://docs.google.com/forms/d/16STP-KPftGBCaF5MjQuXBVBOqShIxScFtuPhCAlQJM8/viewform?ts=64a7c2b5&edit_requested=true",
+    },
+    {
+      text: "Talk to Expert",
+      path: null,
+      link: "https://calendly.com/aditya-lighthouse/30min?month=2023-07",
+    },
   ],
 };
 
@@ -232,6 +236,14 @@ export const testimonialSection = {
   subTitle:
     "Testimonials from creative professionals who rely on Lighthouse to shine a light on their work.",
   testimonials: [
+    {
+      quote:
+        "Using lighthouse for Macha was the best choice to store things on IPFS and Filecoin. The integration process was remarkably simple and efficient, making it the ultimate storage solution due to its exceptional speed and reliability. Lighthouse would unquestionably be our preferred recommendation for Storage Infra of Web3",
+      person: "Saksham",
+      designation: "MetaWork Labs",
+      img: "/testimonial/saksham.jpg",
+      link: "https://twitter.com/saxmjain?s=21&t=nUsbImMLxK72iJU2a3rdjQ",
+    },
     {
       quote:
         "Lighthouse incentivized storage promotes data availability market competition for modular blockchains like Syscoin. Cheaper and secure than cloud storage, ensuring long-term data liveness guarantees for network participants.",

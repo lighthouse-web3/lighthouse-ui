@@ -69,7 +69,9 @@ function Footer() {
                   window.open(socialLinks?.twitter, "_blank");
                 }}
               >
-                <BsTwitter />
+                <ImageBox src={"/icons/twitterX.svg"} width="20px" />
+
+                {/* <BsTwitter /> */}
               </span>
               <span
                 className={Styles.icon + " ptr"}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // import Swiper from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FeatureBlogCard } from "../../components";
@@ -8,6 +8,16 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper";
+
+const getNumberOfElements = (parentWidth, minComponentWidth) => {
+  let number = Math.floor(parentWidth / minComponentWidth);
+  return number;
+};
+
+const getFillWidth = (parentWidth) => {
+  let numberOfElement = getNumberOfElements(parentWidth, 300);
+  return (parentWidth / numberOfElement).toFixed(2) - 20;
+};
 
 function MostPopularBlogs({ blogsData }) {
   const [windowSize, setWindowSize] = useState({
@@ -30,29 +40,21 @@ function MostPopularBlogs({ blogsData }) {
     <div className={Style.MostPopularBlogs} data-aos="fade-up">
       <p className={Style.MostPopularBlogs__title}>Our Blogs</p>
       <div className={Style.MostPopularBlogs__carouselContainer}>
-        <Swiper
-          slidesPerView={
-            windowSize.width > 600
-              ? blogsData?.length < 4
-                ? blogsData?.length
-                : 4
-              : 1
-          }
-          spaceBetween={30}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          className="mySwiper"
-        >
-          {blogsData?.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className={Style.blogCard}>
-                <FeatureBlogCard blog={item} />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {blogsData?.map((item, index) => (
+          <div
+            className={Style.blogCard}
+            style={{
+              width: getFillWidth(
+                windowSize.width > 550
+                  ? windowSize.width - 0.3 * windowSize.width
+                  : windowSize.width
+              ),
+            }}
+            key={index}
+          >
+            <FeatureBlogCard blog={item} />
+          </div>
+        ))}
       </div>
     </div>
   );

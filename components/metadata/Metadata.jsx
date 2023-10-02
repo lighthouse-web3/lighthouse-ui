@@ -36,6 +36,7 @@ function Metadata({
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://www.lighthouse.storage/" />
       <meta property="twitter:title" content="Lighthouse Perpetual Storage" />
+      <meta name="msvalidate.01" content="604856DE8115C3F615EDBDB485DD021A" />
       <meta
         property="twitter:description"
         content="Store Files Perpetually on IPFS and Filecoin"
