@@ -1,8 +1,6 @@
 import { Metadata } from "../components";
 import { DocContainer, DocContainer2, Footer, Header } from "../containers";
 
-import Styles from "../styles/Home.module.scss";
-
 export default function Documentation() {
   return (
     <>

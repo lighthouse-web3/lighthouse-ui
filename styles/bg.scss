@@ -5,11 +5,11 @@
   position: relative;
   overflow-y: visible;
   z-index: 0;
-  background: var(--clr-bg-black);
+  background: var(--bg-clr);
 
   .contentContainer {
     width: 100%;
     z-index: 2;
-    background: var(--clr-bg-black);
+    background: var(--bg-clr);
   }
 }

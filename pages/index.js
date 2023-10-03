@@ -15,8 +15,6 @@ import {
 import dynamic from "next/dynamic";
 const Header = dynamic(() => import("../containers/Header/Header"));
 
-import Styles from "../styles/Home.module.scss";
-
 export default function Home() {
   const [windowSize, setWindowSize] = useState({
     width: undefined,

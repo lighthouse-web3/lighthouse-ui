@@ -1,21 +1,21 @@
+@import "styles/mixins.scss";
+
+$bgclr: --bg-clr;
 .Header {
   width: 100%;
-  display: flex;
-  align-items: center;
-  background: #000000;
+  @include flex-centered;
+  background: var(--bg-clr);
   z-index: 5;
+  color: var(--txt-clr);
 
   .infoContainer {
-    display: flex;
+    @include flex-centered;
     justify-content: space-between;
     width: 100%;
-    align-items: center;
 
     .logoContainer {
       margin-right: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-centered;
 
       .imageBox {
         position: relative;
@@ -26,13 +26,16 @@
     }
 
     .linksContainer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-centered;
       font-weight: 300;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(6.800000190734863px);
+      padding: 0rem 1.5rem;
 
       p {
         a {
+          color: inherit;
           font-size: 1.1rem;
           transition: border-bottom 0.5s ease-in;
           padding-bottom: 0.3rem;
@@ -45,6 +48,15 @@
         .active {
           border-bottom: 1.5px solid rgb(255, 255, 255);
         }
+      }
+    }
+
+    .buttonContainer {
+      @include flex-centered;
+      gap: 1rem;
+      span {
+        @include flex-centered;
+        font-size: 1.5rem;
       }
     }
   }

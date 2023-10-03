@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
@@ -13,8 +13,11 @@ import {
   boot as bootIntercom,
   update as updateIntercom,
 } from "../utils/services/Intercom";
+import ThemeContext from "../utils/services/Themecontext";
 
 function MyApp({ Component, pageProps }) {
+  const [theme, setTheme] = useState("light");
+
   useEffect(() => {
     AOS.init({
       disable: false,
@@ -40,8 +43,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <Component {...pageProps} />
-      <ToastContainer />
+      <ThemeContext.Provider value={{ theme, setTheme }}>
+        <Component {...pageProps} />
+        <ToastContainer />
+      </ThemeContext.Provider>
     </>
   );
 }

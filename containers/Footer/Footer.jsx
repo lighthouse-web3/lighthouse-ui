@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import Styles from "./Footer.module.scss";
 
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
@@ -16,9 +16,12 @@ import { footerData, socialLinks } from "../../utils/Data/SiteContent";
 import { useRouter } from "next/router";
 import { sendEmail, validateEmail } from "../../utils/services/emailService";
 import { notify } from "../../utils/services/notification";
+import ThemeContext from "../../utils/services/Themecontext";
+import { useEffect } from "react";
 
 function Footer() {
   const _navigate = useRouter();
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const mailInput = useRef();
   const subscribeEmail = () => {
@@ -31,6 +34,10 @@ function Footer() {
       notify("Please Enter a valid Email", "error");
     }
   };
+
+  useEffect(() => {
+    console.log(theme, "footer");
+  }, [theme]);
 
   return (
     <div className={Styles.Footer}>

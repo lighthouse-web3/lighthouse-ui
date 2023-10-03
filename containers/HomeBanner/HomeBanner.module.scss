@@ -4,7 +4,7 @@
   color: white;
   height: calc(100% - 100px);
   position: relative;
-  background: black;
+  background: var(--bg-clr);
   padding: 1rem 15%;
 
   .infoBox {
