@@ -1,6 +1,6 @@
 @import "styles/mixins.scss";
 
-$bgclr: --bg-clr;
+$bgclr: var(--header-bar-clr);
 .Header {
   width: 100%;
   @include flex-centered;
@@ -29,8 +29,10 @@ $bgclr: --bg-clr;
       @include flex-centered;
       font-weight: 300;
       border-radius: 0.75rem;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(6.800000190734863px);
+      border: 1px solid $bgclr;
+      backdrop-filter: blur(6px);
+      background: $bgclr;
+
       padding: 0rem 1.5rem;
 
       p {

@@ -20,7 +20,7 @@ function HomeBanner() {
         ></div>
       </div>
       <div className={Styles.globeBox} data-aos="fade-up">
-        <video
+        {/* <video
           src={
             windowSize.width > 400
               ? "/globe_rotate.mp4"
@@ -29,9 +29,9 @@ function HomeBanner() {
           autoPlay
           loop
           muted
-        ></video>
+        ></video> */}
       </div>
-      <div className={Styles.overlay}></div>
+      {/* <div className={Styles.overlay}></div> */}
     </div>
   );
 }

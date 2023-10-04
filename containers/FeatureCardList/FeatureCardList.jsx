@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { FeatureCard, ImageBox, TitleSeprator } from "../../components";
+import { ImageBox, TitleSeprator } from "../../components";
 import { LandingPageData } from "../../utils/Data/SiteContent";
 import Style from "./FeatureCardList.module.scss";
-
-const featuresList = [];
 
 function FeatureCardList() {
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });

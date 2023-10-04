@@ -1,7 +1,7 @@
 .Banner {
   display: flex;
-  flex-direction: row;
-  color: white;
+
+  color: var(--txt-clr);
   height: calc(100% - 100px);
   position: relative;
   background: var(--bg-clr);
@@ -21,6 +21,10 @@
       font-size: calc(2.5rem + 3vw);
       text-transform: capitalize;
       font-weight: 700;
+      background: linear-gradient(90deg, #295fd9 1.12%, #bd487c 102.79%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .subTitle {
       font-family: var(--font-main);

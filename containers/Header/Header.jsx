@@ -126,7 +126,7 @@ function Header({ style }) {
             onClick={() =>
               window.open("https://files.lighthouse.storage/", "_blank")
             }
-            className={"fillBtn__blue"}
+            className={"fillBtn__purple"}
             style={{ padding: "0.5rem 2rem" }}
           >
             LOGIN
