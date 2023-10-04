@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Metadata } from "../components";
 import { FAQContainer, Footer, Header } from "../containers";
 
