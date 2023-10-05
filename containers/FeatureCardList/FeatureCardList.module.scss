@@ -1,65 +1,50 @@
+@import "styles/mixins.scss";
+@import "styles/mediaQuery.scss";
+
 .FeatureCardList {
   background: url("/wavePattern.svg");
   background-position: bottom;
   background-size: cover;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  &__Title {
+  @include flex-setup(column, flex-start);
+  color: var(--txt-clr);
+
+  &__titleContainer {
+    margin-top: 10%;
     width: 100%;
-    font-size: 3rem;
-    color: white;
-    font-weight: 700;
-    text-align: center;
+    text-align: left;
+    p:nth-of-type(1) {
+      text-transform: uppercase;
+      @include text-size(0.85rem);
+      font-weight: 700;
+      letter-spacing: 0.08rem;
+    }
+    p:nth-of-type(2) {
+      text-transform: uppercase;
+      @include text-size(2.5rem);
+      font-weight: 500;
+      line-height: 120%;
+      letter-spacing: -0.07rem;
+      margin-top: 10px;
+    }
   }
 
   &__FeatureContainer {
     display: flex;
     flex-direction: row;
-    .featureBox {
+    gap: 1.5rem;
+    span {
       flex: 1;
-      padding: 1.5rem;
-      margin: 2rem;
-      display: flex;
+    }
+    @include screen-size(phone-only) {
       flex-direction: column;
-      border: 5px solid #1e0f2c;
-      border-radius: 10px;
-      &:hover {
-        transform: scale(1.01);
-        cursor: pointer;
-        background: #1e0f2c;
-      }
-      &__icon {
-        width: 30%;
-        height: auto;
-      }
-
-      &__title {
-        font-size: 1.6rem;
-        color: white;
-        font-weight: 600;
-        display: flex;
-        justify-content: space-between;
-        margin: 2rem 0rem 1rem 0rem;
-        p {
-          margin: 0;
-        }
-      }
-
-      &__description {
-        letter-spacing: 0.02em;
-        color: #958a8a;
-        font-size: 1.2rem;
-        line-height: 130%;
-      }
     }
   }
 
   &__BannerContainer {
     flex: 1;
-    justify-content: center;
-    align-items: center;
-    display: flex;
+    @include flex-centered;
+    width: 100%;
     margin-top: 10%;
     .Banner {
       padding: 1.5rem;
@@ -85,48 +70,6 @@
         text-align: center;
         color: #ffffff;
       }
-    }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .FeatureCardList {
-    &__Title {
-      width: 100%;
-      font-size: 3rem;
-    }
-
-    &__FeatureContainer {
-      display: flex;
-      flex-direction: column;
-      .featureBox {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-
-        &__icon {
-          width: 30%;
-          height: auto;
-        }
-
-        &__title {
-          font-size: 1.5rem;
-          span {
-            display: none;
-          }
-        }
-
-        &__description {
-          text-align: center;
-        }
-      }
-    }
-
-    &__BannerContainer {
-      margin-bottom: 2rem;
     }
   }
 }

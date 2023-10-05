@@ -5,26 +5,19 @@ import ImageBox from "../ImageBox/ImageBox";
 function TestimonialCard({ quote, person, designation, img, link }) {
   return (
     <div className={Style.TestimonialCard}>
-      <ImageBox src={"/icons/apostrophy.svg"} width={80} height={100} />
-      <p className={Style.TestimonialCard__testimonial}>{quote}</p>
-
-      <div
-        className={Style.TestimonialCard__userBox}
-        onClick={() => {
-          window.open(`${link}`, `__blank`);
-        }}
-      >
+      <div className={Style.TestimonialCard__titleBox}>
         <ImageBox
           src={img}
-          width={50}
-          height={50}
           style={{ borderRadius: "50%" }}
+          width={"3rem"}
+          height={"3rem"}
         />
-
-        <p>
-          {person} <br /> <small>{designation}</small>
-        </p>
+        <div className={Style.personBox}>
+          <p>{person}</p>
+          <p>{designation}</p>
+        </div>
       </div>
+      <p className={Style.TestimonialCard__testimonial}>{quote}</p>
     </div>
   );
 }

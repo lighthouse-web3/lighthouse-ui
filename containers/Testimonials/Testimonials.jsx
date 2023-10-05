@@ -1,91 +1,37 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ImageBox, TestimonialCard, TitleSeprator } from "../../components";
-import { testimonialSection } from "../../utils/Data/SiteContent";
-import useWindowSize from "../../utils/Hooks/windowSize";
-
 import Style from "./Testimonials.module.scss";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/navigation";
-
-// import required modules
-import { EffectCoverflow, Navigation } from "swiper";
-import { MdOutlineNavigateNext } from "react-icons/md";
+import { TestimonialCard } from "../../components";
+import { testimonialSection } from "../../utils/Data/SiteContent";
 
 function Testimonials() {
-  const windowSize = useWindowSize();
-  const [currentSlide, setCurrentSlide] = useState();
-  const swiperRef = useRef();
+  const cardContainerRef = useRef(null);
+  const [cardWidth, setCardWidth] = useState(0);
+
+  const calculateCardWidth = () => {
+    const containerWidth = cardContainerRef?.current?.offsetWidth;
+    const cardCount = 3;
+    const gapRem = 2;
+    const cardWidth =
+      (containerWidth - gapRem * (cardCount - 1) * 16 - 2) / cardCount;
+    return cardWidth;
+  };
 
   useEffect(() => {
-    swiperRef?.current?.slideNext();
+    setCardWidth(calculateCardWidth());
   }, []);
 
   return (
     <div className={Style.Testimonials}>
-      <TitleSeprator title={"Testimonials"} />
-      <Swiper
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={"auto"}
-        onSlideChange={(e) => {
-          console.log(e);
-          setCurrentSlide(e?.activeIndex);
-        }}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 200,
-          modifier: 1,
-          slideShadows: false,
-        }}
-        breakpoints={{
-          768: {
-            slidesPerView: 1,
-            spaceBetween: 40,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 50,
-          },
-        }}
-        modules={[EffectCoverflow, Navigation]}
-        className={"testimonialSwipper"}
-      >
-        {testimonialSection?.["testimonials"]?.map((item, key) => (
-          <SwiperSlide key={key}>
+      <div className={Style.Testimonials__titleContainer}>
+        <p>Testimonials</p>
+        <p>What our client say</p>
+      </div>
+      <div className={Style.Testimonials__cardContainer} ref={cardContainerRef}>
+        {testimonialSection?.testimonials.map((item, index) => (
+          <span key={index} style={{ width: `${cardWidth}px` }}>
             <TestimonialCard {...item} />
-          </SwiperSlide>
+          </span>
         ))}
-      </Swiper>
-      <div className={Style.Testimonials__navigationBox}>
-        <span
-          onClick={() => {
-            swiperRef?.current?.slidePrev();
-          }}
-          style={currentSlide === 0 ? { opacity: "0.5", cursor: "auto" } : {}}
-        >
-          <MdOutlineNavigateNext />
-        </span>
-        <span
-          onClick={() => {
-            swiperRef?.current?.slideNext();
-          }}
-          style={
-            currentSlide === testimonialSection?.["testimonials"]?.length - 1
-              ? { opacity: "0.5", cursor: "auto" }
-              : {}
-          }
-        >
-          <MdOutlineNavigateNext />
-        </span>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 @import "styles/mixins.scss";
-
 $bgclr: var(--header-bar-clr);
+
 .Header {
   width: 100%;
   @include flex-centered;

@@ -25,6 +25,9 @@
     justify-content: space-between;
     span {
       width: 30%;
+      @include screen-size(phone-only) {
+        width: 100%;
+      }
     }
   }
 }
