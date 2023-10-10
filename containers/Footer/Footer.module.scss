@@ -1,5 +1,5 @@
 .Footer {
-  color: #fff;
+  color: var(--txt-clr);
   font-family: var(--font-main);
 
   &__upperFooter {
@@ -11,6 +11,7 @@
     gap: 1rem;
     padding-top: 3rem;
     padding-bottom: 3rem;
+    color: var(--txt-clr);
 
     .brandBox {
       flex: 1;
@@ -19,6 +20,7 @@
       justify-content: flex-start;
       align-items: flex-start;
       gap: 1rem;
+      color: inherit;
 
       .logo {
         width: 60%;
@@ -68,7 +70,7 @@
 
       &__link {
         text-transform: capitalize;
-        color: #fff;
+        color: var(--txt-clr);
         &:hover {
           text-decoration: underline;
           text-underline-position: under;

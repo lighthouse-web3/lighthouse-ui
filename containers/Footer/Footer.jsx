@@ -49,7 +49,11 @@ function Footer() {
               _navigate.push("/");
             }}
           >
-            <ImageBox src={"/logo.svg"} width="100%" />
+            {theme === "light" ? (
+              <ImageBox src={"/logo_black.png"} width="100%" />
+            ) : (
+              <ImageBox src={"/logo.svg"} width="100%" />
+            )}
           </div>
           <div className={Styles.socialBox}>
             {/* <p>Find us on social</p> */}

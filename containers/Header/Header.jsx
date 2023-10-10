@@ -82,7 +82,11 @@ function Header({ style }) {
               _navigate.push("/");
             }}
           >
-            <Image src="/logo.svg" layout="fill" alt="brandLogo" />
+            {theme === "light" ? (
+              <Image src={"/logo_black.png"} layout="fill" alt="brandLogo" />
+            ) : (
+              <Image src={"/logo.svg"} layout="fill" alt="brandLogo" />
+            )}
           </div>
         </div>
         <div className={Styles.linksContainer}>
