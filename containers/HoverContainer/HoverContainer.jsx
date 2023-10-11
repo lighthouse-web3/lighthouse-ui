@@ -41,7 +41,11 @@ function HoverContainer() {
     };
   }, []);
 
-  return <div ref={flashlight} className={styles.flashlight}></div>;
+  return (
+    <div className={styles.HoverContainer}>
+      <div ref={flashlight} className={styles.flashlight}></div>
+    </div>
+  );
 }
 
 export default HoverContainer;

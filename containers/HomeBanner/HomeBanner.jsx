@@ -9,7 +9,7 @@ function HomeBanner() {
 
   return (
     <div className={Styles.Banner}>
-      {/* <div className={Styles.infoBox} data-aos="fade-up">
+      <div className={Styles.infoBox} data-aos="fade-up">
         <div className={Styles.title}>
           {LandingPageData?.HeroSection?.title}
         </div>
@@ -19,14 +19,24 @@ function HomeBanner() {
             __html: LandingPageData?.HeroSection?.subTitle,
           }}
         ></div>
-      </div> */}
+      </div>
       <div className={Styles.globeBox} data-aos="fade-up">
         {/* <video
           src={
             windowSize.width > 400 ? "/curl.mp4" : "/globe_rotate_mobile.mp4"
           }
           autoPlay
-          loop
+          loop   <div className={Styles.infoBox} data-aos="fade-up">
+        <div className={Styles.title}>
+          {LandingPageData?.HeroSection?.title}
+        </div>
+        <div
+          className={Styles.subTitle}
+          dangerouslySetInnerHTML={{
+            __html: LandingPageData?.HeroSection?.subTitle,
+          }}
+        ></div>
+      </div>
           muted
         ></video> */}
         <HoverContainer />
