@@ -11,7 +11,6 @@ function FAQContainer() {
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
-    console.log("-----");
     (async () => {
       const res = await axios.get(`${baseUrl}/faqs?populate=*`);
       let faqData = res["status"] === 200 ? res["data"]?.["data"] : null;
@@ -68,7 +67,7 @@ function FAQContainer() {
         <button
           className={"fillBtn__blue ptr"}
           onClick={() => {
-            window.location.href = `mailto:${socialLinks?.contactMail}`;
+            window.location.href = `${socialLinks?.contactLink}`;
           }}
         >
           Contact Us
