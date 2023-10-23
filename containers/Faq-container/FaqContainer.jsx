@@ -67,7 +67,7 @@ function FAQContainer() {
         <button
           className={"fillBtn__blue ptr"}
           onClick={() => {
-            window.location.href = `${socialLinks?.contactLink}`;
+            window.open(`${socialLinks?.contactLink}`, "_blank");
           }}
         >
           Contact Us
