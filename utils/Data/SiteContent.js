@@ -3,9 +3,8 @@ export const disclaimerText =
 
 export const LandingPageData = {
   HeroSection: {
-    title: "Store Files Permanently",
-    subTitle:
-      "Perpetual storage powered by decentralized web. Easily store and secure your data",
+    title: "Unlock the Power of Web3 Storage:",
+    subTitle: "Secure, Reliable, & Lightning-Fast with Lighthouse.",
   },
   KeyFeatures: [
     {

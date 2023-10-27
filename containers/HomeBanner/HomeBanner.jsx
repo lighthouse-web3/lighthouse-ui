@@ -19,6 +19,10 @@ function HomeBanner() {
             __html: LandingPageData?.HeroSection?.subTitle,
           }}
         ></div>
+
+        <div className="flex-center">
+          <button className="fillBtn__blue">Build Your Legacy</button>
+        </div>
       </div>
       <div className={Styles.globeBox} data-aos="fade-up">
         {/* <video
@@ -39,7 +43,7 @@ function HomeBanner() {
       </div>
           muted
         ></video> */}
-        <HoverContainer />
+        {/* <HoverContainer /> */}
       </div>
       {/* <div className={Styles.overlay}></div> */}
     </div>

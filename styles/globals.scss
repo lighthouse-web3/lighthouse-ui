@@ -16,7 +16,7 @@
 
   --bg-clr: #08060b;
   --txt-clr: #ffffff;
-  --primary-clr: #858bf3;
+  --primary-clr: #6c41f4;
 
   --header-bar-clr: rgba(255, 255, 255, 0.05);
   --featureCard-bg-clr: #1f1d23;
@@ -63,6 +63,11 @@ body {
   color: white;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .border_btn {
   cursor: pointer;
   width: fit-content;
