@@ -1,18 +1,25 @@
 @import "styles/mixins.scss";
 
 .TitleSeprator {
+  color: var(--txt-clr);
   width: 100%;
   @include flex-centered;
   gap: 1rem;
-  p {
-    font-style: normal;
+  margin-top: 10%;
+  text-align: center;
+  p:nth-of-type(1) {
+    text-transform: uppercase;
+    @include text-size(0.85rem);
     font-weight: 700;
+    letter-spacing: 0.08rem;
+  }
+  p:nth-of-type(2) {
+    text-transform: uppercase;
     @include text-size(2.5rem);
-    line-height: 150%;
-    letter-spacing: 0.2px;
-    color: var(--txt-clr);
-    font-family: var(--font-inter);
-    font-weight: 700;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.07rem;
+    margin-top: 10px;
   }
 }
 

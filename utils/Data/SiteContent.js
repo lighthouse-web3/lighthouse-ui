@@ -8,35 +8,35 @@ export const LandingPageData = {
   },
   KeyFeatures: [
     {
-      icon: "/featureIcon/feature6.svg",
+      icon: "/featureIcon/feature6.png",
       title: "Pay once and store forever",
       subTitle: `Never worry about recurring payments with our "Pay once and store forever" feature.`,
     },
     {
-      icon: "/featureIcon/feature5.svg",
+      icon: "/featureIcon/feature5.png",
       title: "Store files on IPFS and Filecoin",
       subTitle: `Harness the power of IPFS and Filecoin to securely store your files on a decentralized network.`,
     },
     {
-      icon: "/featureIcon/feature1.svg",
+      icon: "/featureIcon/feature1.png",
       title: "Encryption & Access control functionality",
       subTitle:
         "Keep your data safe and with token gated access on a public network.",
     },
     {
-      icon: "/featureIcon/feature4.svg",
+      icon: "/featureIcon/feature4.png",
       title: "Dedicated IPFS gateways for fast retrievals",
       subTitle:
         "Experience lightning-fast retrievals with our dedicated IPFS Gateways.",
     },
     {
-      icon: "/featureIcon/feature3.svg",
+      icon: "/featureIcon/feature3.png",
       title: "Image resize to save bandwidth",
       subTitle:
         "Save bandwidth without sacrificing image quality with our automatic image resize feature.",
     },
     {
-      icon: "/featureIcon/feature2.svg",
+      icon: "/featureIcon/feature2.png",
       title: "Fast Gateway that streams even 4k videos",
       subTitle:
         "Enjoy seamless streaming of 4K videos with our ultra-fast gateways.",
@@ -84,13 +84,13 @@ export const LandingPageData = {
   ],
   StorageFeature: [
     {
-      icon: "/suitsIcon/suitsIcon1.webp",
+      icon: "/suitsIcon/suitsIcon1.svg",
       title: "Lighthouse Files",
       description: "Explore the working of Lighthouse using our DAPP.",
       link: "https://files.lighthouse.storage/",
     },
     {
-      icon: "/suitsIcon/suitsIcon2.webp",
+      icon: "/suitsIcon/suitsIcon2.svg",
       title: "Lighthouse SDK",
       description:
         "Lighthouse Software Developer Kit comprises of all the tools developers need to integrate Lighthouse.",
@@ -98,14 +98,14 @@ export const LandingPageData = {
     },
 
     {
-      icon: "/suitsIcon/suitsIcon3.webp",
+      icon: "/suitsIcon/suitsIcon3.svg",
       title: "Lighthouse CLI",
       description:
         "All lighthouse features available through the convenience of the Command Line Interface ",
       link: "https://docs.lighthouse.storage/lighthouse-1/cli-tool/overview",
     },
     {
-      icon: "/suitsIcon/suitsIcon4.webp",
+      icon: "/suitsIcon/suitsIcon4.svg",
       title: "Lighthouse Kavach",
       description:
         "Store private files on the distributed web with secure encryption and access control features through Lighthouse Kavach",

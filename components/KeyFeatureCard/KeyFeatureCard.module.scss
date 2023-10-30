@@ -34,4 +34,12 @@
       color: white;
     }
   }
+
+  &__iconBox {
+    width: 4rem;
+    height: 4rem;
+    // background: var(--primary-clr);
+    border-radius: 100%;
+    @include flex-centered;
+  }
 }

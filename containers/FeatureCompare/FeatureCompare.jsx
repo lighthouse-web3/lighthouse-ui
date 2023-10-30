@@ -10,7 +10,11 @@ function FeatureCompare() {
       <div className={Styles.FeatureCompare__featureContainer}>
         {LandingPageData.KeyFeatures.map((item, index) => (
           <span key={index}>
-            <KeyFeatureCard title={item?.title} subTitle={item?.subTitle} />
+            <KeyFeatureCard
+              title={item?.title}
+              subTitle={item?.subTitle}
+              icon={item?.icon}
+            />
           </span>
         ))}
       </div>

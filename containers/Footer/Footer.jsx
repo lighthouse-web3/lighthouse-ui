@@ -152,8 +152,6 @@ function Footer() {
             className="fillBtn__purple ptr"
             style={{
               width: "100%",
-              background: "#2563EB",
-              border: "1px solid #2563EB",
               marginTop: "1rem",
             }}
             onClick={subscribeEmail}

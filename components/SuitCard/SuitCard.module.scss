@@ -15,12 +15,18 @@
   justify-content: flex-start;
   text-align: center;
   font-family: var(--font-sans);
+  transition: background 0.5s, color 0.5s;
+  transition-timing-function: ease-in;
 
   &__iconBox {
     width: 4rem;
     height: 4rem;
     background: var(--primary-clr);
     border-radius: 100%;
+    @include flex-centered;
+    img {
+      filter: brightness(0) invert(1);
+    }
   }
 
   &__title {
@@ -34,5 +40,18 @@
     opacity: 0.7;
     line-height: 160%;
     margin: 0;
+  }
+
+  &:hover {
+    background: var(--primary-clr);
+    color: white;
+    cursor: pointer;
+
+    .SuitCard__iconBox {
+      background: white !important;
+      img {
+        filter: none;
+      }
+    }
   }
 }
