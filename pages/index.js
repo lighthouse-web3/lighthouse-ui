@@ -36,7 +36,7 @@ export default function Home() {
     <>
       <Metadata title="Lighthouse Perpetual Storage" />
       <div className={"bodyContainer"}>
-        <NewsBar />
+        {/* <NewsBar /> */}
         <Header />
         <div className="sectionContainer">
           <div className="contentContainer">
@@ -49,8 +49,8 @@ export default function Home() {
             <PartnerCarousel />
           </div>
         </div>
-        <div className="sectionContainer">
-          <div className="contentContainer container">
+        <div className="">
+          <div className="container">
             <FeatureCompare />
           </div>
         </div>

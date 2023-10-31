@@ -1,14 +1,53 @@
-import React from "react";
+import React, { useContext } from "react";
 import { LandingPageData } from "../../utils/Data/SiteContent";
 import Styles from "./HomeBanner.module.scss";
 import useWindowSize from "../../utils/Hooks/windowSize";
-import { HoverContainer } from "..";
+import { ImageBox, StatBox } from "../../components";
+import ThemeContext from "../../utils/services/Themecontext";
+// import { HoverContainer } from "..";
 
 function HomeBanner() {
   const windowSize = useWindowSize();
+  const { theme, setTheme } = useContext(ThemeContext);
 
   return (
     <div className={Styles.Banner}>
+      <span className={Styles.Banner__bgImg1}>
+        <ImageBox
+          src={`/BannerImages/${theme}_bannerImg_1.png`}
+          width={"20vw"}
+          height={"20vw"}
+          aspectRatio={true}
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+        />
+      </span>
+      <span className={Styles.Banner__bgImg2}>
+        <ImageBox
+          src={`/BannerImages/${theme}_bannerImg_2.png`}
+          width={"30vw"}
+          height={"30vw"}
+          aspectRatio={true}
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+        />
+      </span>
+      <span className={Styles.Banner__bgImg3}>
+        <ImageBox
+          src={`/BannerImages/${theme}_bannerImg_3.png`}
+          width={"30vw"}
+          height={"30vw"}
+          aspectRatio={true}
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+        />
+      </span>
       <div className={Styles.infoBox} data-aos="fade-up">
         <div className={Styles.title}>
           {LandingPageData?.HeroSection?.title}
@@ -24,28 +63,9 @@ function HomeBanner() {
           <button className="fillBtn__blue">Build Your Legacy</button>
         </div>
       </div>
-      <div className={Styles.globeBox} data-aos="fade-up">
-        {/* <video
-          src={
-            windowSize.width > 400 ? "/curl.mp4" : "/globe_rotate_mobile.mp4"
-          }
-          autoPlay
-          loop   <div className={Styles.infoBox} data-aos="fade-up">
-        <div className={Styles.title}>
-          {LandingPageData?.HeroSection?.title}
-        </div>
-        <div
-          className={Styles.subTitle}
-          dangerouslySetInnerHTML={{
-            __html: LandingPageData?.HeroSection?.subTitle,
-          }}
-        ></div>
+      <div className={Styles.statBox} data-aos="fade-up">
+        <StatBox />
       </div>
-          muted
-        ></video> */}
-        {/* <HoverContainer /> */}
-      </div>
-      {/* <div className={Styles.overlay}></div> */}
     </div>
   );
 }

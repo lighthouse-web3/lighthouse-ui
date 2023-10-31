@@ -4,9 +4,9 @@ $bgclr: var(--header-bar-clr);
 .Header {
   width: 100%;
   @include flex-centered;
-  background: var(--bg-clr);
+  background: var(--clr-bg-black);
   z-index: 5;
-  color: var(--txt-clr);
+  color: #ffffff;
 
   .infoContainer {
     @include flex-centered;
@@ -29,9 +29,7 @@ $bgclr: var(--header-bar-clr);
       @include flex-centered;
       font-weight: 300;
       border-radius: 0.75rem;
-      border: 1px solid $bgclr;
       backdrop-filter: blur(6px);
-      background: $bgclr;
 
       padding: 0rem 1.5rem;
 

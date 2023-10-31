@@ -10,8 +10,8 @@ function KeyFeatureCard({ title, subTitle, icon }) {
         <div className={styles.KeyFeatureCard__iconBox}>
           <ImageBox
             src={icon}
-            width={"4rem"}
-            height={"4rem"}
+            width={"6rem"}
+            height={"6rem"}
             aspectRatio={true}
             style={{
               objectFit: "cover",

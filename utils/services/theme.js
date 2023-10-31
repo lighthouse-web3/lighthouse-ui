@@ -29,6 +29,11 @@ const ThemeProperties = [
     dark: "linear-gradient(125deg, #000 -1.58%, rgba(77, 77, 77, 0.00) 123.59%)",
     light: "#F7F7F7",
   },
+  {
+    property: "--testimonialCard-border-clr",
+    dark: "#4f4f4f",
+    light: "#F7F7F7",
+  },
 ];
 
 export const themeChanger = (theme) => {

@@ -3,20 +3,19 @@
 
 .KeyFeatureCard {
   width: 100%;
-  min-height: 100px;
-  height: auto;
+  height: 100%;
   border-radius: 0.9375rem;
   font-family: var(--font-sans);
   background: var(--featureCard-bg-clr);
   color: var(--txt-clr);
-  padding: 1rem;
+  padding: 3rem 0.5rem 1rem 0.5rem;
   &__innerCard {
     background: var(--featureCard-bg-innerClr);
     width: 100%;
-    margin-top: 2rem;
+    height: 100%;
     border-radius: inherit;
     padding: 2rem 1rem;
-    transition: background 0.5s, color 0.5s;
+    transition: background 0.2s, color 0.2s;
     transition-timing-function: ease-in;
     p:nth-of-type(1) {
       @include text-size(1.75rem);
@@ -36,8 +35,8 @@
   }
 
   &__iconBox {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     // background: var(--primary-clr);
     border-radius: 100%;
     @include flex-centered;
