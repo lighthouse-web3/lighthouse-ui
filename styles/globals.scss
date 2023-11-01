@@ -116,6 +116,8 @@ body {
   font-size: 1.2rem;
   border: none;
   font-weight: 400;
+  overflow: hidden;
+  position: relative;
 
   &:hover {
     font-weight: 600;

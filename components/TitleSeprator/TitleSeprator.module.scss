@@ -3,15 +3,16 @@
 .TitleSeprator {
   color: var(--txt-clr);
   width: 100%;
-  @include flex-centered;
+  @include flex-setup(column, center);
   gap: 1rem;
-  margin-top: 10%;
+  margin-top: 5%;
   text-align: center;
   p:nth-of-type(1) {
     text-transform: uppercase;
     @include text-size(0.85rem);
     font-weight: 700;
     letter-spacing: 0.08rem;
+    margin: 0px;
   }
   p:nth-of-type(2) {
     text-transform: uppercase;

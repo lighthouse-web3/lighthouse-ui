@@ -18,6 +18,7 @@ import { sendEmail, validateEmail } from "../../utils/services/emailService";
 import { notify } from "../../utils/services/notification";
 import ThemeContext from "../../utils/services/Themecontext";
 import { useEffect } from "react";
+import { RiTwitterXLine } from "react-icons/ri";
 
 function Footer() {
   const _navigate = useRouter();
@@ -50,7 +51,7 @@ function Footer() {
             }}
           >
             {theme === "light" ? (
-              <ImageBox src={"/logo_black.png"} width="100%" />
+              <ImageBox src={"/logo_black.svg"} width="100%" />
             ) : (
               <ImageBox src={"/logo.svg"} width="100%" />
             )}
@@ -80,9 +81,7 @@ function Footer() {
                   window.open(socialLinks?.twitter, "_blank");
                 }}
               >
-                <ImageBox src={"/icons/twitterX.svg"} width="20px" />
-
-                {/* <BsTwitter /> */}
+                <RiTwitterXLine />
               </span>
               <span
                 className={Styles.icon + " ptr"}

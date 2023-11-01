@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FeatureBlogCard, ImageBox } from "../../components";
+import { FeatureBlogCard, ImageBox, TitleSeprator } from "../../components";
 import blogs from "../../pages/blogs";
 import { mediaUrl } from "../../utils/Data/config";
 import useWindowSize from "../../utils/Hooks/windowSize";
@@ -21,9 +21,9 @@ function FeaturedArticle({ blogsData }) {
 
   return (
     <div className={Style.FeaturedArticle}>
-      <p className={Style.title}>Read our latest blog</p>
-      <div className={Style.blogContainer} data-aos="fade-up">
+      {/* <TitleSeprator topTitle={"Blogs"} title={"Read our latest blog"} /> */}
 
+      <div className={Style.blogContainer} data-aos="fade-up">
         <div
           className={Style.blogContainer__contentBox}
           onClick={() => {
@@ -39,7 +39,6 @@ function FeaturedArticle({ blogsData }) {
             {latestBlog?.attributes?.title}
           </p>
           <button className={"fillBtn__blue ptr"}>Read Full Story</button>
-
         </div>
         <div
           className={Style.blogContainer__imageBox}

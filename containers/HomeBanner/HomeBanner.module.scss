@@ -9,8 +9,8 @@
 
   &__bgImg1 {
     position: absolute;
-    top: -5%;
-    left: -5%;
+    top: 0%;
+    left: -7%;
     z-index: 0;
   }
   &__bgImg2 {
@@ -35,9 +35,9 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 2rem;
-    padding: 10% 7.5% 1rem 7.5%;
+    padding: 0% 7.5% 0% 7.5%;
 
     text-align: center;
     .title {

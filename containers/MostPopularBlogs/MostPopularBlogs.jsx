@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 // import Swiper from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FeatureBlogCard } from "../../components";
+import { FeatureBlogCard, TitleSeprator } from "../../components";
 import Style from "./MostPopularBlogs.module.scss";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -38,7 +38,11 @@ function MostPopularBlogs({ blogsData }) {
   }, []);
   return (
     <div className={Style.MostPopularBlogs} data-aos="fade-up">
-      <p className={Style.MostPopularBlogs__title}>Our Blogs</p>
+      <TitleSeprator
+        style={{ alignItems: "flex-start" }}
+        topTitle={"Our Blogs"}
+        title={"Read our latest blog"}
+      />
       <div className={Style.MostPopularBlogs__carouselContainer}>
         {blogsData?.map((item, index) => (
           <div

@@ -126,7 +126,8 @@ $bgclr: var(--header-bar-clr);
 @media screen and (max-width: 800px) {
   .Header {
     .navbarMobileMenu {
-      display: block;
+      display: flex;
+      margin-left: 10px;
     }
 
     .infoContainer {

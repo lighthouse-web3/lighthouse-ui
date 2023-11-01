@@ -1,15 +1,10 @@
+@import "styles/mixins.scss";
+
 .FeaturedArticle {
+  margin-top: 5%;
   width: 100%;
-  color: white;
+  color: var(--txt-clr);
   font-family: var(--font-main);
-  .title {
-    font-size: 2.5rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 62px;
-    letter-spacing: -2px;
-    margin-bottom: 2.5rem;
-  }
 
   .blogContainer {
     width: 100%;
@@ -18,7 +13,6 @@
     gap: 2rem;
     min-height: 300px;
     padding-bottom: 7%;
-    border-bottom: 1px solid white;
 
     &__contentBox {
       display: flex;
@@ -29,16 +23,18 @@
       .title {
         font-style: normal;
         font-weight: 700;
-        font-size: 3rem;
+        @include text-size(3rem);
         line-height: 150%;
         letter-spacing: 0.1rem;
         margin-bottom: 12px;
+        font-family: inherit;
       }
     }
     &__imageBox {
       flex: 1;
       padding: 2rem;
       width: 100%;
+      border-radius: 10px;
     }
   }
 }

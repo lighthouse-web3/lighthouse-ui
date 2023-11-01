@@ -6,7 +6,7 @@ function KeyFeatureCard({ title, subTitle, icon }) {
   return (
     <div className={styles.KeyFeatureCard}>
       <div className={styles.KeyFeatureCard__innerCard}>
-        <p>{title}</p>
+        <p style={{ marginTop: "0rem" }}>{title}</p>
         <div className={styles.KeyFeatureCard__iconBox}>
           <ImageBox
             src={icon}

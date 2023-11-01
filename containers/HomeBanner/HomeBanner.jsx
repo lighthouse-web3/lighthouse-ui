@@ -10,25 +10,54 @@ function HomeBanner() {
   const windowSize = useWindowSize();
   const { theme, setTheme } = useContext(ThemeContext);
 
+  console.log(windowSize);
+
   return (
     <div className={Styles.Banner}>
-      <span className={Styles.Banner__bgImg1}>
-        <ImageBox
-          src={`/BannerImages/${theme}_bannerImg_1.png`}
-          width={"20vw"}
-          height={"20vw"}
-          aspectRatio={true}
-          style={{
-            objectFit: "cover",
-            objectPosition: "center",
-          }}
-        />
-      </span>
+      {windowSize?.width && (
+        <span className={Styles.Banner__bgImg1}>
+          <ImageBox
+            src={`/BannerImages/${theme}_bannerImg_1.png`}
+            width={
+              windowSize?.width > 1440
+                ? "30vw"
+                : windowSize?.width > 600
+                ? "35vw"
+                : "50vw"
+            }
+            height={
+              windowSize?.width > 1440
+                ? "30vw"
+                : windowSize?.width > 600
+                ? "35vw"
+                : "50vw"
+            }
+            aspectRatio={true}
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+          />
+        </span>
+      )}
+
       <span className={Styles.Banner__bgImg2}>
         <ImageBox
           src={`/BannerImages/${theme}_bannerImg_2.png`}
-          width={"30vw"}
-          height={"30vw"}
+          width={
+            windowSize?.width > 1440
+              ? "30vw"
+              : windowSize?.width > 600
+              ? "35vw"
+              : "50vw"
+          }
+          height={
+            windowSize?.width > 1440
+              ? "30vw"
+              : windowSize?.width > 600
+              ? "35vw"
+              : "50vw"
+          }
           aspectRatio={true}
           style={{
             objectFit: "cover",
@@ -39,8 +68,20 @@ function HomeBanner() {
       <span className={Styles.Banner__bgImg3}>
         <ImageBox
           src={`/BannerImages/${theme}_bannerImg_3.png`}
-          width={"30vw"}
-          height={"30vw"}
+          width={
+            windowSize?.width > 1440
+              ? "30vw"
+              : windowSize?.width > 600
+              ? "35vw"
+              : "50vw"
+          }
+          height={
+            windowSize?.width > 1440
+              ? "30vw"
+              : windowSize?.width > 600
+              ? "35vw"
+              : "50vw"
+          }
           aspectRatio={true}
           style={{
             objectFit: "cover",
