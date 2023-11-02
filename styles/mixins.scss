@@ -117,3 +117,22 @@
     display: none;
   }
 }
+
+@mixin grid-equal(
+  $column,
+  $row,
+  $column-gap: 1rem,
+  $row-gap: 1rem,
+  $equal-height: "true"
+) {
+  display: grid;
+  grid-template-columns: repeat($column, 1fr);
+  grid-template-rows: repeat($row, 1fr);
+  grid-column-gap: $column-gap;
+  grid-row-gap: $row-gap;
+  @if $equal-height == "true" {
+    grid-auto-rows: 1fr;
+  } @else {
+    grid-auto-rows: auto;
+  }
+}

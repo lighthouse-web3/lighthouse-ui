@@ -61,7 +61,12 @@ function FeaturedArticle({ blogsData }) {
               width={"100%"}
               height={"100%"}
               aspectRatio={true}
-              style={{ borderRadius: "10px", objectFit: "cover" }}
+              layout={"fill"}
+              style={{
+                borderRadius: "10px",
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
             />
           )}
         </div>

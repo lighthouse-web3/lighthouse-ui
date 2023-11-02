@@ -3,9 +3,10 @@
 .Banner {
   display: flex;
   color: var(--txt-clr);
-  height: calc(100% - 100px);
+  height: calc(100vh - 100px);
   position: relative;
   background: var(--bg-clr);
+  margin-bottom: 10vh;
 
   &__bgImg1 {
     position: absolute;
@@ -37,7 +38,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
-    padding: 0% 7.5% 0% 7.5%;
+    // padding: 0% 7.5% 0% 7.5%;
 
     text-align: center;
     .title {

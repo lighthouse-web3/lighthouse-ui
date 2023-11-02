@@ -5,7 +5,6 @@
   background: url("/wavePattern.svg");
   background-position: bottom;
   background-size: cover;
-  min-height: 100vh;
   @include flex-setup(column, flex-start);
   color: var(--txt-clr);
 
@@ -30,14 +29,13 @@
   }
 
   &__FeatureContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
-    span {
-      flex: 1;
+    @include grid-equal(4, 1, 2rem, 2rem);
+
+    @include screen-size(tablet-landscape-up) {
+      @include grid-equal(2, 1, 2rem, 2rem);
     }
     @include screen-size(phone-only) {
-      flex-direction: column;
+      @include grid-equal(1, 1, 2rem, 2rem);
     }
   }
 

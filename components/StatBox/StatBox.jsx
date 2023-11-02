@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import styles from "./StatBox.module.scss";
 import ThemeContext from "../../utils/services/Themecontext";
+import CountUp from "react-countup";
+
 function StatBox() {
   const { theme, setTheme } = useContext(ThemeContext);
   return (
@@ -16,19 +18,27 @@ function StatBox() {
     >
       <div className={styles.StatBox__stat}>
         <p>Clients</p>
-        <p>3K+</p>
+        <p>
+          <CountUp duration={5} end={100} delay={2} suffix="+" />
+        </p>
       </div>
       <div className={styles.StatBox__stat}>
         <p>Clients</p>
-        <p>3K+</p>
+        <p>
+          <CountUp duration={5} end={100} delay={3} suffix="+" />
+        </p>
       </div>
       <div className={styles.StatBox__stat}>
         <p>Clients</p>
-        <p>3K+</p>
+        <p>
+          <CountUp duration={5} end={100} delay={4} suffix="+" />
+        </p>
       </div>
       <div className={styles.StatBox__stat}>
         <p>Clients</p>
-        <p>3K+</p>
+        <p>
+          <CountUp duration={5} end={100} delay={5} suffix="+" />
+        </p>
       </div>
     </div>
   );
