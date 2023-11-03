@@ -225,6 +225,11 @@ export const footerData = {
       link: "https://docs.google.com/forms/d/16STP-KPftGBCaF5MjQuXBVBOqShIxScFtuPhCAlQJM8/viewform?ts=64a7c2b5&edit_requested=true",
     },
     {
+      text: "Service Level Agreement (SLA)",
+      path: null,
+      link: "https://docs.google.com/document/d/1wytqTDfbhlpkdKKlOMjCWtBaO5BSLnkFoNlJOw6wTUk/edit",
+    },
+    {
       text: "Talk to Expert",
       path: null,
       link: "https://calendly.com/aditya-lighthouse/30min?month=2023-07",
