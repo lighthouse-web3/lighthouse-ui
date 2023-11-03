@@ -10,7 +10,8 @@
     width: 100%;
     @include grid-equal(2, 1, 2rem, 2rem);
     @include screen-size(phone-only) {
-      @include grid-equal(1, 1, 1rem, 1.5rem, "false");
+      @include grid-equal(1, 1, 1rem, 1.5rem, "true");
+      grid-auto-flow: dense;
     }
     padding-bottom: 5vh;
 
@@ -30,6 +31,9 @@
     &__imageBox {
       width: 100%;
       height: 100%;
+      @include screen-size(phone-only) {
+        grid-row: 1;
+      }
     }
   }
 }
