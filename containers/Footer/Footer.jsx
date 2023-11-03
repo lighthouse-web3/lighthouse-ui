@@ -1,9 +1,5 @@
 import React, { useContext, useRef } from "react";
 import Styles from "./Footer.module.scss";
-
-import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { BsTelegram, BsDiscord, BsTwitter, BsLinkedin } from "react-icons/bs";
-// import { BiLogoDiscordAlt } from "react-icons/bi";
 import {
   FaDiscord,
   FaInstagram,

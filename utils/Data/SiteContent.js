@@ -8,35 +8,46 @@ export const LandingPageData = {
   },
   KeyFeatures: [
     {
-      icon: "/featureIcon/feature6.png",
+      icon: "/featureIcon/feature_6.svg",
+      width: "6rem",
       title: "Pay once and store forever",
       subTitle: `Never worry about recurring payments with our "Pay once and store forever" feature.`,
     },
     {
-      icon: "/featureIcon/feature5.png",
+      icon: "/featureIcon/feature_5.svg",
+      width: "8rem",
+
       title: "Store files on IPFS and Filecoin",
       subTitle: `Harness the power of IPFS and Filecoin to securely store your files on a decentralized network.`,
     },
     {
-      icon: "/featureIcon/feature1.png",
+      icon: "/featureIcon/feature_1.svg",
+      width: "6rem",
+
       title: "Encryption & Access control functionality",
       subTitle:
         "Keep your data safe and with token gated access on a public network.",
     },
     {
-      icon: "/featureIcon/feature4.png",
+      icon: "/featureIcon/feature_4.svg",
+      width: "8rem",
+
       title: "Dedicated IPFS gateways for fast retrievals",
       subTitle:
         "Experience lightning-fast retrievals with our dedicated IPFS Gateways.",
     },
     {
-      icon: "/featureIcon/feature3.png",
+      icon: "/featureIcon/feature_3.svg",
+      width: "6rem",
+
       title: "Image resize to save bandwidth",
       subTitle:
         "Save bandwidth without sacrificing image quality with our automatic image resize feature.",
     },
     {
-      icon: "/featureIcon/feature2.png",
+      icon: "/featureIcon/feature_2.svg",
+      width: "6rem",
+
       title: "Fast Gateway that streams even 4k videos",
       subTitle:
         "Enjoy seamless streaming of 4K videos with our ultra-fast gateways.",

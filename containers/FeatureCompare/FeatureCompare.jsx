@@ -10,11 +10,7 @@ function FeatureCompare() {
       <div className={Styles.FeatureCompare__featureContainer}>
         {LandingPageData.KeyFeatures.map((item, index) => (
           <span key={index} data-aos="fade-up" data-aos-delay={100 * index}>
-            <KeyFeatureCard
-              title={item?.title}
-              subTitle={item?.subTitle}
-              icon={item?.icon}
-            />
+            <KeyFeatureCard {...item} />
           </span>
         ))}
       </div>
