@@ -56,10 +56,6 @@ function Header({ style }) {
   }, [_navigate]);
 
   useEffect(() => {
-    themeChanger(theme);
-  }, [theme]);
-
-  useEffect(() => {
     const onScroll = (e) => {
       setScrollTop(e.target.documentElement.scrollTop);
       setScrolling(e.target.documentElement.scrollTop > scrollTop);

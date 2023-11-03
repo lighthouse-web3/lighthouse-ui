@@ -17,27 +17,21 @@ function StatBox() {
       }
     >
       <div className={styles.StatBox__stat}>
-        <p>Clients</p>
+        <p>API Request / Day</p>
         <p>
-          <CountUp duration={5} end={100} delay={2} suffix="+" />
+          <CountUp duration={8} end={10} delay={2} suffix="M+" />
         </p>
       </div>
       <div className={styles.StatBox__stat}>
-        <p>Clients</p>
+        <p>Users</p>
         <p>
-          <CountUp duration={5} end={100} delay={3} suffix="+" />
+          <CountUp duration={8} end={9} delay={2} suffix="K+" />
         </p>
       </div>
       <div className={styles.StatBox__stat}>
-        <p>Clients</p>
+        <p>Number of files</p>
         <p>
-          <CountUp duration={5} end={100} delay={4} suffix="+" />
-        </p>
-      </div>
-      <div className={styles.StatBox__stat}>
-        <p>Clients</p>
-        <p>
-          <CountUp duration={5} end={100} delay={5} suffix="+" />
+          <CountUp duration={8} end={1.8} decimals={1} delay={2} suffix="M+" />
         </p>
       </div>
     </div>

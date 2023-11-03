@@ -17,7 +17,7 @@ const ThemeProperties = [
   {
     property: "--featureCard-bg-clr",
     dark: "#1F1D23",
-    light: "#F7F7F7",
+    light: "#c7c7c785",
   },
   {
     property: "--featureCard-bg-innerClr",
@@ -32,11 +32,18 @@ const ThemeProperties = [
   {
     property: "--testimonialCard-border-clr",
     dark: "#4f4f4f",
-    light: "#F7F7F7",
+    light: "#c0c0c0",
+  },
+  {
+    property: "--wave-pattern",
+    dark: `url("/wavePattern_dark.svg")`,
+    light: `url("/wavePattern_light.svg")`,
   },
 ];
 
 export const themeChanger = (theme) => {
+  theme &&
+    localStorage.setItem("lighthouse.storage/store", JSON.stringify({ theme }));
   ThemeProperties.forEach((property) => {
     document.documentElement.style.setProperty(
       `${property?.property}`,

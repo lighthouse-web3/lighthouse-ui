@@ -14,9 +14,10 @@ import {
   update as updateIntercom,
 } from "../utils/services/Intercom";
 import ThemeContext from "../utils/services/Themecontext";
+import { themeChanger } from "../utils/services/theme";
 
 function MyApp({ Component, pageProps }) {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(null);
 
   useEffect(() => {
     AOS.init({
@@ -39,7 +40,20 @@ function MyApp({ Component, pageProps }) {
     });
     loadIntercom();
     bootIntercom();
+
+    const themeFromLocalStorage = JSON.parse(
+      localStorage?.getItem("lighthouse.storage/store") || "{}"
+    );
+    if (themeFromLocalStorage?.theme) {
+      setTheme(themeFromLocalStorage?.theme);
+    } else {
+      setTheme("dark");
+    }
   }, []);
+
+  useEffect(() => {
+    themeChanger(theme);
+  }, [theme]);
 
   return (
     <>

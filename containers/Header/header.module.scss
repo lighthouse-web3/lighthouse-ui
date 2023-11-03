@@ -37,7 +37,7 @@ $bgclr: var(--header-bar-clr);
         a {
           color: inherit;
           font-size: 1.1rem;
-          transition: border-bottom 0.5s ease-in;
+          transition: border-bottom 0.1s ease-in;
           padding-bottom: 0.3rem;
           border-bottom: 1px solid transparent;
           &:hover {

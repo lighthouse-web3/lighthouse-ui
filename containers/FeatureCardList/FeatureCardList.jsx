@@ -32,13 +32,10 @@ function FeatureCardList() {
   }, []);
 
   return (
-    <div className={Style.FeatureCardList}>
+    <div className={Style.FeatureCardList + " container"}>
       <div className={Style.FeatureCardList__titleContainer}>
+        <p></p>
         <p>Lighthouse Suite</p>
-        <p>
-          Transforming visions <br />
-          into thriving businesses
-        </p>
       </div>
 
       <div className={Style.FeatureCardList__FeatureContainer}>

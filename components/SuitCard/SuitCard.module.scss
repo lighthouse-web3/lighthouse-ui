@@ -18,6 +18,10 @@
   transition: background 0.2s, color 0.2s;
   transition-timing-function: ease-in;
 
+  @include screen-size(phone-only) {
+    border: 1px solid var(--testimonialCard-border-clr);
+  }
+
   &__iconBox {
     width: 4rem;
     height: 4rem;

@@ -38,13 +38,13 @@ export default function Home() {
       <div className={"bodyContainer"}>
         {/* <NewsBar /> */}
         <Header />
-        <div className="sectionContainer">
+        <div>
           <div className="contentContainer">
             <HomeBanner />
           </div>
         </div>
 
-        <div className="sectionContainer" style={{ minHeight: "auto" }}>
+        <div style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
             <PartnerCarousel />
           </div>
@@ -54,17 +54,17 @@ export default function Home() {
             <FeatureCompare />
           </div>
         </div>
-        <div className="sectionContainer" style={{ minHeight: "auto" }}>
+        <div style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
             <Testimonials />
           </div>
         </div>
-        <div className="sectionContainer">
-          <div className="contentContainer container">
+        <div>
+          <div className="">
             <FeatureCardList />
           </div>
         </div>
-        <div className="sectionContainer">
+        <div>
           <div className="contentContainer container">
             <FAQContainer />
           </div>

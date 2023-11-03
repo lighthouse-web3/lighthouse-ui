@@ -7,7 +7,7 @@ function Testimonials() {
   return (
     <div className={Style.Testimonials}>
       <div className={Style.Testimonials__titleContainer}>
-        <p>Testimonials</p>
+        <p></p>
         <p>What our client say</p>
       </div>
       <div className={Style.Testimonials__cardContainer}>
