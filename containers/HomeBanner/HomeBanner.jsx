@@ -22,14 +22,14 @@ function HomeBanner() {
               ? "30vw"
               : windowSize?.width > 600
               ? "35vw"
-              : "50vw"
+              : "80vw"
           }
           height={
             windowSize?.width > 1440
               ? "30vw"
               : windowSize?.width > 600
               ? "35vw"
-              : "50vw"
+              : "80vw"
           }
           aspectRatio={true}
           style={{
@@ -70,14 +70,14 @@ function HomeBanner() {
               ? "30vw"
               : windowSize?.width > 600
               ? "35vw"
-              : "50vw"
+              : "80vw"
           }
           height={
             windowSize?.width > 1440
               ? "30vw"
               : windowSize?.width > 600
               ? "35vw"
-              : "50vw"
+              : "80vw"
           }
           aspectRatio={true}
           style={{

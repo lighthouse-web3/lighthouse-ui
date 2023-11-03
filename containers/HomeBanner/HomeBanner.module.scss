@@ -13,18 +13,28 @@
     top: 0%;
     left: -7%;
     z-index: 0;
+    @include screen-size(phone-only) {
+      top: -1%;
+      left: -17%;
+    }
   }
   &__bgImg2 {
     position: absolute;
     bottom: -7%;
     left: 0%;
     z-index: 0;
+    @include screen-size(phone-only) {
+      display: none;
+    }
   }
   &__bgImg3 {
     position: absolute;
     bottom: -10%;
     right: 0%;
     z-index: 0;
+    @include screen-size(phone-only) {
+      bottom: -15%;
+    }
   }
 
   .infoBox {
