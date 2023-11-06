@@ -8,7 +8,7 @@ function Testimonials() {
     <div className={Style.Testimonials}>
       <div className={Style.Testimonials__titleContainer}>
         <p></p>
-        <p>What our client say</p>
+        <p>Testimonials</p>
       </div>
       <div className={Style.Testimonials__cardContainer}>
         {testimonialSection?.testimonials.map((item, index) => (

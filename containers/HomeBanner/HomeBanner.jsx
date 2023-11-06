@@ -98,11 +98,7 @@ function HomeBanner() {
         ></div>
 
         <div className="flex-center">
-          <div className="fillBtn__slide">
-            <a href="#0" className="bttn">
-              Build Your Legacy
-            </a>
-          </div>
+          <button className="fillBtn__slide">Build Your Legacy</button>
         </div>
       </div>
       <div className={Styles.statBox} data-aos="fade-up" data-aos-delay={100}>

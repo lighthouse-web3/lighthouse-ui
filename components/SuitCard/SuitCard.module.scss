@@ -8,6 +8,8 @@
   background: var(--featureCard-bg-innerClr);
   color: var(--txt-clr);
   box-shadow: 8px 12px 60px 0px rgba(133, 139, 243, 0.08);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--testimonialCard-border-clr);
   padding: 4rem 2rem;
   gap: 1.5rem;
   flex: 1 0 0;

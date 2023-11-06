@@ -15,7 +15,7 @@ function KeyFeatureCard({ title, subTitle, icon, width }) {
         >
           <ImageBox
             src={icon}
-            width={theme === "dark" ? "6rem" : width}
+            width={theme === "dark" ? "6rem" : "6rem"}
             height={"6rem"}
             aspectRatio={true}
             style={{

@@ -69,7 +69,7 @@ export const LandingPageData = {
       link: "",
     },
     {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmW8JmiyLmbpTfeqtzoCYQ9qd4AQsdGtaHhXACcUhzHMt7",
+      icon: "/client/dataverse_os.svg",
       link: "",
     },
     // {
@@ -89,7 +89,7 @@ export const LandingPageData = {
       link: "",
     },
     {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmbN1Y6K6932CEekSDAiKkV4rmiuRrG9DHpVCLCFnv9EwE",
+      icon: "/client/silence.svg",
       link: "",
     },
   ],
