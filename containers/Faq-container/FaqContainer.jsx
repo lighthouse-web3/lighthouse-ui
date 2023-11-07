@@ -49,7 +49,10 @@ function FAQContainer() {
         <button
           className={"fillBtn__blue ptr"}
           onClick={() => {
-            window.location.href = `mailto:${socialLinks?.contactMail}`;
+            window.open(
+              "https://airtable.com/app0KP7ENgYlLDcJ0/shrPFC2TgojuOAYO4",
+              "__blank"
+            );
           }}
         >
           Contact Us

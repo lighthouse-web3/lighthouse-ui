@@ -57,8 +57,6 @@
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
-    // padding: 0% 7.5% 0% 7.5%;
-
     text-align: center;
     .title {
       width: 100%;
@@ -79,6 +77,10 @@
       margin-top: 0rem;
       letter-spacing: 2px;
       line-height: 3.5rem;
+      z-index: 3;
+    }
+
+    button {
       z-index: 3;
     }
   }

@@ -7,7 +7,7 @@ import useWindowSize from "../../utils/Hooks/windowSize";
 function EventBlogBanner() {
   let blogs = [1, 1, 1, 1];
   let size = useWindowSize();
-  console.log(size);
+  //console.log(size);
   return (
     <div className={Style.EventBlogBanner}>
       <div className={Style.BannerContainer}>
@@ -28,7 +28,7 @@ function EventBlogBanner() {
             <Swiper
               spaceBetween={50}
               slidesPerView={size?.width < 500 ? 1 : 3}
-              onSwiper={(swiper) => console.log(swiper)}
+              onSwiper={(swiper) => //console.log(swiper)}
             >
               {blogs.map((blog, index) => (
                 <SwiperSlide key={index}>

@@ -13,7 +13,14 @@ function TestimonialCard({ quote, person, designation, img, link }) {
           height={"3rem"}
         />
         <div className={Style.personBox}>
-          <p>{person}</p>
+          <p
+            className="ptr"
+            onClick={() => {
+              window.open(link, "_blank");
+            }}
+          >
+            {person}
+          </p>
           <p>{designation}</p>
         </div>
       </div>

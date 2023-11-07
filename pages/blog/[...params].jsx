@@ -58,7 +58,7 @@ function Blog({ blogData, allBlogs }) {
   const { params } = router.query;
   const [showBlog, setShowBlog] = useState(blogData);
   const [similarBlogs, setSimilarBlogs] = useState([]);
-  console.log(blogData);
+  //console.log(blogData);
   useEffect(() => {
     (async () => {
       try {

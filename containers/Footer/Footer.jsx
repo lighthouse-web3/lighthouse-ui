@@ -33,7 +33,7 @@ function Footer() {
   };
 
   useEffect(() => {
-    console.log(theme, "footer");
+    //console.log(theme, "footer");
   }, [theme]);
 
   return (

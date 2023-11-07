@@ -3,7 +3,7 @@ export const disclaimerText =
 
 export const LandingPageData = {
   HeroSection: {
-    title: "Unlock the Power of Web3 Storage:",
+    title: "Store Files Permanently",
     subTitle: "Secure, Reliable, & Lightning-Fast with Lighthouse.",
   },
   KeyFeatures: [
@@ -17,7 +17,7 @@ export const LandingPageData = {
       icon: "/featureIcon/feature_5.svg",
       width: "8rem",
 
-      title: "Store files on IPFS and Filecoin",
+      title: "Store files on distributed web",
       subTitle: `Harness the power of IPFS and Filecoin to securely store your files on a decentralized network.`,
     },
     {
@@ -97,7 +97,8 @@ export const LandingPageData = {
     {
       icon: "/suitsIcon/suitsIcon1.svg",
       title: "Lighthouse Files",
-      description: "Explore the working of Lighthouse using our DAPP.",
+      description:
+        "Easy to use application that allows you to Login, Store and Share files securely across the web",
       link: "https://files.lighthouse.storage/",
     },
     {
@@ -112,7 +113,7 @@ export const LandingPageData = {
       icon: "/suitsIcon/suitsIcon3.svg",
       title: "Lighthouse CLI",
       description:
-        "All lighthouse features available through the convenience of the Command Line Interface ",
+        "All Lighthouse features available through the convenience of the Command Line Interface ",
       link: "https://docs.lighthouse.storage/lighthouse-1/cli-tool/overview",
     },
     {
@@ -285,6 +286,14 @@ export const testimonialSection = {
       designation: "OKContract",
       img: "/testimonial/henri.jpg",
       link: "https://twitter.com/henri__OK",
+    },
+    {
+      quote:
+        "Great product, inspired team with clear vision. Their permanent storage functionality is one of a kind scaling quickly with demands of FileMarket user growth",
+      person: "lya Orlov",
+      designation: "FileMarket",
+      img: "/testimonial/lya.png",
+      link: "https://twitter.com/UnderKong",
     },
   ],
 };

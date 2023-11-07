@@ -12,8 +12,8 @@ function Metadata({
 
   return (
     <Head>
-      <title>Lighthouse Perpetual Storage</title>
-      <meta name="title" content="Lighthouse Perpetual Storage" />
+      <title>Lighthouse Permanent Storage</title>
+      <meta name="title" content="Lighthouse Permanent Storage" />
       <meta
         name="description"
         content="Store Files Perpetually on IPFS and Filecoin"

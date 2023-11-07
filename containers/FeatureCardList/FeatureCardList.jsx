@@ -57,7 +57,7 @@ function FeatureCardList() {
         data-aos="fade-up"
       >
         <div className={Style.Banner} style={gradientStyle}>
-          <p>Come change the way we store data on blockchain</p>
+          <p>Experience the power of affordable Permanent Storage</p>
           <button
             className="border_btn"
             ref={bannerRef}
@@ -65,7 +65,7 @@ function FeatureCardList() {
               window.open("https://files.lighthouse.storage/", "__blank");
             }}
           >
-            Try Now
+            Start Now
           </button>
         </div>
       </div>

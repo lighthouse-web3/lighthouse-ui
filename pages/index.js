@@ -34,7 +34,7 @@ export default function Home() {
   // }, []);
   return (
     <>
-      <Metadata title="Lighthouse Perpetual Storage" />
+      <Metadata title="Lighthouse Permanent Storage" />
       <div className={"bodyContainer"}>
         {/* <NewsBar /> */}
         <Header />

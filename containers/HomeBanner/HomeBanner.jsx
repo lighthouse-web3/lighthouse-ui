@@ -10,7 +10,7 @@ function HomeBanner() {
   const windowSize = useWindowSize();
   const { theme, setTheme } = useContext(ThemeContext);
 
-  console.log(windowSize);
+  //console.log(windowSize);
 
   return (
     <div className={Styles.Banner}>
@@ -98,7 +98,17 @@ function HomeBanner() {
         ></div>
 
         <div className="flex-center">
-          <button className="fillBtn__slide">Build Your Legacy</button>
+          <button
+            className="fillBtn__slide"
+            onClick={() => {
+              window.open(
+                "https://docs.lighthouse.storage/lighthouse-1/",
+                "_blank"
+              );
+            }}
+          >
+            Start Now
+          </button>
         </div>
       </div>
       <div className={Styles.statBox} data-aos="fade-up" data-aos-delay={100}>

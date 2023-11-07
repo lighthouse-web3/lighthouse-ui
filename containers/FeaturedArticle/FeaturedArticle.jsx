@@ -14,7 +14,7 @@ function FeaturedArticle({ blogsData }) {
         new Date(a?.attributes?.publishedAt)
       );
     });
-    console.log(sorted[0]);
+    //console.log(sorted[0]);
 
     setLatestBlog(sorted[0]);
   }, []);
