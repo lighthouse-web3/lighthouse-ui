@@ -181,7 +181,7 @@ export const LandingPageData = {
   Documentation: {
     title: "Lighthouse Documentation",
     subtitle:
-      "Lighthouse is a perpetual file storage protocol that allows the ability to pay once and store forever",
+      "Lighthouse is permanent storage protocol that allows the ability to pay once and store forever",
     bannerImage:
       "https://gateway.lighthouse.storage/ipfs/QmSdS3Zxk64vC28LhNy4jJrcYzD4ziqPB69UaR1ufNXib7",
     videURL: "",
