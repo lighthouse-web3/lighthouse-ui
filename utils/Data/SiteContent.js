@@ -106,22 +106,24 @@ export const LandingPageData = {
       title: "Lighthouse SDK",
       description:
         "Lighthouse Software Developer Kit comprises of all the tools developers need to integrate Lighthouse.",
-      link: "https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/overview",
+      link: "https://docs.lighthouse.storage/lighthouse-1/how-to/create-an-api-key",
     },
 
     {
       icon: "/suitsIcon/suitsIcon3.svg",
       title: "Lighthouse CLI",
       description:
+
         "All Lighthouse features available through the convenience of the Command Line Interface ",
       link: "https://docs.lighthouse.storage/lighthouse-1/cli-tool/overview",
+
     },
     {
       icon: "/suitsIcon/suitsIcon4.svg",
       title: "Lighthouse Kavach",
       description:
         "Store private files on the distributed web with secure encryption and access control features through Lighthouse Kavach",
-      link: "https://github.com/lighthouse-web3/encryption-sdk",
+      link: "https://docs.lighthouse.storage/lighthouse-1/how-to/upload-encrypted-data",
     },
   ],
 
@@ -198,6 +200,7 @@ export const socialLinks = {
   discord: "https://discord.com/invite/c4a4CGCdJG",
   instagram: "https://www.instagram.com/lighthouseweb3/?igshid=MDM4ZDc5MmU%3D",
   contactMail: "nandit@lighthouse.storage",
+  contactLink: "https://airtable.com/shrPFC2TgojuOAYO4",
 };
 
 export const footerData = {
@@ -234,6 +237,7 @@ export const footerData = {
       path: null,
       link: "https://docs.google.com/forms/d/16STP-KPftGBCaF5MjQuXBVBOqShIxScFtuPhCAlQJM8/viewform?ts=64a7c2b5&edit_requested=true",
     },
+
     {
       text: "Talk to Expert",
       path: null,
@@ -307,13 +311,17 @@ export const documentationCards = [
   {
     title: "CLI Commands",
     subTitle:
+
       "Learn to install the CLI globally on your system using our npm package",
+
     link: "https://docs.lighthouse.storage/lighthouse-1/how-to/overview",
   },
   {
     title: "Code Examples",
+
     subTitle: "Many easy to use tutorial and code examples to build your favourite applications",
-    link: "https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/functions",
+    link: "https://docs.lighthouse.storage/lighthouse-1/how-to/create-an-api-key",
+
   },
   {
     title: "Developers Link",
