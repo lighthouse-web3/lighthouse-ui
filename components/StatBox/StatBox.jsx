@@ -17,7 +17,7 @@ function StatBox() {
       }
     >
       <div className={styles.StatBox__stat}>
-        <p>API Request / Day</p>
+        <p>API Requests / Day</p>
         <p>
           <CountUp duration={8} end={10} delay={2} suffix="M+" />
         </p>
