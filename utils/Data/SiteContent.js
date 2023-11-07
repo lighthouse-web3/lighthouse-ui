@@ -301,23 +301,23 @@ export const testimonialSection = {
 export const documentationCards = [
   {
     title: "Introduction",
-    subTitle: "Learn about lighthouse and how it is different",
+    subTitle: "Learn about Lighthouse and Get Started Quickly with examples",
     link: "https://docs.lighthouse.storage/lighthouse-1/",
   },
   {
     title: "CLI Commands",
     subTitle:
-      "Learn to install the package globally on your system using our npm package",
-    link: "https://docs.lighthouse.storage/lighthouse-1/cli-tool/cli-commands",
+      "Learn to install the CLI globally on your system using our npm package",
+    link: "https://docs.lighthouse.storage/lighthouse-1/how-to/overview",
   },
   {
     title: "Code Examples",
-    subTitle: "Go through our detailed code examples",
+    subTitle: "Many easy to use tutorial and code examples to build your favourite applications",
     link: "https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/functions",
   },
   {
     title: "Developers Link",
-    subTitle: "Explore all our public repositories",
+    subTitle: "Check our open-source Github repos to learn more and contribute to Lighthouse",
     link: "https://github.com/lighthouse-web3",
   },
 ];
