@@ -19,14 +19,14 @@ function HomeBanner() {
           src={`/BannerImages/${theme}_bannerImg_1.png`}
           width={
             windowSize?.width > 1440
-              ? "30vw"
+              ? "34vw"
               : windowSize?.width > 600
               ? "35vw"
               : "80vw"
           }
           height={
             windowSize?.width > 1440
-              ? "30vw"
+              ? "34vw"
               : windowSize?.width > 600
               ? "35vw"
               : "80vw"
@@ -42,15 +42,15 @@ function HomeBanner() {
         <ImageBox
           src={`/BannerImages/${theme}_bannerImg_2.png`}
           width={
-            windowSize?.width > 1440
-              ? "30vw"
+            windowSize?.width >= 1440
+              ? "32vw"
               : windowSize?.width > 600
               ? "35vw"
               : "50vw"
           }
           height={
-            windowSize?.width > 1440
-              ? "30vw"
+            windowSize?.width >= 1440
+              ? "32vw"
               : windowSize?.width > 600
               ? "35vw"
               : "50vw"
@@ -67,14 +67,14 @@ function HomeBanner() {
           src={`/BannerImages/${theme}_bannerImg_3.png`}
           width={
             windowSize?.width > 1440
-              ? "30vw"
+              ? "34vw"
               : windowSize?.width > 600
               ? "35vw"
               : "80vw"
           }
           height={
             windowSize?.width > 1440
-              ? "30vw"
+              ? "34vw"
               : windowSize?.width > 600
               ? "35vw"
               : "80vw"
