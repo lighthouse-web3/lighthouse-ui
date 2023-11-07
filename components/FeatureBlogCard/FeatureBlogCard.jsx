@@ -19,7 +19,7 @@ function FeatureBlogCard({ blog }) {
           src={mediaUrl + blog?.attributes?.coverImage?.data?.attributes?.url}
           width={"100%"}
           height={"200px"}
-          aspectRatio={true}
+          aspectRatio={false}
           layout={"fill"}
           style={{
             objectFit: "cover",
@@ -27,10 +27,10 @@ function FeatureBlogCard({ blog }) {
           }}
         />
       </div>
-      <p className={Style.FeatureBlogCard__title}>{blog?.attributes?.title}</p>
       <p className={Style.FeatureBlogCard__category}>
         {blog?.attributes?.author}
       </p>
+      <p className={Style.FeatureBlogCard__title}>{blog?.attributes?.title}</p>
     </div>
   );
 }

@@ -35,3 +35,6 @@ export const Testimonials = dynamic(() =>
 export const FAQContainer = dynamic(() =>
   import("./Faq-container/FaqContainer")
 );
+export const HoverContainer = dynamic(() =>
+  import("./HoverContainer/HoverContainer")
+);

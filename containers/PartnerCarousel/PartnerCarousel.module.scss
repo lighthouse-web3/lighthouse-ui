@@ -1,18 +1,18 @@
+@import "styles/mixins.scss";
+@import "styles/mediaQuery.scss";
+
 .PartnerCarousel {
-  margin: 5% 0rem 10% 0%;
+  margin: 5% 0rem 5% 0%;
   color: white;
   font-family: var(--font-main);
   &__titleBox {
   }
 
   &__brandLogoContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    @include flex-centered;
     flex-wrap: wrap;
     margin-top: 5%;
     gap: 3rem;
-    align-items: center;
   }
 }
 

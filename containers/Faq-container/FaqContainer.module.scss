@@ -1,30 +1,11 @@
 .FAQContainer {
-  min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-top: 10%;
-
+  gap: 1rem;
+  margin-top: 5%;
+  color: var(--txt-clr);
   font-family: var(--font-main);
-  &__title {
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 0;
-    color: #efefef;
-    font-weight: 600;
-    line-height: 2rem;
-    letter-spacing: -0.045rem;
-  }
-  &__subTitle {
-    margin-top: 0;
-    width: 100%;
-    text-align: center;
-    color: #667085;
-    font-weight: 700;
-    font-size: 3rem;
-  }
 
   &__Container {
     margin: 1rem 15%;
@@ -32,7 +13,7 @@
       margin-bottom: 1.5rem;
       padding-bottom: 1rem;
       &:not(:last-of-type) {
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid var(--txt-clr);
       }
 
       .questionBox {
@@ -43,7 +24,7 @@
           flex: 1;
           font-weight: 400;
           font-size: 1.3rem;
-          color: #ffffff;
+          color: inherit;
         }
         .icon {
           width: auto;
@@ -51,13 +32,13 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          color: white;
+          color: inherit;
           font-size: 1.5rem;
         }
       }
 
       .answerBox {
-        color: #ffffff;
+        color: inherit;
         font-weight: 400;
         font-size: 1rem;
         line-height: 24px;
@@ -68,7 +49,7 @@
   &__QuestionBox {
     margin: 0rem 1.5rem 4rem 1.5rem;
     border-radius: 16px;
-    background: #171717;
+    background: var(--featureCard-bg-clr);
     min-height: 200px;
     padding: 2rem;
     display: flex;
@@ -85,7 +66,7 @@
       font-weight: 600;
       line-height: 30px;
       text-align: center;
-      color: #ffffff;
+      color: inherit;
     }
 
     .subTitle {

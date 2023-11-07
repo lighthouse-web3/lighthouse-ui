@@ -1,10 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { AiOutlineArrowRight } from "react-icons/ai";
-import { FeatureCard, ImageBox, TitleSeprator } from "../../components";
+import { SuitCard } from "../../components";
 import { LandingPageData } from "../../utils/Data/SiteContent";
 import Style from "./FeatureCardList.module.scss";
-
-const featuresList = [];
 
 function FeatureCardList() {
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });
@@ -35,30 +32,24 @@ function FeatureCardList() {
   }, []);
 
   return (
-    <div className={Style.FeatureCardList}>
-      <TitleSeprator data-aos="fade-up" title={"Lighthouse Suite"} />
+    <div className={Style.FeatureCardList + " container"}>
+      <div className={Style.FeatureCardList__titleContainer}>
+        <p></p>
+        <p>Lighthouse Suite</p>
+      </div>
+
       <div className={Style.FeatureCardList__FeatureContainer}>
         {LandingPageData?.StorageFeature.map((item, index) => (
-          <div
+          <span
+            key={index}
             data-aos="fade-up"
             data-aos-delay={100 * index}
-            className={Style.featureBox}
-            key={index}
             onClick={() => {
               window.open(item?.link, "__blank");
             }}
           >
-            <div className={Style.featureBox__icon}>
-              <ImageBox src={item?.icon} />
-            </div>
-            <div className={Style.featureBox__title}>
-              <p>{item?.title}</p>
-              <span>
-                <AiOutlineArrowRight />
-              </span>
-            </div>
-            <p className={Style.featureBox__description}>{item?.description}</p>
-          </div>
+            <SuitCard {...item} />
+          </span>
         ))}
       </div>
       <div
@@ -66,7 +57,7 @@ function FeatureCardList() {
         data-aos="fade-up"
       >
         <div className={Style.Banner} style={gradientStyle}>
-          <p>Come change the way we store data on blockchain</p>
+          <p>Experience the power of affordable Permanent Storage</p>
           <button
             className="border_btn"
             ref={bannerRef}
@@ -74,7 +65,7 @@ function FeatureCardList() {
               window.open("https://files.lighthouse.storage/", "__blank");
             }}
           >
-            Try Now
+            Start Now
           </button>
         </div>
       </div>

@@ -4,40 +4,50 @@ export const disclaimerText =
 export const LandingPageData = {
   HeroSection: {
     title: "Store Files Permanently",
-    subTitle:
-      "Perpetual storage powered by decentralized web. Easily store and secure your data",
+    subTitle: "Secure, Reliable, & Lightning-Fast with Lighthouse.",
   },
   KeyFeatures: [
     {
-      icon: "/featureIcon/feature6.svg",
+      icon: "/featureIcon/feature_6.svg",
+      width: "6rem",
       title: "Pay once and store forever",
       subTitle: `Never worry about recurring payments with our "Pay once and store forever" feature.`,
     },
     {
-      icon: "/featureIcon/feature5.svg",
-      title: "Store files on IPFS and Filecoin",
+      icon: "/featureIcon/feature_5.svg",
+      width: "8rem",
+
+      title: "Store files on distributed web",
       subTitle: `Harness the power of IPFS and Filecoin to securely store your files on a decentralized network.`,
     },
     {
-      icon: "/featureIcon/feature1.svg",
+      icon: "/featureIcon/feature_1.svg",
+      width: "6rem",
+
       title: "Encryption & Access control functionality",
       subTitle:
         "Keep your data safe and with token gated access on a public network.",
     },
     {
-      icon: "/featureIcon/feature4.svg",
+      icon: "/featureIcon/feature_4.svg",
+      width: "8rem",
+
       title: "Dedicated IPFS gateways for fast retrievals",
       subTitle:
         "Experience lightning-fast retrievals with our dedicated IPFS Gateways.",
     },
     {
-      icon: "/featureIcon/feature3.svg",
+      icon: "/featureIcon/feature_3.svg",
+      width: "6rem",
+
       title: "Image resize to save bandwidth",
       subTitle:
         "Save bandwidth without sacrificing image quality with our automatic image resize feature.",
     },
     {
-      icon: "/featureIcon/feature2.svg",
+      icon: "/featureIcon/feature_2.svg",
+      width: "6rem",
+
       title: "Fast Gateway that streams even 4k videos",
       subTitle:
         "Enjoy seamless streaming of 4K videos with our ultra-fast gateways.",
@@ -59,7 +69,7 @@ export const LandingPageData = {
       link: "",
     },
     {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmW8JmiyLmbpTfeqtzoCYQ9qd4AQsdGtaHhXACcUhzHMt7",
+      icon: "/client/dataverse_os.svg",
       link: "",
     },
     // {
@@ -79,19 +89,20 @@ export const LandingPageData = {
       link: "",
     },
     {
-      icon: "https://gateway.lighthouse.storage/ipfs/QmbN1Y6K6932CEekSDAiKkV4rmiuRrG9DHpVCLCFnv9EwE",
+      icon: "/client/silence.svg",
       link: "",
     },
   ],
   StorageFeature: [
     {
-      icon: "/suitsIcon/suitsIcon1.webp",
+      icon: "/suitsIcon/suitsIcon1.svg",
       title: "Lighthouse Files",
-      description: "Explore the working of Lighthouse using our DAPP.",
+      description:
+        "Easy to use application that allows you to Login, Store and Share files securely across the web",
       link: "https://files.lighthouse.storage/",
     },
     {
-      icon: "/suitsIcon/suitsIcon2.webp",
+      icon: "/suitsIcon/suitsIcon2.svg",
       title: "Lighthouse SDK",
       description:
         "Lighthouse Software Developer Kit comprises of all the tools developers need to integrate Lighthouse.",
@@ -99,14 +110,16 @@ export const LandingPageData = {
     },
 
     {
-      icon: "/suitsIcon/suitsIcon3.webp",
+      icon: "/suitsIcon/suitsIcon3.svg",
       title: "Lighthouse CLI",
       description:
-        "All lighthouse features available through the convenience of the Command Line Interface ",
-      link: "https://docs.lighthouse.storage/lighthouse-1/how-to/overview",
+
+        "All Lighthouse features available through the convenience of the Command Line Interface ",
+      link: "https://docs.lighthouse.storage/lighthouse-1/cli-tool/overview",
+
     },
     {
-      icon: "/suitsIcon/suitsIcon4.webp",
+      icon: "/suitsIcon/suitsIcon4.svg",
       title: "Lighthouse Kavach",
       description:
         "Store private files on the distributed web with secure encryption and access control features through Lighthouse Kavach",
@@ -170,7 +183,7 @@ export const LandingPageData = {
   Documentation: {
     title: "Lighthouse Documentation",
     subtitle:
-      "Lighthouse is a perpetual file storage protocol that allows the ability to pay once and store forever",
+      "Lighthouse is permanent storage protocol that allows the ability to pay once and store forever",
     bannerImage:
       "https://gateway.lighthouse.storage/ipfs/QmSdS3Zxk64vC28LhNy4jJrcYzD4ziqPB69UaR1ufNXib7",
     videURL: "",
@@ -278,29 +291,41 @@ export const testimonialSection = {
       img: "/testimonial/henri.jpg",
       link: "https://twitter.com/henri__OK",
     },
+    {
+      quote:
+        "Great product, inspired team with clear vision. Their permanent storage functionality is one of a kind scaling quickly with demands of FileMarket user growth",
+      person: "lya Orlov",
+      designation: "FileMarket",
+      img: "/testimonial/lya.png",
+      link: "https://twitter.com/UnderKong",
+    },
   ],
 };
 
 export const documentationCards = [
   {
     title: "Introduction",
-    subTitle: "Learn about lighthouse and how it is different",
+    subTitle: "Learn about Lighthouse and Get Started Quickly with examples",
     link: "https://docs.lighthouse.storage/lighthouse-1/",
   },
   {
     title: "CLI Commands",
     subTitle:
-      "Learn to install the package globally on your system using our npm package",
+
+      "Learn to install the CLI globally on your system using our npm package",
+
     link: "https://docs.lighthouse.storage/lighthouse-1/how-to/overview",
   },
   {
     title: "Code Examples",
-    subTitle: "Go through our detailed code examples",
+
+    subTitle: "Many easy to use tutorial and code examples to build your favourite applications",
     link: "https://docs.lighthouse.storage/lighthouse-1/how-to/create-an-api-key",
+
   },
   {
     title: "Developers Link",
-    subTitle: "Explore all our public repositories",
+    subTitle: "Check our open-source Github repos to learn more and contribute to Lighthouse",
     link: "https://github.com/lighthouse-web3",
   },
 ];

@@ -1,0 +1,23 @@
+@mixin screen-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $size == not-phone {
+    @media (min-width: 600px) {
+      @content;
+    }
+  } @else if $size == tablet-landscape-up {
+    @media (max-width: 900px) {
+      @content;
+    }
+  } @else if $size == desktop-small {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $size == desktop-big {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}

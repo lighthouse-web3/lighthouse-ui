@@ -1,0 +1,138 @@
+@import "~rfs/scss";
+
+@mixin button-hover {
+  &:not([disabled]):hover {
+    @content;
+  }
+}
+
+@mixin flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-setup($alignment: row, $position: center) {
+  display: flex;
+  flex-direction: $alignment;
+  justify-content: $position;
+  align-items: $position;
+}
+
+@mixin gutter-space($horizontal-padding: 0rem) {
+  padding: $horizontal-padding 8%;
+  @include screen-size(phone-only) {
+    padding: $horizontal-padding 4%;
+  }
+}
+
+@mixin remove-btn-style {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin overflow-ellipsis($line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+@mixin horizontal-list($alignment, $margin: 2rem) {
+  @include reset-list;
+
+  ul,
+  ol {
+    display: flex;
+    align-items: center;
+    @if $alignment == left {
+      justify-content: flex-start;
+    }
+    @if $alignment == right {
+      justify-content: flex-end;
+    }
+    @if $alignment == center {
+      justify-content: center;
+    }
+  }
+
+  li {
+    display: inline-block;
+
+    @if $alignment == left {
+      margin: {
+        right: $margin;
+      }
+    }
+    @if $alignment == right {
+      margin: {
+        left: $margin;
+      }
+    }
+    @if $alignment == center {
+      margin: 0px $margin;
+    }
+  }
+}
+
+@mixin vertical-list($alignment, $margin) {
+  ul,
+  ol {
+    @include reset-list;
+    display: flex;
+    flex-direction: column;
+  }
+
+  li {
+    display: inline-block;
+    margin-bottom: $margin;
+    text-align: $alignment;
+  }
+}
+
+@mixin text-size($input) {
+  @include font-size($input);
+}
+
+@mixin cover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin grid-equal(
+  $column,
+  $row,
+  $column-gap: 1rem,
+  $row-gap: 1rem,
+  $equal-height: "true"
+) {
+  display: grid;
+  grid-template-columns: repeat($column, 1fr);
+  grid-template-rows: repeat($row, 1fr);
+  grid-column-gap: $column-gap;
+  grid-row-gap: $row-gap;
+  @if $equal-height == "true" {
+    grid-auto-rows: 1fr;
+  } @else {
+    grid-auto-rows: auto;
+  }
+}

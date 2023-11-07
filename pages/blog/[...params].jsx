@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Style from "../../styles/Blog.module.scss";
 import axios from "axios";
 import { baseUrl, mediaUrl } from "../../utils/Data/config";
 import {
@@ -59,7 +58,7 @@ function Blog({ blogData, allBlogs }) {
   const { params } = router.query;
   const [showBlog, setShowBlog] = useState(blogData);
   const [similarBlogs, setSimilarBlogs] = useState([]);
-  console.log(blogData);
+  //console.log(blogData);
   useEffect(() => {
     (async () => {
       try {

@@ -1,3 +1,6 @@
+@import "styles/mixins.scss";
+@import "styles/mediaQuery.scss";
+
 .MostPopularBlogs {
   width: 100%;
   color: white;
@@ -12,15 +15,25 @@
   }
 
   &__carouselContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 2rem 1rem;
+    // width: 100%;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: flex-start;
+    // align-items: flex-start;
+    // flex-wrap: wrap;
+    // gap: 2rem 1rem;
+    @include grid-equal(3, 1, 2rem, 2rem);
+    padding-bottom: 2rem;
+
+    @include screen-size(desktop-small) {
+      @include grid-equal(2, 1, 2rem, 2rem);
+    }
+    @include screen-size(phone-only) {
+      @include grid-equal(1, 1, 2rem, 2rem);
+    }
+
     .blogCard {
-      width: 300px;
+      width: 100%;
       height: auto;
     }
   }

@@ -1,9 +1,5 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import Styles from "./Footer.module.scss";
-
-import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { BsTelegram, BsDiscord, BsTwitter, BsLinkedin } from "react-icons/bs";
-// import { BiLogoDiscordAlt } from "react-icons/bi";
 import {
   FaDiscord,
   FaInstagram,
@@ -16,9 +12,13 @@ import { footerData, socialLinks } from "../../utils/Data/SiteContent";
 import { useRouter } from "next/router";
 import { sendEmail, validateEmail } from "../../utils/services/emailService";
 import { notify } from "../../utils/services/notification";
+import ThemeContext from "../../utils/services/Themecontext";
+import { useEffect } from "react";
+import { RiTwitterXLine } from "react-icons/ri";
 
 function Footer() {
   const _navigate = useRouter();
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const mailInput = useRef();
   const subscribeEmail = () => {
@@ -32,6 +32,10 @@ function Footer() {
     }
   };
 
+  useEffect(() => {
+    //console.log(theme, "footer");
+  }, [theme]);
+
   return (
     <div className={Styles.Footer}>
       <div className={Styles.Footer__upperFooter + " container"}>
@@ -42,7 +46,11 @@ function Footer() {
               _navigate.push("/");
             }}
           >
-            <ImageBox src={"/logo.svg"} width="100%" />
+            {theme === "light" ? (
+              <ImageBox src={"/logo_black.svg"} width="100%" />
+            ) : (
+              <ImageBox src={"/logo.svg"} width="100%" />
+            )}
           </div>
           <div className={Styles.socialBox}>
             {/* <p>Find us on social</p> */}
@@ -69,9 +77,7 @@ function Footer() {
                   window.open(socialLinks?.twitter, "_blank");
                 }}
               >
-                <ImageBox src={"/icons/twitterX.svg"} width="20px" />
-
-                {/* <BsTwitter /> */}
+                <RiTwitterXLine />
               </span>
               <span
                 className={Styles.icon + " ptr"}
@@ -141,8 +147,6 @@ function Footer() {
             className="fillBtn__purple ptr"
             style={{
               width: "100%",
-              background: "#2563EB",
-              border: "1px solid #2563EB",
               marginTop: "1rem",
             }}
             onClick={subscribeEmail}

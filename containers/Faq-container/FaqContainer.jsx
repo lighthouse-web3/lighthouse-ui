@@ -67,7 +67,12 @@ function FAQContainer() {
         <button
           className={"fillBtn__blue ptr"}
           onClick={() => {
-            window.open(`${socialLinks?.contactLink}`, "_blank");
+
+            window.open(
+              "https://airtable.com/app0KP7ENgYlLDcJ0/shrPFC2TgojuOAYO4",
+              "__blank"
+            );
+
           }}
         >
           Contact Us

@@ -15,6 +15,8 @@ function BlogView({ blogData }) {
               objectFit: "cover",
               objectPosition: "center",
             }}
+            layout={"fill"}
+            aspectRatio={false}
             maxHeight={"100%"}
           />
         )}

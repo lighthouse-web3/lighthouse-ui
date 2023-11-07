@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
@@ -13,8 +13,12 @@ import {
   boot as bootIntercom,
   update as updateIntercom,
 } from "../utils/services/Intercom";
+import ThemeContext from "../utils/services/Themecontext";
+import { themeChanger } from "../utils/services/theme";
 
 function MyApp({ Component, pageProps }) {
+  const [theme, setTheme] = useState(null);
+
   useEffect(() => {
     AOS.init({
       disable: false,
@@ -36,12 +40,27 @@ function MyApp({ Component, pageProps }) {
     });
     loadIntercom();
     bootIntercom();
+
+    const themeFromLocalStorage = JSON.parse(
+      localStorage?.getItem("lighthouse.storage/store") || "{}"
+    );
+    if (themeFromLocalStorage?.theme) {
+      setTheme(themeFromLocalStorage?.theme);
+    } else {
+      setTheme("dark");
+    }
   }, []);
+
+  useEffect(() => {
+    themeChanger(theme);
+  }, [theme]);
 
   return (
     <>
-      <Component {...pageProps} />
-      <ToastContainer />
+      <ThemeContext.Provider value={{ theme, setTheme }}>
+        <Component {...pageProps} />
+        <ToastContainer />
+      </ThemeContext.Provider>
     </>
   );
 }

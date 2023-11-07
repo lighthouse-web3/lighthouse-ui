@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Styles from "./header.module.scss";
 import { RiMenuFill, RiCloseLine } from "react-icons/ri";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 
 import Image from "next/image";
 import { useRouter } from "next/router";
-import NewsBar from "../NewsBar/NewsBar";
+import { themeChanger } from "../../utils/services/theme";
+import { BsMoon, BsSun } from "react-icons/bs";
+import ThemeContext from "../../utils/services/Themecontext";
 
 const links = [
   {
@@ -46,6 +48,7 @@ function Header({ style }) {
   const [scrollTop, setScrollTop] = useState();
   const [scrolling, setScrolling] = useState();
   const [currentRoute, setCurrentRoute] = useState();
+  const { theme, setTheme } = useContext(ThemeContext);
   const _navigate = useRouter();
 
   useEffect(() => {
@@ -75,7 +78,7 @@ function Header({ style }) {
               _navigate.push("/");
             }}
           >
-            <Image src="/logo.svg" layout="fill" alt="brandLogo" />
+            <Image src={"/logo.svg"} layout="fill" alt="brandLogo" />
           </div>
         </div>
         <div className={Styles.linksContainer}>
@@ -98,15 +101,33 @@ function Header({ style }) {
             </p>
           ))}
         </div>
-        <button
-          onClick={() =>
-            window.open("https://files.lighthouse.storage/", "_blank")
-          }
-          className={"fillBtn__blue"}
-          style={{ padding: "0.5rem 2rem" }}
-        >
-          LOGIN
-        </button>
+
+        <div className={Styles.buttonContainer}>
+          <span className="ptr">
+            {theme === "light" ? (
+              <BsMoon
+                onClick={() => {
+                  setTheme("dark");
+                }}
+              />
+            ) : (
+              <BsSun
+                onClick={() => {
+                  setTheme("light");
+                }}
+              />
+            )}
+          </span>
+          <button
+            onClick={() =>
+              window.open("https://files.lighthouse.storage/", "_blank")
+            }
+            className={"fillBtn__purple"}
+            style={{ padding: "0.5rem 2rem" }}
+          >
+            LOGIN
+          </button>
+        </div>
       </div>
 
       <div className={Styles.navbarMobileMenu}>

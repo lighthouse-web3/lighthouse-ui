@@ -1,15 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "./bg.scss";
+@import "./mixins.scss";
+@import "styles/mediaQuery.scss";
 
 :root {
   --font-main: "Helvetica";
   --font-inter: "Inter";
+  --font-sans: "Open Sans";
   --clr-blue: #2563eb;
-  --clr-bg-black: #000000;
+  --clr-bg-black: #08060b;
   --gradient: linear-gradient(90.23deg, #6079b8 1.12%, #c54477 102.79%);
   --clr-text-grey: rgba(116, 109, 109, 1);
+  //--------------------
+
+  --bg-clr: #08060b;
+  --txt-clr: #ffffff;
+  --primary-clr: #6c41f4;
+
+  --header-bar-clr: rgba(255, 255, 255, 0.05);
+  --featureCard-bg-clr: #1f1d23;
+  --featureCard-bg-innerClr: #fff;
+  --testimonialCard-border-clr: #4f4f4f;
+
+  --testimonialCard-bg-clr: linear-gradient(
+    125deg,
+    #000 -1.58%,
+    rgba(77, 77, 77, 0) 123.59%
+  );
+
+  --box-shadow: 3px 3px 50px 0px rgba(0, 0, 0, 0.1);
+
+  --wave-pattern: url("/wavePattern_dark.svg");
 }
 
 html,
@@ -21,8 +45,8 @@ body {
   background-size: cover;
   background-position: center;
   overflow-x: hidden;
-  background: #08060b !important;
-  color: white;
+  color: var(--txt-clr);
+  background: var(--bg-clr) !important;
 }
 
 .bodyContainer {
@@ -38,6 +62,12 @@ body {
 
 .container {
   padding: 1rem 10%;
+  @include screen-size(phone-only) {
+    padding: 1rem 1rem;
+  }
+  @include screen-size(desktop-big) {
+    padding: 1rem 20%;
+  }
 }
 
 .sectionTitle {
@@ -47,6 +77,11 @@ body {
   color: white;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .border_btn {
   cursor: pointer;
   width: fit-content;
@@ -66,21 +101,91 @@ body {
 }
 
 .fillBtn__purple {
-  background: #7f56d9;
-  border: 1px solid #7f56d9;
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-  border-radius: 8px;
+  background: var(--primary-clr);
+  border: 1px solid var(--primary-clr);
+  box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.05),
+    0px 8px 15px -3px rgba(0, 112, 243, 0.4);
+  border-radius: 0.75rem;
+  font-family: var(--font-inter);
+  font-weight: 500;
   color: white;
   font-size: 1.2rem;
   width: fit-content;
   height: fit-content;
   padding: 10px 30px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.fillBtn__slide {
+  $primary: var(--primary-clr);
+  $border-radius: 0.2rem;
+
+  @include remove-btn-style;
+  @include flex-centered;
+  height: 50px;
+  width: fit-content;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+
+  border-radius: $border-radius;
+  color: $primary;
+  text-decoration: none;
+  -webkit-transition: 0.2s all ease;
+  transition: 0.2s ease all;
+  &:hover {
+    color: #fff;
+    letter-spacing: 4px;
+  }
+  &:focus {
+    color: #fff;
+  }
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 3px solid $primary;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  &:before {
+    border-radius: $border-radius;
+    -webkit-transition: 0.2s all ease;
+    transition: 0.2s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: $primary;
+    z-index: -2;
+  }
+  &:hover {
+    cursor: pointer;
+    &:before {
+      -webkit-transition: 0.5s all ease;
+      transition: 0.2s all ease;
+      left: 0;
+      right: 0;
+      opacity: 1;
+    }
+  }
+  &:focus {
+    &:before {
+      transition: 0.2s all ease;
+      left: 0;
+      right: 0;
+      opacity: 1;
+    }
+  }
 }
 
 .fillBtn__blue {
   cursor: pointer;
   width: fit-content;
-  background: var(--clr-blue);
+  background: var(--primary-clr);
   box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   height: fit-content;
@@ -90,6 +195,8 @@ body {
   font-size: 1.2rem;
   border: none;
   font-weight: 400;
+  overflow: hidden;
+  position: relative;
 
   &:hover {
     font-weight: 600;
@@ -160,14 +267,14 @@ body {
   }
 }
 
-@media screen and (max-width: 2560px) {
-  .container {
-    padding: 1rem 15%;
-  }
-}
+// @media screen and (max-width: 2560px) {
+//   .container {
+//     padding: 1rem 15%;
+//   }
+// }
 
-@media screen and (max-width: 550px) {
-  .container {
-    padding: 1rem 1rem;
-  }
-}
+// @media screen and (max-width: 550px) {
+//   .container {
+//     padding: 1rem 1rem;
+//   }
+// }
