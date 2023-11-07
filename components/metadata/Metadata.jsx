@@ -12,15 +12,14 @@ function Metadata({
   const router = useRouter();
 
   return (
-
-    <Head>
-      <title>Lighthouse Permanent Storage</title>
-      <meta name="title" content="Lighthouse Permanent Storage" />
-      <meta
-        name="description"
-        content="Store Files Perpetually on IPFS and Filecoin"
-      />
-
+    <>
+      <Head>
+        <title>Lighthouse Permanent Storage</title>
+        <meta name="title" content="Lighthouse Permanent Storage" />
+        <meta
+          name="description"
+          content="Store Files Perpetually on IPFS and Filecoin"
+        />
 
         {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:type" content="website" />
