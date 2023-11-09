@@ -113,10 +113,8 @@ export const LandingPageData = {
       icon: "/suitsIcon/suitsIcon3.svg",
       title: "Lighthouse CLI",
       description:
-
         "All Lighthouse features available through the convenience of the Command Line Interface ",
       link: "https://docs.lighthouse.storage/lighthouse-1/cli-tool/overview",
-
     },
     {
       icon: "/suitsIcon/suitsIcon4.svg",
@@ -269,11 +267,11 @@ export const testimonialSection = {
     },
     {
       quote:
-        "Using Lighthouse Storage has been a game changer for our projects. Its exceptional speed and reliability have surpassed all other storage solutions we've tried, making it our go-to choice for our storage needs.",
-      person: "Vivek pal",
-      designation: "Shastra OS",
-      img: "/testimonial/vivek.jpg",
-      link: "https://twitter.com/vivekpal0x",
+        "Lighthouse perpetual storage is the best practice in the FVM community. By integrating Lighthouse SDK, DataverseOS ecosystem dApps can access functions of programmable storage and store user files on Filecoin and customize payment solutions easily!",
+      person: "Qibing Li",
+      designation: "DataverseOS",
+      img: "/testimonial/Qibing.jpg",
+      link: "",
     },
     {
       quote:
@@ -311,7 +309,6 @@ export const documentationCards = [
   {
     title: "CLI Commands",
     subTitle:
-
       "Learn to install the CLI globally on your system using our npm package",
 
     link: "https://docs.lighthouse.storage/lighthouse-1/how-to/overview",
@@ -319,13 +316,14 @@ export const documentationCards = [
   {
     title: "Code Examples",
 
-    subTitle: "Many easy to use tutorial and code examples to build your favourite applications",
+    subTitle:
+      "Many easy to use tutorial and code examples to build your favourite applications",
     link: "https://docs.lighthouse.storage/lighthouse-1/how-to/create-an-api-key",
-
   },
   {
     title: "Developers Link",
-    subTitle: "Check our open-source Github repos to learn more and contribute to Lighthouse",
+    subTitle:
+      "Check our open-source Github repos to learn more and contribute to Lighthouse",
     link: "https://github.com/lighthouse-web3",
   },
 ];
