@@ -275,11 +275,11 @@ export const testimonialSection = {
     },
     {
       quote:
-        "Implementing Lighthouse Protocol was a breeze! Clear documentation and step-by-step instructions made integration fast. Kudos to the team for great Devrel support. Excited to use it again and recommend it to others.",
-      person: "Akashya",
-      designation: "Strive",
-      img: "/testimonial/akshaya.jpeg",
-      link: "https://www.linkedin.com/in/akshayacodified",
+        "The encryption and on-chain access control mechanism enabled by Lighthouse is instrumental to our design and engineering work at Daln. Integrating the SDK into our UI was a breeze.",
+      person: "Karen",
+      designation: "Daln",
+      img: "/testimonial/karen.png",
+      link: "",
     },
     {
       quote:
