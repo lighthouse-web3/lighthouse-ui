@@ -10,13 +10,11 @@ function HomeBanner() {
   const windowSize = useWindowSize();
   const { theme, setTheme } = useContext(ThemeContext);
 
-  //console.log(windowSize);
-
   return (
     <div className={Styles.Banner}>
       <span className={Styles.Banner__bgImg1}>
         <ImageBox
-          src={`/BannerImages/${theme}_bannerImg_1.png`}
+          src={`/BannerImages/${theme ? theme : "dark"}_bannerImg_1.png`}
           width={
             windowSize?.width > 1440
               ? "34vw"
@@ -40,7 +38,7 @@ function HomeBanner() {
       </span>
       <span className={Styles.Banner__bgImg2}>
         <ImageBox
-          src={`/BannerImages/${theme}_bannerImg_2.png`}
+          src={`/BannerImages/${theme ? theme : "dark"}_bannerImg_2.png`}
           width={
             windowSize?.width >= 1440
               ? "32vw"
@@ -64,7 +62,7 @@ function HomeBanner() {
       </span>
       <span className={Styles.Banner__bgImg3}>
         <ImageBox
-          src={`/BannerImages/${theme}_bannerImg_3.png`}
+          src={`/BannerImages/${theme ? theme : "dark"}_bannerImg_3.png`}
           width={
             windowSize?.width > 1440
               ? "34vw"
@@ -101,10 +99,7 @@ function HomeBanner() {
           <button
             className="fillBtn__slide"
             onClick={() => {
-              window.open(
-                "https://files.lighthouse.storage",
-                "_blank"
-              );
+              window.open("https://files.lighthouse.storage", "_blank");
             }}
           >
             Start Now

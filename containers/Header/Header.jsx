@@ -86,7 +86,7 @@ function Header({ style }) {
             <p key={index}>
               {link.path.length > 0 ? (
                 <a
-                  className={currentRoute === link.path && Styles.active}
+                  className={currentRoute === link.path ? Styles.active : ""}
                   onClick={() => {
                     _navigate.push(link.path);
                   }}
