@@ -9,20 +9,32 @@ import {
 } from "../containers";
 import { baseUrl } from "../utils/Data/config";
 
+export const getStaticProps = async () => {
+  let blogsData = null;
+  try {
+    const res = await axios.get(`${baseUrl}/blogs?populate=*`);
+    blogsData = res["status"] === 200 ? res["data"]?.["data"] : null;
+    console.log(blogsData);
+  } catch (error) {}
+  return {
+    props: {
+      blogsData,
+    },
+  };
+};
 
-function Blogs() {
-  const [blogsData, setBlogsData] = useState(null);
+function Blogs({ blogsData }) {
+  // const [blogsData, setBlogsData] = useState(null);
 
-  useEffect(() => {
-    (async () => {
-      const res = await axios.get(`${baseUrl}/blogs?populate=*`);
-      let blogsData = res["status"] === 200 ? res["data"]?.["data"] : null;
-      setBlogsData(blogsData);
-    })();
+  // useEffect(() => {
+  //   (async () => {
+  //     const res = await axios.get(`${baseUrl}/blogs?populate=*`);
+  //     let blogsData = res["status"] === 200 ? res["data"]?.["data"] : null;
+  //     setBlogsData(blogsData);
+  //   })();
 
-    return () => {};
-  }, []);
-
+  //   return () => {};
+  // }, []);
 
   return (
     <>
