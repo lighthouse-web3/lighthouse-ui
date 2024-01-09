@@ -8,10 +8,7 @@ function FeatureBlogCard({ blog }) {
     <div
       className={Style.FeatureBlogCard}
       onClick={() => {
-        window.open(
-          `/blog/${blog?.id}/${blog?.attributes?.title?.replaceAll(" ", "-")}`,
-          "_blank"
-        );
+        window.open(`/blogs/${blog?.attributes?.title?.trim()}`, "_blank");
       }}
     >
       <div className={Style.FeatureBlogCard__imageContainer}>

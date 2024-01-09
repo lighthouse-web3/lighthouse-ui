@@ -14,14 +14,10 @@ import { Metadata } from "../../components";
 export const getStaticPaths = async () => {
   const res = await axios.get(`${baseUrl}/blogs?populate=*`);
   let allBlogs = res["status"] === 200 ? res["data"]?.["data"] : null;
-
   const paths = allBlogs.map((blog) => {
     return {
       params: {
-        params: [
-          blog["id"] + "",
-          blog?.attributes?.title?.replaceAll(" ", "-"),
-        ],
+        params: [blog?.attributes?.title?.trim()],
       },
     };
   });
@@ -33,17 +29,18 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-  const id = context.params.params[0];
+  const title = context.params.params[0];
   let blogData = "null";
   let allBlogs = [];
   try {
-    const res = await axios.get(`${baseUrl}/blogs/${id}?populate=*`);
-    blogData =
-      res["status"] === 200 ? res["data"]?.["data"]?.["attributes"] : null;
-
     const allBlogsRes = await axios.get(`${baseUrl}/blogs?populate=*`);
     allBlogs =
       allBlogsRes["status"] === 200 ? allBlogsRes["data"]?.["data"] : [];
+    // console.log(allBlogs, "-----ALL BLOGS --- ");
+    blogData = allBlogs.filter(
+      (blog) =>
+        blog?.attributes?.title?.trim()?.toLowerCase() == title?.toLowerCase()
+    )?.[0]?.attributes;
   } catch (error) {}
   return {
     props: {
@@ -54,20 +51,6 @@ export const getStaticProps = async (context) => {
 };
 
 function Blog({ blogData, allBlogs }) {
-  const router = useRouter();
-  const { params } = router.query;
-  const [showBlog, setShowBlog] = useState(blogData);
-  const [similarBlogs, setSimilarBlogs] = useState([]);
-  //console.log(blogData);
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await axios.get(`${baseUrl}/blogs?populate=*`);
-        res["status"] === 200 &&
-          getSimilarBlogs(showBlog, res["data"]?.["data"], setSimilarBlogs);
-      } catch (error) {}
-    })();
-  }, [params]);
   return (
     <>
       <Metadata

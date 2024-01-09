@@ -14,23 +14,17 @@ function FeaturedArticle({ blogsData }) {
         new Date(a?.attributes?.publishedAt)
       );
     });
-    //console.log(sorted[0]);
-
     setLatestBlog(sorted[0]);
   }, []);
 
   return (
     <div className={Style.FeaturedArticle}>
-      {/* <TitleSeprator topTitle={"Blogs"} title={"Read our latest blog"} /> */}
-
       <div className={Style.blogContainer} data-aos="fade-up">
         <div
           className={Style.blogContainer__contentBox}
           onClick={() => {
             window.open(
-              `/blog/${
-                latestBlog?.id
-              }/${latestBlog?.attributes?.title?.replaceAll(" ", "-")}`,
+              `/blogs/${latestBlog?.attributes?.title?.trim()}`,
               "_blank"
             );
           }}
@@ -44,9 +38,7 @@ function FeaturedArticle({ blogsData }) {
           className={Style.blogContainer__imageBox}
           onClick={() => {
             window.open(
-              `/blog/${
-                latestBlog?.id
-              }/${latestBlog?.attributes?.title?.replaceAll(" ", "-")}`,
+              `/blogs/${latestBlog?.attributes?.title?.trim()}`,
               "_blank"
             );
           }}

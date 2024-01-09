@@ -41,10 +41,7 @@ function generateSiteMap(posts) {
        .map(({ id, attributes }) => {
          return `
            <url>
-               <loc>${`${URL}/blog/${id}/${attributes?.title?.replaceAll(
-                 " ",
-                 "-"
-               )}`}</loc>
+               <loc>${`${URL}/blogs/${attributes?.title?.trim()}`}</loc>
                	<lastmod>
 			${attributes?.updatedAt}
 		</lastmod>

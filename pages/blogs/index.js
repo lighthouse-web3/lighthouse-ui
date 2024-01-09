@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Metadata } from "../components";
+import { Metadata } from "../../components";
 import {
   FeaturedArticle,
   Footer,
   Header,
   MostPopularBlogs,
-} from "../containers";
-import { baseUrl } from "../utils/Data/config";
+} from "../../containers";
+import { baseUrl } from "../../utils/Data/config";
 
 export const getStaticProps = async () => {
   let blogsData = null;
@@ -24,18 +24,6 @@ export const getStaticProps = async () => {
 };
 
 function Blogs({ blogsData }) {
-  // const [blogsData, setBlogsData] = useState(null);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const res = await axios.get(`${baseUrl}/blogs?populate=*`);
-  //     let blogsData = res["status"] === 200 ? res["data"]?.["data"] : null;
-  //     setBlogsData(blogsData);
-  //   })();
-
-  //   return () => {};
-  // }, []);
-
   return (
     <>
       <Metadata title="Lighthouse Storage | Blogs" />
