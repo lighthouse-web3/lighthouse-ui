@@ -10,14 +10,14 @@ export const LandingPageData = {
     {
       icon: "/featureIcon/feature_6.svg",
       width: "6rem",
-      title: "Pay once and store forever",
-      subTitle: `Never worry about recurring payments with our "Pay once and store forever" feature.`,
+      title: "Perpetual Storage for a One-Time Investment",
+      subTitle: `Embrace perpetual storage with IPFS and Filecoin's advanced services.`,
     },
     {
       icon: "/featureIcon/feature_5.svg",
       width: "8rem",
 
-      title: "Store files on distributed web",
+      title: "Decentralized Storage Solutions for Your Files",
       subTitle: `Harness the power of IPFS and Filecoin to securely store your files on a decentralized network.`,
     },
     {
@@ -40,17 +40,17 @@ export const LandingPageData = {
       icon: "/featureIcon/feature_3.svg",
       width: "6rem",
 
-      title: "Image resize to save bandwidth",
+      title: "Decentralized image resizing",
       subTitle:
-        "Save bandwidth without sacrificing image quality with our automatic image resize feature.",
+        "Save bandwidth, optimize with blockchain-powered solutions seamlessly  without sacrificing image quality.",
     },
     {
       icon: "/featureIcon/feature_2.svg",
       width: "6rem",
 
-      title: "Fast Gateway that streams even 4k videos",
+      title: "High-Speed IPFS Video Gateway",
       subTitle:
-        "Enjoy seamless streaming of 4K videos with our ultra-fast gateways.",
+        "Enjoy 4k video streaming at lightning speed with our decentralized storage and dedicated IPFS gateway.",
     },
   ],
 
@@ -251,7 +251,7 @@ export const testimonialSection = {
   testimonials: [
     {
       quote:
-        "Using lighthouse for Macha was the best choice to store things on IPFS and Filecoin. The integration process was remarkably simple and efficient, making it the ultimate storage solution due to its exceptional speed and reliability. Lighthouse would unquestionably be our preferred recommendation for Storage Infra of Web3",
+        "Lighthouse with Macha delivers optimal Decentralized Storage on IPFS and Filecoin. The seamless integration and exceptional speed make it our top pick for Web3 Storage. As a reliable Filecoin Storage Provider, Lighthouse stands out for NFT Data Security, solidifying its role in our decentralized storage infrastructure for Web3.",
       person: "Saksham",
       designation: "MetaWork Labs",
       img: "/testimonial/saksham.jpg",
@@ -259,7 +259,7 @@ export const testimonialSection = {
     },
     {
       quote:
-        "Lighthouse incentivized storage promotes data availability market competition for modular blockchains like Syscoin. Cheaper and secure than cloud storage, ensuring long-term data liveness guarantees for network participants.",
+        "Lighthouse, with its incentivized storage, fuels data availability market competition in the realm of modular blockchains like Syscoin. It stands as a more affordable and secure choice compared to cloud storage, ensuring extended data liveness guarantees for participants in the network. Embrace decentralized storage solutions for heightened security and efficiency in blockchain data management.",
       person: "Jagdeep sidhu",
       designation: "Syscoin",
       img: "/testimonial/jagdeep.jpg",
