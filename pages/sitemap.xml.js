@@ -12,6 +12,8 @@ function generateSiteMap(posts) {
 		<lastmod>
 			2023-08-29T14:24:13+00:00
 		</lastmod>
+		<changefreq>weekly</changefreq>
+<priority>0.8</priority>
 	</url>
 	<url>
 		<loc>
@@ -20,6 +22,8 @@ function generateSiteMap(posts) {
 		<lastmod>
 			2023-08-29T14:24:13+00:00
 		</lastmod>
+		<changefreq>weekly</changefreq>
+<priority>0.8</priority>
 	</url>
 	<url>
 		<loc>
@@ -28,6 +32,8 @@ function generateSiteMap(posts) {
 		<lastmod>
 			2023-08-29T14:24:13+00:00
 		</lastmod>
+		<changefreq>weekly</changefreq>
+<priority>0.9</priority>
 	</url>
 	<url>
 		<loc>
@@ -36,15 +42,21 @@ function generateSiteMap(posts) {
 		<lastmod>
 			2023-08-29T14:24:13+00:00
 		</lastmod>
+		<changefreq>weekly</changefreq>
+<priority>0.5</priority>
 	</url>
      ${posts
        .map(({ id, attributes }) => {
          return `
            <url>
-               <loc>${`${URL}/blogs/${attributes?.title?.trim()}`}</loc>
+               <loc>${`${URL}/blogs/${encodeURIComponent(
+                 attributes?.title?.trim()
+               )}`}</loc>
                	<lastmod>
 			${attributes?.updatedAt}
 		</lastmod>
+		<changefreq>weekly</changefreq>
+<priority>0.3</priority>
            </url>
          `;
        })

@@ -54,10 +54,12 @@ function Blog({ blogData, allBlogs }) {
   return (
     <>
       <Metadata
-        title={blogData?.Seo?.metaTitle}
-        description={blogData?.Seo?.metaDiscription?.slice(0, 100) + "..."}
+        title={blogData?.title}
+        description={blogData?.description?.slice(0, 100) + "..."}
         image={mediaUrl + blogData?.coverImage?.data?.attributes?.url}
-        url={"https://www.lighthouse.storage/"}
+        url={`https://www.lighthouse.storage/blogs/${encodeURIComponent(
+          blogData?.title
+        )}`}
       />
       <div className={"bodyContainer"}>
         <Header style={{ backgroundColor: "#000" }} />
