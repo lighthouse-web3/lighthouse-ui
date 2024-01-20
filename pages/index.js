@@ -13,6 +13,7 @@ import {
 } from "../containers";
 
 import dynamic from "next/dynamic";
+import { LandingPageData } from "../utils/Data/SiteContent";
 const Header = dynamic(() => import("../containers/Header/Header"));
 
 export default function Home() {
@@ -46,7 +47,10 @@ export default function Home() {
 
         <div style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
-            <PartnerCarousel />
+            <PartnerCarousel
+              data={LandingPageData?.clientsLogo}
+              title={"Trusted By"}
+            />
           </div>
         </div>
         <div className="">

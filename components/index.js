@@ -9,3 +9,4 @@ export { default as TitleSeprator } from "./TitleSeprator/TitleSeprator";
 export { default as KeyFeatureCard } from "./KeyFeatureCard/KeyFeatureCard";
 export { default as SuitCard } from "./SuitCard/SuitCard";
 export { default as StatBox } from "./StatBox/StatBox";
+export { default as StatBoxVarient } from "./StatBoxVarient/StatBoxVarient";

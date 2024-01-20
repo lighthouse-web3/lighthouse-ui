@@ -10,6 +10,11 @@ const ThemeProperties = [
     light: "#08060b",
   },
   {
+    property: "--secondary-gradient-blue",
+    dark: "linear-gradient(180deg, #131A15 0%, #090B3A 100%)",
+    light: "linear-gradient(180deg, #131A15 0%, #090B3A 100%)",
+  },
+  {
     property: "--header-bar-clr",
     dark: "rgba(255, 255, 255, 0.05)",
     light: "#f8f8f8",

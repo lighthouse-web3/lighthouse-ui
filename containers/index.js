@@ -3,8 +3,14 @@ import dynamic from "next/dynamic";
 export const Footer = dynamic(() => import("./Footer/Footer"));
 export const Header = dynamic(() => import("./Header/Header"));
 export const HomeBanner = dynamic(() => import("./HomeBanner/HomeBanner"));
+export const NftHeroContainer = dynamic(() =>
+  import("./NftHeroContainer/NftHeroContainer")
+);
 export const FeatureCompare = dynamic(() =>
   import("./FeatureCompare/FeatureCompare")
+);
+export const NftFeatureCompare = dynamic(() =>
+  import("./NftFeatureCompare/NftFeatureCompare")
 );
 export const PartnerCarousel = dynamic(() =>
   import("./PartnerCarousel/PartnerCarousel")
@@ -32,6 +38,7 @@ export const DocContainer2 = dynamic(() =>
 export const Testimonials = dynamic(() =>
   import("./Testimonials/Testimonials")
 );
+export const NftSteps = dynamic(() => import("./NftSteps/NftSteps"));
 export const FAQContainer = dynamic(() =>
   import("./Faq-container/FaqContainer")
 );
