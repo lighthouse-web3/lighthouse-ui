@@ -6,19 +6,15 @@ export const sendEmail = async (email) => {
     to_email: email,
   };
   emailjs
-    .send(
-      "service_dyqwvtg",
-      "template_np0xnzi",
-      message,
-      "user_Aknum3vI0j25vcn8JC5ZO"
-    )
+    .send("service_dyqwvtg", "template_np0xnzi", message, "BAasPcGDlBaaNEeAr")
     .then(
-      function (response) {
+      (response) => {
         if (response.status === 200) {
           notify("Email Submitted", "success");
         }
       },
-      function (error) {
+      (error) => {
+        console.log(error);
         notify(`Error: ${error}`, "error");
       }
     );

@@ -62,7 +62,10 @@ function FeatureCardList() {
             className="border_btn"
             ref={bannerRef}
             onClick={() => {
-              window.open("https://files.lighthouse.storage/", "__blank");
+              window.open(
+                "https://docs.lighthouse.storage/lighthouse-1/",
+                "__blank"
+              );
             }}
           >
             Start Now

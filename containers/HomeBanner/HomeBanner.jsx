@@ -99,7 +99,10 @@ function HomeBanner() {
           <button
             className="fillBtn__slide"
             onClick={() => {
-              window.open("https://files.lighthouse.storage", "_blank");
+              window.open(
+                "https://docs.lighthouse.storage/lighthouse-1/",
+                "_blank"
+              );
             }}
           >
             Start Now

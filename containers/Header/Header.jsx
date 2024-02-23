@@ -32,8 +32,8 @@ const links = [
   },
   {
     title: "Documentation",
-    path: "/documentation",
-    href: "",
+    path: "",
+    href: "https://docs.lighthouse.storage/lighthouse-1/",
   },
 
   {
