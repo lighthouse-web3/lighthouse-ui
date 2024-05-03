@@ -92,6 +92,10 @@ export const LandingPageData = {
       icon: "/client/silence.svg",
       link: "",
     },
+    {
+      icon: "/client/nft_storage.svg",
+      link: "",
+    },
   ],
   StorageFeature: [
     {
