@@ -25,13 +25,13 @@ function StatBox() {
       <div className={styles.StatBox__stat}>
         <p>Users</p>
         <p>
-          <CountUp duration={8} end={9} delay={2} suffix="K+" />
+          <CountUp duration={8} end={14} delay={2} suffix="K+" />
         </p>
       </div>
       <div className={styles.StatBox__stat}>
         <p>Number of files</p>
         <p>
-          <CountUp duration={8} end={1.8} decimals={1} delay={2} suffix="M+" />
+          <CountUp duration={8} end={2.0} decimals={1} delay={2} suffix="M+" />
         </p>
       </div>
     </div>
