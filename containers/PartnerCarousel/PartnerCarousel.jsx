@@ -4,14 +4,14 @@ import { ImageBox, TitleSeprator } from "../../components";
 import { LandingPageData } from "../../utils/Data/SiteContent";
 import ThemeContext from "../../utils/services/Themecontext";
 
-function PartnerCarousel() {
+function PartnerCarousel({ data, title }) {
   const { theme, setTheme } = useContext(ThemeContext);
   return (
     <div className={Styles.PartnerCarousel}>
-      <TitleSeprator title={"Trusted By"} />
+      <TitleSeprator title={title} />
 
       <div className={Styles.PartnerCarousel__brandLogoContainer}>
-        {LandingPageData?.clientsLogo?.map((item, index) => (
+        {data?.map((item, index) => (
           <span
             key={index}
             data-aos="fade-up"

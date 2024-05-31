@@ -25,16 +25,16 @@ function ImageBox({
       className={
         aspectRatio ? Styles.imageRatioContainer : Styles.imageContainer
       }
-      style={dimensions}
+      style={{ ...dimensions, overflow: "hidden" }}
     >
       <Image
         className={Styles.image}
         {...rest}
-        style={{ objectFit: "cover", ...style }}
+        style={{ ...style }}
         // style={style}
         alt={alt ? alt : "icon"}
         src={src}
-        objectFit={"contain"}
+        objectFit={style?.objectFit ? style.objectFit : "cover"}
         layout={layout ? layout : "fill"}
       />
     </div>
