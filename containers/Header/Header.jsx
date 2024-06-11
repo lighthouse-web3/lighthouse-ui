@@ -120,7 +120,8 @@ function Header({ style }) {
           </span>
           <button
             onClick={() =>
-              window.open("https://files.lighthouse.storage/", "_blank")
+              window.open("http://localhost:3001/?redirectfrom=main", "_blank")
+              // window.open("https://files.lighthouse.storage/?referfrom=main", "_blank")
             }
             className={"fillBtn__purple"}
             style={{ padding: "0.5rem 2rem" }}

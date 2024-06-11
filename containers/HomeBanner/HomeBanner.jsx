@@ -95,7 +95,7 @@ function HomeBanner() {
           }}
         ></div>
 
-        <div className="flex-center">
+        <div className={Styles.buttonContainer}>
           <button
             className="fillBtn__slide"
             style={{ margin: '0px 8px' }}

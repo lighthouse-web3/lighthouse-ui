@@ -80,6 +80,12 @@
       z-index: 3;
     }
 
+    .buttonContainer{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     button {
       z-index: 3;
     }
@@ -116,6 +122,14 @@
       .subTitle {
         font-size: calc(1rem + 1.1vw);
         line-height: 2.5rem;
+      }
+      .buttonContainer{
+        flex-direction: column;
+        button{
+          width: 100% !important;
+          margin: 5px !important;
+        }
+  
       }
     }
 
