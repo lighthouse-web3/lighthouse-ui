@@ -120,7 +120,7 @@ function Header({ style }) {
           </span>
           <button
             onClick={() =>
-              window.open("http://localhost:3001/?redirectfrom=main", "_blank")
+              window.open("https://files.lighthouse.storage/?redirectfrom=main", "_blank")
               // window.open("https://files.lighthouse.storage/?referfrom=main", "_blank")
             }
             className={"fillBtn__purple"}
