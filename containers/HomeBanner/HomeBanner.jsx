@@ -98,6 +98,7 @@ function HomeBanner() {
         <div className="flex-center">
           <button
             className="fillBtn__slide"
+            style={{ margin: '0px 8px' }}
             onClick={() => {
               window.open(
                 "https://docs.lighthouse.storage/lighthouse-1/",
@@ -105,7 +106,19 @@ function HomeBanner() {
               );
             }}
           >
-            Start Now
+            Documentation
+          </button>
+          <button
+            className="fillBtn__slide_pink"
+            style={{ margin: '0px 8px' }}
+            onClick={() => {
+              window.open(
+                "https://files.lighthouse.storage/",
+                "_blank"
+              );
+            }}
+          >
+            Go to App
           </button>
         </div>
       </div>

@@ -158,7 +158,7 @@ export const LandingPageData = {
     {
       question: "What does it cost to store data to Lighthouse?",
       answer:
-        'Currently we have an incentivization program for projects to get free storage to store on Lighthouse.  <a href="https://airtable.com/shrPFC2TgojuOAYO4"> Fill up this form  </a>.  Although the actual cost per GB will be dynamic and we estimate it to be around $5 / GB or less. More info on the exact cost will be calculated as we approach mainnet',
+        'Check our payment plans here -  <a href="https://files.lighthouse.storage/"> Pricing  </a>.',
     },
     {
       question: "How can I pay for the Lighthouse?",
