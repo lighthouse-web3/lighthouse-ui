@@ -79,6 +79,7 @@ function HomeBanner() {
           }
           aspectRatio={true}
           style={{
+            zindex: "1",
             objectFit: "cover",
             objectPosition: "center",
           }}
