@@ -25,7 +25,7 @@ function StatBox() {
       <div className={styles.StatBox__stat}>
         <p>Users</p>
         <p>
-          <CountUp duration={8} end={14} delay={2} suffix="K+" />
+          <CountUp duration={8} end={15} delay={2} suffix="K+" />
         </p>
       </div>
       <div className={styles.StatBox__stat}>
