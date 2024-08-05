@@ -69,14 +69,6 @@ export const LandingPageData = {
       link: "",
     },
     {
-      icon: "/client/dataverse_os.svg",
-      link: "",
-    },
-    // {
-    //   icon: "https://gateway.lighthouse.storage/ipfs/QmNUyLh1XDU8R84PGep1zUbjqJzYV4dayMcdM6ZmA4m3Tk",
-    //   link: "",
-    // },
-    {
       icon: "/client/mask.svg",
       link: "",
     },
@@ -94,6 +86,14 @@ export const LandingPageData = {
     },
     {
       icon: "/client/nft_storage.svg",
+      link: "",
+    },
+    {
+      icon: "/client/Aethir.svg",
+      link: "",
+    },
+    {
+      icon: "/client/singularity.svg",
       link: "",
     },
   ],
