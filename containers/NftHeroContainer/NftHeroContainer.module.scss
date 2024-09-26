@@ -1,0 +1,130 @@
+@import "styles/mixins.scss";
+@import "styles/mediaQuery.scss";
+.Banner {
+  display: flex;
+  color: #fff;
+  height: calc(100vh - 100px);
+  position: relative;
+  background: var(--bg-clr);
+
+  &__container {
+    @include flex-setup(row, center);
+    width: 100%;
+    padding: 1rem 10%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--secondary-gradient-blue);
+  }
+  &__leftContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  &__rightContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+    width: 50%;
+  }
+  .title {
+    width: 100%;
+    font-size: calc(2rem + 2vw);
+    font-weight: 700;
+    max-width: 560px;
+    line-height: 5rem;
+    // background: linear-gradient(90deg, #295fd9 1.12%, #bd487c 102.79%);
+    // background-clip: text;
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    z-index: 3;
+  }
+  .subTitle {
+    font-family: var(--font-main);
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(0.5rem + 0.5vw);
+    margin-top: 0rem;
+    letter-spacing: 2px;
+    line-height: 2rem;
+    max-width: 560px;
+    z-index: 3;
+  }
+
+  .infoBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+    .title {
+      width: 100%;
+      font-size: calc(2.5rem + 3vw);
+      text-transform: capitalize;
+      font-weight: 700;
+      background: linear-gradient(90deg, #295fd9 1.12%, #bd487c 102.79%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      z-index: 3;
+    }
+    .subTitle {
+      font-family: var(--font-main);
+      font-style: normal;
+      font-weight: 400;
+      font-size: calc(0.8rem + 0.8vw);
+      margin-top: 0rem;
+      letter-spacing: 2px;
+      line-height: 3.5rem;
+      z-index: 3;
+    }
+
+    button {
+      z-index: 3;
+    }
+  }
+
+  .statBox {
+    bottom: -4rem;
+    right: 0;
+    width: 100%;
+    height: auto;
+    z-index: 3;
+    @include screen-size(phone-only) {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Banner {
+    flex-direction: column;
+    padding: 1rem 5%;
+
+    .infoBox {
+      width: 100%;
+      flex: 1;
+      gap: 1rem;
+      padding: 1rem;
+      background: transparent;
+
+      // .title {
+      // }
+      .subTitle {
+        font-size: calc(1rem + 1.1vw);
+        line-height: 2.5rem;
+      }
+    }
+
+    .globeBox {
+      width: 100%;
+    }
+  }
+}

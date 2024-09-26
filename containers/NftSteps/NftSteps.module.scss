@@ -1,0 +1,93 @@
+@import "styles/mixins.scss";
+@import "styles/mediaQuery.scss";
+.NftSteps {
+  @include flex-setup(column, flex-start);
+  height: 100%;
+  margin: 0 0 5vh 0;
+  gap: 4rem;
+  color: var(--txt-clr);
+  font-family: var(--font-sans);
+
+  &__titleContainer {
+    margin-top: 10%;
+    width: 100%;
+    text-align: center;
+    p:nth-of-type(1) {
+      text-transform: uppercase;
+      @include text-size(0.85rem);
+      font-weight: 700;
+      letter-spacing: 0.08rem;
+    }
+    p:nth-of-type(2) {
+      text-transform: uppercase;
+      @include text-size(2.5rem);
+      font-weight: 500;
+      line-height: 120%;
+      letter-spacing: -0.07rem;
+      margin-top: 10px;
+    }
+  }
+
+  &__cardContainer {
+    width: 100%;
+    // display: flex;
+    // flex-wrap: wrap;
+    // gap: 2rem 2rem;
+    // justify-content: flex-start;
+    // span {
+    //   @include screen-size(phone-only) {
+    //     width: 100%;
+    //   }
+    // }
+
+    @include grid-equal(2, 2, 2rem, 2rem);
+
+    @include screen-size(tablet-landscape-up) {
+      @include grid-equal(2, 3, 1rem, 1.5rem);
+    }
+    @include screen-size(phone-only) {
+      @include grid-equal(1, 1, 1rem, 1.5rem, "false");
+    }
+  }
+
+  &__BannerContainer {
+    flex: 1;
+    @include flex-centered;
+    width: 100%;
+    margin-top: 10%;
+    .Banner {
+      padding: 1.5rem;
+      background: linear-gradient(
+        95.31deg,
+        #a659ff -28.73%,
+        #7178ff 23.23%,
+        #2148ff 62.74%,
+        #6643eb 111.77%
+      );
+
+      border-radius: 22px;
+      width: 90%;
+      height: 250px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      p:nth-of-type(1) {
+        font-weight: 400;
+        font-size: 2.5rem;
+        line-height: 108%;
+        text-align: center;
+        color: #ffffff;
+      }
+      p:nth-of-type(2) {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 108%;
+        text-align: center;
+        color: #ffffff;
+      }
+      p {
+      }
+    }
+  }
+}

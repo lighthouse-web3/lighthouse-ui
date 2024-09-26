@@ -1,0 +1,32 @@
+@import "styles/mixins.scss";
+@import "styles/mediaQuery.scss";
+
+.NftFeatureCompare {
+  @include flex-setup(column, flex-start);
+  color: white;
+  font-family: var(--font-main);
+  gap: 4rem;
+  @include screen-size(phone-only) {
+    gap: 2rem;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    @include text-size(2.5rem);
+    line-height: 150%;
+    letter-spacing: 0.2px;
+  }
+
+  &__featureContainer {
+    @include grid-equal(3, 2, 5%, 5%);
+    padding-bottom: 2rem;
+
+    @include screen-size(tablet-landscape-up) {
+      @include grid-equal(2, 3, 1rem, 1.5rem);
+    }
+    @include screen-size(phone-only) {
+      @include grid-equal(1, 6, 1rem, 1.5rem);
+    }
+  }
+}
