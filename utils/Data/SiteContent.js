@@ -243,7 +243,7 @@ export const footerData = {
     {
       text: "Talk to Expert",
       path: null,
-      link: "https://calendly.com/aditya-lighthouse/30min?month=2023-07",
+      link: "https://calendly.com/nanditmehra/30min",
     },
   ],
 };
