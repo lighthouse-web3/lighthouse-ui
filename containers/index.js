@@ -38,3 +38,9 @@ export const FAQContainer = dynamic(() =>
 export const HoverContainer = dynamic(() =>
   import("./HoverContainer/HoverContainer")
 );
+export const LogoMarquee = dynamic(() =>
+  import("./LogoMarquee/LogoMarquee")
+);
+export const LighthouseSuit = dynamic(() =>
+  import("./LighthouseSuit/LighthouseSuit")
+);

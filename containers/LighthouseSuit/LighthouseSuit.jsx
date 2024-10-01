@@ -1,0 +1,34 @@
+import React from "react";
+import styles from "./LighthouseSuit.module.scss";
+import Image from "next/image";
+
+export default function LighthouseSuit({ data }) {
+  console.log(data, "-----");
+  return (
+    <div className={styles.LighthouseSuitContainer}>
+      <div className={styles.header} style={data.index % 2 !== 0 ? { flexDirection: 'row-reverse' } : {}}>
+        <div className={styles.headerLeft} style={data.index % 2 !== 0 ? { textAlign: 'right' } : {}}>
+          <h2 className={styles.title}>{data.title}</h2>
+          <h3 className={styles.subtitle}>{data.subTitle}</h3>
+          <p className={styles.description}>{data.description}</p>
+          <button className={styles.learnMore}>LEARN MORE</button>
+        </div>
+        <div className={styles.headerRight}>
+          <Image src={data.icon} alt="Dashboard" width={300} height={350} />
+        </div>
+      </div>
+      <div className={styles.features}>
+        {data.featureCard.map((data, index) => (
+          
+            <div className={styles.featureCard} key={index}>
+              <h5 className={styles.featureTitle}>{data.title}</h5>
+              <p className={styles.featureDescription}>
+               {data.subTitle}
+              </p>
+            </div>
+          
+        ))}
+      </div>
+    </div>
+  );
+}

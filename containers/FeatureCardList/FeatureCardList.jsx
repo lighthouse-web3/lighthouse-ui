@@ -33,25 +33,6 @@ function FeatureCardList() {
 
   return (
     <div className={Style.FeatureCardList + " container"}>
-      <div className={Style.FeatureCardList__titleContainer}>
-        <p></p>
-        <p>Lighthouse Suite</p>
-      </div>
-
-      <div className={Style.FeatureCardList__FeatureContainer}>
-        {LandingPageData?.StorageFeature.map((item, index) => (
-          <span
-            key={index}
-            data-aos="fade-up"
-            data-aos-delay={100 * index}
-            onClick={() => {
-              window.open(item?.link, "__blank");
-            }}
-          >
-            <SuitCard {...item} />
-          </span>
-        ))}
-      </div>
       <div
         className={Style.FeatureCardList__BannerContainer}
         data-aos="fade-up"

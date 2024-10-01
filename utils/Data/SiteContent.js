@@ -3,7 +3,7 @@ export const disclaimerText =
 
 export const LandingPageData = {
   HeroSection: {
-    title: "Store Files Permanently",
+    title: "Data Layer powering AI, DePin and NFTs",
     subTitle: "Secure, Reliable, & Lightning-Fast with Lighthouse.",
   },
   KeyFeatures: [
@@ -95,6 +95,88 @@ export const LandingPageData = {
     {
       icon: "/client/singularity.svg",
       link: "",
+    },
+  ],
+  lighthouseSuit:[
+    {
+      title:'DATA DAOs',
+      subTitle:'Empower Data Sovereignty with Decentralized Data DAOs',
+      description:'Explore the future of decentralized data management with our Data DAOs.',
+      icon:'/suitsIcon/data_daos.png',
+      featureCard:[
+        {
+          title:'Endowment Pool',
+          subTitle:'Create a diverse cryptocurrency pool to support DeFi integrations, ensuring sustainable data finances.'
+        },
+        {
+          title:'Verifiable Proofs',
+          subTitle:'Create a diverse cryptocurrency pool to support DeFi integrations, ensuring sustainable data finances.'
+        },
+        {
+          title:'Programmability',
+          subTitle:'Create a diverse cryptocurrency pool to support DeFi integrations, ensuring sustainable data finances.'
+        }
+      ]
+    },
+    {
+      title:'WEB APPLICATION',
+      subTitle:'Secure and Simplify Your File Storage and Sharing',
+      description:'Log in and access your files with ease. Our web application provides a user-friendly interface to store, retrieve, and share files securely across the web. ',
+      icon:'/suitsIcon/web_app.png',
+      featureCard:[
+        {
+          title:'Seamless Access',
+          subTitle:'Enhance your file management with our user-friendly web application.'
+        },
+        {
+          title:'Advanced Sharing Capabilities',
+          subTitle:'Create a diverse cryptocurrency pool to support DeFi integrations, ensuring sustainable data finances.'
+        },
+        {
+          title:'Reliable Storage',
+          subTitle:'Create a diverse cryptocurrency pool to support DeFi integrations, ensuring sustainable data finances.'
+        }
+      ]
+    },
+    {
+      title:'SDK & CLI',
+      subTitle:'Integrate with Precision Using Our Comprehensive Development Tools',
+      description:'Accelerate your development process with our all-encompassing set of integration tools.',
+      icon:'/suitsIcon/sdk_cli.png',
+      featureCard:[
+        {
+          title:'Lighthouse SDK',
+          subTitle:'A developer-friendly toolkit that offers libraries, APIs, and extensive documentation to seamlessly integrate Lighthouse'
+        },
+        {
+          title:'Lighthouse CLI',
+          subTitle:'CLI that provides developers with full control over file management directly from your terminal with simple commands.'
+        },
+        {
+          title:'Cross-Platform Flexibility',
+          subTitle:`Whether you're building web apps, mobile applications, or desktop solutions, the SDK and CLI ensure compatibility across various platforms`
+        }
+      ]
+    },
+    {
+      title:'Encryption SDK & Token Gating',
+      subTitle:'Secure Your Files with Advanced Encryption and Access Controls',
+      description:'Fortify your data security with our sophisticated encryption tools and access management solutions.',
+      icon:'/suitsIcon/encryption.png',
+      featureCard:[
+        {
+          title:'Robust Encryption',
+          subTitle:'Protect your data with Lighthouse Kavach, utilizing top-tier encryption techniques such as BLS Threshold Cryptography to ensure maximum security.'
+        },
+        {
+          title:'Token Gating',
+          subTitle:'Implement robust access controls with token-based security using blockchain identities from EVM-compatible wallets, Solana, Cosmos, and more.'
+        },
+        {
+          title:'Multi-Wallet Integration',
+          subTitle:'Easily manage access permissions and authenticate user identities across a variety of blockchain wallet platforms.'
+        }
+      ]
     },
   ],
   StorageFeature: [
