@@ -37,14 +37,14 @@ export default function Home() {
         </div>
         <div style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
-          <TitleSeprator title={'Empowering Digital Sovereignty'}  />
-            {
-              LandingPageData.lighthouseSuit.map((data,index)=>  <>
-              <LighthouseSuit key={index} data={{...data,index}} />
-              <hr/>
-              </>)
-            } 
-          </div> 
+            <TitleSeprator title={"Empowering the Data Economy"} />
+            {LandingPageData.lighthouseSuit.map((data, index) => (
+              <>
+                <LighthouseSuit key={index} data={{ ...data, index }} />
+                <hr />
+              </>
+            ))}
+          </div>
         </div>
         <div style={{ minHeight: "auto" }}>
           <div className="contentContainer">

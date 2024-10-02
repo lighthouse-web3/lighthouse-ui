@@ -3,8 +3,9 @@ export const disclaimerText =
 
 export const LandingPageData = {
   HeroSection: {
-    title: "Data Layer powering AI, DePin and NFTs",
-    subTitle: "Secure, Reliable, & Lightning-Fast with Lighthouse.",
+    title: "Programmable Data Layer",
+    subTitle:
+      "Powering AI, DePin, NFTs with decentralized storage and encryption",
   },
   KeyFeatures: [
     {
@@ -97,86 +98,105 @@ export const LandingPageData = {
       link: "",
     },
   ],
-  lighthouseSuit:[
+  lighthouseSuit: [
     {
-      title:'DATA DAOs',
-      subTitle:'Empower Data Sovereignty with Decentralized Data DAOs',
-      description:'Explore the future of decentralized data management with our Data DAOs.',
-      icon:'/suitsIcon/data_daos.png',
-      featureCard:[
+      title: "DATA DAOs",
+      subTitle: "Setup and Utilize Smart Contracts to spin up Data DAOs",
+      description:
+        "Data DAOs that generates yield and ensure long-term preservation of data long-term with governance",
+      icon: "/suitsIcon/data_daos.png",
+      link: "https://www.lighthouse.storage/blogs/Discover%20How%20the%20Endowment%20Pool%20Makes%20Your%20Data%20Immortal",
+      featureCard: [
         {
-          title:'Endowment Pool',
-          subTitle:'Create a diverse cryptocurrency pool to support DeFi integrations, ensuring sustainable data finances.'
+          title: "Endowment Pool",
+          subTitle:
+            "Resilient pool of funds with multiple currency and access to DeFi",
         },
         {
-          title:'Verifiable Proofs',
-          subTitle:'Create a diverse cryptocurrency pool to support DeFi integrations, ensuring sustainable data finances.'
+          title: "Verifiable Proofs",
+          subTitle:
+            "Proof of Space Time and PoDSI to ensure continuous availability",
         },
         {
-          title:'Programmability',
-          subTitle:'Create a diverse cryptocurrency pool to support DeFi integrations, ensuring sustainable data finances.'
-        }
-      ]
+          title: "Programmability",
+          subTitle:
+            "Fine grain control over replications, storage providers, SLA & costs",
+        },
+      ],
     },
     {
-      title:'WEB APPLICATION',
-      subTitle:'Secure and Simplify Your File Storage and Sharing',
-      description:'Log in and access your files with ease. Our web application provides a user-friendly interface to store, retrieve, and share files securely across the web. ',
-      icon:'/suitsIcon/web_app.png',
-      featureCard:[
+      title: "WEB APPLICATION",
+      subTitle: "Secure and Simplify Your File Storage and Sharing",
+      description:
+        "Log in and access your files with ease. Our web application provides a user-friendly interface to store, retrieve, and share files on popular decentralized storage networks - IPFS and Filecoin",
+      icon: "/suitsIcon/web_app.png",
+      link: "https://files.lighthouse.storage/",
+      featureCard: [
         {
-          title:'Seamless Access',
-          subTitle:'Enhance your file management with our user-friendly web application.'
+          title: "Seamless Access",
+          subTitle:
+            "Easily login via your favourite social login or wallets supported across multiple networks",
         },
         {
-          title:'Advanced Sharing Capabilities',
-          subTitle:'Create a diverse cryptocurrency pool to support DeFi integrations, ensuring sustainable data finances.'
+          title: "Advanced Sharing Capabilities",
+          subTitle: `dont use cryptocurrency throughout the website. Better use "tokens" or "assets"`,
         },
         {
-          title:'Reliable Storage',
-          subTitle:'Create a diverse cryptocurrency pool to support DeFi integrations, ensuring sustainable data finances.'
-        }
-      ]
+          title: "Diverse Payment Options",
+          subTitle:
+            "Pay via credit card, debit card or popular tokens onchain via our flexible annual or lifetime plans",
+        },
+      ],
     },
     {
-      title:'SDK & CLI',
-      subTitle:'Integrate with Precision Using Our Comprehensive Development Tools',
-      description:'Accelerate your development process with our all-encompassing set of integration tools.',
-      icon:'/suitsIcon/sdk_cli.png',
-      featureCard:[
+      title: "SDK & CLI",
+      subTitle:
+        "Integrate Lighthouse into your project with our popular development tools",
+      description:
+        "Developers can easily integrate our SDK & CLI into their application pipeline in language of their choice",
+      icon: "/suitsIcon/sdk_cli.png",
+      link: "https://docs.lighthouse.storage/lighthouse-1/",
+      featureCard: [
         {
-          title:'Lighthouse SDK',
-          subTitle:'A developer-friendly toolkit that offers libraries, APIs, and extensive documentation to seamlessly integrate Lighthouse'
+          title: "Lighthouse SDK",
+          subTitle:
+            "A developer-friendly toolkit that offers libraries, APIs, and extensive documentation to seamlessly integrate Lighthouse",
         },
         {
-          title:'Lighthouse CLI',
-          subTitle:'CLI that provides developers with full control over file management directly from your terminal with simple commands.'
+          title: "Lighthouse CLI",
+          subTitle:
+            "CLI that provides developers with full control over file management directly from your terminal with simple commands.",
         },
         {
-          title:'Cross-Platform Flexibility',
-          subTitle:`Whether you're building web apps, mobile applications, or desktop solutions, the SDK and CLI ensure compatibility across various platforms`
-        }
-      ]
+          title: "Cross-Platform Flexibility",
+          subTitle: `Whether you're building web apps, mobile applications, or desktop solutions, the SDK and CLI ensure compatibility across various platforms`,
+        },
+      ],
     },
     {
-      title:'Encryption SDK & Token Gating',
-      subTitle:'Secure Your Files with Advanced Encryption and Access Controls',
-      description:'Fortify your data security with our sophisticated encryption tools and access management solutions.',
-      icon:'/suitsIcon/encryption.png',
-      featureCard:[
+      title: "Encryption SDK & Token Gating",
+      subTitle: "Secure Your Data with Advanced Encryption and Access Controls",
+      description:
+        "Use our encryption sdk to easily store private files and token gate them with onchain NFT, Token Ownership and Much more",
+      icon: "/suitsIcon/encryption.png",
+      link: "https://docs.lighthouse.storage/lighthouse-1/how-to/encryption-features",
+      featureCard: [
         {
-          title:'Robust Encryption',
-          subTitle:'Protect your data with Lighthouse Kavach, utilizing top-tier encryption techniques such as BLS Threshold Cryptography to ensure maximum security.'
+          title: "Threshold Encryption",
+          subTitle:
+            "Protect your data with Lighthouse Kavach, utilizing top-tier encryption techniques such as BLS Threshold Cryptography to ensure maximum security.",
         },
         {
-          title:'Token Gating',
-          subTitle:'Implement robust access controls with token-based security using blockchain identities from EVM-compatible wallets, Solana, Cosmos, and more.'
+          title: "Token Gating",
+          subTitle:
+            "Implement access control and token gating  using signatures from EVM, Solana, Cosmos, Passkeys and zkTLS",
         },
         {
-          title:'Multi-Wallet Integration',
-          subTitle:'Easily manage access permissions and authenticate user identities across a variety of blockchain wallet platforms.'
-        }
-      ]
+          title: "Multiple Networks Supported",
+          subTitle:
+            "Easily manage access permissions and authenticate user identities using a variety of wallets and networks.",
+        },
+      ],
     },
   ],
   StorageFeature: [

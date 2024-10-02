@@ -11,10 +11,12 @@ export default function LighthouseSuit({ data }) {
           <h2 className={styles.title}>{data.title}</h2>
           <h3 className={styles.subtitle}>{data.subTitle}</h3>
           <p className={styles.description}>{data.description}</p>
-          <button className={styles.learnMore}>LEARN MORE</button>
+          <button className={styles.learnMore} onClick={() => {
+            window.open(data.link, '_blank');
+          }}>LEARN MORE</button>
         </div>
         <div className={styles.headerRight}>
-          <Image src={data.icon} alt="Dashboard" width={300} height={350} />
+          <img src={data.icon} alt="Dashboard" width={'100%'} height={'auto'} />
         </div>
       </div>
       <div className={styles.features}>
