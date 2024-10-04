@@ -1,37 +1,23 @@
 import { useEffect, useState } from "react";
-import { Metadata } from "../components";
+import { Metadata, TitleSeprator } from "../components";
 import {
   FAQContainer,
   FeatureCardList,
   FeatureCompare,
   Footer,
-  // Header,
+  Header,
   HomeBanner,
+  LighthouseSuit,
+  LogoMarquee,
   NewsBar,
   PartnerCarousel,
   Testimonials,
 } from "../containers";
+import { LandingPageData } from "../utils/Data/SiteContent";
 
-import dynamic from "next/dynamic";
-const Header = dynamic(() => import("../containers/Header/Header"));
+
 
 export default function Home() {
-  // const [windowSize, setWindowSize] = useState({
-  //   width: undefined,
-  //   height: undefined,
-  // });
-
-  // useEffect(() => {
-  //   function handleResize() {
-  //     setWindowSize({
-  //       width: window.innerWidth,
-  //       height: window.innerHeight,
-  //     });
-  //   }
-  //   window.addEventListener("resize", handleResize);
-  //   handleResize();
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
   return (
     <>
       <Metadata title="Lighthouse Permanent Storage" />
@@ -47,6 +33,22 @@ export default function Home() {
         <div style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
             <PartnerCarousel />
+          </div>
+        </div>
+        <div style={{ minHeight: "auto" }}>
+          <div className="contentContainer container">
+            <TitleSeprator title={"Empowering the Data Economy"} />
+            {LandingPageData.lighthouseSuit.map((data, index) => (
+              <>
+                <LighthouseSuit key={index} data={{ ...data, index }} />
+                <hr />
+              </>
+            ))}
+          </div>
+        </div>
+        <div style={{ minHeight: "auto" }}>
+          <div className="contentContainer">
+            <LogoMarquee />
           </div>
         </div>
         <div className="">

@@ -12,6 +12,7 @@
     "@emailjs/browser": "^3.12.1",
     "aos": "^2.3.4",
     "axios": "^1.1.3",
+    "lighthouse_ui_2.0": "file:",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-countup": "^6.5.0",
