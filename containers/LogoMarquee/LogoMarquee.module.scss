@@ -1,7 +1,5 @@
 
 .LogoMarqueeContainer{
-
-
     .marqueeContainer {
         width: 100%;
         overflow: hidden;
@@ -31,7 +29,7 @@
     
         .marquee {
             display: flex;
-            animation: scroll 30s linear infinite;
+            animation: scroll 35s linear infinite;
             .logo {
                 flex-shrink: 0;
                 width: 150px;
@@ -54,6 +52,20 @@
       }
 
 }
+
+
+@media (max-width: 768px) {
+
+  .LogoMarqueeContainer{
+    .marqueeContainer {
+        .marquee {
+            display: flex;
+            animation: scroll 10s linear infinite;
+          }
+      }
+}
+}
+
 
   
 

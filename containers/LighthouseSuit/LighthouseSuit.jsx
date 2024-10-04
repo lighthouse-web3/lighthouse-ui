@@ -3,7 +3,6 @@ import styles from "./LighthouseSuit.module.scss";
 import Image from "next/image";
 
 export default function LighthouseSuit({ data }) {
-  console.log(data, "-----");
   return (
     <div className={styles.LighthouseSuitContainer}>
       <div className={styles.header} style={data.index % 2 !== 0 ? { flexDirection: 'row-reverse' } : {}}>
