@@ -84,6 +84,8 @@
   @media (max-width: 768px) {
     .header {
       flex-direction: column !important;
+      margin-bottom: 3rem;
+
 
       .headerLeft,
       .headerRight {
