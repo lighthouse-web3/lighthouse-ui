@@ -57,7 +57,7 @@ function Blog({ blogData, allBlogs }) {
         title={blogData?.title}
         description={blogData?.description?.slice(0, 100) + "..."}
         image={mediaUrl + blogData?.coverImage?.data?.attributes?.url}
-        url={`https://www.lighthouse.storage/blogs/${encodeURIComponent(
+        url={`https://www.lhprotocol.com/blogs/${encodeURIComponent(
           blogData?.title
         )}`}
       />
