@@ -108,19 +108,19 @@ export const LandingPageData = {
       link: "https://www.lhprotocol.com/blogs/Discover%20How%20the%20Endowment%20Pool%20Makes%20Your%20Data%20Immortal",
       featureCard: [
         {
-          title: "Endowment Pool",
+          title: "Governance & Yield",
           subTitle:
-            "Resilient pool of funds with multiple currency and access to DeFi",
+            "Own and manage data pools. Govern the working and yield generation of stored data",
         },
         {
-          title: "Verifiable Proofs",
+          title: "AI Data Monetisation",
           subTitle:
-            "Proof of Space Time and PoDSI to ensure continuous availability",
+            "Store and Monetize data via access control and training for AI Models",
         },
         {
-          title: "Programmability",
+          title: "Private Processing",
           subTitle:
-            "Fine grain control over replications, storage providers, SLA & costs",
+            "Compute over private data being stored and connect to AI workflows",
         },
       ],
     },
