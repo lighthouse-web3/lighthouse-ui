@@ -69,7 +69,7 @@ export async function getServerSideProps({ res }) {
   // Generate the XML sitemap with the blog data
 
   try {
-    const response = await axios.get(`${baseUrl}/blogs?populate=*`);
+    const response = await axios.get(`${baseUrl}/blogs?pagination[pageSize]=50&populate=*`);
     const blogsData =
       response["status"] === 200 ? response["data"]?.["data"] : null;
     const sitemap = generateSiteMap(blogsData);

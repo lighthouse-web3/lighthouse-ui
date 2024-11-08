@@ -12,7 +12,7 @@ import {
 import { Metadata } from "../../components";
 
 export const getStaticPaths = async () => {
-  const res = await axios.get(`${baseUrl}/blogs?populate=*`);
+  const res = await axios.get(`${baseUrl}/blogs?pagination[pageSize]=50&populate=*`);
   let allBlogs = res["status"] === 200 ? res["data"]?.["data"] : null;
   const paths = allBlogs.map((blog) => {
     return {
@@ -33,7 +33,7 @@ export const getStaticProps = async (context) => {
   let blogData = "null";
   let allBlogs = [];
   try {
-    const allBlogsRes = await axios.get(`${baseUrl}/blogs?populate=*`);
+    const allBlogsRes = await axios.get(`${baseUrl}/blogs?pagination[pageSize]=50&populate=*`);
     allBlogs =
       allBlogsRes["status"] === 200 ? allBlogsRes["data"]?.["data"] : [];
     // console.log(allBlogs, "-----ALL BLOGS --- ");
