@@ -240,7 +240,8 @@ export const LandingPageData = {
     {
       question: "How long will data be stored on Lighthouse?",
       answer:
-        "As we approach our mainnet, we tend to be pretty transparent on the estimated number of years your data will be stored. For example, at the start, your data might be estimated to be stored for 25 years but as the endowment pool grows over time given the economic model of Lighthouse, the time for which your files are stored should also keep on increasing. If the economic model works as we are proposing it to be, your files shouldn’t be needed to pay for again for a very very long period of time",
+        `As we move closer to our mainnet launch, we aim to be transparent about the estimated duration of data storage. Initially, your data might be projected to remain stored for around 25 years. However, as the endowment pool grows over time, aligned with Lighthouse’s economic model, this duration is expected to increase.
+If the model performs as designed, your files should remain stored for a long period without requiring additional payments as part of lifetime plan. In the unlikely event that the endowment pool depletes its funds, users might need to contribute again to continue storage`,
     },
     {
       question: " What are the upload or file size restrictions on Lighthouse?",
