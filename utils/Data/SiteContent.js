@@ -11,7 +11,7 @@ export const LandingPageData = {
     {
       icon: "/featureIcon/feature_6.svg",
       width: "6rem",
-      title: "Perpetual Storage for a One-Time Investment",
+      title: "Perpetual Storage to preserve your data",
       subTitle: `Embrace perpetual storage with IPFS and Filecoin's advanced services.`,
     },
     {
