@@ -97,6 +97,10 @@ export const LandingPageData = {
       icon: "/client/singularity.svg",
       link: "",
     },
+    {
+      icon: "/client/dimante.svg",
+      link: "",
+    },
   ],
   lighthouseSuit: [
     {
