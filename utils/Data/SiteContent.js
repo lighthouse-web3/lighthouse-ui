@@ -352,6 +352,11 @@ export const footerData = {
       path: null,
       link: "https://calendly.com/nanditmehra/30min",
     },
+    {
+      text: "Whitepaper",
+      path: "/whitepaper",
+      link: "",
+    },
   ],
 };
 
