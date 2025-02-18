@@ -342,6 +342,11 @@ export const footerData = {
       link: "https://airtable.com/shrPFC2TgojuOAYO4",
     },
     {
+      text: "Explorer",
+      path: null,
+      link: "https://explorer.lighthouse.storage/",
+    },
+    {
       text: "Report Online Abuse",
       path: null,
       link: "https://docs.google.com/forms/d/16STP-KPftGBCaF5MjQuXBVBOqShIxScFtuPhCAlQJM8/viewform?ts=64a7c2b5&edit_requested=true",
