@@ -20,7 +20,7 @@ import { LandingPageData } from "../utils/Data/SiteContent";
 export default function Home() {
   return (
     <>
-      <Metadata title="LHProtocol - A Programmable Data Layer" />
+      <Metadata title="Lighthouse Storage - A Programmable Data Layer" />
       <div className={"bodyContainer"}>
         {/* <NewsBar /> */}
         <Header />

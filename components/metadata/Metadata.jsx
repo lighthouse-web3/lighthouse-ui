@@ -4,9 +4,9 @@ import React, { useEffect } from "react";
 import Script from "next/script";
 
 function Metadata({
-  title = "LHProtocol - A Programmable Data Layer",
+  title = "Lighthouse Storage - A Programmable Data Layer",
   description = "Powering AI, DePin, NFTs with decentralized storage and encryption",
-  url = "https://lhprotocol.com/",
+  url = "https://lighthouse.storage/",
   image = "https://gateway.lighthouse.storage/ipfs/Qmd7rR9EPKomhmoRUw2WB7FJAeSWAtC8c1nkKgGZL39LpB",
 }) {
   const router = useRouter();

@@ -157,7 +157,7 @@ function Footer() {
       </div>
       <div className={Styles.Footer__lowerFooter}>
         <p>
-          © Copyright ${new Date().getFullYear()}, All Rights Reserved by
+          © Copyright {new Date().getFullYear()}, All Rights Reserved by
           Lighthouse Storage
         </p>
       </div>

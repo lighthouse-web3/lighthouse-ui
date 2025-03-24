@@ -49,7 +49,7 @@ function FeatureCardList() {
               );
             }}
           >
-            Start Now
+            Learn More
           </button>
         </div>
       </div>

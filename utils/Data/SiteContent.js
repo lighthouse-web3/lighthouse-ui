@@ -109,7 +109,7 @@ export const LandingPageData = {
       description:
         "Data DAOs that generates yield and ensure long-term preservation of data long-term with governance",
       icon: "/suitsIcon/data_daos.png",
-      link: "https://www.lhprotocol.com/blogs/Discover%20How%20the%20Endowment%20Pool%20Makes%20Your%20Data%20Immortal",
+      link: "https://www.lighthouse.storage/blogs/Discover%20How%20the%20Endowment%20Pool%20Makes%20Your%20Data%20Immortal",
       featureCard: [
         {
           title: "Governance & Yield",
