@@ -3,9 +3,9 @@ export const disclaimerText =
 
 export const LandingPageData = {
   HeroSection: {
-    title: "Programmable Data Layer",
+    title: "Store Your Data <br/> Permanently & Securely",
     subTitle:
-      "Powering AI, DePin, NFTs with decentralized storage and encryption",
+      "Lighthouse offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises.",
   },
   KeyFeatures: [
     {
@@ -107,9 +107,10 @@ export const LandingPageData = {
       title: "DATA DAOs",
       subTitle: "Setup and Utilize Smart Contracts to spin up Data DAOs",
       description:
-        "Data DAOs that generates yield and ensure long-term preservation of data long-term with governance",
+        "Create Data DAOs that generate yield and ensure long-term data preservation through decentralized governance and incentivized storage.",
       icon: "/suitsIcon/data_daos.png",
       link: "https://www.lighthouse.storage/blogs/Discover%20How%20the%20Endowment%20Pool%20Makes%20Your%20Data%20Immortal",
+      buttonText:'Learn More',
       featureCard: [
         {
           title: "Governance & Yield",
@@ -117,7 +118,7 @@ export const LandingPageData = {
             "Own and manage data pools. Govern the working and yield generation of stored data",
         },
         {
-          title: "AI Data Monetisation",
+          title: "AI Data Monetization",
           subTitle:
             "Store and Monetize data via access control and training for AI Models",
         },
@@ -132,9 +133,10 @@ export const LandingPageData = {
       title: "WEB APPLICATION",
       subTitle: "Secure and Simplify Your File Storage and Sharing",
       description:
-        "Log in and access your files with ease. Our web application provides a user-friendly interface to store, retrieve, and share files on popular decentralized storage networks - IPFS and Filecoin",
+        "Log in to our web application and access your files with ease. Our app provides a user-friendly interface to store, retrieve, and share files on popular decentralized storage networks: IPFS and Filecoin.",
       icon: "/suitsIcon/web_app.png",
       link: "https://files.lighthouse.storage/",
+      buttonText:'Open App', 
       featureCard: [
         {
           title: "Seamless Access",
@@ -160,6 +162,7 @@ export const LandingPageData = {
         "Developers can easily integrate our SDK & CLI into their application pipeline in language of their choice",
       icon: "/suitsIcon/sdk_cli.png",
       link: "https://docs.lighthouse.storage/lighthouse-1/",
+      buttonText:'Explore documentation',
       featureCard: [
         {
           title: "Lighthouse SDK",
@@ -184,6 +187,7 @@ export const LandingPageData = {
         "Use our encryption sdk to easily store private files and token gate them with onchain NFT, Token Ownership and Much more",
       icon: "/suitsIcon/encryption.png",
       link: "https://docs.lighthouse.storage/lighthouse-1/how-to/encryption-features",
+      buttonText:'Learn More',
       featureCard: [
         {
           title: "Threshold Encryption",
@@ -243,8 +247,7 @@ export const LandingPageData = {
     },
     {
       question: "How long will data be stored on Lighthouse?",
-      answer:
-        `As we move closer to our mainnet launch, we aim to be transparent about the estimated duration of data storage. Initially, your data might be projected to remain stored for around 25 years. However, as the endowment pool grows over time, aligned with Lighthouse’s economic model, this duration is expected to increase.
+      answer: `As we move closer to our mainnet launch, we aim to be transparent about the estimated duration of data storage. Initially, your data might be projected to remain stored for around 25 years. However, as the endowment pool grows over time, aligned with Lighthouse’s economic model, this duration is expected to increase.
 If the model performs as designed, your files should remain stored for a long period without requiring additional payments as part of lifetime plan. In the unlikely event that the endowment pool depletes its funds, users might need to contribute again to continue storage`,
     },
     {

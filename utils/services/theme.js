@@ -1,13 +1,13 @@
 const ThemeProperties = [
   {
     property: "--bg-clr",
-    dark: "#08060b",
+    dark: "#000000",
     light: "#FFFFFF",
   },
   {
     property: "--txt-clr",
     dark: "#FFFFFF",
-    light: "#08060b",
+    light: "#000000",
   },
   {
     property: "--header-bar-clr",

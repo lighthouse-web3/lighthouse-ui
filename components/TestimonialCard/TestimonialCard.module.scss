@@ -12,6 +12,7 @@
   font-family: var(--font-sans);
   padding: 2rem;
   @include flex-setup(column, flex-start);
+  justify-content: space-between;
   gap: 1rem;
 
   &__titleBox {

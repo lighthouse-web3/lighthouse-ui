@@ -4,7 +4,7 @@
 .PartnerCarousel {
   margin: 5% 0rem 5% 0%;
   color: white;
-  font-family: var(--font-main);
+  font-family: var(--font-sans);
   &__titleBox {
   }
 
@@ -13,6 +13,8 @@
     flex-wrap: wrap;
     margin-top: 5%;
     gap: 3rem;
+    opacity: 0.6;
+
   }
 }
 

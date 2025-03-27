@@ -1,29 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "./bg.scss";
 @import "./mixins.scss";
 @import "styles/mediaQuery.scss";
 
 :root {
-  --font-main: "Helvetica";
-  --font-inter: "Inter";
   --font-sans: "Open Sans";
   --clr-blue: #2563eb;
-  --clr-bg-black: #08060b;
+  --clr-bg-black: #000000;
   --gradient: linear-gradient(90.23deg, #6079b8 1.12%, #c54477 102.79%);
   --clr-text-grey: rgba(116, 109, 109, 1);
   //--------------------
 
-  --bg-clr: #08060b;
+  --bg-clr: #000000;
   --txt-clr: #ffffff;
-  --primary-clr: #6c41f4;
-  --pink-clr:#a94c89;
+  --primary-clr: #643fbb;
+  --pink-clr: #a94c89;
 
   --header-bar-clr: rgba(255, 255, 255, 0.05);
-  --featureCard-bg-clr: #1f1d23;
-  --featureCard-bg-innerClr: #fff;
+  --featureCard-bg-clr: linear-gradient(160.33deg, #010101 0%, #19171c 100%);
+  --featureCard-bg-innerClr: linear-gradient(
+    160.33deg,
+    #010101 0%,
+    #19171c 100%
+  );
   --testimonialCard-border-clr: #4f4f4f;
 
   --testimonialCard-bg-clr: linear-gradient(
@@ -41,8 +40,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, "Helvetica", "Encode Sans", Droid Sans,
-    Helvetica Neue, sans-serif;
+  font-family: var(--font-sans);
   background-size: cover;
   background-position: center;
   overflow-x: hidden;
@@ -74,7 +72,7 @@ body {
 .sectionTitle {
   font-weight: 500;
   font-size: 3rem;
-  font-family: var(--font-main);
+  font-family: var(--font-sans);
   color: white;
 }
 
@@ -103,145 +101,42 @@ body {
 
 .fillBtn__purple {
   background: var(--primary-clr);
-  border: 1px solid var(--primary-clr);
-  box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.05),
-    0px 8px 15px -3px rgba(0, 112, 243, 0.4);
-  border-radius: 0.15rem;
-  font-family: var(--font-inter);
-  font-weight: 500;
-  color: white;
-  font-size: 1.2rem;
   width: fit-content;
   height: fit-content;
-  padding: 10px 30px;
+  border: none;
+  border-radius: 0.5rem;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  gap: 10px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: center;
 
   &:hover {
     cursor: pointer;
   }
 }
 
-.fillBtn__slide {
-  $primary: var(--primary-clr);
-  $border-radius: 0.2rem;
-  @include remove-btn-style;
-  @include flex-centered;
-  height: 50px;
+.fillBtn__grey {
   width: fit-content;
-  padding: 1rem 2.5rem;
+  height: 50px;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 8px 12px;
+  gap: 10px;
+  font-family: inherit;
+  font-weight: 600;
   font-size: 1rem;
-
-  border-radius: $border-radius;
-  color: $primary;
-  text-decoration: none;
-  -webkit-transition: 0.2s all ease;
-  transition: 0.2s ease all;
-  &:hover {
-    color: #fff;
-    letter-spacing: 4px;
-  }
-  &:focus {
-    color: #fff;
-  }
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: bold;
-  border: 3px solid $primary;
-  position: relative;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
-  &:before {
-    border-radius: $border-radius;
-    -webkit-transition: 0.2s all ease;
-    transition: 0.2s all ease;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    right: 50%;
-    bottom: 0;
-    opacity: 0;
-    content: "";
-    background-color: $primary;
-    z-index: -2;
-  }
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: center;
   &:hover {
     cursor: pointer;
-    &:before {
-      -webkit-transition: 0.5s all ease;
-      transition: 0.2s all ease;
-      left: 0;
-      right: 0;
-      opacity: 1;
-    }
-  }
-  &:focus {
-    &:before {
-      transition: 0.2s all ease;
-      left: 0;
-      right: 0;
-      opacity: 1;
-    }
-  }
-}
-
-
-.fillBtn__slide_pink {
-  $primary: var(--pink-clr);
-  $border-radius: 0.2rem;
-  @include remove-btn-style;
-  @include flex-centered;
-  height: 50px;
-  width: fit-content;
-  padding: 1rem 2.5rem;
-  font-size: 1rem;
-
-  border-radius: $border-radius;
-  color: $primary;
-  text-decoration: none;
-  -webkit-transition: 0.2s all ease;
-  transition: 0.2s ease all;
-  &:hover {
-    color: #fff;
-    letter-spacing: 4px;
-  }
-  &:focus {
-    color: #fff;
-  }
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: bold;
-  border: 3px solid $primary;
-  position: relative;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
-  &:before {
-    border-radius: $border-radius;
-    -webkit-transition: 0.2s all ease;
-    transition: 0.2s all ease;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    right: 50%;
-    bottom: 0;
-    opacity: 0;
-    content: "";
-    background-color: $primary;
-    z-index: -2;
-  }
-  &:hover {
-    cursor: pointer;
-    &:before {
-      -webkit-transition: 0.5s all ease;
-      transition: 0.2s all ease;
-      left: 0;
-      right: 0;
-      opacity: 1;
-    }
-  }
-  &:focus {
-    &:before {
-      transition: 0.2s all ease;
-      left: 0;
-      right: 0;
-      opacity: 1;
-    }
   }
 }
 

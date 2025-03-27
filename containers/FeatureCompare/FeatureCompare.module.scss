@@ -4,20 +4,11 @@
 .FeatureCompare {
   @include flex-setup(column, flex-start);
   color: white;
-  font-family: var(--font-main);
-  gap: 4rem;
+  font-family: var(--font-sans);
+  gap: 1rem;
   @include screen-size(phone-only) {
     gap: 2rem;
   }
-
-  &__title {
-    font-style: normal;
-    font-weight: 700;
-    @include text-size(2.5rem);
-    line-height: 150%;
-    letter-spacing: 0.2px;
-  }
-
   &__featureContainer {
     @include grid-equal(3, 2, 5%, 5%);
     padding-bottom: 2rem;

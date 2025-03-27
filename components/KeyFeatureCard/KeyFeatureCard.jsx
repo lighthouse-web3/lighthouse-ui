@@ -8,15 +8,14 @@ function KeyFeatureCard({ title, subTitle, icon, width }) {
   return (
     <div className={styles.KeyFeatureCard}>
       <div className={styles.KeyFeatureCard__innerCard}>
-        <p style={{ marginTop: "0rem" }}>{title}</p>
-        <div
+      <div
           className={styles.KeyFeatureCard__iconBox}
           style={theme === "dark" ? { background: "#ffffff" } : {}}
         >
           <ImageBox
             src={icon}
-            width={theme === "dark" ? "6rem" : "6rem"}
-            height={"6rem"}
+            width={theme === "dark" ? "5rem" : "5rem"}
+            height={"5rem"}
             aspectRatio={true}
             style={{
               objectFit: "cover",
@@ -24,6 +23,8 @@ function KeyFeatureCard({ title, subTitle, icon, width }) {
             }}
           />
         </div>
+        <p style={{ marginTop: "0rem" }}>{title}</p>
+     
 
         <p>{subTitle}</p>
       </div>

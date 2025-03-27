@@ -6,7 +6,7 @@
   border-radius: 1.25rem;
   //   border: 1px solid #4f4f4f;
   height: 8rem;
-  font-family: var(--font-main);
+  font-family: var(--font-sans);
   @include flex-setup(row, center);
   justify-content: space-evenly;
   box-shadow: 0px 7px 20px 0px rgba(99, 117, 124, 0.2);
@@ -20,7 +20,7 @@
 
       &:nth-of-type(2) {
         font-size: 2.5rem;
-        font-family: var(--font-inter);
+        font-family: var(--font-sans);
         font-weight: 600;
       }
     }

@@ -4,45 +4,49 @@
 .KeyFeatureCard {
   width: 100%;
   height: 100%;
-  border-radius: 0.9375rem;
-  font-family: var(--font-sans);
-  background: var(--featureCard-bg-clr);
+  border-radius: 20px;
+  font-family: inherit;
   color: var(--txt-clr);
   padding: 3rem 0.5rem 1rem 0.5rem;
 
   &__innerCard {
-    background: var(--featureCard-bg-innerClr);
     width: 100%;
     height: 100%;
+    border: 1px solid #1f1d248e;
     border-radius: inherit;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1.5rem;
     @include flex-setup(column, flex-start);
     justify-content: flex-start;
-    transition: background 0.2s, color 0.2s;
-    transition-timing-function: ease-in;
+    gap: 24px;
+    background: linear-gradient(160.33deg, #01010100 0%, #19171c23 100%);
+
+   
     p:nth-of-type(1) {
-      @include text-size(1.75rem);
+      @include text-size(20px);
       font-weight: 600;
-      line-height: 150%;
+      line-height: 110%;
+      margin: 0;
     }
     p:nth-of-type(2) {
-      @include text-size(1.1rem);
-      line-height: 150%;
+      @include text-size(1rem);
+      line-height: 110%;
+      font-weight: 400;
       opacity: 0.6;
+      margin: 0;
     }
 
-    &:hover {
-      background: var(--primary-clr);
-      color: white;
-      .KeyFeatureCard__iconBox {
-        background: white;
-      }
-    }
+    // &:hover {
+    //   background: var(--primary-clr);
+    //   color: white;
+    //   .KeyFeatureCard__iconBox {
+    //     background: white;
+    //   }
+    // }
   }
 
   &__iconBox {
-    width: 8rem;
-    height: 8rem;
+    width: 6.5rem;
+    height: 6.5rem;
     border-radius: 100%;
     @include flex-centered;
   }

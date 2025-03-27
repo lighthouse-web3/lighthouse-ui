@@ -7,20 +7,13 @@
   gap: 1rem;
   margin-top: 5%;
   text-align: center;
-  p:nth-of-type(1) {
-    text-transform: uppercase;
-    @include text-size(0.85rem);
-    font-weight: 700;
-    letter-spacing: 0.08rem;
-    margin: 0px;
-  }
-  p:nth-of-type(2) {
-    text-transform: uppercase;
-    @include text-size(2.5rem);
-    font-weight: 500;
-    line-height: 120%;
-    letter-spacing: -0.07rem;
-    margin-top: 10px;
+  p {
+    @include text-size(2rem);
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
   }
 }
 
