@@ -54,7 +54,7 @@
   &__QuestionBox {
     margin: 0rem 1.5rem 4rem 1.5rem;
     border-radius: 16px;
-    background: #1F1D23;
+    background: var(--featureCard-bg-clr);
     min-height: 200px;
     padding: 2rem;
     display: flex;
