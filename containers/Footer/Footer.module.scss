@@ -1,6 +1,6 @@
 .Footer {
   color: var(--txt-clr);
-  font-family: var(--font-main);
+  font-family: var(--font-sans);
 
   &__upperFooter {
     background: var(--bg-clr);
@@ -29,7 +29,7 @@
       .socialBox {
         p {
           font-style: normal;
-          font-weight: 700;
+          font-weight: 400;
           font-size: 0.9rem;
           text-transform: uppercase;
 
@@ -58,7 +58,7 @@
       gap: 2rem;
       letter-spacing: 1px;
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 500;
 
       p {
         margin: 0px;
@@ -82,7 +82,7 @@
       flex: 1;
       letter-spacing: 1px;
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 500;
 
       &__title {
         color: #94a3b8;

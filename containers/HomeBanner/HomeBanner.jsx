@@ -4,7 +4,6 @@ import Styles from "./HomeBanner.module.scss";
 import useWindowSize from "../../utils/Hooks/windowSize";
 import { ImageBox, StatBox } from "../../components";
 import ThemeContext from "../../utils/services/Themecontext";
-// import { HoverContainer } from "..";
 
 function HomeBanner() {
   const windowSize = useWindowSize();
@@ -86,9 +85,13 @@ function HomeBanner() {
         />
       </span>
       <div className={Styles.infoBox + " container"} data-aos="fade-up">
-        <div className={Styles.title}>
-          {LandingPageData?.HeroSection?.title}
-        </div>
+        <div
+          className={Styles.title}
+          dangerouslySetInnerHTML={{
+            __html: LandingPageData?.HeroSection?.title,
+          }}
+        ></div>
+
         <div
           className={Styles.subTitle}
           dangerouslySetInnerHTML={{
@@ -98,8 +101,8 @@ function HomeBanner() {
 
         <div className={Styles.buttonContainer}>
           <button
-            className="fillBtn__slide"
-            style={{ margin: '0px 8px' }}
+            className="fillBtn__grey"
+            style={{ margin: "0px 8px" }}
             onClick={() => {
               window.open(
                 "https://docs.lighthouse.storage/lighthouse-1/",
@@ -107,19 +110,16 @@ function HomeBanner() {
               );
             }}
           >
-            Documentation
+            Explore Docs
           </button>
           <button
-            className="fillBtn__slide_pink"
-            style={{ margin: '0px 8px' }}
+            className="fillBtn__purple"
+            style={{ margin: "0px 8px" , height:'50px' }}
             onClick={() => {
-              window.open(
-                "https://files.lighthouse.storage/",
-                "_blank"
-              );
+              window.open("https://files.lighthouse.storage/", "_blank");
             }}
           >
-            Go to App
+            Try For Free
           </button>
         </div>
       </div>

@@ -38,7 +38,7 @@ function FeatureCardList() {
         data-aos="fade-up"
       >
         <div className={Style.Banner} style={gradientStyle}>
-          <p>Experience the power of affordable Permanent Storage</p>
+          <p>Experience the power of <br/>affordable permanent storage</p>
           <button
             className="border_btn"
             ref={bannerRef}
@@ -49,7 +49,7 @@ function FeatureCardList() {
               );
             }}
           >
-            Learn More
+            Start Now
           </button>
         </div>
       </div>

@@ -8,6 +8,8 @@ import { useRouter } from "next/router";
 import { themeChanger } from "../../utils/services/theme";
 import { BsMoon, BsSun } from "react-icons/bs";
 import ThemeContext from "../../utils/services/Themecontext";
+import { MdArrowOutward } from "react-icons/md";
+
 
 const links = [
   {
@@ -15,11 +17,6 @@ const links = [
     path: "/",
     href: "",
   },
-  // {
-  //   title: "About Us",
-  //   path: "/about",
-  //   href: "",
-  // },
   {
     title: "Blog",
     path: "/blogs",
@@ -96,7 +93,9 @@ function Header({ style }) {
               ) : (
                 <a href={link.href} target="_blank" rel="noopener noreferrer">
                   {link.title}
+                  <MdArrowOutward/>
                 </a>
+
               )}
             </p>
           ))}
@@ -121,12 +120,11 @@ function Header({ style }) {
           <button
             onClick={() =>
               window.open("https://files.lighthouse.storage/?redirectfrom=main", "_blank")
-              // window.open("https://files.lighthouse.storage/?referfrom=main", "_blank")
             }
             className={"fillBtn__purple"}
             style={{ padding: "0.5rem 2rem" }}
           >
-            LOGIN
+            Get Started
           </button>
 
         </div>

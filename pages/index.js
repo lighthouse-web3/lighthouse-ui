@@ -30,6 +30,12 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="">
+          <div className="container">
+            <FeatureCompare />
+          </div>
+        </div>
+
         <div style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
             <PartnerCarousel />
@@ -41,7 +47,7 @@ export default function Home() {
             {LandingPageData.lighthouseSuit.map((data, index) => (
               <>
                 <LighthouseSuit key={index} data={{ ...data, index }} />
-                <hr />
+                {index !== 3 && <hr style={{borderColor:'#667085'}} />}
               </>
             ))}
           </div>
@@ -51,11 +57,7 @@ export default function Home() {
             <LogoMarquee />
           </div>
         </div>
-        <div className="">
-          <div className="container">
-            <FeatureCompare />
-          </div>
-        </div>
+      
         <div style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
             <Testimonials />

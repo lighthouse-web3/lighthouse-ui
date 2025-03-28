@@ -5,6 +5,8 @@ import ImageBox from "../ImageBox/ImageBox";
 function TestimonialCard({ quote, person, designation, img, link }) {
   return (
     <div className={Style.TestimonialCard}>
+  
+      <p className={Style.TestimonialCard__testimonial}>{`"${quote}"`}</p>
       <div className={Style.TestimonialCard__titleBox}>
         <ImageBox
           src={img}
@@ -21,10 +23,9 @@ function TestimonialCard({ quote, person, designation, img, link }) {
           >
             {person}
           </p>
-          <p>{designation}</p>
+          <p style={{color:'#A3AAB8'}}>{designation}</p>
         </div>
       </div>
-      <p className={Style.TestimonialCard__testimonial}>{quote}</p>
     </div>
   );
 }

@@ -60,19 +60,18 @@ function FAQContainer() {
         ))}
       </div>
       <div className={Styles.FAQContainer__QuestionBox} data-aos="fade-up">
-        <p className={Styles.title}>Still have questions?</p>
+        <p className={Styles.title}>Lets Talk !</p>
         <p className={Styles.subTitle}>
-          Can’t find the answer you’re looking for? Get in touch with our team.
+          Didn’t find what you were looking for? <br/> Our team is happy to help.{" "}
         </p>
+        <br/>
         <button
-          className={"fillBtn__blue ptr"}
+          className={"fillBtn__purple ptr"}
           onClick={() => {
-
             window.open(
               "https://airtable.com/app0KP7ENgYlLDcJ0/shrPFC2TgojuOAYO4",
               "__blank"
             );
-
           }}
         >
           Contact Us

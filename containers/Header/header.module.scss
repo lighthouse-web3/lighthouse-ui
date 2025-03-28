@@ -1,5 +1,4 @@
 @import "styles/mixins.scss";
-$bgclr: var(--header-bar-clr);
 
 .Header {
   width: 100%;
@@ -27,22 +26,20 @@ $bgclr: var(--header-bar-clr);
 
     .linksContainer {
       @include flex-centered;
-      font-weight: 300;
-      border-radius: 0.75rem;
-      backdrop-filter: blur(6px);
-
-      padding: 0rem 1.5rem;
-
       p {
         a {
           color: inherit;
-          font-size: 1.1rem;
-          transition: border-bottom 0.1s ease-in;
+          font-size: 0.9rem;
           padding-bottom: 0.3rem;
-          border-bottom: 1px solid transparent;
-          &:hover {
-            border-bottom: 1.5px solid rgb(255, 255, 255);
-          }
+          font-family: inherit;
+          font-weight: 600;
+          line-height: 150%;
+          letter-spacing: 0%;
+          text-align: center;
+
+          // &:hover {
+          //   border-bottom: 1.5px solid rgb(255, 255, 255);
+          // }
         }
 
         .active {
@@ -65,7 +62,7 @@ $bgclr: var(--header-bar-clr);
   .MobileMenu {
     p {
       a {
-        font-family: var(--font-main);
+        font-family: var(--font-sans);
         font-style: normal;
         font-weight: normal;
         font-size: calc(10px + 1vw);
@@ -84,7 +81,7 @@ $bgclr: var(--header-bar-clr);
       font-size: 1rem;
       height: fit-content;
       padding: 0.5rem;
-      font-family: var(--font-main);
+      font-family: var(--font-sans);
       margin: 0rem 1rem;
 
       cursor: pointer;
@@ -107,7 +104,7 @@ $bgclr: var(--header-bar-clr);
     align-items: flex-end;
     flex-direction: column;
     text-align: end;
-    background-color: #08060b;
+    background-color: #000000;
     padding: 1em;
     position: absolute;
     top: 20px;
@@ -139,7 +136,7 @@ $bgclr: var(--header-bar-clr);
 
     .navbar__link__logo p {
       font-size: 20px;
-      font-family: var(--font-main);
+      font-family: var(--font-sans);
       margin: 0px 0px;
     }
   }

@@ -15,6 +15,8 @@ import { notify } from "../../utils/services/notification";
 import ThemeContext from "../../utils/services/Themecontext";
 import { useEffect } from "react";
 import { RiTwitterXLine } from "react-icons/ri";
+import { MdArrowOutward } from "react-icons/md";
+
 
 function Footer() {
   const _navigate = useRouter();
@@ -136,6 +138,8 @@ function Footer() {
               }}
             >
               {item?.text}
+              <MdArrowOutward/>
+
             </p>
           ))}
         </div>
