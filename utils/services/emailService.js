@@ -1,23 +1,43 @@
+import axios from "axios";
 import { notify } from "./notification";
-import emailjs from "@emailjs/browser";
 
 export const sendEmail = async (email) => {
-  let message = {
-    to_email: email,
-  };
-  emailjs
-    .send("service_dyqwvtg", "template_np0xnzi", message, "BAasPcGDlBaaNEeAr")
-    .then(
-      (response) => {
-        if (response.status === 200) {
+  try {
+    if (validateEmail(email)) {
+      const options = {
+        method: "POST",
+        url: "https://api.brevo.com/v3/smtp/email",
+        headers: {
+          accept: "application/json",
+          "content-type": "application/json",
+          "api-key": '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',
+        },
+        data: {
+          sender: {
+            name: "Lighthouse",
+            email: "hello@lighthouseweb3.xyz",
+          },
+          to: [{ email }],
+          templateId: 4,
+          tags: ["mainsite-subscription"],
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          //
           notify("Email Submitted", "success");
-        }
-      },
-      (error) => {
-        console.log(error);
-        notify(`Error: ${error}`, "error");
-      }
-    );
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    } else {
+      notify(`Error: Enter a valid email address`, "error");
+    }
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export const validateEmail = (email) => {
