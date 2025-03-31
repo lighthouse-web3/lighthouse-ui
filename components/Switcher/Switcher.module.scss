@@ -1,0 +1,47 @@
+@import 'styles/mixins.scss';
+@import 'styles/mediaQuery.scss';
+
+.switcher {
+  position: relative;
+  display: inline-flex;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--testimonialCard-border-clr);
+  padding: 0.2rem;
+  overflow: hidden;
+}
+
+.switchButton {
+  position: relative;
+  z-index: 2;
+  padding: 0.4rem 1.2rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--txt-clr);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.active {
+  color: white;
+}
+
+.switcher::before {
+  content: '';
+  position: absolute;
+  top: 0.2rem;
+  bottom: 0.2rem;
+  width: 48%;
+  border-radius: 999px;
+  background: var(--primary-clr);
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(0%);
+}
+
+.switcher[data-active='right']::before {
+  transform: translateX(100%);
+}

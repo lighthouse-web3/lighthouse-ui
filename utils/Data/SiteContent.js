@@ -451,3 +451,196 @@ export const documentationCards = [
     link: "https://github.com/lighthouse-web3",
   },
 ];
+
+
+export const LifetimePricing = [
+  {
+    index: 0,
+    title: "Beacon",
+    cost: "20",
+    icon: "/icons/beacon.png",
+    icon_light: "/icons/beacon_light.png",
+    buttonText:'Get Started',
+    features: [
+      {
+        title: "Total Storage",
+        value: "5 GB",
+        tooltip: "Total Storage Space",
+      },
+      {
+        title: "Bandwidth",
+        value: "10 GB",
+        tooltip: "Additional bandwidth at $0.1 per GB / month",
+      },
+      {
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
+      },
+      {
+        title: "Filecoin",
+        value: "icon",
+        tooltip: "Storage Backup",
+      },
+    ],
+  },
+  {
+    index: 1,
+    title: "Navigator",
+    cost: "100",
+    icon: "/icons/navigator.png",
+    icon_light: "/icons/navigator_light.png",
+    buttonText:'Get Started',
+
+    features: [
+      {
+        title: "Total Storage",
+        value: "25 GB",
+        tooltip: "Total Storage Space",
+      },
+      {
+        title: "Bandwidth",
+        value: "50 GB",
+        tooltip: "Additional bandwidth at $0.1 per GB / month",
+      },
+      {
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
+      },
+      {
+        title: "Filecoin",
+        value: "icon",
+        tooltip: "Storage Backup",
+      },
+    ],
+  },
+  {
+    index: 2,
+    title: "Harbor",
+    cost: "500",
+    icon: "/icons/harbor.png",
+    icon_light: "/icons/harbor_light.png",
+    buttonText:'Get Started',
+
+    features: [
+      {
+        title: "Total Storage",
+        value: "150 GB",
+        tooltip: "Total Storage Space",
+      },
+      {
+        title: "Bandwidth",
+        value: "300 GB",
+        tooltip: "Additional bandwidth at $0.1 per GB / month",
+      },
+      {
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
+      },
+      {
+        title: "Filecoin",
+        value: "icon",
+        tooltip: "Storage Backup",
+      },
+    ],
+  },
+];
+
+export const AnnualPricing = [
+  {
+    index: null,
+    title: "Free",
+    cost: "0",
+    icon: "/icons/free.png",
+    icon_light: "/icons/free_light.png",
+    buttonText:'Try For Free',
+
+    features: [
+      {
+        title: "Total Storage",
+        value: "5 GB",
+        tooltip: "Total Storage Space",
+      },
+      {
+        title: "Bandwidth",
+        value: "5 GB",
+        tooltip: "Additional bandwidth at $0.1 per GB / month",
+      },
+      {
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
+      },
+      {
+        title: "Filecoin",
+        value: "icon",
+        tooltip: "Storage Backup",
+      },
+    ],
+    onlyShow: true,
+  },
+  {
+    index: 7,
+    title: "Lite",
+    cost: "120",
+    icon: "/icons/lite.png",
+    icon_light: "/icons/lite_light.png",
+    buttonText:'Get Started',
+
+    features: [
+      {
+        title: "Total Storage",
+        value: "200 GB",
+        tooltip: "Total Storage Space",
+      },
+      {
+        title: "Bandwidth",
+        value: "100 GB",
+        tooltip: "Additional bandwidth at $0.1 per GB / month",
+      },
+      {
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
+      },
+      {
+        title: "Filecoin",
+        value: "icon",
+        tooltip: "Storage Backup",
+      },
+    ],
+  },
+  {
+    index: 8,
+    title: "Premium",
+    icon: "/icons/premium.png",
+    icon_light: "/icons/premium_light.png",
+    cost: "499",
+    buttonText:'Get Started',
+
+    features: [
+      {
+        title: "Total Storage",
+        value: "1 TB",
+        tooltip: "Total Storage Space",
+      },
+      {
+        title: "Bandwidth",
+        value: "1 TB",
+        tooltip: "Additional bandwidth at $0.1 per GB / month",
+      },
+      {
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
+      },
+      {
+        title: "Filecoin",
+        value: "icon",
+        tooltip: "Storage Backup",
+      },
+    ],
+  },
+];

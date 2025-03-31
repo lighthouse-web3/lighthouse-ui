@@ -44,3 +44,6 @@ export const LogoMarquee = dynamic(() =>
 export const LighthouseSuit = dynamic(() =>
   import("./LighthouseSuit/LighthouseSuit")
 );
+export const Pricing = dynamic(() =>
+  import("./Pricing/Pricing")
+);

@@ -11,6 +11,7 @@ import {
   LogoMarquee,
   NewsBar,
   PartnerCarousel,
+  Pricing,
   Testimonials,
 } from "../containers";
 import { LandingPageData } from "../utils/Data/SiteContent";
@@ -33,6 +34,11 @@ export default function Home() {
         <div className="">
           <div className="container">
             <FeatureCompare />
+          </div>
+        </div>
+        <div className="">
+          <div className="container">
+            <Pricing />
           </div>
         </div>
 
