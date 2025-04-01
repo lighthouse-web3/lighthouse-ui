@@ -44,7 +44,7 @@ function FeatureCardList() {
             ref={bannerRef}
             onClick={() => {
               window.open(
-                "https://docs.lighthouse.storage/lighthouse-1/",
+                "https://files.lighthouse.storage/",
                 "__blank"
               );
             }}
