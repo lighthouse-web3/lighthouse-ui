@@ -31,7 +31,7 @@ const Pricing = () => {
             <tbody>
               {plan.features.map((feature, index) => (
                 <tr key={index}>
-                  <td style={{ color: "#A3AAB8" }}>
+                  <td >
                     {feature.title}{" "}
                     <span>
                       <BsInfoCircle
