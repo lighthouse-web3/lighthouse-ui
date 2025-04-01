@@ -4,8 +4,8 @@ import React, { useEffect } from "react";
 import Script from "next/script";
 
 function Metadata({
-  title = "Lighthouse Storage - A Programmable Data Layer",
-  description = "Powering AI, DePin, NFTs with decentralized storage and encryption",
+  title = "Lighthouse Storage - Store Data Permanently & Securely",
+  description = "Decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises.",
   url = "https://lighthouse.storage/",
   image = "https://gateway.lighthouse.storage/ipfs/Qmd7rR9EPKomhmoRUw2WB7FJAeSWAtC8c1nkKgGZL39LpB",
 }) {
