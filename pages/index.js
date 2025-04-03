@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Metadata, TitleSeprator } from "../components";
 import {
+  EcosystemGrid,
   FAQContainer,
   FeatureCardList,
   FeatureCompare,
@@ -59,8 +60,11 @@ export default function Home() {
           </div>
         </div>
         <div style={{ minHeight: "auto" }}>
-          <div className="contentContainer">
-            <LogoMarquee />
+          <div className="contentContainer container">
+          <TitleSeprator title={"Lighthouse Ecosystem"} />
+
+            {/* <LogoMarquee /> */}
+            <EcosystemGrid/>
           </div>
         </div>
       

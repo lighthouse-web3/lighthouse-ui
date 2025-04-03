@@ -161,6 +161,15 @@ const ecosystemData = [
     telegram: null,
     twitter: 'https://x.com/alexandrialabs'
   },
+  {
+    name: "Scratchable Monads",
+    description: "First scratchable and interactive NFT collection on Monad.",
+    icon: "/client/monad.svg",
+    tags: ["NFTs"],
+    website: 'https://www.monad.xyz/',
+    telegram: null,
+    twitter: 'https://x.com/scratchablemon'
+  },
 
   // === Social/Gaming ===
   {
