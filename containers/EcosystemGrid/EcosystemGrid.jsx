@@ -252,23 +252,23 @@ const ecosystemData = [
     name: "Aethir",
     description:
       "DePIN-based cloud GPU infrastructure for real-time compute and edge rendering.",
-    icon: "/client/aethir.svg",
+    icon: "/client/aethir.png",
     tags: ["DePIN"],
     website: "https://aethir.com",
     telegram: "https://t.me/AethirCommunity",
     twitter: "https://twitter.com/AethirCloud",
   },
-  // {
-  //   name: "Aethir",
-  //   description:
-  //     "DePIN-based cloud GPU infrastructure for real-time compute and edge rendering.",
-  //   icon: "/client/aethir.svg",
-  //   tags: ["Data Availability (DA)"],
-  //   website: "https://aethir.com",
-  //   telegram: "https://t.me/AethirCommunity",
-  //   twitter: "https://twitter.com/AethirCloud",
-  //   image: "/client/screenshot/aethir.png",
-  // },
+  {
+    name: "Aethir",
+    description:
+      "DePIN-based cloud GPU infrastructure for real-time compute and edge rendering.",
+    icon: "/client/aethir.png",
+    tags: ["Data Availability (DA)"],
+    website: "https://aethir.com",
+    telegram: "https://t.me/AethirCommunity",
+    twitter: "https://twitter.com/AethirCloud",
+    image: "/client/screenshot/aethir.png",
+  },
   {
     name: "Silence Laboratories",
     description:
