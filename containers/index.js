@@ -47,3 +47,9 @@ export const LighthouseSuit = dynamic(() =>
 export const Pricing = dynamic(() =>
   import("./Pricing/Pricing")
 );
+export const EcosystemBanner = dynamic(() =>
+  import("./EcosystemBanner/EcosystemBanner")
+);
+export const EcosystemGrid = dynamic(() =>
+  import("./EcosystemGrid/EcosystemGrid")
+);

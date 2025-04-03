@@ -1,0 +1,128 @@
+@import "styles/mixins.scss";
+@import "styles/mediaQuery.scss";
+
+.ecosystemSection {
+  width: 100%;
+  padding: 4rem 0rem;
+  background: var(--bg-clr);
+
+  @include screen-size(phone-only) {
+    padding: 2rem 1rem;
+  }
+}
+
+.badgeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.badge {
+  border: 1px solid var(--testimonialCard-border-clr);
+  background: transparent;
+  color: var(--txt-clr);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--testimonialCard-border-clr)
+  }
+  @include screen-size(phone-only) {
+    font-size: 0.9rem;
+}
+}
+
+.active {
+  background: var(--primary-clr);
+  color: white;
+}
+
+.cardGrid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  border: 1px solid var(--testimonialCard-border-clr);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  color: var(--txt-clr);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &:hover {
+    border-color: var(--primary-clr);
+  }
+}
+
+.highlightWrapper {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.highlightCard {
+  display: flex;
+  border: 1px solid var(--testimonialCard-border-clr);
+  color: var(--txt-clr);
+
+  padding: 1.5rem;
+  border-radius: 1rem;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  @include screen-size(phone-only) {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
+
+.highlightImage {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 1rem;
+  flex: 1;
+}
+
+.highlightRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.logo {
+  max-width: 100%;
+  height: 40px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.desc {
+  font-size: 0.95rem;
+  color: var(--txt-clr);
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.footerIcons {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.1rem;
+}

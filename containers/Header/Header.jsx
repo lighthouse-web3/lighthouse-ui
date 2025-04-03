@@ -28,6 +28,11 @@ const links = [
     href: "",
   },
   {
+    title: "Ecosystem",
+    path: "/ecosystem",
+    href: "",
+  },
+  {
     title: "Documentation",
     path: "",
     href: "https://docs.lighthouse.storage/lighthouse-1/",
