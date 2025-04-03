@@ -4,6 +4,7 @@ import { RiTwitterXLine } from "react-icons/ri";
 import { FaTelegramPlane } from "react-icons/fa";
 import { SlGlobe } from "react-icons/sl";
 import ThemeContext from "../../utils/services/Themecontext";
+import { ImageBox } from "../../components";
 
 const badgeOptions = [
   "Artificial Intelligence (AI)",
@@ -74,7 +75,7 @@ const ecosystemData = [
     icon: "/client/nuklai.svg",
     tags: ["Artificial Intelligence (AI)"],
     website: "https://www.nukl.ai/",
-    telegram: 'https://t.co/KV0trjRjhg',
+    telegram: "https://t.co/KV0trjRjhg",
     twitter: "https://x.com/NuklaiData",
   },
 
@@ -154,21 +155,22 @@ const ecosystemData = [
   },
   {
     name: "Alexandria Books",
-    description: "Alexandria Books is an online bookstore offering a curated selection of thought-provoking, empowering, and diverse reads across genres and age groups.",
+    description:
+      "Alexandria Books is an online bookstore offering a curated selection of thought-provoking, empowering, and diverse reads across genres and age groups.",
     icon: "/client/alexandria.svg",
     tags: ["NFTs"],
-    website: 'https://www.alexandriabooks.com/',
+    website: "https://www.alexandriabooks.com/",
     telegram: null,
-    twitter: 'https://x.com/alexandrialabs'
+    twitter: "https://x.com/alexandrialabs",
   },
   {
     name: "Scratchable Monads",
     description: "First scratchable and interactive NFT collection on Monad.",
     icon: "/client/monad.svg",
     tags: ["NFTs"],
-    website: 'https://www.monad.xyz/',
+    website: "https://www.monad.xyz/",
     telegram: null,
-    twitter: 'https://x.com/scratchablemon'
+    twitter: "https://x.com/scratchablemon",
   },
 
   // === Social/Gaming ===
@@ -212,7 +214,6 @@ const ecosystemData = [
     telegram: "https://t.me/itheum",
     twitter: "https://twitter.com/itheum",
     image: "/client/screenshot/itheum.png",
-
   },
   {
     name: "Wild Friends",
@@ -246,7 +247,6 @@ const ecosystemData = [
     telegram: null,
     twitter: "https://x.com/webhash_eth",
     image: "/client/screenshot/webhash.png",
-
   },
   {
     name: "Aethir",
@@ -268,7 +268,6 @@ const ecosystemData = [
     telegram: "https://t.me/AethirCommunity",
     twitter: "https://twitter.com/AethirCloud",
     image: "/client/screenshot/aethir.png",
-
   },
   {
     name: "Silence Laboratories",
@@ -424,7 +423,7 @@ const EcosystemGrid = () => {
                 className={styles.highlightImage}
               />
               <div className={styles.highlightRight}>
-                <img
+                {/* <img
                   src={item.icon}
                   alt={item.name}
                   className={styles.logo}
@@ -433,7 +432,23 @@ const EcosystemGrid = () => {
                       ? { filter: "brightness(100%)" }
                       : { filter: "brightness(10%)" }
                   }
+                /> */}
+                <span>
+                <ImageBox
+                  src={item?.icon}
+                  width={"200px"}
+                  height={"50px"}
+                  // className={styles.logo}
+                  style={
+                    theme === "dark"
+                      ? { filter: "brightness(100%)" }
+                      : { filter: "brightness(10%)" }
+                  }
+                  aspectRatio={true}
                 />
+
+                </span>
+            
                 <p className={styles.desc}>{item.description}</p>
                 <div className={styles.footerIcons}>
                   <span
