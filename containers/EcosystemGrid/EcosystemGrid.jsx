@@ -7,10 +7,10 @@ import ThemeContext from "../../utils/services/Themecontext";
 
 const badgeOptions = [
   "Artificial Intelligence (AI)",
-  "Data Availability (DA)",
+  "DePIN",
   "NFTs",
   "Social / Gaming",
-  "DePIN",
+  "Data Availability (DA)",
   "L1 / L2",
 ];
 
@@ -22,9 +22,9 @@ const ecosystemData = [
       "Decentralized AI network creating beneficial AI systems via blockchain and open collaboration.",
     icon: "/client/singularity.svg",
     tags: ["Artificial Intelligence (AI)"],
-    website: 'https://singularitynet.io/',
-    telegram: 'https://telegram.me/singularitynet',
-    twitter: 'https://twitter.com/singularitynet',
+    website: "https://singularitynet.io/",
+    telegram: "https://telegram.me/singularitynet",
+    twitter: "https://twitter.com/singularitynet",
   },
   {
     name: "Ocean Protocol",
@@ -32,9 +32,9 @@ const ecosystemData = [
       "Protocol to unlock private data for AI and computation with control and transparency.",
     icon: "/client/ocean.svg",
     tags: ["Artificial Intelligence (AI)"],
-    website: 'https://oceanprotocol.com/',
-    telegram: 'https://t.me/OceanProtocol_Community',
-    twitter: 'https://twitter.com/oceanprotocol',
+    website: "https://oceanprotocol.com/",
+    telegram: "https://t.me/OceanProtocol_Community",
+    twitter: "https://twitter.com/oceanprotocol",
   },
   {
     name: "TopAI Network",
@@ -52,10 +52,30 @@ const ecosystemData = [
       "Decentralized framework enabling AI agents to collaborate, evolve, and persist autonomously over time.",
     icon: "/client/eternal-ai.svg",
     tags: ["Artificial Intelligence (AI)"],
-    website: 'https://eternalai.org/',
+    website: "https://eternalai.org/",
     telegram: null,
-    twitter: 'https://x.com/cryptoeternalai',
+    twitter: "https://x.com/cryptoeternalai",
     image: "/client/screenshot/eternal-ai.png",
+  },
+  {
+    name: "Open Bagel",
+    description:
+      "Bagel.net is a Web3-native communication platform enabling secure, token-gated audio rooms and real-time community interactions for DAOs and crypto communities.",
+    icon: "/client/bagel.svg",
+    tags: ["Artificial Intelligence (AI)"],
+    website: "https://www.bagel.net/",
+    telegram: null,
+    twitter: "https://x.com/BagelOpenAI",
+  },
+  {
+    name: "nuklai",
+    description:
+      "Nukl.ai is an AI orchestration platform for gaming, enabling developers to integrate, manage, and scale intelligent NPCs and game agents effortlessly.",
+    icon: "/client/nuklai.svg",
+    tags: ["Artificial Intelligence (AI)"],
+    website: "https://www.nukl.ai/",
+    telegram: 'https://t.co/KV0trjRjhg',
+    twitter: "https://x.com/NuklaiData",
   },
 
   // === DA ===
@@ -65,9 +85,9 @@ const ecosystemData = [
       "Layer 1/2 blockchain supporting decentralized apps with efficient data availability.",
     icon: "/client/syscoin.svg",
     tags: ["Data Availability (DA)"],
-    website: 'https://syscoin.org/',
-    telegram: 'https://t.me/Syscoin_Official',
-    twitter: 'https://twitter.com/syscoin',
+    website: "https://syscoin.org/",
+    telegram: "https://t.me/Syscoin_Official",
+    twitter: "https://twitter.com/syscoin",
   },
   {
     name: "BVM Network",
@@ -75,9 +95,9 @@ const ecosystemData = [
       "Modular blockchain ecosystem focused on data availability and rollup infrastructure.",
     icon: "/client/bvm-network.svg",
     tags: ["Data Availability (DA)"],
-    website: 'https://bvm.network/',
+    website: "https://bvm.network/",
     telegram: null,
-    twitter: 'https://x.com/BVMnetwork',
+    twitter: "https://x.com/BVMnetwork",
   },
   {
     name: "Cardano",
@@ -89,6 +109,16 @@ const ecosystemData = [
     telegram: "https://t.me/Cardano",
     twitter: "https://twitter.com/Cardano_CF",
   },
+  {
+    name: "Archivista",
+    description:
+      "Archivista.ai is an AI-powered platform that automates document processing, extraction, and classification to streamline enterprise workflows and data management.",
+    icon: "/client/archivista.svg",
+    tags: ["Data Availability (DA)"],
+    website: "https://www.archivista.ai/",
+    telegram: "",
+    twitter: "https://x.com/archivistainc",
+  },
 
   // === NFTs ===
   {
@@ -97,9 +127,10 @@ const ecosystemData = [
       "Decentralized NFT data storage using IPFS and Filecoin for permanence and auditability.",
     icon: "/client/nft_storage.svg",
     tags: ["NFTs"],
-    website: 'https://nft.storage/',
+    website: "https://nft.storage/",
     telegram: null,
-    twitter: 'https://x.com/NFTdotStorage',
+    twitter: "https://x.com/NFTdotStorage",
+    image: "/client/screenshot/nft-storage.png",
   },
   {
     name: "FileMarket",
@@ -107,9 +138,9 @@ const ecosystemData = [
       "NFT marketplace for creators to store and trade digital assets securely.",
     icon: "/client/filemarket.svg",
     tags: ["NFTs"],
-    website: 'https://filemarket.xyz/',
-    telegram: 'https://t.me/FileMarketChat',
-    twitter: 'https://twitter.com/filemarket_xyz',
+    website: "https://filemarket.xyz/",
+    telegram: "https://t.me/FileMarketChat",
+    twitter: "https://twitter.com/filemarket_xyz",
   },
   {
     name: "Ok Contract",
@@ -117,19 +148,19 @@ const ecosystemData = [
       "Smart contract and NFT issuance platform for blockchain-based creators.",
     icon: "/client/ok-contract.svg",
     tags: ["NFTs"],
-    website: 'https://okcontract.com/',
-    telegram: 'https://t.me/okcontractofficial',
-    twitter: 'https://x.com/intent/user?screen_name=okcontract',
+    website: "https://okcontract.com/",
+    telegram: "https://t.me/okcontractofficial",
+    twitter: "https://x.com/intent/user?screen_name=okcontract",
   },
-  // {
-  //   name: "Poster",
-  //   description: "Censorship-resistant digital publishing platform leveraging NFTs.",
-  //   icon: "/client/poster.svg",
-  //   tags: ["NFTs"],
-  //   website: null,
-  //   telegram: null,
-  //   twitter: null
-  // },
+  {
+    name: "Alexandria Books",
+    description: "Alexandria Books is an online bookstore offering a curated selection of thought-provoking, empowering, and diverse reads across genres and age groups.",
+    icon: "/client/alexandria.svg",
+    tags: ["NFTs"],
+    website: 'https://www.alexandriabooks.com/',
+    telegram: null,
+    twitter: 'https://x.com/alexandrialabs'
+  },
 
   // === Social/Gaming ===
   {
@@ -138,9 +169,9 @@ const ecosystemData = [
       "Bridge Web2 and Web3 via encrypted posts and dApp integration on social platforms.",
     icon: "/client/mask.svg",
     tags: ["Social / Gaming"],
-    website: 'https://www.mask.io/',
-    telegram: 'https://t.me/maskbook_group#telegram',
-    twitter: 'https://x.com/realMaskNetwork',
+    website: "https://www.mask.io/",
+    telegram: "https://t.me/maskbook_group#telegram",
+    twitter: "https://x.com/realMaskNetwork",
   },
   {
     name: "Lync",
@@ -148,9 +179,9 @@ const ecosystemData = [
       "Identity and social-layer gaming infrastructure built for Web3 communities.",
     icon: "/client/lync.svg",
     tags: ["Social / Gaming"],
-    website: 'https://lync.world/',
-    telegram: 'https://t.me/PlasmOfficial',
-    twitter: 'https://twitter.com/Lyncworld',
+    website: "https://lync.world/",
+    telegram: "https://t.me/PlasmOfficial",
+    twitter: "https://twitter.com/Lyncworld",
   },
   {
     name: "IsoTopic",
@@ -158,9 +189,21 @@ const ecosystemData = [
       "NFT game platform for asset-driven gameplay and social storytelling.",
     icon: "/client/isotopic.svg",
     tags: ["Social / Gaming"],
-    website: 'https://isotopic.io/',
-    telegram: 'https://t.me/+agHbqwIuW95jMzdk',
-    twitter: 'https://twitter.com/isotopic12',
+    website: "https://isotopic.io/",
+    telegram: "https://t.me/+agHbqwIuW95jMzdk",
+    twitter: "https://twitter.com/isotopic12",
+  },
+  {
+    name: "itheum",
+    description:
+      "ItHeum is a Web3 data platform enabling ownership, control, and monetization of personal data using decentralized and blockchain-based technologies.",
+    icon: "/client/itheum.svg",
+    tags: ["Social / Gaming"],
+    website: "https://www.itheum.io/",
+    telegram: "https://t.me/itheum",
+    twitter: "https://twitter.com/itheum",
+    image: "/client/screenshot/itheum.png",
+
   },
   {
     name: "Wild Friends",
@@ -168,9 +211,19 @@ const ecosystemData = [
       "Gamified NFT ecosystem with customizable avatars and community adventures.",
     icon: "/client/wild-friends.svg",
     tags: ["Social / Gaming"],
-    website: 'https://twitter.com/NetworkMeson',
-    telegram: 'https://t.me/+LC_kZ0o1EBNjY2Qx',
-    twitter: 'https://x.com/wildfriendsgame',
+    website: "https://twitter.com/NetworkMeson",
+    telegram: "https://t.me/+LC_kZ0o1EBNjY2Qx",
+    twitter: "https://x.com/wildfriendsgame",
+  },
+  {
+    name: "intotheverse",
+    description:
+      "Into The Verse is a Web3-based sci-fi action game featuring NFT integration, immersive gameplay, and a decentralized player-driven metaverse economy.",
+    icon: "/client/intotheverse.svg",
+    tags: ["Social / Gaming"],
+    website: "https://intotheverse.xyz/game",
+    telegram: "https://t.me/+DMcO1fw_hc40Nzll",
+    twitter: "https://x.com/intotheverse_?lang=en",
   },
 
   // === DePIN (Infra) ===
@@ -180,9 +233,11 @@ const ecosystemData = [
       "Decentralized hashing and indexing service for Web3 content discovery.",
     icon: "/client/webhash.svg",
     tags: ["DePIN"],
-    website: 'https://webhash.com/',
+    website: "https://webhash.com/",
     telegram: null,
-    twitter: 'https://x.com/webhash_eth',
+    twitter: "https://x.com/webhash_eth",
+    image: "/client/screenshot/webhash.png",
+
   },
   {
     name: "Aethir",
@@ -195,23 +250,35 @@ const ecosystemData = [
     twitter: "https://twitter.com/AethirCloud",
   },
   {
+    name: "Aethir",
+    description:
+      "DePIN-based cloud GPU infrastructure for real-time compute and edge rendering.",
+    icon: "/client/aethir.svg",
+    tags: ["Data Availability (DA)"],
+    website: "https://aethir.com",
+    telegram: "https://t.me/AethirCommunity",
+    twitter: "https://twitter.com/AethirCloud",
+    image: "/client/screenshot/aethir.png",
+
+  },
+  {
     name: "Silence Laboratories",
     description:
       "Crypto-secure infrastructure for privacy-preserving computation and authentication.",
     icon: "/client/silence.svg",
     tags: ["DePIN"],
-    website: 'https://www.silencelaboratories.com/',
+    website: "https://www.silencelaboratories.com/",
     telegram: null,
-    twitter: 'https://twitter.com/silencelabs_sl',
+    twitter: "https://twitter.com/silencelabs_sl",
   },
   {
     name: "Zeeve",
     description: "Scalable blockchain deployment and node management platform.",
     icon: "/client/zeeve.svg",
-    tags: ["DePIN"],
-    website: 'https://www.zeeve.io/',
-    telegram: 'https://t.me/ZeeveDeeptech',
-    twitter: 'https://twitter.com/0xZeeve',
+    tags: ["Data Availability (DA)"],
+    website: "https://www.zeeve.io/",
+    telegram: "https://t.me/ZeeveDeeptech",
+    twitter: "https://twitter.com/0xZeeve",
   },
   {
     name: "DataverseOS",
@@ -220,14 +287,14 @@ const ecosystemData = [
     tags: ["DePIN"],
     website: null,
     telegram: null,
-    twitter: 'https://x.com/dataverseos',
+    twitter: "https://x.com/dataverseos",
   },
   {
     name: "StackOS",
     description: "Decentralized cloud platform to deploy full-stack dApps.",
     icon: "/client/stackos.svg",
     tags: ["DePIN"],
-    website: 'https://app.stackos.io/',
+    website: "https://app.stackos.io/",
     telegram: null,
     twitter: null,
   },
@@ -237,9 +304,9 @@ const ecosystemData = [
       "Bandwidth marketplace protocol for decentralized internet infrastructure.",
     icon: "/client/meson-network.svg",
     tags: ["DePIN"],
-    website: 'https://www.meson.network/',
-    telegram: 'https://t.me/mesonnetwork',
-    twitter: 'https://twitter.com/NetworkMeson',
+    website: "https://www.meson.network/",
+    telegram: "https://t.me/mesonnetwork",
+    twitter: "https://twitter.com/NetworkMeson",
   },
 
   // === L1 / L2 ===
@@ -360,15 +427,35 @@ const EcosystemGrid = () => {
                 />
                 <p className={styles.desc}>{item.description}</p>
                 <div className={styles.footerIcons}>
-                  <span>
+                  <span
+                    className="ptr"
+                    onClick={() => {
+                      window.open(item.website, "_blank");
+                    }}
+                  >
                     <SlGlobe />
                   </span>
-                  <span>
-                    <FaTelegramPlane />
-                  </span>
-                  <span>
-                    <RiTwitterXLine />
-                  </span>
+                  {item.telegram && (
+                    <span
+                      className="ptr"
+                      onClick={() => {
+                        window.open(item.telegram, "_blank");
+                      }}
+                    >
+                      <FaTelegramPlane />
+                    </span>
+                  )}
+
+                  {item.twitter && (
+                    <span
+                      className="ptr"
+                      onClick={() => {
+                        window.open(item.twitter, "_blank");
+                      }}
+                    >
+                      <RiTwitterXLine />
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
@@ -392,15 +479,35 @@ const EcosystemGrid = () => {
               />
               <p className={styles.desc}>{item.description}</p>
               <div className={styles.footerIcons}>
-                <span>
+                <span
+                  className="ptr"
+                  onClick={() => {
+                    window.open(item.website, "_blank");
+                  }}
+                >
                   <SlGlobe />
                 </span>
-                <span>
-                  <FaTelegramPlane />
-                </span>
-                <span>
-                  <RiTwitterXLine />
-                </span>
+                {item.telegram && (
+                  <span
+                    className="ptr"
+                    onClick={() => {
+                      window.open(item.telegram, "_blank");
+                    }}
+                  >
+                    <FaTelegramPlane />
+                  </span>
+                )}
+
+                {item.twitter && (
+                  <span
+                    className="ptr"
+                    onClick={() => {
+                      window.open(item.twitter, "_blank");
+                    }}
+                  >
+                    <RiTwitterXLine />
+                  </span>
+                )}
               </div>
             </div>
           ))}

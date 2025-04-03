@@ -3,11 +3,11 @@
 
 .banner {
     margin: 0 auto;
-  padding: 4rem 0rem;
+  padding: 2.5rem 0rem;
   font-family: var(--font-sans);
 
   @include screen-size(phone-only) {
-    padding: 3rem 1.5rem;
+    padding: 1rem 1rem;
   }
 }
 

@@ -11,7 +11,7 @@ const EcosystemBanner = () => {
           <span className={styles.highlight}>Lighthouse Ecosystem</span>
         </h1>
         <p className={styles.subtext}>
-          Harnessing the power of Filecoin and LLMs, Lighthouse empowers developers,
+          Harnessing the power of decentralized network, Lighthouse empowers developers,
           data contributors, and users with secure, transparent, and scalable infrastructure.
         </p>
       </div>
