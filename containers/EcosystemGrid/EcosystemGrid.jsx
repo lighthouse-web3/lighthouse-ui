@@ -45,7 +45,7 @@ const ecosystemData = [
     tags: ["Artificial Intelligence (AI)"],
     website: "https://topai.network",
     telegram: "https://t.me/topaiofficial",
-    twitter: "https://twitter.com/topaiprotocol",
+    twitter: "https://x.com/topnetwork_top",
   },
   {
     name: "Eternal AI",

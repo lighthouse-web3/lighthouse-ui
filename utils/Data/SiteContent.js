@@ -311,7 +311,7 @@ export const socialLinks = {
   telegram: "https://t.me/LighthouseStorage",
   discord: "https://discord.com/invite/c4a4CGCdJG",
   instagram: "https://www.instagram.com/lighthouseweb3/?igshid=MDM4ZDc5MmU%3D",
-  contactMail: "nandit@lighthouse.storage",
+  contactMail: "mail@lighthouse.storage",
   contactLink: "https://airtable.com/shrPFC2TgojuOAYO4",
 };
 
