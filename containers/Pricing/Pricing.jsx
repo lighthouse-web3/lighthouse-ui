@@ -11,7 +11,7 @@ import { BsInfoCircle } from "react-icons/bs";
 import { FaCircleCheck } from "react-icons/fa6";
 
 const Pricing = () => {
-  const [activeTitle, setActiveTitle] = useState("Annually");
+  const [activeTitle, setActiveTitle] = useState("Lifetime");
 
   const renderCards = (plans) => {
     return plans.map((plan, index) => (
@@ -61,8 +61,8 @@ const Pricing = () => {
       <TitleSeprator title={"Discover your perfect plan"} />
       <div className={styles.switcherWrapper}>
         <Switcher
-          title1="Annually"
-          title2="Lifetime"
+          title1="Lifetime"
+          title2="Annually"
           activeTitle={activeTitle}
           setActiveTitle={setActiveTitle}
         />
