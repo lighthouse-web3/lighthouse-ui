@@ -9,7 +9,6 @@ import {
   Header,
   HomeBanner,
   LighthouseSuit,
-  LogoMarquee,
   NewsBar,
   PartnerCarousel,
   Pricing,
@@ -62,8 +61,6 @@ export default function Home() {
         <div style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
           <TitleSeprator title={"Lighthouse Ecosystem"} />
-
-            {/* <LogoMarquee /> */}
             <EcosystemGrid/>
           </div>
         </div>
