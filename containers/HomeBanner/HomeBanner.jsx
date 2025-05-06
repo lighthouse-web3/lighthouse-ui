@@ -9,11 +9,20 @@ function HomeBanner() {
   const windowSize = useWindowSize();
   const { theme, setTheme } = useContext(ThemeContext);
 
+  const bannerImages = {
+    dark_bannerImg_1 : 'https://gateway.lighthouse.storage/ipfs/bafkreicxy3eocvtyyl3xfs3euk5pc4zgxsyosjrxknft5hrdaqueg2l5na',
+    dark_bannerImg_2 : 'https://gateway.lighthouse.storage/ipfs/bafkreifjzr3gc6v24yv5c4sgecb6a3dcyxeyuivxgzf4zakqtfuuaz6bgy',
+    dark_bannerImg_3 : 'https://gateway.lighthouse.storage/ipfs/bafkreiesyhpu3eagitbizbyzndoxdinuqyrqotdxobnpboynooyk6ef27y',
+    light_bannerImg_1 : 'https://gateway.lighthouse.storage/ipfs/bafkreihkck4tgwwgrbxyln3vesqopa242uqasojr5d5tnin2vv3zrltksa',
+    light_bannerImg_2 : 'https://gateway.lighthouse.storage/ipfs/bafkreiauljyamwu3xn4kzh5guy5m66n3l2xmjzithky37fgy7wqvoyjuiy',
+    light_bannerImg_3 : 'https://gateway.lighthouse.storage/ipfs/bafkreiaaa3gohgn7p4tut3prs7zlrppxiawnfw56rfxn55k47h5qeydpfm',
+  }
+
   return (
     <div className={Styles.Banner}>
       <span className={Styles.Banner__bgImg1}>
         <ImageBox
-          src={`/BannerImages/${theme ? theme : "dark"}_bannerImg_1.png`}
+          src={bannerImages[`${theme ? theme : "dark"}_bannerImg_1`]}
           width={
             windowSize?.width > 1440
               ? "34vw"
@@ -37,7 +46,7 @@ function HomeBanner() {
       </span>
       <span className={Styles.Banner__bgImg2}>
         <ImageBox
-          src={`/BannerImages/${theme ? theme : "dark"}_bannerImg_2.png`}
+          src={bannerImages[`${theme ? theme : "dark"}_bannerImg_2`]}
           width={
             windowSize?.width >= 1440
               ? "32vw"
@@ -61,7 +70,7 @@ function HomeBanner() {
       </span>
       <span className={Styles.Banner__bgImg3}>
         <ImageBox
-          src={`/BannerImages/${theme ? theme : "dark"}_bannerImg_3.png`}
+          src={bannerImages[`${theme ? theme : "dark"}_bannerImg_3`]}
           width={
             windowSize?.width > 1440
               ? "34vw"

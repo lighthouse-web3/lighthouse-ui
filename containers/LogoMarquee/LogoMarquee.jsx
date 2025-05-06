@@ -6,7 +6,7 @@ import { TitleSeprator } from "../../components";
 export default function LogoMarquee() {
   return (
     <div className={styles.LogoMarqueeContainer}>
-              <TitleSeprator title={"Trusted By"} />
+              <TitleSeprator title={"Trusted aaBy"} />
 
       <div className={styles.marqueeContainer}>
         <div className={styles.marquee}>

@@ -8,11 +8,6 @@ import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {
-  load as loadIntercom,
-  boot as bootIntercom,
-  update as updateIntercom,
-} from "../utils/services/Intercom";
 import ThemeContext from "../utils/services/Themecontext";
 import { themeChanger } from "../utils/services/theme";
 
@@ -38,9 +33,6 @@ function MyApp({ Component, pageProps }) {
       mirror: false,
       anchorPlacement: "top-center",
     });
-    loadIntercom();
-    bootIntercom();
-
     const themeFromLocalStorage = JSON.parse(
       localStorage?.getItem("lighthouse.storage/store") || "{}"
     );
