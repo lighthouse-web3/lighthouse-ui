@@ -136,7 +136,7 @@ export const LandingPageData = {
         "Log in to our web application and access your files with ease. Our app provides a user-friendly interface to store, retrieve, and share files on popular decentralized storage networks: IPFS and Filecoin.",
       icon: "/suitsIcon/web_app.png",
       link: "https://files.lighthouse.storage/",
-      buttonText:'Open App', 
+      buttonText:'Open App',
       featureCard: [
         {
           title: "Seamless Access",
@@ -317,11 +317,6 @@ export const socialLinks = {
 
 export const footerData = {
   sitemap: [
-    {
-      text: "Home",
-      path: "/",
-      link: null,
-    },
     {
       text: "FAQ's",
       path: "/faq",

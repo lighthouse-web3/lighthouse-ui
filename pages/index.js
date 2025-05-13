@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Metadata, TitleSeprator } from "../components";
 import {
   EcosystemGrid,
@@ -9,10 +8,9 @@ import {
   Header,
   HomeBanner,
   LighthouseSuit,
-  NewsBar,
   PartnerCarousel,
   Pricing,
-  Testimonials,
+  Testimonials
 } from "../containers";
 import { LandingPageData } from "../utils/Data/SiteContent";
 
@@ -31,12 +29,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="">
+        <div>
           <div className="container">
             <FeatureCompare />
           </div>
         </div>
-        <div className="">
+        <div>
           <div className="container">
             <Pricing />
           </div>
@@ -64,14 +62,14 @@ export default function Home() {
             <EcosystemGrid/>
           </div>
         </div>
-      
+
         <div style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
             <Testimonials />
           </div>
         </div>
         <div>
-          <div className="">
+          <div>
             <FeatureCardList />
           </div>
         </div>
