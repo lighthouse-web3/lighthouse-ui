@@ -11,7 +11,7 @@ import { BsInfoCircle } from "react-icons/bs";
 import { FaCircleCheck } from "react-icons/fa6";
 
 const Pricing = () => {
-  const [activeTitle, setActiveTitle] = useState("Lifetime");
+  const [activeTitle, setActiveTitle] = useState("Annually");
 
   const renderCards = (plans) => {
     return plans.map((plan, index) => (
@@ -23,15 +23,37 @@ const Pricing = () => {
         </div>
         <p className={styles.price}>
           ${plan.cost}{" "}
-          <span>{activeTitle === "Annually" ? "/year" : "/lifetime"}</span>
+          <span>{activeTitle === "Annually" ? "/month" : "/lifetime"}</span>
         </p>
-        <button  className={styles.button} onClick={() => window.open('https://files.lighthouse.storage/', "_self")}>{plan.buttonText}</button>
+        {activeTitle === "Annually" ? (
+          <p
+            style={{
+              marginTop: "-20px",
+              fontWeight: "400",
+              fontSize: "0.9rem",
+              opacity: !plan.onlyShow ? "0.7" : "0",
+            }}
+          >
+           ( billed once yearly )
+          </p>
+        ) : (
+          <></>
+        )}
+
+        <button
+          className={styles.button}
+          onClick={() =>
+            window.open("https://files.lighthouse.storage/", "_self")
+          }
+        >
+          {plan.buttonText}
+        </button>
         <div className={styles.details}>
           <table>
             <tbody>
               {plan.features.map((feature, index) => (
                 <tr key={index}>
-                  <td >
+                  <td>
                     {feature.title}{" "}
                     <span>
                       <BsInfoCircle
@@ -61,8 +83,8 @@ const Pricing = () => {
       <TitleSeprator title={"Discover your perfect plan"} />
       <div className={styles.switcherWrapper}>
         <Switcher
-          title1="Lifetime"
-          title2="Annually"
+          title1="Annually"
+          title2="Lifetime"
           activeTitle={activeTitle}
           setActiveTitle={setActiveTitle}
         />
