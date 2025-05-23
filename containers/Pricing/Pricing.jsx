@@ -75,6 +75,8 @@ const Pricing = () => {
             </tbody>
           </table>
         </div>
+        <Tooltip id="pricingPage-tooltip" />
+
       </div>
     ));
   };
@@ -100,7 +102,6 @@ const Pricing = () => {
           activeTitle === "Lifetime" ? LifetimePricing : AnnualPricing
         )}
       </div>
-      <Tooltip id="pricingPage-tooltip" />
     </section>
   );
 };
