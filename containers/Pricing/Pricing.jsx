@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import styles from "./Pricing.module.scss";
 import { Switcher, TitleSeprator } from "../../components";
