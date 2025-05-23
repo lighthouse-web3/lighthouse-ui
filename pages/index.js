@@ -15,6 +15,8 @@ import {
   Testimonials,
 } from "../containers";
 import { LandingPageData } from "../utils/Data/SiteContent";
+import 'react-tooltip/dist/react-tooltip.css'
+
 
 
 
