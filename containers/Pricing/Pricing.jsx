@@ -56,10 +56,9 @@ const Pricing = () => {
                 <tr key={index}>
                   <td>
                     {feature.title}{" "}
-                    <span>
+                    <span data-tooltip-id="pricingPage-tooltip"
+                        data-tooltip-content={feature?.tooltip}>
                       <BsInfoCircle
-                        data-tooltip-id="pricingPage-tooltip"
-                        data-tooltip-content={feature?.tooltip}
                       />
                     </span>
                   </td>
@@ -75,7 +74,6 @@ const Pricing = () => {
             </tbody>
           </table>
         </div>
-        <Tooltip id="pricingPage-tooltip" />
 
       </div>
     ));
@@ -102,6 +100,8 @@ const Pricing = () => {
           activeTitle === "Lifetime" ? LifetimePricing : AnnualPricing
         )}
       </div>
+      <Tooltip id="pricingPage-tooltip" />
+
     </section>
   );
 };
