@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import styles from "./Pricing.module.scss";
 import { Switcher, TitleSeprator } from "../../components";
 import {
@@ -13,6 +13,11 @@ import { FaCircleCheck } from "react-icons/fa6";
 
 const Pricing = () => {
   const [activeTitle, setActiveTitle] = useState("Annually");
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const renderCards = (plans) => {
     return plans.map((plan, index) => (
@@ -35,7 +40,7 @@ const Pricing = () => {
               opacity: !plan.onlyShow ? "0.7" : "0",
             }}
           >
-           ( billed once yearly )
+            ( billed once yearly )
           </p>
         ) : (
           <></>
@@ -56,10 +61,16 @@ const Pricing = () => {
                 <tr key={index}>
                   <td>
                     {feature.title}{" "}
-                    <span data-tooltip-id="pricingPage-tooltip"
-                        data-tooltip-content={feature?.tooltip}>
-                      <BsInfoCircle
-                      />
+                    <span
+                      data-tooltip-id="pricingPage-tooltip"
+                      data-tooltip-content={
+                        typeof feature.tooltip === "string"
+                          ? feature.tooltip
+                          : ""
+                      }
+                      data-tooltip-place="top"
+                    >
+                      <BsInfoCircle />
                     </span>
                   </td>
                   <td style={{ textAlign: "right" }}>
@@ -74,7 +85,6 @@ const Pricing = () => {
             </tbody>
           </table>
         </div>
-
       </div>
     ));
   };
@@ -100,8 +110,7 @@ const Pricing = () => {
           activeTitle === "Lifetime" ? LifetimePricing : AnnualPricing
         )}
       </div>
-      <Tooltip id="pricingPage-tooltip" />
-
+      {isClient && <Tooltip id="pricingPage-tooltip" />}
     </section>
   );
 };
