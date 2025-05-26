@@ -7,7 +7,6 @@ import {
   LifetimePricing,
   pricingPlans,
 } from "../../utils/Data/SiteContent";
-import { Tooltip } from "react-tooltip";
 import { BsInfoCircle } from "react-icons/bs";
 import { FaCircleCheck } from "react-icons/fa6";
 
@@ -57,17 +56,14 @@ const Pricing = () => {
                 <tr key={index}>
                   <td>
                     {feature.title}{" "}
-                    <span
-                      // data-tooltip-id="pricingPage-tooltip"
-                      // data-tooltip-content={
-                      //   typeof feature.tooltip === "string"
-                      //     ? feature.tooltip
-                      //     : ""
-                      // }
-                      // data-tooltip-place="top"
-                    >
-                      {/* <BsInfoCircle /> */}
-                    </span>
+                    <div className={styles.tooltipWrapper}>
+                      <BsInfoCircle />
+                      {feature.tooltip && (
+                        <div className={styles.tooltipContent}>
+                          {feature.tooltip}
+                        </div>
+                      )}
+                    </div>
                   </td>
                   <td style={{ textAlign: "right" }}>
                     {feature?.value === "icon" ? (
