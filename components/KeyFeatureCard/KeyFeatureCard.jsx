@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import styles from "./KeyFeatureCard.module.scss";
-import ImageBox from "../ImageBox/ImageBox";
+import { useContext } from "react";
 import ThemeContext from "../../utils/services/Themecontext";
+import ImageBox from "../ImageBox/ImageBox";
+import styles from "./KeyFeatureCard.module.scss";
 
 function KeyFeatureCard({ title, subTitle, icon, width }) {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -24,7 +24,7 @@ function KeyFeatureCard({ title, subTitle, icon, width }) {
           />
         </div>
         <p style={{ marginTop: "0rem" }}>{title}</p>
-     
+
 
         <p>{subTitle}</p>
       </div>
