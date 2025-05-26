@@ -39,10 +39,16 @@ export const HoverContainer = dynamic(() =>
   import("./HoverContainer/HoverContainer")
 );
 export const LighthouseSuit = dynamic(() =>
-  import("./LighthouseSuit/LighthouseSuit")
+  import("./LighthouseSuit/LighthouseSuit"), {
+    loading: () => <div>Loading...</div>,
+    ssr: true
+  }
 );
 export const Pricing = dynamic(() =>
-  import("./Pricing/Pricing")
+  import("./Pricing/Pricing"), {
+    loading: () => <div>Loading...</div>,
+    ssr: true
+  }
 );
 export const EcosystemBanner = dynamic(() =>
   import("./EcosystemBanner/EcosystemBanner")
