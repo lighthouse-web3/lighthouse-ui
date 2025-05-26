@@ -13,11 +13,7 @@ import { FaCircleCheck } from "react-icons/fa6";
 
 const Pricing = () => {
   const [activeTitle, setActiveTitle] = useState("Annually");
-  const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   const renderCards = (plans) => {
     return plans.map((plan, index) => (
@@ -62,15 +58,15 @@ const Pricing = () => {
                   <td>
                     {feature.title}{" "}
                     <span
-                      data-tooltip-id="pricingPage-tooltip"
-                      data-tooltip-content={
-                        typeof feature.tooltip === "string"
-                          ? feature.tooltip
-                          : ""
-                      }
-                      data-tooltip-place="top"
+                      // data-tooltip-id="pricingPage-tooltip"
+                      // data-tooltip-content={
+                      //   typeof feature.tooltip === "string"
+                      //     ? feature.tooltip
+                      //     : ""
+                      // }
+                      // data-tooltip-place="top"
                     >
-                      <BsInfoCircle />
+                      {/* <BsInfoCircle /> */}
                     </span>
                   </td>
                   <td style={{ textAlign: "right" }}>
@@ -110,7 +106,7 @@ const Pricing = () => {
           activeTitle === "Lifetime" ? LifetimePricing : AnnualPricing
         )}
       </div>
-      {isClient && <Tooltip id="pricingPage-tooltip" />}
+      {/* {isClient && <Tooltip id="pricingPage-tooltip" />} */}
     </section>
   );
 };
