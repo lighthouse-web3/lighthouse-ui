@@ -9,15 +9,13 @@ import {
   Header,
   HomeBanner,
   LighthouseSuit,
+  MascotBox,
   NewsBar,
   PartnerCarousel,
   Pricing,
   Testimonials,
 } from "../containers";
 import { LandingPageData } from "../utils/Data/SiteContent";
-
-
-
 
 export default function Home() {
   return (
@@ -42,6 +40,31 @@ export default function Home() {
             <Pricing />
           </div>
         </div>
+        <div className="">
+          <div className="contentContainer container">
+            <TitleSeprator title={"What Turby Says"} />
+            <MascotBox
+              bgImage="./mascot/moon_bg.png"
+              mascotImage="/mascot/turby_astronaut.png"
+              heading="Discover your perfect plan"
+              description="Lighthouse offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises."
+            />
+            <MascotBox
+              bgImage="./mascot/beach_bg.png"
+              mascotImage="/mascot/turby_lifeguard.png"
+              position="right"
+              heading="Discover your perfect plan"
+              description="Lighthouse offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises."
+            />
+            <MascotBox
+              bgImage="./mascot/globe_bg.png"
+              mascotImage="/mascot/turby_hacker.png"
+              position="left"
+              heading="Discover your perfect plan"
+              description="Lighthouse offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises."
+            />
+          </div>
+        </div>
 
         <div style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
@@ -54,18 +77,18 @@ export default function Home() {
             {LandingPageData.lighthouseSuit.map((data, index) => (
               <>
                 <LighthouseSuit key={index} data={{ ...data, index }} />
-                {index !== 3 && <hr style={{borderColor:'#667085'}} />}
+                {index !== 3 && <hr style={{ borderColor: "#667085" }} />}
               </>
             ))}
           </div>
         </div>
         <div style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
-          <TitleSeprator title={"Lighthouse Ecosystem"} />
-            <EcosystemGrid/>
+            <TitleSeprator title={"Lighthouse Ecosystem"} />
+            <EcosystemGrid />
           </div>
         </div>
-      
+
         <div style={{ minHeight: "auto" }}>
           <div className="contentContainer container">
             <Testimonials />

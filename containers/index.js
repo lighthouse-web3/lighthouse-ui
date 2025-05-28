@@ -50,3 +50,6 @@ export const EcosystemBanner = dynamic(() =>
 export const EcosystemGrid = dynamic(() =>
   import("./EcosystemGrid/EcosystemGrid")
 );
+export const MascotBox = dynamic(() =>
+  import("./MascotBox/MascotBox")
+);
