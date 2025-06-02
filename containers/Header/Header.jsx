@@ -96,7 +96,13 @@ function Header({ style }) {
                   {link.title}
                 </a>
               ) : (
-                <a href={link.href} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  tabIndex={0}
+                  role="link"
+                >
                   {link.title}
                   <MdArrowOutward/>
                 </a>
@@ -106,7 +112,17 @@ function Header({ style }) {
         </div>
 
         <div className={Styles.buttonContainer}>
-          <span className="ptr">
+          <span
+            className="ptr"
+            tabIndex={0}
+            role="button"
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                setTheme(theme === "light" ? "dark" : "light");
+              }
+            }}
+          >
             {theme === "light" ? (
               <BsMoon
                 onClick={() => {
