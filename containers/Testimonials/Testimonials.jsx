@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import Style from "./Testimonials.module.scss";
-import { TestimonialCard, TitleSeprator } from "../../components";
+import React from "react";
+import { TestimonialCard, TitleSeparator } from "../../components";
 import { testimonialSection } from "../../utils/Data/SiteContent";
+import Style from "./Testimonials.module.scss";
 
 function Testimonials() {
   return (
@@ -10,7 +10,7 @@ function Testimonials() {
         <p></p>
         <p>Testimonials</p>
       </div> */}
-      <TitleSeprator title={"Testimonials"} />
+      <TitleSeparator title={"Testimonials"} />
 
       <div className={Style.Testimonials__cardContainer}>
         {testimonialSection?.testimonials.map((item, index) => (

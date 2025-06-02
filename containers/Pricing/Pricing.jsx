@@ -1,14 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import styles from "./Pricing.module.scss";
-import { Switcher, TitleSeprator } from "../../components";
-import {
-  AnnualPricing,
-  LifetimePricing,
-  pricingPlans,
-} from "../../utils/Data/SiteContent";
+import React, { useState } from "react";
 import { BsInfoCircle } from "react-icons/bs";
 import { FaCircleCheck } from "react-icons/fa6";
+import { Switcher, TitleSeparator } from "../../components";
+import {
+  AnnualPricing,
+  LifetimePricing
+} from "../../utils/Data/SiteContent";
+import styles from "./Pricing.module.scss";
 
 const Pricing = () => {
   const [activeTitle, setActiveTitle] = useState("Annually");
@@ -83,7 +82,7 @@ const Pricing = () => {
 
   return (
     <section>
-      <TitleSeprator title={"Discover your perfect plan"} />
+      <TitleSeparator title={"Discover your perfect plan"} />
       <div className={styles.switcherWrapper}>
         <Switcher
           title1="Annually"

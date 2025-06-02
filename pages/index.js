@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { Metadata, TitleSeprator } from "../components";
+import { Metadata, TitleSeparator } from "../components";
 import {
   EcosystemGrid,
   FAQContainer,
@@ -8,11 +7,9 @@ import {
   Footer,
   Header,
   HomeBanner,
-  LighthouseSuit,
-  NewsBar,
-  PartnerCarousel,
+  LighthouseSuit, PartnerCarousel,
   Pricing,
-  Testimonials,
+  Testimonials
 } from "../containers";
 import { LandingPageData } from "../utils/Data/SiteContent";
 
@@ -26,63 +23,48 @@ export default function Home() {
       <div className={"bodyContainer"}>
         {/* <NewsBar /> */}
         <Header />
-        <div>
           <div className="contentContainer">
             <HomeBanner />
           </div>
-        </div>
-
-        <div className="">
           <div className="container">
             <FeatureCompare />
           </div>
-        </div>
-        <div className="">
           <div className="container">
             <Pricing />
           </div>
-        </div>
-
-        <div style={{ minHeight: "auto" }}>
-          <div className="contentContainer container">
-            <PartnerCarousel />
+          <div style={{ minHeight: "auto" }}>
+            <div className="contentContainer container">
+              <PartnerCarousel />
+            </div>
           </div>
-        </div>
-        <div style={{ minHeight: "auto" }}>
-          <div className="contentContainer container">
-            <TitleSeprator title={"Empowering the Data Economy"} />
-            {LandingPageData.lighthouseSuit.map((data, index) => (
-              <>
-                <LighthouseSuit key={index} data={{ ...data, index }} />
-                {index !== 3 && <hr style={{borderColor:'#667085'}} />}
-              </>
-            ))}
+          <div style={{ minHeight: "auto" }}>
+            <div className="contentContainer container">
+              <TitleSeparator title={"Empowering the Data Economy"} />
+              {LandingPageData.lighthouseSuit.map((data, index) => (
+                <>
+                  <LighthouseSuit key={index} data={{ ...data, index }} />
+                  {index !== 3 && <hr style={{borderColor:'#667085'}} />}
+                </>
+              ))}
+            </div>
           </div>
-        </div>
-        <div style={{ minHeight: "auto" }}>
-          <div className="contentContainer container">
-          <TitleSeprator title={"Lighthouse Ecosystem"} />
-            <EcosystemGrid/>
+          <div style={{ minHeight: "auto" }}>
+            <div className="contentContainer container">
+            <TitleSeparator title={"Lighthouse Ecosystem"} />
+              <EcosystemGrid/>
+            </div>
           </div>
-        </div>
-      
-        <div style={{ minHeight: "auto" }}>
-          <div className="contentContainer container">
-            <Testimonials />
+          <div style={{ minHeight: "auto" }}>
+            <div className="contentContainer container">
+              <Testimonials />
+            </div>
           </div>
-        </div>
-        <div>
-          <div className="">
-            <FeatureCardList />
-          </div>
-        </div>
-        <div>
+          <FeatureCardList />
           <div className="contentContainer container">
             <FAQContainer />
           </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
     </>
   );
 }
