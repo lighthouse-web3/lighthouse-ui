@@ -41,10 +41,10 @@ export default function Home() {
             <div className="contentContainer container">
               <TitleSeparator title={"Empowering the Data Economy"} />
               {LandingPageData.lighthouseSuit.map((data, index) => (
-                <>
-                  <LighthouseSuit key={index} data={{ ...data, index }} />
+                <div key={index}>
+                  <LighthouseSuit data={{ ...data, index }} />
                   {index !== 3 && <hr style={{borderColor:'#667085'}} />}
-                </>
+                </div>
               ))}
             </div>
           </div>

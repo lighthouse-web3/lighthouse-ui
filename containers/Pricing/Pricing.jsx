@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 import { BsInfoCircle } from "react-icons/bs";
 import { FaCircleCheck } from "react-icons/fa6";
@@ -19,7 +20,7 @@ const Pricing = () => {
         <h3 className={styles.planTitle}>{plan.title}</h3>
 
         <div className={styles.iconWrapper}>
-          <img src={plan.icon} alt={`${plan.title} icon`} />
+          <Image src={plan.icon} alt={`${plan.title} icon`} width={100} height={100} />
         </div>
         <p className={styles.price}>
           ${plan.cost}{" "}
