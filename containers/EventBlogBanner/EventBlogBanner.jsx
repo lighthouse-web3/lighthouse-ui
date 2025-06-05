@@ -28,7 +28,7 @@ function EventBlogBanner() {
             <Swiper
               spaceBetween={50}
               slidesPerView={size?.width < 500 ? 1 : 3}
-              onSwiper={(swiper) => //console.log(swiper)}
+              onSwiper={(swiper) => {}}
             >
               {blogs.map((blog, index) => (
                 <SwiperSlide key={index}>

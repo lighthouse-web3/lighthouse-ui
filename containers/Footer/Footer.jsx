@@ -146,7 +146,14 @@ function Footer() {
 
         <div className={Styles.newsLetterBox}>
           <p className={Styles.newsLetterBox__title}>Newsletter</p>
-          <input type="text" placeholder="user@mail.com" ref={mailInput} />
+          <input
+            type="text"
+            placeholder="user@mail.com"
+            ref={mailInput}
+            id="newsletter-email"
+            name="newsletter-email"
+            autoComplete="email"
+          />
           <button
             className="fillBtn__purple ptr"
             style={{

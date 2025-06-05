@@ -1,14 +1,13 @@
 import React from "react";
-import { FeatureBlogCard, TitleSeprator } from "../../components";
+import { FeatureBlogCard, TitleSeparator } from "../../components";
 import Style from "./MostPopularBlogs.module.scss";
 
 // import required modules
-import { Pagination } from "swiper";
 
 function MostPopularBlogs({ blogsData }) {
   return (
     <div className={Style.MostPopularBlogs} data-aos="fade-up">
-      <TitleSeprator
+      <TitleSeparator
         style={{ alignItems: "flex-start" }}
         topTitle={"Our Blogs"}
         title={"Read our latest blog"}

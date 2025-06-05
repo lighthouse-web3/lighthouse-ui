@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Styles from "./FaqContainer.module.scss";
-import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
-import { LandingPageData, socialLinks } from "../../utils/Data/SiteContent";
-import { ImageBox, TitleSeprator } from "../../components";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
+import { TitleSeparator } from "../../components";
 import { baseUrl } from "../../utils/Data/config";
+import Styles from "./FaqContainer.module.scss";
 
 function FAQContainer() {
   const [isOpen, setIsOpen] = useState(0);
@@ -24,7 +23,7 @@ function FAQContainer() {
   }, []);
   return (
     <div className={Styles.FAQContainer}>
-      <TitleSeprator data-aos="fade-up" title={"FAQs"} />
+      <TitleSeparator data-aos="fade-up" title={"FAQs"} />
 
       <div className={Styles.FAQContainer__Container}>
         {faqs.map((item, index) => (
