@@ -1,17 +1,18 @@
+"use client";
+import Image from "next/image";
 import React, { useState } from "react";
-import styles from "./Pricing.module.scss";
-import { Switcher, TitleSeprator } from "../../components";
-import {
-  AnnualPricing,
-  LifetimePricing,
-  pricingPlans,
-} from "../../utils/Data/SiteContent";
-import { Tooltip } from "react-tooltip";
 import { BsInfoCircle } from "react-icons/bs";
 import { FaCircleCheck } from "react-icons/fa6";
+import { Switcher, TitleSeparator } from "../../components";
+import {
+  AnnualPricing,
+  LifetimePricing
+} from "../../utils/Data/SiteContent";
+import styles from "./Pricing.module.scss";
 
 const Pricing = () => {
-  const [activeTitle, setActiveTitle] = useState("Lifetime");
+  const [activeTitle, setActiveTitle] = useState("Annually");
+
 
   const renderCards = (plans) => {
     return plans.map((plan, index) => (
@@ -19,26 +20,50 @@ const Pricing = () => {
         <h3 className={styles.planTitle}>{plan.title}</h3>
 
         <div className={styles.iconWrapper}>
-          <img src={plan.icon} alt={`${plan.title} icon`} />
+          <Image src={plan.icon} alt={`${plan.title} icon`} width={100} height={100} />
         </div>
         <p className={styles.price}>
           ${plan.cost}{" "}
-          <span>{activeTitle === "Annually" ? "/year" : "/lifetime"}</span>
+          <span>{activeTitle === "Annually" ? "/month" : "/lifetime"}</span>
         </p>
-        <button  className={styles.button} onClick={() => window.open('https://files.lighthouse.storage/', "_self")}>{plan.buttonText}</button>
+        {activeTitle === "Annually" ? (
+          <p
+            style={{
+              marginTop: "-20px",
+              fontWeight: "400",
+              fontSize: "0.9rem",
+              opacity: !plan.onlyShow ? "0.7" : "0",
+            }}
+          >
+            ( billed once yearly )
+          </p>
+        ) : (
+          <></>
+        )}
+
+        <button
+          className={styles.button}
+          onClick={() =>
+            window.open("https://files.lighthouse.storage/", "_self")
+          }
+        >
+          {plan.buttonText}
+        </button>
         <div className={styles.details}>
           <table>
             <tbody>
               {plan.features.map((feature, index) => (
                 <tr key={index}>
-                  <td >
+                  <td>
                     {feature.title}{" "}
-                    <span>
-                      <BsInfoCircle
-                        data-tooltip-id="pricingPage-tooltip"
-                        data-tooltip-content={feature?.tooltip}
-                      />
-                    </span>
+                    <div className={styles.tooltipWrapper}>
+                      <BsInfoCircle />
+                      {feature.tooltip && (
+                        <div className={styles.tooltipContent}>
+                          {feature.tooltip}
+                        </div>
+                      )}
+                    </div>
                   </td>
                   <td style={{ textAlign: "right" }}>
                     {feature?.value === "icon" ? (
@@ -58,11 +83,11 @@ const Pricing = () => {
 
   return (
     <section>
-      <TitleSeprator title={"Discover your perfect plan"} />
+      <TitleSeparator title={"Discover your perfect plan"} />
       <div className={styles.switcherWrapper}>
         <Switcher
-          title1="Lifetime"
-          title2="Annually"
+          title1="Annually"
+          title2="Lifetime"
           activeTitle={activeTitle}
           setActiveTitle={setActiveTitle}
         />
@@ -77,7 +102,7 @@ const Pricing = () => {
           activeTitle === "Lifetime" ? LifetimePricing : AnnualPricing
         )}
       </div>
-      <Tooltip id="pricingPage-tooltip" />
+      {/* {isClient && <Tooltip id="pricingPage-tooltip" />} */}
     </section>
   );
 };

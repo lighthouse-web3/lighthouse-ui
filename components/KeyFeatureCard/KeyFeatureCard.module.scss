@@ -18,9 +18,9 @@
     @include flex-setup(column, flex-start);
     justify-content: flex-start;
     gap: 24px;
-    background: linear-gradient(160.33deg, #01010100 0%, #19171c23 100%);
+    background: var(--featureCard-bg-clr);
 
-   
+
     p:nth-of-type(1) {
       @include text-size(20px);
       font-weight: 600;

@@ -94,19 +94,19 @@ function HomeBanner() {
         />
       </span>
       <div className={Styles.infoBox + " container"} data-aos="fade-up">
-        <div
+        <h1
           className={Styles.title}
           dangerouslySetInnerHTML={{
             __html: LandingPageData?.HeroSection?.title,
           }}
-        ></div>
+        ></h1>
 
-        <div
+        <p
           className={Styles.subTitle}
           dangerouslySetInnerHTML={{
             __html: LandingPageData?.HeroSection?.subTitle,
           }}
-        ></div>
+        ></p>
 
         <div className={Styles.buttonContainer}>
           <button
