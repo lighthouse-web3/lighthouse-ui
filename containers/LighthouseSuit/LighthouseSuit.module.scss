@@ -12,10 +12,10 @@
     .headerLeft {
       flex: 1;
       .title {
-        color: #A286F8;        
+        color: #A286F8;
         font-size: 1.2rem;
         margin: 0rem;
-      } 
+      }
 
       .subtitle {
         font-size: 1.5rem;
@@ -27,7 +27,7 @@
       .description {
         margin-bottom: 1rem;
         font-weight: 400;
-        color: #667085;
+        color: #A3AAB8;
       }
 
       .learnMore {
@@ -62,7 +62,7 @@
     gap: 1rem;
 
     .featureCard {
-      background: linear-gradient(160.33deg, #01010100 0%, #19171c23 100%);
+      background: var(--featureCard-bg-clr);
       padding: 1rem;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

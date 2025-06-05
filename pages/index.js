@@ -26,9 +26,11 @@ export default function Home() {
           <div className="contentContainer">
             <HomeBanner />
           </div>
+
           <div className="container">
             <FeatureCompare />
           </div>
+
           <div className="container">
             <Pricing />
           </div>
@@ -48,6 +50,7 @@ export default function Home() {
               ))}
             </div>
           </div>
+
           <div style={{ minHeight: "auto" }}>
             <div className="contentContainer container">
             <TitleSeparator title={"Lighthouse Ecosystem"} />
@@ -58,6 +61,7 @@ export default function Home() {
             <div className="contentContainer container">
               <Testimonials />
             </div>
+
           </div>
           <FeatureCardList />
           <div className="contentContainer container">
