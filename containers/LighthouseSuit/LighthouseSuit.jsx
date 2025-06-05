@@ -1,7 +1,6 @@
 import React from "react";
-import styles from "./LighthouseSuit.module.scss";
-import Image from "next/image";
 import { FiCheckCircle } from "react-icons/fi";
+import styles from "./LighthouseSuit.module.scss";
 
 export default function LighthouseSuit({ data }) {
   return (
@@ -36,7 +35,7 @@ export default function LighthouseSuit({ data }) {
             <div>
               <FiCheckCircle />
             </div>
-            <h5 className={styles.featureTitle}>{data.title}</h5>
+            <h4 className={styles.featureTitle}>{data.title}</h4>
             <p className={styles.featureDescription}>{data.subTitle}</p>
           </div>
         ))}

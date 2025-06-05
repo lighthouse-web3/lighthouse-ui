@@ -1,6 +1,6 @@
 @import "styles/mixins.scss";
 
-.TitleSeprator {
+.TitleSeparator {
   color: var(--txt-clr);
   width: 100%;
   @include flex-setup(column, center);
@@ -18,7 +18,7 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .TitleSeprator {
+  .TitleSeparator {
     &__iconContainer {
       display: none;
     }

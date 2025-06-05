@@ -1,14 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { RiCloseLine, RiMenuFill } from "react-icons/ri";
 import Styles from "./header.module.scss";
-import { RiMenuFill, RiCloseLine } from "react-icons/ri";
-import { MdOutlineArrowForwardIos } from "react-icons/md";
 
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { themeChanger } from "../../utils/services/theme";
 import { BsMoon, BsSun } from "react-icons/bs";
-import ThemeContext from "../../utils/services/Themecontext";
 import { MdArrowOutward } from "react-icons/md";
+import ThemeContext from "../../utils/services/Themecontext";
 
 
 const links = [
@@ -88,26 +86,43 @@ function Header({ style }) {
             <p key={index}>
               {link.path.length > 0 ? (
                 <a
+                  href={link.path}
                   className={currentRoute === link.path ? Styles.active : ""}
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     _navigate.push(link.path);
                   }}
                 >
                   {link.title}
                 </a>
               ) : (
-                <a href={link.href} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  tabIndex={0}
+                  role="link"
+                >
                   {link.title}
                   <MdArrowOutward/>
                 </a>
-
               )}
             </p>
           ))}
         </div>
 
         <div className={Styles.buttonContainer}>
-          <span className="ptr">
+          <span
+            className="ptr"
+            tabIndex={0}
+            role="button"
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                setTheme(theme === "light" ? "dark" : "light");
+              }
+            }}
+          >
             {theme === "light" ? (
               <BsMoon
                 onClick={() => {
@@ -160,7 +175,9 @@ function Header({ style }) {
               <p key={index}>
                 {link.path.length > 0 ? (
                   <a
-                    onClick={() => {
+                    href={link.path}
+                    onClick={(e) => {
+                      e.preventDefault();
                       _navigate.push(link.path);
                     }}
                   >

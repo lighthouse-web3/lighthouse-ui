@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
-import Styles from "./PartnerCarousel.module.scss";
-import { ImageBox, TitleSeprator } from "../../components";
+import { ImageBox, TitleSeparator } from "../../components";
 import { LandingPageData } from "../../utils/Data/SiteContent";
 import ThemeContext from "../../utils/services/Themecontext";
+import Styles from "./PartnerCarousel.module.scss";
 
 function PartnerCarousel() {
   const { theme, setTheme } = useContext(ThemeContext);
   return (
     <div className={Styles.PartnerCarousel}>
-      <TitleSeprator title={"Trusted By"} />
+      <TitleSeparator title={"Trusted By"} />
 
       <div className={Styles.PartnerCarousel__brandLogoContainer}>
         {LandingPageData?.clientsLogo?.map((item, index) => (

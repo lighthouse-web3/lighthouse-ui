@@ -48,6 +48,11 @@ body {
   background: var(--bg-clr) !important;
 }
 
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
 .bodyContainer {
   display: flex;
   flex-direction: column;

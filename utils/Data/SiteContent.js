@@ -579,7 +579,7 @@ export const AnnualPricing = [
   {
     index: 7,
     title: "Lite",
-    cost: "120",
+    cost: "10",
     icon: "/icons/lite.png",
     icon_light: "/icons/lite_light.png",
     buttonText:'Get Started',
@@ -612,7 +612,7 @@ export const AnnualPricing = [
     title: "Premium",
     icon: "/icons/premium.png",
     icon_light: "/icons/premium_light.png",
-    cost: "499",
+    cost: "42",
     buttonText:'Get Started',
 
     features: [
