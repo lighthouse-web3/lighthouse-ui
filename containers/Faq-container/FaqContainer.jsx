@@ -1,30 +1,37 @@
-import React, { useEffect, useState } from "react";
-import Styles from "./FaqContainer.module.scss";
-import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
-import { LandingPageData, socialLinks } from "../../utils/Data/SiteContent";
-import { ImageBox, TitleSeprator } from "../../components";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
+import { TitleSeparator } from "../../components";
+import { LandingPageData } from "../../utils/Data/SiteContent";
 import { baseUrl } from "../../utils/Data/config";
+import Styles from "./FaqContainer.module.scss";
 
-function FAQContainer() {
+// optional props: type = "main" | "pricing"
+function FAQContainer({ type = "main" }) {
   const [isOpen, setIsOpen] = useState(0);
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
-    (async () => {
-      const res = await axios.get(`${baseUrl}/faqs?populate=*`);
-      let faqData = res["status"] === 200 ? res["data"]?.["data"] : null;
-      const mainSiteFaq = faqData.filter(
-        (faq) => faq.attributes.Platform === "Mainsite"
-      );
-      setFaqs(mainSiteFaq);
-    })();
-
+    if (type === "pricing") {
+      setFaqs(LandingPageData.PricingFAQs);
+    } else {
+      (async () => {
+        const res = await axios.get(`${baseUrl}/faqs?populate=*`);
+        let faqData = res["status"] === 200 ? res["data"]?.["data"] : null;
+        const mainSiteFaq = faqData.filter(
+          (faq) => faq.attributes.Platform === "Mainsite"
+        );
+        setFaqs(mainSiteFaq);
+      })();
+    }
     return () => {};
   }, []);
   return (
     <div className={Styles.FAQContainer}>
-      <TitleSeprator data-aos="fade-up" title={"FAQs"} />
+      <TitleSeparator
+        data-aos="fade-up"
+        title={type === "pricing" ? "Pricing FAQs" : "FAQs"}
+      />
 
       <div className={Styles.FAQContainer__Container}>
         {faqs.map((item, index) => (
@@ -62,9 +69,10 @@ function FAQContainer() {
       <div className={Styles.FAQContainer__QuestionBox} data-aos="fade-up">
         <p className={Styles.title}>Lets Talk !</p>
         <p className={Styles.subTitle}>
-          Didn’t find what you were looking for? <br/> Our team is happy to help.{" "}
+          Didn’t find what you were looking for? <br /> Our team is happy to
+          help.{" "}
         </p>
-        <br/>
+        <br />
         <button
           className={"fillBtn__purple ptr"}
           onClick={() => {

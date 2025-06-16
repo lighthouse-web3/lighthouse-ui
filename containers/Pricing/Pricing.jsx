@@ -1,18 +1,18 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import styles from "./Pricing.module.scss";
-import { Switcher, TitleSeprator } from "../../components";
+import Image from "next/image";
+import React, { useState } from "react";
+import { BsInfoCircle } from "react-icons/bs";
+import { FaCheck, FaXmark } from "react-icons/fa6";
+import { Switcher, TitleSeparator } from "../../components";
 import {
+  AddOnsPricing,
   AnnualPricing,
   LifetimePricing,
-  pricingPlans,
 } from "../../utils/Data/SiteContent";
-import { BsInfoCircle } from "react-icons/bs";
-import { FaCircleCheck } from "react-icons/fa6";
+import styles from "./Pricing.module.scss";
 
 const Pricing = () => {
   const [activeTitle, setActiveTitle] = useState("Annually");
-
 
   const renderCards = (plans) => {
     return plans.map((plan, index) => (
@@ -20,12 +20,22 @@ const Pricing = () => {
         <h3 className={styles.planTitle}>{plan.title}</h3>
 
         <div className={styles.iconWrapper}>
-          <img src={plan.icon} alt={`${plan.title} icon`} />
+          <Image
+            src={plan.icon}
+            alt={`${plan.title} icon`}
+            width={100}
+            height={100}
+          />
         </div>
-        <p className={styles.price}>
-          ${plan.cost}{" "}
-          <span>{activeTitle === "Annually" ? "/month" : "/lifetime"}</span>
-        </p>
+        {activeTitle === "Add-on" ? (
+          <></>
+        ) : (
+          <p className={styles.price}>
+            ${plan.cost}{" "}
+            <span>{activeTitle === "Annually" ? "/month" : "/lifetime"}</span>
+          </p>
+        )}
+
         {activeTitle === "Annually" ? (
           <p
             style={{
@@ -66,11 +76,10 @@ const Pricing = () => {
                     </div>
                   </td>
                   <td style={{ textAlign: "right" }}>
-                    {feature?.value === "icon" ? (
-                      <FaCircleCheck />
-                    ) : (
-                      feature.value
-                    )}
+                    {feature?.value === "icon-cross" && <FaXmark />}
+                    {feature?.value === "icon" && <FaCheck />}
+                    {feature?.value !== "icon-cross" &&
+                      feature?.value !== "icon" && <span>{feature.value}</span>}
                   </td>
                 </tr>
               ))}
@@ -83,26 +92,31 @@ const Pricing = () => {
 
   return (
     <section>
-      <TitleSeprator title={"Discover your perfect plan"} />
+      <TitleSeparator title={"Discover your perfect plan"} />
       <div className={styles.switcherWrapper}>
         <Switcher
           title1="Annually"
           title2="Lifetime"
+          title3="Add-on"
           activeTitle={activeTitle}
           setActiveTitle={setActiveTitle}
         />
       </div>
       <p className={styles.subText}>
-        {activeTitle === "Annually"
-          ? "Easy, convenient and budget friendly plans. Just Pay Annually."
-          : "Hassle free, price-beating lifetime plans. No recurring subscription fees, just a one time payment to secure your storage for life!"}
+        {activeTitle === "Annually" &&
+          "Easy, convenient and budget friendly plans. Just Pay Annually."}
+        {activeTitle === "Lifetime" &&
+          "Hassle free, price-beating lifetime plans. No recurring subscription fees, just a one time payment to secure your storage for life!"}
+        {activeTitle === "Add-on" &&
+          "Add-on plans are available for those who want to add additional services to your existing plan."}
       </p>
       <div className={styles.cardGrid}>
-        {renderCards(
-          activeTitle === "Lifetime" ? LifetimePricing : AnnualPricing
-        )}
+        {(activeTitle === "Lifetime" || activeTitle === "Annually") &&
+          renderCards(
+            activeTitle === "Lifetime" ? LifetimePricing : AnnualPricing
+          )}
+        {activeTitle === "Add-on" && renderCards(AddOnsPricing)}
       </div>
-      {/* {isClient && <Tooltip id="pricingPage-tooltip" />} */}
     </section>
   );
 };

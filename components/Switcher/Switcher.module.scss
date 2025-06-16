@@ -1,5 +1,5 @@
-@import 'styles/mixins.scss';
-@import 'styles/mediaQuery.scss';
+@import "styles/mixins.scss";
+@import "styles/mediaQuery.scss";
 
 .switcher {
   position: relative;
@@ -8,7 +8,7 @@
   background: transparent;
   border: 1px solid var(--testimonialCard-border-clr);
   padding: 0.2rem;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .switchButton {
@@ -23,6 +23,7 @@
   border-radius: 999px;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
+  flex: 1;
 }
 
 .active {
@@ -30,18 +31,30 @@
 }
 
 .switcher::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0.2rem;
   bottom: 0.2rem;
-  width: 48%;
+  width: 32.5%; // around one-third
   border-radius: 999px;
   background: var(--primary-clr);
   z-index: 1;
   transition: all 0.3s ease-in-out;
+  left: 0.2rem;
   transform: translateX(0%);
 }
 
-.switcher[data-active='right']::before {
+// left (index 0)
+.switcher[data-active="0"]::before {
+  transform: translateX(0%);
+}
+
+// middle (index 1)
+.switcher[data-active="1"]::before {
   transform: translateX(100%);
+}
+
+// right (index 2)
+.switcher[data-active="2"]::before {
+  transform: translateX(200%);
 }
