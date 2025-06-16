@@ -1,6 +1,13 @@
 import { useEffect } from "react";
-import { Metadata } from "../components";
-import { FAQContainer, Footer, Header, Pricing } from "../containers";
+import { Metadata, TitleSeparator } from "../components";
+import {
+  FAQContainer,
+  Footer,
+  Header,
+  LogoMarquee,
+  Pricing,
+  PricingTable,
+} from "../containers";
 
 export default function PricingPage() {
   return (
@@ -11,6 +18,12 @@ export default function PricingPage() {
         <div className="sectionContainer">
           <div className="contentContainer container">
             <Pricing />
+          </div>
+          <LogoMarquee />
+          <div className="contentContainer container">
+            <TitleSeparator title={"Compare Lifetime plans "} />
+            <br />
+            <PricingTable />
           </div>
           <div className="contentContainer container">
             <FAQContainer type="pricing" />

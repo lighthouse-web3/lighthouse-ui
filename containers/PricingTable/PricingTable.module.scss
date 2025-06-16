@@ -1,0 +1,50 @@
+@import "styles/mixins.scss";
+@import "styles/mediaQuery.scss";
+
+.pricingTable {
+  background-color: #0a0710;
+  border-radius: 1rem;
+  overflow: hidden;
+  color: white;
+}
+
+.headerRow,
+.featureRow {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.featureColumn {
+  flex: 1;
+  padding: 1rem;
+  font-weight: 500;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.planColumn {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+}
+
+.headerRow .planColumn {
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.headerRow .planColumn:last-child,
+.featureRow .planColumn:last-child {
+  border-right: none;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0.25rem 0;
+}
+
+.subtext {
+  color: #a0a0a0;
+  font-size: 0.875rem;
+}

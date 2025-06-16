@@ -6,10 +6,11 @@ import styles from "./LogoMarquee.module.scss";
 export default function LogoMarquee() {
   return (
     <div className={styles.LogoMarqueeContainer}>
-      <TitleSeparator title={"Trusted aaBy"} />
+      <TitleSeparator title={"Trusted by"} />
       <div className={styles.marqueeContainer}>
         <div className={styles.marquee}>
           {LandingPageData?.clientsLogo?.map((logo, index) => (
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               key={index}
               src={logo.icon}
@@ -17,14 +18,14 @@ export default function LogoMarquee() {
               className={styles.logo}
             />
           ))}
-          {LandingPageData?.clientsLogo?.map((logo, index) => (
+          {/* {LandingPageData?.clientsLogo?.map((logo, index) => (
             <img
               key={index}
               src={logo.icon}
               alt={"Logo"}
               className={styles.logo}
             />
-          ))}
+          ))} */}
         </div>
       </div>
     </div>

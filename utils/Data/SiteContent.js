@@ -455,11 +455,6 @@ export const LifetimePricing = [
         value: "icon-cross",
         tooltip: "Get Add-ons for Migration Support",
       },
-      {
-        title: "Many More",
-        value: "",
-        tooltip: "Check Add-ons for more features",
-      },
     ],
   },
   {
@@ -506,11 +501,6 @@ export const LifetimePricing = [
         value: "icon-cross",
         tooltip: "Get Add-ons for Migration Support",
       },
-      {
-        title: "Many More",
-        value: "",
-        tooltip: "Check Add-ons for more features",
-      },
     ],
   },
   {
@@ -556,11 +546,6 @@ export const LifetimePricing = [
         title: "Migration Support",
         value: "icon-cross",
         tooltip: "Get Add-ons for Migration Support",
-      },
-      {
-        title: "Many More",
-        value: "",
-        tooltip: "Check Add-ons for more features",
       },
     ],
   },
@@ -611,11 +596,6 @@ export const AnnualPricing = [
         value: "icon-cross",
         tooltip: "Get Add-ons for Migration Support",
       },
-      {
-        title: "Many More",
-        value: "",
-        tooltip: "Check Add-ons for more features",
-      },
     ],
     onlyShow: true,
   },
@@ -663,11 +643,6 @@ export const AnnualPricing = [
         value: "icon-cross",
         tooltip: "Get Add-ons for Migration Support",
       },
-      {
-        title: "Many More",
-        value: "",
-        tooltip: "Check Add-ons for more features",
-      },
     ],
   },
   {
@@ -713,11 +688,6 @@ export const AnnualPricing = [
         title: "Migration Support",
         value: "icon-cross",
         tooltip: "Get Add-ons for Migration Support",
-      },
-      {
-        title: "Many More",
-        value: "",
-        tooltip: "Check Add-ons for more features",
       },
     ],
   },
