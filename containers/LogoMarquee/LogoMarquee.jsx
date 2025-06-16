@@ -18,14 +18,14 @@ export default function LogoMarquee() {
               className={styles.logo}
             />
           ))}
-          {/* {LandingPageData?.clientsLogo?.map((logo, index) => (
+          {LandingPageData?.clientsLogo?.map((logo, index) => (
             <img
               key={index}
               src={logo.icon}
               alt={"Logo"}
               className={styles.logo}
             />
-          ))} */}
+          ))}
         </div>
       </div>
     </div>
