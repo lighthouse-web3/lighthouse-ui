@@ -242,16 +242,30 @@ export const LandingPageData = {
   PricingFAQs: [
     {
       attributes: {
-        question: "What is the difference between Beacon and Navigator?",
+        question: "How can I pay for the Lighthouse?",
         answer:
-          "Beacon is the smallest plan and Navigator is the largest plan. Beacon is the cheapest plan and Navigator is the most expensive plan. Beacon is the smallest plan and Navigator is the largest plan. Beacon is the cheapest plan and Navigator is the most expensive plan.",
+          "You can pay per file depending on the file size or top up the associated API key with prepaid storage space in multiple tokens like Polygon, USDC, USDT, DAI, and other native chain tokens.",
+      },
+    },
+    {
+      attributes: {
+        question: "What are Add-ons and how do they work?",
+        answer:
+          "Add-ons are additional services you can opt for on top of your base storage plans. These include features like Encryption & Token Gating, IPNS, Migration Support, SLAs, Custom Gateway, and Direct Customer Support. They are designed to extend the core functionality of your Lighthouse plan.",
+      },
+    },
+    {
+      attributes: {
+        question: "Can Add-ons be used with Lifetime Plans?",
+        answer:
+          "Yes, Add-ons can be added to any Lifetime plan. However, Add-ons are charged monthly, independent of the one-time payment made for the Lifetime storage.",
       },
     },
     {
       attributes: {
         question: "What does it mean by permanent storage?",
         answer:
-          "Permanent storage means you pay once for your files storage and it's meant to be stored forever. No need to recurrently pay for your files.\n",
+          "Permanent storage means you pay once for your files and they are intended to be stored forever. There is no need for recurring payments to retain your stored files.",
       },
     },
   ],
@@ -696,8 +710,8 @@ export const AnnualPricing = [
 export const AddOnsPricing = [
   {
     index: 1,
-    title: "Pro Add-ons",
-    cost: "10",
+    title: "Pro",
+    cost: "99",
     icon: "/icons/addOn.png",
     icon_light: "/icons/addOn.png",
     buttonText: "Get Add-ons",
@@ -737,8 +751,8 @@ export const AddOnsPricing = [
   },
   {
     index: 1,
-    title: "Customize Add-ons",
-    cost: "10",
+    title: "Customize",
+    cost: "Custom",
     icon: "/icons/customize_addOn.png",
     icon_light: "/icons/customize_addOn.png",
     buttonText: "Contact Our Sales Team",

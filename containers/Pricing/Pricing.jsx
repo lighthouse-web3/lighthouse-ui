@@ -28,7 +28,15 @@ const Pricing = () => {
           />
         </div>
         {activeTitle === "Add-on" ? (
-          <></>
+          <p className={styles.price}>
+            {plan.cost === "Custom" ? (
+              <span>Pay For What You Need</span>
+            ) : (
+              <>
+                ${plan.cost} <span>/month</span>
+              </>
+            )}
+          </p>
         ) : (
           <p className={styles.price}>
             ${plan.cost}{" "}
@@ -66,12 +74,10 @@ const Pricing = () => {
                 <tr key={index}>
                   <td>
                     {feature.title}{" "}
-                    <div className={styles.tooltipWrapper}>
+                    <div className="tooltipWrapper">
                       <BsInfoCircle />
                       {feature.tooltip && (
-                        <div className={styles.tooltipContent}>
-                          {feature.tooltip}
-                        </div>
+                        <div className="tooltipContent">{feature.tooltip}</div>
                       )}
                     </div>
                   </td>

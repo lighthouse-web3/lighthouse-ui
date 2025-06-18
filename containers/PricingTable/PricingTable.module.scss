@@ -1,11 +1,21 @@
 @import "styles/mixins.scss";
 @import "styles/mediaQuery.scss";
 
+.pricingTitle {
+  margin-bottom: 3rem;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
 .pricingTable {
   background-color: #0a0710;
   border-radius: 1rem;
   overflow: hidden;
   color: white;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .headerRow,
@@ -21,6 +31,7 @@
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .planColumn {
@@ -42,6 +53,11 @@
   font-size: 1.25rem;
   font-weight: bold;
   margin: 0.25rem 0;
+  span {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #a0a0a0;
+  }
 }
 
 .subtext {

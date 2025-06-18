@@ -20,8 +20,9 @@ export default function PricingPage() {
             <Pricing />
           </div>
           <LogoMarquee />
+
           <div className="contentContainer container">
-            <TitleSeparator title={"Compare Lifetime plans "} />
+            <br />
             <br />
             <PricingTable />
           </div>

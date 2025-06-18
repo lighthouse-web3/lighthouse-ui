@@ -231,14 +231,35 @@ h1 {
   }
 }
 
-// @media screen and (max-width: 2560px) {
-//   .container {
-//     padding: 1rem 15%;
-//   }
-// }
+.tooltipWrapper {
+  position: relative;
+  display: inline-block;
 
-// @media screen and (max-width: 550px) {
-//   .container {
-//     padding: 1rem 1rem;
-//   }
-// }
+  svg {
+    cursor: pointer;
+  }
+
+  &:hover .tooltipContent {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-20px);
+    transform: translateX(-50%);
+  }
+}
+
+.tooltipContent {
+  position: absolute;
+  bottom: 120%;
+  left: 60%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: #222;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  z-index: 10000;
+}
