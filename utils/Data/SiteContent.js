@@ -110,7 +110,7 @@ export const LandingPageData = {
         "Create Data DAOs that generate yield and ensure long-term data preservation through decentralized governance and incentivized storage.",
       icon: "/suitsIcon/data_daos.png",
       link: "https://www.lighthouse.storage/blogs/Discover%20How%20the%20Endowment%20Pool%20Makes%20Your%20Data%20Immortal",
-      buttonText:'Learn More',
+      buttonText: "Learn More",
       featureCard: [
         {
           title: "Governance & Yield",
@@ -136,7 +136,7 @@ export const LandingPageData = {
         "Log in to our web application and access your files with ease. Our app provides a user-friendly interface to store, retrieve, and share files on popular decentralized storage networks: IPFS and Filecoin.",
       icon: "/suitsIcon/web_app.png",
       link: "https://files.lighthouse.storage/",
-      buttonText:'Open App',
+      buttonText: "Open App",
       featureCard: [
         {
           title: "Seamless Access",
@@ -162,7 +162,7 @@ export const LandingPageData = {
         "Developers can easily integrate our SDK & CLI into their application pipeline in language of their choice",
       icon: "/suitsIcon/sdk_cli.png",
       link: "https://docs.lighthouse.storage/lighthouse-1/",
-      buttonText:'Explore documentation',
+      buttonText: "Explore documentation",
       featureCard: [
         {
           title: "Lighthouse SDK",
@@ -187,7 +187,7 @@ export const LandingPageData = {
         "Use our encryption sdk to easily store private files and token gate them with onchain NFT, Token Ownership and Much more",
       icon: "/suitsIcon/encryption.png",
       link: "https://docs.lighthouse.storage/lighthouse-1/how-to/encryption-features",
-      buttonText:'Learn More',
+      buttonText: "Learn More",
       featureCard: [
         {
           title: "Threshold Encryption",
@@ -239,56 +239,34 @@ export const LandingPageData = {
     },
   ],
 
-  FAQs: [
+  PricingFAQs: [
     {
-      question: "What does it mean by permanent storage?",
-      answer:
-        "Permanent storage means you pay once for your files storage and it's meant to be stored forever. No need to recurrently pay for your files.\n",
+      attributes: {
+        question: "How can I pay for the Lighthouse?",
+        answer:
+          "You can pay per file depending on the file size or top up the associated API key with prepaid storage space in multiple tokens like Polygon, USDC, USDT, DAI, and other native chain tokens.",
+      },
     },
     {
-      question: "How long will data be stored on Lighthouse?",
-      answer: `As we move closer to our mainnet launch, we aim to be transparent about the estimated duration of data storage. Initially, your data might be projected to remain stored for around 25 years. However, as the endowment pool grows over time, aligned with Lighthouse’s economic model, this duration is expected to increase.
-If the model performs as designed, your files should remain stored for a long period without requiring additional payments as part of lifetime plan. In the unlikely event that the endowment pool depletes its funds, users might need to contribute again to continue storage`,
+      attributes: {
+        question: "What are Add-ons and how do they work?",
+        answer:
+          "Add-ons are additional services you can opt for on top of your base storage plans. These include features like Encryption & Token Gating, IPNS, Migration Support, SLAs, Custom Gateway, and Direct Customer Support. They are designed to extend the core functionality of your Lighthouse plan.",
+      },
     },
     {
-      question: " What are the upload or file size restrictions on Lighthouse?",
-      answer:
-        "You can store up to 32GB in size per individual upload. Each upload can include a single file or a directory of files.",
+      attributes: {
+        question: "Can Add-ons be used with Lifetime Plans?",
+        answer:
+          "Yes, Add-ons can be added to any Lifetime plan. However, Add-ons are charged monthly, independent of the one-time payment made for the Lifetime storage.",
+      },
     },
     {
-      question: "Can I upload private/sensitive data to Lighthouse?",
-      answer:
-        "Yes, you will have to encrypt it before uploading using encryption and access control features available at Lighthouse. Refer to our documentation for this.\n",
-    },
-    {
-      question: "Can I edit/delete files uploaded to Lighthouse?",
-      answer:
-        "We definitely understand that not all use cases will require storing data permanently. Files can be deleted from our hot storage and other filecoin miners. However, this doesn’t prevent nodes in the IPFS decentralised storage network from retaining copies of data indefinitely. If you are looking for use cases involving editing the files, you can contact us via email or discord, we can discuss how you can achieve that using mutable references.\n",
-    },
-    {
-      question: "What does it cost to store data to Lighthouse?",
-      answer:
-        'Check our payment plans here -  <a href="https://files.lighthouse.storage/"> Pricing  </a>.',
-    },
-    {
-      question: "How can I pay for the Lighthouse?",
-      answer:
-        "You can pay per file depending on the file size or top up the associated API key with prepaid storage space in multiple tokens like polygon, USDC, USDT, DAI, other native chain tokens\n",
-    },
-    {
-      question: "How is it different from IPFS and Filecoin?",
-      answer:
-        "IPFS is a distributed storage network famous for its content-addressing way of referencing files which makes it tamper-proof. There is no way to pay an IPFS node to store your files in an IPFS token (because there is no such token :P). \nThat’s why Filecoin is built on IPFS and allows anyone to pay using Filecoin tokens to storage miners to store your files. Although Lighthouse is built on IPFS and Filecoin miner network, there is a couple of value adds that Lighthouse brings in\n\n1. Permanent storage - in filecoin you have to recurrently pay for your files else the miner will drop your files. Lighthouse solves this by bringing in permanent storage ability\n\n2. Ease of interaction - Lighthouse abstracts away complexities of directly using filecoin and dealing with filecoin miner network\n\n3. Private files - IPFS and Filecoin by default are public storage networks and anyone can see the data you upload. Building your own encryption layer is not an easy job. Lighthouse by default provides the user a layer of encryption and access control for encrypting your files/data along with sharing to authorised users.\n",
-    },
-    {
-      question: "How is it different from Arweave?",
-      answer:
-        "Lighthouse aims to be a cheaper storage option than Arweave for permanent storage along with verifiable storage guarantees and facilitate more scalable storage abilities\n",
-    },
-    {
-      question: "Which chains does it support?",
-      answer:
-        "Users can interact with the following chains to pay for storage and get a verifiable record of storage on Lighthouse\n\n1. Ethereum\n2. Polygon\n3. BSC\n4. Fantom\n5. Optimism\n6. More coming soon\n",
+      attributes: {
+        question: "What does it mean by permanent storage?",
+        answer:
+          "Permanent storage means you pay once for your files and they are intended to be stored forever. There is no need for recurring payments to retain your stored files.",
+      },
     },
   ],
 
@@ -447,7 +425,6 @@ export const documentationCards = [
   },
 ];
 
-
 export const LifetimePricing = [
   {
     index: 0,
@@ -455,7 +432,7 @@ export const LifetimePricing = [
     cost: "20",
     icon: "/icons/beacon.png",
     icon_light: "/icons/beacon_light.png",
-    buttonText:'Get Started',
+    buttonText: "Get Started",
     features: [
       {
         title: "Total Storage",
@@ -477,6 +454,21 @@ export const LifetimePricing = [
         value: "icon",
         tooltip: "Storage Backup",
       },
+      {
+        title: "Encryption & Token Gating",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Encryption & Token Gating",
+      },
+      {
+        title: "IPNS",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for IPNS",
+      },
+      {
+        title: "Migration Support",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Migration Support",
+      },
     ],
   },
   {
@@ -485,7 +477,7 @@ export const LifetimePricing = [
     cost: "100",
     icon: "/icons/navigator.png",
     icon_light: "/icons/navigator_light.png",
-    buttonText:'Get Started',
+    buttonText: "Get Started",
 
     features: [
       {
@@ -508,6 +500,21 @@ export const LifetimePricing = [
         value: "icon",
         tooltip: "Storage Backup",
       },
+      {
+        title: "Encryption & Token Gating",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Encryption & Token Gating",
+      },
+      {
+        title: "IPNS",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for IPNS",
+      },
+      {
+        title: "Migration Support",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Migration Support",
+      },
     ],
   },
   {
@@ -516,7 +523,7 @@ export const LifetimePricing = [
     cost: "500",
     icon: "/icons/harbor.png",
     icon_light: "/icons/harbor_light.png",
-    buttonText:'Get Started',
+    buttonText: "Get Started",
 
     features: [
       {
@@ -539,6 +546,21 @@ export const LifetimePricing = [
         value: "icon",
         tooltip: "Storage Backup",
       },
+      {
+        title: "Encryption & Token Gating",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Encryption & Token Gating",
+      },
+      {
+        title: "IPNS",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for IPNS",
+      },
+      {
+        title: "Migration Support",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Migration Support",
+      },
     ],
   },
 ];
@@ -550,7 +572,7 @@ export const AnnualPricing = [
     cost: "0",
     icon: "/icons/free.png",
     icon_light: "/icons/free_light.png",
-    buttonText:'Try For Free',
+    buttonText: "Try For Free",
 
     features: [
       {
@@ -573,6 +595,21 @@ export const AnnualPricing = [
         value: "icon",
         tooltip: "Storage Backup",
       },
+      {
+        title: "Encryption & Token Gating",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Encryption & Token Gating",
+      },
+      {
+        title: "IPNS",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for IPNS",
+      },
+      {
+        title: "Migration Support",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Migration Support",
+      },
     ],
     onlyShow: true,
   },
@@ -582,7 +619,7 @@ export const AnnualPricing = [
     cost: "10",
     icon: "/icons/lite.png",
     icon_light: "/icons/lite_light.png",
-    buttonText:'Get Started',
+    buttonText: "Get Started",
 
     features: [
       {
@@ -605,6 +642,21 @@ export const AnnualPricing = [
         value: "icon",
         tooltip: "Storage Backup",
       },
+      {
+        title: "Encryption & Token Gating",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Encryption & Token Gating",
+      },
+      {
+        title: "IPNS",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for IPNS",
+      },
+      {
+        title: "Migration Support",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Migration Support",
+      },
     ],
   },
   {
@@ -613,7 +665,7 @@ export const AnnualPricing = [
     icon: "/icons/premium.png",
     icon_light: "/icons/premium_light.png",
     cost: "42",
-    buttonText:'Get Started',
+    buttonText: "Get Started",
 
     features: [
       {
@@ -636,6 +688,106 @@ export const AnnualPricing = [
         value: "icon",
         tooltip: "Storage Backup",
       },
+      {
+        title: "Encryption & Token Gating",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Encryption & Token Gating",
+      },
+      {
+        title: "IPNS",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for IPNS",
+      },
+      {
+        title: "Migration Support",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Migration Support",
+      },
     ],
+  },
+];
+
+export const AddOnsPricing = [
+  {
+    index: 1,
+    title: "Pro",
+    cost: "99",
+    icon: "/icons/addOn.png",
+    icon_light: "/icons/addOn.png",
+    buttonText: "Get Add-ons",
+    features: [
+      {
+        title: "Encryption & Token Gating",
+        value: "icon",
+        tooltip: "Get Add-ons for Encryption & Token Gating",
+      },
+      {
+        title: "IPNS",
+        value: "icon",
+        tooltip: "Get Add-ons for IPNS",
+      },
+      {
+        title: "Migration Support",
+        value: "icon",
+        tooltip: "Get Add-ons for Migration Support",
+      },
+      {
+        title: "SLAs",
+        value: "icon",
+        tooltip: "Get Add-ons for SLAs",
+      },
+      {
+        title: "Custom Gateway",
+        value: "icon",
+        tooltip: "Get Add-ons for Custom Gateway",
+      },
+      {
+        title: "Direct Customer Support",
+        value: "icon",
+        tooltip: "Get Add-ons for Direct Customer Support",
+      },
+    ],
+    onlyShow: true,
+  },
+  {
+    index: 1,
+    title: "Customize",
+    cost: "Custom",
+    icon: "/icons/customize_addOn.png",
+    icon_light: "/icons/customize_addOn.png",
+    buttonText: "Contact Our Sales Team",
+    features: [
+      {
+        title: "Encryption & Token Gating",
+        value: "icon",
+        tooltip: "Get Add-ons for Encryption & Token Gating",
+      },
+      {
+        title: "IPNS",
+        value: "icon",
+        tooltip: "Get Add-ons for IPNS",
+      },
+      {
+        title: "Migration Support",
+        value: "icon",
+        tooltip: "Get Add-ons for Migration Support",
+      },
+      {
+        title: "SLAs",
+        value: "icon",
+        tooltip: "Get Add-ons for SLAs",
+      },
+      {
+        title: "Custom Gateway",
+        value: "icon",
+        tooltip: "Get Add-ons for Custom Gateway",
+      },
+      {
+        title: "Direct Customer Support",
+        value: "icon",
+        tooltip: "Get Add-ons for Direct Customer Support",
+      },
+    ],
+    onlyShow: true,
   },
 ];

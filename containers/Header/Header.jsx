@@ -8,7 +8,6 @@ import { BsMoon, BsSun } from "react-icons/bs";
 import { MdArrowOutward } from "react-icons/md";
 import ThemeContext from "../../utils/services/Themecontext";
 
-
 const links = [
   {
     title: "Home",
@@ -23,6 +22,11 @@ const links = [
   {
     title: "FAQ",
     path: "/faq",
+    href: "",
+  },
+  {
+    title: "Pricing",
+    path: "/pricing",
     href: "",
   },
   {
@@ -104,7 +108,7 @@ function Header({ style }) {
                   role="link"
                 >
                   {link.title}
-                  <MdArrowOutward/>
+                  <MdArrowOutward />
                 </a>
               )}
             </p>
@@ -116,9 +120,11 @@ function Header({ style }) {
             className="ptr"
             tabIndex={0}
             role="button"
-            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            aria-label={`Switch to ${
+              theme === "light" ? "dark" : "light"
+            } mode`}
             onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
+              if (e.key === "Enter" || e.key === " ") {
                 setTheme(theme === "light" ? "dark" : "light");
               }
             }}
@@ -139,14 +145,16 @@ function Header({ style }) {
           </span>
           <button
             onClick={() =>
-              window.open("https://files.lighthouse.storage/?redirectfrom=main", "_blank")
+              window.open(
+                "https://files.lighthouse.storage/?redirectfrom=main",
+                "_blank"
+              )
             }
             className={"fillBtn__purple"}
             style={{ padding: "0.5rem 2rem" }}
           >
             Get Started
           </button>
-
         </div>
       </div>
 

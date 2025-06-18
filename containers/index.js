@@ -41,12 +41,15 @@ export const HoverContainer = dynamic(() =>
 export const LighthouseSuit = dynamic(() =>
   import("./LighthouseSuit/LighthouseSuit")
 );
-export const Pricing = dynamic(() =>
-  import("./Pricing/Pricing")
-);
+export const Pricing = dynamic(() => import("./Pricing/Pricing"));
 export const EcosystemBanner = dynamic(() =>
   import("./EcosystemBanner/EcosystemBanner")
 );
 export const EcosystemGrid = dynamic(() =>
   import("./EcosystemGrid/EcosystemGrid")
+);
+export const MascotBox = dynamic(() => import("./MascotBox/MascotBox"));
+export const LogoMarquee = dynamic(() => import("./LogoMarquee/LogoMarquee"));
+export const PricingTable = dynamic(() =>
+  import("./PricingTable/PricingTable")
 );
