@@ -1,4 +1,5 @@
 import "../styles/globals.scss";
+import "../styles/tailwind.css";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";

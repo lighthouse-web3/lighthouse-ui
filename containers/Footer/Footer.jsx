@@ -17,7 +17,6 @@ import { useEffect } from "react";
 import { RiTwitterXLine } from "react-icons/ri";
 import { MdArrowOutward } from "react-icons/md";
 
-
 function Footer() {
   const _navigate = useRouter();
   const { theme, setTheme } = useContext(ThemeContext);
@@ -40,7 +39,7 @@ function Footer() {
 
   return (
     <div className={Styles.Footer}>
-      <div className={Styles.Footer__upperFooter + " container"}>
+      <div className={Styles.Footer__upperFooter + " styleContainer"}>
         <div className={Styles.brandBox}>
           <div
             className={Styles.logo + " ptr"}
@@ -138,8 +137,7 @@ function Footer() {
               }}
             >
               {item?.text}
-              <MdArrowOutward/>
-
+              <MdArrowOutward />
             </p>
           ))}
         </div>

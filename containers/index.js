@@ -53,3 +53,4 @@ export const LogoMarquee = dynamic(() => import("./LogoMarquee/LogoMarquee"));
 export const PricingTable = dynamic(() =>
   import("./PricingTable/PricingTable")
 );
+export const HeroParallax = dynamic(() => import("./HeroParallax"));
