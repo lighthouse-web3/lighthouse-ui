@@ -4,6 +4,7 @@ import {
   FAQContainer,
   Footer,
   Header,
+  HeroParallax,
   LogoMarquee,
   Pricing,
   PricingTable,
@@ -16,19 +17,7 @@ export default function PricingPage() {
       <div className={"bodyContainer"}>
         <Header />
         <div className="sectionContainer">
-          <div className="contentContainer styleContainer">
-            <Pricing />
-          </div>
-          <LogoMarquee />
-
-          <div className="contentContainer styleContainer">
-            <br />
-            <br />
-            <PricingTable />
-          </div>
-          <div className="contentContainer styleContainer">
-            <FAQContainer type="pricing" />
-          </div>
+          <HeroParallax />
         </div>
         <Footer />
       </div>

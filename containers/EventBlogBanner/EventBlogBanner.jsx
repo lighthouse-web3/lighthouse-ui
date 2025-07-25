@@ -21,7 +21,7 @@ function EventBlogBanner() {
           />
         </div>
         <div className={Style.overlayContainer}></div>
-        <div className={Style.contentContainer + " container"}>
+        <div className={Style.contentContainer + " styleContainer"}>
           <p className={Style.title}>Short Reads</p>
           <hr />
           <div className={Style.carouselContainer}>

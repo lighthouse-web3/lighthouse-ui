@@ -9,7 +9,7 @@ export default function FAQ() {
       <div className={"bodyContainer"}>
         <Header />
         <div className="sectionContainer">
-          <div className="contentContainer container">
+          <div className="contentContainer styleContainer">
             <FAQContainer />
           </div>
         </div>

@@ -10,13 +10,19 @@ function HomeBanner() {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const bannerImages = {
-    dark_bannerImg_1 : 'https://gateway.lighthouse.storage/ipfs/bafkreicxy3eocvtyyl3xfs3euk5pc4zgxsyosjrxknft5hrdaqueg2l5na',
-    dark_bannerImg_2 : 'https://gateway.lighthouse.storage/ipfs/bafkreifjzr3gc6v24yv5c4sgecb6a3dcyxeyuivxgzf4zakqtfuuaz6bgy',
-    dark_bannerImg_3 : 'https://gateway.lighthouse.storage/ipfs/bafkreiesyhpu3eagitbizbyzndoxdinuqyrqotdxobnpboynooyk6ef27y',
-    light_bannerImg_1 : 'https://gateway.lighthouse.storage/ipfs/bafkreihkck4tgwwgrbxyln3vesqopa242uqasojr5d5tnin2vv3zrltksa',
-    light_bannerImg_2 : 'https://gateway.lighthouse.storage/ipfs/bafkreiauljyamwu3xn4kzh5guy5m66n3l2xmjzithky37fgy7wqvoyjuiy',
-    light_bannerImg_3 : 'https://gateway.lighthouse.storage/ipfs/bafkreiaaa3gohgn7p4tut3prs7zlrppxiawnfw56rfxn55k47h5qeydpfm',
-  }
+    dark_bannerImg_1:
+      "https://gateway.lighthouse.storage/ipfs/bafkreicxy3eocvtyyl3xfs3euk5pc4zgxsyosjrxknft5hrdaqueg2l5na",
+    dark_bannerImg_2:
+      "https://gateway.lighthouse.storage/ipfs/bafkreifjzr3gc6v24yv5c4sgecb6a3dcyxeyuivxgzf4zakqtfuuaz6bgy",
+    dark_bannerImg_3:
+      "https://gateway.lighthouse.storage/ipfs/bafkreiesyhpu3eagitbizbyzndoxdinuqyrqotdxobnpboynooyk6ef27y",
+    light_bannerImg_1:
+      "https://gateway.lighthouse.storage/ipfs/bafkreihkck4tgwwgrbxyln3vesqopa242uqasojr5d5tnin2vv3zrltksa",
+    light_bannerImg_2:
+      "https://gateway.lighthouse.storage/ipfs/bafkreiauljyamwu3xn4kzh5guy5m66n3l2xmjzithky37fgy7wqvoyjuiy",
+    light_bannerImg_3:
+      "https://gateway.lighthouse.storage/ipfs/bafkreiaaa3gohgn7p4tut3prs7zlrppxiawnfw56rfxn55k47h5qeydpfm",
+  };
 
   return (
     <div className={Styles.Banner}>
@@ -93,7 +99,7 @@ function HomeBanner() {
           }}
         />
       </span>
-      <div className={Styles.infoBox + " container"} data-aos="fade-up">
+      <div className={Styles.infoBox + " styleContainer"} data-aos="fade-up">
         <h1
           className={Styles.title}
           dangerouslySetInnerHTML={{
@@ -123,7 +129,7 @@ function HomeBanner() {
           </button>
           <button
             className="fillBtn__purple"
-            style={{ margin: "0px 8px" , height:'50px' }}
+            style={{ margin: "0px 8px", height: "50px" }}
             onClick={() => {
               window.open("https://files.lighthouse.storage/", "_blank");
             }}

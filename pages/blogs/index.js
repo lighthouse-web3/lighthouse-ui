@@ -12,7 +12,9 @@ import { baseUrl } from "../../utils/Data/config";
 export const getStaticProps = async () => {
   let blogsData = null;
   try {
-    const res = await axios.get(`${baseUrl}/blogs?pagination[pageSize]=50&populate=*`);
+    const res = await axios.get(
+      `${baseUrl}/blogs?pagination[pageSize]=50&populate=*`
+    );
     blogsData = res["status"] === 200 ? res["data"]?.["data"] : null;
     console.log(blogsData);
   } catch (error) {}
@@ -31,12 +33,12 @@ function Blogs({ blogsData }) {
       <div className={"bodyContainer"}>
         <Header style={{ background: "#000" }} />
         <div className="sectionContainer" style={{ minHeight: "auto" }}>
-          <div className="contentContainer container">
+          <div className="contentContainer styleContainer">
             {blogsData && <FeaturedArticle blogsData={blogsData} />}
           </div>
         </div>
         <div className="sectionContainer" style={{ minHeight: "auto" }}>
-          <div className="contentContainer container">
+          <div className="contentContainer styleContainer">
             {blogsData && <MostPopularBlogs blogsData={blogsData} />}
           </div>
         </div>
