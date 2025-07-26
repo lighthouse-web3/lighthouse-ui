@@ -6,6 +6,7 @@ import {
   Header,
   HeroParallax,
   TurbyCarousel,
+  WhyTurby,
 } from "../containers";
 
 export default function PricingPage() {
@@ -19,6 +20,9 @@ export default function PricingPage() {
         </div>
         <div className="sectionContainer">
           <TurbyCarousel />
+        </div>
+        <div className="sectionContainer">
+          <WhyTurby />
         </div>
         <Footer />
       </div>

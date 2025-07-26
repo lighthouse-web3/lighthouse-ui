@@ -250,7 +250,7 @@ export const BlurImage = ({ height, width, src, className, alt, ...rest }) => {
     <img
       className={cn(
         "h-full w-full transition duration-300",
-        isLoading ? "blur-sm" : "blur-0",
+        "blur-0",
         className
       )}
       onLoad={() => setLoading(false)}
@@ -259,7 +259,6 @@ export const BlurImage = ({ height, width, src, className, alt, ...rest }) => {
       height={height}
       loading="lazy"
       decoding="async"
-      blurDataURL={typeof src === "string" ? src : undefined}
       alt={alt ? alt : "Background of a beautiful view"}
       {...rest}
     />
