@@ -54,3 +54,4 @@ export const PricingTable = dynamic(() =>
   import("./PricingTable/PricingTable")
 );
 export const HeroParallax = dynamic(() => import("./HeroParallax"));
+export const TurbyCarousel = dynamic(() => import("./TurbyCarousel"));

@@ -5,9 +5,7 @@ import {
   Footer,
   Header,
   HeroParallax,
-  LogoMarquee,
-  Pricing,
-  PricingTable,
+  TurbyCarousel,
 } from "../containers";
 
 export default function PricingPage() {
@@ -18,6 +16,9 @@ export default function PricingPage() {
         <Header />
         <div className="sectionContainer">
           <HeroParallax />
+        </div>
+        <div className="sectionContainer">
+          <TurbyCarousel />
         </div>
         <Footer />
       </div>
