@@ -4,20 +4,13 @@ import { ThreeDMarquee } from "../components/ui/3d-marquee";
 export default function HeroParallax() {
   const images = () => {
     const images = [];
-    for (let i = 0; i < 30; i++) {
-      images.push(
-        `https://gateway.lighthouse.storage/ipfs/bafybeid774thx3nuf7a4afhnw3mezecnusqjcfcwmt63hdlkbt3esktk3a/${
-          i + 1
-        }.png`
-      );
+    for (let i = 0; i < 20; i++) {
+      images.push(`/turby/turby_${i + 1}.jpeg`);
     }
-    for (let i = 0; i < 10; i++) {
-      images.push(
-        `https://gateway.lighthouse.storage/ipfs/bafybeid774thx3nuf7a4afhnw3mezecnusqjcfcwmt63hdlkbt3esktk3a/${
-          i + 1
-        }.png`
-      );
+    for (let i = 0; i < 20; i++) {
+      images.push(`/turby/turby_${i + 1}.jpeg`);
     }
+
     return images;
   };
 

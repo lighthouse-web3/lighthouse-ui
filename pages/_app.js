@@ -11,6 +11,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ThemeContext from "../utils/services/Themecontext";
 import { themeChanger } from "../utils/services/theme";
+import { AnimatePresence } from "motion/react";
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState(null);
@@ -51,7 +52,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <ThemeContext.Provider value={{ theme, setTheme }}>
-        <Component {...pageProps} />
+        <AnimatePresence mode="wait" initial={false}>
+          <Component {...pageProps} />
+        </AnimatePresence>
         <ToastContainer />
       </ThemeContext.Provider>
     </>

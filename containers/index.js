@@ -55,4 +55,8 @@ export const PricingTable = dynamic(() =>
 );
 export const HeroParallax = dynamic(() => import("./HeroParallax"));
 export const TurbyCarousel = dynamic(() => import("./TurbyCarousel"));
-export const WhyTurby = dynamic(() => import("./WhyTurby"));
+export const WhyTurby = dynamic(() => import("./WhyTurby"), {
+  ssr: false,
+});
+export const TurbyFeatures = dynamic(() => import("./TurbyFeature"));
+export const SignupTurby = dynamic(() => import("./SignupTurby"));

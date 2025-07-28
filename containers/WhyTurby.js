@@ -1,58 +1,88 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
+import { IconBolt, IconInfinity, IconUsersGroup } from "@tabler/icons-react";
+import { CometCard } from "../components/ui/commet-card";
 
 export default function WhyTurby() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => void setMounted(true), []);
+  if (!mounted) return null;
   return (
-    <section className="w-full flex flex-col md:flex-row items-center justify-center gap-8 py-12">
+    <section className="styleContainer w-full flex flex-col md:flex-row items-stretch justify-between gap-8 py-8">
       {/* Left Side: Features List */}
-      <div className="flex-1 max-w-lg px-4">
-        <div className="mb-8">
-          <h3 className="text-xl md:text-2xl font-semibold mb-2">
-            1. Always In Sync
-          </h3>
-          <p className="text-gray-500 text-base md:text-lg">
-            Gain access to the demographics, psychographics, and location of
-            unique people who talk about your brand.
-          </p>
-        </div>
-        <div className="mb-8">
-          <h3 className="text-xl md:text-2xl font-semibold mb-2">
-            2. Work With Any Team
-          </h3>
-          <p className="text-gray-500 text-base md:text-lg">
-            Unify data from Facebook, Instagram, Twitter, LinkedIn, and Youtube
-            to gain rich insights from easy-to-use reports.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-xl md:text-2xl font-semibold mb-2">
-            3. A Productivity Platform
-          </h3>
-          <p className="text-gray-500 text-base md:text-lg">
-            Track actions taken on your website that originated from social, and
-            understand the impact on your bottom line.
-          </p>
-        </div>
-      </div>
-      {/* Right Side: Card */}
-      <div className="flex-1 max-w-lg w-full px-4">
-        <div className="bg-neutral-900 text-white rounded-2xl p-8 flex flex-col items-center shadow-lg">
-          <div className="text-center w-full">
-            <p className="font-semibold text-base mb-2 tracking-wide">
-              SOCIAL ACTIVITIES
+      <div className="flex-1 px-4 flex flex-col justify-center">
+        <div className="mb-8 flex items-start gap-4">
+          <IconInfinity className="h-10 w-12" />
+          <div>
+            <h3 className="text-xl md:text-2xl font-semibold mb-2">
+              Permanent Storage
+            </h3>
+            <p className="text-gray-500 text-base md:text-lg">
+              Each NFT is permanently stored on Lighthouse, ensuring your
+              digital asset lasts forever.
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Working on Wallstreet is Not So Easy
-            </h2>
-            <p className="text-gray-200 mb-6">
-              There&apos;s nothing I really wanted to do in life that I
-              wasn&apos;t able to get good at. I&apos;m not really specifically
-              talented at anything except for the ability to learn.
-            </p>
-            <button className="bg-white text-neutral-900 font-semibold rounded-md px-6 py-2 mt-2 shadow hover:bg-gray-100 transition">
-              BUTTON
-            </button>
           </div>
         </div>
+        <div className="mb-8 flex items-start gap-4">
+          <IconUsersGroup className="h-10 w-12" />
+          <div>
+            <h3 className="text-xl md:text-2xl font-semibold mb-2">
+              Community Building
+            </h3>
+            <p className="text-gray-500 text-base md:text-lg">
+              Join a community of developers, creators, and web3 enthusiasts
+              building the future of storage.
+            </p>
+          </div>
+        </div>
+        <div className="flex items-start gap-4">
+          <IconBolt className="h-10 w-12" />
+          <div>
+            <h3 className="text-xl md:text-2xl font-semibold mb-2">
+              Utility & Access
+            </h3>
+            <p className="text-gray-500 text-base md:text-lg">
+              NFT holders get exclusive access to Lighthouse features, events,
+              and future drops.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Side: Card needs to be same height as the left side */}
+      <div className="flex-1 w-full px-4 flex items-stretch justify-center">
+        <CometCard>
+          <button
+            type="button"
+            className=" flex w-80 cursor-pointer flex-col items-stretch rounded-[16px] border-0 bg-[#1F2121] p-2 md:p-4"
+            aria-label="View invite F7RA"
+            style={{
+              transformStyle: "preserve-3d",
+              transform: "none",
+              opacity: 1,
+            }}
+          >
+            <div className="mx-2 flex-1">
+              <div className="relative mt-2 aspect-[4/4] w-full">
+                <img
+                  loading="lazy"
+                  className=" h-full w-full rounded-[16px]  object-cover "
+                  alt="Turby NFT"
+                  src={`/turby/turby_${
+                    Math.floor(Math.random() * 20) + 1
+                  }.jpeg`}
+                />
+              </div>
+            </div>
+            <div className="mt-2 flex flex-col flex-shrink-0 gap-2 items-center justify-between p-4 font-mono text-white">
+              <div className="text-sm font-semibold"> 3,333 Unique Turtles</div>
+              <div className="text-xs text-gray-300 opacity-50">
+                Each Turby has unique traits, accessories, and backgrounds,
+                making every NFT special and collectible.
+              </div>
+            </div>
+          </button>
+        </CometCard>
       </div>
     </section>
   );

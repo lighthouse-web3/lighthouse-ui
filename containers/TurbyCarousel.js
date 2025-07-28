@@ -1,12 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Carousel, Card } from "../components/ui/apple-cards-carousel";
 
 export default function TurbyCarousel() {
-  const cards = data.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
-  ));
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    const newCards = data.map((card, index) => (
+      <Card key={card.src} card={card} index={index} />
+    ));
+    setCards(newCards);
+  }, []);
 
   return (
     <div className="w-full h-full py-20">
@@ -16,7 +21,7 @@ export default function TurbyCarousel() {
       >
         Get to know your Turby.
       </h2>
-      <Carousel items={cards} />
+      {cards.length > 0 && <Carousel items={cards} />}
     </div>
   );
 }
@@ -25,38 +30,38 @@ const data = [
   {
     category: "Turby 1",
     title: "Turby 1",
-    src: "https://gateway.lighthouse.storage/ipfs/bafybeid774thx3nuf7a4afhnw3mezecnusqjcfcwmt63hdlkbt3esktk3a/1.png",
+    src: "/turby/turby_1.jpeg",
     // content: <DummyContent />,
   },
   {
     category: "Turby 2",
     title: "Turby 2",
-    src: "https://gateway.lighthouse.storage/ipfs/bafybeid774thx3nuf7a4afhnw3mezecnusqjcfcwmt63hdlkbt3esktk3a/2.png",
+    src: "/turby/turby_2.jpeg",
     // content: <DummyContent />,
   },
   {
     category: "Turby 3",
     title: "Turby 3",
-    src: "https://gateway.lighthouse.storage/ipfs/bafybeid774thx3nuf7a4afhnw3mezecnusqjcfcwmt63hdlkbt3esktk3a/3.png",
+    src: "/turby/turby_3.jpeg",
     // content: <DummyContent />,
   },
 
   {
     category: "Turby 4",
     title: "Turby 4",
-    src: "https://gateway.lighthouse.storage/ipfs/bafybeid774thx3nuf7a4afhnw3mezecnusqjcfcwmt63hdlkbt3esktk3a/4.png",
+    src: "/turby/turby_8.jpeg",
     // content: <DummyContent />,
   },
   {
     category: "Turby 5",
     title: "Turby 5",
-    src: "https://gateway.lighthouse.storage/ipfs/bafybeid774thx3nuf7a4afhnw3mezecnusqjcfcwmt63hdlkbt3esktk3a/5.png",
+    src: "/turby/turby_11.jpeg",
     // content: <DummyContent />,
   },
   {
     category: "Turby 6",
     title: "Turby 6",
-    src: "https://gateway.lighthouse.storage/ipfs/bafybeid774thx3nuf7a4afhnw3mezecnusqjcfcwmt63hdlkbt3esktk3a/6.png",
+    src: "/turby/turby_6.jpeg",
     // content: <DummyContent />,
   },
 ];

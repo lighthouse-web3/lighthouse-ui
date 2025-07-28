@@ -96,14 +96,14 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
             {items.map((item, index) => (
               <motion.div
                 initial={{
-                  opacity: 0,
+                  opacity: 1,
                   y: 20,
                 }}
                 animate={{
                   opacity: 1,
                   y: 0,
                   transition: {
-                    duration: 0.5,
+                    duration: 0.7,
                     delay: 0.2 * index,
                     ease: "easeOut",
                     once: true,
@@ -177,13 +177,13 @@ export const Card = ({ card, index, layout = false }) => {
         {open && (
           <div className="fixed inset-0 z-50 h-screen overflow-auto">
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={{ opacity: 0.5 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg"
             />
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={{ opacity: 0.5 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               ref={containerRef}
