@@ -15,7 +15,7 @@ export default function HeroParallax() {
   };
 
   return (
-    <div className="relative mx-auto  flex h-screen w-full  flex-col items-center justify-center overflow-hidden ">
+    <div className="relative mx-auto  z-1 flex h-screen w-full  flex-col items-center justify-center overflow-hidden ">
       <h2 className="relative z-20 mx-auto max-w-4xl text-center text-2xl font-bold text-balance text-white md:text-4xl lg:text-6xl">
         Turby is Live on
         <span className="relative z-20 inline-block rounded-xl bg-blue-500/40 px-4 py-1 text-white  decoration-sky-500 decoration-[6px] underline-offset-[16px] backdrop-blur-sm">
