@@ -270,6 +270,51 @@ export const LandingPageData = {
     },
   ],
 
+  TurbyFAQs: [
+    {
+      attributes: {
+        question: "What is the Turby NFT collection?",
+        answer:
+          "The Turby NFT collection consists of 3,333 unique digital collectibles featuring Turby, the official mascot of Lighthouse Storage. Each NFT has unique traits, accessories, and backgrounds, stored permanently on the Lighthouse network.",
+      },
+    },
+    {
+      attributes: {
+        question: "How much does it cost to mint a Turby NFT?",
+        answer:
+          "Whitelist members can mint for 0.05 ETH, while public sale pricing is 0.08 ETH. Gas fees are additional and depend on network congestion.",
+      },
+    },
+    {
+      attributes: {
+        question: "What benefits do NFT holders receive?",
+        answer:
+          'Holders get free monthly storage credits, exclusive Discord access, early feature access, governance voting rights, and potential future airdrops. Full benefits are detailed in the "What You Get" section above.',
+      },
+    },
+    {
+      attributes: {
+        question: "When is the mint date?",
+        answer:
+          "Whitelist minting begins on [DATE] at [TIME] UTC, followed by public sale 24 hours later. Join our Discord or whitelist for the latest updates.",
+      },
+    },
+    {
+      attributes: {
+        question: "How are the NFTs stored?",
+        answer:
+          "All Turby NFTs are stored on the Lighthouse decentralized storage network, ensuring permanent availability and true ownership. The metadata and images are immutably stored and cannot be changed or removed.",
+      },
+    },
+    {
+      attributes: {
+        question: "Can I trade my Turby NFT?",
+        answer:
+          "Yes! Turby NFTs can be traded on popular marketplaces like OpenSea, LooksRare, and others. However, some exclusive benefits may be tied to original holders.",
+      },
+    },
+  ],
+
   Documentation: {
     title: "Lighthouse Documentation",
     subtitle:

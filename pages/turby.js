@@ -44,6 +44,9 @@ export default function PricingPage() {
         <div className="sectionContainer my-16">
           <SignupTurby />
         </div>
+        <div className="contentContainer styleContainer">
+          <FAQContainer type="turby" />
+        </div>
         <Footer />
       </div>
     </>

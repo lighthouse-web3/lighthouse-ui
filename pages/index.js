@@ -23,7 +23,6 @@ export default function Home() {
         <div className="contentContainer">
           <HomeBanner />
         </div>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
         <div className="styleContainer">
           <FeatureCompare />
         </div>

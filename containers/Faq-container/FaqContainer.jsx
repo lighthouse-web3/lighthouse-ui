@@ -6,7 +6,7 @@ import { LandingPageData } from "../../utils/Data/SiteContent";
 import { baseUrl } from "../../utils/Data/config";
 import Styles from "./FaqContainer.module.scss";
 
-// optional props: type = "main" | "pricing"
+// optional props: type = "main" | "pricing" | "turby"
 function FAQContainer({ type = "main" }) {
   const [isOpen, setIsOpen] = useState(0);
   const [faqs, setFaqs] = useState([]);
@@ -14,6 +14,8 @@ function FAQContainer({ type = "main" }) {
   useEffect(() => {
     if (type === "pricing") {
       setFaqs(LandingPageData.PricingFAQs);
+    } else if (type === "turby") {
+      setFaqs(LandingPageData.TurbyFAQs);
     } else {
       (async () => {
         const res = await axios.get(`${baseUrl}/faqs?populate=*`);
@@ -27,10 +29,17 @@ function FAQContainer({ type = "main" }) {
     return () => {};
   }, []);
   return (
-    <div className={Styles.FAQContainer}>
+    <div className={Styles.FAQContainer} style={{ marginBottom: "3rem" }}>
       <TitleSeparator
         data-aos="fade-up"
-        title={type === "pricing" ? "Pricing FAQs" : "FAQs"}
+        style={{ marginTop: "0", marginBottom: "1rem" }}
+        topTitle={
+          type === "pricing"
+            ? "Pricing FAQs"
+            : type === "turby"
+            ? "Turby NFT FAQs"
+            : "FAQs"
+        }
       />
 
       <div className={Styles.FAQContainer__Container}>
@@ -66,25 +75,27 @@ function FAQContainer({ type = "main" }) {
           </div>
         ))}
       </div>
-      <div className={Styles.FAQContainer__QuestionBox} data-aos="fade-up">
-        <p className={Styles.title}>Lets Talk !</p>
-        <p className={Styles.subTitle}>
-          Didn’t find what you were looking for? <br /> Our team is happy to
-          help.{" "}
-        </p>
-        <br />
-        <button
-          className={"fillBtn__purple ptr"}
-          onClick={() => {
-            window.open(
-              "https://airtable.com/app0KP7ENgYlLDcJ0/shrPFC2TgojuOAYO4",
-              "__blank"
-            );
-          }}
-        >
-          Contact Us
-        </button>
-      </div>
+      {type !== "turby" && (
+        <div className={Styles.FAQContainer__QuestionBox} data-aos="fade-up">
+          <p className={Styles.title}>Lets Talk !</p>
+          <p className={Styles.subTitle}>
+            Didn’t find what you were looking for? <br /> Our team is happy to
+            help.{" "}
+          </p>
+          <br />
+          <button
+            className={"fillBtn__purple ptr"}
+            onClick={() => {
+              window.open(
+                "https://airtable.com/app0KP7ENgYlLDcJ0/shrPFC2TgojuOAYO4",
+                "__blank"
+              );
+            }}
+          >
+            Contact Us
+          </button>
+        </div>
+      )}
     </div>
   );
 }
