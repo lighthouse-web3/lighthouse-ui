@@ -25,7 +25,7 @@ export default function SignupTurby() {
   return (
     <div className="styleContainer h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
       <Spotlight />
-      <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0 mt-10">
+      <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-15 sm:pt-10 md:pt-5 mt-10">
         <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
           Join the Whitelist
         </h1>
@@ -33,19 +33,9 @@ export default function SignupTurby() {
           Get early access to mint your Turby NFT before the public sale.
           Limited spots available!
         </p>
-        <div className="p-4 max-w-3xl mx-auto relative z-10  w-full pt-20 md:pt-0 mt-10">
+        <div className="p-4 max-w-3xl mx-auto relative z-10  w-full pt-5 sm:pt-10 md:pt-5 mt-10">
           <div className="flex flex-col gap-4">
             <form className="my-8" onSubmit={handleSubmit}>
-              <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
-                <LabelInputContainer>
-                  <Label htmlFor="firstname">First name</Label>
-                  <Input id="firstname" placeholder="Tyler" type="text" />
-                </LabelInputContainer>
-                <LabelInputContainer>
-                  <Label htmlFor="lastname">Last name</Label>
-                  <Input id="lastname" placeholder="Durden" type="text" />
-                </LabelInputContainer>
-              </div>
               <LabelInputContainer className="mb-4">
                 <Label htmlFor="email">Email Address</Label>
                 <Input
@@ -53,6 +43,10 @@ export default function SignupTurby() {
                   placeholder="projectmayhem@fc.com"
                   type="email"
                 />
+              </LabelInputContainer>
+              <LabelInputContainer className="mb-4">
+                <Label htmlFor="email">Wallet Address</Label>
+                <Input id="email" placeholder="0x1234567890..." type="email" />
               </LabelInputContainer>
 
               <div className="flex justify-center mt-7">

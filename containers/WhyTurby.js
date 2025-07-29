@@ -8,7 +8,7 @@ export default function WhyTurby() {
   useEffect(() => void setMounted(true), []);
   if (!mounted) return null;
   return (
-    <section className="styleContainer w-full flex flex-col md:flex-row items-stretch justify-between gap-8 py-8">
+    <section className="styleContainer w-full flex flex-col md:flex-row items-stretch justify-between gap-8 py-8 text-[var(--txt-clr)]">
       {/* Left Side: Features List */}
       <div className="flex-1 px-4 flex flex-col justify-center">
         <div className="mb-8 flex items-start gap-4">

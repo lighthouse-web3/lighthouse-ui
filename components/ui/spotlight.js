@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useAnimate } from "motion/react";
 import { motion } from "motion/react";
 
 export const Spotlight = ({
@@ -13,29 +14,45 @@ export const Spotlight = ({
   duration = 10,
   xOffset = 500,
 } = {}) => {
+  const [scope, animate] = useAnimate();
+  const [direction, setDirection] = useState(0);
+
+  // Toggle direction every `duration` seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDirection((prev) => (prev === 0 ? 1 : 0));
+    }, duration * 1000);
+    return () => clearInterval(interval);
+  }, [duration]);
+
+  // Trigger animation on direction change
+  useEffect(() => {
+    const leftX = direction === 0 ? xOffset : -xOffset;
+    const rightX = direction === 0 ? -xOffset : xOffset;
+
+    animate(
+      'div[data-role="left"]',
+      { x: leftX },
+      { duration, ease: "easeInOut" }
+    );
+    animate(
+      'div[data-role="right"]',
+      { x: rightX },
+      { duration, ease: "easeInOut" }
+    );
+  }, [direction, animate, duration, xOffset]);
+
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1.5,
-      }}
+      ref={scope}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
       className="pointer-events-none absolute inset-0 h-full w-full"
     >
-      <motion.div
-        animate={{
-          x: [0, xOffset, 0],
-        }}
-        transition={{
-          duration,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut",
-        }}
+      {/* Left side spotlight */}
+      <div
+        data-role="left"
         className="absolute top-0 left-0 w-screen h-screen z-40 pointer-events-none"
       >
         <div
@@ -45,39 +62,30 @@ export const Spotlight = ({
             width: `${width}px`,
             height: `${height}px`,
           }}
-          className={`absolute top-0 left-0`}
         />
-
         <div
           style={{
-            transform: "rotate(-45deg) translate(5%, -50%)",
+            transform: `rotate(-45deg) translate(5%, -50%)`,
             background: gradientSecond,
             width: `${smallWidth}px`,
             height: `${height}px`,
           }}
-          className={`absolute top-0 left-0 origin-top-left`}
+          className="origin-top-left absolute top-0 left-0"
         />
-
         <div
           style={{
-            transform: "rotate(-45deg) translate(-180%, -70%)",
+            transform: `rotate(-45deg) translate(-180%, -70%)`,
             background: gradientThird,
             width: `${smallWidth}px`,
             height: `${height}px`,
           }}
-          className={`absolute top-0 left-0 origin-top-left`}
+          className="origin-top-left absolute top-0 left-0"
         />
-      </motion.div>
-      <motion.div
-        animate={{
-          x: [0, -xOffset, 0],
-        }}
-        transition={{
-          duration,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut",
-        }}
+      </div>
+
+      {/* Right side spotlight */}
+      <div
+        data-role="right"
         className="absolute top-0 right-0 w-screen h-screen z-40 pointer-events-none"
       >
         <div
@@ -87,29 +95,26 @@ export const Spotlight = ({
             width: `${width}px`,
             height: `${height}px`,
           }}
-          className={`absolute top-0 right-0`}
         />
-
         <div
           style={{
-            transform: "rotate(45deg) translate(-5%, -50%)",
+            transform: `rotate(45deg) translate(-5%, -50%)`,
             background: gradientSecond,
             width: `${smallWidth}px`,
             height: `${height}px`,
           }}
-          className={`absolute top-0 right-0 origin-top-right`}
+          className="origin-top-right absolute top-0 right-0"
         />
-
         <div
           style={{
-            transform: "rotate(45deg) translate(180%, -70%)",
+            transform: `rotate(45deg) translate(180%, -70%)`,
             background: gradientThird,
             width: `${smallWidth}px`,
             height: `${height}px`,
           }}
-          className={`absolute top-0 right-0 origin-top-right`}
+          className="origin-top-right absolute top-0 right-0"
         />
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
