@@ -12,7 +12,7 @@
     .headerLeft {
       flex: 1;
       .title {
-        color: #A286F8;
+        color: #a286f8;
         font-size: 1.2rem;
         margin: 0rem;
       }
@@ -27,7 +27,7 @@
       .description {
         margin-bottom: 1rem;
         font-weight: 400;
-        color: #A3AAB8;
+        color: #a3aab8;
       }
 
       .learnMore {
@@ -50,8 +50,8 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      img{
-        filter: drop-shadow(5px 5px 5px #222)
+      img {
+        filter: drop-shadow(5px 5px 5px #222);
       }
     }
   }
@@ -67,7 +67,9 @@
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       color: var(--txt-clr);
-
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
 
       .featureTitle {
         font-weight: 600;
@@ -77,7 +79,7 @@
 
       .featureDescription {
         font-weight: 400;
-        color: #A3AAB8;
+        color: #a3aab8;
         font-size: 0.9rem;
       }
     }
@@ -87,7 +89,6 @@
     .header {
       flex-direction: column !important;
       margin-bottom: 3rem;
-
 
       .headerLeft,
       .headerRight {

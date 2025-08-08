@@ -3,7 +3,7 @@ import React from "react";
 function TitleSeparator({ topTitle, title, style }) {
   return (
     <div
-      className="flex flex-col items-center gap-4 mt-[5%] w-full px-4 text-[var(--txt-clr)]"
+      className="flex flex-col items-center gap-4 mt-[5%] w-full px-4 text-[var(--txt-clr)] mb-10"
       style={style}
     >
       {topTitle && (

@@ -128,7 +128,7 @@ function Footer() {
           <p className={Styles.siteMap__title}>Help</p>
           {footerData?.otherLinks.map((item, index) => (
             <p
-              className={Styles.siteMap__link + " ptr"}
+              className={Styles.siteMap__link + " flex ptr"}
               key={index}
               onClick={() => {
                 item?.path

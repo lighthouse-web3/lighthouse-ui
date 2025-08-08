@@ -98,7 +98,7 @@ const Pricing = () => {
 
   return (
     <section>
-      <TitleSeparator title={"Discover your perfect plan"} />
+      <TitleSeparator topTitle={"Discover your perfect plan"} />
       <div className={styles.switcherWrapper}>
         <Switcher
           title1="Annually"

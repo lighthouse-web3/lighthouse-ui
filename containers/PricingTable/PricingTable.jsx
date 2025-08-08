@@ -67,7 +67,7 @@ function PricingTable() {
   return (
     <>
       <div className={styles.pricingTitle}>
-        <TitleSeparator title={"Compare Lifetime plans "} />
+        <TitleSeparator topTitle={"Compare Lifetime plans "} />
       </div>
 
       <div className={styles.pricingTable}>
