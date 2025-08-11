@@ -1,3 +1,4 @@
+import { CardSpotlight } from "../components/ui/cardSpotlight";
 import { cn } from "../utils/services/helper";
 import {
   IconAdjustmentsBolt,
@@ -22,7 +23,7 @@ export default function TurbyFeatures() {
         "Beta testing opportunities",
         "Exclusive events and AMAs",
       ],
-      icon: <IconGift className="h-10 w-10" />,
+      icon: <IconGift className="h-10 w-10 text-neutral-400" />,
     },
     {
       title: "Storage Benefits",
@@ -32,7 +33,7 @@ export default function TurbyFeatures() {
         "Advanced analytics dashboard",
         "Custom storage solutions",
       ],
-      icon: <IconDatabaseImport className="h-10 w-10" />,
+      icon: <IconDatabaseImport className="h-10 w-10 text-neutral-400" />,
     },
     {
       title: "Future Rewards",
@@ -42,7 +43,7 @@ export default function TurbyFeatures() {
         "Revenue sharing opportunities",
         "Exclusive merchandise",
       ],
-      icon: <IconCurrencyDollar className="h-10 w-10" />,
+      icon: <IconCurrencyDollar className="h-10 w-10 text-neutral-400" />,
     },
   ];
   return (
@@ -56,19 +57,8 @@ export default function TurbyFeatures() {
 
 const Feature = ({ title, description, icon, index }) => {
   return (
-    <div
-      key={index}
-      className="bg-[var(--featureCard-bg-clr)] p-4 rounded-lg shadow-md flex flex-col items-start text-[var(--txt-clr)]"
-    >
-      <div className="text-3xl text-primary mb-4">{icon}</div>
-      <h4 className="font-semibold text-xl mb-4">{title}</h4>
-      <ul className="text-lg font-normal text-gray-400 list-disc list-inside">
-        {description.map((item, index) => (
-          <li key={index} className="mb-2">
-            {item}
-          </li>
-        ))}
-      </ul>
+    <div key={index} className="rounded-lg">
+      <CardSpotlight title={title} description={description} icon={icon} />
     </div>
   );
 };

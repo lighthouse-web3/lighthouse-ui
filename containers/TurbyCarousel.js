@@ -14,13 +14,7 @@ export default function TurbyCarousel() {
   }, []);
 
   return (
-    <div className="w-full h-full py-20">
-      <h2
-        className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold font-sans"
-        style={{ color: "var(--txt-clr)" }}
-      >
-        Get to know your Turby.
-      </h2>
+    <div className="w-full h-full">
       {cards.length > 0 && <Carousel items={cards} />}
     </div>
   );

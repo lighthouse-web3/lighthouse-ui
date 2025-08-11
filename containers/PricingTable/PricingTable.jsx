@@ -112,7 +112,7 @@ function PricingTable() {
               return (
                 <div
                   key={feature.title}
-                  className={styles.planColumn}
+                  className={styles.planColumn + " flex justify-center"}
                   title={feature.tooltip}
                 >
                   {feature.value === "icon" && (

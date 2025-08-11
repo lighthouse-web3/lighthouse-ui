@@ -98,7 +98,7 @@ function Footer() {
               </span>
             </div>
             <p
-              className={Styles.mail}
+              className={Styles.mail + " mt-4"}
               onClick={() => {
                 window.open(`mailto:${socialLinks?.contactMail}`, "_blank");
               }}
@@ -143,7 +143,7 @@ function Footer() {
         </div>
 
         <div className={Styles.newsLetterBox}>
-          <p className={Styles.newsLetterBox__title}>Newsletter</p>
+          <p className={Styles.newsLetterBox__title + " mb-4"}>Newsletter</p>
           <input
             type="text"
             placeholder="user@mail.com"

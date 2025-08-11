@@ -51,7 +51,7 @@ function FAQContainer({ type = "main" }) {
             data-aos-delay={100 * index}
           >
             <div
-              className={Styles.questionBox + " ptr"}
+              className={Styles.questionBox + " ptr mb-3"}
               onClick={() => {
                 isOpen === index ? setIsOpen(null) : setIsOpen(index);
               }}

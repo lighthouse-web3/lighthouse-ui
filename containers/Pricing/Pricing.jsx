@@ -17,7 +17,7 @@ const Pricing = () => {
   const renderCards = (plans) => {
     return plans.map((plan, index) => (
       <div key={index} className={styles.card}>
-        <h3 className={styles.planTitle}>{plan.title}</h3>
+        <h3 className={styles.planTitle + " mb-4"}>{plan.title}</h3>
 
         <div className={styles.iconWrapper}>
           <Image
@@ -46,6 +46,8 @@ const Pricing = () => {
 
         {activeTitle === "Annually" ? (
           <p
+            // convert to tailwind
+            className="pt-4"
             style={{
               marginTop: "-20px",
               fontWeight: "400",

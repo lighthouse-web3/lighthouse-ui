@@ -26,6 +26,20 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
   const [canScrollRight, setCanScrollRight] = React.useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  //should be movable by keybord left-riight arrows too
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "ArrowLeft") {
+        scrollLeft();
+      }
+      if (event.key === "ArrowRight") {
+        scrollRight();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [scrollLeft, scrollRight]);
+
   useEffect(() => {
     if (carouselRef.current) {
       carouselRef.current.scrollLeft = initialScroll;
@@ -90,7 +104,7 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
             className={cn(
               "flex flex-row justify-start gap-4 pl-4",
               // remove max-w-4xl if you want the carousel to span the full width of its container
-              "mx-auto max-w-7xl"
+              "mx-auto "
             )}
           >
             {items.map((item, index) => (

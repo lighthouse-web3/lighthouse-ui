@@ -14,14 +14,14 @@ const links = [
     path: "/",
     href: "",
   },
-  // {
-  //   title: "Blog",
-  //   path: "/blogs",
-  //   href: "",
-  // },
   {
-    title: "FAQ",
-    path: "/faq",
+    title: "Blog",
+    path: "/blogs",
+    href: "",
+  },
+  {
+    title: "Turby",
+    path: "/turby",
     href: "",
   },
   {

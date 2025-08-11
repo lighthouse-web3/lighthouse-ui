@@ -1,3 +1,4 @@
+"use client";
 import { useEffect } from "react";
 import { Metadata, TitleSeparator } from "../components";
 import {
@@ -21,6 +22,10 @@ export default function PricingPage() {
           <HeroParallax />
         </div>
         <div className="sectionContainer">
+          <TitleSeparator
+            topTitle="Get to know your Turby"
+            style={{ textAlign: "center", marginBottom: "0px" }}
+          />
           <TurbyCarousel />
         </div>
         <div className="sectionContainer">
