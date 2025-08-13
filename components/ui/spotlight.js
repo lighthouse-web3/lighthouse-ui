@@ -1,7 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useAnimate } from "motion/react";
-import { motion } from "motion/react";
 
 export const Spotlight = ({
   gradientFirst = "radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(210, 100%, 85%, .08) 0, hsla(210, 100%, 55%, .02) 50%, hsla(210, 100%, 45%, 0) 80%)",
@@ -14,8 +12,13 @@ export const Spotlight = ({
   duration = 10,
   xOffset = 500,
 } = {}) => {
-  const [scope, animate] = useAnimate();
   const [direction, setDirection] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Fade in effect on mount
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   // Toggle direction every `duration` seconds
   useEffect(() => {
@@ -25,35 +28,22 @@ export const Spotlight = ({
     return () => clearInterval(interval);
   }, [duration]);
 
-  // Trigger animation on direction change
-  useEffect(() => {
-    const leftX = direction === 0 ? xOffset : -xOffset;
-    const rightX = direction === 0 ? -xOffset : xOffset;
-
-    animate(
-      'div[data-role="left"]',
-      { x: leftX },
-      { duration, ease: "easeInOut" }
-    );
-    animate(
-      'div[data-role="right"]',
-      { x: rightX },
-      { duration, ease: "easeInOut" }
-    );
-  }, [direction, animate, duration, xOffset]);
+  // Calculate transform values based on direction
+  const leftX = direction === 0 ? xOffset : -xOffset;
+  const rightX = direction === 0 ? -xOffset : xOffset;
 
   return (
-    <motion.div
-      ref={scope}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
-      className="pointer-events-none absolute inset-0 h-full w-full"
+    <div
+      className={`pointer-events-none absolute inset-0 h-full w-full transition-opacity duration-[1500ms] ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
     >
       {/* Left side spotlight */}
       <div
-        data-role="left"
-        className="absolute top-0 left-0 w-screen h-screen z-40 pointer-events-none"
+        className="absolute top-0 left-0 w-screen h-screen z-40 pointer-events-none transition-transform duration-[10000ms] ease-in-out"
+        style={{
+          transform: `translateX(${leftX}px)`,
+        }}
       >
         <div
           style={{
@@ -85,8 +75,10 @@ export const Spotlight = ({
 
       {/* Right side spotlight */}
       <div
-        data-role="right"
-        className="absolute top-0 right-0 w-screen h-screen z-40 pointer-events-none"
+        className="absolute top-0 right-0 w-screen h-screen z-40 pointer-events-none transition-transform duration-[10000ms] ease-in-out"
+        style={{
+          transform: `translateX(${rightX}px)`,
+        }}
       >
         <div
           style={{
@@ -115,6 +107,6 @@ export const Spotlight = ({
           className="origin-top-right absolute top-0 right-0"
         />
       </div>
-    </motion.div>
+    </div>
   );
 };

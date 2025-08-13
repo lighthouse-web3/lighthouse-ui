@@ -1,16 +1,25 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { Spotlight } from "../components/ui/spotlight";
 import { Label } from "../components/ui/label";
-import { Input } from "../components/ui/input";
 import { cn } from "../utils/services/helper";
-import {
-  IconBrandGithub,
-  IconBrandGoogle,
-  IconBrandOnlyfans,
-} from "@tabler/icons-react";
+import { joinWaitlist, validateEmail } from "../utils/services/emailService";
+import { Input } from "../components/ui/input";
+import { notify } from "../utils/services/notification";
+
+const rocketAnimation = `
+  @keyframes rocket-rocking {
+    0%, 100% { transform: rotate(-2deg) translateY(0px); }
+    25% { transform: rotate(1deg) translateY(-3px); }
+    50% { transform: rotate(2deg) translateY(0px); }
+    75% { transform: rotate(-1deg) translateY(-2px); }
+  }
+`;
 
 export default function SignupTurby() {
+  const emailInput = useRef();
+  const addressInput = useRef();
+
   const LabelInputContainer = ({ children, className }) => {
     return (
       <div className={cn("flex w-full flex-col space-y-2", className)}>
@@ -18,46 +27,133 @@ export default function SignupTurby() {
       </div>
     );
   };
+
+  // Wallet address validator
+  const validateWalletAddress = (address) => {
+    // Check if it's a valid Ethereum-style address (0x followed by 40 hex characters)
+    const ethereumRegex = /^0x[a-fA-F0-9]{40}$/;
+
+    // Check if it's a valid Solana address (base58 encoded, 32-44 characters)
+    const solanaRegex = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
+
+    // Check if it's a valid Bitcoin address (base58 encoded, 26-35 characters)
+    const bitcoinRegex = /^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$/;
+
+    return (
+      ethereumRegex.test(address) ||
+      solanaRegex.test(address) ||
+      bitcoinRegex.test(address)
+    );
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted");
-  };
-  return (
-    <div className="styleContainer h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-      <Spotlight />
-      <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-15 sm:pt-10 md:pt-5 mt-10">
-        <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-          Join the Whitelist
-        </h1>
-        <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
-          Get early access to mint your Turby NFT before the public sale.
-          Limited spots available!
-        </p>
-        <div className="p-4 max-w-3xl mx-auto relative z-10  w-full pt-5 sm:pt-10 md:pt-5 mt-10">
-          <div className="flex flex-col gap-4">
-            <form className="my-8" onSubmit={handleSubmit}>
-              <LabelInputContainer className="mb-4">
-                <Label htmlFor="email">Email Address</Label>
-                <Input
-                  id="email"
-                  placeholder="projectmayhem@fc.com"
-                  type="email"
-                />
-              </LabelInputContainer>
-              <LabelInputContainer className="mb-4">
-                <Label htmlFor="email">Wallet Address</Label>
-                <Input id="email" placeholder="0x1234567890..." type="email" />
-              </LabelInputContainer>
+    const email = emailInput?.current?.value || "";
+    const address = addressInput?.current?.value || "";
 
-              <div className="flex justify-center mt-7">
-                <button className="border_btn w-full" type="submit">
-                  Join Whitelist
-                </button>
-              </div>
-            </form>
+    // Check if both fields are filled
+    if (!email.trim() || !address.trim()) {
+      notify("Please fill in both email and wallet address", "error");
+      return;
+    }
+
+    // Validate email format
+    if (!validateEmail(email)) {
+      notify("Please enter a valid email address", "error");
+      return;
+    }
+
+    // Validate wallet address format
+    if (!validateWalletAddress(address)) {
+      notify("Please enter a valid wallet address", "error");
+      return;
+    }
+
+    // If both fields are valid, call the API
+    joinWaitlist(email, address).then(() => {
+      notify("You are on the whitelist", "success");
+      // Clear the form after successful submission
+      emailInput.current.value = "";
+      addressInput.current.value = "";
+    });
+  };
+
+  return (
+    <>
+      <style jsx>{rocketAnimation}</style>
+      <div className="styleContainer min-h-screen w-full rounded-md flex flex-col items-center justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden px-4 py-8">
+        <Spotlight />
+
+        {/* Header Section */}
+        <div className="relative z-10 text-center max-w-4xl mx-auto mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
+            Join the Whitelist
+          </h1>
+          <p className="mt-4 sm:mt-6 font-normal text-sm sm:text-base text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+            Get early access to mint your Turby NFT before the public sale.
+            Limited spots available!
+          </p>
+        </div>
+
+        {/* Turby Rocket Section */}
+        <div className="relative z-10 mb-8 sm:mb-12">
+          <div className="animate-bounce animate-pulse">
+            <img
+              src="/turby_rocket.png"
+              alt="Turby Astronaut on Rocket"
+              className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:w-72 object-contain drop-shadow-2xl transform transition-all duration-1000 ease-in-out hover:scale-110 hover:rotate-2 active:scale-95"
+            />
           </div>
         </div>
+
+        {/* Form Section */}
+        <div className="relative z-10 w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto">
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            <LabelInputContainer>
+              <Label
+                htmlFor="email"
+                className="text-sm sm:text-base text-neutral-200"
+              >
+                Email Address
+              </Label>
+              <Input
+                id="email"
+                name="email"
+                placeholder="projectmayhem@fc.com"
+                type="email"
+                ref={emailInput}
+                className="h-11 sm:h-12 text-sm sm:text-base"
+              />
+            </LabelInputContainer>
+
+            <LabelInputContainer>
+              <Label
+                htmlFor="address"
+                className="text-sm sm:text-base text-neutral-200"
+              >
+                Wallet Address
+              </Label>
+              <Input
+                id="address"
+                name="address"
+                placeholder="0x1234567890..."
+                type="text"
+                ref={addressInput}
+                className="h-11 sm:h-12 text-sm sm:text-base"
+              />
+            </LabelInputContainer>
+
+            <div className="pt-4">
+              <button
+                type="submit"
+                className="w-full h-12 sm:h-14 border border-white/80 hover:border-white transition-all duration-300 [filter:drop-shadow(0px_4px_31px_rgba(0,0,0,0.15))] rounded-xl bg-black/20 backdrop-blur-sm text-white text-base sm:text-lg font-medium hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              >
+                Join Whitelist
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
