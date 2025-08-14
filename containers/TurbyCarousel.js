@@ -22,40 +22,33 @@ export default function TurbyCarousel() {
 
 const data = [
   {
-    category: "Turby 1",
-    title: "Turby 1",
+    category: "Pirate Punk",
+    title: "The Dapper Rebel",
     src: "/turby/turby_1.jpeg",
-    // content: <DummyContent />,
   },
   {
-    category: "Turby 2",
-    title: "Turby 2",
+    category: "Suave Wave",
+    title: "Mustache Maverick",
     src: "/turby/turby_2.jpeg",
-    // content: <DummyContent />,
   },
   {
-    category: "Turby 3",
-    title: "Turby 3",
+    category: "Festive Pride",
+    title: "Rainbow Rocket",
     src: "/turby/turby_3.jpeg",
-    // content: <DummyContent />,
   },
-
   {
-    category: "Turby 4",
-    title: "Turby 4",
+    category: "Beat Blaster",
+    title: "Headphone Hero",
     src: "/turby/turby_8.jpeg",
-    // content: <DummyContent />,
   },
   {
-    category: "Turby 5",
-    title: "Turby 5",
+    category: "Royal Rogue",
+    title: "Crowned & Dangerous",
     src: "/turby/turby_11.jpeg",
-    // content: <DummyContent />,
   },
   {
-    category: "Turby 6",
-    title: "Turby 6",
+    category: "Battle Ready",
+    title: "Armor Ace",
     src: "/turby/turby_6.jpeg",
-    // content: <DummyContent />,
   },
 ];
