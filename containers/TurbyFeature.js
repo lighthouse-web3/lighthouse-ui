@@ -23,7 +23,7 @@ export default function TurbyFeatures() {
         "Beta testing opportunities",
         "Exclusive events and AMAs",
       ],
-      icon: <IconGift className="h-10 w-10 text-neutral-400" />,
+      icon: "/icons/turby/exclusive_.png",
     },
     {
       title: "Storage Benefits",
@@ -33,7 +33,7 @@ export default function TurbyFeatures() {
         "Advanced analytics dashboard",
         "Custom storage solutions",
       ],
-      icon: <IconDatabaseImport className="h-10 w-10 text-neutral-400" />,
+      icon: "/icons/turby/storage_.png",
     },
     {
       title: "Future Rewards",
@@ -43,7 +43,7 @@ export default function TurbyFeatures() {
         "Revenue sharing opportunities",
         "Exclusive merchandise",
       ],
-      icon: <IconCurrencyDollar className="h-10 w-10 text-neutral-400" />,
+      icon: "/icons/turby/reward_.png",
     },
   ];
   return (

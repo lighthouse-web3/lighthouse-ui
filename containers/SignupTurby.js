@@ -16,7 +16,7 @@ const rocketAnimation = `
   }
 `;
 
-export default function SignupTurby() {
+export default function SignupTurby({ id }) {
   const emailInput = useRef();
   const addressInput = useRef();
 
@@ -81,8 +81,11 @@ export default function SignupTurby() {
   return (
     <>
       <style jsx>{rocketAnimation}</style>
-      <div className="styleContainer min-h-screen w-full rounded-md flex flex-col items-center justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden px-4 py-8">
-        <Spotlight />
+      <div
+        id={id}
+        className="styleContainer min-h-screen w-full rounded-md flex flex-col items-center justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden px-4 py-8"
+      >
+        {/* <Spotlight /> */}
 
         {/* Header Section */}
         <div className="relative z-10 text-center max-w-4xl mx-auto mb-8">

@@ -7,7 +7,7 @@ function TitleSeparator({ topTitle, title, style }) {
       style={style}
     >
       {topTitle && (
-        <p className="font-semibold text-3xl lg:w-3xl text-center">
+        <p className="font-semibold text-3xl md:text-5xl lg:w-5xl text-center">
           {topTitle}
         </p>
       )}

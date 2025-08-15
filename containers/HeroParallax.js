@@ -16,26 +16,28 @@ export default function HeroParallax() {
 
   return (
     <div className="relative mx-auto  z-1 flex h-screen w-full  flex-col items-center justify-center overflow-hidden ">
-      <h2 className="relative z-20 mx-auto max-w-4xl text-center text-2xl font-bold text-balance text-white md:text-4xl lg:text-6xl">
-        Turby is coming to
-        <span className="relative z-20 inline-block rounded-xl bg-blue-500/40 px-4 py-1 text-white  decoration-sky-500 decoration-[6px] underline-offset-[16px] backdrop-blur-sm">
-          Lighthouse
-        </span>
-        {/* — Mint the Madness!{" "} */}
-      </h2>
-      <p className="relative z-20 mx-auto max-w-2xl py-8 text-center text-sm text-neutral-200 md:text-base">
-        {/* You are not your job, you&apos;re not how much money you have in the
-        bank. You are not the car you drive. You&apos;re not the contents of
-        your wallet. */}
-      </p>
-      <div className="relative z-20 flex flex-wrap items-center justify-center gap-4 pt-4">
-        <button className="p-[3px] relative">
+      {/* <h1 class="relative z-20 mb-4 text-4xl font-bold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center ">
+        Turby is coming to Lighthouse
+     
+      </h1> */}
+
+      <h1 className="relative z-20 text-center text-5xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-300 bg-opacity-90 leading-tight">
+        Turby is coming to Lighthouse
+      </h1>
+      <div className="relative z-20 flex flex-wrap items-center justify-center gap-4 pt-8">
+        <button
+          className="p-[3px] relative cursor-pointer"
+          onClick={() => {
+            const signupSection = document.getElementById("signup-turby");
+            signupSection.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-          <div className="px-8 py-2  bg-black rounded-[4px] relative group transition duration-200 text-white hover:bg-transparent text-sm font-bold">
+          <div className="px-8 py-2  bg-black rounded-[4px] relative group transition duration-200 text-white hover:bg-transparent text-xl font-bold">
             Join the waitlist
           </div>
         </button>
-        <button className="fillBtn__purple ptr">Read more</button>
+        {/* <button className="fillBtn__purple ptr">Read more</button> */}
       </div>
       {/* overlay */}
       <div className="absolute inset-0 z-10 h-full w-full bg-black/80 dark:bg-black/80" />

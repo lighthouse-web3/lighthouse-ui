@@ -13,45 +13,73 @@ import {
 } from "../containers";
 
 export default function PricingPage() {
+  useEffect(() => {
+    // Ensure smooth scrolling behavior
+    document.documentElement.style.scrollBehavior = "smooth";
+
+    return () => {
+      document.documentElement.style.scrollBehavior = "auto";
+    };
+  }, []);
+
   return (
     <>
       <Metadata title="Lighthouse Storage | Pricing" />
       <div className={"bodyContainer"}>
         <Header />
-        <div className="sectionContainer">
+
+        {/* Hero Section - Full height */}
+        <div className="">
           <HeroParallax />
         </div>
-        <div className="sectionContainer">
+
+        {/* Carousel Section - Full height */}
+        <div className="">
           <TitleSeparator
             topTitle="Get to know your Turby"
             style={{ textAlign: "center", marginBottom: "0px" }}
           />
           <TurbyCarousel />
         </div>
-        <div className="sectionContainer">
-          <TitleSeparator
-            topTitle="About Lighthouse & Turby NFTs"
-            title="Lighthouse is a decentralized storage protocol that makes data permanent and accessible.  Our Turby NFT collection celebrates this mission while building a community of web3 enthusiasts."
-            style={{ textAlign: "center" }}
-          />
-          <div className="my-16">
-            <WhyTurby />
+
+        {/* Why Turby Section - Full height */}
+        <div className="flex items-center">
+          <div className="w-full">
+            <TitleSeparator
+              topTitle="About Lighthouse & Turby NFTs"
+              title="Lighthouse is a decentralized storage protocol that makes data permanent and accessible. Our Turby NFT collection celebrates this mission while building a community of web3 enthusiasts."
+              style={{ textAlign: "center" }}
+            />
+            <div className="my-16">
+              <WhyTurby />
+            </div>
           </div>
         </div>
-        <div className="sectionContainer">
-          <TitleSeparator
-            topTitle="What You Get"
-            title="Turby NFT holders enjoy exclusive benefits and utilities within the Lighthouse ecosystem."
-            style={{ textAlign: "center" }}
-          />
-          <TurbyFeatures />
+
+        {/* Turby Features Section - Full height */}
+        <div className="flex items-center">
+          <div className="w-full">
+            <TitleSeparator
+              topTitle="What You Get"
+              title="Turby NFT holders enjoy exclusive benefits and utilities within the Lighthouse ecosystem."
+              style={{ textAlign: "center" }}
+            />
+            <TurbyFeatures />
+          </div>
         </div>
-        <div className="sectionContainer my-16">
-          <SignupTurby />
+
+        {/* Signup Section - Full height */}
+        <div className="">
+          <SignupTurby id="signup-turby" />
         </div>
-        <div className="contentContainer styleContainer">
-          <FAQContainer type="turby" />
+
+        {/* FAQ Section - Full height */}
+        <div className="flex items-center">
+          <div className="contentContainer styleContainer">
+            <FAQContainer type="turby" />
+          </div>
         </div>
+
         <Footer />
       </div>
     </>
