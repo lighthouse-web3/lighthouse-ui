@@ -23,7 +23,7 @@ export default function TurbyFeatures() {
         "Beta testing opportunities",
         "Exclusive events and AMAs",
       ],
-      icon: "/icons/turby/exclusive_.png",
+      icon: "/icons/turby/exclusive.png",
     },
     {
       title: "Storage Benefits",
@@ -33,7 +33,7 @@ export default function TurbyFeatures() {
         "Advanced analytics dashboard",
         "Custom storage solutions",
       ],
-      icon: "/icons/turby/storage_.png",
+      icon: "/icons/turby/storage.png",
     },
     {
       title: "Future Rewards",
@@ -43,7 +43,7 @@ export default function TurbyFeatures() {
         "Revenue sharing opportunities",
         "Exclusive merchandise",
       ],
-      icon: "/icons/turby/reward_.png",
+      icon: "/icons/turby/reward.png",
     },
   ];
   return (

@@ -4,7 +4,7 @@ import { BackgroundGradient } from "./background-gradient";
 
 export const CardSpotlight = ({ title, description, icon }) => {
   return (
-    <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
+    <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-[#180028]">
       <img
         src={`${icon}`}
         alt="icons-turby"

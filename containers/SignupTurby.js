@@ -147,12 +147,24 @@ export default function SignupTurby({ id }) {
             </LabelInputContainer>
 
             <div className="pt-4">
-              <button
+              {/* <button
                 type="submit"
                 className="w-full h-12 sm:h-14 border border-white/80 hover:border-white transition-all duration-300 [filter:drop-shadow(0px_4px_31px_rgba(0,0,0,0.15))] rounded-xl bg-black/20 backdrop-blur-sm text-white text-base sm:text-lg font-medium hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 Join Whitelist
-              </button>
+              </button> */}
+              <div className="relative z-20 flex flex-wrap items-center justify-center gap-4  w-full">
+                <button
+                  className="p-[3px] relative cursor-pointer w-full"
+                  type="submit"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+                  <div className="px-8 py-2  bg-black rounded-[4px] relative group transition duration-200 text-white hover:bg-transparent text-xl font-bold">
+                    Join Whitelist
+                  </div>
+                </button>
+                {/* <button className="fillBtn__purple ptr">Read more</button> */}
+              </div>
             </div>
           </form>
         </div>
