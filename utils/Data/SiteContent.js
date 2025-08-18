@@ -282,7 +282,7 @@ export const LandingPageData = {
       attributes: {
         question: "How much does it cost to mint a Turby NFT?",
         answer:
-          "Whitelist members can mint for 0.05 ETH, while public sale pricing is 0.08 ETH. Gas fees are additional and depend on network congestion.",
+          "Waitlist members can mint for 0.05 ETH, while public sale pricing is 0.08 ETH. Gas fees are additional and depend on network congestion.",
       },
     },
     {
@@ -296,7 +296,7 @@ export const LandingPageData = {
       attributes: {
         question: "When is the mint date?",
         answer:
-          "Whitelist minting begins on [DATE] at [TIME] UTC, followed by public sale 24 hours later. Join our Discord or whitelist for the latest updates.",
+          "Waitlist minting begins on [DATE] at [TIME] UTC, followed by public sale 24 hours later. Join our Discord or Waitlist for the latest updates.",
       },
     },
     {
@@ -310,7 +310,7 @@ export const LandingPageData = {
       attributes: {
         question: "Can I trade my Turby NFT?",
         answer:
-          "Yes! Turby NFTs can be traded on popular marketplaces like OpenSea, LooksRare, and others. However, some exclusive benefits may be tied to original holders.",
+          "Yes! Turby NFTs can be traded on popular marketplaces like OpenSea, others. However, some exclusive benefits may be tied to original holders.",
       },
     },
   ],

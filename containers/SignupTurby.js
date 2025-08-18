@@ -71,7 +71,7 @@ export default function SignupTurby({ id }) {
 
     // If both fields are valid, call the API
     joinWaitlist(email, address).then(() => {
-      notify("You are on the whitelist", "success");
+      notify("You are on the Waitlist", "success");
       // Clear the form after successful submission
       emailInput.current.value = "";
       addressInput.current.value = "";
@@ -90,7 +90,7 @@ export default function SignupTurby({ id }) {
         {/* Header Section */}
         <div className="relative z-10 text-center max-w-4xl mx-auto mb-8">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
-            Join the Whitelist
+            Join the Waitlist
           </h1>
           <p className="mt-4 sm:mt-6 font-normal text-sm sm:text-base text-neutral-300 max-w-2xl mx-auto leading-relaxed">
             Get early access to mint your Turby NFT before the public sale.
@@ -151,7 +151,7 @@ export default function SignupTurby({ id }) {
                 type="submit"
                 className="w-full h-12 sm:h-14 border border-white/80 hover:border-white transition-all duration-300 [filter:drop-shadow(0px_4px_31px_rgba(0,0,0,0.15))] rounded-xl bg-black/20 backdrop-blur-sm text-white text-base sm:text-lg font-medium hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                Join Whitelist
+                Join Waitlist
               </button> */}
               <div className="relative z-20 flex flex-wrap items-center justify-center gap-4  w-full">
                 <button
@@ -160,7 +160,7 @@ export default function SignupTurby({ id }) {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
                   <div className="px-8 py-2  bg-black rounded-[4px] relative group transition duration-200 text-white hover:bg-transparent text-xl font-bold">
-                    Join Whitelist
+                    Join Waitlist
                   </div>
                 </button>
                 {/* <button className="fillBtn__purple ptr">Read more</button> */}
