@@ -75,7 +75,7 @@ export default function WhyTurby() {
               </div>
             </div>
             <div className="mt-2 flex flex-col flex-shrink-0 gap-2 items-center justify-between p-4 font-mono text-white">
-              <div className="text-sm font-semibold"> 3,333 Unique Turtles</div>
+              <div className="text-sm font-semibold"> Many Unique Turtles</div>
               <div className="text-xs text-gray-300 opacity-50">
                 Each Turby has unique traits, accessories, and backgrounds,
                 making every NFT special and collectible.

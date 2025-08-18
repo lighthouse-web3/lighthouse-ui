@@ -275,7 +275,7 @@ export const LandingPageData = {
       attributes: {
         question: "What is the Turby NFT collection?",
         answer:
-          "The Turby NFT collection consists of 3,333 unique digital collectibles featuring Turby, the official mascot of Lighthouse Storage. Each NFT has unique traits, accessories, and backgrounds, stored permanently on the Lighthouse network.",
+          "The Turby NFT collection consists of unique digital collectibles featuring Turby, the official mascot of Lighthouse Storage. Each NFT has unique traits, accessories, and backgrounds, stored permanently on the Lighthouse network.",
       },
     },
     {
