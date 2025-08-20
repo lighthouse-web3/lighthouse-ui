@@ -26,7 +26,6 @@ function MyApp({ Component, pageProps }) {
       disableMutationObserver: false,
       debounceDelay: 50,
       throttleDelay: 99,
-
       offset: 120,
       delay: 0,
       duration: 400,

@@ -11,7 +11,11 @@ export default function WhyTurby() {
     <section className="styleContainer w-full flex flex-col md:flex-row items-stretch justify-between gap-8 py-8 text-[var(--txt-clr)]">
       {/* Left Side: Features List */}
       <div className="flex-1 px-4 flex flex-col justify-center">
-        <div className="mb-8 flex items-start gap-4">
+        <div
+          className="mb-8 flex items-start gap-4"
+          data-aos="fade-up"
+          data-aos-delay={150}
+        >
           <IconInfinity className="h-10 w-12" />
           <div>
             <h3 className="text-xl md:text-2xl font-semibold mb-2">
@@ -23,7 +27,11 @@ export default function WhyTurby() {
             </p>
           </div>
         </div>
-        <div className="mb-8 flex items-start gap-4">
+        <div
+          className="mb-8 flex items-start gap-4"
+          data-aos="fade-up"
+          data-aos-delay={250}
+        >
           <IconUsersGroup className="h-10 w-12" />
           <div>
             <h3 className="text-xl md:text-2xl font-semibold mb-2">
@@ -35,7 +43,11 @@ export default function WhyTurby() {
             </p>
           </div>
         </div>
-        <div className="flex items-start gap-4">
+        <div
+          className="flex items-start gap-4"
+          data-aos="fade-up"
+          data-aos-delay={350}
+        >
           <IconBolt className="h-10 w-12" />
           <div>
             <h3 className="text-xl md:text-2xl font-semibold mb-2">
@@ -50,7 +62,11 @@ export default function WhyTurby() {
       </div>
 
       {/* Right Side: Card needs to be same height as the left side */}
-      <div className="flex-1 w-full px-4 flex items-stretch justify-center">
+      <div
+        className="flex-1 w-full px-4 flex items-stretch justify-center"
+        data-aos="fade-up"
+        data-aos-delay={450}
+      >
         <CometCard>
           <button
             type="button"

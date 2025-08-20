@@ -83,12 +83,14 @@ export default function SignupTurby({ id }) {
       <style jsx>{rocketAnimation}</style>
       <div
         id={id}
-        className="styleContainer min-h-screen w-full rounded-md flex flex-col items-center justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden px-4 py-8"
+        className="styleContainer min-h-screen w-full rounded-md flex flex-col items-center justify-center  relative overflow-hidden px-4 py-8"
       >
-        {/* <Spotlight /> */}
-
         {/* Header Section */}
-        <div className="relative z-10 text-center max-w-4xl mx-auto mb-8">
+        <div
+          className="relative z-10 text-center max-w-4xl mx-auto mb-8"
+          data-aos="fade-up"
+          data-aos-delay={150}
+        >
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
             Join the Waitlist
           </h1>
@@ -116,6 +118,8 @@ export default function SignupTurby({ id }) {
               <Label
                 htmlFor="email"
                 className="text-sm sm:text-base text-neutral-200"
+                data-aos="fade-up"
+                data-aos-delay={150}
               >
                 Email Address
               </Label>
@@ -126,13 +130,17 @@ export default function SignupTurby({ id }) {
                 type="email"
                 ref={emailInput}
                 className="h-11 sm:h-12 text-sm sm:text-base"
+                data-aos="fade-up"
+                data-aos-delay={150}
               />
             </LabelInputContainer>
 
-            <LabelInputContainer>
+            <LabelInputContainer data-aos="fade-up" data-aos-delay={250}>
               <Label
                 htmlFor="address"
                 className="text-sm sm:text-base text-neutral-200"
+                data-aos="fade-up"
+                data-aos-delay={250}
               >
                 Wallet Address
               </Label>
@@ -143,17 +151,17 @@ export default function SignupTurby({ id }) {
                 type="text"
                 ref={addressInput}
                 className="h-11 sm:h-12 text-sm sm:text-base"
+                data-aos="fade-up"
+                data-aos-delay={250}
               />
             </LabelInputContainer>
 
             <div className="pt-4">
-              {/* <button
-                type="submit"
-                className="w-full h-12 sm:h-14 border border-white/80 hover:border-white transition-all duration-300 [filter:drop-shadow(0px_4px_31px_rgba(0,0,0,0.15))] rounded-xl bg-black/20 backdrop-blur-sm text-white text-base sm:text-lg font-medium hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              <div
+                className="relative z-20 flex flex-wrap items-center justify-center gap-4  w-full"
+                data-aos="fade-up"
+                data-aos-delay={350}
               >
-                Join Waitlist
-              </button> */}
-              <div className="relative z-20 flex flex-wrap items-center justify-center gap-4  w-full">
                 <button
                   className="p-[3px] relative cursor-pointer w-full"
                   type="submit"
@@ -163,7 +171,6 @@ export default function SignupTurby({ id }) {
                     Join Waitlist
                   </div>
                 </button>
-                {/* <button className="fillBtn__purple ptr">Read more</button> */}
               </div>
             </div>
           </form>

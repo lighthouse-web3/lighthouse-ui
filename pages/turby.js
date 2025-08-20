@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Metadata, TitleSeparator } from "../components";
 import {
   FAQContainer,
@@ -13,14 +13,9 @@ import {
 } from "../containers";
 
 export default function PricingPage() {
-  useEffect(() => {
-    // Ensure smooth scrolling behavior
-    document.documentElement.style.scrollBehavior = "smooth";
-
-    return () => {
-      document.documentElement.style.scrollBehavior = "auto";
-    };
-  }, []);
+  const [scrollY, setScrollY] = useState(0);
+  const rocketRef = useRef(null);
+  const signupRef = useRef(null);
 
   return (
     <>
@@ -38,6 +33,7 @@ export default function PricingPage() {
           <TitleSeparator
             topTitle="Get to know your Turby"
             style={{ textAlign: "center", marginBottom: "0px" }}
+            data-aos="fade-up"
           />
           <TurbyCarousel />
         </div>
@@ -69,7 +65,7 @@ export default function PricingPage() {
         </div>
 
         {/* Signup Section - Full height */}
-        <div className="">
+        <div className="" ref={signupRef}>
           <SignupTurby id="signup-turby" />
         </div>
 

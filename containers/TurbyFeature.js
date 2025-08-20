@@ -1,17 +1,4 @@
 import { CardSpotlight } from "../components/ui/cardSpotlight";
-import { cn } from "../utils/services/helper";
-import {
-  IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
-  IconDatabaseImport,
-  IconEaseInOut,
-  IconGift,
-  IconHeart,
-  IconHelp,
-  IconRouteAltLeft,
-  IconTerminal2,
-} from "@tabler/icons-react";
 
 export default function TurbyFeatures() {
   const features = [
@@ -57,7 +44,13 @@ export default function TurbyFeatures() {
 
 const Feature = ({ title, description, icon, index }) => {
   return (
-    <div key={index} className="rounded-lg">
+    <div
+      key={index}
+      className="w-full h-full"
+      data-aos="fade-up"
+      data-aos-delay={150 * index}
+      data-aos-once="true"
+    >
       <CardSpotlight title={title} description={description} icon={icon} />
     </div>
   );

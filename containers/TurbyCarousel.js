@@ -165,10 +165,10 @@ export default function TurbyCarousel() {
             {data.map((card, index) => (
               <div
                 key={index}
-                className={`flex-shrink-0 transition-all duration-500 ${
-                  !isMobile && index === currentCardIndex
-                    ? "scale-90 opacity-100"
-                    : "scale-100 opacity-100"
+                className={`flex-shrink-0 transition-all duration-500 transform translate-y-8 opacity-0 animate-fade-up ${
+                  index === currentCardIndex
+                    ? "scale-100 opacity-100"
+                    : "scale-95 opacity-60"
                 }`}
                 style={{
                   marginRight:
@@ -177,6 +177,7 @@ export default function TurbyCarousel() {
                       : !isMobile && index === currentCardIndex
                       ? "4rem"
                       : "2rem",
+                  animationDelay: `${150 * index}ms`,
                 }}
               >
                 <div className="relative flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-96 dark:bg-neutral-900">

@@ -83,7 +83,7 @@ export const BackgroundGradient = ({
       {/* Content: mobile center, desktop left */}
       <div
         className={cn(
-          "relative z-10 text-center sm:text-left flex flex-col items-center sm:items-start",
+          "relative z-10 text-center  flex flex-col items-center",
           className
         )}
       >

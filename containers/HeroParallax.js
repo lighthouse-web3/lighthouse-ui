@@ -16,15 +16,16 @@ export default function HeroParallax() {
 
   return (
     <div className="relative mx-auto  z-1 flex h-screen w-full  flex-col items-center justify-center overflow-hidden ">
-      {/* <h1 class="relative z-20 mb-4 text-4xl font-bold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center ">
-        Turby is coming to Lighthouse
-     
-      </h1> */}
-
-      <h1 className="relative z-20 text-center text-5xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-300 bg-opacity-90 leading-tight">
+      <h1
+        className="relative z-20 text-center text-5xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-300 bg-opacity-90 leading-tight"
+        data-aos="fade-up"
+      >
         Turby is coming to Lighthouse
       </h1>
-      <div className="relative z-20 flex flex-wrap items-center justify-center gap-4 pt-8">
+      <div
+        className="relative z-20 flex flex-wrap items-center justify-center gap-4 pt-8"
+        data-aos="fade-up"
+      >
         <button
           className="p-[3px] relative cursor-pointer"
           onClick={() => {
