@@ -6,36 +6,57 @@ const MouseFollowingEyes = () => {
   const pupilRefs = useRef([]);
 
   useEffect(() => {
+    let animationFrameId;
+
     const handleMouseMove = (e) => {
       if (!containerRef.current) return;
 
-      pupilRefs.current.forEach((pupil, index) => {
-        const eyeball = eyeRefs.current[index];
-        if (!pupil || !eyeball) return;
+      // Cancel previous animation frame for smooth movement
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
 
-        const eyeArea = eyeball.getBoundingClientRect();
-        const pupilArea = pupil.getBoundingClientRect();
+      animationFrameId = requestAnimationFrame(() => {
+        pupilRefs.current.forEach((pupil, index) => {
+          const eyeball = eyeRefs.current[index];
+          if (!pupil || !eyeball) return;
 
-        const R = eyeArea.width / 2;
-        const r = pupilArea.width / 2;
+          const eyeArea = eyeball.getBoundingClientRect();
+          const pupilArea = pupil.getBoundingClientRect();
 
-        const centerX = eyeArea.left + R;
-        const centerY = eyeArea.top + R;
+          const R = eyeArea.width / 2;
+          const r = pupilArea.width / 2;
 
-        const dx = e.clientX - centerX;
-        const dy = e.clientY - centerY;
+          const centerX = eyeArea.left + R;
+          const centerY = eyeArea.top + R;
 
-        const theta = Math.atan2(dy, dx);
-        const angle = theta * (180 / Math.PI);
+          const dx = e.clientX - centerX;
+          const dy = e.clientY - centerY;
 
-        // Move pupil in direction of cursor
-        pupil.style.transform = `translateX(${R - r}px) rotate(${angle}deg)`;
-        pupil.style.transformOrigin = `${r}px center`;
+          // Calculate distance from center
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          // Limit movement to keep pupil within eye bounds
+          const maxMoveX = R - r;
+          const maxMoveY = eyeArea.height / 2 - pupilArea.height / 2;
+
+          // Calculate normalized movement with easing
+          const moveX = Math.min(maxMoveX, Math.max(-maxMoveX, dx * 0.2));
+          const moveY = Math.min(maxMoveY, Math.max(-maxMoveY, dy * 0.2));
+
+          // Move pupil without rotation - only translate
+          pupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
       });
     };
 
     document.addEventListener("mousemove", handleMouseMove);
-    return () => document.removeEventListener("mousemove", handleMouseMove);
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, []);
 
   return (
@@ -50,8 +71,8 @@ const MouseFollowingEyes = () => {
         }}
       >
         {[
-          { left: 80, top: 70 },
-          { left: 190, top: 70 },
+          { left: 80, top: 60 },
+          { left: 190, top: 60 },
         ].map((pos, index) => (
           <svg
             key={index}
@@ -63,19 +84,24 @@ const MouseFollowingEyes = () => {
               top: pos.top,
             }}
           >
-            <circle
+            <ellipse
               ref={(el) => (eyeRefs.current[index] = el)}
               cx="16.5"
               cy="35"
-              r="16.5"
+              rx="14"
+              ry="22"
               fill="black"
             />
-            <circle
+            <ellipse
               ref={(el) => (pupilRefs.current[index] = el)}
               cx="16.5"
               cy="35"
-              r="7.5"
+              rx="7.5"
+              ry="12"
               fill="white"
+              style={{
+                transition: "transform 0.1s ease-out",
+              }}
             />
           </svg>
         ))}
