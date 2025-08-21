@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Spotlight } from "../components/ui/spotlight";
 import { Label } from "../components/ui/label";
 import { cn } from "../utils/services/helper";
@@ -10,19 +10,29 @@ import { notify } from "../utils/services/notification";
 import ThemeContext from "../utils/services/Themecontext";
 import MouseFollowingEyes from "../components/ui/MouseFollowingEyes";
 
-const rocketAnimation = `
-  @keyframes rocket-rocking {
-    0%, 100% { transform: rotate(-2deg) translateY(0px); }
-    25% { transform: rotate(1deg) translateY(-3px); }
-    50% { transform: rotate(2deg) translateY(0px); }
-    75% { transform: rotate(-1deg) translateY(-2px); }
-  }
-`;
-
 export default function SignupTurby({ id }) {
   const emailInput = useRef();
   const addressInput = useRef();
   const { theme, setTheme } = useContext(ThemeContext);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const componentRef = useRef();
+
+  // Intersection Observer to detect when component is visible
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (componentRef.current) {
+      observer.observe(componentRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const LabelInputContainer = ({ children, className }) => {
     return (
@@ -84,11 +94,53 @@ export default function SignupTurby({ id }) {
 
   return (
     <>
-      <style jsx>{rocketAnimation}</style>
       <div
+        ref={componentRef}
         id={id}
         className="styleContainer min-h-screen w-full rounded-md flex flex-col items-center justify-center  relative overflow-hidden px-4 py-8"
       >
+        {/* Animated Turby_Astro.png image - Right side */}
+        {isInView && window.innerWidth >= 800 && (
+          <div
+            className="fixed top-1/2 right-[-200px] rotate-280 z-50"
+            style={{
+              animation: isHovered
+                ? "none"
+                : "turbySlideIn 12s ease-in-out infinite",
+            }}
+          >
+            <img
+              src="/turby/Turby_Astro.png"
+              alt="Turby Astronaut"
+              className="h-[300px] w-auto cursor-pointer transition-transform hover:scale-110"
+              style={{
+                filter: "drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3))",
+              }}
+            />
+          </div>
+        )}
+
+        {/* Animated Turby_Astro.png image - Left side */}
+        {isInView && window.innerWidth >= 800 && (
+          <div
+            className="fixed top-1/2 left-[-200px] -rotate-280 z-50"
+            style={{
+              animation: isHovered
+                ? "none"
+                : "turbySlideInLeft 12s ease-in-out infinite",
+            }}
+          >
+            <img
+              src="/turby/Turby_Hacker.png"
+              alt="Turby Hacker"
+              className="h-[300px] w-auto cursor-pointer transition-transform hover:scale-110"
+              style={{
+                filter: "drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3))",
+              }}
+            />
+          </div>
+        )}
+
         {/* Header Section */}
         <div
           className="relative z-10 text-center max-w-4xl mx-auto mb-8"
@@ -112,15 +164,7 @@ export default function SignupTurby({ id }) {
 
         {/* Turby Rocket Section */}
         <div className="relative z-10 mb-8 sm:mb-12">
-          {/* <div className="animate-bounce animate-pulse">
-            <img
-              src="/turby_rocket.png"
-              alt="Turby Astronaut on Rocket"
-              className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:w-72 object-contain drop-shadow-2xl transform transition-all duration-1000 ease-in-out hover:scale-110 hover:rotate-2 active:scale-95"
-            />
-          </div> */}
           <div className="w-[300px] h-[300px] relative">
-            {/* image on bg and mouse following eyes on top of it */}
             <div className="absolute inset-0">
               <img
                 src="/turby/TURBY_BODY.png"
@@ -196,6 +240,54 @@ export default function SignupTurby({ id }) {
             </div>
           </form>
         </div>
+
+        {/* CSS Animation for Turby_Astro.png */}
+        <style jsx>{`
+          @keyframes turbySlideIn {
+            0% {
+              transform: translate(100%, 100%) rotate(45deg);
+              opacity: 1;
+            }
+            25% {
+              transform: translate(50%, -55%) rotate(45deg);
+              opacity: 1;
+            }
+            75% {
+              transform: translate(50%, -55%) rotate(45deg);
+              opacity: 1;
+            }
+            100% {
+              transform: translate(100%, 100%) rotate(45deg);
+              opacity: 1;
+            }
+          }
+
+          @keyframes turbySlideInLeft {
+            0% {
+              transform: translate(-100%, 100%) rotate(-45deg);
+              opacity: 1;
+            }
+            25% {
+              transform: translate(-50%, -55%) rotate(-45deg);
+              opacity: 1;
+            }
+            75% {
+              transform: translate(-50%, -55%) rotate(-45deg);
+              opacity: 1;
+            }
+            100% {
+              transform: translate(-100%, 100%) rotate(-45deg);
+              opacity: 1;
+            }
+          }
+
+          /* Mobile responsive adjustments */
+          @media (max-width: 768px) {
+            .fixed {
+              position: absolute;
+            }
+          }
+        `}</style>
       </div>
     </>
   );
