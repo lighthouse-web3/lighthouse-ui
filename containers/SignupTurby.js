@@ -1,11 +1,14 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { Spotlight } from "../components/ui/spotlight";
 import { Label } from "../components/ui/label";
 import { cn } from "../utils/services/helper";
 import { joinWaitlist, validateEmail } from "../utils/services/emailService";
 import { Input } from "../components/ui/input";
 import { notify } from "../utils/services/notification";
+import ThemeContext from "../utils/services/Themecontext";
+import MouseFollowingEyes from "../components/ui/MouseFollowingEyes";
 
 const rocketAnimation = `
   @keyframes rocket-rocking {
@@ -19,6 +22,7 @@ const rocketAnimation = `
 export default function SignupTurby({ id }) {
   const emailInput = useRef();
   const addressInput = useRef();
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const LabelInputContainer = ({ children, className }) => {
     return (
@@ -91,10 +95,16 @@ export default function SignupTurby({ id }) {
           data-aos="fade-up"
           data-aos-delay={150}
         >
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
+          <h1
+            className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 leading-tight ${
+              theme === "dark"
+                ? "from-neutral-200 to-neutral-500"
+                : "from-neutral-900 to-neutral-500"
+            }`}
+          >
             Join the Waitlist
           </h1>
-          <p className="mt-4 sm:mt-6 font-normal text-sm sm:text-base text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 sm:mt-6 font-normal text-sm sm:text-base text-[var(--txt-clr)] max-w-2xl mx-auto leading-relaxed">
             Get early access to mint your Turby NFT before the public sale.
             Limited spots available!
           </p>
@@ -102,12 +112,23 @@ export default function SignupTurby({ id }) {
 
         {/* Turby Rocket Section */}
         <div className="relative z-10 mb-8 sm:mb-12">
-          <div className="animate-bounce animate-pulse">
+          {/* <div className="animate-bounce animate-pulse">
             <img
               src="/turby_rocket.png"
               alt="Turby Astronaut on Rocket"
               className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:w-72 object-contain drop-shadow-2xl transform transition-all duration-1000 ease-in-out hover:scale-110 hover:rotate-2 active:scale-95"
             />
+          </div> */}
+          <div className="w-[300px] h-[300px] relative">
+            {/* image on bg and mouse following eyes on top of it */}
+            <div className="absolute inset-0">
+              <img
+                src="/turby/TURBY_BODY.png"
+                alt="Turby Astronaut on Rocket"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <MouseFollowingEyes />
           </div>
         </div>
 
@@ -117,7 +138,7 @@ export default function SignupTurby({ id }) {
             <LabelInputContainer>
               <Label
                 htmlFor="email"
-                className="text-sm sm:text-base text-neutral-200"
+                className="text-sm sm:text-base text-[var(--txt-clr)]"
                 data-aos="fade-up"
                 data-aos-delay={150}
               >
@@ -138,7 +159,7 @@ export default function SignupTurby({ id }) {
             <LabelInputContainer data-aos="fade-up" data-aos-delay={250}>
               <Label
                 htmlFor="address"
-                className="text-sm sm:text-base text-neutral-200"
+                className="text-sm sm:text-base text-[var(--txt-clr)]"
                 data-aos="fade-up"
                 data-aos-delay={250}
               >
