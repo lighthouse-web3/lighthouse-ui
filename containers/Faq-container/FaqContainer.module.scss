@@ -47,6 +47,17 @@
         a {
           color: #a286f8;
         }
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease-in-out;
+      }
+
+      .answerBox.open {
+        max-height: 500px;
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   }
