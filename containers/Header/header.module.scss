@@ -46,7 +46,7 @@
           border-bottom: 1.5px solid rgb(255, 255, 255);
         }
       }
-    }
+    }>
 
     .buttonContainer {
       @include flex-centered;
@@ -99,20 +99,7 @@
   }
 
   .MobileMenu {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    flex-direction: column;
-    text-align: end;
-    background-color: #000000;
-    padding: 1em;
-    position: absolute;
-    top: 20px;
-    right: 0;
-    margin-top: 1rem;
-    min-width: 230px;
-    border-radius: 5px;
-    box-shadow: 1px 6px 11px 0px rgb(255 69 129 / 52%);
+    display: none;
 
     p {
       margin: 0.5rem 0.5rem;
@@ -120,24 +107,182 @@
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .Header {
+    .infoContainer {
+      padding: 0 2rem;
+      
+      .logoContainer {
+        margin-right: 1rem;
+        
+        .imageBox {
+          width: 120px;
+          min-height: 50px;
+        }
+      }
+      
+      .linksContainer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        
+        p {
+          margin: 0 0.5rem;
+          
+          a {
+            font-size: 0.8rem;
+          }
+        }
+      }
+      
+      .buttonContainer {
+        gap: 0.5rem;
+        
+        span {
+          font-size: 1.2rem;
+        }
+        
+        button {
+          padding: 0.4rem 1.5rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 800px) {
   .Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--clr-bg-black);
+    
     .navbarMobileMenu {
       display: flex;
+      align-items: center;
+      gap: 1rem;
       margin-left: 10px;
-    }
-
-    .infoContainer {
-      .linksContainer,
-      button {
-        display: none;
+      position: relative;
+      z-index: 1002;
+      
+      svg {
+        width: 24px;
+        height: 24px;
       }
     }
 
-    .navbar__link__logo p {
-      font-size: 20px;
-      font-family: var(--font-sans);
-      margin: 0px 0px;
+    .infoContainer {
+      padding: 1rem;
+      position: relative;
+      z-index: 1001;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      .linksContainer,
+      .buttonContainer {
+        display: none;
+      }
+      
+      .logoContainer {
+        .imageBox {
+          width: 100px;
+          min-height: 40px;
+        }
+      }
     }
+    
+    .MobileMenu {
+      position: fixed;
+      top: 80px;
+      left: 10px;
+      right: 10px;
+      max-width: calc(100% - 20px);
+      max-height: calc(100vh - 120px);
+      background-color: var(--clr-bg-black);
+      border-radius: 10px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3); 
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-30px) scale(0.95);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      
+      &.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+      }
+      
+      p {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease-out;
+        
+        a {
+          display: block;
+          padding: 0.75rem;
+          font-size: 1rem;
+          color: white;
+          text-decoration: none;
+          text-align: left;
+          border-radius: 5px;
+          
+          &:hover {
+            background-color: rgba(255,255,255,0.1);
+          }
+          
+          svg {
+            margin-left: 0.5rem;
+            vertical-align: middle;
+          }
+        }
+      }
+      
+      button {
+        width: 90%;
+        margin: 1rem auto;
+        padding: 0.75rem;
+        font-size: 1rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease-out;
+      }
+      
+      &.open {
+        p {
+          opacity: 1;
+          transform: translateY(0);
+          &:nth-child(1) { transition-delay: 0.1s; }
+          &:nth-child(2) { transition-delay: 0.15s; }
+          &:nth-child(3) { transition-delay: 0.2s; }
+          &:nth-child(4) { transition-delay: 0.25s; }
+          &:nth-child(5) { transition-delay: 0.3s; }
+          &:nth-child(6) { transition-delay: 0.35s; }
+          &:nth-child(7) { transition-delay: 0.4s; }
+        }
+        
+        button {
+          opacity: 1;
+          transform: translateY(0);
+          transition-delay: 0.45s;
+        }
+      }
+    }
+  }
+
+  body.menu-open {
+    overflow: hidden;
   }
 }

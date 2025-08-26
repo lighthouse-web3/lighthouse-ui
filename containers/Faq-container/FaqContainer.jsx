@@ -8,7 +8,7 @@ import Styles from "./FaqContainer.module.scss";
 
 // optional props: type = "main" | "pricing"
 function FAQContainer({ type = "main" }) {
-  const [isOpen, setIsOpen] = useState(0);
+  const [isOpen, setIsOpen] = useState(null);
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,8 @@ function FAQContainer({ type = "main" }) {
       })();
     }
     return () => {};
-  }, []);
+  }, [type]);
+
   return (
     <div className={Styles.FAQContainer}>
       <TitleSeparator
@@ -56,20 +57,22 @@ function FAQContainer({ type = "main" }) {
                 )}
               </div>
             </div>
-            {isOpen === index && (
-              <div className={Styles.answerBox}>
-                <p
-                  dangerouslySetInnerHTML={{ __html: item?.attributes?.answer }}
-                ></p>
-              </div>
-            )}
+            <div 
+              className={`${Styles.answerBox} ${
+                isOpen === index ? Styles.open : ''
+              }`}
+            >
+              <p
+                dangerouslySetInnerHTML={{ __html: item?.attributes?.answer }}
+              ></p>
+            </div>
           </div>
         ))}
       </div>
       <div className={Styles.FAQContainer__QuestionBox} data-aos="fade-up">
-        <p className={Styles.title}>Lets Talk !</p>
+        <p className={Styles.title}>Lets Talk!</p>
         <p className={Styles.subTitle}>
-          Didn’t find what you were looking for? <br /> Our team is happy to
+          Didn&apos;t find what you were looking for? <br /> Our team is happy to
           help.{" "}
         </p>
         <br />

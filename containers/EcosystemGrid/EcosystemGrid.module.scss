@@ -126,3 +126,22 @@
   gap: 1rem;
   font-size: 1.1rem;
 }
+
+.highlightWrapper, .cardGrid {
+  position: relative;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.highlightWrapper.fade, .cardGrid.fade {
+  opacity: 0;
+}
+
+.highlightCard, .card {
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.highlightCard.fade, .card.fade {
+  opacity: 0;
+  transform: translateY(20px);
+}

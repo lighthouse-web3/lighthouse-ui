@@ -27,7 +27,7 @@
       .description {
         margin-bottom: 1rem;
         font-weight: 400;
-        color: #A3AAB8;
+        color: var(--answer-text-color, #4d4d4d);
       }
 
       .learnMore {
@@ -77,7 +77,7 @@
 
       .featureDescription {
         font-weight: 400;
-        color: #A3AAB8;
+        color: var(--answer-text-color, #4d4d4d);
         font-size: 0.9rem;
       }
     }
