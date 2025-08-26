@@ -43,7 +43,7 @@
         font-size: 1rem;
         line-height: 160%;
         letter-spacing: 0%;
-        color: #a3aab8;
+        color: var(--answer-text-color, #4d4d4d);
         a {
           color: #a286f8;
         }
@@ -114,3 +114,5 @@
     }
   }
 }
+
+
