@@ -9,6 +9,7 @@ import { Input } from "../components/ui/input";
 import { notify } from "../utils/services/notification";
 import ThemeContext from "../utils/services/Themecontext";
 import MouseFollowingEyes from "../components/ui/MouseFollowingEyes";
+import { CometCard } from "../components/ui/commet-card";
 
 export default function SignupTurby({ id }) {
   const emailInput = useRef();
@@ -162,8 +163,18 @@ export default function SignupTurby({ id }) {
           </p>
         </div>
 
+        <div
+          className="flex-1 w-full px-4 my-10 mb-20 flex items-stretch justify-center"
+          data-aos="fade-up"
+          data-aos-delay={450}
+        >
+          <CometCard showGlare={false}>
+            <img src="/turby_rocket.png" alt="Turby" width={200} height={200} />
+          </CometCard>
+        </div>
+
         {/* Turby Rocket Section */}
-        <div className="relative z-10 mb-8 sm:mb-12">
+        {/* <div className="relative z-10 mb-8 sm:mb-12">
           <div className="w-[300px] h-[300px] relative">
             <div className="absolute inset-0">
               <img
@@ -174,7 +185,7 @@ export default function SignupTurby({ id }) {
             </div>
             <MouseFollowingEyes />
           </div>
-        </div>
+        </div> */}
 
         {/* Form Section */}
         <div className="relative z-10 w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto">
