@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { RiCloseLine, RiMenuFill } from "react-icons/ri";
 import Styles from "./header.module.scss";
 
@@ -58,19 +58,22 @@ function Header({ style }) {
     setCurrentRoute(_navigate?.route);
   }, [_navigate]);
 
+  const prevScrollRef = useRef(scrollTop);
+
   useEffect(() => {
     const onScroll = (e) => {
       const newScrollTop = e.target.documentElement.scrollTop;
       setScrollTop(newScrollTop);
-      setScrolling(newScrollTop > scrollTop);
+      setScrolling(newScrollTop > prevScrollRef.current);
       // This is done to close the mobile menu when scrolling
-      if (Math.abs(newScrollTop - scrollTop) > 50) {
+      if (Math.abs(newScrollTop - prevScrollRef.current) > 50) {
         setToggleMenu(false);
       }
+      prevScrollRef.current = newScrollTop;
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, [scrollTop]);
+  }, []);
 
   useEffect(() => {
     if (toggleMenu) {

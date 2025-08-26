@@ -399,6 +399,7 @@ const EcosystemGrid = () => {
 
   useEffect(() => {
     setIsFading(true);
+    let unfadeTimeout;
     const fadeTimeout = setTimeout(() => {
       const allFiltered = ecosystemData.filter((item) =>
         item.tags.includes(activeTag)
@@ -409,12 +410,15 @@ const EcosystemGrid = () => {
 
       setHighlightItems(highlights);
       setFilteredItems(nonHighlights);
-      setTimeout(() => {
+      unfadeTimeout = setTimeout(() => {
         setIsFading(false);
       }, 50);
     }, 500);
 
-    return () => clearTimeout(fadeTimeout);
+    return () => {
+      clearTimeout(fadeTimeout);
+      if (unfadeTimeout) clearTimeout(unfadeTimeout);
+    };
   }, [activeTag]);
 
   return (
