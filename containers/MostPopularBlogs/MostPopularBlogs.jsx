@@ -5,6 +5,7 @@ import Style from "./MostPopularBlogs.module.scss";
 // import required modules
 
 function MostPopularBlogs({ blogsData }) {
+  const reversedBlogsData = blogsData?.reverse();
   return (
     <div className={Style.MostPopularBlogs} data-aos="fade-up">
       <TitleSeparator
@@ -13,7 +14,7 @@ function MostPopularBlogs({ blogsData }) {
         title={"Read our latest blog"}
       />
       <div className={Style.MostPopularBlogs__carouselContainer}>
-        {blogsData?.map((item, index) => (
+        {reversedBlogsData?.map((item, index) => (
           <div
             className={Style.blogCard}
             key={index}

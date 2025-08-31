@@ -21,7 +21,7 @@ function BlogView({ blogData }) {
           />
         )}
       </div>
-      <div className={Style.BlogView__contentContainer}>
+      <div className={Style.BlogView__contentContainer + " container"}>
         <p className={Style.title}>{blogData?.title}</p>
 
         <div className={Style.fontContainer}></div>
