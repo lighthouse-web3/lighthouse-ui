@@ -5,7 +5,15 @@ import Style from "./MostPopularBlogs.module.scss";
 // import required modules
 
 function MostPopularBlogs({ blogsData }) {
-  const reversedBlogsData = blogsData?.reverse();
+  console.log(blogsData, "-----BLOGS DATA --- ");
+  const sortedBlogsData = blogsData?.sort((a, b) => {
+    return (
+      new Date(b?.attributes?.publishedAt) -
+      new Date(a?.attributes?.publishedAt)
+    );
+  });
+  console.log(sortedBlogsData, "-----SORTED BLOGS DATA --- ");
+
   return (
     <div className={Style.MostPopularBlogs} data-aos="fade-up">
       <TitleSeparator
@@ -14,7 +22,7 @@ function MostPopularBlogs({ blogsData }) {
         title={"Read our latest blog"}
       />
       <div className={Style.MostPopularBlogs__carouselContainer}>
-        {reversedBlogsData?.map((item, index) => (
+        {sortedBlogsData?.map((item, index) => (
           <div
             className={Style.blogCard}
             key={index}
