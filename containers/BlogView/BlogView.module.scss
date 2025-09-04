@@ -44,6 +44,23 @@
         color: inherit;
       }
 
+      h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 2rem;
+        color: inherit;
+        border-bottom: 1px solid var(--txt-clr);
+        padding-bottom: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      h4 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 2rem;
+        color: inherit;
+      }
+
       pre {
         border-radius: 3px;
         text-align: left;
@@ -63,7 +80,13 @@
       }
 
       img {
-        width: 100%;
+        display: block;
+        margin: 2rem auto;
+        width: 80%;
+        height: auto;
+        max-height: 500px;
+        object-fit: contain;
+        object-position: center;
       }
     }
   }
@@ -84,6 +107,7 @@
         }
 
         img {
+          width: 100%;
         }
       }
     }
