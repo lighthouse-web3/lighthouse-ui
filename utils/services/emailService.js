@@ -1,7 +1,7 @@
 import axios from "axios";
 import { notify } from "./notification";
 
-const brevo_key = process.env.NEXT_PUBLIC_BREVO_API_KEY;
+const brevo_key = process.env.NEXT_PUBLIC_BREVO_API;
 
 export const sendEmail = async (email) => {
   try {
