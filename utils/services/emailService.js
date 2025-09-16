@@ -1,9 +1,16 @@
 import axios from "axios";
 import { notify } from "./notification";
-const brevo_key = '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';
+
+const brevo_key = process.env.NEXT_PUBLIC_BREVO_API_KEY;
 
 export const sendEmail = async (email) => {
   try {
+    if (!brevo_key) {
+      console.error("Brevo API key is not configured");
+      notify("Email service configuration error", "error");
+      return;
+    }
+
     if (validateEmail(email)) {
       const options = {
         method: "POST",
