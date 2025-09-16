@@ -5,7 +5,6 @@ const brevo_key = process.env.NEXT_PUBLIC_BREVO_API_KEY;
 
 export const sendEmail = async (email) => {
   try {
-    // Check if API key is available
     if (!brevo_key) {
       console.error("Brevo API key is not configured");
       notify("Email service configuration error", "error");
