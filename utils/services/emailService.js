@@ -5,45 +5,23 @@ const brevo_key = process.env.NEXT_PUBLIC_BREVO_API;
 
 export const sendEmail = async (email) => {
   try {
-    if (!brevo_key) {
-      console.error("Brevo API key is not configured");
-      notify("Email service configuration error", "error");
+    if (!validateEmail(email)) {
+      notify(`Error: Enter a valid email address`, "error");
       return;
     }
 
-    if (validateEmail(email)) {
-      const options = {
-        method: "POST",
-        url: "https://api.brevo.com/v3/smtp/email",
-        headers: {
-          accept: "application/json",
-          "content-type": "application/json",
-          "api-key": brevo_key,
-        },
-        data: {
-          sender: {
-            name: "Lighthouse",
-            email: "hello@lighthouseweb3.xyz",
-          },
-          to: [{ email }],
-          templateId: 4,
-          tags: ["mainsite-subscription"],
-        },
-      };
-
-      axios
-        .request(options)
-        .then(function (response) {
-          //
-          notify("Email Submitted", "success");
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
+    const response = await axios.post("/api/send-email", { email });
+    if (response.status === 200) {
+      notify("Email Submitted", "success");
     } else {
-      notify(`Error: Enter a valid email address`, "error");
+      notify("Failed to send email", "error");
     }
   } catch (error) {
+    if (error.response && error.response.data && error.response.data.error) {
+      notify(error.response.data.error, "error");
+    } else {
+      notify("Failed to send email", "error");
+    }
     console.error(error);
   }
 };
