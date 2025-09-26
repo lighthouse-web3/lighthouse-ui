@@ -338,6 +338,11 @@ export const footerData = {
       path: "/whitepaper",
       link: "",
     },
+    {
+      text: "T&C",
+      path: null,
+      link: "https://gateway.lighthouse.storage/ipfs/bafkreifn2ks6mwp3cbxegwtyvlz2iin2dlfmpjbdqbpcfsgdnrhs6kev4e",
+    },
   ],
 };
 
