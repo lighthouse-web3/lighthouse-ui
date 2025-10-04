@@ -341,7 +341,7 @@ export const footerData = {
     {
       text: "T&C",
       path: null,
-      link: "https://gateway.lighthouse.storage/ipfs/bafkreifn2ks6mwp3cbxegwtyvlz2iin2dlfmpjbdqbpcfsgdnrhs6kev4e",
+      link: "https://gateway.lighthouse.storage/ipfs/bafkreidx6qtkebzxqjgcei5vhbfsfk2uf7iyaypppgvmhophv7q255x6x4",
     },
   ],
 };
