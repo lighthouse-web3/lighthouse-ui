@@ -43,10 +43,21 @@
         font-size: 1rem;
         line-height: 160%;
         letter-spacing: 0%;
-        color: #a3aab8;
+        color: var(--answer-text-color, #4d4d4d);
         a {
           color: #a286f8;
         }
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease-in-out;
+      }
+
+      .answerBox.open {
+        max-height: 500px;
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   }
@@ -103,3 +114,5 @@
     }
   }
 }
+
+

@@ -39,6 +39,11 @@ const ThemeProperties = [
     dark: `url("/wavePattern_dark.svg")`,
     light: `url("/wavePattern_light.svg")`,
   },
+  {
+    property: "--answer-text-color",
+    dark: "#a3aab8",
+    light: "#4d4d4d",
+  },
 ];
 
 export const themeChanger = (theme) => {

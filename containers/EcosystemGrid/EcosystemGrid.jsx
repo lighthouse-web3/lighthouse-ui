@@ -1,4 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import Image from "next/image";
 import styles from "./EcosystemGrid.module.scss";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaTelegramPlane } from "react-icons/fa";
@@ -391,10 +392,34 @@ const ecosystemData = [
 
 const EcosystemGrid = () => {
   const [activeTag, setActiveTag] = useState("Artificial Intelligence (AI)");
-  const filtered = ecosystemData.filter((item) =>
-    item.tags.includes(activeTag)
-  );
+  const [filteredItems, setFilteredItems] = useState([]);
+  const [highlightItems, setHighlightItems] = useState([]);
+  const [isFading, setIsFading] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
+
+  useEffect(() => {
+    setIsFading(true);
+    let unfadeTimeout;
+    const fadeTimeout = setTimeout(() => {
+      const allFiltered = ecosystemData.filter((item) =>
+        item.tags.includes(activeTag)
+      );
+      
+      const highlights = allFiltered.filter((item) => item.image);
+      const nonHighlights = allFiltered.filter((item) => !item.image);
+
+      setHighlightItems(highlights);
+      setFilteredItems(nonHighlights);
+      unfadeTimeout = setTimeout(() => {
+        setIsFading(false);
+      }, 50);
+    }, 500);
+
+    return () => {
+      clearTimeout(fadeTimeout);
+      if (unfadeTimeout) clearTimeout(unfadeTimeout);
+    };
+  }, [activeTag]);
 
   return (
     <section className={styles.ecosystemSection}>
@@ -412,33 +437,31 @@ const EcosystemGrid = () => {
         ))}
       </div>
 
-      <div className={styles.highlightWrapper}>
-        {filtered
-          .filter((item) => item.image)
-          .map((item, idx) => (
-            <div key={idx} className={styles.highlightCard}>
-              <img
-                src={item.image}
-                alt={item.name}
-                className={styles.highlightImage}
-              />
-              <div className={styles.highlightRight}>
-                {/* <img
-                  src={item.icon}
-                  alt={item.name}
-                  className={styles.logo}
-                  style={
-                    theme === "dark"
-                      ? { filter: "brightness(100%)" }
-                      : { filter: "brightness(10%)" }
-                  }
-                /> */}
-                <span>
+      <div 
+        className={`${styles.highlightWrapper} ${
+          isFading ? styles.fade : ''
+        }`}
+      >
+        {highlightItems.map((item, idx) => (
+          <div 
+            key={`highlight-${idx}`} 
+            className={`${styles.highlightCard} ${
+              isFading ? styles.fade : ''
+            }`}
+          >
+            <Image
+              src={item.image}
+              alt={item.name}
+              width={450}
+              height={250}
+              className={styles.highlightImage}
+            />
+            <div className={styles.highlightRight}>
+              <span>
                 <ImageBox
                   src={item?.icon}
                   width={"200px"}
                   height={"50px"}
-                  // className={styles.logo}
                   style={
                     theme === "dark"
                       ? { filter: "brightness(100%)" }
@@ -446,61 +469,8 @@ const EcosystemGrid = () => {
                   }
                   aspectRatio={true}
                 />
-
-                </span>
-            
-                <p className={styles.desc}>{item.description}</p>
-                <div className={styles.footerIcons}>
-                  <span
-                    className="ptr"
-                    onClick={() => {
-                      window.open(item.website, "_blank");
-                    }}
-                  >
-                    <SlGlobe />
-                  </span>
-                  {item.telegram && (
-                    <span
-                      className="ptr"
-                      onClick={() => {
-                        window.open(item.telegram, "_blank");
-                      }}
-                    >
-                      <FaTelegramPlane />
-                    </span>
-                  )}
-
-                  {item.twitter && (
-                    <span
-                      className="ptr"
-                      onClick={() => {
-                        window.open(item.twitter, "_blank");
-                      }}
-                    >
-                      <RiTwitterXLine />
-                    </span>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-      </div>
-
-      <div className={styles.cardGrid}>
-        {filtered
-          .filter((item) => !item.image)
-          .map((item, idx) => (
-            <div key={idx} className={styles.card}>
-              <img
-                src={item.icon}
-                alt={item.name}
-                className={styles.logo}
-                style={
-                  theme === "dark"
-                    ? { filter: "brightness(100%)" }
-                    : { filter: "brightness(10%)" }
-                }
-              />
+              </span>
+          
               <p className={styles.desc}>{item.description}</p>
               <div className={styles.footerIcons}>
                 <span
@@ -534,7 +504,68 @@ const EcosystemGrid = () => {
                 )}
               </div>
             </div>
-          ))}
+          </div>
+        ))}
+      </div>
+
+      <div 
+        className={`${styles.cardGrid} ${
+          isFading ? styles.fade : ''
+        }`}
+      >
+        {filteredItems.map((item, idx) => (
+          <div 
+            key={`card-${idx}`} 
+            className={`${styles.card} ${
+              isFading ? styles.fade : ''
+            }`}
+          >
+            <Image
+              src={item.icon}
+              alt={item.name}
+              width={200}
+              height={50}
+              className={styles.logo}
+              style={
+                theme === "dark"
+                  ? { filter: "brightness(100%)" }
+                  : { filter: "brightness(10%)" }
+              }
+            />
+            <p className={styles.desc}>{item.description}</p>
+            <div className={styles.footerIcons}>
+              <span
+                className="ptr"
+                onClick={() => {
+                  window.open(item.website, "_blank");
+                }}
+              >
+                <SlGlobe />
+              </span>
+              {item.telegram && (
+                <span
+                  className="ptr"
+                  onClick={() => {
+                    window.open(item.telegram, "_blank");
+                  }}
+                >
+                  <FaTelegramPlane />
+                </span>
+              )}
+
+              {item.twitter && (
+                <span
+                  className="ptr"
+                  onClick={() => {
+                    window.open(item.twitter, "_blank");
+                  }}
+                >
+                  <RiTwitterXLine />
+                </span>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
