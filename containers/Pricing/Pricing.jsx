@@ -107,8 +107,9 @@ const Pricing = () => {
       <div className={styles.switcherWrapper}>
         <Switcher
           title1="Annually"
-          title2="Lifetime"
-          title3="Add-on"
+          title2="Monthly"
+          title3="Lifetime"
+          title4="Add-on"
           activeTitle={activeTitle}
           setActiveTitle={setActiveTitle}
         />
@@ -122,7 +123,9 @@ const Pricing = () => {
           "Add-on plans are available for those who want to add additional services to your existing plan."}
       </p>
       <div className={styles.cardGrid}>
-        {(activeTitle === "Lifetime" || activeTitle === "Annually") &&
+        {(activeTitle === "Lifetime" ||
+          activeTitle === "Annually" ||
+          activeTitle === "Monthly") &&
           renderCards(
             activeTitle === "Lifetime" ? LifetimePricing : AnnualPricing
           )}

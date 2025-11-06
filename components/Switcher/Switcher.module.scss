@@ -35,7 +35,7 @@
   position: absolute;
   top: 0.2rem;
   bottom: 0.2rem;
-  width: 32.5%; // around one-third
+  width: 25%; // one-fourth for 4 tabs
   border-radius: 999px;
   background: var(--primary-clr);
   z-index: 1;
@@ -49,12 +49,17 @@
   transform: translateX(0%);
 }
 
-// middle (index 1)
+// second (index 1)
 .switcher[data-active="1"]::before {
   transform: translateX(100%);
 }
 
-// right (index 2)
+// third (index 2)
 .switcher[data-active="2"]::before {
   transform: translateX(200%);
+}
+
+// fourth (index 3)
+.switcher[data-active="3"]::before {
+  transform: translateX(300%);
 }
