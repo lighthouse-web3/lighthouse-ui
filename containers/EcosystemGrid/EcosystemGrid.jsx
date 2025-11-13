@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useMemo, useCallback } from "react";
 import styles from "./EcosystemGrid.module.scss";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaTelegramPlane } from "react-icons/fa";
 import { SlGlobe } from "react-icons/sl";
 import ThemeContext from "../../utils/services/Themecontext";
-import { ImageBox } from "../../components";
+import ImageBox from "../../components/ImageBox/ImageBox";
 
 const badgeOptions = [
   "Artificial Intelligence (AI)",
@@ -391,10 +391,20 @@ const ecosystemData = [
 
 const EcosystemGrid = () => {
   const [activeTag, setActiveTag] = useState("Artificial Intelligence (AI)");
-  const filtered = ecosystemData.filter((item) =>
-    item.tags.includes(activeTag)
+  const { theme } = useContext(ThemeContext);
+
+  const filtered = useMemo(() => 
+    ecosystemData.filter(item => item.tags.includes(activeTag)),
+    [activeTag]
   );
-  const { theme, setTheme } = useContext(ThemeContext);
+
+  const handleTagClick = useCallback((tag) => {
+    setActiveTag(tag);
+  }, []);
+
+  const imageStyle = useMemo(() => ({
+    filter: theme === "dark" ? "brightness(100%)" : "brightness(10%)"
+  }), [theme]);
 
   return (
     <section className={styles.ecosystemSection}>
@@ -402,10 +412,9 @@ const EcosystemGrid = () => {
         {badgeOptions.map((tag) => (
           <button
             key={tag}
-            className={`${styles.badge} ${
-              activeTag === tag ? styles.active : ""
-            }`}
-            onClick={() => setActiveTag(tag)}
+            className={`${styles.badge} ${activeTag === tag ? styles.active : ""}`}
+            onClick={() => handleTagClick(tag)}
+            aria-pressed={activeTag === tag}
           >
             {tag}
           </button>
@@ -416,39 +425,24 @@ const EcosystemGrid = () => {
         {filtered
           .filter((item) => item.image)
           .map((item, idx) => (
-            <div key={idx} className={styles.highlightCard}>
+            <div key={item.name || idx} className={styles.highlightCard}>
               <img
                 src={item.image}
                 alt={item.name}
                 className={styles.highlightImage}
+                loading="lazy"
               />
               <div className={styles.highlightRight}>
-                {/* <img
-                  src={item.icon}
-                  alt={item.name}
-                  className={styles.logo}
-                  style={
-                    theme === "dark"
-                      ? { filter: "brightness(100%)" }
-                      : { filter: "brightness(10%)" }
-                  }
-                /> */}
                 <span>
-                <ImageBox
-                  src={item?.icon}
-                  width={"200px"}
-                  height={"50px"}
-                  // className={styles.logo}
-                  style={
-                    theme === "dark"
-                      ? { filter: "brightness(100%)" }
-                      : { filter: "brightness(10%)" }
-                  }
-                  aspectRatio={true}
-                />
-
+                  <ImageBox
+                    src={item?.icon}
+                    width={"200px"}
+                    height={"50px"}
+                    style={imageStyle}
+                    aspectRatio={true}
+                    alt={`${item.name} icon`}
+                  />
                 </span>
-            
                 <p className={styles.desc}>{item.description}</p>
                 <div className={styles.footerIcons}>
                   <span
@@ -540,4 +534,4 @@ const EcosystemGrid = () => {
   );
 };
 
-export default EcosystemGrid;
+export default React.memo(EcosystemGrid);
