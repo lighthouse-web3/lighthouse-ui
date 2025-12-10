@@ -444,14 +444,14 @@ export const LifetimePricing = [
         value: "5 GB",
         tooltip: "Total Storage Space",
       },
-      {
-        title: "Bandwidth",
-        value: "10 GB",
-        tooltip: "Additional bandwidth at $0.1 per GB / month",
-      },
+      // {
+      //   title: "Bandwidth",
+      //   value: "10 GB",
+      //   tooltip: "Additional bandwidth at $0.1 per GB / month",
+      // },
       {
         title: "IPFS",
-        value: "icon",
+        value: "icon-cross",
         tooltip: "Hot Storage",
       },
       {
@@ -490,14 +490,14 @@ export const LifetimePricing = [
         value: "25 GB",
         tooltip: "Total Storage Space",
       },
-      {
-        title: "Bandwidth",
-        value: "50 GB",
-        tooltip: "Additional bandwidth at $0.1 per GB / month",
-      },
+      // {
+      //   title: "Bandwidth",
+      //   value: "50 GB",
+      //   tooltip: "Additional bandwidth at $0.1 per GB / month",
+      // },
       {
         title: "IPFS",
-        value: "icon",
+        value: "icon-cross",
         tooltip: "Hot Storage",
       },
       {
@@ -536,14 +536,14 @@ export const LifetimePricing = [
         value: "150 GB",
         tooltip: "Total Storage Space",
       },
-      {
-        title: "Bandwidth",
-        value: "300 GB",
-        tooltip: "Additional bandwidth at $0.1 per GB / month",
-      },
+      // {
+      //   title: "Bandwidth",
+      //   value: "300 GB",
+      //   tooltip: "Additional bandwidth at $0.1 per GB / month",
+      // },
       {
         title: "IPFS",
-        value: "icon",
+        value: "icon-cross",
         tooltip: "Hot Storage",
       },
       {
@@ -585,11 +585,11 @@ export const AnnualPricing = [
         value: "5 GB",
         tooltip: "Total Storage Space",
       },
-      {
-        title: "Bandwidth",
-        value: "5 GB",
-        tooltip: "Additional bandwidth at $0.1 per GB / month",
-      },
+      // {
+      //   title: "Bandwidth",
+      //   value: "5 GB",
+      //   tooltip: "Additional bandwidth at $0.1 per GB / month",
+      // },
       {
         title: "IPFS",
         value: "icon",
@@ -629,14 +629,14 @@ export const AnnualPricing = [
     features: [
       {
         title: "Total Storage",
-        value: "200 GB",
+        value: "500 GB",
         tooltip: "Total Storage Space",
       },
-      {
-        title: "Bandwidth",
-        value: "100 GB",
-        tooltip: "Additional bandwidth at $0.1 per GB / month",
-      },
+      // {
+      //   title: "Bandwidth",
+      //   value: "100 GB",
+      //   tooltip: "Additional bandwidth at $0.1 per GB / month",
+      // },
       {
         title: "IPFS",
         value: "icon",
@@ -675,14 +675,14 @@ export const AnnualPricing = [
     features: [
       {
         title: "Total Storage",
-        value: "1 TB",
+        value: "2.5 TB",
         tooltip: "Total Storage Space",
       },
-      {
-        title: "Bandwidth",
-        value: "1 TB",
-        tooltip: "Additional bandwidth at $0.1 per GB / month",
-      },
+      // {
+      //   title: "Bandwidth",
+      //   value: "1 TB",
+      //   tooltip: "Additional bandwidth at $0.1 per GB / month",
+      // },
       {
         title: "IPFS",
         value: "icon",
