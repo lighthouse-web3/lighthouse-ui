@@ -278,13 +278,13 @@ export const LandingPageData = {
           "The Turby NFT collection consists of unique digital collectibles featuring Turby, the official mascot of Lighthouse Storage. Each NFT has unique traits, accessories, and backgrounds, stored permanently on the Lighthouse network.",
       },
     },
-    {
-      attributes: {
-        question: "How much does it cost to mint a Turby NFT?",
-        answer:
-          "Waitlist members can mint for 0.05 ETH, while public sale pricing is 0.08 ETH. Gas fees are additional and depend on network congestion.",
-      },
-    },
+    // {
+    //   attributes: {
+    //     question: "How much does it cost to mint a Turby NFT?",
+    //     answer:
+    //       "Waitlist members can mint for 0.05 ETH, while public sale pricing is 0.08 ETH. Gas fees are additional and depend on network congestion.",
+    //   },
+    // },
     {
       attributes: {
         question: "What benefits do NFT holders receive?",
@@ -292,13 +292,13 @@ export const LandingPageData = {
           'Holders get free monthly storage credits, exclusive Discord access, early feature access, governance voting rights, and potential future airdrops. Full benefits are detailed in the "What You Get" section above.',
       },
     },
-    {
-      attributes: {
-        question: "When is the mint date?",
-        answer:
-          "Waitlist minting begins on [DATE] at [TIME] UTC, followed by public sale 24 hours later. Join our Discord or Waitlist for the latest updates.",
-      },
-    },
+    // {
+    //   attributes: {
+    //     question: "When is the mint date?",
+    //     answer:
+    //       "Waitlist minting begins on [DATE] at [TIME] UTC, followed by public sale 24 hours later. Join our Discord or Waitlist for the latest updates.",
+    //   },
+    // },
     {
       attributes: {
         question: "How are the NFTs stored?",

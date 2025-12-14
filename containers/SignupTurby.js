@@ -157,10 +157,10 @@ export default function SignupTurby({ id }) {
           >
             Join the Waitlist
           </h1>
-          <p className="mt-4 sm:mt-6 font-normal text-sm sm:text-base text-[var(--txt-clr)] max-w-2xl mx-auto leading-relaxed">
+          {/* <p className="mt-4 sm:mt-6 font-normal text-sm sm:text-base text-[var(--txt-clr)] max-w-2xl mx-auto leading-relaxed">
             Get early access to mint your Turby NFT before the public sale.
             Limited spots available!
-          </p>
+          </p> */}
         </div>
 
         <div
