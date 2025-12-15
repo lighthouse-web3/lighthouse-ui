@@ -37,7 +37,7 @@ const links = [
   {
     title: "Documentation",
     path: "",
-    href: "https://docs.lighthouse.storage/lighthouse-1/",
+    href: "https://docs.lighthouse.storage/",
   },
 
   {
@@ -73,7 +73,7 @@ function Header({ style }) {
   }, [scrolling]);
 
   return (
-    <div className={Styles.Header + " container"}>
+    <div className={Styles.Header + " styleContainer"}>
       <div className={Styles.infoContainer}>
         <div className={Styles.logoContainer}>
           <div
@@ -102,6 +102,7 @@ function Header({ style }) {
               ) : (
                 <a
                   href={link.href}
+                  className="flex"
                   target="_blank"
                   rel="noopener noreferrer"
                   tabIndex={0}
@@ -143,7 +144,7 @@ function Header({ style }) {
               />
             )}
           </span>
-          <button
+          {/* <button
             onClick={() =>
               window.open(
                 "https://files.lighthouse.storage/?redirectfrom=main",
@@ -154,7 +155,7 @@ function Header({ style }) {
             style={{ padding: "0.5rem 2rem" }}
           >
             Get Started
-          </button>
+          </button> */}
         </div>
       </div>
 
@@ -192,7 +193,12 @@ function Header({ style }) {
                     {link.title}
                   </a>
                 ) : (
-                  <a href={link.href} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={link.href}
+                    className="flex"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {link.title}
                   </a>
                 )}
