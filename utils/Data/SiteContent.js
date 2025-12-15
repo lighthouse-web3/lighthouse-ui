@@ -161,7 +161,7 @@ export const LandingPageData = {
       description:
         "Developers can easily integrate our SDK & CLI into their application pipeline in language of their choice",
       icon: "/suitsIcon/sdk_cli.png",
-      link: "https://docs.lighthouse.storage/lighthouse-1/",
+      link: "https://docs.lighthouse.storage/",
       buttonText: "Explore documentation",
       featureCard: [
         {
@@ -186,7 +186,7 @@ export const LandingPageData = {
       description:
         "Use our encryption sdk to easily store private files and token gate them with onchain NFT, Token Ownership and Much more",
       icon: "/suitsIcon/encryption.png",
-      link: "https://docs.lighthouse.storage/lighthouse-1/how-to/encryption-features",
+      link: "https://docs.lighthouse.storage/how-to/encryption-features",
       buttonText: "Learn More",
       featureCard: [
         {
@@ -220,7 +220,7 @@ export const LandingPageData = {
       title: "Lighthouse SDK",
       description:
         "Lighthouse Software Developer Kit comprises of all the tools developers need to integrate Lighthouse.",
-      link: "https://docs.lighthouse.storage/lighthouse-1/how-to/create-an-api-key",
+      link: "https://docs.lighthouse.storage/how-to/create-an-api-key",
     },
 
     {
@@ -228,14 +228,14 @@ export const LandingPageData = {
       title: "Lighthouse CLI",
       description:
         "All Lighthouse features available through the convenience of the Command Line Interface ",
-      link: "https://docs.lighthouse.storage/lighthouse-1/cli-tool/overview",
+      link: "https://docs.lighthouse.storage/cli-tool/overview",
     },
     {
       icon: "/suitsIcon/suitsIcon4.svg",
       title: "Lighthouse Kavach",
       description:
         "Store private files on the distributed web with secure encryption and access control features through Lighthouse Kavach",
-      link: "https://docs.lighthouse.storage/lighthouse-1/how-to/upload-encrypted-data",
+      link: "https://docs.lighthouse.storage/how-to/upload-encrypted-data",
     },
   ],
 
@@ -406,21 +406,21 @@ export const documentationCards = [
   {
     title: "Introduction",
     subTitle: "Learn about Lighthouse and Get Started Quickly with examples",
-    link: "https://docs.lighthouse.storage/lighthouse-1/",
+    link: "https://docs.lighthouse.storage/",
   },
   {
     title: "CLI Commands",
     subTitle:
       "Learn to install the CLI globally on your system using our npm package",
 
-    link: "https://docs.lighthouse.storage/lighthouse-1/how-to/overview",
+    link: "https://docs.lighthouse.storage/how-to/overview",
   },
   {
     title: "Code Examples",
 
     subTitle:
       "Many easy to use tutorial and code examples to build your favourite applications",
-    link: "https://docs.lighthouse.storage/lighthouse-1/how-to/create-an-api-key",
+    link: "https://docs.lighthouse.storage/how-to/create-an-api-key",
   },
   {
     title: "Developers Link",
