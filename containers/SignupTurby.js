@@ -85,12 +85,16 @@ export default function SignupTurby({ id }) {
     }
 
     // If both fields are valid, call the API
-    joinWaitlist(email, address).then(() => {
-      notify("You are on the Waitlist", "success");
-      // Clear the form after successful submission
-      emailInput.current.value = "";
-      addressInput.current.value = "";
-    });
+    joinWaitlist(email, address)
+      .then(() => {
+        notify("You are on the Waitlist", "success");
+        // Clear the form after successful submission
+        emailInput.current.value = "";
+        addressInput.current.value = "";
+      })
+      .catch(() => {
+        notify("Failed to join the waitlist. Please try again.", "error");
+      });
   };
 
   return (

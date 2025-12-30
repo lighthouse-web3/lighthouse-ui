@@ -46,40 +46,23 @@ export const sendEmail = async (email) => {
 // joinwaitlist which takes email and address and template ID 5 and send email
 export const joinWaitlist = async (email, address) => {
   try {
-    const options = {
+    const response = await fetch("/api/airtable/waitlist", {
       method: "POST",
-      url: "https://api.brevo.com/v3/smtp/email",
       headers: {
-        accept: "application/json",
         "content-type": "application/json",
-        "api-key": BREVO_API_KEY,
       },
-      data: {
-        sender: {
-          name: "Lighthouse",
-          email: "hello@lighthouseweb3.xyz",
-        },
-        to: [{ email }],
-        templateId: 29,
-        tags: ["mainsite-turby-join-waitlist"],
-      },
-    };
+      body: JSON.stringify({ email, address }),
+    });
 
-    axios
-      .request(options)
-      .then(function (response) {
-        notify("Email Submitted", "success");
-        addEmailToList(email, 22, {
-          address: address,
-          DESCRIPTION: address,
-          TAGS: ["turby-join-waitlist"],
-        });
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+    if (!response.ok) {
+      const data = await response.json().catch(() => ({}));
+      throw new Error(data?.error || "Failed to join waitlist");
+    }
+
+    return response.json();
   } catch (error) {
     console.error(error);
+    throw error;
   }
 };
 
