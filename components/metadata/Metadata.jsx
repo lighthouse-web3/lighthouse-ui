@@ -11,6 +11,12 @@ function Metadata({
 }) {
   const router = useRouter();
 
+  // ✅ Use environment variable for GA ID
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
+  // ✅ Skip analytics in development or if not configured
+  const shouldLoadAnalytics = gaId && process.env.NODE_ENV === "production";
+
   return (
     <>
       <Head>
@@ -32,14 +38,32 @@ function Metadata({
         <meta property="twitter:image" content={image} />
       </Head>
 
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-20157XPF9Y"></Script>
-      <Script id="google-analytics">
-        {`  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-20157XPF9Y');`}
-      </Script>
+      {/*Only load if configured and in production  */}
+      {shouldLoadAnalytics && (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+            strategy="afterInteractive"
+            onError={(e) => {
+              console.error("Google Analytics failed to load:", e);
+            }}
+          />
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
+            onError={(e) => {
+              console.error("Google Analytics initialization failed:", e);
+            }}
+          >
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gaId}');
+            `}
+          </Script>
+        </>
+      )}
     </>
   );
 }
