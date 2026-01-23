@@ -12,6 +12,7 @@ function ImageBox({
   style,
   layout,
   aspectRatio,
+  priority,  
   ...rest
 }) {
   let dimensions = {};
@@ -31,11 +32,12 @@ function ImageBox({
         className={Styles.image}
         {...rest}
         style={{ objectFit: "cover", ...style }}
-        // style={style}
         alt={alt ? alt : "icon"}
         src={src}
         objectFit={"contain"}
         layout={layout ? layout : "fill"}
+        priority={priority}  
+        loading={priority ? "eager" : "lazy"}  
       />
     </div>
   );

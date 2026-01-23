@@ -9,19 +9,33 @@ function HomeBanner() {
   const windowSize = useWindowSize();
   const { theme, setTheme } = useContext(ThemeContext);
 
-  const bannerImages = {
-    dark_bannerImg_1:
-      "https://gateway.lighthouse.storage/ipfs/bafkreicxy3eocvtyyl3xfs3euk5pc4zgxsyosjrxknft5hrdaqueg2l5na",
-    dark_bannerImg_2:
-      "https://gateway.lighthouse.storage/ipfs/bafkreifjzr3gc6v24yv5c4sgecb6a3dcyxeyuivxgzf4zakqtfuuaz6bgy",
-    dark_bannerImg_3:
-      "https://gateway.lighthouse.storage/ipfs/bafkreiesyhpu3eagitbizbyzndoxdinuqyrqotdxobnpboynooyk6ef27y",
-    light_bannerImg_1:
-      "https://gateway.lighthouse.storage/ipfs/bafkreihkck4tgwwgrbxyln3vesqopa242uqasojr5d5tnin2vv3zrltksa",
-    light_bannerImg_2:
-      "https://gateway.lighthouse.storage/ipfs/bafkreiauljyamwu3xn4kzh5guy5m66n3l2xmjzithky37fgy7wqvoyjuiy",
-    light_bannerImg_3:
-      "https://gateway.lighthouse.storage/ipfs/bafkreiaaa3gohgn7p4tut3prs7zlrppxiawnfw56rfxn55k47h5qeydpfm",
+// const bannerImages = {
+//     dark_bannerImg_1:
+//       "https://gateway.lighthouse.storage/ipfs/bafkreicxy3eocvtyyl3xfs3euk5pc4zgxsyosjrxknft5hrdaqueg2l5na",
+//     dark_bannerImg_2:
+//       "https://gateway.lighthouse.storage/ipfs/bafkreifjzr3gc6v24yv5c4sgecb6a3dcyxeyuivxgzf4zakqtfuuaz6bgy",
+//     dark_bannerImg_3:
+//       "https://gateway.lighthouse.storage/ipfs/bafkreiesyhpu3eagitbizbyzndoxdinuqyrqotdxobnpboynooyk6ef27y",
+//     light_bannerImg_1:
+//       "https://gateway.lighthouse.storage/ipfs/bafkreihkck4tgwwgrbxyln3vesqopa242uqasojr5d5tnin2vv3zrltksa",
+//     light_bannerImg_2:
+//       "https://gateway.lighthouse.storage/ipfs/bafkreiauljyamwu3xn4kzh5guy5m66n3l2xmjzithky37fgy7wqvoyjuiy",
+//     light_bannerImg_3:
+//       "https://gateway.lighthouse.storage/ipfs/bafkreiaaa3gohgn7p4tut3prs7zlrppxiawnfw56rfxn55k47h5qeydpfm",
+//   };
+
+
+  
+// Use local images instead of IPFS URLs for faster loading  
+ 
+
+const bannerImages = {
+    dark_bannerImg_1: "/BannerImages/dark_bannerImg_1.png",
+    dark_bannerImg_2: "/BannerImages/dark_bannerImg_2.png",
+    dark_bannerImg_3: "/BannerImages/dark_bannerImg_3.png",
+    light_bannerImg_1: "/BannerImages/light_bannerImg_1.png",
+    light_bannerImg_2: "/BannerImages/light_bannerImg_2.png",
+    light_bannerImg_3: "/BannerImages/light_bannerImg_3.png",
   };
 
   return (
@@ -48,6 +62,7 @@ function HomeBanner() {
             objectFit: "cover",
             objectPosition: "center",
           }}
+          priority={true}  // Add priority for faster loading
         />
       </span>
       <span className={Styles.Banner__bgImg2}>
@@ -72,6 +87,7 @@ function HomeBanner() {
             objectFit: "cover",
             objectPosition: "center",
           }}
+          priority={true}  
         />
       </span>
       <span className={Styles.Banner__bgImg3}>
@@ -97,6 +113,7 @@ function HomeBanner() {
             objectFit: "cover",
             objectPosition: "center",
           }}
+          priority={true}  
         />
       </span>
       <div className={Styles.infoBox + " container"} data-aos="fade-up">
