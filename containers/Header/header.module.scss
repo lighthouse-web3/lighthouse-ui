@@ -6,6 +6,7 @@
   background: var(--clr-bg-black);
   z-index: 5;
   color: #ffffff;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
   .infoContainer {
     @include flex-centered;
@@ -54,6 +55,11 @@
       span {
         @include flex-centered;
         font-size: 1.5rem;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
   }
@@ -73,6 +79,7 @@
         text-decoration: none;
         cursor: pointer;
         margin: 0rem 1rem;
+        transition: color 0.3s ease-in-out;
       }
     }
 
@@ -83,8 +90,8 @@
       padding: 0.5rem;
       font-family: var(--font-sans);
       margin: 0rem 1rem;
-
       cursor: pointer;
+      transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
 
       &:hover {
         transform: scale(1.05);
@@ -104,7 +111,8 @@
     align-items: flex-end;
     flex-direction: column;
     text-align: end;
-    background-color: #000000;
+    background-color: var(--bg-clr);
+    color: var(--txt-clr);  // Add this line for menu text color
     padding: 1em;
     position: absolute;
     top: 20px;
@@ -113,9 +121,19 @@
     min-width: 230px;
     border-radius: 5px;
     box-shadow: 1px 6px 11px 0px rgb(255 69 129 / 52%);
+    transition: background-color 0.3s ease-in-out;
 
     p {
       margin: 0.5rem 0.5rem;
+
+      a {
+        color: var(--txt-clr);  // Change from #ffffff to var(--txt-clr)
+        transition: color 0.3s ease-in-out;
+      }
+    }
+    
+    button {
+      color: var(--txt-clr);  // Change button text color to be theme-aware
     }
   }
 }

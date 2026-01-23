@@ -1,6 +1,7 @@
 .Footer {
   color: var(--txt-clr);
   font-family: var(--font-sans);
+  transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 
   &__upperFooter {
     background: var(--bg-clr);
@@ -12,6 +13,7 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
     color: var(--txt-clr);
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 
     .brandBox {
       flex: 1;
@@ -71,6 +73,8 @@
       &__link {
         text-transform: capitalize;
         color: var(--txt-clr);
+        transition: color 0.1s ease-in-out;
+        
         &:hover {
           text-decoration: underline;
           text-underline-position: under;
@@ -99,6 +103,7 @@
         font-size: 0.9rem;
         line-height: 26px;
         color: #4f4f4f;
+        transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
 
         &:focus {
           outline: none;
@@ -112,6 +117,7 @@
     text-align: center;
     color: white;
     padding: 1rem;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
   }
 }
 
@@ -182,9 +188,10 @@
     }
 
     &__lowerFooter {
-      background: #000;
+      background: var(--bg-clr);  // Changed from hardcoded #000 to use theme variable
       text-align: center;
       padding: 1rem;
+      transition: background-color 0.1s ease-in-out;
     }
   }
 }
