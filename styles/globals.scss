@@ -34,6 +34,9 @@
   --box-shadow: 3px 3px 50px 0px rgba(0, 0, 0, 0.1);
 
   --wave-pattern: url("/wavePattern_dark.svg");
+  
+  // Transition duration for theme changes
+  --theme-transition-duration: 0.1s;
 }
 
 html,
@@ -46,6 +49,10 @@ body {
   overflow-x: hidden;
   color: var(--txt-clr);
   background: var(--bg-clr) !important;
+  
+  // Add smooth transition for theme changes
+  transition: background-color var(--theme-transition-duration) ease-in-out,
+              color var(--theme-transition-duration) ease-in-out;
 }
 
 h1 {
@@ -58,11 +65,20 @@ h1 {
   flex-direction: column;
   height: 100%;
   min-height: 100vh;
+  transition: background-color var(--theme-transition-duration) ease-in-out;
 }
 
 * {
   box-sizing: border-box;
 }
+
+// Add transition to all elements that use theme colors
+* {
+  transition: background-color var(--theme-transition-duration) ease-in-out,
+              color var(--theme-transition-duration) ease-in-out,
+              border-color var(--theme-transition-duration) ease-in-out;
+}
+
 
 .container {
   padding: 1rem 10%;
@@ -226,7 +242,6 @@ h1 {
 
   body {
     color: white;
-
     background: var(--clr-bg-black);
   }
 }

@@ -4,9 +4,9 @@ import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { TitleSeparator } from "../../components";
 import { LandingPageData } from "../../utils/Data/SiteContent";
 import { baseUrl } from "../../utils/Data/config";
+import { sanitizeHTML } from "../../utils/services/htmlSanitizer";
 import Styles from "./FaqContainer.module.scss";
 
-// optional props: type = "main" | "pricing"
 function FAQContainer({ type = "main" }) {
   const [isOpen, setIsOpen] = useState(0);
   const [faqs, setFaqs] = useState([]);
@@ -16,16 +16,22 @@ function FAQContainer({ type = "main" }) {
       setFaqs(LandingPageData.PricingFAQs);
     } else {
       (async () => {
-        const res = await axios.get(`${baseUrl}/faqs?populate=*`);
-        let faqData = res["status"] === 200 ? res["data"]?.["data"] : null;
-        const mainSiteFaq = faqData.filter(
-          (faq) => faq.attributes.Platform === "Mainsite"
-        );
-        setFaqs(mainSiteFaq);
+        try {
+          const res = await axios.get(`${baseUrl}/faqs?populate=*`);
+          let faqData = res["status"] === 200 ? res["data"]?.["data"] : null;
+          const mainSiteFaq = faqData.filter(
+            (faq) => faq.attributes.Platform === "Mainsite"
+          );
+          setFaqs(mainSiteFaq);
+        } catch (error) {
+          console.error("Failed to fetch FAQs:", error);
+          setFaqs([]);
+        }
       })();
     }
     return () => {};
   }, []);
+
   return (
     <div className={Styles.FAQContainer}>
       <TitleSeparator
@@ -59,7 +65,7 @@ function FAQContainer({ type = "main" }) {
             {isOpen === index && (
               <div className={Styles.answerBox}>
                 <p
-                  dangerouslySetInnerHTML={{ __html: item?.attributes?.answer }}
+                  dangerouslySetInnerHTML={{ __html: sanitizeHTML(item?.attributes?.answer) }}
                 ></p>
               </div>
             )}
