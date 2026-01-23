@@ -42,12 +42,24 @@ const ThemeProperties = [
 ];
 
 export const themeChanger = (theme) => {
-  theme &&
-    localStorage.setItem("lighthouse.storage/store", JSON.stringify({ theme }));
-  ThemeProperties.forEach((property) => {
-    document.documentElement.style.setProperty(
-      `${property?.property}`,
-      theme === "dark" ? property?.dark : property?.light
-    );
-  });
+  if (!theme || typeof window === 'undefined') return;
+  
+  try {
+    requestAnimationFrame(() => {
+      localStorage.setItem(
+        "lighthouse.storage/store", 
+        JSON.stringify({ theme })
+      );
+
+      const style = document.documentElement.style;
+      ThemeProperties.forEach((property) => {
+        style.setProperty(
+          property.property,
+          theme === "dark" ? property.dark : property.light
+        );
+      });
+    });
+  } catch (error) {
+    console.error('Error updating theme:', error);
+  }
 };

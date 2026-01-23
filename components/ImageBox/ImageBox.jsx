@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useMemo } from "react";
 import Styles from "./ImageBox.module.scss";
 
 function ImageBox({
@@ -10,35 +10,39 @@ function ImageBox({
   alt,
   src,
   style,
-  layout,
+  layout = "fill",
   aspectRatio,
+  priority = false,
   ...rest
 }) {
-  let dimensions = {};
-  width ? (dimensions["width"] = width) : "100%";
-  maxWidth ? (dimensions["maxWidth"] = maxWidth) : "100%";
-  height ? (dimensions["height"] = height) : "unset";
-  maxHeight ? (dimensions["maxHeight"] = maxHeight) : "unset";
+  const dimensions = useMemo(() => {
+    const dims = {};
+    if (width) dims.width = width;
+    if (maxWidth) dims.maxWidth = maxWidth;
+    if (height) dims.height = height;
+    if (maxHeight) dims.maxHeight = maxHeight;
+    return dims;
+  }, [width, maxWidth, height, maxHeight]);
+
+  const containerClass = aspectRatio ? 
+    Styles.imageRatioContainer : 
+    Styles.imageContainer;
 
   return (
-    <div
-      className={
-        aspectRatio ? Styles.imageRatioContainer : Styles.imageContainer
-      }
-      style={dimensions}
-    >
+    <div className={containerClass} style={dimensions}>
       <Image
         className={Styles.image}
         {...rest}
         style={{ objectFit: "cover", ...style }}
-        // style={style}
-        alt={alt ? alt : "icon"}
+        alt={alt || "image"}
         src={src}
-        objectFit={"contain"}
-        layout={layout ? layout : "fill"}
+        objectFit="contain"
+        layout={layout}
+        priority={priority}
+        loading={priority ? "eager" : "lazy"}
       />
     </div>
   );
 }
 
-export default ImageBox;
+export default React.memo(ImageBox);
