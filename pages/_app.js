@@ -13,6 +13,16 @@ import ThemeContext from "../utils/services/Themecontext";
 import { themeChanger } from "../utils/services/theme";
 import { AnimatePresence } from "motion/react";
 
+// RainbowKit imports
+import "@rainbow-me/rainbowkit/styles.css";
+import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { WagmiConfig } from "wagmi";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { wagmiConfig, chains } from "../utils/wagmi-config";
+
+// Create a client for react-query
+const queryClient = new QueryClient();
+
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState(null);
 
@@ -35,7 +45,7 @@ function MyApp({ Component, pageProps }) {
       anchorPlacement: "top-center",
     });
     const themeFromLocalStorage = JSON.parse(
-      localStorage?.getItem("lighthouse.storage/store") || "{}"
+      localStorage?.getItem("lighthouse.storage/store") || "{}",
     );
     if (themeFromLocalStorage?.theme) {
       setTheme(themeFromLocalStorage?.theme);
@@ -49,14 +59,18 @@ function MyApp({ Component, pageProps }) {
   }, [theme]);
 
   return (
-    <>
-      <ThemeContext.Provider value={{ theme, setTheme }}>
-        <AnimatePresence mode="wait" initial={false}>
-          <Component {...pageProps} />
-        </AnimatePresence>
-        <ToastContainer />
-      </ThemeContext.Provider>
-    </>
+    <WagmiConfig config={wagmiConfig}>
+      <QueryClientProvider client={queryClient}>
+        <RainbowKitProvider chains={chains}>
+          <ThemeContext.Provider value={{ theme, setTheme }}>
+            <AnimatePresence mode="wait" initial={false}>
+              <Component {...pageProps} />
+            </AnimatePresence>
+            <ToastContainer />
+          </ThemeContext.Provider>
+        </RainbowKitProvider>
+      </QueryClientProvider>
+    </WagmiConfig>
   );
 }
 
