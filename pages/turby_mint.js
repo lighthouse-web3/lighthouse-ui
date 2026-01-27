@@ -267,10 +267,10 @@ export default function TurbyMintPage() {
               </button>
 
               {/* Powered By */}
-              <div className={Styles.poweredBy}>
+              {/* <div className={Styles.poweredBy}>
                 <span>Powered by</span>
                 <img src="/logo.svg" alt="Lighthouse" height={20} />
-              </div>
+              </div> */}
             </div>
           </div>
         </main>
