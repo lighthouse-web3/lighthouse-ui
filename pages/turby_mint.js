@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Metadata } from "../components";
 import { Footer, Header } from "../containers";
 import Styles from "../styles/turby_mint.module.scss";
@@ -14,9 +14,18 @@ import {
   IconMail,
   IconInstagram,
 } from "@tabler/icons-react";
+import { formatEther, parseEther } from "viem";
 
 // RainbowKit/Wagmi hooks (v1 API)
-import { useAccount, useBalance, useDisconnect } from "wagmi";
+import {
+  useAccount,
+  useBalance,
+  useContractRead,
+  useContractWrite,
+  useDisconnect,
+  usePrepareContractWrite,
+  useWaitForTransaction,
+} from "wagmi";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { baseSepolia } from "wagmi/chains";
 
@@ -26,6 +35,58 @@ const truncateAddress = (addr) => {
   return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
 };
 
+const TURBY_ABI = [
+  {
+    inputs: [],
+    name: "mintPrice",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "maxPerTransaction",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "maxPerWallet",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "owner", type: "address" }],
+    name: "numberMinted",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "mintEnded",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "totalSupply",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "uint256", name: "quantity", type: "uint256" }],
+    name: "mint",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+];
+
 // NFT Configuration - Update these values
 const NFT_CONFIG = {
   name: "MINT TURBY",
@@ -33,16 +94,13 @@ const NFT_CONFIG = {
   description:
     "Turby is a unique NFT turtle, a symbol of our community for Lighthouse. Cute, quirky, and truly yours—join the Web3 movement and own a piece of the future with on-chain permanence and personality!",
   totalSupply: 3333,
-  mintedCount: 133, // This should be fetched from contract
-  price: 0.0001, // ETH
-  contractAddress: "YOUR_CONTRACT_ADDRESS_HERE", // Update with actual contract
+  mintedCount: 133,
+  price: 0.0001, // ETH fallback
+  contractAddress: "0xef81468b1caA25Df98efB436C62450b10A34819a",
   socialLinks: {
-    linkedin: "https://www.linkedin.com/company/lighthouse-web3",
     twitter: "https://twitter.com/lighthouseweb3",
     telegram: "https://t.me/LighthouseStorage",
     discord: "https://discord.com/invite/c4a4CGCdJG",
-    instagram:
-      "https://www.instagram.com/lighthouseweb3/?igshid=MDM4ZDc5MmU%3D",
     contactMail: "mail@lighthouse.storage",
   },
 };
@@ -58,21 +116,151 @@ export default function TurbyMintPage() {
     watch: true,
   });
 
-  const [mintQuantity, setMintQuantity] = useState(1);
+  const [mintQuantityInput, setMintQuantityInput] = useState("1");
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+
+  const { data: mintPriceData } = useContractRead({
+    address: NFT_CONFIG.contractAddress,
+    abi: TURBY_ABI,
+    functionName: "mintPrice",
+    watch: true,
+  });
+
+  const { data: maxPerTxData } = useContractRead({
+    address: NFT_CONFIG.contractAddress,
+    abi: TURBY_ABI,
+    functionName: "maxPerTransaction",
+    watch: true,
+  });
+
+  const { data: maxPerWalletData } = useContractRead({
+    address: NFT_CONFIG.contractAddress,
+    abi: TURBY_ABI,
+    functionName: "maxPerWallet",
+    watch: true,
+  });
+
+  const { data: mintedByWalletData } = useContractRead({
+    address: NFT_CONFIG.contractAddress,
+    abi: TURBY_ABI,
+    functionName: "numberMinted",
+    args: address ? [address] : undefined,
+    enabled: Boolean(address),
+    watch: true,
+  });
+
+  const { data: mintEndedData } = useContractRead({
+    address: NFT_CONFIG.contractAddress,
+    abi: TURBY_ABI,
+    functionName: "mintEnded",
+  });
+
+  const { data: totalSupplyData } = useContractRead({
+    address: NFT_CONFIG.contractAddress,
+    abi: TURBY_ABI,
+    functionName: "totalSupply",
+    watch: true,
+  });
+
+  const mintPriceWei =
+    typeof mintPriceData === "bigint"
+      ? mintPriceData
+      : parseEther(NFT_CONFIG.price.toString());
+  const mintedCount =
+    typeof totalSupplyData === "bigint"
+      ? totalSupplyData
+      : BigInt(NFT_CONFIG.mintedCount);
+  const maxPerTx =
+    typeof maxPerTxData === "bigint" ? maxPerTxData : BigInt(0);
+  const maxPerWallet =
+    typeof maxPerWalletData === "bigint" ? maxPerWalletData : BigInt(0);
+  const alreadyMinted =
+    typeof mintedByWalletData === "bigint" ? mintedByWalletData : BigInt(0);
+
+  const totalSupplyLimit = BigInt(NFT_CONFIG.totalSupply);
+  const remainingSupply =
+    totalSupplyLimit > mintedCount
+      ? totalSupplyLimit - mintedCount
+      : BigInt(0);
+  const remainingWallet =
+    maxPerWallet > 0
+      ? maxPerWallet > alreadyMinted
+        ? maxPerWallet - alreadyMinted
+        : BigInt(0)
+      : null;
+
+  let maxAllowed = remainingSupply;
+  if (maxPerTx > 0 && maxAllowed > maxPerTx) {
+    maxAllowed = maxPerTx;
+  }
+  if (remainingWallet !== null && maxAllowed > remainingWallet) {
+    maxAllowed = remainingWallet;
+  }
+
+  const maxMintable = Number(maxAllowed);
+  const inputMax = maxMintable > 0 ? maxMintable : 1;
+  const isSoldOut = maxMintable <= 0;
+  const isMintEnded = Boolean(mintEndedData);
+  const parsedQuantity = Number.parseInt(mintQuantityInput, 10);
+  const rawQuantity = Number.isNaN(parsedQuantity) ? 0 : parsedQuantity;
+  const mintQuantity = Math.max(1, Math.min(rawQuantity || 1, inputMax));
+  const totalCostWei = mintPriceWei * BigInt(mintQuantity);
 
   // Get ETH balance
   const ethBalance = balanceData ? parseFloat(balanceData.formatted) : 0;
+  const balanceValue = balanceData?.value ?? BigInt(0);
 
   // Check if user has sufficient balance
-  const requiredAmount = NFT_CONFIG.price * mintQuantity;
-  const hasSufficientBalance = ethBalance >= requiredAmount;
+  const hasSufficientBalance = balanceValue >= totalCostWei;
+
+  useEffect(() => {
+    setMintQuantityInput((current) => {
+      const parsed = Number.parseInt(current, 10);
+      if (Number.isNaN(parsed)) return current;
+      if (parsed > inputMax) return String(inputMax);
+      if (parsed < 1) return "1";
+      return current;
+    });
+  }, [inputMax]);
+
+  const canPrepareMint =
+    isConnected &&
+    !isMintEnded &&
+    !isSoldOut &&
+    mintQuantity > 0 &&
+    mintQuantity <= maxMintable &&
+    hasSufficientBalance;
+
+  const { config: mintConfig } = usePrepareContractWrite({
+    address: NFT_CONFIG.contractAddress,
+    abi: TURBY_ABI,
+    functionName: "mint",
+    args: [BigInt(mintQuantity)],
+    value: totalCostWei,
+    chainId: baseSepolia.id,
+    enabled: canPrepareMint,
+  });
+
+  const {
+    writeAsync: mintWrite,
+    data: mintTxData,
+    isLoading: isMinting,
+  } = useContractWrite(mintConfig);
+
+  const { isLoading: isConfirming } = useWaitForTransaction({
+    hash: mintTxData?.hash,
+  });
 
   // Handle mint quantity change
   const handleQuantityChange = (e) => {
-    const value = parseInt(e.target.value) || 1;
-    const maxMintable = NFT_CONFIG.totalSupply - NFT_CONFIG.mintedCount;
-    setMintQuantity(Math.max(1, Math.min(value, maxMintable)));
+    setMintQuantityInput(e.target.value);
+  };
+
+  const handleQuantityBlur = () => {
+    const parsed = Number.parseInt(mintQuantityInput, 10);
+    const safeValue = Number.isNaN(parsed) ? 1 : parsed;
+    const clamped = Math.max(1, Math.min(safeValue, inputMax));
+    setMintQuantityInput(String(clamped));
   };
 
   // Handle mint action
@@ -82,13 +270,49 @@ export default function TurbyMintPage() {
       return;
     }
 
-    // TODO: Implement actual minting logic with contract interaction
-    console.log("Minting", mintQuantity, "NFTs");
-    console.log("To address:", address);
+    if (isMintEnded || isSoldOut || !mintWrite) {
+      return;
+    }
+
+    try {
+      await mintWrite();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   // Truncate description for "See more" functionality
   const truncatedDescription = NFT_CONFIG.description.slice(0, 80) + "...";
+
+  const displayPrice = formatEther(mintPriceWei);
+  const displayMaxPerTx = maxPerTx > 0 ? maxPerTx.toString() : "Unlimited";
+  const displayMaxPerWallet =
+    maxPerWallet > 0 ? maxPerWallet.toString() : "Unlimited";
+
+  const buttonLabel = isConnecting
+    ? "Connecting..."
+    : !isConnected
+      ? "Connect Wallet"
+      : isMintEnded
+        ? "Minting window is over"
+        : isSoldOut
+          ? "Sold out"
+          : !hasSufficientBalance
+            ? "Insufficient ETH balance"
+            : isMinting
+              ? "Minting..."
+              : isConfirming
+                ? "Confirming..."
+                : `Mint ${mintQuantity} NFT${mintQuantity > 1 ? "s" : ""}`;
+
+  const isMintActionDisabled =
+    isConnected &&
+    (isMintEnded ||
+      isSoldOut ||
+      !hasSufficientBalance ||
+      isMinting ||
+      isConfirming ||
+      !mintWrite);
 
   return (
     <>
@@ -101,7 +325,7 @@ export default function TurbyMintPage() {
           <div className={Styles.heroBackground}>
             <div className={Styles.heroOverlay} />
             <img
-              src="/turby/turby_1.jpeg"
+              src="https://ipfs.io/ipfs/bafybeidece5bblxlfzthzr2oi6js7brqbp25mbiwqwr43y5hs4txxuerie"
               alt="Turby NFT"
               className={Styles.heroImage}
             />
@@ -182,20 +406,20 @@ export default function TurbyMintPage() {
               <div className={Styles.statsRow}>
                 <div className={Styles.statItem}>
                   <span className={Styles.statValue}>
-                    {NFT_CONFIG.mintedCount} / {NFT_CONFIG.totalSupply}
+                    {mintedCount.toString()} / {NFT_CONFIG.totalSupply}
                   </span>
                   <span className={Styles.statLabel}>Tokens</span>
                 </div>
                 <div className={Styles.statItem}>
                   <span className={Styles.statValue}>
-                    {NFT_CONFIG.price} ETH
+                    {displayPrice} ETH
                   </span>
                   <span className={Styles.statLabel}>Price</span>
                 </div>
               </div>
 
               {/* Mint Section - Only show when connected */}
-              {isConnected && (
+              {isConnected && !isMintEnded && (
                 <div className={Styles.mintSection}>
                   {/* Connected Wallet Info */}
                   <div className={Styles.walletInfo}>
@@ -230,12 +454,29 @@ export default function TurbyMintPage() {
 
                   <input
                     type="number"
-                    value={mintQuantity}
+                    value={mintQuantityInput}
                     onChange={handleQuantityChange}
+                    onBlur={handleQuantityBlur}
                     min={1}
-                    max={NFT_CONFIG.totalSupply - NFT_CONFIG.mintedCount}
+                    max={inputMax}
+                    disabled={isSoldOut}
                     className={Styles.quantityInput}
                   />
+
+                  <div className={Styles.limitRow}>
+                    <span className={Styles.limitItem}>
+                      Max/tx: {displayMaxPerTx}
+                    </span>
+                    <span className={Styles.limitItem}>
+                      Max/wallet: {displayMaxPerWallet}
+                    </span>
+                    <span className={Styles.limitItem}>
+                      Minted by you: {alreadyMinted.toString()}
+                    </span>
+                    <span className={Styles.limitItem}>
+                      Available now: {maxMintable > 0 ? maxMintable : 0}
+                    </span>
+                  </div>
 
                   {/* ETH Balance Display */}
                   <div className={Styles.balanceRow}>
@@ -247,6 +488,12 @@ export default function TurbyMintPage() {
                 </div>
               )}
 
+              {isConnected && isMintEnded && (
+                <div className={Styles.mintClosedBanner}>
+                  Minting window is over.
+                </div>
+              )}
+
               {/* Connect/Mint Button */}
               <button
                 className={`${Styles.mintButton} ${
@@ -255,15 +502,9 @@ export default function TurbyMintPage() {
                     : ""
                 }`}
                 onClick={handleMint}
-                disabled={isConnected && !hasSufficientBalance}
+                disabled={isMintActionDisabled}
               >
-                {isConnecting
-                  ? "Connecting..."
-                  : !isConnected
-                    ? "Connect Wallet"
-                    : !hasSufficientBalance
-                      ? "Insufficient ETH balance"
-                      : `Mint ${mintQuantity} NFT${mintQuantity > 1 ? "s" : ""}`}
+                {buttonLabel}
               </button>
 
               {/* Powered By */}
