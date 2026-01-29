@@ -101,7 +101,7 @@ export default function TurbyProfilePage() {
                 <h2 className="text-[#20bb55] font-bold text-xl mb-1">
                   Mint Successful!
                 </h2>
-                <p className="text-gray-200">
+                <p className="text-[var(--txt-secondary-clr)]">
                   Congratulations on your new Turby NFT!
                 </p>
               </div>
@@ -111,18 +111,18 @@ export default function TurbyProfilePage() {
               className={Styles.mintCard}
               style={{ maxWidth: "1000px", width: "100%" }}
             >
-              <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#ffffff10]">
+              <div className="flex items-center justify-between mb-8 pb-4 border-b border-[var(--card-border-clr)]">
                 <div className="flex items-center gap-4">
                   <Link href="/turby_mint">
-                    <a className="flex items-center justify-center w-10 h-10 rounded-full bg-[#ffffff10] hover:bg-[#ffffff20] transition-colors text-white">
+                    <a className="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--card-bg-clr)] hover:bg-[var(--card-bg-hover-clr)] transition-colors text-[var(--txt-clr)]">
                       <IconArrowLeft size={20} />
                     </a>
                   </Link>
                   <div>
-                    <h1 className="text-2xl font-bold text-white mb-1">
+                    <div className="text-2xl font-bold text-[var(--txt-clr)] mb-1 text-left ml-2">
                       My Turby Collection
-                    </h1>
-                    <div className="text-gray-400 text-sm font-mono bg-[#00000040] py-1 px-3 rounded-md inline-block">
+                    </div>
+                    <div className="text-[var(--txt-secondary-clr)] text-sm font-mono bg-[var(--card-bg-clr)] py-1 px-3 rounded-md inline-block">
                       {address}
                     </div>
                   </div>
@@ -131,19 +131,19 @@ export default function TurbyProfilePage() {
 
               {/* Stats */}
               <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="bg-[#ffffff05] rounded-xl p-6 border border-[#ffffff10] text-center">
-                  <div className="text-3xl font-bold text-white mb-2">
+                <div className="bg-[var(--card-bg-clr)] rounded-xl p-6 border border-[var(--card-border-clr)] text-center">
+                  <div className="text-3xl font-bold text-[var(--txt-clr)] mb-2">
                     {totalMinted}
                   </div>
-                  <div className="text-gray-400 uppercase text-xs tracking-wider">
+                  <div className="text-[var(--txt-secondary-clr)] uppercase text-xs tracking-wider">
                     Total Minted
                   </div>
                 </div>
-                <div className="bg-[#ffffff05] rounded-xl p-6 border border-[#ffffff10] text-center">
-                  <div className="text-3xl font-bold text-white mb-2">
+                <div className="bg-[var(--card-bg-clr)] rounded-xl p-6 border border-[var(--card-border-clr)] text-center">
+                  <div className="text-3xl font-bold text-[var(--txt-clr)] mb-2">
                     {totalValue.toFixed(4)} ETH
                   </div>
-                  <div className="text-gray-400 uppercase text-xs tracking-wider">
+                  <div className="text-[var(--txt-secondary-clr)] uppercase text-xs tracking-wider">
                     Total Value
                   </div>
                 </div>
@@ -152,14 +152,14 @@ export default function TurbyProfilePage() {
               {/* NFT Grid */}
               {loading ? (
                 <div className="flex justify-center py-20">
-                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
+                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[var(--txt-clr)]"></div>
                 </div>
               ) : nfts.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {nfts.map((nft) => (
                     <div
                       key={nft.tokenId}
-                      className="bg-[#ffffff05] rounded-xl overflow-hidden border border-[#ffffff10] hover:border-[#6450E3] transition-colors group"
+                      className="bg-[var(--card-bg-clr)] rounded-xl overflow-hidden border border-[var(--card-border-clr)] hover:border-[#6450E3] transition-colors group"
                     >
                       <div className="aspect-square relative overflow-hidden">
                         {nft.image ? (
@@ -169,16 +169,16 @@ export default function TurbyProfilePage() {
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                           />
                         ) : (
-                          <div className="w-full h-full flex items-center justify-center bg-[#ffffff05] text-gray-500">
+                          <div className="w-full h-full flex items-center justify-center bg-[var(--card-bg-clr)] text-[var(--txt-secondary-clr)]">
                             No Image
                           </div>
                         )}
                       </div>
                       <div className="p-4">
-                        <h3 className="font-bold text-white truncate">
+                        <h3 className="font-bold text-[var(--txt-clr)] truncate">
                           {nft.name || `Turby #${nft.tokenId}`}
                         </h3>
-                        <p className="text-gray-400 text-sm mt-1">
+                        <p className="text-[var(--txt-secondary-clr)] text-sm mt-1">
                           Token ID: {nft.tokenId}
                         </p>
                       </div>
@@ -186,7 +186,7 @@ export default function TurbyProfilePage() {
                   ))}
                 </div>
               ) : (
-                <div className="text-center py-20 text-gray-400">
+                <div className="text-center py-20 text-[var(--txt-secondary-clr)]">
                   <p>No Turby NFTs found in this wallet.</p>
                   <Link href="/turby_mint">
                     <a className="inline-block mt-4 text-[#6450E3] hover:underline">

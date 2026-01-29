@@ -14,6 +14,7 @@ import {
   IconMail,
   IconPlus,
   IconMinus,
+  IconUser,
 } from "@tabler/icons-react";
 import { formatEther, parseEther } from "viem";
 import { useRouter } from "next/router";
@@ -413,14 +414,26 @@ export default function TurbyMintPage() {
                         </a>
                       </Link>
                     </div>
-                    <button
-                      className={Styles.disconnectBtn}
-                      onClick={() => disconnect()}
-                      title="Disconnect wallet"
-                    >
-                      <IconLogout size={18} />
-                      <span>Disconnect</span>
-                    </button>
+                    <div className="flex items-center gap-2">
+                      <Link href={`/turby_mint/${address}`}>
+                        <a
+                          className={Styles.profileBtn}
+                          style={{ marginRight: "8px", textDecoration: "none" }}
+                          title="View Profile"
+                        >
+                          <IconUser size={18} />
+                          <span>Profile</span>
+                        </a>
+                      </Link>
+                      <button
+                        className={Styles.disconnectBtn}
+                        onClick={() => disconnect()}
+                        title="Disconnect wallet"
+                      >
+                        <IconLogout size={18} />
+                        <span>Disconnect</span>
+                      </button>
+                    </div>
                   </div>
 
                   <div className={`${Styles.quantityRow} !mb-2`}>
@@ -436,27 +449,27 @@ export default function TurbyMintPage() {
                   </div>
 
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center border border-[#ffffff20] rounded-lg overflow-hidden h-[42px]">
+                    <div className="flex items-center border border-[var(--card-border-clr)] rounded-lg overflow-hidden h-[42px]">
                       <button
                         onClick={decrementQuantity}
                         disabled={mintQuantity <= 1 || isSoldOut}
-                        className="px-3 py-2 hover:bg-[#ffffff10] transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-white"
+                        className="px-3 py-2 hover:bg-[var(--card-bg-hover-clr)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-[var(--txt-clr)]"
                       >
                         <IconMinus size={18} />
                       </button>
-                      <div className="w-12 text-center text-white font-medium bg-transparent border-x border-[#ffffff20] h-full flex items-center justify-center">
+                      <div className="w-12 text-center text-[var(--txt-clr)] font-medium bg-transparent border-x border-[var(--card-border-clr)] h-full flex items-center justify-center">
                         {mintQuantity}
                       </div>
                       <button
                         onClick={incrementQuantity}
                         disabled={mintQuantity >= inputMax || isSoldOut}
-                        className="px-3 py-2 hover:bg-[#ffffff10] transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-white"
+                        className="px-3 py-2 hover:bg-[var(--card-bg-hover-clr)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-[var(--txt-clr)]"
                       >
                         <IconPlus size={18} />
                       </button>
                     </div>
 
-                    <div className="flex flex-col items-end gap-1 text-sm text-gray-300">
+                    <div className="flex flex-col items-end gap-1 text-sm text-[var(--txt-secondary-clr)]">
                       <div className={Styles.limitItem}>
                         <span>Minted by you: </span>
                         <Link href={`/turby_mint/${address}`}>
