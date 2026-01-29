@@ -1,4 +1,4 @@
-import { fetchOwnedNFTs } from "../../ai_context/fetch_nft";
+import { fetchOwnedNFTs } from "../../utils/services/nft";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
