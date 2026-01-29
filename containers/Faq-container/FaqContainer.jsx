@@ -7,12 +7,14 @@ import { baseUrl } from "../../utils/Data/config";
 import Styles from "./FaqContainer.module.scss";
 
 // optional props: type = "main" | "pricing" | "turby"
-function FAQContainer({ type = "main" }) {
+function FAQContainer({ type = "main", customData = null }) {
   const [isOpen, setIsOpen] = useState(0);
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
-    if (type === "pricing") {
+    if (customData) {
+      setFaqs(customData);
+    } else if (type === "pricing") {
       setFaqs(LandingPageData.PricingFAQs);
     } else if (type === "turby") {
       setFaqs(LandingPageData.TurbyFAQs);
@@ -21,7 +23,7 @@ function FAQContainer({ type = "main" }) {
         const res = await axios.get(`${baseUrl}/faqs?populate=*`);
         let faqData = res["status"] === 200 ? res["data"]?.["data"] : null;
         const mainSiteFaq = faqData.filter(
-          (faq) => faq.attributes.Platform === "Mainsite"
+          (faq) => faq.attributes.Platform === "Mainsite",
         );
         setFaqs(mainSiteFaq);
       })();
@@ -37,8 +39,8 @@ function FAQContainer({ type = "main" }) {
           type === "pricing"
             ? "Pricing FAQs"
             : type === "turby"
-            ? "Turby NFT FAQs"
-            : "FAQs"
+              ? "Turby NFT FAQs"
+              : "FAQs"
         }
       />
 
@@ -88,7 +90,7 @@ function FAQContainer({ type = "main" }) {
             onClick={() => {
               window.open(
                 "https://airtable.com/app0KP7ENgYlLDcJ0/shrPFC2TgojuOAYO4",
-                "__blank"
+                "__blank",
               );
             }}
           >

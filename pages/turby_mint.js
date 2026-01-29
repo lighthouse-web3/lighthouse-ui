@@ -12,9 +12,13 @@ import {
   IconChevronUp,
   IconLogout,
   IconMail,
-  IconInstagram,
+  IconPlus,
+  IconMinus,
 } from "@tabler/icons-react";
 import { formatEther, parseEther } from "viem";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import FAQContainer from "../containers/Faq-container/FaqContainer";
 
 // RainbowKit/Wagmi hooks (v1 API)
 import {
@@ -35,57 +39,7 @@ const truncateAddress = (addr) => {
   return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
 };
 
-const TURBY_ABI = [
-  {
-    inputs: [],
-    name: "mintPrice",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "maxPerTransaction",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "maxPerWallet",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "owner", type: "address" }],
-    name: "numberMinted",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "mintEnded",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "totalSupply",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "uint256", name: "quantity", type: "uint256" }],
-    name: "mint",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-];
+import { TURBY_ABI } from "../utils/abi/turbyABI";
 
 // NFT Configuration - Update these values
 const NFT_CONFIG = {
@@ -105,11 +59,29 @@ const NFT_CONFIG = {
   },
 };
 
+const TURBY_FAQS = [
+  {
+    attributes: {
+      question: "What are the minting limits?",
+      answer:
+        "The minting limits are enforced by the smart contract to ensure fair distribution. You can check the 'Max/tx' and 'Max/wallet' values displayed above the mint button.",
+    },
+  },
+  {
+    attributes: {
+      question: "How do I see my minted NFTs?",
+      answer:
+        "Once you have minted your Turby NFTs, you can view them by clicking on 'Minted by you' or your wallet address in the minting section. This will take you to your personal profile page.",
+    },
+  },
+];
+
 export default function TurbyMintPage() {
   // RainbowKit/Wagmi hooks
   const { address, isConnected, isConnecting } = useAccount();
   const { openConnectModal } = useConnectModal();
   const { disconnect } = useDisconnect();
+  const router = useRouter();
   const { data: balanceData } = useBalance({
     address: address,
     chainId: baseSepolia.id,
@@ -170,8 +142,7 @@ export default function TurbyMintPage() {
     typeof totalSupplyData === "bigint"
       ? totalSupplyData
       : BigInt(NFT_CONFIG.mintedCount);
-  const maxPerTx =
-    typeof maxPerTxData === "bigint" ? maxPerTxData : BigInt(0);
+  const maxPerTx = typeof maxPerTxData === "bigint" ? maxPerTxData : BigInt(0);
   const maxPerWallet =
     typeof maxPerWalletData === "bigint" ? maxPerWalletData : BigInt(0);
   const alreadyMinted =
@@ -179,9 +150,7 @@ export default function TurbyMintPage() {
 
   const totalSupplyLimit = BigInt(NFT_CONFIG.totalSupply);
   const remainingSupply =
-    totalSupplyLimit > mintedCount
-      ? totalSupplyLimit - mintedCount
-      : BigInt(0);
+    totalSupplyLimit > mintedCount ? totalSupplyLimit - mintedCount : BigInt(0);
   const remainingWallet =
     maxPerWallet > 0
       ? maxPerWallet > alreadyMinted
@@ -252,8 +221,20 @@ export default function TurbyMintPage() {
   });
 
   // Handle mint quantity change
-  const handleQuantityChange = (e) => {
-    setMintQuantityInput(e.target.value);
+  const incrementQuantity = () => {
+    setMintQuantityInput((prev) => {
+      const current = parseInt(prev, 10) || 0;
+      if (current >= inputMax) return String(inputMax);
+      return String(current + 1);
+    });
+  };
+
+  const decrementQuantity = () => {
+    setMintQuantityInput((prev) => {
+      const current = parseInt(prev, 10) || 0;
+      if (current <= 1) return "1";
+      return String(current - 1);
+    });
   };
 
   const handleQuantityBlur = () => {
@@ -275,7 +256,10 @@ export default function TurbyMintPage() {
     }
 
     try {
-      await mintWrite();
+      const tx = await mintWrite();
+      if (tx && tx.hash) {
+        await router.push(`/turby_mint/${address}?success=true`);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -411,9 +395,7 @@ export default function TurbyMintPage() {
                   <span className={Styles.statLabel}>Tokens</span>
                 </div>
                 <div className={Styles.statItem}>
-                  <span className={Styles.statValue}>
-                    {displayPrice} ETH
-                  </span>
+                  <span className={Styles.statValue}>{displayPrice} ETH</span>
                   <span className={Styles.statLabel}>Price</span>
                 </div>
               </div>
@@ -425,9 +407,11 @@ export default function TurbyMintPage() {
                   <div className={Styles.walletInfo}>
                     <div className={Styles.walletAddress}>
                       <span className={Styles.walletLabel}>Connected:</span>
-                      <span className={Styles.walletValue}>
-                        {truncateAddress(address)}
-                      </span>
+                      <Link href={`/turby_mint/${address}`}>
+                        <a className={Styles.walletValue}>
+                          {truncateAddress(address)}
+                        </a>
+                      </Link>
                     </div>
                     <button
                       className={Styles.disconnectBtn}
@@ -439,8 +423,7 @@ export default function TurbyMintPage() {
                     </button>
                   </div>
 
-                  {/* Quantity Input */}
-                  <div className={Styles.quantityRow}>
+                  <div className={`${Styles.quantityRow} !mb-2`}>
                     <div className={Styles.quantityLabel}>
                       <span>How many to mint?</span>
                       <div className="tooltipWrapper">
@@ -452,31 +435,49 @@ export default function TurbyMintPage() {
                     </div>
                   </div>
 
-                  <input
-                    type="number"
-                    value={mintQuantityInput}
-                    onChange={handleQuantityChange}
-                    onBlur={handleQuantityBlur}
-                    min={1}
-                    max={inputMax}
-                    disabled={isSoldOut}
-                    className={Styles.quantityInput}
-                  />
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center border border-[#ffffff20] rounded-lg overflow-hidden h-[42px]">
+                      <button
+                        onClick={decrementQuantity}
+                        disabled={mintQuantity <= 1 || isSoldOut}
+                        className="px-3 py-2 hover:bg-[#ffffff10] transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-white"
+                      >
+                        <IconMinus size={18} />
+                      </button>
+                      <div className="w-12 text-center text-white font-medium bg-transparent border-x border-[#ffffff20] h-full flex items-center justify-center">
+                        {mintQuantity}
+                      </div>
+                      <button
+                        onClick={incrementQuantity}
+                        disabled={mintQuantity >= inputMax || isSoldOut}
+                        className="px-3 py-2 hover:bg-[#ffffff10] transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-white"
+                      >
+                        <IconPlus size={18} />
+                      </button>
+                    </div>
 
-                  <div className={Styles.limitRow}>
-                    <span className={Styles.limitItem}>
-                      Max/tx: {displayMaxPerTx}
-                    </span>
-                    <span className={Styles.limitItem}>
-                      Max/wallet: {displayMaxPerWallet}
-                    </span>
-                    <span className={Styles.limitItem}>
-                      Minted by you: {alreadyMinted.toString()}
-                    </span>
-                    <span className={Styles.limitItem}>
-                      Available now: {maxMintable > 0 ? maxMintable : 0}
-                    </span>
+                    <div className="flex flex-col items-end gap-1 text-sm text-gray-300">
+                      <div className={Styles.limitItem}>
+                        <span>Minted by you: </span>
+                        <Link href={`/turby_mint/${address}`}>
+                          <a className="text-[#6450E3] hover:underline font-medium">
+                            {alreadyMinted.toString()}
+                          </a>
+                        </Link>
+                      </div>
+                      <span className={Styles.limitItem}>
+                        Available now: {maxMintable > 0 ? maxMintable : 0}
+                      </span>
+                    </div>
                   </div>
+
+                  {/* Limits moved to tooltip or just shown above if needed, but user asked to remove max/tx from below input. 
+                      However, we still need to show them somewhere? The prompt implies "rest of the rules should be applied here 
+                      as well such as max per transaction , max per wallet etc" which we did in logic. 
+                      "Use (...) faq object - which covers all the rules of minting eg. max per transactions & max per wallet"
+                      So maybe we remove the text display completely? "remove max per transaction and max per wallet from below the input bar"
+                      I will remove the old limitRow.
+                   */}
 
                   {/* ETH Balance Display */}
                   <div className={Styles.balanceRow}>
@@ -515,6 +516,8 @@ export default function TurbyMintPage() {
             </div>
           </div>
         </main>
+
+        <FAQContainer type="turby" customData={TURBY_FAQS} />
 
         <Footer />
       </div>

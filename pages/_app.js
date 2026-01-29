@@ -15,7 +15,7 @@ import { AnimatePresence } from "motion/react";
 
 // RainbowKit imports
 import "@rainbow-me/rainbowkit/styles.css";
-import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { darkTheme, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { WagmiConfig } from "wagmi";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { wagmiConfig, chains } from "../utils/wagmi-config";
@@ -61,7 +61,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <WagmiConfig config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider chains={chains}>
+        <RainbowKitProvider
+          chains={chains}
+          modalSize="compact"
+          theme={darkTheme()}
+        >
           <ThemeContext.Provider value={{ theme, setTheme }}>
             <AnimatePresence mode="wait" initial={false}>
               <Component {...pageProps} />
