@@ -48,7 +48,7 @@ const NFT_CONFIG = {
   chain: "Base Sepolia",
   description:
     "Turby is a unique NFT turtle, a symbol of our community for Lighthouse. Cute, quirky, and truly yours—join the Web3 movement and own a piece of the future with on-chain permanence and personality!",
-  totalSupply: 3333,
+  // totalSupply: 3333, // Removed for infinite supply
   mintedCount: 133,
   price: 0.0001, // ETH fallback
   contractAddress: "0xef81468b1caA25Df98efB436C62450b10A34819a",
@@ -149,9 +149,6 @@ export default function TurbyMintPage() {
   const alreadyMinted =
     typeof mintedByWalletData === "bigint" ? mintedByWalletData : BigInt(0);
 
-  const totalSupplyLimit = BigInt(NFT_CONFIG.totalSupply);
-  const remainingSupply =
-    totalSupplyLimit > mintedCount ? totalSupplyLimit - mintedCount : BigInt(0);
   const remainingWallet =
     maxPerWallet > 0
       ? maxPerWallet > alreadyMinted
@@ -159,10 +156,13 @@ export default function TurbyMintPage() {
         : BigInt(0)
       : null;
 
-  let maxAllowed = remainingSupply;
-  if (maxPerTx > 0 && maxAllowed > maxPerTx) {
-    maxAllowed = maxPerTx;
-  }
+  // Infinite supply logic:
+  // We don't check a global remainingSupply.
+  // Initial maxAllowed is constrained by maxPerTx.
+  // If maxPerTx is 0 (formatted as "Unlimited"), we pick a reasonable safety cap for the UI (e.g. 50).
+  let maxAllowed = maxPerTx > 0 ? maxPerTx : BigInt(50);
+
+  // If there's a wallet limit, that's the hard ceiling (if we haven't already hit it).
   if (remainingWallet !== null && maxAllowed > remainingWallet) {
     maxAllowed = remainingWallet;
   }
@@ -281,7 +281,7 @@ export default function TurbyMintPage() {
       : isMintEnded
         ? "Minting window is over"
         : isSoldOut
-          ? "Sold out"
+          ? "Limit Reached"
           : !hasSufficientBalance
             ? "Insufficient ETH balance"
             : isMinting
