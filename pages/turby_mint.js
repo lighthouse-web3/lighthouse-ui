@@ -322,6 +322,23 @@ export default function TurbyMintPage() {
               {/* Title */}
               <h1 className={Styles.title}>{NFT_CONFIG.name}</h1>
 
+              {/* sqaure image of turby gif -> /turby_mint/turby.gif */}
+              <div
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <img
+                  src="/turby/turby_gif.gif"
+                  alt="Turby NFT"
+                  className={Styles.turbyGif}
+                />
+              </div>
+
               {/* Chain Badge */}
               <div className={Styles.chainBadge}>
                 <span className={Styles.chainLabel}>Chain:</span>
