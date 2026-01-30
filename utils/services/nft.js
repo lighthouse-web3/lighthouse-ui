@@ -1,3 +1,5 @@
+import { Alchemy, Network } from "alchemy-sdk";
+
 const LIGHTHOUSE_GATEWAY = "https://gateway.lighthouse.storage/ipfs/";
 
 const CONFIG = {

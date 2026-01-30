@@ -391,13 +391,13 @@ export default function TurbyMintPage() {
               <div className={Styles.statsRow}>
                 <div className={Styles.statItem}>
                   <span className={Styles.statValue}>
-                    {mintedCount.toString()} / {NFT_CONFIG.totalSupply}
+                    {mintedCount.toString()}
                   </span>
-                  <span className={Styles.statLabel}>Tokens</span>
+                  <span className={Styles.statLabel}>Tokens Minted</span>
                 </div>
                 <div className={Styles.statItem}>
                   <span className={Styles.statValue}>{displayPrice} ETH</span>
-                  <span className={Styles.statLabel}>Price</span>
+                  <span className={Styles.statLabel}>Price / Token</span>
                 </div>
               </div>
 
