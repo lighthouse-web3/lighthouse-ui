@@ -12,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ThemeContext from "../utils/services/Themecontext";
 import { themeChanger } from "../utils/services/theme";
 import { AnimatePresence } from "motion/react";
+import { NewsBar } from "../containers";
 
 // RainbowKit imports
 import "@rainbow-me/rainbowkit/styles.css";
@@ -67,6 +68,7 @@ function MyApp({ Component, pageProps }) {
           theme={darkTheme()}
         >
           <ThemeContext.Provider value={{ theme, setTheme }}>
+            <NewsBar />
             <AnimatePresence mode="wait" initial={false}>
               <Component {...pageProps} />
             </AnimatePresence>

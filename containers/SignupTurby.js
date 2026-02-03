@@ -33,7 +33,7 @@ export default function SignupTurby({ id }) {
       <div
         ref={componentRef}
         id={id}
-        className="styleContainer min-h-screen w-full rounded-md flex flex-col items-center justify-center  relative overflow-hidden px-4 py-8"
+        className="styleContainer my-12 w-full rounded-md flex flex-col items-center justify-center  relative overflow-hidden px-4 py-8"
       >
         {/* Animated Turby_Astro.png image - Right side */}
         {isInView && window.innerWidth >= 800 && (

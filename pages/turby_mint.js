@@ -47,7 +47,7 @@ const NFT_CONFIG = {
   name: "MINT TURBY",
   chain: "Base Sepolia",
   description:
-    "Turby is the on-chain mascot of Lighthouse. It represents permanent data and long-term digital ownership.Turby NFTs are stored using Lighthouse’s perpetual storage infrastructure. The artwork and metadata are designed to remain available long-term.",
+    "Turby is the on-chain mascot of Lighthouse. It represents permanent data and long-term digital ownership. Turby NFTs are stored using Lighthouse’s perpetual storage infrastructure. The artwork and metadata are designed to remain available long-term.",
   // totalSupply: 3333, // Removed for infinite supply
   mintedCount: 133,
   price: 0.0001, // ETH fallback
@@ -59,23 +59,6 @@ const NFT_CONFIG = {
     contactMail: "mail@lighthouse.storage",
   },
 };
-
-const TURBY_FAQS = [
-  {
-    attributes: {
-      question: "What are the minting limits?",
-      answer:
-        "The minting limits are enforced by the smart contract to ensure fair distribution. You can check the 'Max/tx' and 'Max/wallet' values displayed above the mint button.",
-    },
-  },
-  {
-    attributes: {
-      question: "How do I see my minted NFTs?",
-      answer:
-        "Once you have minted your Turby NFTs, you can view them by clicking on 'Minted by you' or your wallet address in the minting section. This will take you to your personal profile page.",
-    },
-  },
-];
 
 export default function TurbyMintPage() {
   // RainbowKit/Wagmi hooks
@@ -547,7 +530,7 @@ export default function TurbyMintPage() {
           </div>
         </main>
 
-        <FAQContainer type="turby" customData={TURBY_FAQS} />
+        <FAQContainer type="turby" />
 
         <Footer />
       </div>

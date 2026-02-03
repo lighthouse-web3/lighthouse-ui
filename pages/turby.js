@@ -43,7 +43,7 @@ export default function PricingPage() {
           <div className="w-full">
             <TitleSeparator
               topTitle="About Lighthouse & Turby NFTs"
-              title="Lighthouse is a decentralized storage protocol that makes data permanent and accessible. Our Turby NFT collection celebrates this mission while building a community of web3 enthusiasts."
+              title="Lighthouse is a decentralized storage protocol focused on long-term data availability. The Turby NFT collection represents this mission through culture and community. Turby is designed as a symbol of Lighthouse values, bringing together builders, creators, and users who care about durability and long-term access to data."
               style={{ textAlign: "center" }}
             />
             <div className="my-16">
