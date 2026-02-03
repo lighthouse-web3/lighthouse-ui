@@ -3,10 +3,15 @@ import { configureChains, createConfig } from "wagmi";
 import { baseSepolia } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 import {
+  braveWallet,
+  coinbaseWallet,
   metaMaskWallet,
+  okxWallet,
   phantomWallet,
+  rabbyWallet,
   rainbowWallet,
-  walletConnectWallet,
+  trustWallet,
+  uniswapWallet,
   injectedWallet,
 } from "@rainbow-me/rainbowkit/wallets";
 
@@ -23,16 +28,28 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
 const projectId =
   process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "demo-project-id";
 console.log(projectId);
+const appName = "Lighthouse";
 
 const connectors = connectorsForWallets([
   {
-    groupName: "Suggested",
+    groupName: "Recommended",
     wallets: [
-      rainbowWallet({ projectId, chains }),
+      // Base wallet uses Coinbase Wallet in RainbowKit v1
+      coinbaseWallet({ appName, chains }),
+      braveWallet({ chains }),
       metaMaskWallet({ projectId, chains }),
-      injectedWallet({ projectId, chains }),
       phantomWallet({ chains }),
-      // walletConnectWallet({ projectId, chains }),
+    ],
+  },
+  {
+    groupName: "Others",
+    wallets: [
+      okxWallet({ projectId, chains }),
+      rabbyWallet({ chains }),
+      rainbowWallet({ projectId, chains }),
+      trustWallet({ projectId, chains }),
+      uniswapWallet({ projectId, chains }),
+      injectedWallet({ chains }),
     ],
   },
 ]);
