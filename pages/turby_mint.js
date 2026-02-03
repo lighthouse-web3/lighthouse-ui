@@ -47,7 +47,7 @@ const NFT_CONFIG = {
   name: "MINT TURBY",
   chain: "Base Sepolia",
   description:
-    "Turby is a unique NFT turtle, a symbol of our community for Lighthouse. Cute, quirky, and truly yours—join the Web3 movement and own a piece of the future with on-chain permanence and personality!",
+    "Turby is the on-chain mascot of Lighthouse. It represents permanent data and long-term digital ownership.Turby NFTs are stored using Lighthouse’s perpetual storage infrastructure. The artwork and metadata are designed to remain available long-term.",
   // totalSupply: 3333, // Removed for infinite supply
   mintedCount: 133,
   price: 0.0001, // ETH fallback
@@ -394,14 +394,14 @@ export default function TurbyMintPage() {
                 >
                   <IconBrandTelegram size={20} />
                 </a>
-                <a
+                {/* <a
                   href={NFT_CONFIG.socialLinks.contactMail}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={Styles.socialIcon}
                 >
                   <IconMail size={20} />
-                </a>
+                </a> */}
               </div>
 
               {/* Stats Row */}
@@ -410,11 +410,11 @@ export default function TurbyMintPage() {
                   <span className={Styles.statValue}>
                     {mintedCount.toString()}
                   </span>
-                  <span className={Styles.statLabel}>Tokens Minted</span>
+                  <span className={Styles.statLabel}>NFTs Minted</span>
                 </div>
                 <div className={Styles.statItem}>
                   <span className={Styles.statValue}>{displayPrice} ETH</span>
-                  <span className={Styles.statLabel}>Price / Token</span>
+                  <span className={Styles.statLabel}>Price / NFT</span>
                 </div>
               </div>
 

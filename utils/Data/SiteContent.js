@@ -273,44 +273,98 @@ export const LandingPageData = {
   TurbyFAQs: [
     {
       attributes: {
-        question: "What is the Turby NFT collection?",
+        question: "Who is behind Turby?",
         answer:
-          "The Turby NFT collection consists of unique digital collectibles featuring Turby, the official mascot of Lighthouse Storage. Each NFT has unique traits, accessories, and backgrounds, stored permanently on the Lighthouse network.",
-      },
-    },
-    // {
-    //   attributes: {
-    //     question: "How much does it cost to mint a Turby NFT?",
-    //     answer:
-    //       "Waitlist members can mint for 0.05 ETH, while public sale pricing is 0.08 ETH. Gas fees are additional and depend on network congestion.",
-    //   },
-    // },
-    {
-      attributes: {
-        question: "What benefits do NFT holders receive?",
-        answer:
-          'Holders get free monthly storage credits, exclusive Discord access, early feature access, governance voting rights, and potential future airdrops. Full benefits are detailed in the "What You Get" section above.',
-      },
-    },
-    // {
-    //   attributes: {
-    //     question: "When is the mint date?",
-    //     answer:
-    //       "Waitlist minting begins on [DATE] at [TIME] UTC, followed by public sale 24 hours later. Join our Discord or Waitlist for the latest updates.",
-    //   },
-    // },
-    {
-      attributes: {
-        question: "How are the NFTs stored?",
-        answer:
-          "All Turby NFTs are stored on the Lighthouse decentralized storage network, ensuring permanent availability and true ownership. The metadata and images are immutably stored and cannot be changed or removed.",
+          "Turby is created and maintained by the Lighthouse team, builders of decentralized and perpetual storage infrastructure.",
       },
     },
     {
       attributes: {
-        question: "Can I trade my Turby NFT?",
+        question: "Why does Turby matter?",
         answer:
-          "Yes! Turby NFTs can be traded on popular marketplaces like OpenSea, others. However, some exclusive benefits may be tied to original holders.",
+          "Turby represents Lighthouse culture on-chain and serves as a permanent marker of early participation in the Lighthouse ecosystem.",
+      },
+    },
+    {
+      attributes: {
+        question: "How is Turby stored?",
+        answer:
+          "Turby NFT metadata is stored using Lighthouse’s perpetual storage infrastructure and is designed for long-term accessibility.",
+      },
+    },
+    {
+      attributes: {
+        question: "Is the metadata permanent?",
+        answer:
+          "Yes. Turby metadata is stored in a way that is intended to remain accessible long-term without reliance on centralized servers.",
+      },
+    },
+    {
+      attributes: {
+        question: "What does owning Turby unlock?",
+        answer:
+          "Owning Turby may provide:<br/>Early access to Lighthouse experiments and product features<br/>Priority access to future drops and community activations<br/>Recognition as an early Lighthouse community supporter<br/>Utility may evolve over time.",
+      },
+    },
+    {
+      attributes: {
+        question: "What network is the mint on?",
+        answer: "The mint is deployed on Base mainnet.",
+      },
+    },
+    {
+      attributes: {
+        question: "Is there a total supply cap?",
+        answer:
+          "This mint does not currently display a fixed total supply. Minting limits are enforced per transaction and per wallet through the smart contract.",
+      },
+    },
+    {
+      attributes: {
+        question: "What are the minting limits?",
+        answer:
+          "Minting limits are enforced by the smart contract to ensure fair participation. You can view the maximum per transaction and per wallet above the mint button.",
+      },
+    },
+    {
+      attributes: {
+        question: "How much does it cost to mint Turby?",
+        answer:
+          "Each Turby NFT costs 0.0001 ETH.<br/>The pricing is community-first and designed to keep participation accessible.",
+      },
+    },
+    {
+      attributes: {
+        question: "How do I mint a Turby NFT?",
+        answer:
+          "Connect your wallet<br/>Choose the quantity within the allowed limits<br/>Confirm the transaction<br/>Turby will appear in your wallet",
+      },
+    },
+    {
+      attributes: {
+        question: "How do I see my minted NFTs?",
+        answer:
+          "After minting, click “Minted by you” or your wallet address to view your Turby NFTs.",
+      },
+    },
+    {
+      attributes: {
+        question: "Where can I verify the smart contract?",
+        answer:
+          "The smart contract address and explorer link are available on the mint page. The contract is verified.",
+      },
+    },
+    {
+      attributes: {
+        question: "Where can I learn more about Lighthouse?",
+        answer:
+          "You can explore Lighthouse’s website and documentation to learn more about the protocol and its approach to long-term data availability.",
+      },
+    },
+    {
+      attributes: {
+        question: "What is Turby ultimately about?",
+        answer: "Turby is about permanence.",
       },
     },
   ],
