@@ -34,7 +34,12 @@
       text-align: center;
       letter-spacing: 1px;
     }
-
+    &:hover {
+      p span {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+    }
   }
 }
 
@@ -42,14 +47,11 @@
   .NewsBar {
     min-height: 50px;
 
-    .bgClr {
-    }
     .contentBox {
       gap: 10px;
       p {
         font-size: 0.8rem;
       }
-
     }
   }
 }

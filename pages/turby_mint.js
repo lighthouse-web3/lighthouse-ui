@@ -45,7 +45,7 @@ import { TURBY_ABI } from "../utils/abi/turbyABI";
 // NFT Configuration - Update these values
 const NFT_CONFIG = {
   name: "MINT TURBY",
-  chain: "Base Sepolia",
+  chain: "Base",
   description:
     "Turby is the on-chain mascot of Lighthouse. It represents permanent data and long-term digital ownership. Turby NFTs are stored using Lighthouse’s perpetual storage infrastructure. The artwork and metadata are designed to remain available long-term.",
   // totalSupply: 3333, // Removed for infinite supply
@@ -530,7 +530,12 @@ export default function TurbyMintPage() {
           </div>
         </main>
 
-        <FAQContainer type="turby" />
+        {/* FAQ Section - Full height */}
+        <div className="flex items-center">
+          <div className="contentContainer styleContainer flex-1">
+            <FAQContainer type="turby" />
+          </div>
+        </div>
 
         <Footer />
       </div>

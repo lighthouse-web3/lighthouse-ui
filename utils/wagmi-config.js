@@ -35,20 +35,20 @@ const connectors = connectorsForWallets([
     groupName: "Recommended",
     wallets: [
       // Base wallet uses Coinbase Wallet in RainbowKit v1
-      coinbaseWallet({ appName, chains }),
-      braveWallet({ chains }),
       metaMaskWallet({ projectId, chains }),
       phantomWallet({ chains }),
+      braveWallet({ chains }),
+      rabbyWallet({ chains }),
     ],
   },
   {
     groupName: "Others",
     wallets: [
       okxWallet({ projectId, chains }),
-      rabbyWallet({ chains }),
       rainbowWallet({ projectId, chains }),
       trustWallet({ projectId, chains }),
       uniswapWallet({ projectId, chains }),
+      coinbaseWallet({ appName, chains }),
       injectedWallet({ chains }),
     ],
   },
