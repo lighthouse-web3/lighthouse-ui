@@ -1,5 +1,5 @@
 export const disclaimerText =
-  "Turby by Lighthouse &middot; Mint starts 5 Feb &middot; Limited 7-day window";
+  "Turby by Lighthouse is live · Open for 7 days · Ends 12 Feb, 13:30 UTC";
 
 export const LandingPageData = {
   HeroSection: {
@@ -281,13 +281,15 @@ export const LandingPageData = {
     {
       attributes: {
         question: "When does the mint go live?",
-        answer: "The Turby mint goes live on 5 February at 13:30 UTC (7:00 PM IST).",
+        answer:
+          "The Turby mint goes live on 5 February at 13:30 UTC (7:00 PM IST).",
       },
     },
     {
       attributes: {
         question: "How long will the mint be live?",
-        answer: "The mint will be live for 7 days, ending on 12 February at 13:30 UTC.",
+        answer:
+          "The mint will be live for 7 days, ending on 12 February at 13:30 UTC.",
       },
     },
     {
