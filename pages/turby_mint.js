@@ -50,7 +50,7 @@ const NFT_CONFIG = {
     "Turby is the on-chain mascot of Lighthouse. It represents permanent data and long-term digital ownership. Turby NFTs are stored using Lighthouse’s perpetual storage infrastructure. The artwork and metadata are designed to remain available long-term.",
   // totalSupply: 3333, // Removed for infinite supply
   mintedCount: 133,
-  price: 0.0001, // ETH fallback
+  price: 0.01, // ETH fallback
   contractAddress: "0xef81468b1caA25Df98efB436C62450b10A34819a",
   socialLinks: {
     twitter: "https://twitter.com/lighthouseweb3",

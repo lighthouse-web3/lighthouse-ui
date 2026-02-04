@@ -54,8 +54,8 @@ export default function TurbyProfilePage() {
   };
 
   const totalMinted = nfts.length;
-  // Assuming strict price of 0.0001 ETH per mint as per main page config
-  const mintPrice = 0.0001;
+  // Assuming strict price of 0.01 ETH per mint as per main page config
+  const mintPrice = 0.01;
   const totalValue = totalMinted * mintPrice;
 
   return (

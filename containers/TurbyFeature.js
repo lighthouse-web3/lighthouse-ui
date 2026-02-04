@@ -25,7 +25,6 @@ export default function TurbyFeatures() {
     {
       title: "Long-Term Continuity",
       description: [
-        "Why holding Turby continues to matter over time",
         "Eligibility for future Turby releases",
         "Inclusion in Lighthouse community initiatives",
         "Participation in ecosystem pilots",
