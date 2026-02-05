@@ -1,11 +1,12 @@
 import { Alchemy, Network } from "alchemy-sdk";
+import { NFTcontractAddress, NFTNetwork } from "../Data/config";
 
 const LIGHTHOUSE_GATEWAY = "https://gateway.lighthouse.storage/ipfs/";
 
 const CONFIG = {
   alchemyApiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY,
-  network: "base-sepolia", // "base" for mainnet
-  contractAddress: "0xef81468b1caA25Df98efB436C62450b10A34819a",
+  network: NFTNetwork,
+  contractAddress: NFTcontractAddress,
   ownerAddress: "0x0035cd0CA79A5b156d5443b698655DBDc5403B45",
 };
 

@@ -1,3 +1,4 @@
+import { NFTcontractAddress, NFTNetwork } from "../../utils/Data/config";
 import { fetchOwnedNFTs } from "../../utils/services/nft";
 
 export default async function handler(req, res) {
@@ -13,8 +14,8 @@ export default async function handler(req, res) {
 
   // Use server-side environment variable for Alchemy
   const alchemyApiKey = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY;
-  const network = "base-sepolia";
-  const contractAddress = "0xef81468b1caA25Df98efB436C62450b10A34819a";
+  const network = NFTNetwork;
+  const contractAddress = NFTcontractAddress;
 
   try {
     const nfts = await fetchOwnedNFTs(

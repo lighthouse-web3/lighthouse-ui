@@ -32,7 +32,7 @@ import {
   useWaitForTransaction,
 } from "wagmi";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
-import { baseSepolia } from "wagmi/chains";
+import { base, baseSepolia } from "wagmi/chains";
 
 // Helper to truncate wallet address
 const truncateAddress = (addr) => {
@@ -41,6 +41,7 @@ const truncateAddress = (addr) => {
 };
 
 import { TURBY_ABI } from "../utils/abi/turbyABI";
+import { NFTcontractAddress, NFTNetwork } from "../utils/Data/config";
 
 // NFT Configuration - Update these values
 const NFT_CONFIG = {
@@ -48,10 +49,9 @@ const NFT_CONFIG = {
   chain: "Base",
   description:
     "Turby is the on-chain mascot of Lighthouse. It represents permanent data and long-term digital ownership. Turby NFTs are stored using Lighthouse’s perpetual storage infrastructure. The artwork and metadata are designed to remain available long-term.",
-  // totalSupply: 3333, // Removed for infinite supply
   mintedCount: 133,
   price: 0.01, // ETH fallback
-  contractAddress: "0xef81468b1caA25Df98efB436C62450b10A34819a",
+  contractAddress: NFTcontractAddress,
   socialLinks: {
     twitter: "https://twitter.com/lighthouseweb3",
     telegram: "https://t.me/LighthouseStorage",
@@ -68,9 +68,11 @@ export default function TurbyMintPage() {
   const router = useRouter();
   const { data: balanceData } = useBalance({
     address: address,
-    chainId: baseSepolia.id,
+    chainId: NFTNetwork === "base" ? base.id : baseSepolia.id,
     watch: true,
   });
+  console.log("balanceData", balanceData);
+  console.log(NFTNetwork === "base" ? base.id : baseSepolia.id);
 
   const [mintQuantityInput, setMintQuantityInput] = useState("1");
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
