@@ -16,6 +16,8 @@ import {
   IconMinus,
   IconUser,
 } from "@tabler/icons-react";
+import { SiOpensea } from "react-icons/si";
+
 import { formatEther, parseEther } from "viem";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -58,6 +60,7 @@ const NFT_CONFIG = {
     twitter: "https://twitter.com/lighthouseweb3",
     telegram: "https://t.me/LighthouseStorage",
     discord: "https://discord.com/invite/c4a4CGCdJG",
+    opensea: "https://opensea.io/collection/lighthouse-turby-354048658",
     contactMail: "mail@lighthouse.storage",
   },
 };
@@ -394,6 +397,14 @@ export default function TurbyMintPage() {
                   className={Styles.socialIcon}
                 >
                   <IconBrandTelegram size={20} />
+                </a>
+                <a
+                  href={NFT_CONFIG.socialLinks.opensea}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={Styles.socialIcon}
+                >
+                  <SiOpensea size={20} />
                 </a>
                 {/* <a
                   href={NFT_CONFIG.socialLinks.contactMail}
