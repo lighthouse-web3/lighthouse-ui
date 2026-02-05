@@ -64,7 +64,12 @@ const Pricing = () => {
         <button
           className={styles.button}
           onClick={() =>
-            window.open("https://files.lighthouse.storage/", "_self")
+            plan.title === "Customize"
+              ? window.open(
+                  "https://airtable.com/app0KP7ENgYlLDcJ0/shrPFC2TgojuOAYO4",
+                  "_blank"
+                )
+              : window.open("https://files.lighthouse.storage/", "_self")
           }
         >
           {plan.buttonText}

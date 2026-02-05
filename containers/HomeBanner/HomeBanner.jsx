@@ -119,10 +119,7 @@ function HomeBanner() {
             className="fillBtn__grey"
             style={{ margin: "0px 8px" }}
             onClick={() => {
-              window.open(
-                "https://docs.lighthouse.storage/lighthouse-1/",
-                "_blank"
-              );
+              window.open("https://docs.lighthouse.storage/", "_blank");
             }}
           >
             Explore Docs

@@ -5,6 +5,12 @@ const BREVO_API_KEY = process.env.NEXT_PUBLIC_BREVO_API;
 
 export const sendEmail = async (email) => {
   try {
+    if (!brevo_key) {
+      console.error("Brevo API key is not configured");
+      notify("Email service configuration error", "error");
+      return;
+    }
+
     if (validateEmail(email)) {
       const options = {
         method: "POST",
@@ -70,8 +76,33 @@ export const validateEmail = (email) => {
   return String(email)
     .toLowerCase()
     .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     );
+};
+
+export const addEmailToList = async (email, listId, attributes) => {
+  const options = {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "content-type": "application/json",
+      "api-key": BREVO_API_KEY,
+    },
+    body: JSON.stringify({
+      attributes: attributes || {},
+      updateEnabled: true,
+      email: email,
+      listIds: [listId],
+    }),
+  };
+
+  try {
+    const response = await fetch("https://api.brevo.com/v3/contacts", options);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export const addEmailToList = async (email, listId, attributes) => {
