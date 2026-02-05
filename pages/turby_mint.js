@@ -30,6 +30,8 @@ import {
   useDisconnect,
   usePrepareContractWrite,
   useWaitForTransaction,
+  useNetwork,
+  useSwitchNetwork,
 } from "wagmi";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { base, baseSepolia } from "wagmi/chains";
@@ -167,6 +169,17 @@ export default function TurbyMintPage() {
 
   // Check if user has sufficient balance
   const hasSufficientBalance = balanceValue >= totalCostWei;
+
+  // Network Switching Logic
+  const { chain } = useNetwork();
+  const { switchNetwork } = useSwitchNetwork();
+  const targetChainId = NFTNetwork === "base" ? base.id : baseSepolia.id;
+
+  useEffect(() => {
+    if (isConnected && chain?.id !== targetChainId && switchNetwork) {
+      switchNetwork(targetChainId);
+    }
+  }, [isConnected, chain, switchNetwork, targetChainId]);
 
   useEffect(() => {
     setMintQuantityInput((current) => {

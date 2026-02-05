@@ -1,6 +1,6 @@
 import { connectorsForWallets } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig } from "wagmi";
-import { baseSepolia } from "wagmi/chains";
+import { base, baseSepolia } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 import {
   braveWallet,
@@ -21,7 +21,7 @@ import {
  */
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [baseSepolia],
+  [base, baseSepolia],
   [publicProvider()],
 );
 
