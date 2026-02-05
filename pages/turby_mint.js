@@ -131,6 +131,8 @@ export default function TurbyMintPage() {
       ? totalSupplyData
       : BigInt(NFT_CONFIG.mintedCount);
   const maxPerTx = typeof maxPerTxData === "bigint" ? maxPerTxData : BigInt(0);
+  console.log(maxPerTx, "max per tx");
+
   const maxPerWallet =
     typeof maxPerWalletData === "bigint" ? maxPerWalletData : BigInt(0);
   const alreadyMinted =
@@ -148,6 +150,7 @@ export default function TurbyMintPage() {
   // Initial maxAllowed is constrained by maxPerTx.
   // If maxPerTx is 0 (formatted as "Unlimited"), we pick a reasonable safety cap for the UI (e.g. 50).
   let maxAllowed = maxPerTx > 0 ? maxPerTx : BigInt(50);
+  console.log(maxAllowed, "max allowed");
 
   // If there's a wallet limit, that's the hard ceiling (if we haven't already hit it).
   if (remainingWallet !== null && maxAllowed > remainingWallet) {
@@ -193,7 +196,6 @@ export default function TurbyMintPage() {
 
   const canPrepareMint =
     isConnected &&
-    !isMintEnded &&
     !isSoldOut &&
     mintQuantity > 0 &&
     mintQuantity <= maxMintable &&
@@ -250,7 +252,7 @@ export default function TurbyMintPage() {
       return;
     }
 
-    if (isMintEnded || isSoldOut || !mintWrite) {
+    if (isSoldOut || !mintWrite) {
       return;
     }
 
@@ -276,26 +278,30 @@ export default function TurbyMintPage() {
     ? "Connecting..."
     : !isConnected
       ? "Connect Wallet"
-      : isMintEnded
-        ? "Minting window is over"
-        : isSoldOut
-          ? "Limit Reached"
-          : !hasSufficientBalance
-            ? "Insufficient ETH balance"
-            : isMinting
-              ? "Minting..."
-              : isConfirming
-                ? "Confirming..."
-                : `Mint ${mintQuantity} NFT${mintQuantity > 1 ? "s" : ""}`;
+      : isSoldOut
+        ? "Limit Reached"
+        : !hasSufficientBalance
+          ? "Insufficient ETH balance"
+          : isMinting
+            ? "Minting..."
+            : isConfirming
+              ? "Confirming..."
+              : `Mint ${mintQuantity} NFT${mintQuantity > 1 ? "s" : ""}`;
+
+  console.log(isConnected);
+  console.log(isMintEnded);
+  console.log(isSoldOut);
+  console.log(hasSufficientBalance);
 
   const isMintActionDisabled =
     isConnected &&
-    (isMintEnded ||
-      isSoldOut ||
+    (isSoldOut ||
       !hasSufficientBalance ||
       isMinting ||
       isConfirming ||
       !mintWrite);
+
+  console.log(isMintActionDisabled, "isMintActionDisabled");
 
   return (
     <>
@@ -517,12 +523,6 @@ export default function TurbyMintPage() {
                 </div>
               )}
 
-              {isConnected && isMintEnded && (
-                <div className={Styles.mintClosedBanner}>
-                  Minting window is over.
-                </div>
-              )}
-
               {/* Connect/Mint Button */}
               <button
                 className={`${Styles.mintButton} ${
@@ -535,12 +535,6 @@ export default function TurbyMintPage() {
               >
                 {buttonLabel}
               </button>
-
-              {/* Powered By */}
-              {/* <div className={Styles.poweredBy}>
-                <span>Powered by</span>
-                <img src="/logo.svg" alt="Lighthouse" height={20} />
-              </div> */}
             </div>
           </div>
         </main>
