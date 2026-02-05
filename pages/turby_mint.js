@@ -207,7 +207,7 @@ export default function TurbyMintPage() {
     functionName: "mint",
     args: [BigInt(mintQuantity)],
     value: totalCostWei,
-    chainId: baseSepolia.id,
+    chainId: NFTNetwork === "base" ? base.id : baseSepolia.id,
     enabled: canPrepareMint,
   });
 
@@ -252,7 +252,7 @@ export default function TurbyMintPage() {
       return;
     }
 
-    if (isSoldOut || !mintWrite) {
+    if (isSoldOut) {
       return;
     }
 
