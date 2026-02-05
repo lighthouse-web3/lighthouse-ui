@@ -32,7 +32,8 @@
   @include flex-setup(column, flex-start);
   justify-content: center;
   align-items: center;
-  line-height: 100%;
+  gap: 10px;
+  line-height: 130%;
   letter-spacing: 0%;
   text-align: center;
   background: var(--featureCard-bg-clr);
@@ -96,7 +97,7 @@
   font-family: Open Sans;
   font-weight: 400;
   font-size: 14px;
-  line-height: 100%;
+  line-height: 130%;
   letter-spacing: 0%;
 
   table {

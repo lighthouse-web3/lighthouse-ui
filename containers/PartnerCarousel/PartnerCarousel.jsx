@@ -8,7 +8,7 @@ function PartnerCarousel() {
   const { theme, setTheme } = useContext(ThemeContext);
   return (
     <div className={Styles.PartnerCarousel}>
-      <TitleSeparator title={"Trusted By"} />
+      <TitleSeparator topTitle={"Trusted By"} />
 
       <div className={Styles.PartnerCarousel__brandLogoContainer}>
         {LandingPageData?.clientsLogo?.map((item, index) => (

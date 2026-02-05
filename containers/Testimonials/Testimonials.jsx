@@ -10,7 +10,7 @@ function Testimonials() {
         <p></p>
         <p>Testimonials</p>
       </div> */}
-      <TitleSeparator title={"Testimonials"} />
+      <TitleSeparator topTitle={"Testimonials"} />
 
       <div className={Style.Testimonials__cardContainer}>
         {testimonialSection?.testimonials.map((item, index) => (

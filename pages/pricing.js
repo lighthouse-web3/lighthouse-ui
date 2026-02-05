@@ -16,17 +16,17 @@ export default function PricingPage() {
       <div className={"bodyContainer"}>
         <Header />
         <div className="sectionContainer">
-          <div className="contentContainer container">
+          <div className="contentContainer styleContainer">
             <Pricing />
           </div>
           <LogoMarquee />
 
-          <div className="contentContainer container">
+          <div className="contentContainer styleContainer">
             <br />
             <br />
             <PricingTable />
           </div>
-          <div className="contentContainer container">
+          <div className="contentContainer styleContainer">
             <FAQContainer type="pricing" />
           </div>
         </div>

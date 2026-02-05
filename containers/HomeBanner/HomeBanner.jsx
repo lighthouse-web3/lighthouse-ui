@@ -99,7 +99,7 @@ function HomeBanner() {
           }}
         />
       </span>
-      <div className={Styles.infoBox + " container"} data-aos="fade-up">
+      <div className={Styles.infoBox + " styleContainer"} data-aos="fade-up">
         <h1
           className={Styles.title}
           dangerouslySetInnerHTML={{

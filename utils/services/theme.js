@@ -39,6 +39,36 @@ const ThemeProperties = [
     dark: `url("/wavePattern_dark.svg")`,
     light: `url("/wavePattern_light.svg")`,
   },
+  {
+    property: "--txt-secondary-clr",
+    dark: "rgba(255, 255, 255, 0.7)",
+    light: "rgba(0, 0, 0, 0.6)",
+  },
+  {
+    property: "--card-bg-clr",
+    dark: "rgba(255, 255, 255, 0.05)",
+    light: "rgba(0, 0, 0, 0.05)",
+  },
+  {
+    property: "--card-bg-hover-clr",
+    dark: "rgba(255, 255, 255, 0.1)",
+    light: "rgba(0, 0, 0, 0.1)",
+  },
+  {
+    property: "--card-border-clr",
+    dark: "rgba(255, 255, 255, 0.1)",
+    light: "rgba(0, 0, 0, 0.1)",
+  },
+  {
+    property: "--hero-overlay-start",
+    dark: "rgba(0, 0, 0, 0.4)",
+    light: "rgba(255, 255, 255, 0.4)",
+  },
+  {
+    property: "--hero-overlay-mid",
+    dark: "rgba(0, 0, 0, 0.8)",
+    light: "rgba(255, 255, 255, 0.8)",
+  },
 ];
 
 export const themeChanger = (theme) => {
@@ -47,7 +77,7 @@ export const themeChanger = (theme) => {
   ThemeProperties.forEach((property) => {
     document.documentElement.style.setProperty(
       `${property?.property}`,
-      theme === "dark" ? property?.dark : property?.light
+      theme === "dark" ? property?.dark : property?.light,
     );
   });
 };

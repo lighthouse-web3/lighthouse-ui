@@ -6,7 +6,7 @@ import styles from "./LogoMarquee.module.scss";
 export default function LogoMarquee() {
   return (
     <div className={styles.LogoMarqueeContainer}>
-      <TitleSeparator title={"Trusted by"} />
+      <TitleSeparator topTitle={"Trusted by"} />
       <div className={styles.marqueeContainer}>
         <div className={styles.marquee}>
           {LandingPageData?.clientsLogo?.map((logo, index) => (

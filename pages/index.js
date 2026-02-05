@@ -23,20 +23,21 @@ export default function Home() {
         <div className="contentContainer">
           <HomeBanner />
         </div>
-        <div className="container">
+        <div className="styleContainer">
           <FeatureCompare />
         </div>
-        <div className="container">
+        <div className="styleContainer">
           <Pricing />
         </div>
+
         <div style={{ minHeight: "auto" }}>
-          <div className="contentContainer container">
+          <div className="contentContainer styleContainer">
             <PartnerCarousel />
           </div>
         </div>
         <div style={{ minHeight: "auto" }}>
-          <div className="contentContainer container">
-            <TitleSeparator title={"Empowering the Data Economy"} />
+          <div className="contentContainer styleContainer">
+            <TitleSeparator topTitle={"Empowering the Data Economy"} />
             {LandingPageData.lighthouseSuit.map((data, index) => (
               <div key={index}>
                 <LighthouseSuit data={{ ...data, index }} />
@@ -46,18 +47,18 @@ export default function Home() {
           </div>
         </div>
         <div style={{ minHeight: "auto" }}>
-          <div className="contentContainer container">
-            <TitleSeparator title={"Lighthouse Ecosystem"} />
+          <div className="contentContainer styleContainer">
+            <TitleSeparator topTitle={"Lighthouse Ecosystem"} />
             <EcosystemGrid />
           </div>
         </div>
         <div style={{ minHeight: "auto" }}>
-          <div className="contentContainer container">
+          <div className="contentContainer styleContainer">
             <Testimonials />
           </div>
         </div>
         <FeatureCardList />
-        <div className="contentContainer container">
+        <div className="contentContainer styleContainer">
           <FAQContainer />
         </div>
         <Footer />

@@ -15,7 +15,7 @@ export default function Documentation() {
             minHeight: "auto",
           }}
         >
-          <div className="contentContainer container">
+          <div className="contentContainer styleContainer">
             <DocContainer />
           </div>
         </div>
@@ -25,7 +25,7 @@ export default function Documentation() {
             minHeight: "auto",
           }}
         >
-          <div className="contentContainer container">
+          <div className="contentContainer styleContainer">
             <DocContainer2 />
           </div>
         </div>

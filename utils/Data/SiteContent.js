@@ -1,5 +1,5 @@
 export const disclaimerText =
-  "Filecoin Storage Deals are Live via our SDK and Files Dapp";
+  "Turby by Lighthouse is live · Open for 7 days · Ends 12 Feb, 13:30 UTC";
 
 export const LandingPageData = {
   HeroSection: {
@@ -266,6 +266,75 @@ export const LandingPageData = {
         question: "What does it mean by permanent storage?",
         answer:
           "Permanent storage means you pay once for your files and they are intended to be stored forever. There is no need for recurring payments to retain your stored files.",
+      },
+    },
+  ],
+
+  TurbyFAQs: [
+    {
+      attributes: {
+        question: "What is Turby?",
+        answer:
+          "Turby is the official mascot of Lighthouse. The Turby NFT represents Lighthouse culture and the community around long-term data availability.",
+      },
+    },
+    {
+      attributes: {
+        question: "When does the mint go live?",
+        answer:
+          "The Turby mint goes live on 5 February at 13:30 UTC (7:00 PM IST).",
+      },
+    },
+    {
+      attributes: {
+        question: "How long will the mint be live?",
+        answer:
+          "The mint will be live for 7 days, ending on 12 February at 13:30 UTC.",
+      },
+    },
+    {
+      attributes: {
+        question: "What network is the mint on?",
+        answer: "The mint is live on Base mainnet.",
+      },
+    },
+    {
+      attributes: {
+        question: "How much does it cost to mint?",
+        answer: "Each Turby NFT costs approximately 0.01 ETH.",
+      },
+    },
+    {
+      attributes: {
+        question: "How many can I mint?",
+        answer: "Each wallet can mint up to 10 Turby NFTs.",
+      },
+    },
+    {
+      attributes: {
+        question: "How are Turby NFTs stored?",
+        answer:
+          "Turby NFT artwork and metadata are stored using Lighthouse's storage infrastructure and are designed for long-term accessibility.",
+      },
+    },
+    {
+      attributes: {
+        question: "Can I trade my Turby NFT?",
+        answer:
+          "Yes. Turby NFTs can be transferred or traded on supported NFT marketplaces.",
+      },
+    },
+    {
+      attributes: {
+        question: "Is there a fixed total supply?",
+        answer:
+          "The mint does not currently display a fixed total supply. Limits are enforced per wallet.",
+      },
+    },
+    {
+      attributes: {
+        question: "Who is behind Turby?",
+        answer: "Turby is created and maintained by the Lighthouse team.",
       },
     },
   ],

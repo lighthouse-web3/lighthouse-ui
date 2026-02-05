@@ -32,21 +32,21 @@ function FeatureCardList() {
   }, []);
 
   return (
-    <div className={Style.FeatureCardList + " container"}>
+    <div className={Style.FeatureCardList + " styleContainer"}>
       <div
         className={Style.FeatureCardList__BannerContainer}
         data-aos="fade-up"
       >
         <div className={Style.Banner} style={gradientStyle}>
-          <p>Experience the power of <br/>affordable permanent storage</p>
+          <p className="mb-4">
+            Experience the power of <br />
+            affordable permanent storage
+          </p>
           <button
             className="border_btn"
             ref={bannerRef}
             onClick={() => {
-              window.open(
-                "https://files.lighthouse.storage/",
-                "__blank"
-              );
+              window.open("https://files.lighthouse.storage/", "__blank");
             }}
           >
             Start Now

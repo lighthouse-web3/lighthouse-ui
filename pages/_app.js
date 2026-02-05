@@ -1,4 +1,5 @@
 import "../styles/globals.scss";
+import "../styles/tailwind.css";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -10,6 +11,18 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ThemeContext from "../utils/services/Themecontext";
 import { themeChanger } from "../utils/services/theme";
+import { AnimatePresence } from "motion/react";
+import { NewsBar } from "../containers";
+
+// RainbowKit imports
+import "@rainbow-me/rainbowkit/styles.css";
+import { darkTheme, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { WagmiConfig } from "wagmi";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { wagmiConfig, chains } from "../utils/wagmi-config";
+
+// Create a client for react-query
+const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState(null);
@@ -24,7 +37,6 @@ function MyApp({ Component, pageProps }) {
       disableMutationObserver: false,
       debounceDelay: 50,
       throttleDelay: 99,
-
       offset: 120,
       delay: 0,
       duration: 400,
@@ -34,7 +46,7 @@ function MyApp({ Component, pageProps }) {
       anchorPlacement: "top-center",
     });
     const themeFromLocalStorage = JSON.parse(
-      localStorage?.getItem("lighthouse.storage/store") || "{}"
+      localStorage?.getItem("lighthouse.storage/store") || "{}",
     );
     if (themeFromLocalStorage?.theme) {
       setTheme(themeFromLocalStorage?.theme);
@@ -48,12 +60,23 @@ function MyApp({ Component, pageProps }) {
   }, [theme]);
 
   return (
-    <>
-      <ThemeContext.Provider value={{ theme, setTheme }}>
-        <Component {...pageProps} />
-        <ToastContainer />
-      </ThemeContext.Provider>
-    </>
+    <WagmiConfig config={wagmiConfig}>
+      <QueryClientProvider client={queryClient}>
+        <RainbowKitProvider
+          chains={chains}
+          modalSize="compact"
+          theme={darkTheme()}
+        >
+          <ThemeContext.Provider value={{ theme, setTheme }}>
+            <NewsBar />
+            <AnimatePresence mode="wait" initial={false}>
+              <Component {...pageProps} />
+            </AnimatePresence>
+            <ToastContainer />
+          </ThemeContext.Provider>
+        </RainbowKitProvider>
+      </QueryClientProvider>
+    </WagmiConfig>
   );
 }
 

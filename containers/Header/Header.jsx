@@ -20,8 +20,8 @@ const links = [
     href: "",
   },
   {
-    title: "FAQ",
-    path: "/faq",
+    title: "Turby",
+    path: "/turby",
     href: "",
   },
   {
@@ -73,7 +73,7 @@ function Header({ style }) {
   }, [scrolling]);
 
   return (
-    <div className={Styles.Header + " container"}>
+    <div className={Styles.Header + " styleContainer"}>
       <div className={Styles.infoContainer}>
         <div className={Styles.logoContainer}>
           <div

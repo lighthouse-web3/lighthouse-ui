@@ -152,6 +152,9 @@
 
         &__link {
           text-transform: capitalize;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
 

@@ -39,7 +39,7 @@ function Footer() {
 
   return (
     <div className={Styles.Footer}>
-      <div className={Styles.Footer__upperFooter + " container"}>
+      <div className={Styles.Footer__upperFooter + " styleContainer"}>
         <div className={Styles.brandBox}>
           <div
             className={Styles.logo + " ptr"}
@@ -98,7 +98,7 @@ function Footer() {
               </span>
             </div>
             <p
-              className={Styles.mail}
+              className={Styles.mail + " mt-4"}
               onClick={() => {
                 window.open(`mailto:${socialLinks?.contactMail}`, "_blank");
               }}
@@ -128,7 +128,7 @@ function Footer() {
           <p className={Styles.siteMap__title}>Help</p>
           {footerData?.otherLinks.map((item, index) => (
             <p
-              className={Styles.siteMap__link + " ptr"}
+              className={Styles.siteMap__link + " flex ptr"}
               key={index}
               onClick={() => {
                 item?.path
@@ -143,7 +143,7 @@ function Footer() {
         </div>
 
         <div className={Styles.newsLetterBox}>
-          <p className={Styles.newsLetterBox__title}>Newsletter</p>
+          <p className={Styles.newsLetterBox__title + " mb-4"}>Newsletter</p>
           <input
             type="text"
             placeholder="user@mail.com"

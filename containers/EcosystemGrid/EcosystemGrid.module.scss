@@ -29,11 +29,11 @@
   transition: all 0.3s ease;
 
   &:hover {
-    background: var(--testimonialCard-border-clr)
+    background: var(--testimonialCard-border-clr);
   }
   @include screen-size(phone-only) {
     font-size: 0.9rem;
-}
+  }
 }
 
 .active {
@@ -52,6 +52,7 @@
   border-radius: 0.75rem;
   padding: 1.5rem;
   color: var(--txt-clr);
+  gap: 1rem;
 
   display: flex;
   flex-direction: column;

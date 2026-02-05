@@ -53,3 +53,10 @@ export const LogoMarquee = dynamic(() => import("./LogoMarquee/LogoMarquee"));
 export const PricingTable = dynamic(() =>
   import("./PricingTable/PricingTable")
 );
+export const HeroParallax = dynamic(() => import("./HeroParallax"));
+export const TurbyCarousel = dynamic(() => import("./TurbyCarousel"));
+export const WhyTurby = dynamic(() => import("./WhyTurby"), {
+  ssr: false,
+});
+export const TurbyFeatures = dynamic(() => import("./TurbyFeature"));
+export const SignupTurby = dynamic(() => import("./SignupTurby"));
