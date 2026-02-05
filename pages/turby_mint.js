@@ -292,14 +292,11 @@ export default function TurbyMintPage() {
   console.log(isMintEnded);
   console.log(isSoldOut);
   console.log(hasSufficientBalance);
+  console.log(!mintWrite, "mint write");
 
   const isMintActionDisabled =
     isConnected &&
-    (isSoldOut ||
-      !hasSufficientBalance ||
-      isMinting ||
-      isConfirming ||
-      !mintWrite);
+    (isSoldOut || !hasSufficientBalance || isMinting || isConfirming);
 
   console.log(isMintActionDisabled, "isMintActionDisabled");
 
