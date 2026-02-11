@@ -1,5 +1,4 @@
-export const disclaimerText =
-  "Turby by Lighthouse is live · Open for 7 days · Ends 12 Feb, 13:30 UTC";
+export const disclaimerText = "Turby by Lighthouse is live";
 
 export const LandingPageData = {
   HeroSection: {
