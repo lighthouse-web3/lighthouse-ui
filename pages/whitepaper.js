@@ -1,10 +1,11 @@
 import React from "react";
+import { whitepaperContent } from "../utils/Data/StaticPageContent";
 
 const Whitepaper = () => {
   return (
     <div style={{ width: "100%", height: "100vh" }}>
       <iframe
-        src="https://drive.google.com/file/d/1JT5R8FbcsiBGgCHu-DUcPuQu0Fm77xEM/preview"
+        src={whitepaperContent.previewUrl}
         width="100%"
         height="100%"
         allow="autoplay"

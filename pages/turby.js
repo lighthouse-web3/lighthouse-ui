@@ -11,6 +11,7 @@ import {
   SignupTurby,
   WhyTurby,
 } from "../containers";
+import { turbyPageContent } from "../utils/Data/TurbyContent";
 
 export default function PricingPage() {
   const [scrollY, setScrollY] = useState(0);
@@ -42,8 +43,8 @@ export default function PricingPage() {
         <div className="flex items-center">
           <div className="w-full">
             <TitleSeparator
-              topTitle="About Lighthouse & Turby NFTs"
-              title="Lighthouse is a decentralized storage protocol focused on long-term data availability. The Turby NFT collection represents this mission through culture and community. Turby is designed as a symbol of Lighthouse values, bringing together builders, creators, and users who care about durability and long-term access to data."
+              topTitle={turbyPageContent.aboutTitle}
+              title={turbyPageContent.aboutDescription}
               style={{ textAlign: "center" }}
             />
             <div className="my-16">
@@ -56,8 +57,8 @@ export default function PricingPage() {
         <div className="flex items-center">
           <div className="w-full">
             <TitleSeparator
-              topTitle="What You Get"
-              title="Turby NFT holders enjoy exclusive benefits and utilities within the Lighthouse ecosystem."
+              topTitle={turbyPageContent.benefitsTitle}
+              title={turbyPageContent.benefitsDescription}
               style={{ textAlign: "center" }}
             />
             <TurbyFeatures />
