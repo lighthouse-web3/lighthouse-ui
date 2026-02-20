@@ -641,7 +641,7 @@ export const LifetimePricing = [
 export const AnnualPricing = [
   {
     index: null,
-    title: "Free",
+    title: "Free Trial",
     cost: "0",
     icon: "/icons/free.png",
     icon_light: "/icons/free_light.png",
@@ -689,7 +689,7 @@ export const AnnualPricing = [
   {
     index: 7,
     title: "Lite",
-    cost: "10",
+    cost: "120",
     icon: "/icons/lite.png",
     icon_light: "/icons/lite_light.png",
     buttonText: "Get Started",
@@ -737,7 +737,7 @@ export const AnnualPricing = [
     title: "Premium",
     icon: "/icons/premium.png",
     icon_light: "/icons/premium_light.png",
-    cost: "42",
+    cost: "499",
     buttonText: "Get Started",
 
     features: [
@@ -751,6 +751,130 @@ export const AnnualPricing = [
       //   value: "1 TB",
       //   tooltip: "Additional bandwidth at $0.1 per GB / month",
       // },
+      {
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
+      },
+      {
+        title: "Filecoin",
+        value: "icon",
+        tooltip: "Storage Backup",
+      },
+      {
+        title: "Encryption & Token Gating",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Encryption & Token Gating",
+      },
+      {
+        title: "IPNS",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for IPNS",
+      },
+      {
+        title: "Migration Support",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Migration Support",
+      },
+    ],
+  },
+];
+
+export const MonthlyPricing = [
+  {
+    index: null,
+    title: "Free Trial",
+    cost: "0",
+    icon: "/icons/free.png",
+    icon_light: "/icons/free_light.png",
+    buttonText: "Try For Free",
+    features: [
+      {
+        title: "Total Storage",
+        value: "5 GB",
+        tooltip: "Total Storage Space",
+      },
+      {
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
+      },
+      {
+        title: "Filecoin",
+        value: "icon",
+        tooltip: "Storage Backup",
+      },
+      {
+        title: "Encryption & Token Gating",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Encryption & Token Gating",
+      },
+      {
+        title: "IPNS",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for IPNS",
+      },
+      {
+        title: "Migration Support",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Migration Support",
+      },
+    ],
+    onlyShow: true,
+  },
+  {
+    index: 200,
+    title: "Lite",
+    cost: "12",
+    icon: "/icons/lite.png",
+    icon_light: "/icons/lite_light.png",
+    buttonText: "Get Started",
+    features: [
+      {
+        title: "Total Storage",
+        value: "500 GB",
+        tooltip: "Total Storage Space",
+      },
+      {
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
+      },
+      {
+        title: "Filecoin",
+        value: "icon",
+        tooltip: "Storage Backup",
+      },
+      {
+        title: "Encryption & Token Gating",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Encryption & Token Gating",
+      },
+      {
+        title: "IPNS",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for IPNS",
+      },
+      {
+        title: "Migration Support",
+        value: "icon-cross",
+        tooltip: "Get Add-ons for Migration Support",
+      },
+    ],
+  },
+  {
+    index: 201,
+    title: "Premium",
+    icon: "/icons/premium.png",
+    icon_light: "/icons/premium_light.png",
+    cost: "49",
+    buttonText: "Get Started",
+    features: [
+      {
+        title: "Total Storage",
+        value: "2.5 TB",
+        tooltip: "Total Storage Space",
+      },
       {
         title: "IPFS",
         value: "icon",

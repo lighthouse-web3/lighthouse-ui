@@ -8,6 +8,7 @@ import {
   AddOnsPricing,
   AnnualPricing,
   LifetimePricing,
+  MonthlyPricing,
 } from "../../utils/Data/SiteContent";
 import styles from "./Pricing.module.scss";
 
@@ -40,25 +41,14 @@ const Pricing = () => {
         ) : (
           <p className={styles.price}>
             ${plan.cost}{" "}
-            <span>{activeTitle === "Annually" ? "/month" : "/lifetime"}</span>
+            <span>
+              {activeTitle === "Lifetime"
+                ? "/lifetime"
+                : activeTitle === "Annually"
+                ? "/annum"
+                : "/month"}
+            </span>
           </p>
-        )}
-
-        {activeTitle === "Annually" ? (
-          <p
-            // convert to tailwind
-            className="pt-4"
-            style={{
-              marginTop: "-20px",
-              fontWeight: "400",
-              fontSize: "0.9rem",
-              opacity: !plan.onlyShow ? "0.7" : "0",
-            }}
-          >
-            ( billed once yearly )
-          </p>
-        ) : (
-          <></>
         )}
 
         <button
@@ -72,7 +62,7 @@ const Pricing = () => {
               : window.open("https://files.lighthouse.storage/", "_self")
           }
         >
-          {plan.buttonText}
+          {plan.buttonText || "Get Started"}
         </button>
         <div className={styles.details}>
           <table>
@@ -111,6 +101,7 @@ const Pricing = () => {
           title1="Annually"
           title2="Lifetime"
           title3="Add-on"
+          title4="Monthly"
           activeTitle={activeTitle}
           setActiveTitle={setActiveTitle}
         />
@@ -118,15 +109,23 @@ const Pricing = () => {
       <p className={styles.subText}>
         {activeTitle === "Annually" &&
           "Easy, convenient and budget friendly plans. Just Pay Annually."}
+        {activeTitle === "Monthly" &&
+          "Flexible month-to-month plans without annual commitment."}
         {activeTitle === "Lifetime" &&
           "Hassle free, price-beating lifetime plans. No recurring subscription fees, just a one time payment to secure your storage for life!"}
         {activeTitle === "Add-on" &&
           "Add-on plans are available for those who want to add additional services to your existing plan."}
       </p>
       <div className={styles.cardGrid}>
-        {(activeTitle === "Lifetime" || activeTitle === "Annually") &&
+        {(activeTitle === "Lifetime" ||
+          activeTitle === "Annually" ||
+          activeTitle === "Monthly") &&
           renderCards(
-            activeTitle === "Lifetime" ? LifetimePricing : AnnualPricing
+            activeTitle === "Lifetime"
+              ? LifetimePricing
+              : activeTitle === "Monthly"
+              ? MonthlyPricing
+              : AnnualPricing
           )}
         {activeTitle === "Add-on" && renderCards(AddOnsPricing)}
       </div>

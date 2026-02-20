@@ -2,6 +2,8 @@
 @import "styles/mediaQuery.scss";
 
 .switcher {
+  --tab-count: 3;
+  --active-index: 0;
   position: relative;
   display: inline-flex;
   border-radius: 999px;
@@ -35,26 +37,11 @@
   position: absolute;
   top: 0.2rem;
   bottom: 0.2rem;
-  width: 32.5%; // around one-third
+  width: calc((100% - 0.4rem) / var(--tab-count));
   border-radius: 999px;
   background: var(--primary-clr);
   z-index: 1;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   left: 0.2rem;
-  transform: translateX(0%);
-}
-
-// left (index 0)
-.switcher[data-active="0"]::before {
-  transform: translateX(0%);
-}
-
-// middle (index 1)
-.switcher[data-active="1"]::before {
-  transform: translateX(100%);
-}
-
-// right (index 2)
-.switcher[data-active="2"]::before {
-  transform: translateX(200%);
+  transform: translateX(calc(var(--active-index) * 100%));
 }
