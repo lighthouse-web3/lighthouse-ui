@@ -13,7 +13,7 @@ import {
 import styles from "./Pricing.module.scss";
 
 const Pricing = () => {
-  const [activeTitle, setActiveTitle] = useState("Annually");
+  const [activeTitle, setActiveTitle] = useState("Monthly");
 
   const renderCards = (plans) => {
     return plans.map((plan, index) => (
@@ -98,10 +98,10 @@ const Pricing = () => {
       <TitleSeparator topTitle={"Discover your perfect plan"} />
       <div className={styles.switcherWrapper}>
         <Switcher
-          title1="Annually"
-          title2="Lifetime"
-          title3="Add-on"
-          title4="Monthly"
+          title1="Monthly"
+          title2="Annually"
+          title3="Lifetime"
+          title4="Add-on"
           activeTitle={activeTitle}
           setActiveTitle={setActiveTitle}
         />
