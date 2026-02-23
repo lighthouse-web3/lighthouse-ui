@@ -1,4 +1,4 @@
-export const disclaimerText = "Turby by Lighthouse is live";
+export const disclaimerText = "Turby NFT by Lighthouse is live, Mint Now !";
 
 export const LandingPageData = {
   HeroSection: {
