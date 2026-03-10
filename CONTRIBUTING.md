@@ -12,7 +12,7 @@ Thank you for your interest in contributing to Lighthouse UI! This document prov
    ```
 3. **Add upstream remote**:
    ```bash
-   git remote add upstream https://github.com/ideo-org/lighthouse-ui.git
+   git remote add upstream https://github.com/lighthouse-web3/lighthouse-ui.git
    ```
 4. **Install dependencies**:
    ```bash
@@ -50,7 +50,7 @@ Fixes #45
 
 ## Code Style
 
-This project uses ESLint and Prettier for code formatting:
+This project uses ESLint for code quality checks:
 
 ```bash
 # Run linter
