@@ -58,7 +58,7 @@ Conduct.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the project team at `opensource@lighthouse.storage`.
+reported to the project team at `ravish@lighthouse.storage`.
 
 All complaints will be reviewed and investigated promptly and fairly.
 
