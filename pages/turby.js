@@ -72,7 +72,7 @@ export default function PricingPage() {
 
         {/* FAQ Section - Full height */}
         <div className="flex items-center">
-          <div className="contentContainer styleContainer flex-1">
+          <div className="contentContainer flex-1">
             <FAQContainer type="turby" />
           </div>
         </div>

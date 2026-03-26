@@ -70,15 +70,15 @@ function PricingTable() {
         <TitleSeparator topTitle={"Compare Lifetime plans "} />
       </div>
 
-      <div className={styles.pricingTable}>
+      <div className={`${styles.pricingTable} font-sans text-[#cec2d7] shadow-xl`}>
         <div className={styles.headerRow}>
-          <div className={styles.featureColumn}></div>
+          <div className={`${styles.featureColumn} text-[#e4e2e2] text-lg`}></div>
           {newLifetimePricing.map((plan) => (
             <div key={plan.title} className={styles.planColumn}>
-              <h3>{plan.title}</h3>
-              <p className={styles.price}>
+              <h3 className="font-headline font-bold text-3xl text-[#e4e2e2] mb-3">{plan.title}</h3>
+              <p className={`${styles.price} text-[#dab9ff] text-2xl`}>
                 ${plan.cost}{" "}
-                <span className={styles.priceSpan}>
+                <span className={`${styles.priceSpan} text-[#cec2d7]/60 text-sm font-medium tracking-wide`}>
                   {plan.title === "Pro" ? "/month" : ""}
                 </span>
               </p>
@@ -88,10 +88,10 @@ function PricingTable() {
 
         {featureSet.map((featureTitle) => (
           <div className={styles.featureRow} key={featureTitle}>
-            <div className={styles.featureColumn}>
+            <div className={`${styles.featureColumn} text-[#e4e2e2]`}>
               {featureTitle + " "}&nbsp;
-              <div className="tooltipWrapper">
-                <BsInfoCircle />
+              <div className="tooltipWrapper text-[#cec2d7]">
+                <BsInfoCircle className="hover:text-[#dab9ff] transition-colors cursor-pointer" />
                 {
                   <div className="tooltipContent">
                     {getTooltipForFeature(featureTitle)}
@@ -106,24 +106,24 @@ function PricingTable() {
               if (!feature)
                 return (
                   <div className={styles.planColumn} key={featureTitle}>
-                    -
+                    <span className="text-[#4c4354]">-</span>
                   </div>
                 );
               return (
                 <div
                   key={feature.title}
-                  className={styles.planColumn + " flex justify-center"}
+                  className={styles.planColumn + " flex justify-center items-center"}
                   title={feature.tooltip}
                 >
                   {feature.value === "icon" && (
-                    <FaCheck className={styles.iconCheck} />
+                    <FaCheck className={`${styles.iconCheck} text-[#dab9ff] text-xl`} />
                   )}
                   {feature.value === "icon-cross" && (
-                    <FaXmark className={styles.iconCross} />
+                    <FaXmark className={`${styles.iconCross} text-[#4c4354] text-xl`} />
                   )}
                   {feature.value !== "icon" &&
                     feature.value !== "icon-cross" &&
-                    feature.value}
+                    <span className="font-bold text-[#e4e2e2]">{feature.value}</span>}
                 </div>
               );
             })}

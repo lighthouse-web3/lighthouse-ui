@@ -26,7 +26,7 @@ export default function PricingPage() {
             <br />
             <PricingTable />
           </div>
-          <div className="contentContainer styleContainer">
+          <div className="contentContainer mt-16">
             <FAQContainer type="pricing" />
           </div>
         </div>
