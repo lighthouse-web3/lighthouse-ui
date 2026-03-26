@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import styles from "./EcosystemGrid.module.scss";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaTelegramPlane } from "react-icons/fa";
 import { SlGlobe } from "react-icons/sl";
@@ -397,13 +396,16 @@ const EcosystemGrid = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   return (
-    <section className={styles.ecosystemSection}>
-      <div className={styles.badgeContainer}>
+    <section className="w-full">
+      {/* Category Badges / Filtering Tabs */}
+      <div className="flex flex-wrap items-center justify-center gap-3 mb-16">
         {badgeOptions.map((tag) => (
           <button
             key={tag}
-            className={`${styles.badge} ${
-              activeTag === tag ? styles.active : ""
+            className={`px-6 py-2.5 rounded-full font-sans text-sm font-medium tracking-wide transition-all duration-300 border ${
+              activeTag === tag
+                ? "bg-[#1b1c1c] text-[#dab9ff] border-[#dab9ff]/30 shadow-[0_0_15px_rgba(218,185,255,0.1)]"
+                : "bg-transparent text-[#cec2d7] border-transparent hover:bg-[#1b1c1c]/60 hover:border-[#4c4354]/30"
             }`}
             onClick={() => setActiveTag(tag)}
           >
@@ -412,124 +414,114 @@ const EcosystemGrid = () => {
         ))}
       </div>
 
-      <div className={styles.highlightWrapper}>
-        {filtered
-          .filter((item) => item.image)
-          .map((item, idx) => (
-            <div key={idx} className={styles.highlightCard}>
-              <img
-                src={item.image}
-                alt={item.name}
-                className={styles.highlightImage}
-              />
-              <div className={styles.highlightRight}>
-                {/* <img
-                  src={item.icon}
-                  alt={item.name}
-                  className={styles.logo}
-                  style={
-                    theme === "dark"
-                      ? { filter: "brightness(100%)" }
-                      : { filter: "brightness(10%)" }
-                  }
-                /> */}
-                <span>
-                <ImageBox
-                  src={item?.icon}
-                  width={"200px"}
-                  height={"50px"}
-                  // className={styles.logo}
-                  style={
-                    theme === "dark"
-                      ? { filter: "brightness(100%)" }
-                      : { filter: "brightness(10%)" }
-                  }
-                  aspectRatio={true}
-                />
-
-                </span>
-            
-                <p className={styles.desc}>{item.description}</p>
-                <div className={styles.footerIcons}>
-                  <span
-                    className="ptr"
-                    onClick={() => {
-                      window.open(item.website, "_blank");
-                    }}
-                  >
-                    <SlGlobe />
-                  </span>
-                  {item.telegram && (
+      {/* Highlighted Ecosystem Partners */}
+      {filtered.filter((item) => item.image).length > 0 && (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {filtered
+            .filter((item) => item.image)
+            .map((item, idx) => (
+              <div key={idx} className="relative group bg-[#1b1c1c] rounded-2xl overflow-hidden border border-[#4c4354]/15 hover:border-[#dab9ff]/30 transition-all duration-500 hover:-translate-y-2 flex flex-col sm:flex-row items-center p-8 gap-8">
+                {/* Main Image */}
+                <div className="w-full sm:w-1/2 aspect-video rounded-xl overflow-hidden shadow-lg border border-[#4c4354]/10 bg-[#131314]">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                {/* Content */}
+                <div className="flex flex-col flex-1 w-full h-full justify-center">
+                  <div className="mb-6">
+                    <ImageBox
+                      src={item?.icon}
+                      width={"150px"}
+                      height={"40px"}
+                      style={
+                        theme === "dark"
+                          ? { filter: "brightness(100%)" }
+                          : { filter: "brightness(10%)" }
+                      }
+                      aspectRatio={true}
+                    />
+                  </div>
+                  <p className="text-[#cec2d7] text-sm leading-relaxed mb-8 flex-grow">
+                    {item.description}
+                  </p>
+                  <div className="flex items-center gap-4 mt-auto">
                     <span
-                      className="ptr"
-                      onClick={() => {
-                        window.open(item.telegram, "_blank");
-                      }}
+                      className="text-[#cec2d7] hover:text-[#dab9ff] cursor-pointer transition-colors p-2 bg-[#131314] rounded-full border border-[#4c4354]/20"
+                      onClick={() => window.open(item.website, "_blank")}
                     >
-                      <FaTelegramPlane />
+                      <SlGlobe className="text-xl" />
                     </span>
-                  )}
-
-                  {item.twitter && (
-                    <span
-                      className="ptr"
-                      onClick={() => {
-                        window.open(item.twitter, "_blank");
-                      }}
-                    >
-                      <RiTwitterXLine />
-                    </span>
-                  )}
+                    {item.telegram && (
+                      <span
+                        className="text-[#cec2d7] hover:text-[#dab9ff] cursor-pointer transition-colors p-2 bg-[#131314] rounded-full border border-[#4c4354]/20"
+                        onClick={() => window.open(item.telegram, "_blank")}
+                      >
+                        <FaTelegramPlane className="text-xl" />
+                      </span>
+                    )}
+                    {item.twitter && (
+                      <span
+                        className="text-[#cec2d7] hover:text-[#dab9ff] cursor-pointer transition-colors p-2 bg-[#131314] rounded-full border border-[#4c4354]/20"
+                        onClick={() => window.open(item.twitter, "_blank")}
+                      >
+                        <RiTwitterXLine className="text-xl" />
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-      </div>
+            ))}
+        </div>
+      )}
 
-      <div className={styles.cardGrid}>
+      {/* Standard Ecosystem Partners Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filtered
           .filter((item) => !item.image)
           .map((item, idx) => (
-            <div key={idx} className={styles.card}>
-              <img
-                src={item.icon}
-                alt={item.name}
-                className={styles.logo}
-                style={
-                  theme === "dark"
-                    ? { filter: "brightness(100%)" }
-                    : { filter: "brightness(10%)" }
-                }
-              />
-              <p className={styles.desc}>{item.description}</p>
-              <div className={styles.footerIcons}>
+            <div key={idx} className="group bg-[#1b1c1c] p-8 rounded-xl border border-[#4c4354]/15 hover:border-[#dab9ff]/30 transition-all duration-500 hover:-translate-y-2 flex flex-col h-full relative overflow-hidden">
+              <div className="flex justify-between items-start mb-8 z-10">
+                <div className="h-14 flex items-center justify-start max-w-[150px]">
+                  <img
+                    src={item.icon}
+                    alt={item.name}
+                    className="max-h-full max-w-full object-contain"
+                    style={
+                      theme === "dark"
+                        ? { filter: "brightness(100%)" }
+                        : { filter: "brightness(10%)" }
+                    }
+                  />
+                </div>
+              </div>
+              <h3 className="text-2xl font-headline font-bold mb-3 text-[#e4e2e2] group-hover:text-[#dab9ff] transition-colors">{item.name}</h3>
+              <p className="text-[#cec2d7] text-sm leading-relaxed mb-8 flex-grow z-10">
+                {item.description}
+              </p>
+              <div className="flex items-center gap-4 mt-auto w-fit z-10 pt-6 border-t border-[#4c4354]/15 w-full">
                 <span
-                  className="ptr"
-                  onClick={() => {
-                    window.open(item.website, "_blank");
-                  }}
+                  className="text-[#cec2d7] hover:text-[#dab9ff] cursor-pointer transition-colors"
+                  onClick={() => window.open(item.website, "_blank")}
                 >
-                  <SlGlobe />
+                  <SlGlobe className="text-xl" />
                 </span>
                 {item.telegram && (
                   <span
-                    className="ptr"
-                    onClick={() => {
-                      window.open(item.telegram, "_blank");
-                    }}
+                    className="text-[#cec2d7] hover:text-[#dab9ff] cursor-pointer transition-colors"
+                    onClick={() => window.open(item.telegram, "_blank")}
                   >
-                    <FaTelegramPlane />
+                    <FaTelegramPlane className="text-xl" />
                   </span>
                 )}
-
                 {item.twitter && (
                   <span
-                    className="ptr"
-                    onClick={() => {
-                      window.open(item.twitter, "_blank");
-                    }}
+                    className="text-[#cec2d7] hover:text-[#dab9ff] cursor-pointer transition-colors"
+                    onClick={() => window.open(item.twitter, "_blank")}
                   >
-                    <RiTwitterXLine />
+                    <RiTwitterXLine className="text-xl" />
                   </span>
                 )}
               </div>
