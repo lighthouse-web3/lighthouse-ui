@@ -6,33 +6,30 @@ import CountUp from "react-countup";
 function StatBox() {
   const { theme, setTheme } = useContext(ThemeContext);
   return (
-    <div
-      className={styles.StatBox}
-      style={
-        theme === "dark"
-          ? {
-              border: "1px solid #4f4f4f",
-            }
-          : {}
-      }
-    >
-      <div className={styles.StatBox__stat}>
-        <p>API Requests / Day</p>
-        <p>
+    <div className="flex flex-wrap justify-around gap-12 md:gap-8 w-full">
+      <div className="text-center md:text-left">
+        <div className="text-4xl md:text-5xl font-bold font-sans tracking-tighter text-[#dab9ff] mb-1">
           <CountUp duration={8} end={10} delay={2} suffix="M+" />
-        </p>
+        </div>
+        <div className="text-xs font-bold tracking-widest font-sans uppercase text-[#cec2d7]/60">
+          API Requests
+        </div>
       </div>
-      <div className={styles.StatBox__stat}>
-        <p>Users</p>
-        <p>
+      <div className="text-center md:text-left">
+        <div className="text-4xl md:text-5xl font-bold font-sans tracking-tighter text-[#dab9ff] mb-1">
           <CountUp duration={8} end={20} delay={2} suffix="K+" />
-        </p>
+        </div>
+        <div className="text-xs font-bold tracking-widest font-sans uppercase text-[#cec2d7]/60">
+          Active Users
+        </div>
       </div>
-      <div className={styles.StatBox__stat}>
-        <p>Number of files</p>
-        <p>
+      <div className="text-center md:text-left">
+        <div className="text-4xl md:text-5xl font-bold font-sans tracking-tighter text-[#dab9ff] mb-1">
           <CountUp duration={8} end={5.5} decimals={1} delay={2} suffix="M+" />
-        </p>
+        </div>
+        <div className="text-xs font-bold tracking-widest font-sans uppercase text-[#cec2d7]/60">
+          Files Stored
+        </div>
       </div>
     </div>
   );

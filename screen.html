@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lighthouse | Decentralized &amp; Perpetual Storage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#d4e3ff",
+                        "tertiary-container": "#909191",
+                        "on-primary-fixed": "#2a0053",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "surface-tint": "#dab9ff",
+                        "primary": "#dab9ff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-highest": "#343535",
+                        "surface-dim": "#131314",
+                        "secondary": "#a4c8ff",
+                        "surface-bright": "#393939",
+                        "primary-fixed": "#eedbff",
+                        "on-tertiary-container": "#282a2a",
+                        "tertiary": "#c6c6c7",
+                        "on-tertiary": "#2f3131",
+                        "background": "#131314",
+                        "on-primary-fixed-variant": "#6500b8",
+                        "tertiary-fixed": "#e2e2e2",
+                        "secondary-container": "#2f92f9",
+                        "outline-variant": "#4c4354",
+                        "inverse-primary": "#7f2cd7",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-background": "#e4e2e2",
+                        "on-primary-container": "#3e0074",
+                        "inverse-surface": "#e4e2e2",
+                        "inverse-on-surface": "#303030",
+                        "on-secondary-fixed-variant": "#004784",
+                        "on-secondary": "#00315e",
+                        "surface-container-low": "#1b1c1c",
+                        "on-primary": "#470084",
+                        "surface-variant": "#343535",
+                        "on-surface-variant": "#cec2d7",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#dab9ff",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#001c3a",
+                        "surface-container": "#1f2020",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-container-high": "#2a2a2a",
+                        "surface": "#131314",
+                        "outline": "#978da0",
+                        "on-secondary-container": "#002a52",
+                        "primary-container": "#b170ff",
+                        "on-surface": "#e4e2e2",
+                        "secondary-fixed-dim": "#a4c8ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(19, 19, 20, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .obsidian-gradient {
+            background: linear-gradient(135deg, #dab9ff 0%, #a4c8ff 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_48px_48px_rgba(218,185,255,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-primary font-headline">Lighthouse</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary border-b-2 border-primary pb-1 font-label text-sm tracking-tight transition-colors" href="#">Features</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label text-sm tracking-tight" href="#">Pricing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label text-sm tracking-tight" href="#">Ecosystem</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label text-sm tracking-tight" href="#">Documentation</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="hidden sm:block text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold font-label">Login</button>
+<button class="obsidian-gradient text-on-primary-fixed px-6 py-2.5 rounded-md text-sm font-bold font-label hover:scale-[1.02] transition-transform active:scale-95">Start Now</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden px-8">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(218,185,255,0.08)_0%,_transparent_50%)]"></div>
+<div class="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-12 relative z-10">
+<div class="lg:col-span-7 flex flex-col justify-center">
+<span class="inline-block px-3 py-1 mb-6 rounded-full bg-primary-container/20 border border-primary/20 text-primary text-xs font-bold tracking-widest font-label uppercase">
+                        Decentralized Web 3.0 Storage
+                    </span>
+<h1 class="text-6xl md:text-8xl font-bold font-headline tracking-tighter leading-[0.9] text-on-background mb-8">
+                        Store Your Data <span class="text-primary">Permanently</span> &amp; Securely
+                    </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                        The ultimate perpetual storage layer for the decentralized web. Powered by Filecoin and IPFS for unmatched security and longevity.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="obsidian-gradient text-on-primary-fixed px-8 py-4 rounded-xl text-base font-bold font-label hover:scale-[1.02] transition-transform shadow-[0_20px_40px_rgba(218,185,255,0.15)]">Try For Free</button>
+<button class="bg-surface-variant/20 border border-outline-variant/15 backdrop-blur-md text-on-surface px-8 py-4 rounded-xl text-base font-bold font-label hover:bg-surface-variant/30 transition-all">Explore Docs</button>
+</div>
+</div>
+<div class="lg:col-span-5 relative hidden lg:flex items-center justify-center">
+<div class="w-full aspect-square rounded-[2rem] bg-surface-container-low overflow-hidden border border-outline-variant/10 shadow-2xl relative">
+<img class="w-full h-full object-cover opacity-60 mix-blend-luminosity" data-alt="Abstract 3D digital obsidian structure glowing purple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnaHoOpczjcSnXSNY8tSTTzSBKGIi4qgdSWMputiXklkFzvuQtVtJY9T9ygfkcCyKYn_GjTeP4tIZCjMOjbp5_-eoNqHPgLShRhhn9vq0ugYXH7p_kEzUKzXyww38du-Keiy8iZhhC1s-ZxVvQWPm25mYyTqsL-p3H_no_FuWXeW9t76bQMf65k2MSRGNzJTHuKTRu4XAYnMTRG8b7DlVLedj-smft82Rce8PnvAeFVVYYTIGePH7SukmTMfHumAx7gjoUlkxty4o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 p-6 glass-nav rounded-2xl border border-primary/10">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-xs font-bold tracking-widest font-label uppercase text-primary">Live Network Status</span>
+</div>
+<div class="text-2xl font-bold font-headline tracking-tight">Perpetual Sync Active</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Banner -->
+<section class="bg-surface-container-low py-12 px-8">
+<div class="max-w-7xl mx-auto flex flex-wrap justify-around gap-12 md:gap-8">
+<div class="text-center md:text-left">
+<div class="text-4xl md:text-5xl font-bold font-headline tracking-tighter text-primary mb-1">10M+</div>
+<div class="text-xs font-bold tracking-widest font-label uppercase text-on-surface-variant/60">API Requests</div>
+</div>
+<div class="text-center md:text-left">
+<div class="text-4xl md:text-5xl font-bold font-headline tracking-tighter text-primary mb-1">20K+</div>
+<div class="text-xs font-bold tracking-widest font-label uppercase text-on-surface-variant/60">Active Users</div>
+</div>
+<div class="text-center md:text-left">
+<div class="text-4xl md:text-5xl font-bold font-headline tracking-tighter text-primary mb-1">5.5M+</div>
+<div class="text-xs font-bold tracking-widest font-label uppercase text-on-surface-variant/60">Files Stored</div>
+</div>
+</div>
+</section>
+<!-- Features Grid -->
+<section class="py-24 px-8 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20">
+<span class="text-primary font-label text-sm font-bold tracking-[0.2em] uppercase mb-4 block">Engineered for Permanence</span>
+<h2 class="text-4xl md:text-6xl font-bold font-headline tracking-tighter">Why Choose Lighthouse?</h2>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Feature Card -->
+<div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">all_inclusive</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-4">Perpetual Storage</h3>
+<p class="text-on-surface-variant leading-relaxed">Pay once, store forever. Our endowment model ensures your data remains accessible for centuries.</p>
+</div>
+<!-- Feature Card -->
+<div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-4">Decentralized Solutions</h3>
+<p class="text-on-surface-variant leading-relaxed">Leverage the power of IPFS and Filecoin without the complexity of managing your own nodes.</p>
+</div>
+<!-- Feature Card -->
+<div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-4">Encryption</h3>
+<p class="text-on-surface-variant leading-relaxed">End-to-end encryption by default. Your private keys never leave your device.</p>
+</div>
+<!-- Feature Card -->
+<div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined">dns</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-4">Dedicated Gateways</h3>
+<p class="text-on-surface-variant leading-relaxed">Custom subdomains and high-speed retrieval points for your decentralized content.</p>
+</div>
+<!-- Feature Card -->
+<div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined">aspect_ratio</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-4">Image Resizing</h3>
+<p class="text-on-surface-variant leading-relaxed">On-the-fly transformations for IPFS-hosted images. Serve the right size every time.</p>
+</div>
+<!-- Feature Card -->
+<div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined">videocam</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-4">Video Gateway</h3>
+<p class="text-on-surface-variant leading-relaxed">Optimized streaming gateways for high-definition video content stored on the dweb.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trusted By (Logo Cloud) -->
+<section class="py-16 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<p class="text-center text-on-surface-variant/40 text-xs font-bold tracking-[0.3em] uppercase mb-12 font-label">Trusted by Industry Leaders</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+<img class="h-8 w-auto" data-alt="Abstract minimalist company logo in grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAQuF-mF_Q9crrr0DgrEBKpVavxXsyY5sBWdrJ05JWSK04o3B19lukQznLAA47qFA1ex7AIbRxybdfyghnGU3JixJWUkARkU8CXpzaoGFEFdQStt5nGs-_U9s6UauJYW7mioan5NN2SFF8c_ik_ecWe7yE6MRCObnLyAAAo7CSHQFNlHIi4q0EW9H7Rg41f78Ma5MIaP3on8zTcI2DCo4Ee0WC_qSGbIPMKJeLZW3t1it6BBuRwZ9DtBkC7x1DcToT3zKRxq_ap6M"/>
+<img class="h-8 w-auto" data-alt="Abstract tech logo silhouette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoCNhmgUVbnhTqC86i7WNnQsXoM7K2MZ0BR59dz-U9u1PwXE6z1N7U7ke6s6_3mRLaCo4Hn6CMVcVpb0LsE-vKbiFZMFYLZ0jkSihqz5j5nnSx2A0UPaNXdXqPwFCFVwPAW3qIycN46SrVMzKVmFflDgPnnSNnjExMe-fTq6E2LsBUtR2axEIGEMDQPUCOuU7IQ6JIhFiJKFzk84JgVqNXXoOZJ1c7P_zLzbSjz0OuWUwZ3yGekTAPaJh0-cQa2a791zSh-cvqkuU"/>
+<img class="h-8 w-auto" data-alt="Geometric minimalist logo design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXWfbRNfVdgrnizkSp5a78lqKXtVqfgcxm4LlrEa6WIrJzlOncMOfZcrL1GNzk0NV9EinoDQRHoiYkpRK3rDArTQPgZLVyHJ6KyWxWjX2F6pX4uUE6VkbDw3hqtLzAsdO_egUs4E12lAajM9yt1MauzZRpyLJ5PxsiiR4h__tpyT5pNFZBHO0oc2jnOsLiKrsRVvfc_l5vNQvZmqztF5CkUD4mrukFA6TUfbCfdjvtqv40yfE8scLYZua7tExIPqAifGk2uhqWTfo"/>
+<img class="h-8 w-auto" data-alt="Clean corporate logo mark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7Tzu00Z0ycZ-nrmLKvFKoS_7bdKc_7BH8oJrAei7Rnr0H9Wjz2Ejd5EDj_WbUaUYEERKDRK0diHqCFzDSqiBu_oNMdad47IT-L83dbJbkh79GrZBGcaUyzXVHVrI0hfb_7vgLK0uRwiEGiXQSu9PAYJKzk3YxkOtgimKum5F6fMCR1vAulgt3D6PQKbOU5DCCFQV55bOrXU1cF-t7E93K-EFI5bxLExIFA0cfc0qSbEGHMY2Dwi2UR_GJwOjgH5Qa56iPzohlP5o"/>
+<img class="h-8 w-auto" data-alt="Modern circular brand icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4s3lrE2lfJnHZDD8AJgDD_0zABgXxVW5-uiie8M_fii0MdeJFMqu0c7DCAk3OdmhOWzpCFRpc2B5cixlSL95wbo79Ev22c7l6XACzPtwSvgLWmBSMT0SCqdh2LKE8MJ3HxTW1Urdn0ZFxPHnnDzjrX2PMdZtW_YAi6sRwHFuOAbaNjISLIxB50glahaONlkeJfyhVT0FSSbzoG-pE1UwNVEiDdx3LWZyQ_aCvqCoLvzllpQMeNTER-TMHsxuMnMbcII_WlYDoKoc"/>
+</div>
+</div>
+</section>
+<!-- Integrations Section -->
+<section class="py-24 px-8 bg-surface">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-4xl md:text-5xl font-bold font-headline tracking-tighter mb-6">Built for Developers</h2>
+<p class="text-lg text-on-surface-variant mb-8 leading-relaxed">Deploy in seconds with our robust SDKs and CLI tools. Lighthouse integrates seamlessly into your existing CI/CD pipelines and web3 stack.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="font-medium">JavaScript &amp; Python SDKs</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="font-medium">Native CLI for easy terminal uploads</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="font-medium">S3 Compatible API support</span>
+</li>
+</ul>
+<button class="bg-surface-container-highest text-on-surface px-8 py-3 rounded-lg font-bold font-label hover:bg-surface-bright transition-colors">Read SDK Documentation</button>
+</div>
+<div class="bg-surface-container-lowest p-1 rounded-2xl border border-outline-variant/20 shadow-2xl">
+<div class="bg-surface-container-high rounded-xl overflow-hidden">
+<div class="flex items-center gap-2 px-4 py-3 bg-surface-container-highest/50 border-b border-outline-variant/10">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-error/40"></div>
+<div class="w-3 h-3 rounded-full bg-secondary/40"></div>
+<div class="w-3 h-3 rounded-full bg-primary/40"></div>
+</div>
+<span class="text-xs text-on-surface-variant/60 font-mono ml-4">lighthouse-sdk --upload</span>
+</div>
+<div class="p-6 font-mono text-sm leading-relaxed overflow-x-auto">
+<p class="text-secondary"><span class="text-primary-container">import</span> lighthouse <span class="text-primary-container">from</span> <span class="text-secondary-fixed">'@lighthouse-web3/sdk'</span>;</p>
+<p class="mt-4"><span class="text-on-surface-variant/40">// Upload a file with encryption</span></p>
+<p><span class="text-primary-container">const</span> response = <span class="text-primary-container">await</span> lighthouse.uploadEncrypted(</p>
+<p class="pl-4">path, </p>
+<p class="pl-4">apiKey, </p>
+<p class="pl-4">publicKey,</p>
+<p class="pl-4">signedMessage</p>
+<p>);</p>
+<p class="mt-4 text-on-surface-variant/40">// Returns a hash (CID) for your permanent data</p>
+<p><span class="text-primary-container">console</span>.log(response.data.Hash);</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto text-center mb-16">
+<h2 class="text-4xl md:text-6xl font-bold font-headline tracking-tighter mb-6">Discover your perfect plan</h2>
+<div class="inline-flex items-center p-1 bg-surface-container-highest rounded-full border border-outline-variant/10">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-bold text-sm">Monthly</button>
+<button class="px-6 py-2 rounded-full text-on-surface-variant hover:text-on-surface font-bold text-sm transition-colors">Annually</button>
+</div>
+</div>
+<div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+<!-- Lite Plan -->
+<div class="p-10 rounded-2xl bg-surface border border-outline-variant/10 flex flex-col hover:border-primary/20 transition-all">
+<div class="mb-8">
+<h3 class="text-2xl font-bold font-headline mb-2">Lite</h3>
+<div class="flex items-baseline gap-1 mb-4">
+<span class="text-5xl font-bold font-headline">$12</span>
+<span class="text-on-surface-variant text-lg">/mo</span>
+</div>
+<p class="text-on-surface-variant">Perfect for individual developers and small hobby projects.</p>
+</div>
+<ul class="space-y-5 mb-12 flex-grow">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">done</span>
+<span class="text-on-surface-variant">50 GB Perpetual Storage</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">done</span>
+<span class="text-on-surface-variant">Shared Gateway Access</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">done</span>
+<span class="text-on-surface-variant">Basic Image Resizing</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">done</span>
+<span class="text-on-surface-variant">Community Support</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-xl border border-primary text-primary font-bold hover:bg-primary/5 transition-colors">Get Started</button>
+</div>
+<!-- Premium Plan -->
+<div class="p-10 rounded-2xl bg-surface border border-primary/40 relative flex flex-col shadow-[0_48px_48px_rgba(218,185,255,0.06)] transform scale-105">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 obsidian-gradient px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-on-primary-fixed">Most Popular</div>
+<div class="mb-8">
+<h3 class="text-2xl font-bold font-headline mb-2">Premium</h3>
+<div class="flex items-baseline gap-1 mb-4">
+<span class="text-5xl font-bold font-headline">$49</span>
+<span class="text-on-surface-variant text-lg">/mo</span>
+</div>
+<p class="text-on-surface-variant">Advanced features for production-scale dApps and enterprises.</p>
+</div>
+<ul class="space-y-5 mb-12 flex-grow">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">done</span>
+<span class="text-on-surface">500 GB Perpetual Storage</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">done</span>
+<span class="text-on-surface">Dedicated Custom Gateway</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">done</span>
+<span class="text-on-surface">High-speed Video Streaming</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">done</span>
+<span class="text-on-surface">Priority 24/7 Tech Support</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">done</span>
+<span class="text-on-surface">Advanced Usage Analytics</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-xl obsidian-gradient text-on-primary-fixed font-bold shadow-[0_10px_30px_rgba(218,185,255,0.2)] hover:scale-[1.02] transition-transform">Get Started</button>
+</div>
+</div>
+</section>
+<!-- Social Proof (Testimonials) -->
+<section class="py-24 px-8 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="text-4xl md:text-5xl font-bold font-headline tracking-tighter mb-4">Trusted by Builders</h2>
+<p class="text-on-surface-variant">See what the decentralized community is saying about Lighthouse.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="p-8 rounded-2xl bg-surface-container-high border border-outline-variant/10">
+<div class="flex gap-1 text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-lg mb-8 leading-relaxed">"Lighthouse solved our biggest hurdle: data persistence. Paying once for lifetime storage is a game-changer for our NFT project."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a male developer smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDML-GTEEaM6MyW2Ppv4toeKkqZLy9MbcBrqDhdHJxtrYBP24uU7tqSI3wv-i6xNmmlf3SiQOvw5v0_iKyCLAAOYoU7dmbm4xYPyVXWTiwAX6LMvVsEZBYH3fzSvbbSCsFq0ybvSsMD6Mhvu7VTDgK4sWyMuXEa2L7YHfypZfPnJ6i4CGtP1iw4pylHDo-W5GdgndRHg7hUCo1KiXOqufZJPbHOAnercOcbyXW3X0YuzXxSY7-ZOcQeriRo-gNko_cH0mSRV5iv3UM"/>
+</div>
+<div>
+<div class="font-bold">Alex Rivera</div>
+<div class="text-xs text-on-surface-variant/60 font-label uppercase tracking-widest">CTO @ DecentralArt</div>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-2xl bg-surface-container-high border border-outline-variant/10">
+<div class="flex gap-1 text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-lg mb-8 leading-relaxed">"The encryption SDK is incredibly well-documented. We integrated it into our healthcare dApp in less than an hour."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a female engineer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtXVfWwPt8COagQOpt1XGCgr0w3dF8H4wOfA93PECeZEojpgNhZAoXkpHwAVvAEl88xCeHARNrT-FiWP2p2sTPjEqBfs1co_1_Ci9bd5StW6fxgwm9jC3Cgf5mGd7JqnxLVmuvw5ryiwnHq-DtYwBXpJUYaGxBRxpYEssjwrvDfomTyrLIcaw_y6EsH-X-eTVPW2Nt4LOpqPlSkF9c98l9YY0TrhnOuFfUXQpROP_8Cl_zchY9upfGxGEYU6JOpX3ps2RHKd665V0"/>
+</div>
+<div>
+<div class="font-bold">Sarah Chen</div>
+<div class="text-xs text-on-surface-variant/60 font-label uppercase tracking-widest">Lead Engineer @ HealthChain</div>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-2xl bg-surface-container-high border border-outline-variant/10">
+<div class="flex gap-1 text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-lg mb-8 leading-relaxed">"Finally, an IPFS service that understands performance. The dedicated gateways are blazing fast across the globe."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young tech professional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEcXf5LiyfDfG9vMC67-4d_J18fpotK0IKNjrsXghq2Ziv03WeJWmkFPBke8gKsF4FLhvgeQ3JvXDMUGKr9awmviBYp88aiI7Y6Ans9VHmKHbXwFCwhnNR1kwJV9uic_VlbHIaFaA_i5-Yk_p7FIZ4NvoC6SI0Pm-LhSW4CucdRtkGKpWY9U5nu2l3dbBAA99Fygazqk97cFodtqK9xBfsqEGtBJWDPP_qma_o9oWi0GCa5f7t6E33DCtob0FkK-iuLAstRTtHbeo"/>
+</div>
+<div>
+<div class="font-bold">Marcus Thorne</div>
+<div class="text-xs text-on-surface-variant/60 font-label uppercase tracking-widest">Founder @ StreamNode</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQs -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-4xl md:text-5xl font-bold font-headline tracking-tighter mb-12 text-center">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<div class="bg-surface p-6 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-bold font-headline text-lg">How is storage truly "perpetual"?</h4>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+<div class="mt-4 text-on-surface-variant leading-relaxed">
+                            We use a smart-contract based endowment model. A portion of your one-time payment is invested in a decentralized fund that pays for recurring storage renewal deals on Filecoin indefinitely.
+                        </div>
+</div>
+<div class="bg-surface p-6 rounded-xl border border-outline-variant/10 opacity-70">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-bold font-headline text-lg">Can I migrate my data from AWS S3?</h4>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<div class="bg-surface p-6 rounded-xl border border-outline-variant/10 opacity-70">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-bold font-headline text-lg">Which networks do you support?</h4>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<div class="bg-surface p-6 rounded-xl border border-outline-variant/10 opacity-70">
+<div class="flex justify-between items-center cursor-pointer">
+<h4 class="font-bold font-headline text-lg">How does encryption work?</h4>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-8 overflow-hidden relative">
+<div class="absolute inset-0 bg-primary/5"></div>
+<div class="absolute -right-64 -bottom-64 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="max-w-7xl mx-auto text-center relative z-10">
+<h2 class="text-5xl md:text-8xl font-bold font-headline tracking-tighter mb-8 leading-[0.9]">Ready to secure your <br/><span class="text-primary">digital legacy?</span></h2>
+<p class="text-xl text-on-surface-variant max-w-2xl mx-auto mb-12">Join thousands of developers building a more permanent, private, and decentralized internet with Lighthouse.</p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="obsidian-gradient text-on-primary-fixed px-12 py-5 rounded-xl text-lg font-bold font-label hover:scale-[1.05] transition-transform shadow-[0_30px_60px_rgba(218,185,255,0.2)]">Get Started Now</button>
+<button class="bg-surface-container-highest/50 backdrop-blur-xl border border-outline-variant/20 text-on-surface px-12 py-5 rounded-xl text-lg font-bold font-label hover:bg-surface-bright transition-colors">Book a Demo</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface py-12 border-t border-outline-variant/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-6">
+<div class="text-xl font-bold text-primary font-headline tracking-tighter">Lighthouse</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant hover:text-primary font-label text-sm transition-colors hover:underline decoration-primary-container" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary font-label text-sm transition-colors hover:underline decoration-primary-container" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary font-label text-sm transition-colors hover:underline decoration-primary-container" href="#">Network Status</a>
+<a class="text-on-surface-variant hover:text-primary font-label text-sm transition-colors hover:underline decoration-primary-container" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary font-label text-sm transition-colors hover:underline decoration-primary-container" href="#">Discord</a>
+</div>
+<div class="text-sm text-on-surface-variant/60 font-body">
+                © 2024 Lighthouse Storage. Decentralized &amp; Perpetual.
+            </div>
+</div>
+</footer>
+</body></html>
