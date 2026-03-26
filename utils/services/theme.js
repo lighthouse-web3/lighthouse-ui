@@ -1,7 +1,7 @@
 const ThemeProperties = [
   {
     property: "--bg-clr",
-    dark: "#000000",
+    dark: "#1B1C1C",
     light: "#FFFFFF",
   },
   {

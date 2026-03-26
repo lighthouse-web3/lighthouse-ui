@@ -6,7 +6,7 @@ import ThemeContext from "../../utils/services/Themecontext";
 function PartnerCarousel() {
   const { theme } = useContext(ThemeContext);
   return (
-    <section className="py-16 bg-[#1b1c1c] overflow-hidden w-full">
+    <section className="py-16 bg-[#131314] overflow-hidden w-full">
       <div className="max-w-7xl mx-auto px-8">
         <p className="text-center text-[#cec2d7]/40 text-xs font-bold tracking-[0.3em] uppercase mb-12 font-sans">
           Trusted by Industry Leaders

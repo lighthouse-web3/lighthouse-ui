@@ -41,10 +41,10 @@ function FAQContainer({ type = "main", customData = null }) {
   };
 
   return (
-    <section className="py-24 px-8 bg-[#131314] font-sans text-[#e4e2e2]">
-      <div className="max-w-3xl mx-auto">
-        <h2 
-          className="text-4xl md:text-5xl font-bold font-sans tracking-tighter mb-12 text-center text-[#e4e2e2]"
+    <section className="py-24 px-8 bg-[#131314]  text-[#e4e2e2]">
+      <div className="max-w-4xl mx-auto">
+        <h2
+          className="text-4xl md:text-5xl font-bold tracking-tighter mb-12 text-center text-[#e4e2e2]"
           data-aos="fade-up"
         >
           {getTitle()}
@@ -66,18 +66,30 @@ function FAQContainer({ type = "main", customData = null }) {
                     className="flex justify-between items-center cursor-pointer"
                     onClick={() => setIsOpen(isActive ? null : index)}
                   >
-                    <h4 className={`font-bold font-sans text-lg pr-4 ${isActive ? "text-[#dab9ff]" : "text-[#e4e2e2]"}`}>
+                    <h4
+                      className={`font-bold font-sans text-lg pr-4 ${isActive ? "text-[#dab9ff]" : "text-[#e4e2e2]"}`}
+                    >
                       {item?.attributes?.question}
                     </h4>
-                    <div className={`text-2xl transition-transform duration-300 ${isActive ? "text-[#dab9ff] rotate-180" : "text-[#cec2d7]"}`}>
-                      {isActive ? <AiOutlineMinusCircle /> : <AiOutlinePlusCircle />}
+                    <div
+                      className={`text-2xl transition-transform duration-300 ${isActive ? "text-[#dab9ff] rotate-180" : "text-[#cec2d7]"}`}
+                    >
+                      {isActive ? (
+                        <AiOutlineMinusCircle />
+                      ) : (
+                        <AiOutlinePlusCircle />
+                      )}
                     </div>
                   </div>
-                  
-                  <div 
+
+                  <div
                     className={`mt-4 text-[#cec2d7] leading-relaxed transition-all duration-300 overflow-hidden ${isActive ? "max-h-96 opacity-100" : "max-h-0 opacity-0 mt-0"}`}
                   >
-                    <p dangerouslySetInnerHTML={{ __html: item?.attributes?.answer }}></p>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: item?.attributes?.answer,
+                      }}
+                    ></p>
                   </div>
                 </div>
               </div>
@@ -85,7 +97,7 @@ function FAQContainer({ type = "main", customData = null }) {
           })}
         </div>
 
-        {type !== "turby" && (
+        {/* {type !== "turby" && (
           <div 
             className="mt-16 p-10 bg-[#1b1c1c] rounded-2xl border border-[#dab9ff]/20 text-center shadow-[0_20px_40px_rgba(218,185,255,0.03)]"
             data-aos="fade-up"
@@ -107,7 +119,7 @@ function FAQContainer({ type = "main", customData = null }) {
               Contact Us
             </button>
           </div>
-        )}
+        )} */}
       </div>
     </section>
   );
