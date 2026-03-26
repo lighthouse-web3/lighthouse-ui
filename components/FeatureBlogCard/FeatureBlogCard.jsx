@@ -11,6 +11,14 @@ const formatDate = (dateString) => {
 };
 
 function FeatureBlogCard({ blog, delay = 0 }) {
+  const stripMarkdown = (text) => {
+    if (!text) return "";
+    return text
+      .replace(/[#_*~`>]/g, "") // remove basic markers
+      .replace(/\[(.*?)\]\(.*?\)/g, "$1") // extract link text
+      .trim();
+  };
+
   return (
     <article 
       className="group flex flex-col h-full bg-[#1b1c1c] rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 border-b-4 border-transparent hover:border-[#dab9ff]/30 cursor-pointer"
@@ -39,7 +47,7 @@ function FeatureBlogCard({ blog, delay = 0 }) {
           {blog?.attributes?.title}
         </h3>
         <p className="text-sm text-[#cec2d7] line-clamp-2 mb-6 leading-relaxed">
-          {blog?.attributes?.description}
+          {stripMarkdown(blog?.attributes?.description)}
         </p>
         <div className="mt-auto flex items-center justify-between pt-6 border-t border-[#4c4354]/15">
           <span className="text-xs font-medium text-[#cec2d7]">5 min read</span>

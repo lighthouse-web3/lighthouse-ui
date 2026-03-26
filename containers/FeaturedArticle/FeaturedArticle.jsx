@@ -24,6 +24,14 @@ function FeaturedArticle({ blogsData }) {
     });
   };
 
+  const stripMarkdown = (text) => {
+    if (!text) return "";
+    return text
+      .replace(/[#_*~`>]/g, "") // remove basic markers
+      .replace(/\[(.*?)\]\(.*?\)/g, "$1") // extract link text
+      .trim();
+  };
+
   return (
     <section className="mb-20" data-aos="fade-up">
       {latestBlog && (
@@ -48,7 +56,7 @@ function FeaturedArticle({ blogsData }) {
                   {latestBlog?.attributes?.title}
                 </h2>
                 <p className="text-[#cec2d7] mb-8 line-clamp-3 leading-relaxed">
-                  {latestBlog?.attributes?.description}
+                  {stripMarkdown(latestBlog?.attributes?.description)}
                 </p>
               </div>
               
