@@ -57,6 +57,10 @@ h6 {
   font-family: var(--font-headline) !important;
 }
 
+button {
+  cursor: pointer !important;
+}
+
 .bodyContainer {
   display: flex;
   flex-direction: column;

@@ -142,7 +142,7 @@ function Header({ style }) {
           </button>
           <button 
             onClick={() => window.open("https://files.lighthouse.storage/?redirectfrom=main", "_blank")}
-            className="bg-gradient-to-br from-[#dab9ff] to-[#a4c8ff] text-[#2a0053] px-6 py-2.5 rounded-md text-sm font-bold font-sans hover:scale-[1.02] transition-transform active:scale-95"
+            className="bg-[#dab9ff] text-[#470084] px-6 py-2.5 rounded-md text-sm font-bold font-sans hover:scale-[1.02] transition-transform active:scale-95 shadow-[0_0_40px_rgba(218,185,255,0.3)]"
           >
             Start Now
           </button>
@@ -213,7 +213,7 @@ function Header({ style }) {
           </button>
           <button
              onClick={() => window.open("https://files.lighthouse.storage/?redirectfrom=main", "_blank")}
-             className="w-full bg-gradient-to-br from-[#dab9ff] to-[#a4c8ff] text-[#2a0053] px-6 py-3 rounded-md text-base font-bold"
+             className="w-full bg-[#dab9ff] text-[#470084] px-6 py-3 rounded-md text-base font-bold shadow-[0_0_40px_rgba(218,185,255,0.3)]"
           >
             Start Now
           </button>
