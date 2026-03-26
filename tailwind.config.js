@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        headline: ['"Space Grotesk"', 'sans-serif'],
+        label: ['Inter', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+      },
       keyframes: {
         "fade-up": {
           "0%": {

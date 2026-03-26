@@ -103,32 +103,6 @@ export const LandingPageData = {
   ],
   lighthouseSuit: [
     {
-      title: "DATA DAOs",
-      subTitle: "Setup and Utilize Smart Contracts to spin up Data DAOs",
-      description:
-        "Create Data DAOs that generate yield and ensure long-term data preservation through decentralized governance and incentivized storage.",
-      icon: "/suitsIcon/data_daos.png",
-      link: "https://www.lighthouse.storage/blogs/Discover%20How%20the%20Endowment%20Pool%20Makes%20Your%20Data%20Immortal",
-      buttonText: "Learn More",
-      featureCard: [
-        {
-          title: "Governance & Yield",
-          subTitle:
-            "Own and manage data pools. Govern the working and yield generation of stored data",
-        },
-        {
-          title: "AI Data Monetization",
-          subTitle:
-            "Store and Monetize data via access control and training for AI Models",
-        },
-        {
-          title: "Private Processing",
-          subTitle:
-            "Compute over private data being stored and connect to AI workflows",
-        },
-      ],
-    },
-    {
       title: "WEB APPLICATION",
       subTitle: "Secure and Simplify Your File Storage and Sharing",
       description:

@@ -36,22 +36,19 @@ export default function Home() {
           </div>
         </div>
         <div style={{ minHeight: "auto" }}>
-          <div className="contentContainer styleContainer">
+          <div className="w-full bg-[#1b1c1c]">
             <TitleSeparator topTitle={"Empowering the Data Economy"} />
             {LandingPageData.lighthouseSuit.map((data, index) => (
-              <div key={index}>
-                <LighthouseSuit data={{ ...data, index }} />
-                {index !== 3 && <hr style={{ borderColor: "#667085" }} />}
-              </div>
+              <LighthouseSuit key={index} data={{ ...data, index }} />
             ))}
           </div>
         </div>
-        <div style={{ minHeight: "auto" }}>
+        {/* <div style={{ minHeight: "auto" }}>
           <div className="contentContainer styleContainer">
             <TitleSeparator topTitle={"Lighthouse Ecosystem"} />
             <EcosystemGrid />
           </div>
-        </div>
+        </div> */}
         <div style={{ minHeight: "auto" }}>
           <div className="contentContainer styleContainer">
             <Testimonials />

@@ -1,50 +1,24 @@
-import React, { useEffect, useRef, useState } from "react";
-import { SuitCard } from "../../components";
-import { LandingPageData } from "../../utils/Data/SiteContent";
-import Style from "./FeatureCardList.module.scss";
+import React from "react";
 
 function FeatureCardList() {
-  const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });
-  const bannerRef = useRef();
-  const calculateGradientAngle = () => {
-    const angle = Math.atan2(mouseCoords.y, mouseCoords.x) * (180 / Math.PI);
-    return angle;
-  };
-
-  const gradientAngle = calculateGradientAngle();
-
-  const gradientStyle = {
-    background: `linear-gradient(${gradientAngle}deg, #a659ff -28.73%, #7178ff 23.23%, #2148ff 62.74%, #ff3517 111.77%)`,
-  };
-
-  useEffect(() => {
-    const handleWindowMouseMove = (e) => {
-      const rect = bannerRef?.current?.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      setMouseCoords({ x, y });
-    };
-    window.addEventListener("mousemove", handleWindowMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleWindowMouseMove);
-    };
-  }, []);
-
   return (
-    <div className={Style.FeatureCardList + " styleContainer"}>
-      <div
-        className={Style.FeatureCardList__BannerContainer}
-        data-aos="fade-up"
-      >
-        <div className={Style.Banner} style={gradientStyle}>
-          <p className="mb-4">
-            Experience the power of <br />
-            affordable permanent storage
-          </p>
-          <button
-            className="border_btn"
-            ref={bannerRef}
+    <section className="py-32 px-8 overflow-hidden relative font-sans">
+      <div className="absolute inset-0 bg-[#dab9ff]/5"></div>
+      <div className="absolute -right-64 -bottom-64 w-[600px] h-[600px] bg-[#dab9ff]/10 rounded-full blur-[120px]"></div>
+      
+      <div className="max-w-7xl mx-auto text-center relative z-10" data-aos="fade-up">
+        <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold font-headline tracking-tighter mb-8 leading-[0.9] text-[#e4e2e2]">
+          Experience the power of <br/>
+          <span className="text-[#dab9ff]">affordable permanent storage</span>
+        </h2>
+        
+        <p className="text-xl text-[#cec2d7] max-w-2xl mx-auto mb-12">
+          Join thousands of developers building a more permanent, private, and decentralized internet with Lighthouse.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
+          <button 
+            className="bg-[#dab9ff] text-[#470084] px-12 py-5 rounded-xl text-lg font-bold font-sans hover:scale-[1.05] transition-transform shadow-[0_30px_60px_rgba(218,185,255,0.2)]"
             onClick={() => {
               window.open("https://files.lighthouse.storage/", "__blank");
             }}
@@ -53,7 +27,7 @@ function FeatureCardList() {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
