@@ -65,22 +65,15 @@ function Blog({ blogData, allBlogs }) {
           blogData?.title
         )}`}
       />
-      <div className={"bodyContainer"}>
-        <Header style={{ backgroundColor: "#000" }} />
-        <div className="sectionContainer">
-          <div className="contentContainer">
-            <BlogView blogData={blogData} />
-          </div>
+      <div className="bg-[#131314] text-[#e4e2e2] font-sans min-h-screen flex flex-col">
+        <Header />
+        <main className="pt-32 pb-20 px-6 w-full max-w-screen-lg mx-auto flex-1">
+          <BlogView blogData={blogData} />
+        </main>
+        <div className="px-6 w-full max-w-screen-2xl mx-auto">
+          <h3 className="text-3xl font-headline font-bold text-[#e4e2e2] mb-12">Read More Articles</h3>
+          <MostPopularBlogs blogsData={allBlogs} />
         </div>
-        <div className="sectionContainer" style={{ minHeight: "auto" }}>
-          <div
-            className="contentContainer styleContainer"
-            style={{ paddingBottom: "2rem" }}
-          >
-            <MostPopularBlogs blogsData={allBlogs} />
-          </div>
-        </div>
-
         <Footer />
       </div>
     </>

@@ -159,7 +159,13 @@ export default function TurbyProfilePage() {
                   {nfts.map((nft) => (
                     <div
                       key={nft.tokenId}
-                      className="bg-[var(--card-bg-clr)] rounded-xl overflow-hidden border border-[var(--card-border-clr)] hover:border-[#6450E3] transition-colors group"
+                      onClick={() => {
+                        window.open(
+                          `https://opensea.io/item/base/0x6300ea10619651e33505629e2b6077fd55d65444/${nft.tokenId}`,
+                          "_blank",
+                        );
+                      }}
+                      className="bg-[var(--card-bg-clr)] cursor-pointer rounded-xl overflow-hidden border border-[var(--card-border-clr)] hover:border-[#6450E3] transition-colors group"
                     >
                       <div className="aspect-square relative overflow-hidden">
                         {nft.image ? (

@@ -73,155 +73,153 @@ function Header({ style }) {
   }, [scrolling]);
 
   return (
-    <div className={Styles.Header + " styleContainer"}>
-      <div className={Styles.infoContainer}>
-        <div className={Styles.logoContainer}>
-          <div
-            className={Styles.imageBox + " ptr"}
-            onClick={() => {
-              _navigate.push("/");
-            }}
-          >
-            <Image src={"/logo.svg"} layout="fill" alt="brandLogo" />
+    <nav className="fixed top-0 w-full z-50 bg-[#131314]/60 backdrop-blur-[20px] shadow-[0_48px_48px_rgba(218,185,255,0.06)]">
+      <div className="flex justify-between items-center px-4 md:px-8 py-4 max-w-7xl mx-auto">
+        <div 
+          className="flex items-center cursor-pointer"
+          onClick={() => _navigate.push("/")}
+        >
+          <div className="relative w-32 h-8 md:w-36 md:h-10">
+            <Image src={"/logo.svg"} layout="fill" objectFit="contain" alt="brandLogo" />
           </div>
         </div>
-        <div className={Styles.linksContainer}>
-          {links.map((link, index) => (
-            <p key={index}>
-              {link.path.length > 0 ? (
-                <a
-                  href={link.path}
-                  className={currentRoute === link.path ? Styles.active : ""}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    _navigate.push(link.path);
-                  }}
-                >
-                  {link.title}
-                </a>
-              ) : (
-                <a
-                  href={link.href}
-                  className="flex"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  tabIndex={0}
-                  role="link"
-                >
-                  {link.title}
-                  <MdArrowOutward />
-                </a>
-              )}
-            </p>
-          ))}
+
+        <div className="hidden md:flex gap-8 items-center">
+          {links.map((link, index) => {
+            const isActive = currentRoute === link.path;
+            const linkClasses = isActive
+              ? "text-[#dab9ff] border-b-2 border-[#dab9ff] pb-1 font-sans text-sm tracking-tight transition-colors"
+              : "text-[#cec2d7] hover:text-[#dab9ff] transition-colors font-sans text-sm tracking-tight";
+
+            return link.path.length > 0 ? (
+              <a
+                key={index}
+                href={link.path}
+                className={linkClasses}
+                onClick={(e) => {
+                  e.preventDefault();
+                  _navigate.push(link.path);
+                }}
+              >
+                {link.title}
+              </a>
+            ) : (
+              <a
+                key={index}
+                href={link.href}
+                className={linkClasses + " flex items-center gap-1"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.title}
+                <MdArrowOutward />
+              </a>
+            );
+          })}
         </div>
 
-        <div className={Styles.buttonContainer}>
+        <div className="hidden md:flex gap-4 items-center">
           <span
-            className="ptr"
+            className="cursor-pointer text-[#cec2d7] hover:text-[#dab9ff] transition-colors"
             tabIndex={0}
             role="button"
-            aria-label={`Switch to ${
-              theme === "light" ? "dark" : "light"
-            } mode`}
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
                 setTheme(theme === "light" ? "dark" : "light");
               }
             }}
           >
-            {theme === "light" ? (
-              <BsMoon
-                onClick={() => {
-                  setTheme("dark");
-                }}
-              />
-            ) : (
-              <BsSun
-                onClick={() => {
-                  setTheme("light");
-                }}
-              />
-            )}
+            {theme === "light" ? <BsMoon size={18} /> : <BsSun size={18} />}
           </span>
-          {/* <button
-            onClick={() =>
-              window.open(
-                "https://files.lighthouse.storage/?redirectfrom=main",
-                "_blank"
-              )
-            }
-            className={"fillBtn__purple"}
-            style={{ padding: "0.5rem 2rem" }}
+
+          <button
+            onClick={() => window.open("https://files.lighthouse.storage/", "_blank")}
+            className="text-[#cec2d7] hover:text-[#dab9ff] transition-colors text-sm font-semibold font-sans"
           >
-            Get Started
-          </button> */}
+            Login
+          </button>
+          <button 
+            onClick={() => window.open("https://files.lighthouse.storage/?redirectfrom=main", "_blank")}
+            className="bg-[#dab9ff] text-[#470084] px-6 py-2.5 rounded-md text-sm font-bold font-sans hover:scale-[1.02] transition-transform active:scale-95 shadow-[0_0_40px_rgba(218,185,255,0.3)]"
+          >
+            Start Now
+          </button>
+        </div>
+
+        <div className="md:hidden flex items-center gap-4">
+          <span
+            className="cursor-pointer text-[#cec2d7]"
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          >
+             {theme === "light" ? <BsMoon size={20} /> : <BsSun size={20} />}
+          </span>
+          {toggleMenu ? (
+            <RiCloseLine
+              color="#cec2d7"
+              size={27}
+              onClick={() => setToggleMenu(false)}
+            />
+          ) : (
+            <RiMenuFill
+              color="#cec2d7"
+              size={27}
+              onClick={() => setToggleMenu(true)}
+            />
+          )}
         </div>
       </div>
 
-      <div className={Styles.navbarMobileMenu}>
-        {toggleMenu ? (
-          <RiCloseLine
-            color="#ffff"
-            size={27}
-            onClick={() => {
-              setToggleMenu(false);
-            }}
-          ></RiCloseLine>
-        ) : (
-          <RiMenuFill
-            color="#ffff"
-            size={27}
-            onClick={() => {
-              setToggleMenu(true);
-            }}
-          ></RiMenuFill>
-        )}
-
-        {toggleMenu && (
-          <div className={Styles.MobileMenu + " scale-up-tr"}>
-            {links.map((link, index) => (
-              <p key={index}>
-                {link.path.length > 0 ? (
-                  <a
-                    href={link.path}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      _navigate.push(link.path);
-                    }}
-                  >
-                    {link.title}
-                  </a>
-                ) : (
-                  <a
-                    href={link.href}
-                    className="flex"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {link.title}
-                  </a>
-                )}
-              </p>
-            ))}
-
-            <button
-              onClick={() =>
-                window.open("https://files.lighthouse.storage/", "_blank")
-              }
-              className="fillBtn__blue"
-              style={{
-                padding: "0.5rem 2rem",
-                marginTop: "1rem",
-                width: "80%",
-              }}
-            >
-              Login
-            </button>
-          </div>
-        )}
-      </div>
-    </div>
+      {toggleMenu && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#131314]/95 backdrop-blur-xl border-t border-white/10 p-4 flex flex-col gap-4 shadow-xl">
+          {links.map((link, index) => {
+            const isActive = currentRoute === link.path;
+            const linkClasses = isActive
+              ? "text-[#dab9ff] font-sans text-base font-medium"
+              : "text-[#cec2d7] font-sans text-base";
+             
+            return link.path.length > 0 ? (
+              <a
+                key={index}
+                href={link.path}
+                className={linkClasses}
+                onClick={(e) => {
+                  e.preventDefault();
+                  _navigate.push(link.path);
+                  setToggleMenu(false);
+                }}
+              >
+                {link.title}
+              </a>
+            ) : (
+              <a
+                key={index}
+                href={link.href}
+                className={linkClasses + " flex items-center gap-1"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.title}
+              </a>
+            );
+          })}
+          <hr className="border-white/10 my-2" />
+          <button
+            onClick={() => window.open("https://files.lighthouse.storage/", "_blank")}
+            className="w-full text-center text-[#cec2d7] py-3 text-base font-semibold"
+          >
+            Login
+          </button>
+          <button
+             onClick={() => window.open("https://files.lighthouse.storage/?redirectfrom=main", "_blank")}
+             className="w-full bg-[#dab9ff] text-[#470084] px-6 py-3 rounded-md text-base font-bold shadow-[0_0_40px_rgba(218,185,255,0.3)]"
+          >
+            Start Now
+          </button>
+        </div>
+      )}
+    </nav>
   );
 }
 

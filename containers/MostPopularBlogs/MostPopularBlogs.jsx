@@ -1,39 +1,22 @@
 import React from "react";
-import { FeatureBlogCard, TitleSeparator } from "../../components";
-import Style from "./MostPopularBlogs.module.scss";
-
-// import required modules
+import { FeatureBlogCard } from "../../components";
 
 function MostPopularBlogs({ blogsData }) {
-  console.log(blogsData, "-----BLOGS DATA --- ");
   const sortedBlogsData = blogsData?.sort((a, b) => {
     return (
       new Date(b?.attributes?.publishedAt) -
       new Date(a?.attributes?.publishedAt)
     );
   });
-  console.log(sortedBlogsData, "-----SORTED BLOGS DATA --- ");
 
   return (
-    <div className={Style.MostPopularBlogs} data-aos="fade-up">
-      <TitleSeparator
-        style={{ alignItems: "flex-start" }}
-        topTitle={"Our Blogs"}
-        title={"Read our latest blog"}
-      />
-      <div className={Style.MostPopularBlogs__carouselContainer}>
-        {sortedBlogsData?.map((item, index) => (
-          <div
-            className={Style.blogCard}
-            key={index}
-            data-aos="fade-up"
-            data-aos-delay={100 * index}
-          >
-            <FeatureBlogCard blog={item} />
-          </div>
-        ))}
-      </div>
-    </div>
+    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      {sortedBlogsData?.slice(1).map((item, index) => (
+        <React.Fragment key={index}>
+          <FeatureBlogCard blog={item} delay={100 * index} />
+        </React.Fragment>
+      ))}
+    </section>
   );
 }
 

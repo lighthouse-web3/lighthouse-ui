@@ -1,0 +1,15 @@
+# Lighthouse Storage
+
+Lighthouse Storage provides scalable, permanent decentralized data storage on IPFS & Filecoin for developers, businesses, and individuals.
+
+## Core Offerings
+- **Permanent Storage**: Pay once and store your files forever. No recurring monthly subscriptions.
+- **Decentralized Infrastructure**: Built on IPFS and Filecoin, ensuring data availability, immutability, and security.
+- **Access Control**: Encrypt and store data securely with fine-grained access control features.
+- **Developer Ecosystem**: Simple APIs, SDKs, and CLI tools to integrate Web3 storage directly into your applications.
+
+## Resources
+- Website: https://lighthouse.storage/
+- Documentation: https://docs.lighthouse.storage/
+- GitHub: https://github.com/lighthouse-web3
+- Twitter: @LighthouseWeb3

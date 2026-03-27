@@ -17,11 +17,13 @@ import {
   IconUser,
 } from "@tabler/icons-react";
 import { SiOpensea } from "react-icons/si";
+import { RiScanFill } from "react-icons/ri";
 
 import { formatEther, parseEther } from "viem";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import FAQContainer from "../containers/Faq-container/FaqContainer";
+import { turbyMintStaticContent } from "../utils/Data/TurbyContent";
 
 // RainbowKit/Wagmi hooks (v1 API)
 import {
@@ -49,20 +51,8 @@ import { NFTcontractAddress, NFTNetwork } from "../utils/Data/config";
 
 // NFT Configuration - Update these values
 const NFT_CONFIG = {
-  name: "MINT TURBY",
-  chain: "Base",
-  description:
-    "Turby is the on-chain mascot of Lighthouse. It represents permanent data and long-term digital ownership. Turby NFTs are stored using Lighthouse’s perpetual storage infrastructure. The artwork and metadata are designed to remain available long-term.",
-  mintedCount: 133,
-  price: 0.01, // ETH fallback
+  ...turbyMintStaticContent,
   contractAddress: NFTcontractAddress,
-  socialLinks: {
-    twitter: "https://twitter.com/lighthouseweb3",
-    telegram: "https://t.me/LighthouseStorage",
-    discord: "https://discord.com/invite/c4a4CGCdJG",
-    opensea: "https://opensea.io/collection/lighthouse-turby-354048658",
-    contactMail: "mail@lighthouse.storage",
-  },
 };
 
 export default function TurbyMintPage() {
@@ -397,6 +387,14 @@ export default function TurbyMintPage() {
                   className={Styles.socialIcon}
                 >
                   <IconBrandTelegram size={20} />
+                </a>
+                <a
+                  href={NFT_CONFIG.socialLinks.baseScan}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={Styles.socialIcon}
+                >
+                  <RiScanFill size={20} style={{ rotate: "314deg" }} />
                 </a>
                 <a
                   href={NFT_CONFIG.socialLinks.opensea}

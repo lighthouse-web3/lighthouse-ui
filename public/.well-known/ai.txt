@@ -1,0 +1,7 @@
+# Lighthouse Storage AI Data Use Configuration
+User-agent: *
+Allow: /
+# Welcome to Lighthouse Storage. This file provides AI data context for our Web3 Storage project.
+name: Lighthouse Storage
+url: https://lighthouse.storage/
+description: Scalable, permanent decentralized data storage on IPFS & Filecoin.
