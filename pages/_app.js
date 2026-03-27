@@ -68,7 +68,7 @@ function MyApp({ Component, pageProps }) {
           theme={darkTheme()}
         >
           <ThemeContext.Provider value={{ theme, setTheme }}>
-            <NewsBar />
+            {/* <NewsBar /> */}
             <AnimatePresence mode="wait" initial={false}>
               <Component {...pageProps} />
             </AnimatePresence>

@@ -73,7 +73,7 @@ function Header({ style }) {
   }, [scrolling]);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#131314]/60 backdrop-blur-[20px] shadow-[0_48px_48px_rgba(218,185,255,0.06)]">
+    <nav className="fixed top-0 w-full z-50 bg-[#131314]/60  shadow-[0_48px_48px_rgba(218,185,255,0.06)]">
       <div className="flex justify-between items-center px-4 md:px-8 py-4 max-w-7xl mx-auto">
         <div
           className="flex items-center cursor-pointer"
@@ -139,14 +139,14 @@ function Header({ style }) {
             {theme === "light" ? <BsMoon size={18} /> : <BsSun size={18} />}
           </span> */}
 
-          <button
+          {/* <button
             onClick={() =>
               window.open("https://files.lighthouse.storage/", "_blank")
             }
             className="text-[#cec2d7] hover:text-[#dab9ff] transition-colors text-sm font-semibold font-sans"
           >
             Login
-          </button>
+          </button> */}
           <button
             onClick={() =>
               window.open(
@@ -217,14 +217,14 @@ function Header({ style }) {
             );
           })}
           <hr className="border-white/10 my-2" />
-          <button
+          {/* <button
             onClick={() =>
               window.open("https://files.lighthouse.storage/", "_blank")
             }
             className="w-full text-center text-[#cec2d7] py-3 text-base font-semibold"
           >
             Login
-          </button>
+          </button> */}
           <button
             onClick={() =>
               window.open(
