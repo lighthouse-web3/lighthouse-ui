@@ -31,7 +31,7 @@ export default function PricingPage() {
                 </div>
                 <h2 className="text-4xl md:text-5xl font-headline font-bold text-[#e4e2e2] mb-3">Pay For What You Need</h2>
                 <p className="text-[#cec2d7] font-sans text-lg max-w-xl">
-                  Tailor your decentralized storage plan exactly to your project's data scale and infrastructural requirements.
+                  Tailor your decentralized storage plan exactly to your project&apos;s data scale and infrastructural requirements.
                 </p>
               </div>
               
