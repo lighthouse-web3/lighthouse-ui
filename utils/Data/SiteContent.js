@@ -737,17 +737,17 @@ export const AnnualPricing = [
       },
       {
         title: "Encryption & Token Gating",
-        value: "icon-cross",
+        value: "icon",
         tooltip: "Get Add-ons for Encryption & Token Gating",
       },
       {
         title: "IPNS",
-        value: "icon-cross",
+        value: "icon",
         tooltip: "Get Add-ons for IPNS",
       },
       {
         title: "Migration Support",
-        value: "icon-cross",
+        value: "icon",
         tooltip: "Get Add-ons for Migration Support",
       },
     ],
@@ -861,17 +861,17 @@ export const MonthlyPricing = [
       },
       {
         title: "Encryption & Token Gating",
-        value: "icon-cross",
+        value: "icon",
         tooltip: "Get Add-ons for Encryption & Token Gating",
       },
       {
         title: "IPNS",
-        value: "icon-cross",
+        value: "icon",
         tooltip: "Get Add-ons for IPNS",
       },
       {
         title: "Migration Support",
-        value: "icon-cross",
+        value: "icon",
         tooltip: "Get Add-ons for Migration Support",
       },
     ],
