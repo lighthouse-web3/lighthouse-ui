@@ -5,7 +5,6 @@ import { BsInfoCircle } from "react-icons/bs";
 import { FaCheck, FaXmark } from "react-icons/fa6";
 import { Switcher, TitleSeparator } from "../../components";
 import {
-  AddOnsPricing,
   AnnualPricing,
   LifetimePricing,
   MonthlyPricing,
@@ -16,7 +15,7 @@ const Pricing = () => {
 
   const renderCards = (plans) => {
     return plans.map((plan, index) => {
-      const isPremium = index === 1; // Mark the 2nd plan as the premium one dynamically
+      const isPremium = index === plans.length - 1; // Mark the last plan (Premium) as the super value one
       const cardClasses = isPremium
         ? "p-6 md:p-8 rounded-2xl bg-[#131314] border border-[#dab9ff]/40 relative flex flex-col shadow-[0_48px_48px_rgba(218,185,255,0.06)] transform lg:scale-105 z-10"
         : "p-6 md:p-8 rounded-2xl bg-[#131314] border border-[#4c4354]/10 flex flex-col hover:border-[#dab9ff]/20 transition-all";
