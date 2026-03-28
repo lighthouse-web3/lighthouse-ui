@@ -488,7 +488,9 @@ const EcosystemGrid = () => {
                   <img
                     src={item.icon}
                     alt={item.name}
-                    className="max-h-full max-w-full object-contain"
+                    width={150}
+                    height={56}
+                    className="w-auto h-full object-contain"
                     style={
                       theme === "dark"
                         ? { filter: "brightness(100%)" }
