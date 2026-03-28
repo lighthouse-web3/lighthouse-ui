@@ -53,20 +53,20 @@ const newLifetimePricing = [...LifetimePricing, addOn];
 function PricingTable() {
   const featureSet = Array.from(
     new Set(
-      newLifetimePricing.flatMap((plan) => plan.features.map((f) => f.title))
-    )
+      newLifetimePricing.flatMap((plan) => plan.features.map((f) => f.title)),
+    ),
   );
 
   function getTooltipForFeature(featureTitle) {
     const feature = newLifetimePricing[0].features.find(
-      (f) => f.title === featureTitle
+      (f) => f.title === featureTitle,
     );
     return feature?.tooltip;
   }
 
   return (
     <>
-      <div className={styles.pricingTitle}>
+      {/* <div className={styles.pricingTitle}>
         <TitleSeparator topTitle={"Compare Lifetime plans "} />
       </div>
 
@@ -129,7 +129,7 @@ function PricingTable() {
             })}
           </div>
         ))}
-      </div>
+      </div> */}
     </>
   );
 }

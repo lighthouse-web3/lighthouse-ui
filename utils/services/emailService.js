@@ -1,13 +1,11 @@
 import axios from "axios";
 import { notify } from "./notification";
 
-
-const brevo_key = process.env.NEXT_PUBLIC_BREVO_API;
-
+const BREVO_API_KEY = process.env.NEXT_PUBLIC_BREVO_API;
 
 export const sendEmail = async (email) => {
   try {
-    if (!brevo_key) {
+    if (!BREVO_API_KEY) {
       console.error("Brevo API key is not configured");
       notify("Email service configuration error", "error");
       return;
@@ -78,7 +76,7 @@ export const validateEmail = (email) => {
   return String(email)
     .toLowerCase()
     .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     );
 };
 

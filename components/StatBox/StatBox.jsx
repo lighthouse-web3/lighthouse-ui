@@ -17,7 +17,7 @@ function StatBox() {
       </div>
       <div className="text-center md:text-left">
         <div className="text-4xl md:text-5xl font-bold font-sans tracking-tighter text-[#dab9ff] mb-1">
-          <CountUp duration={8} end={20} delay={2} suffix="K+" />
+          <CountUp duration={8} end={28} delay={2} suffix="K+" />
         </div>
         <div className="text-xs font-bold tracking-widest font-sans uppercase text-[#cec2d7]/60">
           Active Users
@@ -25,7 +25,7 @@ function StatBox() {
       </div>
       <div className="text-center md:text-left">
         <div className="text-4xl md:text-5xl font-bold font-sans tracking-tighter text-[#dab9ff] mb-1">
-          <CountUp duration={8} end={5.5} decimals={1} delay={2} suffix="M+" />
+          <CountUp duration={8} end={8.5} decimals={1} delay={2} suffix="M+" />
         </div>
         <div className="text-xs font-bold tracking-widest font-sans uppercase text-[#cec2d7]/60">
           Files Stored

@@ -4,24 +4,24 @@ export const LandingPageData = {
   HeroSection: {
     title: "Store Your Data <br/> Permanently & Securely",
     subTitle:
-      "Lighthouse offers permanent, decentralized storage powered by Filecoin. Secure, scalable, and ideal for individuals, developers, and enterprises.",
+      "Lighthouse offers permanent, decentralized storage powered by IPFS. Secure, scalable, and ideal for individuals, developers, and enterprises.",
   },
   KeyFeatures: [
     {
-      icon: "/featureIcon/feature_6.svg",
+      icon: "/featureIcon/feature_6.png",
       width: "6rem",
       title: "Perpetual Storage to preserve your data",
       subTitle: `Embrace perpetual storage with IPFS and Filecoin's advanced services.`,
     },
     {
-      icon: "/featureIcon/feature_5.svg",
+      icon: "/featureIcon/feature_5.png",
       width: "8rem",
 
       title: "Decentralized Storage Solutions for Your Files",
       subTitle: `Harness the power of IPFS and Filecoin to securely store your files on a decentralized network.`,
     },
     {
-      icon: "/featureIcon/feature_1.svg",
+      icon: "/featureIcon/feature_1.png",
       width: "6rem",
 
       title: "Encryption & Access control functionality",
@@ -29,7 +29,7 @@ export const LandingPageData = {
         "Keep your data safe and with token gated access on a public network.",
     },
     {
-      icon: "/featureIcon/feature_4.svg",
+      icon: "/featureIcon/feature_4.png",
       width: "8rem",
 
       title: "Dedicated IPFS gateways for fast retrievals",
@@ -37,7 +37,7 @@ export const LandingPageData = {
         "Experience lightning-fast retrievals with our dedicated IPFS Gateways.",
     },
     {
-      icon: "/featureIcon/feature_3.svg",
+      icon: "/featureIcon/feature_3.png",
       width: "6rem",
 
       title: "Decentralized image resizing",
@@ -45,7 +45,7 @@ export const LandingPageData = {
         "Save bandwidth, optimize with blockchain-powered solutions seamlessly  without sacrificing image quality.",
     },
     {
-      icon: "/featureIcon/feature_2.svg",
+      icon: "/featureIcon/feature_2.png",
       width: "6rem",
 
       title: "High-Speed IPFS Video Gateway",
@@ -395,11 +395,27 @@ export const testimonialSection = {
   testimonials: [
     {
       quote:
-        "Lighthouse with Macha delivers optimal Decentralized Storage on IPFS and Filecoin. The seamless integration and exceptional speed make it our top pick for Web3 Storage. As a reliable Filecoin Storage Provider, Lighthouse stands out for NFT Data Security, solidifying its role in our decentralized storage infrastructure for Web3.",
-      person: "Saksham",
-      designation: "MetaWork Labs",
-      img: "/testimonial/saksham.jpg",
-      link: "https://twitter.com/saxmjain?s=21&t=nUsbImMLxK72iJU2a3rdjQ",
+        "Lighthouse is the missing piece in the web3 ecosystem that enables OKcontract users to directly upload and pin to IPFS transparently and permanently.",
+      person: "Henri",
+      designation: "OKContract",
+      img: "/testimonial/henri.jpg",
+      link: "https://twitter.com/henri__OK",
+    },
+    // {
+    //   quote:
+    //     "Lighthouse with Macha delivers optimal Decentralized Storage on IPFS and Filecoin. The seamless integration and exceptional speed make it our top pick for Web3 Storage. As a reliable Filecoin Storage Provider, Lighthouse stands out for NFT Data Security, solidifying its role in our decentralized storage infrastructure for Web3.",
+    //   person: "Saksham",
+    //   designation: "MetaWork Labs",
+    //   img: "/testimonial/saksham.jpg",
+    //   link: "https://twitter.com/saxmjain?s=21&t=nUsbImMLxK72iJU2a3rdjQ",
+    // },
+    {
+      quote:
+        "Great product, inspired team with clear vision. Their permanent storage functionality is one of a kind scaling quickly with demands of FileMarket user growth",
+      person: "lya Orlov",
+      designation: "FileMarket",
+      img: "/testimonial/lya.png",
+      link: "https://twitter.com/UnderKong",
     },
     {
       quote:
@@ -409,38 +425,22 @@ export const testimonialSection = {
       img: "/testimonial/jagdeep.jpg",
       link: "https://twitter.com/realSidhuJag",
     },
-    {
-      quote:
-        "Lighthouse perpetual storage is the best practice in the FVM community. By integrating Lighthouse SDK, DataverseOS ecosystem dApps can access functions of programmable storage and store user files on Filecoin and customize payment solutions easily!",
-      person: "Qibing Li",
-      designation: "DataverseOS",
-      img: "/testimonial/Qibing.jpg",
-      link: "",
-    },
-    {
-      quote:
-        "The encryption and on-chain access control mechanism enabled by Lighthouse is instrumental to our design and engineering work at Daln. Integrating the SDK into our UI was a breeze.",
-      person: "Karen",
-      designation: "Daln",
-      img: "/testimonial/karen.png",
-      link: "",
-    },
-    {
-      quote:
-        "Lighthouse is the missing piece in the web3 ecosystem that enables OKcontract users to directly upload and pin to IPFS transparently and permanently.",
-      person: "Henri",
-      designation: "OKContract",
-      img: "/testimonial/henri.jpg",
-      link: "https://twitter.com/henri__OK",
-    },
-    {
-      quote:
-        "Great product, inspired team with clear vision. Their permanent storage functionality is one of a kind scaling quickly with demands of FileMarket user growth",
-      person: "lya Orlov",
-      designation: "FileMarket",
-      img: "/testimonial/lya.png",
-      link: "https://twitter.com/UnderKong",
-    },
+    // {
+    //   quote:
+    //     "Lighthouse perpetual storage is the best practice in the FVM community. By integrating Lighthouse SDK, DataverseOS ecosystem dApps can access functions of programmable storage and store user files on Filecoin and customize payment solutions easily!",
+    //   person: "Qibing Li",
+    //   designation: "DataverseOS",
+    //   img: "/testimonial/Qibing.jpg",
+    //   link: "",
+    // },
+    // {
+    //   quote:
+    //     "The encryption and on-chain access control mechanism enabled by Lighthouse is instrumental to our design and engineering work at Daln. Integrating the SDK into our UI was a breeze.",
+    //   person: "Karen",
+    //   designation: "Daln",
+    //   img: "/testimonial/karen.png",
+    //   link: "",
+    // },
   ],
 };
 
@@ -737,17 +737,17 @@ export const AnnualPricing = [
       },
       {
         title: "Encryption & Token Gating",
-        value: "icon-cross",
+        value: "icon",
         tooltip: "Get Add-ons for Encryption & Token Gating",
       },
       {
         title: "IPNS",
-        value: "icon-cross",
+        value: "icon",
         tooltip: "Get Add-ons for IPNS",
       },
       {
         title: "Migration Support",
-        value: "icon-cross",
+        value: "icon",
         tooltip: "Get Add-ons for Migration Support",
       },
     ],
@@ -861,17 +861,17 @@ export const MonthlyPricing = [
       },
       {
         title: "Encryption & Token Gating",
-        value: "icon-cross",
+        value: "icon",
         tooltip: "Get Add-ons for Encryption & Token Gating",
       },
       {
         title: "IPNS",
-        value: "icon-cross",
+        value: "icon",
         tooltip: "Get Add-ons for IPNS",
       },
       {
         title: "Migration Support",
-        value: "icon-cross",
+        value: "icon",
         tooltip: "Get Add-ons for Migration Support",
       },
     ],

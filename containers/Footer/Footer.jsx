@@ -135,12 +135,17 @@ function Footer() {
           <div className="flex flex-col gap-4">
             <p className="font-bold text-[#e4e2e2] text-lg font-headline">Newsletter</p>
             <input
-              type="text"
+              type="email"
               placeholder="user@mail.com"
               ref={mailInput}
               id="newsletter-email"
               name="newsletter-email"
               autoComplete="email"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  subscribeEmail();
+                }
+              }}
               className="bg-[#1b1c1c] border border-[#4c4354]/20 text-[#e4e2e2] px-4 py-3 rounded-xl focus:outline-none focus:border-[#dab9ff] transition-colors w-full"
             />
             <button
