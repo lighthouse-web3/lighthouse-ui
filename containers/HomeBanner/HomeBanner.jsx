@@ -12,7 +12,7 @@ function HomeBanner() {
   return (
     <div className="bg-[#131314] text-[#e4e2e2] font-sans pt-16">
       {/* Hero Section */}
-      <section className="relative min-h-[921px] flex items-center overflow-hidden px-8">
+      <section className="relative min-h-[700px] flex items-center overflow-hidden px-8">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(218,185,255,0.08)_0%,_transparent_50%)]"></div>
         <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-12 relative z-10">
           <div
