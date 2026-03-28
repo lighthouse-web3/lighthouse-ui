@@ -8,20 +8,20 @@ export const LandingPageData = {
   },
   KeyFeatures: [
     {
-      icon: "/featureIcon/feature_6.svg",
+      icon: "/featureIcon/feature_6.png",
       width: "6rem",
       title: "Perpetual Storage to preserve your data",
       subTitle: `Embrace perpetual storage with IPFS and Filecoin's advanced services.`,
     },
     {
-      icon: "/featureIcon/feature_5.svg",
+      icon: "/featureIcon/feature_5.png",
       width: "8rem",
 
       title: "Decentralized Storage Solutions for Your Files",
       subTitle: `Harness the power of IPFS and Filecoin to securely store your files on a decentralized network.`,
     },
     {
-      icon: "/featureIcon/feature_1.svg",
+      icon: "/featureIcon/feature_1.png",
       width: "6rem",
 
       title: "Encryption & Access control functionality",
@@ -29,7 +29,7 @@ export const LandingPageData = {
         "Keep your data safe and with token gated access on a public network.",
     },
     {
-      icon: "/featureIcon/feature_4.svg",
+      icon: "/featureIcon/feature_4.png",
       width: "8rem",
 
       title: "Dedicated IPFS gateways for fast retrievals",
@@ -37,7 +37,7 @@ export const LandingPageData = {
         "Experience lightning-fast retrievals with our dedicated IPFS Gateways.",
     },
     {
-      icon: "/featureIcon/feature_3.svg",
+      icon: "/featureIcon/feature_3.png",
       width: "6rem",
 
       title: "Decentralized image resizing",
@@ -45,7 +45,7 @@ export const LandingPageData = {
         "Save bandwidth, optimize with blockchain-powered solutions seamlessly  without sacrificing image quality.",
     },
     {
-      icon: "/featureIcon/feature_2.svg",
+      icon: "/featureIcon/feature_2.png",
       width: "6rem",
 
       title: "High-Speed IPFS Video Gateway",

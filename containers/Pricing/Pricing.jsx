@@ -30,7 +30,7 @@ const Pricing = () => {
         >
           {isPremium && (
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-br from-[#dab9ff] to-[#a4c8ff] px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-[#2a0053]">
-              Most Popular
+              Super Value
             </div>
           )}
 
@@ -162,7 +162,7 @@ const Pricing = () => {
       </div>
 
       <div
-        className={`max-w-7xl mx-auto grid gap-4 lg:gap-6 mt-12 items-stretch px-4 ${activeTitle === "Add-on" ? "md:grid-cols-2" : "md:grid-cols-3"}`}
+        className={`max-w-7xl mx-auto grid gap-4 lg:gap-6 mt-12 items-stretch px-0 md:px-4 ${activeTitle === "Add-on" ? "md:grid-cols-2" : "md:grid-cols-3"}`}
       >
         {(activeTitle === "Lifetime" ||
           activeTitle === "Annually" ||

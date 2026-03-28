@@ -10,7 +10,7 @@ function HomeBanner() {
   const { theme, setTheme } = useContext(ThemeContext);
 
   return (
-    <div className="bg-[#131314] text-[#e4e2e2] font-sans pt-20">
+    <div className="bg-[#131314] text-[#e4e2e2] font-sans pt-16">
       {/* Hero Section */}
       <section className="relative min-h-[921px] flex items-center overflow-hidden px-8">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(218,185,255,0.08)_0%,_transparent_50%)]"></div>

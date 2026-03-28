@@ -185,13 +185,13 @@ function Header({ style }) {
 
       {toggleMenu && (
         <div className="md:hidden absolute top-full left-0 w-full bg-[#131314]/95 backdrop-blur-xl border-t border-white/10 p-4 flex flex-col gap-4 shadow-xl">
-          {links.map((link, index) => {
+          {links.filter(link => link.path.length > 0).map((link, index) => {
             const isActive = currentRoute === link.path;
             const linkClasses = isActive
               ? "text-[#dab9ff] font-sans text-base font-medium"
               : "text-[#cec2d7] font-sans text-base";
 
-            return link.path.length > 0 ? (
+            return (
               <a
                 key={index}
                 href={link.path}
@@ -204,9 +204,18 @@ function Header({ style }) {
               >
                 {link.title}
               </a>
-            ) : (
+            );
+          })}
+          <hr className="border-white/10 my-2" />
+          {links.filter(link => link.path.length === 0).map((link, index) => {
+            const isActive = currentRoute === link.path;
+            const linkClasses = isActive
+              ? "text-[#dab9ff] font-sans text-base font-medium"
+              : "text-[#cec2d7] font-sans text-base";
+
+            return (
               <a
-                key={index}
+                key={`ext-${index}`}
                 href={link.href}
                 className={linkClasses + " flex items-center gap-1"}
                 target="_blank"
