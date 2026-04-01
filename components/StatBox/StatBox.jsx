@@ -20,7 +20,7 @@ function StatBox() {
           <CountUp duration={8} end={28} delay={2} suffix="K+" />
         </div>
         <div className="text-xs font-bold tracking-widest font-sans uppercase text-[#cec2d7]/60">
-          Active Users
+          Users
         </div>
       </div>
       <div className="text-center md:text-left">
