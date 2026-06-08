@@ -143,7 +143,7 @@ const Pricing = () => {
         <Switcher
           title1="Monthly"
           title2="Annually"
-          title3="Lifetime"
+          // title3="Lifetime"
           // title4="Add-on"
           activeTitle={activeTitle}
           setActiveTitle={setActiveTitle}

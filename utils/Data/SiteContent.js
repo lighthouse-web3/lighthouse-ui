@@ -234,13 +234,13 @@ export const LandingPageData = {
           "Yes, Add-ons can be added to any Lifetime plan. However, Add-ons are charged monthly, independent of the one-time payment made for the Lifetime storage.",
       },
     },
-    {
-      attributes: {
-        question: "What does it mean by permanent storage?",
-        answer:
-          "Permanent storage means you pay once for your files and they are intended to be stored forever. There is no need for recurring payments to retain your stored files.",
-      },
-    },
+    // {
+    //   attributes: {
+    //     question: "What does it mean by permanent storage?",
+    //     answer:
+    //       "Permanent storage means you pay once for your files and they are intended to be stored forever. There is no need for recurring payments to retain your stored files.",
+    //   },
+    // },
   ],
 
   TurbyFAQs: [
