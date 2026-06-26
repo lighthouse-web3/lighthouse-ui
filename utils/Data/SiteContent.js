@@ -2,23 +2,23 @@ export const disclaimerText = "Turby NFT by Lighthouse is live, Mint Now !";
 
 export const LandingPageData = {
   HeroSection: {
-    title: "Store Your Data <br/> Permanently & Securely",
+    title: "Store Your Data <br/> Securely & Reliably",
     subTitle:
-      "Lighthouse offers permanent, decentralized storage powered by IPFS. Secure, scalable, and ideal for individuals, developers, and enterprises.",
+      "Lighthouse offers decentralized storage powered by IPFS. Secure, scalable, and ideal for individuals, developers, and enterprises.",
   },
   KeyFeatures: [
     {
       icon: "/featureIcon/feature_6.png",
       width: "6rem",
-      title: "Perpetual Storage to preserve your data",
-      subTitle: `Embrace perpetual storage with IPFS and Filecoin's advanced services.`,
+      title: "Long-term Storage to preserve your data",
+      subTitle: `Embrace long-term storage with IPFS and decentralized networks like Filecoin and Walrus.`,
     },
     {
       icon: "/featureIcon/feature_5.png",
       width: "8rem",
 
       title: "Decentralized Storage Solutions for Your Files",
-      subTitle: `Harness the power of IPFS and Filecoin to securely store your files on a decentralized network.`,
+      subTitle: `Harness the power of IPFS to securely store your files on decentralized networks like Filecoin and Walrus.`,
     },
     {
       icon: "/featureIcon/feature_1.png",
@@ -106,7 +106,7 @@ export const LandingPageData = {
       title: "WEB APPLICATION",
       subTitle: "Secure and Simplify Your File Storage and Sharing",
       description:
-        "Log in to our web application and access your files with ease. Our app provides a user-friendly interface to store, retrieve, and share files on popular decentralized storage networks: IPFS and Filecoin.",
+        "Log in to our web application and access your files with ease. Our app provides a user-friendly interface to store, retrieve, and share files on popular decentralized storage networks: IPFS, Filecoin, and Walrus.",
       icon: "/suitsIcon/web_app.png",
       link: "https://files.lighthouse.storage/",
       buttonText: "Open App",
@@ -315,7 +315,7 @@ export const LandingPageData = {
   Documentation: {
     title: "Lighthouse Documentation",
     subtitle:
-      "Lighthouse is permanent storage protocol that allows the ability to pay once and store forever",
+      "Lighthouse is a decentralized storage protocol built on IPFS with support for networks like Filecoin and Walrus.",
     bannerImage:
       "https://gateway.lighthouse.storage/ipfs/QmSdS3Zxk64vC28LhNy4jJrcYzD4ziqPB69UaR1ufNXib7",
     videURL: "",
@@ -395,7 +395,7 @@ export const testimonialSection = {
   testimonials: [
     {
       quote:
-        "Lighthouse is the missing piece in the web3 ecosystem that enables OKcontract users to directly upload and pin to IPFS transparently and permanently.",
+        "Lighthouse is the missing piece in the web3 ecosystem that enables OKcontract users to directly upload and pin to IPFS transparently.",
       person: "Henri",
       designation: "OKContract",
       img: "/testimonial/henri.jpg",
@@ -411,7 +411,7 @@ export const testimonialSection = {
     // },
     {
       quote:
-        "Great product, inspired team with clear vision. Their permanent storage functionality is one of a kind scaling quickly with demands of FileMarket user growth",
+        "Great product, inspired team with clear vision. Their decentralized storage functionality is one of a kind scaling quickly with demands of FileMarket user growth",
       person: "lya Orlov",
       designation: "FileMarket",
       img: "/testimonial/lya.png",

@@ -5,8 +5,8 @@ import Script from "next/script";
 
 function Metadata({
   title = "Lighthouse Web3 Storage",
-  description = "Lighthouse Storage provides scalable, permanent decentralized data storage on IPFS & Filecoin for developers and enterprises. Pay once, store forever.",
-  keywords = "decentralized storage, permanent storage, IPFS, Filecoin, Web3 storage, scalable data storage, enterprise storage, Lighthouse Web3",
+  description = "Lighthouse Storage provides scalable, decentralized data storage on IPFS with support for networks like Filecoin and Walrus for developers and enterprises.",
+  keywords = "decentralized storage, IPFS, Filecoin, Walrus, Web3 storage, scalable data storage, enterprise storage, Lighthouse Web3",
   url = "https://lighthouse.storage/",
   image = "https://gateway.lighthouse.storage/ipfs/Qmd7rR9EPKomhmoRUw2WB7FJAeSWAtC8c1nkKgGZL39LpB",
   siteName = "Lighthouse Storage",

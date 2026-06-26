@@ -50,7 +50,7 @@ export default function LighthouseSuit({ data }) {
                   <p className="pl-4">publicKey,</p>
                   <p className="pl-4">signedMessage</p>
                   <p>);</p>
-                  <p className="mt-4 text-[#cec2d7]/40">// Returns a hash (CID) for your permanent data</p>
+                  <p className="mt-4 text-[#cec2d7]/40">// Returns a hash (CID) for your stored data</p>
                   <p><span className="text-[#dab9ff]">console</span>.log(response.data.Hash);</p>
                 </div>
               </div>

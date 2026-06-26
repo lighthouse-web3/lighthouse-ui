@@ -124,7 +124,7 @@ const ecosystemData = [
   {
     name: "NFT Storage",
     description:
-      "Decentralized NFT data storage using IPFS and Filecoin for permanence and auditability.",
+      "Decentralized NFT data storage using IPFS on networks like Filecoin and Walrus for reliability and auditability.",
     icon: "/client/nft_storage.svg",
     tags: ["NFTs"],
     website: "https://nft.storage/",
