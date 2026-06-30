@@ -77,8 +77,30 @@ const ecosystemData = [
     telegram: "https://t.co/KV0trjRjhg",
     twitter: "https://x.com/NuklaiData",
   },
+  {
+    name: "Walrus Memory",
+    description:
+      "Portable memory layer for AI agents, enabling reliable coordination and programmable access control across apps and sessions.",
+    icon: "/client/walrus.png",
+    darkIconFilter: "brightness(0) invert(1)",
+    tags: ["Artificial Intelligence (AI)"],
+    website: "https://walrus.xyz/products/walrus-memory/",
+    telegram: null,
+    twitter: "https://x.com/walrusprotocol",
+  },
 
   // === DA ===
+  {
+    name: "Walrus",
+    description:
+      "Decentralized storage and data availability platform for verifiable data, AI, and onchain applications.",
+    icon: "/client/walrus.png",
+    darkIconFilter: "brightness(0) invert(1)",
+    tags: ["Data Availability (DA)"],
+    website: "https://walrus.xyz/",
+    telegram: null,
+    twitter: "https://x.com/walrusprotocol",
+  },
   {
     name: "Syscoin",
     description:
@@ -386,6 +408,16 @@ const ecosystemData = [
     telegram: null,
     twitter: null,
   },
+  {
+    name: "Sui",
+    description:
+      "Layer 1 blockchain designed for fast, secure digital asset ownership and scalable Web3 applications.",
+    icon: "/client/sui.svg",
+    tags: ["L1 / L2"],
+    website: "https://www.sui.io/",
+    telegram: null,
+    twitter: "https://twitter.com/SuiNetwork",
+  },
 ];
 
 const EcosystemGrid = () => {
@@ -393,7 +425,13 @@ const EcosystemGrid = () => {
   const filtered = ecosystemData.filter((item) =>
     item.tags.includes(activeTag)
   );
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
+  const getIconStyle = (item) => ({
+    filter:
+      theme === "dark"
+        ? item.darkIconFilter || "brightness(100%)"
+        : item.lightIconFilter || "brightness(10%)",
+  });
 
   return (
     <section className="w-full">
@@ -436,11 +474,7 @@ const EcosystemGrid = () => {
                       src={item?.icon}
                       width={"150px"}
                       height={"40px"}
-                      style={
-                        theme === "dark"
-                          ? { filter: "brightness(100%)" }
-                          : { filter: "brightness(10%)" }
-                      }
+                      style={getIconStyle(item)}
                       aspectRatio={true}
                     />
                   </div>
@@ -490,12 +524,8 @@ const EcosystemGrid = () => {
                     alt={item.name}
                     width={150}
                     height={56}
-                    className="w-auto h-full object-contain"
-                    style={
-                      theme === "dark"
-                        ? { filter: "brightness(100%)" }
-                        : { filter: "brightness(10%)" }
-                    }
+                    className="max-w-full max-h-full object-contain"
+                    style={getIconStyle(item)}
                   />
                 </div>
               </div>
