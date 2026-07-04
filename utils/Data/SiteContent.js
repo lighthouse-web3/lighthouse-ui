@@ -612,190 +612,64 @@ export const LifetimePricing = [
   },
 ];
 
-export const AnnualPricing = [
+// --- Shared add-on feature sets (kept in sync with files-dapp) ---
+const unavailableAddOnFeatures = [
   {
-    index: null,
-    title: "Free Trial",
-    cost: "0",
-    icon: "/icons/free.png",
-    icon_light: "/icons/free_light.png",
-    buttonText: "Try For Free",
-
-    features: [
-      {
-        title: "Total Storage",
-        value: "5 GB",
-        tooltip: "Total Storage Space",
-      },
-      // {
-      //   title: "Bandwidth",
-      //   value: "5 GB",
-      //   tooltip: "Additional bandwidth at $0.1 per GB / month",
-      // },
-      {
-        title: "IPFS",
-        value: "icon",
-        tooltip: "Hot Storage",
-      },
-      {
-        title: "Filecoin",
-        value: "icon",
-        tooltip: "Storage Backup",
-      },
-      {
-        title: "Encryption & Token Gating",
-        value: "icon-cross",
-        tooltip: "Get Add-ons for Encryption & Token Gating",
-      },
-      {
-        title: "IPNS",
-        value: "icon-cross",
-        tooltip: "Get Add-ons for IPNS",
-      },
-      {
-        title: "Migration Support",
-        value: "icon-cross",
-        tooltip: "Get Add-ons for Migration Support",
-      },
-    ],
-    onlyShow: true,
+    title: "Encryption & Token Gating",
+    value: "icon-cross",
+    tooltip: "Get Add-ons for Encryption & Token Gating",
   },
   {
-    index: 7,
-    title: "Lite",
-    cost: "120",
-    icon: "/icons/lite.png",
-    icon_light: "/icons/lite_light.png",
-    buttonText: "Get Started",
-
-    features: [
-      {
-        title: "Total Storage",
-        value: "500 GB",
-        tooltip: "Total Storage Space",
-      },
-      // {
-      //   title: "Bandwidth",
-      //   value: "100 GB",
-      //   tooltip: "Additional bandwidth at $0.1 per GB / month",
-      // },
-      {
-        title: "IPFS",
-        value: "icon",
-        tooltip: "Hot Storage",
-      },
-      {
-        title: "Filecoin",
-        value: "icon",
-        tooltip: "Storage Backup",
-      },
-      {
-        title: "Encryption & Token Gating",
-        value: "icon-cross",
-        tooltip: "Get Add-ons for Encryption & Token Gating",
-      },
-      {
-        title: "IPNS",
-        value: "icon-cross",
-        tooltip: "Get Add-ons for IPNS",
-      },
-      {
-        title: "Migration Support",
-        value: "icon-cross",
-        tooltip: "Get Add-ons for Migration Support",
-      },
-    ],
+    title: "IPNS",
+    value: "icon-cross",
+    tooltip: "Get Add-ons for IPNS",
   },
   {
-    index: 8,
-    title: "Premium",
-    icon: "/icons/premium.png",
-    icon_light: "/icons/premium_light.png",
-    cost: "499",
-    buttonText: "Get Started",
-
-    features: [
-      {
-        title: "Total Storage",
-        value: "2.5 TB",
-        tooltip: "Total Storage Space",
-      },
-      // {
-      //   title: "Bandwidth",
-      //   value: "1 TB",
-      //   tooltip: "Additional bandwidth at $0.1 per GB / month",
-      // },
-      {
-        title: "IPFS",
-        value: "icon",
-        tooltip: "Hot Storage",
-      },
-      {
-        title: "Filecoin",
-        value: "icon",
-        tooltip: "Storage Backup",
-      },
-      {
-        title: "Encryption & Token Gating",
-        value: "icon",
-        tooltip: "Get Add-ons for Encryption & Token Gating",
-      },
-      {
-        title: "IPNS",
-        value: "icon",
-        tooltip: "Get Add-ons for IPNS",
-      },
-      {
-        title: "Migration Support",
-        value: "icon",
-        tooltip: "Get Add-ons for Migration Support",
-      },
-    ],
+    title: "Migration Support",
+    value: "icon-cross",
+    tooltip: "Get Add-ons for Migration Support",
   },
 ];
 
-export const MonthlyPricing = [
+const premiumAddOnFeatures = [
   {
-    index: null,
-    title: "Free Trial",
-    cost: "0",
-    icon: "/icons/free.png",
-    icon_light: "/icons/free_light.png",
-    buttonText: "Try For Free",
-    features: [
-      {
-        title: "Total Storage",
-        value: "5 GB",
-        tooltip: "Total Storage Space",
-      },
-      {
-        title: "IPFS",
-        value: "icon",
-        tooltip: "Hot Storage",
-      },
-      {
-        title: "Filecoin",
-        value: "icon",
-        tooltip: "Storage Backup",
-      },
-      {
-        title: "Encryption & Token Gating",
-        value: "icon-cross",
-        tooltip: "Get Add-ons for Encryption & Token Gating",
-      },
-      {
-        title: "IPNS",
-        value: "icon-cross",
-        tooltip: "Get Add-ons for IPNS",
-      },
-      {
-        title: "Migration Support",
-        value: "icon-cross",
-        tooltip: "Get Add-ons for Migration Support",
-      },
-    ],
-    onlyShow: true,
+    title: "Encryption & Token Gating",
+    value: "icon",
+    tooltip: "Get Add-ons for Encryption & Token Gating",
   },
+  {
+    title: "IPNS",
+    value: "icon",
+    tooltip: "Get Add-ons for IPNS",
+  },
+  {
+    title: "Migration Support",
+    value: "icon",
+    tooltip: "Get Add-ons for Migration Support",
+  },
+];
+
+// Encryption & Migration are not yet available for Walrus storage, so they are
+// shown disabled with a "Coming soon" tooltip.
+const walrusAddOnFeatures = [
+  {
+    title: "Encryption & Token Gating",
+    value: "icon-cross",
+    tooltip: "Coming soon",
+  },
+  {
+    title: "IPNS",
+    value: "icon-cross",
+    tooltip: "Get Add-ons for IPNS",
+  },
+  {
+    title: "Migration Support",
+    value: "icon-cross",
+    tooltip: "Coming soon",
+  },
+];
+
+export const FilecoinMonthlyPricing = [
   {
     index: 200,
     title: "Lite",
@@ -819,21 +693,33 @@ export const MonthlyPricing = [
         value: "icon",
         tooltip: "Storage Backup",
       },
+      ...unavailableAddOnFeatures,
+    ],
+  },
+  {
+    index: 202,
+    title: "Pro",
+    cost: "20",
+    icon: "/icons/premium.png",
+    icon_light: "/icons/premium_light.png",
+    buttonText: "Get Started",
+    features: [
       {
-        title: "Encryption & Token Gating",
-        value: "icon-cross",
-        tooltip: "Get Add-ons for Encryption & Token Gating",
+        title: "Total Storage",
+        value: "1 TiB",
+        tooltip: "Total Storage Space",
       },
       {
-        title: "IPNS",
-        value: "icon-cross",
-        tooltip: "Get Add-ons for IPNS",
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
       },
       {
-        title: "Migration Support",
-        value: "icon-cross",
-        tooltip: "Get Add-ons for Migration Support",
+        title: "Filecoin",
+        value: "icon",
+        tooltip: "Storage Backup",
       },
+      ...unavailableAddOnFeatures,
     ],
   },
   {
@@ -859,24 +745,150 @@ export const MonthlyPricing = [
         value: "icon",
         tooltip: "Storage Backup",
       },
-      {
-        title: "Encryption & Token Gating",
-        value: "icon",
-        tooltip: "Get Add-ons for Encryption & Token Gating",
-      },
-      {
-        title: "IPNS",
-        value: "icon",
-        tooltip: "Get Add-ons for IPNS",
-      },
-      {
-        title: "Migration Support",
-        value: "icon",
-        tooltip: "Get Add-ons for Migration Support",
-      },
+      ...premiumAddOnFeatures,
     ],
   },
 ];
+
+export const FilecoinAnnualPricing = [
+  {
+    index: 7,
+    title: "Lite",
+    cost: "120",
+    icon: "/icons/lite.png",
+    icon_light: "/icons/lite_light.png",
+    buttonText: "Get Started",
+    features: [
+      {
+        title: "Total Storage",
+        value: "500 GB",
+        tooltip: "Total Storage Space",
+      },
+      {
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
+      },
+      {
+        title: "Filecoin",
+        value: "icon",
+        tooltip: "Storage Backup",
+      },
+      ...unavailableAddOnFeatures,
+    ],
+  },
+  {
+    index: 8,
+    title: "Premium",
+    icon: "/icons/premium.png",
+    icon_light: "/icons/premium_light.png",
+    cost: "499",
+    buttonText: "Get Started",
+    features: [
+      {
+        title: "Total Storage",
+        value: "2.5 TB",
+        tooltip: "Total Storage Space",
+      },
+      {
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
+      },
+      {
+        title: "Filecoin",
+        value: "icon",
+        tooltip: "Storage Backup",
+      },
+      ...premiumAddOnFeatures,
+    ],
+  },
+];
+
+export const WalrusMonthlyPricing = [
+  {
+    index: 203,
+    title: "Lite",
+    cost: "11",
+    icon: "/icons/lite.png",
+    icon_light: "/icons/lite_light.png",
+    buttonText: "Get Started",
+    features: [
+      {
+        title: "Total Storage",
+        value: "250 GB",
+        tooltip: "Total Storage Space",
+      },
+      {
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
+      },
+      {
+        title: "Walrus",
+        value: "icon",
+        tooltip: "Storage Backup",
+      },
+      ...walrusAddOnFeatures,
+    ],
+  },
+  {
+    index: 204,
+    title: "Pro",
+    cost: "33",
+    icon: "/icons/premium.png",
+    icon_light: "/icons/premium_light.png",
+    buttonText: "Get Started",
+    features: [
+      {
+        title: "Total Storage",
+        value: "1 TiB",
+        tooltip: "Total Storage Space",
+      },
+      {
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
+      },
+      {
+        title: "Walrus",
+        value: "icon",
+        tooltip: "Storage Backup",
+      },
+      ...walrusAddOnFeatures,
+    ],
+  },
+  {
+    index: 205,
+    title: "Premium",
+    icon: "/icons/premium.png",
+    icon_light: "/icons/premium_light.png",
+    cost: "79",
+    buttonText: "Get Started",
+    features: [
+      {
+        title: "Total Storage",
+        value: "2.5 TiB",
+        tooltip: "Total Storage Space",
+      },
+      {
+        title: "IPFS",
+        value: "icon",
+        tooltip: "Hot Storage",
+      },
+      {
+        title: "Walrus",
+        value: "icon",
+        tooltip: "Storage Backup",
+      },
+      ...walrusAddOnFeatures,
+    ],
+  },
+];
+
+// Backwards-compatible aliases (Filecoin is the default network)
+export const MonthlyPricing = FilecoinMonthlyPricing;
+export const AnnualPricing = FilecoinAnnualPricing;
 
 export const AddOnsPricing = [
   {
