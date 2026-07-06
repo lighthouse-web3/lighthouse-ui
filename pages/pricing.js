@@ -1,12 +1,10 @@
-import { useEffect } from "react";
-import { Metadata, TitleSeparator } from "../components";
+import { Metadata } from "../components";
 import {
   FAQContainer,
   Footer,
   Header,
   LogoMarquee,
   Pricing,
-  PricingTable,
 } from "../containers";
 
 export default function PricingPage() {

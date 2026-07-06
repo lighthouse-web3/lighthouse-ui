@@ -123,7 +123,7 @@ export const LandingPageData = {
         {
           title: "Diverse Payment Options",
           subTitle:
-            "Pay via credit card, debit card or popular tokens onchain via our flexible annual or lifetime plans",
+            "Pay via credit card, debit card or popular tokens onchain via flexible monthly and annual plans",
         },
       ],
     },
@@ -215,9 +215,9 @@ export const LandingPageData = {
   PricingFAQs: [
     {
       attributes: {
-        question: "How can I pay for the Lighthouse?",
+        question: "How can I pay for Lighthouse?",
         answer:
-          "You can pay per file depending on the file size or top up the associated API key with prepaid storage space in multiple tokens like Polygon, USDC, USDT, DAI, and other native chain tokens.",
+          "You can subscribe through the Lighthouse app using a monthly or annual plan. Supported payment options include card payments and popular onchain tokens such as Polygon, USDC, USDT, DAI, and other native chain tokens.",
       },
     },
     {
@@ -229,18 +229,63 @@ export const LandingPageData = {
     },
     {
       attributes: {
-        question: "Can Add-ons be used with Lifetime Plans?",
+        question: "Which storage providers and billing periods are available?",
         answer:
-          "Yes, Add-ons can be added to any Lifetime plan. However, Add-ons are charged monthly, independent of the one-time payment made for the Lifetime storage.",
+          "Lighthouse offers recurring plans on Filecoin and Walrus. Filecoin plans are available monthly or annually, while Walrus plans are currently billed monthly.",
       },
     },
-    // {
-    //   attributes: {
-    //     question: "What does it mean by permanent storage?",
-    //     answer:
-    //       "Permanent storage means you pay once for your files and they are intended to be stored forever. There is no need for recurring payments to retain your stored files.",
-    //   },
-    // },
+  ],
+
+  MainSiteFAQs: [
+    {
+      attributes: {
+        question: "How long will data be stored on Lighthouse?",
+        answer:
+          "Your data remains stored while your Lighthouse plan is active and within the limits of the selected provider plan. Filecoin plans can be billed monthly or annually, and Walrus plans are currently billed monthly.",
+      },
+    },
+    {
+      attributes: {
+        question: "Can I upload private/sensitive data to Lighthouse?",
+        answer:
+          "Yes, but sensitive data should be encrypted before upload. Lighthouse provides encryption and access-control features where available, and add-on availability may vary by storage provider.",
+      },
+    },
+    {
+      attributes: {
+        question: "Can I edit/delete files uploaded to Lighthouse?",
+        answer:
+          "Files can be removed from Lighthouse-managed storage where supported. Because IPFS uses content-addressed data and decentralized nodes may cache public files, deletion cannot guarantee that every third-party copy disappears. For workflows that need updates, use mutable references such as IPNS.",
+      },
+    },
+    {
+      attributes: {
+        question: "How can I pay for Lighthouse?",
+        answer:
+          "You can subscribe through the Lighthouse app using a monthly plan or a Filecoin annual plan. Supported payment options include card payments and popular onchain tokens such as Polygon, USDC, USDT, DAI, and other native chain tokens.",
+      },
+    },
+    {
+      attributes: {
+        question: "How is it different from IPFS and Filecoin?",
+        answer:
+          "IPFS provides content addressing and peer-to-peer data distribution, while Filecoin adds paid storage deals on top of IPFS. Lighthouse simplifies that stack by giving you an app, SDK, CLI, gateways, billing, and optional add-ons for storing data on providers such as Filecoin and Walrus without managing storage deals directly.",
+      },
+    },
+    {
+      attributes: {
+        question: "How is it different from Arweave?",
+        answer:
+          "Arweave is built around pay-once permanent storage. Lighthouse now focuses on recurring monthly and annual storage plans on decentralized providers such as Filecoin and Walrus, along with IPFS tooling, gateways, access-control features, and developer-friendly upload workflows.",
+      },
+    },
+    {
+      attributes: {
+        question: "Which chains does it support?",
+        answer:
+          "Users can pay for Lighthouse storage through supported payment networks in the app, including Ethereum, Polygon, BSC, Fantom, Optimism, and more as support expands.",
+      },
+    },
   ],
 
   TurbyFAQs: [

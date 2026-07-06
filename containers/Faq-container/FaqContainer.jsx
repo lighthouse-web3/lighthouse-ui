@@ -1,8 +1,6 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { LandingPageData } from "../../utils/Data/SiteContent";
-import { baseUrl } from "../../utils/Data/config";
 
 // optional props: type = "main" | "pricing" | "turby"
 function FAQContainer({ type = "main", customData = null }) {
@@ -17,20 +15,7 @@ function FAQContainer({ type = "main", customData = null }) {
     } else if (type === "turby") {
       setFaqs(LandingPageData.TurbyFAQs);
     } else {
-      (async () => {
-        try {
-          const res = await axios.get(`${baseUrl}/faqs?populate=*`);
-          let faqData = res["status"] === 200 ? res["data"]?.["data"] : null;
-          if (faqData) {
-            const mainSiteFaq = faqData.filter(
-              (faq) => faq.attributes.Platform === "Mainsite",
-            );
-            setFaqs(mainSiteFaq);
-          }
-        } catch (error) {
-          console.error("Failed to load FAQs", error);
-        }
-      })();
+      setFaqs(LandingPageData.MainSiteFAQs);
     }
   }, [type, customData]);
 

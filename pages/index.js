@@ -17,7 +17,7 @@ import { LandingPageData } from "../utils/Data/SiteContent";
 export default function Home() {
   return (
     <>
-      <Metadata title="Lighthouse Storage - Store Data Permanently & Securely" />
+      <Metadata title="Lighthouse Storage - Store Data Securely & Reliably" />
       <div className={"bodyContainer"}>
         <Header />
         <div className="contentContainer">
