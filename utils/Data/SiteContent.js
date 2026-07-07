@@ -215,13 +215,6 @@ export const LandingPageData = {
   PricingFAQs: [
     {
       attributes: {
-        question: "How can I pay for Lighthouse?",
-        answer:
-          "You can subscribe through the Lighthouse app using a monthly or annual plan. Supported payment options include card payments and popular onchain tokens such as Polygon, USDC, USDT, DAI, and other native chain tokens.",
-      },
-    },
-    {
-      attributes: {
         question: "What are Add-ons and how do they work?",
         answer:
           "Add-ons are additional services you can opt for on top of your base storage plans. These include features like Encryption & Token Gating, IPNS, Migration Support, SLAs, Custom Gateway, and Direct Customer Support. They are designed to extend the core functionality of your Lighthouse plan.",
@@ -260,13 +253,6 @@ export const LandingPageData = {
     },
     {
       attributes: {
-        question: "How can I pay for Lighthouse?",
-        answer:
-          "You can subscribe through the Lighthouse app using a monthly plan or a Filecoin annual plan. Supported payment options include card payments and popular onchain tokens such as Polygon, USDC, USDT, DAI, and other native chain tokens.",
-      },
-    },
-    {
-      attributes: {
         question: "How is it different from IPFS and Filecoin?",
         answer:
           "IPFS provides content addressing and peer-to-peer data distribution, while Filecoin adds paid storage deals on top of IPFS. Lighthouse simplifies that stack by giving you an app, SDK, CLI, gateways, billing, and optional add-ons for storing data on providers such as Filecoin and Walrus without managing storage deals directly.",
@@ -274,16 +260,9 @@ export const LandingPageData = {
     },
     {
       attributes: {
-        question: "How is it different from Arweave?",
-        answer:
-          "Arweave is built around pay-once permanent storage. Lighthouse now focuses on recurring monthly and annual storage plans on decentralized providers such as Filecoin and Walrus, along with IPFS tooling, gateways, access-control features, and developer-friendly upload workflows.",
-      },
-    },
-    {
-      attributes: {
         question: "Which chains does it support?",
         answer:
-          "Users can pay for Lighthouse storage through supported payment networks in the app, including Ethereum, Polygon, BSC, Fantom, Optimism, and more as support expands.",
+          "You can build on any network and store your data on Lighthouse. Lighthouse is chain agnostic, so your storage workflow does not need to be tied to a specific chain.",
       },
     },
   ],
