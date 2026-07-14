@@ -77,7 +77,7 @@ function HomeBanner() {
                   </span>
                 </div>
                 <div className="text-2xl font-bold font-sans tracking-tight">
-                  Perpetual Sync Active
+                  Continuous Sync Active
                 </div>
               </div>
             </div>

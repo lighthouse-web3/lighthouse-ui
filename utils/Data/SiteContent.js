@@ -400,11 +400,6 @@ export const footerData = {
       link: "https://calendly.com/nanditmehra/30min",
     },
     {
-      text: "Whitepaper",
-      path: "/whitepaper",
-      link: "",
-    },
-    {
       text: "T&C",
       path: null,
       link: "https://gateway.lighthouse.storage/ipfs/bafkreidx6qtkebzxqjgcei5vhbfsfk2uf7iyaypppgvmhophv7q255x6x4",
