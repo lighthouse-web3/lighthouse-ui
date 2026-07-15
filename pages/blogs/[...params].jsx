@@ -11,28 +11,34 @@ import {
 } from "../../containers";
 import { Metadata } from "../../components";
 
+const BLOG_REVALIDATE_SECONDS = 60;
+
 export const getStaticPaths = async () => {
-  const res = await axios.get(
-    `${baseUrl}/blogs?pagination[pageSize]=50&populate=*`
-  );
-  let allBlogs = res["status"] === 200 ? res["data"]?.["data"] : null;
-  const paths = allBlogs.map((blog) => {
-    return {
-      params: {
-        params: [blog?.attributes?.title?.trim()],
-      },
-    };
-  });
+  let paths = [];
+
+  try {
+    const res = await axios.get(
+      `${baseUrl}/blogs?pagination[pageSize]=50&populate=*`
+    );
+    const allBlogs = res["status"] === 200 ? res["data"]?.["data"] : [];
+    paths = allBlogs.map((blog) => {
+      return {
+        params: {
+          params: [blog?.attributes?.title?.trim()],
+        },
+      };
+    });
+  } catch (error) {}
 
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 };
 
 export const getStaticProps = async (context) => {
   const title = context.params.params[0];
-  let blogData = "null";
+  let blogData = null;
   let allBlogs = [];
   try {
     const allBlogsRes = await axios.get(
@@ -43,14 +49,23 @@ export const getStaticProps = async (context) => {
     // console.log(allBlogs, "-----ALL BLOGS --- ");
     blogData = allBlogs.filter(
       (blog) =>
-        blog?.attributes?.title?.trim()?.toLowerCase() == title?.toLowerCase()
+        blog?.attributes?.title?.trim()?.toLowerCase() === title?.toLowerCase()
     )?.[0]?.attributes;
   } catch (error) {}
+
+  if (!blogData) {
+    return {
+      notFound: true,
+      revalidate: BLOG_REVALIDATE_SECONDS,
+    };
+  }
+
   return {
     props: {
       blogData,
       allBlogs,
     },
+    revalidate: BLOG_REVALIDATE_SECONDS,
   };
 };
 

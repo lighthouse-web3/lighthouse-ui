@@ -9,6 +9,8 @@ import {
 } from "../../containers";
 import { baseUrl } from "../../utils/Data/config";
 
+const BLOG_REVALIDATE_SECONDS = 60;
+
 export const getStaticProps = async () => {
   let blogsData = null;
   try {
@@ -16,12 +18,12 @@ export const getStaticProps = async () => {
       `${baseUrl}/blogs?pagination[pageSize]=50&populate=*`,
     );
     blogsData = res["status"] === 200 ? res["data"]?.["data"] : null;
-    console.log(blogsData);
   } catch (error) {}
   return {
     props: {
       blogsData,
     },
+    revalidate: BLOG_REVALIDATE_SECONDS,
   };
 };
 
