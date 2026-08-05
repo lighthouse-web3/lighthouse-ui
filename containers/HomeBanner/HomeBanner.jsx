@@ -66,7 +66,7 @@ function HomeBanner() {
               <img
                 className="w-full h-full object-cover opacity-60 mix-blend-luminosity"
                 alt="Abstract 3D digital obsidian structure glowing purple"
-                src="https://gateway.lighthouse.storage/ipfs/bafybeiculufwark5kdvd35b6um23wtatxnsczjyddzmgxd2ebadxm3puwi"
+                src="https://gateway.lighthouse.storage/ipfs/bafybeiexrlsrpc4cjgytk3h7hthwjw65qg5tjt23ir46xe5xnjbmr3okf4"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#131314] via-transparent to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8 p-6 bg-[#131314]/60 backdrop-blur-[20px] rounded-2xl border border-[#dab9ff]/10">
