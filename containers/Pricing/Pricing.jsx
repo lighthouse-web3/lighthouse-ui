@@ -73,7 +73,11 @@ const Pricing = () => {
                   ${plan.cost}
                 </span>
                 <span className="text-[#cec2d7] text-lg">
-                  {effectiveBilling === "Annually" ? "/annum" : "/month"}
+                  {plan.cost === "0"
+                    ? ""
+                    : effectiveBilling === "Annually"
+                      ? "/annum"
+                      : "/month"}
                 </span>
               </p>
             </div>

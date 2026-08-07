@@ -688,7 +688,63 @@ const walrusAddOnFeatures = [
   },
 ];
 
+// --- Free tier (shown on every network / billing period) ---
+const FilecoinFreePlan = {
+  index: 100,
+  title: "Free",
+  cost: "0",
+  icon: "/icons/free.png",
+  icon_light: "/icons/free_light.png",
+  buttonText: "Start for Free",
+  features: [
+    {
+      title: "Total Storage",
+      value: "5 GB",
+      tooltip: "Total Storage Space",
+    },
+    {
+      title: "IPFS",
+      value: "icon",
+      tooltip: "Hot Storage",
+    },
+    {
+      title: "Filecoin",
+      value: "icon",
+      tooltip: "Storage Backup",
+    },
+    ...unavailableAddOnFeatures,
+  ],
+};
+
+const WalrusFreePlan = {
+  index: 101,
+  title: "Free",
+  cost: "0",
+  icon: "/icons/free.png",
+  icon_light: "/icons/free_light.png",
+  buttonText: "Start for Free",
+  features: [
+    {
+      title: "Total Storage",
+      value: "100 MB",
+      tooltip: "Total Storage Space",
+    },
+    {
+      title: "IPFS",
+      value: "icon",
+      tooltip: "Hot Storage",
+    },
+    {
+      title: "Walrus",
+      value: "icon",
+      tooltip: "Storage Backup",
+    },
+    ...walrusAddOnFeatures,
+  ],
+};
+
 export const FilecoinMonthlyPricing = [
+  FilecoinFreePlan,
   {
     index: 200,
     title: "Lite",
@@ -700,32 +756,6 @@ export const FilecoinMonthlyPricing = [
       {
         title: "Total Storage",
         value: "500 GB",
-        tooltip: "Total Storage Space",
-      },
-      {
-        title: "IPFS",
-        value: "icon",
-        tooltip: "Hot Storage",
-      },
-      {
-        title: "Filecoin",
-        value: "icon",
-        tooltip: "Storage Backup",
-      },
-      ...unavailableAddOnFeatures,
-    ],
-  },
-  {
-    index: 202,
-    title: "Pro",
-    cost: "20",
-    icon: "/icons/premium.png",
-    icon_light: "/icons/premium_light.png",
-    buttonText: "Get Started",
-    features: [
-      {
-        title: "Total Storage",
-        value: "1 TiB",
         tooltip: "Total Storage Space",
       },
       {
@@ -770,6 +800,7 @@ export const FilecoinMonthlyPricing = [
 ];
 
 export const FilecoinAnnualPricing = [
+  FilecoinFreePlan,
   {
     index: 7,
     title: "Lite",
@@ -825,6 +856,7 @@ export const FilecoinAnnualPricing = [
 ];
 
 export const WalrusMonthlyPricing = [
+  WalrusFreePlan,
   {
     index: 203,
     title: "Lite",
@@ -836,32 +868,6 @@ export const WalrusMonthlyPricing = [
       {
         title: "Total Storage",
         value: "250 GB",
-        tooltip: "Total Storage Space",
-      },
-      {
-        title: "IPFS",
-        value: "icon",
-        tooltip: "Hot Storage",
-      },
-      {
-        title: "Walrus",
-        value: "icon",
-        tooltip: "Storage Backup",
-      },
-      ...walrusAddOnFeatures,
-    ],
-  },
-  {
-    index: 204,
-    title: "Pro",
-    cost: "33",
-    icon: "/icons/premium.png",
-    icon_light: "/icons/premium_light.png",
-    buttonText: "Get Started",
-    features: [
-      {
-        title: "Total Storage",
-        value: "1 TiB",
         tooltip: "Total Storage Space",
       },
       {
