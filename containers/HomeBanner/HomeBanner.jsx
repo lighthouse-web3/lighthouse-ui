@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Image from "next/image";
 import { LandingPageData } from "../../utils/Data/SiteContent";
 import Styles from "./HomeBanner.module.scss";
 import useWindowSize from "../../utils/Hooks/windowSize";
@@ -19,12 +20,6 @@ function HomeBanner() {
             className="lg:col-span-7 flex flex-col justify-center"
             data-aos="fade-up"
           >
-            <div className="inline-flex items-center space-x-2 mb-6 px-3 py-1 rounded-full bg-[#1b1c1c] border border-[#4c4354]/15 w-fit">
-              <span className="w-2 h-2 rounded-full bg-[#dab9ff] animate-pulse"></span>
-              <span className="text-xs font-sans uppercase tracking-widest text-[#cec2d7]">
-                Decentralized Web 3.0 Storage
-              </span>
-            </div>
             <h1
               className="text-6xl md:text-8xl font-bold font-sans tracking-tighter leading-[0.9] text-[#e4e2e2] mb-8"
               dangerouslySetInnerHTML={{
@@ -62,23 +57,24 @@ function HomeBanner() {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div className="w-full aspect-square rounded-[2rem] bg-[#1b1c1c] overflow-hidden border border-[#4c4354]/10 shadow-2xl relative">
-              <img
-                className="w-full h-full object-cover opacity-60 mix-blend-luminosity"
-                alt="Abstract 3D digital obsidian structure glowing purple"
-                src="https://gateway.lighthouse.storage/ipfs/bafybeiexrlsrpc4cjgytk3h7hthwjw65qg5tjt23ir46xe5xnjbmr3okf4"
+            {/* The globe renders with mix-blend-luminosity, so it takes its hue
+                from this surface — a lilac wash tints the art on brand. */}
+            <div className="w-full aspect-square rounded-[2rem] bg-[radial-gradient(circle_at_50%_45%,_#4c3a6e_0%,_#2a2438_55%,_#1b1c1c_100%)] overflow-hidden border border-[#4c4354]/10 shadow-2xl relative">
+              <Image
+                className="opacity-90 mix-blend-luminosity"
+                alt="Dark 3D globe wrapped in concentric rings of light"
+                src="/hero/network-globe.jpg"
+                layout="fill"
+                objectFit="cover"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#131314] via-transparent to-transparent"></div>
-              <div className="absolute bottom-8 left-8 right-8 p-6 bg-[#131314]/60 backdrop-blur-[20px] rounded-2xl border border-[#dab9ff]/10">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-2 h-2 rounded-full bg-[#dab9ff] animate-pulse"></div>
-                  <span className="text-xs font-bold tracking-widest font-sans uppercase text-[#dab9ff]">
-                    Live Network Status
-                  </span>
-                </div>
-                <div className="text-2xl font-bold font-sans tracking-tight">
-                  Continuous Sync Active
-                </div>
+              <div className="absolute bottom-8 left-8 inline-flex items-center gap-3 px-5 py-3 bg-[#131314]/60 backdrop-blur-[20px] rounded-full border border-[#dab9ff]/10">
+                <div className="w-2 h-2 rounded-full bg-[#dab9ff] animate-pulse"></div>
+                <span className="text-xs font-bold tracking-widest font-sans uppercase text-[#dab9ff]">
+                  {LandingPageData?.HeroSection?.imageCard?.eyebrow}
+                </span>
               </div>
             </div>
           </div>

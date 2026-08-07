@@ -5,6 +5,9 @@ export const LandingPageData = {
     title: "Store Your Data <br/> Securely & Reliably",
     subTitle:
       "Lighthouse offers decentralized storage powered by IPFS. Secure, scalable, and ideal for individuals, developers, and enterprises.",
+    imageCard: {
+      eyebrow: "Network Live",
+    },
   },
   KeyFeatures: [
     {
