@@ -10,20 +10,30 @@ import {
   WalrusMonthlyPricing,
 } from "../../utils/Data/SiteContent";
 
+// Derived from the monthly plans so the teasers can't drift from SiteContent.
+const networkTeaser = (planList) => {
+  const free = planList.find((plan) => plan.cost === "0");
+  const freeStorage = free?.features.find((f) => f.title === "Total Storage")
+    ?.value;
+  const cheapestPaid = planList
+    .filter((plan) => plan.cost !== "0")
+    .reduce((min, plan) => (Number(plan.cost) < Number(min.cost) ? plan : min));
+
+  return `${freeStorage} free · from $${cheapestPaid.cost}/mo`;
+};
+
 const NETWORKS = [
   {
     id: "Filecoin",
     label: "Filecoin",
     logo: "/icons/Filecoin_Circle.png",
-    blurb:
-      "Battle-tested decentralized storage with Filecoin backup and full add-on support.",
+    teaser: networkTeaser(FilecoinMonthlyPricing),
   },
   {
     id: "Walrus",
     label: "Walrus",
     logo: "/icons/Walrus_Circle.png",
-    blurb:
-      "Fast, programmable storage on the Sui-powered Walrus network. Billed monthly.",
+    teaser: networkTeaser(WalrusMonthlyPricing),
   },
 ];
 
@@ -40,8 +50,6 @@ const Pricing = () => {
       : effectiveBilling === "Annually"
         ? FilecoinAnnualPricing
         : FilecoinMonthlyPricing;
-
-  const activeNetwork = NETWORKS.find((n) => n.id === network);
 
   const renderCards = (plans) => {
     return plans.map((plan, index) => {
@@ -154,67 +162,80 @@ const Pricing = () => {
       <div className="max-w-7xl mx-auto text-center mb-12">
         <TitleSeparator topTitle={"Discover your perfect plan"} />
 
-        {/* Primary switch — Storage Network */}
-        <div className="mt-8 inline-flex items-center gap-1 p-1.5 bg-[#343535] rounded-2xl border border-[#4c4354]/20 mx-auto w-max">
-          {NETWORKS.map((n) => {
-            const active = network === n.id;
-            return (
-              <button
-                key={n.id}
-                onClick={() => setNetwork(n.id)}
-                className={`flex items-center gap-2.5 px-6 md:px-8 py-3 rounded-xl font-bold text-sm md:text-base transition-all ${
-                  active
-                    ? "bg-[#131314] text-[#e4e2e2] shadow-[0_8px_24px_rgba(0,0,0,0.35)] ring-1 ring-[#dab9ff]/40"
-                    : "text-[#cec2d7] hover:text-[#e4e2e2]"
-                }`}
-              >
-                <span
-                  className={`inline-flex transition-opacity ${
-                    active ? "opacity-100" : "opacity-60"
-                  }`}
-                >
-                  <Image
-                    src={n.logo}
-                    alt={`${n.label} logo`}
-                    width={24}
-                    height={24}
-                    style={{ objectFit: "contain", width: 24, height: 24 }}
-                  />
-                </span>
-                {n.label}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Secondary control — billing period (Filecoin only; Walrus is monthly-only) */}
-        <div className="mt-5 h-9 flex items-center justify-center">
-          {network === "Filecoin" ? (
-            <div className="inline-flex items-center p-0.5 bg-[#131314] rounded-full border border-[#4c4354]/20 text-xs font-semibold">
-              {["Monthly", "Annually"].map((b) => (
+        {/* Single control bar — storage network on the left, billing on the right */}
+        <div className="mt-8 max-w-3xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-3 p-2 bg-[#343535] rounded-2xl border border-[#4c4354]/20">
+          <div className="flex items-stretch gap-1">
+            {NETWORKS.map((n) => {
+              const active = network === n.id;
+              return (
                 <button
-                  key={b}
-                  onClick={() => setBilling(b)}
-                  className={`px-4 py-1.5 rounded-full transition-colors ${
-                    billing === b
-                      ? "bg-[#dab9ff] text-[#470084]"
-                      : "text-[#cec2d7] hover:text-[#e4e2e2]"
+                  key={n.id}
+                  onClick={() => setNetwork(n.id)}
+                  className={`flex flex-1 md:flex-none items-center gap-2.5 px-4 md:px-5 py-2.5 rounded-xl text-left transition-all ${
+                    active
+                      ? "bg-[#131314] shadow-[0_8px_24px_rgba(0,0,0,0.35)] ring-1 ring-[#dab9ff]/40"
+                      : "hover:bg-[#131314]/40"
                   }`}
                 >
-                  {b === "Annually" ? "Annually · Save" : b}
+                  <span
+                    className={`inline-flex transition-opacity ${
+                      active ? "opacity-100" : "opacity-60"
+                    }`}
+                  >
+                    <Image
+                      src={n.logo}
+                      alt={`${n.label} logo`}
+                      width={28}
+                      height={28}
+                      style={{ objectFit: "contain", width: 28, height: 28 }}
+                    />
+                  </span>
+                  <span className="flex flex-col leading-tight">
+                    <span
+                      className={`font-bold text-sm md:text-base ${
+                        active ? "text-[#e4e2e2]" : "text-[#cec2d7]"
+                      }`}
+                    >
+                      {n.label}
+                    </span>
+                    <span
+                      className={`text-[11px] font-medium ${
+                        active ? "text-[#dab9ff]" : "text-[#cec2d7]/60"
+                      }`}
+                    >
+                      {n.teaser}
+                    </span>
+                  </span>
                 </button>
-              ))}
-            </div>
-          ) : (
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#131314] border border-[#4c4354]/20 text-xs font-semibold text-[#cec2d7]">
-              Billed monthly
-            </span>
-          )}
-        </div>
+              );
+            })}
+          </div>
 
-        <p className="text-[#cec2d7] max-w-2xl mx-auto mt-6 leading-relaxed">
-          {activeNetwork?.blurb}
-        </p>
+          {/* Billing period — Filecoin only; Walrus is monthly-only */}
+          <div className="flex items-center justify-center md:pr-1">
+            {network === "Filecoin" ? (
+              <div className="inline-flex items-center p-0.5 bg-[#131314] rounded-full border border-[#4c4354]/20 text-xs font-semibold">
+                {["Monthly", "Annually"].map((b) => (
+                  <button
+                    key={b}
+                    onClick={() => setBilling(b)}
+                    className={`px-4 py-1.5 rounded-full transition-colors ${
+                      billing === b
+                        ? "bg-[#dab9ff] text-[#470084]"
+                        : "text-[#cec2d7] hover:text-[#e4e2e2]"
+                    }`}
+                  >
+                    {b === "Annually" ? "Annually · Save" : b}
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <span className="px-4 py-1.5 text-xs font-semibold text-[#cec2d7]/70">
+                Billed monthly
+              </span>
+            )}
+          </div>
+        </div>
       </div>
 
       <div
