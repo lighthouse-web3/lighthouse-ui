@@ -1,6 +1,7 @@
 import React from "react";
 import { mediaUrl } from "../../utils/Data/config";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 const formatDate = (dateString) => {
   if (!dateString) return "";
@@ -81,16 +82,15 @@ function BlogView({ blogData }) {
           [&_pre]:bg-[#1b1c1c] [&_pre]:p-6 [&_pre]:rounded-xl [&_pre]:overflow-x-auto [&_pre]:border [&_pre]:border-[#4c4354]/20 [&_pre]:my-8
           [&_code]:font-mono [&_code]:text-base [&_code]:text-[#a4c8ff] [&_code]:bg-[#343535]/50 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded
           [&_pre_code]:bg-transparent [&_pre_code]:text-[#cec2d7] [&_pre_code]:p-0 [&_pre_code]:text-sm
-          [&_img]:w-full [&_img]:max-w-4xl [&_img]:h-auto [&_img]:rounded-xl [&_img]:my-12 [&_img]:border [&_img]:border-[#4c4354]/10 [&_img]:mx-auto
+          [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-xl [&_img]:my-12 [&_img]:border [&_img]:border-[#4c4354]/10 [&_img]:mx-auto [&_img]:block
         "
       >
-        <ReactMarkdown
-          linkTarget={"_blank"}
-          children={blogData?.description?.replaceAll(
+        <ReactMarkdown linkTarget={"_blank"} rehypePlugins={[rehypeRaw]}>
+          {blogData?.description?.replaceAll(
             "/uploads/",
             `${mediaUrl}/uploads/`,
           )}
-        />
+        </ReactMarkdown>
       </div>
     </article>
   );
