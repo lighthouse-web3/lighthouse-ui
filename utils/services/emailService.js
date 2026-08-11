@@ -1,51 +1,32 @@
-import axios from "axios";
 import { notify } from "./notification";
-
-const BREVO_API_KEY = process.env.NEXT_PUBLIC_BREVO_API;
 
 export const sendEmail = async (email) => {
   try {
-    if (!BREVO_API_KEY) {
-      console.error("Brevo API key is not configured");
-      notify("Email service configuration error", "error");
+    if (!validateEmail(email)) {
+      notify("Error: Enter a valid email address", "error");
       return;
     }
 
-    if (validateEmail(email)) {
-      const options = {
-        method: "POST",
-        url: "https://api.brevo.com/v3/smtp/email",
-        headers: {
-          accept: "application/json",
-          "content-type": "application/json",
-          "api-key": BREVO_API_KEY,
-        },
-        data: {
-          sender: {
-            name: "Lighthouse",
-            email: "hello@lighthouseweb3.xyz",
-          },
-          to: [{ email }],
-          templateId: 4,
-          tags: ["mainsite-subscription"],
-        },
-      };
+    const response = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ email: email.trim() }),
+    });
 
-      axios
-        .request(options)
-        .then(function (response) {
-          //
-          notify("Email Submitted", "success");
-          addEmailToList(email, 20, null);
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-    } else {
-      notify(`Error: Enter a valid email address`, "error");
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      console.error(data?.error || "Subscription failed");
+      notify(data?.error || "Subscription failed", "error");
+      return;
     }
+
+    notify("Email Submitted", "success");
   } catch (error) {
     console.error(error);
+    notify("Subscription failed", "error");
   }
 };
 
@@ -78,29 +59,4 @@ export const validateEmail = (email) => {
     .match(
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     );
-};
-
-export const addEmailToList = async (email, listId, attributes) => {
-  const options = {
-    method: "POST",
-    headers: {
-      accept: "application/json",
-      "content-type": "application/json",
-      "api-key": BREVO_API_KEY,
-    },
-    body: JSON.stringify({
-      attributes: attributes || {},
-      updateEnabled: true,
-      email: email,
-      listIds: [listId],
-    }),
-  };
-
-  try {
-    const response = await fetch("https://api.brevo.com/v3/contacts", options);
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
 };
