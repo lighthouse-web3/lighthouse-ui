@@ -37,7 +37,12 @@ export default async function handler(req, res) {
 
   // 1) Queue the newsletter email via the notification service (Brevo template 4).
   const endpoint = "/send-email";
-  const payload = { to: email, templateId: 4, tags: ["mainsite-subscription"] };
+  const payload = {
+    to: email,
+    templateId: 71,
+    tags: ["mainsite-subscription"],
+    senderId: "lighthouse",
+  };
   const rawBody = JSON.stringify(payload); // sign EXACTLY these bytes
   const timestamp = Math.floor(Date.now() / 1000).toString();
   const signature = signRequest(token, "POST", endpoint, timestamp, rawBody);
