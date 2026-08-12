@@ -39,7 +39,7 @@ export default async function handler(req, res) {
   const endpoint = "/send-email";
   const payload = {
     to: email,
-    templateId: 71,
+    templateId: 4,
     tags: ["mainsite-subscription"],
     senderId: "lighthouse",
   };
