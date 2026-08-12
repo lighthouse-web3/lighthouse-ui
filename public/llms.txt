@@ -1,15 +1,74 @@
 # Lighthouse Storage
 
-Lighthouse Storage provides scalable decentralized data storage on IPFS with Filecoin and Walrus provider plans for developers, businesses, and individuals.
+> Lighthouse is an encrypted storage aggregator for developers and enterprises. One API and SDK route file storage across IPFS, Filecoin, and Walrus, with client-side threshold encryption and on-chain access control applied before data leaves the client.
 
-## Core Offerings
-- **Recurring Storage Plans**: Monthly and annual plans for storing data with supported decentralized providers.
-- **Decentralized Infrastructure**: Built on IPFS with Filecoin and Walrus provider options for data availability, immutability, and security.
-- **Access Control**: Encrypt and store data securely with fine-grained access control features.
-- **Developer Ecosystem**: Simple APIs, SDKs, and CLI tools to integrate Web3 storage directly into your applications.
+Lighthouse is not a storage network. It is the encryption, access-control, routing, and retrieval layer that sits above storage networks. Files are addressed by CID, encrypted client-side through Kavach (BLS threshold cryptography, so no single key node holds a complete key), and gated on conditions such as token balances, NFT ownership, contract return values, time windows, passkeys, or zkTLS proofs.
 
-## Resources
-- Website: https://lighthouse.storage/
-- Documentation: https://docs.lighthouse.storage/
-- GitHub: https://github.com/lighthouse-web3
-- Twitter: @LighthouseWeb3
+Every page on this site is also available as markdown: append `.md` to any path, or send `Accept: text/markdown`. Prefer those over the HTML — they are generated from the same source of truth and carry no navigation chrome. `llms-full.txt` holds the long-form corpus: product detail, backend comparison, competitive positioning, and an extended FAQ.
+
+## Core documentation
+
+- [Documentation home](https://docs.lighthouse.storage): entry point for all products and SDKs
+- [Quick start](https://docs.lighthouse.storage/quick-start): first upload in a few minutes
+- [Create an API key](https://docs.lighthouse.storage/how-to/create-an-api-key): authentication for every surface
+- [IPFS + Filecoin](https://docs.lighthouse.storage/intro): hot retrieval on IPFS with Filecoin deals underneath for durability
+- [IPFS + Walrus](https://docs.lighthouse.storage/ipfs-walrus/intro): erasure-coded blob storage on Sui, addressed as CIDs
+- [Encryption features](https://docs.lighthouse.storage/how-to/encryption-features/): share, revoke, and condition access to encrypted files
+- [Glossary](https://docs.lighthouse.storage/concepts/glossary): CID, deal, epoch, threshold encryption, and related terms
+
+## Site pages (markdown)
+
+- [Home](https://www.lighthouse.storage/index.md): positioning, key features, and the Lighthouse suite
+- [Pricing](https://www.lighthouse.storage/pricing.md): current plans and add-ons, generated from live site data
+- [Documentation index](https://www.lighthouse.storage/documentation.md): developer entry points
+- [FAQ](https://www.lighthouse.storage/faq.md): common pre-sales and technical questions
+- [Ecosystem](https://www.lighthouse.storage/ecosystem.md): projects building on Lighthouse
+- [Blog index](https://www.lighthouse.storage/blogs.md): posts, each also available at `/blogs/{title}.md`
+- [Markdown sitemap](https://www.lighthouse.storage/sitemap.md): every canonical URL with its `.md` alternate
+- [Terms and conditions](https://www.lighthouse.storage/terms-condition.md): terms of service
+- [Whitepaper](https://www.lighthouse.storage/whitepaper.md): protocol and architecture background
+
+## AI agents
+
+- [Memory](https://docs.lighthouse.storage/memory/intro): durable long-term memory for agents, persisted as verifiable blobs
+- [Connect agents over MCP](https://docs.lighthouse.storage/memory/how-to/mcp-setup): Model Context Protocol server for Claude Code, Claude Desktop, and other MCP runtimes
+- [MCP protocol reference](https://docs.lighthouse.storage/how-to/ai/mcp-protocol): storage as native agent tools
+- [x402 pay-per-use upload](https://docs.lighthouse.storage/tutorials/x402-pay-per-use-file-upload): an agent settles stablecoin payment on Base inline with an HTTP request, with no human approving each transaction
+- [Memory source](https://github.com/lighthouse-web3/memory): implementation, including batching and index rebuild
+
+## S3-compatible API (L3)
+
+- [L3 introduction](https://docs.lighthouse.storage/s3/intro): point AWS CLI, boto3, or rclone at Lighthouse storage
+- [Create S3 keys](https://docs.lighthouse.storage/s3/how-to/create-s3-keys): exchange a Lighthouse API key for S3 credentials
+- [S3 and IPFS semantics](https://docs.lighthouse.storage/s3/reference/s3-and-ipfs): how mutable S3 operations map onto immutable content addressing
+- [Supported operations](https://docs.lighthouse.storage/s3/reference/supported-operations): buckets, multipart uploads, presigned URLs, pagination
+
+## SDKs and common operations
+
+- [Upload data](https://docs.lighthouse.storage/how-to/upload-data/): JavaScript, Node, Python, Go, and CLI
+- [Upload encrypted data](https://docs.lighthouse.storage/how-to/upload-encrypted-data/): client-side encryption before upload
+- [Python SDK](https://docs.lighthouse.storage/tutorials/use-python-sdk): installation and usage
+- [Go SDK](https://docs.lighthouse.storage/tutorials/use-go-sdk): installation and usage
+- [Check Filecoin deals](https://docs.lighthouse.storage/how-to/check-for-filecoin-deals): deal status for a stored CID
+- [IPNS for mutable data](https://docs.lighthouse.storage/how-to/ipns-handle-mutable-data): a stable name over changing content
+- [Migrations](https://docs.lighthouse.storage/how-to/migrations/): move in from other storage providers
+- [Migrate IPFS to Walrus](https://docs.lighthouse.storage/ipfs-walrus/how-to/migrate-ipfs-to-walrus): CIDs are preserved across the move
+
+## Access control
+
+- [Token gating and custom contracts](https://docs.lighthouse.storage/tutorials/token-gating-and-custom-contract): gate decryption on contract return values
+- [Token gating NFTs](https://docs.lighthouse.storage/tutorials/token-gating-nfts): ERC-721 and ERC-1155 ownership conditions
+- [Secure file sharing](https://docs.lighthouse.storage/tutorials/secure-file-sharing): per-recipient conditional access
+- [Pay-to-view media](https://docs.lighthouse.storage/tutorials/create-pay-to-view-media): a payment contract gates decryption
+- [zkTLS](https://docs.lighthouse.storage/zktls): zkTLS proofs as an access condition
+- [Account delegation](https://docs.lighthouse.storage/account-delegation): authorize another account to act on your behalf
+
+## Optional
+
+- [Full corpus](https://www.lighthouse.storage/llms-full.txt): long-form reference, including backend comparison, competitive positioning, and terminology guidance
+- [Files app](https://files.lighthouse.storage): dashboard for uploads, keys, and billing
+- [Explorer](https://explorer.lighthouse.storage/): browse stored content
+- [GitHub](https://github.com/lighthouse-web3): open-source SDKs and tooling
+- [Turby](https://www.lighthouse.storage/turby.md): NFT collection, unrelated to the storage product
+- [BaaS, managed database backup](https://www.backupdata.io): separate product for a separate audience
+- [Contact sales](https://airtable.com/shrPFC2TgojuOAYO4): custom volume, retention, and enterprise agreements
