@@ -20,11 +20,6 @@ const links = [
     href: "",
   },
   {
-    title: "Turby",
-    path: "/turby",
-    href: "",
-  },
-  {
     title: "Pricing",
     path: "/pricing",
     href: "",
