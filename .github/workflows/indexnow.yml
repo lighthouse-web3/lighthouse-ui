@@ -1,0 +1,56 @@
+name: IndexNow
+
+# Two triggers, because pages change two different ways here.
+#
+# A production deploy means the repo changed, so the static pages are worth
+# announcing. Blog posts are published from the CMS and never touch this repo,
+# so a deploy would never notice them — the daily run catches those by asking
+# the sitemap what has a recent lastmod.
+on:
+  deployment_status:
+  schedule:
+    # 06:00 UTC daily. Picks up anything published from the CMS the day before.
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+# One run at a time, and never cancel one mid-flight: a cancelled job may have
+# already POSTed, and re-running is cheap while a half-submitted state is not
+# something the API reports back.
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    # `deployment_status` fires for previews and failed deploys too, both of
+    # which would push production URLs for something that is not production.
+    # The schedule and manual runs carry no deployment payload, so they pass
+    # through the second clause.
+    if: >-
+      github.event_name != 'deployment_status' ||
+      (github.event.deployment_status.state == 'success' &&
+       github.event.deployment_status.environment == 'Production')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Pinned rather than inherited from the runner image: the script needs
+      # global fetch, so it must not land on a Node older than 18.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # No install and no build. The script reads two constants out of
+      # utils/Data/config.js and pulls the URL list from the live sitemap.
+      - name: Submit to IndexNow
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            # Only what the CMS published recently. A daily job resubmitting
+            # the whole site is the noise IndexNow asks you to avoid.
+            node scripts/indexnow.mjs --submit --changed 2
+          else
+            node scripts/indexnow.mjs --submit
+          fi
