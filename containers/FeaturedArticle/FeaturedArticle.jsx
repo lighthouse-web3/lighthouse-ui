@@ -45,9 +45,9 @@ function FeaturedArticle({ blogsData }) {
           }}
         >
           <div className="flex flex-col lg:flex-row items-stretch">
-            <div className="lg:w-3/5 overflow-hidden">
+            <div className="lg:w-3/5 overflow-hidden bg-[#131314] flex items-center justify-center">
               <img
-                className="w-full h-[400px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-[400px] lg:h-[600px] object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]"
                 alt={latestBlog?.attributes?.title || "Featured Blog"}
                 src={
                   mediaUrl +
