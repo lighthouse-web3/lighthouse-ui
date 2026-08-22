@@ -25,7 +25,10 @@ function FeatureBlogCard({ blog, delay = 0 }) {
       data-aos="fade-up"
       data-aos-delay={delay}
       onClick={() => {
-        window.open(`/blogs/${blog?.attributes?.title?.trim()}`, "_blank");
+        window.open(
+          `/blogs/${encodeURIComponent(blog?.attributes?.title?.trim())}`,
+          "_blank"
+        );
       }}
     >
       <div className="aspect-video overflow-hidden">

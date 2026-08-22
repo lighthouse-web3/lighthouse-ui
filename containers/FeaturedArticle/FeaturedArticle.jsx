@@ -39,7 +39,7 @@ function FeaturedArticle({ blogsData }) {
           className="group relative overflow-hidden rounded-[1.5rem] bg-[#1b1c1c] transition-all duration-500 hover:shadow-[0_0_64px_0_rgba(218,185,255,0.1)] cursor-pointer"
           onClick={() => {
             window.open(
-              `/blogs/${latestBlog?.attributes?.title?.trim()}`,
+              `/blogs/${encodeURIComponent(latestBlog?.attributes?.title?.trim())}`,
               "_blank",
             );
           }}
