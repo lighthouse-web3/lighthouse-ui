@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import axios from "axios";
-import { baseUrl, mediaUrl } from "../../utils/Data/config";
+import { mediaUrl } from "../../utils/Data/config";
+import { fetchAllBlogs } from "../../lib/blogs";
 import {
   BlogView,
   FeaturedArticle,
@@ -17,10 +17,7 @@ export const getStaticPaths = async () => {
   let paths = [];
 
   try {
-    const res = await axios.get(
-      `${baseUrl}/blogs?pagination[pageSize]=50&populate=*`
-    );
-    const allBlogs = res["status"] === 200 ? res["data"]?.["data"] : [];
+    const allBlogs = await fetchAllBlogs();
     paths = allBlogs.map((blog) => {
       return {
         params: {
@@ -41,11 +38,7 @@ export const getStaticProps = async (context) => {
   let blogData = null;
   let allBlogs = [];
   try {
-    const allBlogsRes = await axios.get(
-      `${baseUrl}/blogs?pagination[pageSize]=50&populate=*`
-    );
-    allBlogs =
-      allBlogsRes["status"] === 200 ? allBlogsRes["data"]?.["data"] : [];
+    allBlogs = await fetchAllBlogs();
     // console.log(allBlogs, "-----ALL BLOGS --- ");
     blogData = allBlogs.filter(
       (blog) =>

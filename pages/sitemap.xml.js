@@ -1,7 +1,6 @@
-import axios from "axios";
-import { baseUrl } from "../utils/Data/config";
 import { SITE_URL } from "../utils/Data/config";
 import { STATIC_CANONICAL_PATHS } from "../lib/markdown";
+import { fetchAllBlogs } from "../lib/blogs";
 
 // Crawl priority per page. Anything not listed falls back to DEFAULT_PRIORITY,
 // so adding a canonical path in lib/markdown.js is enough to get it indexed.
@@ -65,20 +64,10 @@ function generateSiteMap(posts) {
 }
 
 export async function getServerSideProps({ res }) {
-  let blogsData = [];
-
   // A CMS outage should still leave a sitemap listing every static page,
-  // rather than dropping the whole document.
-  try {
-    const response = await axios.get(
-      `${baseUrl}/blogs?pagination[pageSize]=50&populate=*`,
-    );
-    if (response.status === 200 && Array.isArray(response.data?.data)) {
-      blogsData = response.data.data;
-    }
-  } catch (err) {
-    console.error("sitemap: could not load blogs from CMS", err?.message);
-  }
+  // rather than dropping the whole document. fetchAllBlogs resolves to an
+  // empty array in that case.
+  const blogsData = await fetchAllBlogs();
 
   res.setHeader("Content-Type", "application/xml; charset=utf-8");
   res.setHeader(

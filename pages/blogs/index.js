@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { fetchAllBlogs } from "../../lib/blogs";
 import { Metadata } from "../../components";
 import {
   FeaturedArticle,
@@ -7,21 +7,14 @@ import {
   Header,
   MostPopularBlogs,
 } from "../../containers";
-import { baseUrl } from "../../utils/Data/config";
 
 const BLOG_REVALIDATE_SECONDS = 60;
 
 export const getStaticProps = async () => {
-  let blogsData = null;
-  try {
-    const res = await axios.get(
-      `${baseUrl}/blogs?pagination[pageSize]=50&populate=*`,
-    );
-    blogsData = res["status"] === 200 ? res["data"]?.["data"] : null;
-  } catch (error) {}
+  const blogs = await fetchAllBlogs();
   return {
     props: {
-      blogsData,
+      blogsData: blogs.length ? blogs : null,
     },
     revalidate: BLOG_REVALIDATE_SECONDS,
   };
