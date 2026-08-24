@@ -3,6 +3,140 @@ import { mediaUrl } from "../../utils/Data/config";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
+// Lightweight GFM table support without adding remark-gfm.
+// Converts markdown pipe tables to <table> HTML so rehypeRaw can render them
+// and the styled `components.table` handles the look + responsive scroll.
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function splitCells(row) {
+  let trimmed = row.trim();
+  if (trimmed.startsWith("|")) trimmed = trimmed.slice(1);
+  if (trimmed.endsWith("|")) trimmed = trimmed.slice(0, -1);
+  // split on unescaped pipe
+  return trimmed.split("|").map((c) => c.trim());
+}
+
+function isSeparatorCell(cell) {
+  return /^:?-+:?$/.test(cell.trim());
+}
+
+function isSeparatorRow(line) {
+  if (!line.includes("|") && !line.includes("-")) return false;
+  const cells = splitCells(line);
+  if (cells.length === 0) return false;
+  return cells.every(isSeparatorCell);
+}
+
+function isTableRow(line) {
+  return line.trim() !== "" && line.includes("|");
+}
+
+function parseInlineMarkdown(text) {
+  let out = escapeHtml(text);
+  // inline code `code`
+  out = out.replace(/`([^`]+?)`/g, "<code>$1</code>");
+  // links [label](href)
+  out = out.replace(
+    /\[([^\]]+?)\]\((https?:\/\/[^\s)]+|\/[^\s)]+)\)/g,
+    '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
+  );
+  // bold **text** and __text__  (must run before italic)
+  out = out.replace(/\*\*([^*]+?)\*\*/g, "<strong>$1</strong>");
+  out = out.replace(/__([^_]+?)__/g, "<strong>$1</strong>");
+  // italic *text* and _text_
+  out = out.replace(/\*([^*]+?)\*/g, "<em>$1</em>");
+  out = out.replace(/_([^_]+?)_/g, "<em>$1</em>");
+  return out;
+}
+
+function markdownTablesToHtml(markdown) {
+  if (!markdown || !markdown.includes("|")) return markdown;
+  const lines = String(markdown).split("\n");
+  const out = [];
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const next = lines[i + 1];
+    if (next !== undefined && isTableRow(line) && isSeparatorRow(next)) {
+      const headerCells = splitCells(line);
+      const separatorCells = splitCells(next);
+      const aligns = separatorCells.map((c) => {
+        const t = c.trim();
+        const left = t.startsWith(":");
+        const right = t.endsWith(":");
+        if (left && right) return "center";
+        if (right) return "right";
+        return "left";
+      });
+
+      const dataRows = [];
+      let j = i + 2;
+      while (j < lines.length && isTableRow(lines[j])) {
+        // stop if next line is empty or clearly not table continuation
+        // but allow rows with pipes only
+        dataRows.push(lines[j]);
+        j++;
+      }
+
+      const thead =
+        "<table>\n<thead>\n<tr>\n" +
+        headerCells
+          .map((cell, idx) => {
+            const align = aligns[idx];
+            const style =
+              align && align !== "left" ? ` style="text-align:${align}"` : "";
+            return `<th${style}>${parseInlineMarkdown(cell)}</th>`;
+          })
+          .join("\n") +
+        "\n</tr>\n</thead>";
+
+      const tbody =
+        "\n<tbody>\n" +
+        dataRows
+          .map((row) => {
+            let cells = splitCells(row);
+            // pad / trim to header length
+            if (cells.length < headerCells.length) {
+              cells = [...cells, ...Array(headerCells.length - cells.length).fill("")];
+            }
+            if (cells.length > headerCells.length) cells = cells.slice(0, headerCells.length);
+            return (
+              "<tr>\n" +
+              cells
+                .map((cell, idx) => {
+                  const align = aligns[idx];
+                  const style =
+                    align && align !== "left" ? ` style="text-align:${align}"` : "";
+                  return `<td${style}>${parseInlineMarkdown(cell)}</td>`;
+                })
+                .join("\n") +
+              "\n</tr>"
+            );
+          })
+          .join("\n") +
+        "\n</tbody>\n</table>";
+
+      out.push(thead + tbody);
+      i = j - 1; // skip consumed rows
+    } else {
+      out.push(line);
+    }
+  }
+  return out.join("\n");
+}
+
+function preprocessMarkdown(text, mediaBaseUrl) {
+  if (!text) return "";
+  let out = String(text).replaceAll("/uploads/", `${mediaBaseUrl}/uploads/`);
+  out = markdownTablesToHtml(out);
+  return out;
+}
+
 const formatDate = (dateString) => {
   if (!dateString) return "";
   return new Date(dateString).toLocaleDateString("en-US", {
@@ -83,13 +217,42 @@ function BlogView({ blogData }) {
           [&_code]:font-mono [&_code]:text-base [&_code]:text-[#a4c8ff] [&_code]:bg-[#343535]/50 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded
           [&_pre_code]:bg-transparent [&_pre_code]:text-[#cec2d7] [&_pre_code]:p-0 [&_pre_code]:text-sm
           [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-xl [&_img]:my-12 [&_img]:border [&_img]:border-[#4c4354]/10 [&_img]:mx-auto [&_img]:block
+          [&_hr]:my-12 [&_hr]:border-[#4c4354]/20
         "
       >
-        <ReactMarkdown linkTarget={"_blank"} rehypePlugins={[rehypeRaw]}>
-          {blogData?.description?.replaceAll(
-            "/uploads/",
-            `${mediaUrl}/uploads/`,
-          )}
+        <ReactMarkdown
+          linkTarget={"_blank"}
+          rehypePlugins={[rehypeRaw]}
+          components={{
+            table: ({ children }) => (
+              <div className="my-8 w-full overflow-x-auto rounded-xl border border-[#4c4354]/20">
+                <table className="w-full border-collapse text-left text-sm md:text-base">
+                  {children}
+                </table>
+              </div>
+            ),
+            thead: ({ children }) => (
+              <thead className="bg-[#1b1c1c]">{children}</thead>
+            ),
+            tbody: ({ children }) => <tbody>{children}</tbody>,
+            tr: ({ children }) => (
+              <tr className="border-b border-[#4c4354]/10 last:border-0 hover:bg-[#343535]/30 transition-colors">
+                {children}
+              </tr>
+            ),
+            th: ({ children }) => (
+              <th className="px-4 md:px-6 py-3 md:py-4 text-left font-bold text-[#e4e2e2] text-xs md:text-sm uppercase tracking-wider whitespace-nowrap border-b border-[#4c4354]/30">
+                {children}
+              </th>
+            ),
+            td: ({ children }) => (
+              <td className="px-4 md:px-6 py-3 md:py-4 text-[#cec2d7] text-sm md:text-base align-top">
+                {children}
+              </td>
+            ),
+          }}
+        >
+          {preprocessMarkdown(blogData?.description, mediaUrl)}
         </ReactMarkdown>
       </div>
     </article>
