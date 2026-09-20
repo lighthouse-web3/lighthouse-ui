@@ -365,6 +365,11 @@ export const socialLinks = {
 export const footerData = {
   sitemap: [
     {
+      text: "Storage",
+      path: "/storage",
+      link: null,
+    },
+    {
       text: "FAQ's",
       path: "/faq",
       link: null,
