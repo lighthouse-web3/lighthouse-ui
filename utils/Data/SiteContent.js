@@ -426,7 +426,7 @@ export const testimonialSection = {
       person: "Henri",
       designation: "OKContract",
       img: "/testimonial/henri.jpg",
-      link: "https://twitter.com/henri__OK",
+      link: "https://x.com/hbbiok",
     },
     // {
     //   quote:
@@ -434,7 +434,7 @@ export const testimonialSection = {
     //   person: "Saksham",
     //   designation: "MetaWork Labs",
     //   img: "/testimonial/saksham.jpg",
-    //   link: "https://twitter.com/saxmjain?s=21&t=nUsbImMLxK72iJU2a3rdjQ",
+    //   link: "https://x.com/saxmjain",
     // },
     {
       quote:
@@ -442,7 +442,7 @@ export const testimonialSection = {
       person: "lya Orlov",
       designation: "FileMarket",
       img: "/testimonial/lya.png",
-      link: "https://twitter.com/UnderKong",
+      link: "https://x.com/UnderKong",
     },
     {
       quote:
@@ -450,7 +450,7 @@ export const testimonialSection = {
       person: "Jagdeep sidhu",
       designation: "Syscoin",
       img: "/testimonial/jagdeep.jpg",
-      link: "https://twitter.com/realSidhuJag",
+      link: "https://x.com/realSidhuJag",
     },
     // {
     //   quote:
