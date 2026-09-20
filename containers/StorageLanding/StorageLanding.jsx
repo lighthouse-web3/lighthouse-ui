@@ -40,7 +40,7 @@ export default function StorageLanding() {
         </div>
       </div>
       <div style={{ minHeight: "auto", marginTop: "4rem" }}>
-        <div className="w-full bg-[#1b1c1c]">
+        <div className="w-full bg-surface">
           <TitleSeparator topTitle={"Empowering the Data Economy"} />
           {LandingPageData.lighthouseSuit.map((data, index) => (
             <LighthouseSuit key={index} data={{ ...data, index }} />

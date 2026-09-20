@@ -442,8 +442,8 @@ const EcosystemGrid = () => {
             key={tag}
             className={`px-6 py-2.5 rounded-full font-sans text-sm font-medium tracking-wide transition-all duration-300 border ${
               activeTag === tag
-                ? "bg-[#1b1c1c] text-[#dab9ff] border-[#dab9ff]/30 shadow-[0_0_15px_rgba(218,185,255,0.1)]"
-                : "bg-transparent text-[#cec2d7] border-transparent hover:bg-[#1b1c1c]/60 hover:border-[#4c4354]/30"
+                ? "bg-surface text-accent border-accent/30 shadow-[0_0_15px_rgba(206,180,251,0.1)]"
+                : "bg-transparent text-muted border-transparent hover:bg-surface/60 hover:border-line/30"
             }`}
             onClick={() => setActiveTag(tag)}
           >
@@ -458,9 +458,9 @@ const EcosystemGrid = () => {
           {filtered
             .filter((item) => item.image)
             .map((item, idx) => (
-              <div key={idx} className="relative group bg-[#1b1c1c] rounded-2xl overflow-hidden border border-[#4c4354]/15 hover:border-[#dab9ff]/30 transition-all duration-500 hover:-translate-y-2 flex flex-col sm:flex-row items-center p-8 gap-8">
+              <div key={idx} className="relative group bg-surface rounded-2xl overflow-hidden border border-line/15 hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 flex flex-col sm:flex-row items-center p-8 gap-8">
                 {/* Main Image */}
-                <div className="w-full sm:w-1/2 aspect-video rounded-xl overflow-hidden shadow-lg border border-[#4c4354]/10 bg-[#131314]">
+                <div className="w-full sm:w-1/2 aspect-video rounded-xl overflow-hidden shadow-lg border border-line/10 bg-bg">
                   <img
                     src={item.image}
                     alt={item.name}
@@ -478,19 +478,19 @@ const EcosystemGrid = () => {
                       aspectRatio={true}
                     />
                   </div>
-                  <p className="text-[#cec2d7] text-sm leading-relaxed mb-8 flex-grow">
+                  <p className="text-muted text-sm leading-relaxed mb-8 flex-grow">
                     {item.description}
                   </p>
                   <div className="flex items-center gap-4 mt-auto">
                     <span
-                      className="text-[#cec2d7] hover:text-[#dab9ff] cursor-pointer transition-colors p-2 bg-[#131314] rounded-full border border-[#4c4354]/20"
+                      className="text-muted hover:text-accent cursor-pointer transition-colors p-2 bg-bg rounded-full border border-line/20"
                       onClick={() => window.open(item.website, "_blank")}
                     >
                       <SlGlobe className="text-xl" />
                     </span>
                     {item.telegram && (
                       <span
-                        className="text-[#cec2d7] hover:text-[#dab9ff] cursor-pointer transition-colors p-2 bg-[#131314] rounded-full border border-[#4c4354]/20"
+                        className="text-muted hover:text-accent cursor-pointer transition-colors p-2 bg-bg rounded-full border border-line/20"
                         onClick={() => window.open(item.telegram, "_blank")}
                       >
                         <FaTelegramPlane className="text-xl" />
@@ -498,7 +498,7 @@ const EcosystemGrid = () => {
                     )}
                     {item.twitter && (
                       <span
-                        className="text-[#cec2d7] hover:text-[#dab9ff] cursor-pointer transition-colors p-2 bg-[#131314] rounded-full border border-[#4c4354]/20"
+                        className="text-muted hover:text-accent cursor-pointer transition-colors p-2 bg-bg rounded-full border border-line/20"
                         onClick={() => window.open(item.twitter, "_blank")}
                       >
                         <RiTwitterXLine className="text-xl" />
@@ -516,7 +516,7 @@ const EcosystemGrid = () => {
         {filtered
           .filter((item) => !item.image)
           .map((item, idx) => (
-            <div key={idx} className="group bg-[#1b1c1c] p-8 rounded-xl border border-[#4c4354]/15 hover:border-[#dab9ff]/30 transition-all duration-500 hover:-translate-y-2 flex flex-col h-full relative overflow-hidden">
+            <div key={idx} className="group bg-surface p-8 rounded-xl border border-line/15 hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 flex flex-col h-full relative overflow-hidden">
               <div className="flex justify-between items-start mb-8 z-10">
                 <div className="h-14 flex items-center justify-start max-w-[150px]">
                   <img
@@ -529,20 +529,20 @@ const EcosystemGrid = () => {
                   />
                 </div>
               </div>
-              <h3 className="text-2xl font-headline font-bold mb-3 text-[#e4e2e2] group-hover:text-[#dab9ff] transition-colors">{item.name}</h3>
-              <p className="text-[#cec2d7] text-sm leading-relaxed mb-8 flex-grow z-10">
+              <h3 className="text-2xl font-headline font-bold mb-3 text-ink group-hover:text-accent transition-colors">{item.name}</h3>
+              <p className="text-muted text-sm leading-relaxed mb-8 flex-grow z-10">
                 {item.description}
               </p>
-              <div className="flex items-center gap-4 mt-auto w-fit z-10 pt-6 border-t border-[#4c4354]/15 w-full">
+              <div className="flex items-center gap-4 mt-auto w-fit z-10 pt-6 border-t border-line/15 w-full">
                 <span
-                  className="text-[#cec2d7] hover:text-[#dab9ff] cursor-pointer transition-colors"
+                  className="text-muted hover:text-accent cursor-pointer transition-colors"
                   onClick={() => window.open(item.website, "_blank")}
                 >
                   <SlGlobe className="text-xl" />
                 </span>
                 {item.telegram && (
                   <span
-                    className="text-[#cec2d7] hover:text-[#dab9ff] cursor-pointer transition-colors"
+                    className="text-muted hover:text-accent cursor-pointer transition-colors"
                     onClick={() => window.open(item.telegram, "_blank")}
                   >
                     <FaTelegramPlane className="text-xl" />
@@ -550,7 +550,7 @@ const EcosystemGrid = () => {
                 )}
                 {item.twitter && (
                   <span
-                    className="text-[#cec2d7] hover:text-[#dab9ff] cursor-pointer transition-colors"
+                    className="text-muted hover:text-accent cursor-pointer transition-colors"
                     onClick={() => window.open(item.twitter, "_blank")}
                   >
                     <RiTwitterXLine className="text-xl" />

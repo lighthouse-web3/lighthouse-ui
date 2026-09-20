@@ -1,12 +1,12 @@
 const ThemeProperties = [
   {
     property: "--bg-clr",
-    dark: "#1B1C1C",
+    dark: "var(--lh-bg)",
     light: "#FFFFFF",
   },
   {
     property: "--txt-clr",
-    dark: "#FFFFFF",
+    dark: "var(--lh-ink)",
     light: "#000000",
   },
   {

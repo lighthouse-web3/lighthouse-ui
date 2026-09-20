@@ -8,26 +8,26 @@ function StatBox() {
   return (
     <div className="flex flex-wrap justify-around gap-12 md:gap-8 w-full">
       <div className="text-center md:text-left">
-        <div className="text-4xl md:text-5xl font-bold font-sans tracking-tighter text-[#dab9ff] mb-1">
+        <div className="text-4xl md:text-5xl font-bold font-sans tracking-tighter text-accent mb-1">
           <CountUp duration={8} end={10} delay={2} suffix="M+" />
         </div>
-        <div className="text-xs font-bold tracking-widest font-sans uppercase text-[#cec2d7]/60">
+        <div className="text-xs font-bold tracking-widest font-sans uppercase text-muted/60">
           API Requests
         </div>
       </div>
       <div className="text-center md:text-left">
-        <div className="text-4xl md:text-5xl font-bold font-sans tracking-tighter text-[#dab9ff] mb-1">
+        <div className="text-4xl md:text-5xl font-bold font-sans tracking-tighter text-accent mb-1">
           <CountUp duration={8} end={31.6} decimals={1} delay={2} suffix="K+" />
         </div>
-        <div className="text-xs font-bold tracking-widest font-sans uppercase text-[#cec2d7]/60">
+        <div className="text-xs font-bold tracking-widest font-sans uppercase text-muted/60">
           Users
         </div>
       </div>
       <div className="text-center md:text-left">
-        <div className="text-4xl md:text-5xl font-bold font-sans tracking-tighter text-[#dab9ff] mb-1">
+        <div className="text-4xl md:text-5xl font-bold font-sans tracking-tighter text-accent mb-1">
           <CountUp duration={8} end={9.2} decimals={1} delay={2} suffix="M+" />
         </div>
-        <div className="text-xs font-bold tracking-widest font-sans uppercase text-[#cec2d7]/60">
+        <div className="text-xs font-bold tracking-widest font-sans uppercase text-muted/60">
           Files Stored
         </div>
       </div>

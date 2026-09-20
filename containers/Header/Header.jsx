@@ -68,8 +68,8 @@ function Header({ style }) {
   }, [scrolling]);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#131314]/60  shadow-[0_48px_48px_rgba(218,185,255,0.06)]">
-      <div className="flex justify-between items-center px-4 md:px-8 py-4 max-w-7xl mx-auto">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 md:px-6 md:pt-5">
+      <div className="flex justify-between items-center gap-6 h-[72px] px-5 md:px-6 max-w-7xl mx-auto rounded-[15px] border border-line/[0.13] bg-bg/80 backdrop-blur-[25px]">
         <div
           className="flex items-center cursor-pointer"
           onClick={() => _navigate.push("/")}
@@ -88,8 +88,8 @@ function Header({ style }) {
           {links.map((link, index) => {
             const isActive = currentRoute === link.path;
             const linkClasses = isActive
-              ? "text-[#dab9ff] border-b-2 border-[#dab9ff] pb-1 font-sans text-sm tracking-tight transition-colors"
-              : "text-[#cec2d7] hover:text-[#dab9ff] transition-colors font-sans text-sm tracking-tight";
+              ? "text-accent font-sans text-[15px] transition-colors"
+              : "text-ink/85 hover:text-ink transition-colors font-sans text-[15px]";
 
             return link.path.length > 0 ? (
               <a
@@ -120,7 +120,7 @@ function Header({ style }) {
 
         <div className="hidden md:flex gap-4 items-center">
           {/* <span
-            className="cursor-pointer text-[#cec2d7] hover:text-[#dab9ff] transition-colors"
+            className="cursor-pointer text-muted hover:text-accent transition-colors"
             tabIndex={0}
             role="button"
             aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
@@ -138,7 +138,7 @@ function Header({ style }) {
             onClick={() =>
               window.open("https://files.lighthouse.storage/", "_blank")
             }
-            className="text-[#cec2d7] hover:text-[#dab9ff] transition-colors text-sm font-semibold font-sans"
+            className="text-muted hover:text-accent transition-colors text-sm font-semibold font-sans"
           >
             Login
           </button> */}
@@ -149,28 +149,29 @@ function Header({ style }) {
                 "_blank",
               )
             }
-            className="bg-[#dab9ff] text-[#470084] px-6 py-2.5 rounded-md text-sm font-bold font-sans hover:scale-[1.02] transition-transform active:scale-95 shadow-[0_0_40px_rgba(218,185,255,0.3)]"
+            className="flex items-center gap-2 border border-accent/20 text-ink px-[17px] py-3 rounded-lg text-sm font-sans hover:bg-accent/10 transition-colors"
           >
             Start Now
+            <MdArrowOutward />
           </button>
         </div>
 
         <div className="md:hidden flex items-center gap-4">
           {/* <span
-            className="cursor-pointer text-[#cec2d7]"
+            className="cursor-pointer text-muted"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
           >
              {theme === "light" ? <BsMoon size={20} /> : <BsSun size={20} />}
           </span> */}
           {toggleMenu ? (
             <RiCloseLine
-              color="#cec2d7"
+              color="var(--lh-muted)"
               size={27}
               onClick={() => setToggleMenu(false)}
             />
           ) : (
             <RiMenuFill
-              color="#cec2d7"
+              color="var(--lh-muted)"
               size={27}
               onClick={() => setToggleMenu(true)}
             />
@@ -179,12 +180,12 @@ function Header({ style }) {
       </div>
 
       {toggleMenu && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-[#131314]/95 backdrop-blur-xl border-t border-white/10 p-4 flex flex-col gap-4 shadow-xl">
+        <div className="md:hidden absolute top-full left-0 w-full bg-bg/95 backdrop-blur-xl border-t border-white/10 p-4 flex flex-col gap-4 shadow-xl">
           {links.filter(link => link.path.length > 0).map((link, index) => {
             const isActive = currentRoute === link.path;
             const linkClasses = isActive
-              ? "text-[#dab9ff] font-sans text-base font-medium"
-              : "text-[#cec2d7] font-sans text-base";
+              ? "text-accent font-sans text-base font-medium"
+              : "text-muted font-sans text-base";
 
             return (
               <a
@@ -205,8 +206,8 @@ function Header({ style }) {
           {links.filter(link => link.path.length === 0).map((link, index) => {
             const isActive = currentRoute === link.path;
             const linkClasses = isActive
-              ? "text-[#dab9ff] font-sans text-base font-medium"
-              : "text-[#cec2d7] font-sans text-base";
+              ? "text-accent font-sans text-base font-medium"
+              : "text-muted font-sans text-base";
 
             return (
               <a
@@ -225,7 +226,7 @@ function Header({ style }) {
             onClick={() =>
               window.open("https://files.lighthouse.storage/", "_blank")
             }
-            className="w-full text-center text-[#cec2d7] py-3 text-base font-semibold"
+            className="w-full text-center text-muted py-3 text-base font-semibold"
           >
             Login
           </button> */}
@@ -236,7 +237,7 @@ function Header({ style }) {
                 "_blank",
               )
             }
-            className="w-full bg-[#dab9ff] text-[#470084] px-6 py-3 rounded-md text-base font-bold shadow-[0_0_40px_rgba(218,185,255,0.3)]"
+            className="w-full bg-accent text-[#470084] px-6 py-3 rounded-md text-base font-bold shadow-[0_0_40px_rgba(206,180,251,0.3)]"
           >
             Start Now
           </button>

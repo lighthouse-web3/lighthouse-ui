@@ -9,3 +9,28 @@
     0px 1px 0px 0px rgba(25, 28, 33, 0.02),
     0px 0px 0px 1px rgba(25, 28, 33, 0.08);
 }
+
+/* Design tokens shared with the memory layer page.
+ *
+ * These live here rather than in tailwind.config.js because this project is on
+ * Tailwind v4, which does not read that file at all -- it is inert. A plain
+ * `@theme` block (not `@theme inline`) also emits each value as a :root custom
+ * property, so styles/globals.scss and any plain CSS can reference the same
+ * token. Opacity modifiers work on these directly: `border-line/[0.13]`,
+ * `text-muted/60`.
+ */
+@theme {
+  --font-sans: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-headline: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-label: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+
+  --color-bg: #101012;
+  --color-surface: #17161c;
+  --color-surface-2: #1c1b22;
+  --color-ink: #f4f2f7;
+  --color-muted: #a6a1b2;
+  --color-accent: #ceb4fb;
+  --color-accent-ink: #21182f;
+  --color-line: #ddccff;
+}
