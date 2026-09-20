@@ -42,6 +42,11 @@ const nextConfig = {
           destination: "/index.md",
         },
         {
+          source: "/storage",
+          has: [markdownAcceptHeader],
+          destination: "/storage.md",
+        },
+        {
           source: "/pricing",
           has: [markdownAcceptHeader],
           destination: "/pricing.md",
@@ -99,6 +104,10 @@ const nextConfig = {
         {
           source: "/index.md",
           destination: "/api/markdown",
+        },
+        {
+          source: "/storage.md",
+          destination: "/api/markdown/storage",
         },
         {
           source: "/pricing.md",

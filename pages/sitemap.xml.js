@@ -6,6 +6,7 @@ import { fetchAllBlogs } from "../lib/blogs";
 // so adding a canonical path in lib/markdown.js is enough to get it indexed.
 const PRIORITY = {
   "/": 1.0,
+  "/storage": 0.9,
   "/pricing": 0.9,
   "/documentation": 0.9,
   "/blogs": 0.8,
