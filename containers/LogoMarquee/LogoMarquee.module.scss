@@ -2,7 +2,7 @@
   .marqueeContainer {
     width: 100%;
     overflow: hidden;
-    background: #131314;
+    background: var(--lh-bg);
     position: relative;
     padding: 3rem 0rem;
 
@@ -18,12 +18,12 @@
 
     &::before {
       left: 0;
-      background: linear-gradient(to right, #131314, transparent);
+      background: linear-gradient(to right, var(--lh-bg), transparent);
     }
 
     &::after {
       right: 0;
-      background: linear-gradient(to left, #131314, transparent);
+      background: linear-gradient(to left, var(--lh-bg), transparent);
     }
 
     .marquee {

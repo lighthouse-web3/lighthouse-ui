@@ -3,16 +3,28 @@
 @import "styles/mediaQuery.scss";
 
 :root {
-  --font-sans: "Inter", sans-serif;
-  --font-headline: "Space Grotesk", sans-serif;
+  --font-sans: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-headline: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+
+  // Bridges to the design tokens in styles/tailwind.css, which is the single
+  // source of truth. Kept so plain CSS and .scss modules can use them too.
+  --lh-bg: var(--color-bg);
+  --lh-surface: var(--color-surface);
+  --lh-surface-2: var(--color-surface-2);
+  --lh-ink: var(--color-ink);
+  --lh-muted: var(--color-muted);
+  --lh-accent: var(--color-accent);
+  --lh-accent-ink: var(--color-accent-ink);
+  --lh-line: color-mix(in srgb, var(--color-line) 13%, transparent);
+
   --clr-blue: #2563eb;
   --clr-bg-black: #1b1c1c;
   --gradient: linear-gradient(90.23deg, #6079b8 1.12%, #c54477 102.79%);
   --clr-text-grey: rgba(116, 109, 109, 1);
   //--------------------
 
-  --bg-clr: #1b1c1c;
-  --txt-clr: #ffffff;
+  --bg-clr: var(--lh-bg);
+  --txt-clr: var(--lh-ink);
   --primary-clr: #643fbb;
   --pink-clr: #a94c89;
 
@@ -43,7 +55,12 @@ body {
   font-family: var(--font-sans);
   background-size: cover;
   background-position: center;
+  // `hidden` here would make html/body the scroll container, which silently
+  // breaks `position: sticky` anywhere on the site. `clip` suppresses the same
+  // horizontal overflow without creating one. The `hidden` line stays first as
+  // the fallback for browsers that do not support `clip`.
   overflow-x: hidden;
+  overflow-x: clip;
   color: var(--txt-clr);
   background: var(--bg-clr) !important;
 }
@@ -55,6 +72,26 @@ h4,
 h5,
 h6 {
   font-family: var(--font-headline) !important;
+  // DM Sans is a variable font, so the memory layer page sets headings at 500
+  // with very tight tracking rather than reaching for bold. Matching that here
+  // means the components do not each need their own weight and tracking.
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+
+h1 {
+  letter-spacing: -0.07em;
+  line-height: 0.96;
+}
+
+h2 {
+  letter-spacing: -0.06em;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button {

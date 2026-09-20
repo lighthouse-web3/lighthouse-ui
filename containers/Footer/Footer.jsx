@@ -36,7 +36,7 @@ function Footer() {
   }, [theme]);
 
   return (
-    <footer className="bg-[#131314] py-16 border-t border-[#4c4354]/15 font-sans">
+    <footer className="bg-bg py-16 border-t border-line/15 font-sans">
       <div className="max-w-7xl mx-auto px-8">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -57,38 +57,38 @@ function Footer() {
             
             <div className="flex gap-5">
               <span
-                className="text-[#cec2d7] hover:text-[#dab9ff] transition-colors text-xl cursor-pointer"
+                className="text-muted hover:text-accent transition-colors text-xl cursor-pointer"
                 onClick={() => window.open(socialLinks?.telegram, "_blank")}
               >
                 <FaTelegramPlane />
               </span>
               <span
-                className="text-[#cec2d7] hover:text-[#dab9ff] transition-colors text-xl cursor-pointer"
+                className="text-muted hover:text-accent transition-colors text-xl cursor-pointer"
                 onClick={() => window.open(socialLinks?.discord, "_blank")}
               >
                 <FaDiscord />
               </span>
               <span
-                className="text-[#cec2d7] hover:text-[#dab9ff] transition-colors text-xl cursor-pointer"
+                className="text-muted hover:text-accent transition-colors text-xl cursor-pointer"
                 onClick={() => window.open(socialLinks?.twitter, "_blank")}
               >
                 <RiTwitterXLine />
               </span>
               <span
-                className="text-[#cec2d7] hover:text-[#dab9ff] transition-colors text-xl cursor-pointer"
+                className="text-muted hover:text-accent transition-colors text-xl cursor-pointer"
                 onClick={() => window.open(socialLinks?.linkedin, "_blank")}
               >
                 <FaLinkedinIn />
               </span>
               <span
-                className="text-[#cec2d7] hover:text-[#dab9ff] transition-colors text-xl cursor-pointer"
+                className="text-muted hover:text-accent transition-colors text-xl cursor-pointer"
                 onClick={() => window.open(socialLinks?.instagram, "_blank")}
               >
                 <FaInstagram />
               </span>
             </div>
             <p
-              className="text-[#cec2d7] hover:text-[#dab9ff] transition-colors cursor-pointer text-sm"
+              className="text-muted hover:text-accent transition-colors cursor-pointer text-sm"
               onClick={() => {
                 window.open(`mailto:${socialLinks?.contactMail}`, "_blank");
               }}
@@ -98,10 +98,10 @@ function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <p className="font-bold text-[#e4e2e2] text-lg font-headline">Sitemap</p>
+            <p className="font-bold text-ink text-lg font-headline">Sitemap</p>
             {footerData?.sitemap.map((item, index) => (
               <p
-                className="text-[#cec2d7] hover:text-[#dab9ff] text-sm transition-colors cursor-pointer w-fit"
+                className="text-muted hover:text-accent text-sm transition-colors cursor-pointer w-fit"
                 key={index}
                 onClick={() => {
                   item?.path
@@ -115,10 +115,10 @@ function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <p className="font-bold text-[#e4e2e2] text-lg font-headline">Help</p>
+            <p className="font-bold text-ink text-lg font-headline">Help</p>
             {footerData?.otherLinks.map((item, index) => (
               <p
-                className="text-[#cec2d7] hover:text-[#dab9ff] text-sm transition-colors cursor-pointer w-fit flex items-center gap-1"
+                className="text-muted hover:text-accent text-sm transition-colors cursor-pointer w-fit flex items-center gap-1"
                 key={index}
                 onClick={() => {
                   item?.path
@@ -133,7 +133,7 @@ function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <p className="font-bold text-[#e4e2e2] text-lg font-headline">Newsletter</p>
+            <p className="font-bold text-ink text-lg font-headline">Newsletter</p>
             <input
               type="email"
               placeholder="user@mail.com"
@@ -146,10 +146,10 @@ function Footer() {
                   subscribeEmail();
                 }
               }}
-              className="bg-[#1b1c1c] border border-[#4c4354]/20 text-[#e4e2e2] px-4 py-3 rounded-xl focus:outline-none focus:border-[#dab9ff] transition-colors w-full"
+              className="bg-surface border border-line/20 text-ink px-4 py-3 rounded-xl focus:outline-none focus:border-accent transition-colors w-full"
             />
             <button
-              className="bg-[#dab9ff] text-[#470084] px-4 py-3 rounded-xl font-bold font-sans hover:bg-[#c79ef5] transition-colors w-full shadow-lg"
+              className="bg-accent text-[#470084] px-4 py-3 rounded-xl font-bold font-sans hover:bg-[#c79ef5] transition-colors w-full shadow-lg"
               onClick={subscribeEmail}
             >
               Subscribe Now
@@ -158,8 +158,8 @@ function Footer() {
 
         </div>
 
-        <div className="pt-8 border-t border-[#4c4354]/15 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-sm text-[#cec2d7]/60">
+        <div className="pt-8 border-t border-line/15 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-sm text-muted/60">
             © Copyright {new Date().getFullYear()}, All Rights Reserved by Lighthouse Storage
           </div>
         </div>

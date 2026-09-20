@@ -36,7 +36,7 @@ function FeaturedArticle({ blogsData }) {
     <section className="mb-20" data-aos="fade-up">
       {latestBlog && (
         <div
-          className="group relative overflow-hidden rounded-[1.5rem] bg-[#1b1c1c] transition-all duration-500 hover:shadow-[0_0_64px_0_rgba(218,185,255,0.1)] cursor-pointer"
+          className="group relative overflow-hidden rounded-[1.5rem] bg-surface transition-all duration-500 hover:shadow-[0_0_64px_0_rgba(206,180,251,0.1)] cursor-pointer"
           onClick={() => {
             window.open(
               `/blogs/${encodeURIComponent(latestBlog?.attributes?.title?.trim())}`,
@@ -45,7 +45,7 @@ function FeaturedArticle({ blogsData }) {
           }}
         >
           <div className="flex flex-col lg:flex-row items-stretch">
-            <div className="lg:w-3/5 overflow-hidden bg-[#131314] flex items-center justify-center">
+            <div className="lg:w-3/5 overflow-hidden bg-bg flex items-center justify-center">
               <img
                 className="w-full h-[400px] lg:h-[600px] object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]"
                 alt={latestBlog?.attributes?.title || "Featured Blog"}
@@ -57,32 +57,32 @@ function FeaturedArticle({ blogsData }) {
             </div>
             <div className="lg:w-2/5 p-8 md:p-12 flex flex-col justify-between">
               <div>
-                <span className="inline-block px-3 py-1 rounded-md bg-[#b170ff]/20 text-[#dab9ff] text-xs font-bold uppercase tracking-widest mb-6">
+                <span className="inline-block px-3 py-1 rounded-md bg-[#b170ff]/20 text-accent text-xs font-bold uppercase tracking-widest mb-6">
                   Engineering
                 </span>
-                <h2 className="text-3xl md:text-4xl font-headline font-bold leading-tight mb-4 text-[#e4e2e2] group-hover:text-[#dab9ff] transition-colors">
+                <h2 className="text-3xl md:text-4xl font-headline font-bold leading-tight mb-4 text-ink group-hover:text-accent transition-colors">
                   {latestBlog?.attributes?.title}
                 </h2>
-                <p className="text-[#cec2d7] mb-8 line-clamp-3 leading-relaxed">
+                <p className="text-muted mb-8 line-clamp-3 leading-relaxed">
                   {stripMarkdown(latestBlog?.attributes?.description)}
                 </p>
               </div>
 
-              <div className="flex items-center justify-between pt-8 border-t border-[#4c4354]/15">
+              <div className="flex items-center justify-between pt-8 border-t border-line/15">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#343535] overflow-hidden text-[#dab9ff] font-bold text-lg">
+                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-surface-2 overflow-hidden text-accent font-bold text-lg">
                     {latestBlog?.attributes?.author?.[0] || "L"}
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-[#e4e2e2]">
+                    <div className="text-sm font-bold text-ink">
                       {latestBlog?.attributes?.author || "Lighthouse Team"}
                     </div>
-                    <div className="text-xs text-[#cec2d7]">
+                    <div className="text-xs text-muted">
                       {formatDate(latestBlog?.attributes?.publishedAt)}
                     </div>
                   </div>
                 </div>
-                <div className="text-xs font-medium text-[#cec2d7] flex items-center">
+                <div className="text-xs font-medium text-muted flex items-center">
                   <span className="material-symbols-outlined text-sm mr-1">
                     schedule
                   </span>

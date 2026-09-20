@@ -70,15 +70,15 @@ function PricingTable() {
         <TitleSeparator topTitle={"Compare Lifetime plans "} />
       </div>
 
-      <div className={`${styles.pricingTable} font-sans text-[#cec2d7] shadow-xl`}>
+      <div className={`${styles.pricingTable} font-sans text-muted shadow-xl`}>
         <div className={styles.headerRow}>
-          <div className={`${styles.featureColumn} text-[#e4e2e2] text-lg`}></div>
+          <div className={`${styles.featureColumn} text-ink text-lg`}></div>
           {newLifetimePricing.map((plan) => (
             <div key={plan.title} className={styles.planColumn}>
-              <h3 className="font-headline font-bold text-3xl text-[#e4e2e2] mb-3">{plan.title}</h3>
-              <p className={`${styles.price} text-[#dab9ff] text-2xl`}>
+              <h3 className="font-headline font-bold text-3xl text-ink mb-3">{plan.title}</h3>
+              <p className={`${styles.price} text-accent text-2xl`}>
                 ${plan.cost}{" "}
-                <span className={`${styles.priceSpan} text-[#cec2d7]/60 text-sm font-medium tracking-wide`}>
+                <span className={`${styles.priceSpan} text-muted/60 text-sm font-medium tracking-wide`}>
                   {plan.title === "Pro" ? "/month" : ""}
                 </span>
               </p>
@@ -88,10 +88,10 @@ function PricingTable() {
 
         {featureSet.map((featureTitle) => (
           <div className={styles.featureRow} key={featureTitle}>
-            <div className={`${styles.featureColumn} text-[#e4e2e2]`}>
+            <div className={`${styles.featureColumn} text-ink`}>
               {featureTitle + " "}&nbsp;
-              <div className="tooltipWrapper text-[#cec2d7]">
-                <BsInfoCircle className="hover:text-[#dab9ff] transition-colors cursor-pointer" />
+              <div className="tooltipWrapper text-muted">
+                <BsInfoCircle className="hover:text-accent transition-colors cursor-pointer" />
                 {
                   <div className="tooltipContent">
                     {getTooltipForFeature(featureTitle)}
@@ -106,7 +106,7 @@ function PricingTable() {
               if (!feature)
                 return (
                   <div className={styles.planColumn} key={featureTitle}>
-                    <span className="text-[#4c4354]">-</span>
+                    <span className="text-line">-</span>
                   </div>
                 );
               return (
@@ -116,14 +116,14 @@ function PricingTable() {
                   title={feature.tooltip}
                 >
                   {feature.value === "icon" && (
-                    <FaCheck className={`${styles.iconCheck} text-[#dab9ff] text-xl`} />
+                    <FaCheck className={`${styles.iconCheck} text-accent text-xl`} />
                   )}
                   {feature.value === "icon-cross" && (
-                    <FaXmark className={`${styles.iconCross} text-[#4c4354] text-xl`} />
+                    <FaXmark className={`${styles.iconCross} text-line text-xl`} />
                   )}
                   {feature.value !== "icon" &&
                     feature.value !== "icon-cross" &&
-                    <span className="font-bold text-[#e4e2e2]">{feature.value}</span>}
+                    <span className="font-bold text-ink">{feature.value}</span>}
                 </div>
               );
             })}
