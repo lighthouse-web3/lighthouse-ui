@@ -55,8 +55,8 @@ const Pricing = () => {
     return plans.map((plan, index) => {
       const isPremium = index === plans.length - 1; // Last plan = the super value one
       const cardClasses = isPremium
-        ? "p-6 md:p-8 rounded-2xl bg-[#131314] border border-[#dab9ff]/40 relative flex flex-col shadow-[0_48px_48px_rgba(218,185,255,0.06)] transform lg:scale-105 z-10"
-        : "p-6 md:p-8 rounded-2xl bg-[#131314] border border-[#4c4354]/10 flex flex-col hover:border-[#dab9ff]/20 transition-all";
+        ? "p-6 md:p-8 rounded-2xl bg-bg border border-accent/40 relative flex flex-col shadow-[0_48px_48px_rgba(206,180,251,0.06)] transform lg:scale-105 z-10"
+        : "p-6 md:p-8 rounded-2xl bg-bg border border-line/10 flex flex-col hover:border-accent/20 transition-all";
 
       return (
         <div
@@ -66,21 +66,21 @@ const Pricing = () => {
           data-aos-delay={index * 100}
         >
           {isPremium && (
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-br from-[#dab9ff] to-[#a4c8ff] px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-[#2a0053]">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-accent-ink">
               Super Value
             </div>
           )}
 
           <div className="mb-8 flex items-center justify-between">
             <div>
-              <h3 className="text-2xl font-bold font-sans mb-2 text-[#e4e2e2]">
+              <h3 className="text-2xl font-bold font-sans mb-2 text-ink">
                 {plan.title}
               </h3>
               <p className="flex items-baseline gap-1">
-                <span className="text-4xl md:text-5xl font-bold font-sans text-[#dab9ff]">
+                <span className="text-4xl md:text-5xl font-bold font-sans text-accent">
                   ${plan.cost}
                 </span>
-                <span className="text-[#cec2d7] text-lg">
+                <span className="text-muted text-lg">
                   {plan.cost === "0"
                     ? ""
                     : effectiveBilling === "Annually"
@@ -104,15 +104,15 @@ const Pricing = () => {
             {plan.features.map((feature, idx) => (
               <li
                 key={idx}
-                className="flex items-center justify-between gap-4 text-sm text-[#cec2d7]"
+                className="flex items-center justify-between gap-4 text-sm text-muted"
               >
                 <div className="flex items-center gap-3">
                   <div className="group relative cursor-pointer flex items-center">
-                    <span className="text-[#e4e2e2]">{feature.title}</span>
+                    <span className="text-ink">{feature.title}</span>
                     {feature.tooltip && (
                       <div className="ml-2 flex items-center">
-                        <BsInfoCircle className="text-[#cec2d7]/60 hover:text-[#e4e2e2]" />
-                        <div className="invisible group-hover:visible absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-[#343535] border border-[#4c4354]/40 text-xs text-[#e4e2e2] p-2 rounded shadow-xl whitespace-nowrap z-50">
+                        <BsInfoCircle className="text-muted/60 hover:text-ink" />
+                        <div className="invisible group-hover:visible absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-surface-2 border border-line/40 text-xs text-ink p-2 rounded shadow-xl whitespace-nowrap z-50">
                           {feature.tooltip}
                         </div>
                       </div>
@@ -124,11 +124,11 @@ const Pricing = () => {
                     <FaXmark className="inline text-[#ffb4ab] text-lg" />
                   )}
                   {feature?.value === "icon" && (
-                    <FaCheck className="inline text-[#dab9ff] text-lg" />
+                    <FaCheck className="inline text-accent text-lg" />
                   )}
                   {feature?.value !== "icon-cross" &&
                     feature?.value !== "icon" && (
-                      <span className="text-[#e4e2e2]">{feature.value}</span>
+                      <span className="text-ink">{feature.value}</span>
                     )}
                 </div>
               </li>
@@ -138,8 +138,8 @@ const Pricing = () => {
           <button
             className={
               isPremium
-                ? "w-full py-4 mt-auto rounded-xl bg-gradient-to-br from-[#dab9ff] to-[#a4c8ff] text-[#2a0053] font-bold shadow-[0_10px_30px_rgba(218,185,255,0.2)] hover:scale-[1.02] transition-transform"
-                : "w-full py-4 mt-auto rounded-xl border border-[#dab9ff] text-[#dab9ff] font-bold hover:bg-[#dab9ff]/5 transition-colors"
+                ? "w-full py-4 mt-auto rounded-lg bg-accent text-accent-ink font-bold shadow-[0_10px_30px_rgba(206,180,251,0.2)] hover:scale-[1.02] transition-transform"
+                : "w-full py-4 mt-auto rounded-xl border border-accent text-accent font-bold hover:bg-accent/5 transition-colors"
             }
             onClick={() =>
               plan.title === "Customize"
@@ -158,12 +158,12 @@ const Pricing = () => {
   };
 
   return (
-    <section className="py-24 px-8 bg-[#1b1c1c] font-sans">
+    <section className="py-24 px-8 bg-surface font-sans">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <TitleSeparator topTitle={"Discover your perfect plan"} />
 
         {/* Single control bar — storage network on the left, billing on the right */}
-        <div className="mt-8 max-w-3xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-3 p-2 bg-[#343535] rounded-2xl border border-[#4c4354]/20">
+        <div className="mt-8 max-w-3xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-3 p-2 bg-surface-2 rounded-2xl border border-line/20">
           <div className="flex items-stretch gap-1">
             {NETWORKS.map((n) => {
               const active = network === n.id;
@@ -173,8 +173,8 @@ const Pricing = () => {
                   onClick={() => setNetwork(n.id)}
                   className={`flex flex-1 md:flex-none items-center gap-2.5 px-4 md:px-5 py-2.5 rounded-xl text-left transition-all ${
                     active
-                      ? "bg-[#131314] shadow-[0_8px_24px_rgba(0,0,0,0.35)] ring-1 ring-[#dab9ff]/40"
-                      : "hover:bg-[#131314]/40"
+                      ? "bg-bg shadow-[0_8px_24px_rgba(0,0,0,0.35)] ring-1 ring-accent/40"
+                      : "hover:bg-bg/40"
                   }`}
                 >
                   <span
@@ -193,14 +193,14 @@ const Pricing = () => {
                   <span className="flex flex-col leading-tight">
                     <span
                       className={`font-bold text-sm md:text-base ${
-                        active ? "text-[#e4e2e2]" : "text-[#cec2d7]"
+                        active ? "text-ink" : "text-muted"
                       }`}
                     >
                       {n.label}
                     </span>
                     <span
                       className={`text-[11px] font-medium ${
-                        active ? "text-[#dab9ff]" : "text-[#cec2d7]/60"
+                        active ? "text-accent" : "text-muted/60"
                       }`}
                     >
                       {n.teaser}
@@ -214,15 +214,15 @@ const Pricing = () => {
           {/* Billing period — Filecoin only; Walrus is monthly-only */}
           <div className="flex items-center justify-center md:pr-1">
             {network === "Filecoin" ? (
-              <div className="inline-flex items-center p-0.5 bg-[#131314] rounded-full border border-[#4c4354]/20 text-xs font-semibold">
+              <div className="inline-flex items-center p-0.5 bg-bg rounded-full border border-line/20 text-xs font-semibold">
                 {["Monthly", "Annually"].map((b) => (
                   <button
                     key={b}
                     onClick={() => setBilling(b)}
                     className={`px-4 py-1.5 rounded-full transition-colors ${
                       billing === b
-                        ? "bg-[#dab9ff] text-[#470084]"
-                        : "text-[#cec2d7] hover:text-[#e4e2e2]"
+                        ? "bg-accent text-[#470084]"
+                        : "text-muted hover:text-ink"
                     }`}
                   >
                     {b === "Annually" ? "Annually · Save" : b}
@@ -230,7 +230,7 @@ const Pricing = () => {
                 ))}
               </div>
             ) : (
-              <span className="px-4 py-1.5 text-xs font-semibold text-[#cec2d7]/70">
+              <span className="px-4 py-1.5 text-xs font-semibold text-muted/70">
                 Billed monthly
               </span>
             )}

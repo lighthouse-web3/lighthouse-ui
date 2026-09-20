@@ -6,9 +6,9 @@ import ThemeContext from "../../utils/services/Themecontext";
 function PartnerCarousel() {
   const { theme } = useContext(ThemeContext);
   return (
-    <section className="py-16 bg-[#131314] overflow-hidden w-full">
+    <section className="py-16 bg-bg overflow-hidden w-full">
       <div className="max-w-7xl mx-auto px-8">
-        <p className="text-center text-[#cec2d7]/40 text-xs font-bold tracking-[0.3em] uppercase mb-12 font-sans">
+        <p className="text-center text-muted/40 text-xs font-bold tracking-[0.3em] uppercase mb-12 font-sans">
           Trusted by Industry Leaders
         </p>
         <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">

@@ -4,13 +4,13 @@ import { FaStar } from "react-icons/fa";
 
 function Testimonials() {
   return (
-    <section className="py-24 px-8 bg-[#131314] font-sans text-[#e4e2e2]">
+    <section className="py-24 px-8 bg-bg font-sans text-ink">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tighter mb-4 text-[#e4e2e2]">
+          <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tighter mb-4 text-ink">
             Trusted by Builders
           </h2>
-          <p className="text-[#cec2d7]">
+          <p className="text-muted">
             See what the decentralized community is saying about Lighthouse.
           </p>
         </div>
@@ -18,7 +18,7 @@ function Testimonials() {
           {testimonialSection?.testimonials.map((item, index) => (
             <div
               key={index}
-              className="p-8 rounded-2xl bg-[#1b1c1c] border border-[#4c4354]/10 cursor-pointer hover:border-[#dab9ff]/30 transition-all flex flex-col justify-between"
+              className="p-8 rounded-2xl bg-surface border border-line/10 cursor-pointer hover:border-accent/30 transition-all flex flex-col justify-between"
               data-aos="fade-up"
               data-aos-delay={100 * index}
               onClick={() => {
@@ -26,19 +26,19 @@ function Testimonials() {
               }}
             >
               <div>
-                <div className="flex gap-1 text-[#dab9ff] mb-6">
+                <div className="flex gap-1 text-accent mb-6">
                   <FaStar />
                   <FaStar />
                   <FaStar />
                   <FaStar />
                   <FaStar />
                 </div>
-                <p className="italic text-lg mb-8 leading-relaxed text-[#e4e2e2]">
+                <p className="italic text-lg mb-8 leading-relaxed text-ink">
                   "{item.quote}"
                 </p>
               </div>
               <div className="flex items-center gap-4 mt-auto">
-                <div className="w-12 h-12 rounded-full bg-[#343535] overflow-hidden flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-surface-2 overflow-hidden flex-shrink-0">
                   <img
                     className="w-full h-full object-cover"
                     src={item.img}
@@ -46,8 +46,8 @@ function Testimonials() {
                   />
                 </div>
                 <div>
-                  <div className="font-bold text-[#e4e2e2]">{item.person}</div>
-                  <div className="text-xs text-[#cec2d7]/60 font-sans font-bold uppercase tracking-widest mt-1">
+                  <div className="font-bold text-ink">{item.person}</div>
+                  <div className="text-xs text-muted/60 font-sans font-bold uppercase tracking-widest mt-1">
                     {item.designation}
                   </div>
                 </div>
