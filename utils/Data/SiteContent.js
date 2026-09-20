@@ -421,7 +421,7 @@ export const testimonialSection = {
       person: "Henri",
       designation: "OKContract",
       img: "/testimonial/henri.jpg",
-      link: "https://twitter.com/henri__OK",
+      link: "https://x.com/hbbiok",
     },
     // {
     //   quote:
