@@ -9,9 +9,17 @@ import { MdArrowOutward } from "react-icons/md";
 import ThemeContext from "../../utils/services/Themecontext";
 
 const links = [
+  // The memory product leads the root now, so it leads the nav here too. The
+  // storage pages keep a direct route back to it rather than stranding
+  // visitors who arrive on a storage URL.
   {
-    title: "Home",
+    title: "Memory",
     path: "/",
+    href: "",
+  },
+  {
+    title: "Storage",
+    path: "/storage",
     href: "",
   },
   {
@@ -72,7 +80,7 @@ function Header({ style }) {
       <div className="flex justify-between items-center gap-6 h-[72px] px-5 md:px-6 max-w-7xl mx-auto rounded-[15px] border border-line/[0.13] bg-bg/80 backdrop-blur-[25px]">
         <div
           className="flex items-center cursor-pointer"
-          onClick={() => _navigate.push("/")}
+          onClick={() => _navigate.push("/storage")}
         >
           <div className="relative w-32 h-8 md:w-36 md:h-10">
             <Image

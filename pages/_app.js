@@ -1,5 +1,18 @@
 import "../styles/globals.scss";
 import "../styles/tailwind.css";
+
+// Memory landing page styles, ported from the standalone site. Their class
+// selectors were checked against the rest of the site and share no names, and
+// the bare element rules are scoped to .memory-page, so nothing here reaches
+// the storage pages. Import order matches the original entry point.
+import "../containers/MemoryHome/styles/base.css";
+import "../containers/MemoryHome/styles/responsive.css";
+import "../containers/MemoryHome/styles/refinements.css";
+import "../containers/MemoryHome/styles/motion.css";
+import "../containers/MemoryHome/styles/foundation.css";
+import "../containers/MemoryHome/styles/usecases.css";
+import "../containers/MemoryHome/styles/portal.css";
+import "../containers/MemoryHome/styles/next-overrides.css";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";

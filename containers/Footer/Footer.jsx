@@ -45,7 +45,7 @@ function Footer() {
             <div
               className="w-44 cursor-pointer"
               onClick={() => {
-                _navigate.push("/");
+                _navigate.push("/storage");
               }}
             >
               {theme === "light" ? (

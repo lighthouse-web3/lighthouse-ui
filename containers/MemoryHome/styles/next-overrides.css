@@ -1,0 +1,25 @@
+/*
+ * Deltas needed after porting the standalone site into Next, kept out of the
+ * copied stylesheets so those stay a faithful copy of the source.
+ */
+
+/*
+ * The outbound arrows are react-icons SVGs now rather than a text glyph, to
+ * match the storage header. An <svg> does not sit on the baseline the way the
+ * old <span>↗</span> did, so without this the arrow drops onto a second line
+ * and the nav items render two lines tall. Only direct children are targeted:
+ * the anchors inside the use-cases dropdown have their own grid layout.
+ */
+.memory-page .nav > nav > a,
+.memory-page .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34em;
+}
+
+.memory-page .nav > nav > a > svg,
+.memory-page .nav-cta > svg {
+  width: 0.8em;
+  height: 0.8em;
+  flex: none;
+}

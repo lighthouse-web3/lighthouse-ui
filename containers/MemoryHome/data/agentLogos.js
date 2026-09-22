@@ -1,0 +1,23 @@
+export const agentLogos = {
+  "Claude": "/memory/agent-logos/claude-color.svg",
+  "Codex": "/memory/agent-logos/codex-color.svg",
+  "ChatGPT": "/memory/agent-logos/openai.svg",
+  "Claude Desktop": "/memory/agent-logos/claude-color.svg",
+  "Gemini": "/memory/agent-logos/gemini-color.svg",
+  "Cursor": "/memory/agent-logos/cursor.svg",
+  "Windsurf": "/memory/agent-logos/windsurf.svg",
+  "Cline": "/memory/agent-logos/cline.svg",
+  "Roo Code": "/memory/agent-logos/roocode.svg",
+  "Goose": "/memory/agent-logos/goose.svg",
+  "GitHub Copilot": "/memory/agent-logos/githubcopilot.svg",
+  "OpenHands": "/memory/agent-logos/openhands-color.svg",
+  "CrewAI": "/memory/agent-logos/crewai-color.svg",
+  "LangGraph": "/memory/agent-logos/langgraph-color.svg",
+  "Replit Agent": "/memory/agent-logos/replit-color.svg",
+  "Devin": "/memory/agent-logos/devin-color.svg",
+  "OpenCode": "/memory/agent-logos/opencode.svg",
+  "Claude Code": "/memory/agent-logos/claudecode-color.svg",
+  "Continue": "/memory/agent-logos/continue.png",
+  "Aider": "/memory/agent-logos/aider.png",
+  "AutoGen": "/memory/agent-logos/autogen.png"
+};

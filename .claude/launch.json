@@ -7,6 +7,17 @@
       "runtimeArgs": ["run", "dev"],
       "port": 3000,
       "autoPort": true
+    },
+    {
+      "name": "memory-site",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/Users/nanditmehra/Desktop/lighthouse-github-repos/Lighthouse-Website",
+        "run",
+        "dev"
+      ],
+      "port": 4173
     }
   ]
 }
