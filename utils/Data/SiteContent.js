@@ -363,10 +363,21 @@ export const socialLinks = {
 };
 
 export const footerData = {
+  // Shared by the storage footer and the memory footer, so both stay in sync.
   sitemap: [
+    {
+      text: "Memory",
+      path: "/",
+      link: null,
+    },
     {
       text: "Storage",
       path: "/storage",
+      link: null,
+    },
+    {
+      text: "Use cases",
+      path: "/use-cases",
       link: null,
     },
     {

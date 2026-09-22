@@ -36,7 +36,7 @@ function Footer() {
   }, [theme]);
 
   return (
-    <footer className="bg-bg py-16 border-t border-line/15 font-sans">
+    <footer className="bg-bg pt-16 border-t border-line/15 font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto px-8">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -164,6 +164,16 @@ function Footer() {
           </div>
         </div>
 
+      </div>
+
+      {/* The same outlined wordmark that closes the memory page, so every page
+        * on the site ends the same way. Full-bleed, outside the padded
+        * container, so the wide tracking is not clipped. */}
+      <div
+        aria-hidden="true"
+        className="mt-10 select-none text-center font-semibold leading-[0.9] whitespace-nowrap text-[clamp(55px,13vw,195px)] tracking-[0.05em] text-white/[0.02] [-webkit-text-stroke:1px_rgba(212,181,238,0.09)]"
+      >
+        LIGHTHOUSE
       </div>
     </footer>
   );

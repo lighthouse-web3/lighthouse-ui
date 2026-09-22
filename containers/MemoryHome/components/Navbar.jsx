@@ -79,9 +79,7 @@ export default function Navbar() {
         aria-label="Main navigation"
       >
         <a href={anchor("memory")}>Memory network</a>
-        <a href="/storage">
-          Storage <MdArrowOutward />
-        </a>
+        <a href="/storage">Storage</a>
         <a href={anchor("how")}>How it works</a>
         <div className="uc-nav-dropdown">
           <button
@@ -163,6 +161,7 @@ export default function Navbar() {
             </div>
           )}
         </div>
+        <a href="/blogs">Blogs</a>
         <a
           href="https://docs.lighthouse.storage/"
           target="_blank"

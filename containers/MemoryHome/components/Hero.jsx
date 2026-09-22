@@ -33,7 +33,7 @@ export default function Hero() {
           </a>
           <a
             className="text-link"
-            href="https://docs.lighthouse.storage/"
+            href="https://docs.lighthouse.storage/memory/intro"
             target="_blank"
             rel="noopener"
           >
