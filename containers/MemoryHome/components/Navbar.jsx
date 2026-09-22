@@ -124,7 +124,7 @@ export default function Navbar() {
                   setOpen(false);
               }}
             >
-              <a href="/use-cases/" className="uc-menu-all">
+              <a href="/use-cases" className="uc-menu-all">
                 <div>
                   <small>MEMORY AT WORK</small>
                   <strong>Explore all use cases</strong>
@@ -135,7 +135,7 @@ export default function Navbar() {
                 {useCases.map((c) => (
                   <a
                     key={c.slug}
-                    href={"/use-cases/" + c.slug + "/"}
+                    href={"/use-cases/" + c.slug}
                     aria-current={
                       path === "/use-cases/" + c.slug ? "page" : undefined
                     }

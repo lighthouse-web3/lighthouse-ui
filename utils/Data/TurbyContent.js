@@ -15,7 +15,7 @@ export const turbyMintStaticContent = {
   mintedCount: 133,
   price: 0.01,
   socialLinks: {
-    twitter: "https://twitter.com/lighthouseweb3",
+    twitter: "https://x.com/lighthouseweb3",
     telegram: "https://t.me/LighthouseStorage",
     discord: "https://discord.com/invite/c4a4CGCdJG",
     opensea: "https://opensea.io/collection/lighthouse-turby-354048658",

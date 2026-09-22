@@ -121,7 +121,8 @@ export const LandingPageData = {
         },
         {
           title: "Advanced Sharing Capabilities",
-          subTitle: `dont use cryptocurrency throughout the website. Better use "tokens" or "assets"`,
+          subTitle:
+            "Share files through a public link, or keep them encrypted and gate access behind token and NFT ownership",
         },
         {
           title: "Diverse Payment Options",
@@ -354,7 +355,7 @@ export const LandingPageData = {
 
 export const socialLinks = {
   linkedin: "https://www.linkedin.com/company/lighthouse-web3",
-  twitter: "https://twitter.com/lighthouseweb3",
+  twitter: "https://x.com/lighthouseweb3",
   telegram: "https://t.me/LighthouseStorage",
   discord: "https://discord.com/invite/c4a4CGCdJG",
   instagram: "https://www.instagram.com/lighthouseweb3/?igshid=MDM4ZDc5MmU%3D",

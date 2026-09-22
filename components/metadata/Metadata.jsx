@@ -45,7 +45,7 @@ function Metadata({
     "url": `${SITE_URL}/`,
     "logo": image,
     "sameAs": [
-      "https://twitter.com/LighthouseWeb3",
+      "https://x.com/LighthouseWeb3",
       "https://github.com/lighthouse-web3"
     ]
   };

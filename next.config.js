@@ -97,6 +97,16 @@ const nextConfig = {
           destination: "/blogs/:path*.md",
         },
         {
+          source: "/use-cases",
+          has: [markdownAcceptHeader],
+          destination: "/use-cases.md",
+        },
+        {
+          source: "/use-cases/:path*",
+          has: [markdownAcceptHeader],
+          destination: "/use-cases/:path*.md",
+        },
+        {
           source: "/turby_mint/:path*",
           has: [markdownAcceptHeader],
           destination: "/turby_mint/:path*.md",
@@ -148,6 +158,14 @@ const nextConfig = {
         {
           source: "/blogs/:path*.md",
           destination: "/api/markdown/blogs/:path*",
+        },
+        {
+          source: "/use-cases.md",
+          destination: "/api/markdown/use-cases",
+        },
+        {
+          source: "/use-cases/:path*.md",
+          destination: "/api/markdown/use-cases/:path*",
         },
         {
           source: "/turby_mint/:path*.md",
