@@ -23,7 +23,7 @@ const links = [
     href: "",
   },
   {
-    title: "Blog",
+    title: "Blogs",
     path: "/blogs",
     href: "",
   },

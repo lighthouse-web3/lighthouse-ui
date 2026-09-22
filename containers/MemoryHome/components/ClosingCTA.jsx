@@ -1,3 +1,4 @@
+import { MdArrowOutward } from "react-icons/md";
 export default function ClosingCTA() {
   return (
     <section className="closing section reveal">
@@ -23,10 +24,10 @@ export default function ClosingCTA() {
           target="_blank"
           rel="noopener"
         >
-          Build with Lighthouse <span>↗</span>
+          Build with Lighthouse <MdArrowOutward />
         </a>
         <a className="text-link" href="mailto:mail@lighthouse.storage">
-          Talk to us <span>↗</span>
+          Talk to us <MdArrowOutward />
         </a>
       </div>
     </section>

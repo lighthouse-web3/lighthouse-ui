@@ -97,11 +97,27 @@
     #0d0d0f;
 }
 .nav {
-  top: 22px;
+  top: 20px;
+  width: min(1280px, calc(100% - 48px));
   height: 72px;
   border-radius: 15px;
   background: rgba(17, 16, 21, 0.82);
   box-shadow: 0 18px 60px rgba(0, 0, 0, 0.24);
+}
+/* Match the storage header item for item: same 15px DM Sans at 400, the same
+ * ink/85 resting colour and the same full-ink hover. The nav used to sit two
+ * pixels lower, 40px wider, a size smaller and in a different grey, which read
+ * as two different products when moving between / and /storage. */
+.nav nav {
+  font-size: 15px;
+  color: rgba(244, 242, 247, 0.85);
+}
+.nav nav button {
+  color: inherit;
+}
+.nav nav a:hover,
+.nav nav button:hover {
+  color: var(--white);
 }
 .nav-cta {
   border-radius: 8px;

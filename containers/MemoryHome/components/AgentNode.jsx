@@ -57,7 +57,7 @@ export default function AgentNode({
           agent.symbol
         ) : (
           <img
-            src={`assets/${agent.id}.png`}
+            src={`/memory/${agent.id}.png`}
             alt=""
             loading="lazy"
             draggable={false}

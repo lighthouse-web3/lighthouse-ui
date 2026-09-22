@@ -7,6 +7,10 @@
   --muted: #a6a1b2;
   --lavender: #ceb4fb;
   --line: rgba(221, 204, 255, 0.13);
+  /* One rhythm for the gaps between major sections. Each section pays half at
+   * the top and half at the bottom, so every boundary is 2x this. The values
+   * used to be hand-set per section and ramped 85 -> 170 -> 250 -> 330px. */
+  --section-space: 110px;
 }
 * {
   box-sizing: border-box;
@@ -348,7 +352,7 @@
 .network-section {
   max-width: 1400px;
   margin: auto;
-  padding: 85px 40px 0;
+  padding: var(--section-space) 40px;
 }
 .section-heading {
   display: flex;
@@ -645,8 +649,8 @@
   grid-template-columns: 0.9fr 1.1fr;
   gap: 40px;
   align-items: center;
-  padding-top: 170px;
-  padding-bottom: 150px;
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
 }
 .continuity h2 {
   font-size: clamp(60px, 6.5vw, 94px);
@@ -760,7 +764,8 @@
 }
 .principles {
   border-top: 1px solid var(--line);
-  padding-top: 100px;
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
 }
 .principle-grid {
   display: grid;
@@ -854,8 +859,8 @@
   position: relative;
   border: 1px solid var(--line);
   border-radius: 22px;
-  margin: 100px auto 100px;
-  padding: 100px 50px;
+  margin: var(--section-space) auto;
+  padding: var(--section-space) 50px;
   overflow: visible;
   background: linear-gradient(125deg, #211a2b, #141317);
   isolation: isolate;

@@ -1,4 +1,5 @@
 import MemoryPortal from "./MemoryPortal";
+import { MdArrowOutward } from "react-icons/md";
 export default function HowItWorks({ motionDisabled }) {
   return (
     <section className="continuity section" id="how">
@@ -16,7 +17,7 @@ export default function HowItWorks({ motionDisabled }) {
           access to the context you choose to carry forward.
         </p>
         <a href="#memory" className="text-link">
-          Try the memory network <span>↗</span>
+          Try the memory network <MdArrowOutward />
         </a>
       </div>
       <MemoryPortal motionDisabled={motionDisabled} />

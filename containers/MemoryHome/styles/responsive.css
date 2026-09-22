@@ -156,8 +156,11 @@
     letter-spacing: 0.8px;
     padding: 21px 0;
   }
+:where(.memory-page){
+    --section-space: 72px;
+  }
   .section {
-    padding: 85px 24px;
+    padding: var(--section-space) 24px;
   }
   .statement h2 {
     font-size: 48px;
@@ -171,7 +174,7 @@
     letter-spacing: 1.6px;
   }
   .network-section {
-    padding: 60px 14px 0;
+    padding: var(--section-space) 14px;
   }
   .section-heading {
     display: block;
@@ -300,7 +303,7 @@
   .continuity {
     display: flex;
     flex-direction: column;
-    padding-top: 100px;
+    padding-top: var(--section-space);
     gap: 35px;
     align-items: stretch;
   }
@@ -347,7 +350,7 @@
     bottom: 5%;
   }
   .principles {
-    padding-top: 70px;
+    padding-top: var(--section-space);
   }
   .principles .section-heading {
     padding: 0;

@@ -1,3 +1,4 @@
+import { MdArrowOutward } from "react-icons/md";
 export default function Hero() {
   return (
     <section className="hero" id="home">
@@ -29,7 +30,7 @@ export default function Hero() {
         </p>
         <div className="hero-actions">
           <a className="button primary" href="#memory">
-            Explore shared memory <span>↗</span>
+            Explore shared memory <MdArrowOutward />
           </a>
           <a
             className="text-link"
@@ -37,7 +38,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener"
           >
-            Build on Lighthouse <span>↗</span>
+            Build on Lighthouse <MdArrowOutward />
           </a>
         </div>
       </div>

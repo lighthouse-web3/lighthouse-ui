@@ -23,3 +23,16 @@
   height: 0.8em;
   flex: none;
 }
+
+/*
+ * The same arrow in the page's own CTAs. .button and .text-link are already
+ * inline-flex with their own gap, so only the glyph needs sizing -- matching
+ * the 0.8em the nav uses keeps every outbound arrow on the site identical.
+ */
+.memory-page .button > svg,
+.memory-page .text-link > svg,
+.memory-page .uc-menu-all > svg {
+  width: 0.8em;
+  height: 0.8em;
+  flex: none;
+}

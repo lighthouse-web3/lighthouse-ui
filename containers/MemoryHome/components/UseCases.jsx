@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import UseCaseStory from './UseCaseStory';
 import { usecaseDetails } from '../data/usecaseDetails';
+import { MdArrowOutward } from "react-icons/md";
 export default function UseCases({slug}){
  const item=useCases.find(c=>c.slug===slug);
  useEffect(()=>{
@@ -13,17 +14,17 @@ export default function UseCases({slug}){
   nodes.forEach((el,i)=>{el.classList.add('uc-enter');el.style.setProperty('--uc-delay',`${(i%3)*75}ms`);observer.observe(el)});
   return()=>observer.disconnect();
  },[slug]);
- if(slug&&!item)return <><Navbar/><main className="uc-page section"><h1>Page not found.</h1><a className="text-link" href="/use-cases">Explore use cases ↗</a></main><Footer/></>;
+ if(slug&&!item)return <><Navbar/><main className="uc-page section"><h1>Page not found.</h1><a className="text-link" href="/use-cases">Explore use cases <MdArrowOutward /></a></main><Footer/></>;
  return <><Navbar/><main className="uc-page">
  <section className="uc-intro section">
   <a className="uc-breadcrumb" href={item?'/use-cases':'/'}>{item?'← All use cases':'← Lighthouse'}</a>
   <div className="uc-intro-grid"><div><span className="eyebrow">{item?item.name.toUpperCase():'MEMORY AT WORK'}</span><h1>{item?item.lead:'Real work.'}<br/><span className="shine">{item?item.headline:'Lasting memory.'}</span></h1><p>{item?item.description:'Explore memory for trading agents, market research, tokenised assets and physical AI. Choose a use case to see how the pieces fit together.'}</p>
-   {item&&<div className="hero-actions"><a className="button primary" href={item.planned?'mailto:mail@lighthouse.storage':'https://docs.lighthouse.storage/memory/intro'}>{item.planned?'Discuss your use case':'Build this workflow'} <span>↗</span></a><a className="text-link" href="/use-cases">All use cases <span>↗</span></a></div>}
+   {item&&<div className="hero-actions"><a className="button primary" href={item.planned?'mailto:mail@lighthouse.storage':'https://docs.lighthouse.storage/memory/intro'}>{item.planned?'Discuss your use case':'Build this workflow'} <MdArrowOutward /></a><a className="text-link" href="/use-cases">All use cases <MdArrowOutward /></a></div>}
    {item?.planned&&<span className="uc-planned">Physical-AI reference integration · Planned</span>}
   </div><UseCaseVisual item={item}/></div>
  </section>
- {item?<UseCaseStory item={item}/>:<section className="uc-directory section"><div className="usecases-grid">{useCases.map(c=><article className="usecase-card" key={c.slug}><div className="usecase-label"><span>{c.number}</span>{c.name.toUpperCase()}</div><h3>{c.lead}<br/><span>{c.headline}</span></h3><p>{c.description}</p>{c.planned&&<span className="uc-planned">Reference integration · Planned</span>}<a className="text-link" href={'/use-cases/'+c.slug}>Explore {c.name.toLowerCase()} <span>↗</span></a></article>)}</div></section>}
- <section className="uc-bottom section"><span className="eyebrow">EVERY GOOD IDEA DESERVES A MEMORY.</span><h2>{item?usecaseDetails[item.slug].cta:<>Your next agent.<br/><span className="shine">Already up to speed.</span></>}</h2><div className="hero-actions"><a className="button primary" href="https://docs.lighthouse.storage/">Build with Lighthouse <span>↗</span></a><a className="text-link" href="mailto:mail@lighthouse.storage">Talk to us <span>↗</span></a></div></section>
+ {item?<UseCaseStory item={item}/>:<section className="uc-directory section"><div className="usecases-grid">{useCases.map(c=><article className="usecase-card" key={c.slug}><div className="usecase-label"><span>{c.number}</span>{c.name.toUpperCase()}</div><h3>{c.lead}<br/><span>{c.headline}</span></h3><p>{c.description}</p>{c.planned&&<span className="uc-planned">Reference integration · Planned</span>}<a className="text-link" href={'/use-cases/'+c.slug}>Explore {c.name.toLowerCase()} <MdArrowOutward /></a></article>)}</div></section>}
+ <section className="uc-bottom section"><span className="eyebrow">EVERY GOOD IDEA DESERVES A MEMORY.</span><h2>{item?usecaseDetails[item.slug].cta:<>Your next agent.<br/><span className="shine">Already up to speed.</span></>}</h2><div className="hero-actions"><a className="button primary" href="https://docs.lighthouse.storage/">Build with Lighthouse <MdArrowOutward /></a><a className="text-link" href="mailto:mail@lighthouse.storage">Talk to us <MdArrowOutward /></a></div></section>
  </main><Footer/></>;
 }
 

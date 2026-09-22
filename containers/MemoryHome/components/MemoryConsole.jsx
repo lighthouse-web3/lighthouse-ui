@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { MdArrowOutward } from "react-icons/md";
 
 export default function MemoryConsole({ agent, memory, status, onSave }) {
   const [draft, setDraft] = useState(
@@ -50,7 +51,7 @@ export default function MemoryConsole({ agent, memory, status, onSave }) {
             }}
           />
           <button className="button primary" type="submit">
-            {status === "saved" ? "Saved ✓" : "Save memory ↗"}
+            {status === "saved" ? ("Saved \u2713") : (<>Save memory <MdArrowOutward /></>)}
           </button>
         </div>
       </form>
