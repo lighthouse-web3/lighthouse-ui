@@ -231,6 +231,13 @@ export const LandingPageData = {
           "Lighthouse offers recurring plans on Filecoin and Walrus. Filecoin plans are available monthly or annually, while Walrus plans are currently billed monthly.",
       },
     },
+    {
+      attributes: {
+        question: "What is the AI Memory limit?",
+        answer:
+          "Every plan includes Lighthouse Memory entries your AI agents can store: Lite plans include 25,000, Pro plans 50,000 and Premium plans 100,000 along with priority support. Free accounts get 10,000 memories for a 14-day trial, starting from their first memory. The allowances of all your active paid plans are added together into one pool, and deleting a memory frees its slot.",
+      },
+    },
   ],
 
   MainSiteFAQs: [
@@ -708,11 +715,16 @@ const walrusAddOnFeatures = [
   },
 ];
 
+// memory = Lighthouse Memory entries the plan includes — mirrors memoryLimit in
+// lighthouse-backend config/paymentPlans.ts (Lite 25k · Pro 50k · Premium 100k).
+// Free tier: memoryTrial in lighthouse-backend constants.ts (10k for 14 days from first use).
 // --- Free tier (shown on every network / billing period) ---
 const FilecoinFreePlan = {
   index: 100,
   title: "Free",
   cost: "0",
+  memory: 10000,
+  memoryTrialDays: 14,
   icon: "/icons/free.png",
   icon_light: "/icons/free_light.png",
   buttonText: "Start for Free",
@@ -740,6 +752,8 @@ const WalrusFreePlan = {
   index: 101,
   title: "Free",
   cost: "0",
+  memory: 10000,
+  memoryTrialDays: 14,
   icon: "/icons/free.png",
   icon_light: "/icons/free_light.png",
   buttonText: "Start for Free",
@@ -769,6 +783,7 @@ export const FilecoinMonthlyPricing = [
     index: 200,
     title: "Lite",
     cost: "12",
+    memory: 25000,
     icon: "/icons/lite.png",
     icon_light: "/icons/lite_light.png",
     buttonText: "Get Started",
@@ -797,6 +812,8 @@ export const FilecoinMonthlyPricing = [
     icon: "/icons/premium.png",
     icon_light: "/icons/premium_light.png",
     cost: "49",
+    memory: 100000,
+    prioritySupport: true,
     buttonText: "Get Started",
     features: [
       {
@@ -825,6 +842,7 @@ export const FilecoinAnnualPricing = [
     index: 7,
     title: "Lite",
     cost: "120",
+    memory: 25000,
     icon: "/icons/lite.png",
     icon_light: "/icons/lite_light.png",
     buttonText: "Get Started",
@@ -853,6 +871,8 @@ export const FilecoinAnnualPricing = [
     icon: "/icons/premium.png",
     icon_light: "/icons/premium_light.png",
     cost: "499",
+    memory: 100000,
+    prioritySupport: true,
     buttonText: "Get Started",
     features: [
       {
@@ -881,6 +901,7 @@ export const WalrusMonthlyPricing = [
     index: 203,
     title: "Lite",
     cost: "11",
+    memory: 25000,
     icon: "/icons/lite.png",
     icon_light: "/icons/lite_light.png",
     buttonText: "Get Started",
@@ -909,6 +930,8 @@ export const WalrusMonthlyPricing = [
     icon: "/icons/premium.png",
     icon_light: "/icons/premium_light.png",
     cost: "79",
+    memory: 100000,
+    prioritySupport: true,
     buttonText: "Get Started",
     features: [
       {

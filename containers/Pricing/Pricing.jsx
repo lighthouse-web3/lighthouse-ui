@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { BsInfoCircle } from "react-icons/bs";
-import { FaCheck, FaXmark } from "react-icons/fa6";
+import { FaBrain, FaCheck, FaXmark } from "react-icons/fa6";
 import { TitleSeparator } from "../../components";
 import {
   FilecoinMonthlyPricing,
@@ -100,6 +100,24 @@ const Pricing = () => {
             </div>
           </div>
 
+          {plan.memory > 0 && (
+            <div className="mb-8 flex items-center gap-3 rounded-xl border border-[#dab9ff]/30 bg-gradient-to-br from-[#dab9ff]/10 to-[#a4c8ff]/5 px-4 py-3">
+              <FaBrain className="shrink-0 text-lg text-[#dab9ff]" />
+              <div className="text-left leading-tight">
+                <p className="text-sm font-bold text-[#e4e2e2]">
+                  {plan.memory.toLocaleString("en-US")} AI memories
+                </p>
+                <p className="text-[11px] text-[#cec2d7]">
+                  {plan.memoryTrialDays
+                    ? `${plan.memoryTrialDays}-day free trial`
+                    : plan.prioritySupport
+                      ? "Lighthouse Memory + priority support"
+                      : "Lighthouse Memory for your agents"}
+                </p>
+              </div>
+            </div>
+          )}
+
           <ul className="space-y-4 mb-12 flex-grow">
             {plan.features.map((feature, idx) => (
               <li
@@ -144,9 +162,9 @@ const Pricing = () => {
             onClick={() =>
               plan.title === "Customize"
                 ? window.open(
-                    "https://airtable.com/app0KP7ENgYlLDcJ0/shrPFC2TgojuOAYO4",
-                    "_blank",
-                  )
+                  "https://airtable.com/app0KP7ENgYlLDcJ0/shrPFC2TgojuOAYO4",
+                  "_blank",
+                )
                 : window.open("https://files.lighthouse.storage/", "_self")
             }
           >
@@ -171,16 +189,14 @@ const Pricing = () => {
                 <button
                   key={n.id}
                   onClick={() => setNetwork(n.id)}
-                  className={`flex flex-1 md:flex-none items-center gap-2.5 px-4 md:px-5 py-2.5 rounded-xl text-left transition-all ${
-                    active
-                      ? "bg-bg shadow-[0_8px_24px_rgba(0,0,0,0.35)] ring-1 ring-accent/40"
-                      : "hover:bg-bg/40"
-                  }`}
+                  className={`flex flex-1 md:flex-none items-center gap-2.5 px-4 md:px-5 py-2.5 rounded-xl text-left transition-all ${active
+                    ? "bg-[#131314] shadow-[0_8px_24px_rgba(0,0,0,0.35)] ring-1 ring-[#dab9ff]/40"
+                    : "hover:bg-[#131314]/40"
+                    }`}
                 >
                   <span
-                    className={`inline-flex transition-opacity ${
-                      active ? "opacity-100" : "opacity-60"
-                    }`}
+                    className={`inline-flex transition-opacity ${active ? "opacity-100" : "opacity-60"
+                      }`}
                   >
                     <Image
                       src={n.logo}
@@ -192,16 +208,14 @@ const Pricing = () => {
                   </span>
                   <span className="flex flex-col leading-tight">
                     <span
-                      className={`font-bold text-sm md:text-base ${
-                        active ? "text-ink" : "text-muted"
-                      }`}
+                      className={`font-bold text-sm md:text-base ${active ? "text-[#e4e2e2]" : "text-[#cec2d7]"
+                        }`}
                     >
                       {n.label}
                     </span>
                     <span
-                      className={`text-[11px] font-medium ${
-                        active ? "text-accent" : "text-muted/60"
-                      }`}
+                      className={`text-[11px] font-medium ${active ? "text-[#dab9ff]" : "text-[#cec2d7]/60"
+                        }`}
                     >
                       {n.teaser}
                     </span>
@@ -219,11 +233,10 @@ const Pricing = () => {
                   <button
                     key={b}
                     onClick={() => setBilling(b)}
-                    className={`px-4 py-1.5 rounded-full transition-colors ${
-                      billing === b
-                        ? "bg-accent text-[#470084]"
-                        : "text-muted hover:text-ink"
-                    }`}
+                    className={`px-4 py-1.5 rounded-full transition-colors ${billing === b
+                      ? "bg-[#dab9ff] text-[#470084]"
+                      : "text-[#cec2d7] hover:text-[#e4e2e2]"
+                      }`}
                   >
                     {b === "Annually" ? "Annually · Save" : b}
                   </button>
@@ -236,12 +249,23 @@ const Pricing = () => {
             )}
           </div>
         </div>
+
+        <div className="mt-6 flex justify-center">
+          <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-x-3 gap-y-1.5 rounded-2xl sm:rounded-full text-center border border-[#dab9ff]/25 bg-[#131314] py-1.5 pl-1.5 pr-5 text-sm">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-br from-[#dab9ff] to-[#a4c8ff] px-3 py-1 text-[10px] font-black uppercase tracking-widest text-[#2a0053]">
+              <FaBrain className="text-xs" /> New
+            </span>
+            <span className="text-[#e4e2e2]">
+              <span className="font-semibold">Lighthouse Memory</span> included
+              on every plan
+            </span>
+          </div>
+        </div>
       </div>
 
       <div
-        className={`max-w-7xl mx-auto grid gap-4 lg:gap-6 mt-12 items-stretch px-0 md:px-4 ${
-          plans.length === 2 ? "md:grid-cols-2 max-w-4xl" : "md:grid-cols-3"
-        }`}
+        className={`max-w-7xl mx-auto grid gap-4 lg:gap-6 mt-12 items-stretch px-0 md:px-4 ${plans.length === 2 ? "md:grid-cols-2 max-w-4xl" : "md:grid-cols-3"
+          }`}
       >
         {renderCards(plans)}
       </div>
