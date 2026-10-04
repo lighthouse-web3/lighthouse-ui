@@ -1,15 +1,18 @@
 import { useReducedMotion } from "../hooks/useReducedMotion";
 
+// Each logo links to the investor's own site, or to their X profile where
+// that is the better destination. The design drop linked to third-party
+// CryptoRank fund pages instead.
 const investors = [
-  ["Balaji Srinivasan", "balaji-srinivasan", "https://cryptorank.io/funds/balaji-srinivasan/rounds"],
-  ["Protocol Labs", "protocol-labs", "https://cryptorank.io/funds/protocol-labs/rounds"],
-  ["Big Brain Holdings", "big-brain-holdings", "https://cryptorank.io/funds/big-brain-holdings/rounds"],
-  ["LongHash Ventures", "longhash-ventures", "https://cryptorank.io/funds/longhashvc/rounds"],
-  ["Fenbushi Capital", "fenbushi-capital", "https://cryptorank.io/funds/fenbushi-capital/rounds"],
-  ["NGC Ventures", "ngc-ventures", "https://cryptorank.io/funds/ngc-ventures/rounds"],
-  ["Walrus Foundation", "walrus", "https://walrus.xyz/about/"],
-  ["Mask Network", "mask-network", "https://cryptorank.io/funds/mask-network/rounds"],
-  ["HASH CIB", "hashcib", "https://cryptorank.io/funds/hash-cib/rounds"],
+  ["Balaji Srinivasan", "balaji-srinivasan", "https://x.com/balajis"],
+  ["Protocol Labs", "protocol-labs", "https://pl.xyz/"],
+  ["Big Brain Holdings", "big-brain-holdings", "https://x.com/BigBrainVC"],
+  ["LongHash Ventures", "longhash-ventures", "https://www.longhash.vc/"],
+  ["Fenbushi Capital", "fenbushi-capital", "https://fenbushi.vc/"],
+  ["NGC Ventures", "ngc-ventures", "https://ngc.fund/"],
+  ["Walrus Foundation", "walrus", "https://walrus.xyz/"],
+  ["Mask Network", "mask-network", "https://www.mask.io/"],
+  ["HASH CIB", "hashcib", "https://x.com/HASHCIB"],
 ];
 
 export default function Investors({ hero = false }) {
