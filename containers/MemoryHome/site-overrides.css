@@ -1,0 +1,56 @@
+/*
+ * Changes made on this site on top of the design drop in ./styles.
+ *
+ * Kept out of ./styles so a new drop can be copied over that folder without
+ * losing them, and imported last so they win. Anything here is a deliberate
+ * difference from the design team's build; the matching markup changes are
+ * marked in App.jsx.
+ */
+
+/*
+ * Two section boundaries on the homepage were 260-270px of empty page: under
+ * the "Built on Lighthouse" logos, and between the lighthouse and Questions.
+ * Each is now 80px, a rule, then 100px -- the same distance the page already
+ * leaves under its other section rules.
+ */
+.section-rule {
+  width: min(1240px, calc(100% - 40px));
+  height: 1px;
+  margin: 0 auto;
+  border: 0;
+  background: var(--line);
+}
+
+#build {
+  padding-bottom: 80px;
+}
+#how {
+  padding-top: 100px;
+}
+#foundation {
+  padding-bottom: 80px;
+}
+#faq {
+  padding-top: 100px;
+}
+
+/* Below 1100px the sections switch to 40px side gutters, and to 24px on
+ * phones, where the page's own section padding is 85px rather than 130px. */
+@media (max-width: 1100px) {
+  .section-rule {
+    width: calc(100% - 80px);
+  }
+}
+@media (max-width: 760px) {
+  .section-rule {
+    width: calc(100% - 48px);
+  }
+  #build,
+  #foundation {
+    padding-bottom: 56px;
+  }
+  #how,
+  #faq {
+    padding-top: 64px;
+  }
+}
