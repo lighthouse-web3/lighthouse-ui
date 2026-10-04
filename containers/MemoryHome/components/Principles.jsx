@@ -3,25 +3,25 @@ import { useEffect, useRef } from "react";
 const cards = [
   {
     label: "01 / MEMORY",
-    title: "Skip the reintroduction.",
+    title: "Keep context across sessions.",
     description:
-      "Your project brief, preferences and past decisions shouldn’t disappear when a chat ends. Keep the useful context ready for your next agent.",
+      "Save project facts, preferences and decisions outside the conversation. Your application can search these records and add relevant context to a later request.",
     meta: "PERSISTENT CONTEXT",
     kind: "memory",
   },
   {
     label: "02 / PROOF",
-    title: "Check what comes back.",
+    title: "Verify stored content.",
     description:
-      "Each stored memory has a content identifier. Check that the content you retrieve matches what was saved, with a reference you can trace back to.",
+      "Stored memory batches have content identifiers, or CIDs. Use them to check that retrieved content matches the saved version. This checks integrity, not whether a statement is true.",
     meta: "VERIFIABLE CONTENT",
     kind: "proof",
   },
   {
     label: "03 / CONTROL",
-    title: "The right context. The right agent.",
+    title: "Choose the context you send.",
     description:
-      "Share the project brief with your writing agent. Keep personal notes separate. Choose the context each agent gets, instead of handing over everything.",
+      "Your application decides which records to save and pass to each agent. Tags and namespaces organise context; encryption and access controls need separate configuration.",
     meta: "SELECTIVE SHARING",
     kind: "control",
   },
@@ -100,9 +100,9 @@ function Example({ kind }) {
       <div className="scope-row">
         <div>
           <strong>Personal notes</strong>
-          <span>Only you</span>
+          <span>Excluded from this request</span>
         </div>
-        <span className="scope-tag private">Private</span>
+        <span className="scope-tag private">Not sent</span>
       </div>
     </div>
   );
@@ -198,24 +198,28 @@ export default function Principles({ motionDisabled = false }) {
     >
       <div className="section-heading reveal">
         <div>
-          <span className="eyebrow">03 / A FOUNDATION YOU CAN TRUST</span>
+          <span className="eyebrow">
+            04 / STORAGE, VERIFICATION AND CONTROL
+          </span>
           <h2>
-            More context.
+            The memory behind
             <br />
-            <span>Less starting over.</span>
+            <span>your agent’s brain.</span>
           </h2>
         </div>
         <p>
-          Built on Lighthouse’s decentralized storage.
+          Use decentralised storage for your memory records.
           <br />
-          Keep it. Verify it. Choose where it goes.
+          Decide what to save, how to retrieve it and what to share.
         </p>
       </div>
       <div className="lighthouse-stage" ref={stageRef}>
         <div className="lighthouse-watch" aria-hidden="true">
           <div className="lighthouse-sculpture">
             <img
-              src="/memory/lighthouse-glass.png"
+              src="/assets/lighthouse-glass.webp"
+              loading="lazy"
+              decoding="async"
               alt=""
               width="1024"
               height="1536"

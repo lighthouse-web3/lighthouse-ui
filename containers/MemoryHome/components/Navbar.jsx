@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/router";
-import { MdArrowOutward } from "react-icons/md";
+import { useRoutePath } from "../RouteContext";
 import { useCases } from "../data/usecases";
+const menuPreview = (slug, size) => `/assets/menu/usecase-${slug}-${size}.webp`;
 
 const summaries = {
   "trading-agents": "Keep strategy and execution in context.",
@@ -9,24 +9,14 @@ const summaries = {
   "tokenised-assets": "Connect assets with their history.",
   "physical-ai": "Memory beyond a single machine.",
 };
-
-/**
- * Ported from the standalone Vite site. Two changes for Next: the current route
- * comes from the router rather than `location` (which does not exist during the
- * server render), and the outbound arrows use the same MdArrowOutward icon the
- * storage header uses, so both navs match.
- */
 export default function Navbar() {
-  const router = useRouter();
-  const [open, setOpen] = useState(false);
-  const [mobile, setMobile] = useState(false);
+  const [open, setOpen] = useState(false),
+    [mobile, setMobile] = useState(false);
   const root = useRef(null);
   const trigger = useRef(null);
-
-  const path = (router.asPath || "/").split(/[?#]/)[0].replace(/\/$/, "");
-  const home = path === "";
+  const path = useRoutePath();
+  const home = path === "/" || path === "/index.html";
   const anchor = (id) => (home ? "#" + id : "/#" + id);
-
   useEffect(() => {
     function close(e) {
       if (e.type === "keydown" && e.key === "Escape") {
@@ -48,13 +38,12 @@ export default function Navbar() {
       document.removeEventListener("keydown", close);
     };
   }, [open]);
-
   return (
     <header className="nav" ref={root}>
       <a className="brand" href="/" aria-label="Lighthouse home">
         <img
           className="brand-logo"
-          src="/memory/lighthouse-logo.svg"
+          src="/assets/lighthouse-logo.svg"
           alt="Lighthouse"
           width="218"
           height="66"
@@ -66,7 +55,8 @@ export default function Navbar() {
         aria-expanded={mobile}
         aria-label="Toggle navigation"
       >
-        {mobile ? "Close" : "Menu"} <span aria-hidden="true">{mobile ? "×" : "☰"}</span>
+        {mobile ? "Close" : "Menu"}{" "}
+        <span aria-hidden="true">{mobile ? "×" : "☰"}</span>
       </button>
       <nav
         onClick={(e) => {
@@ -79,7 +69,6 @@ export default function Navbar() {
         aria-label="Main navigation"
       >
         <a href={anchor("memory")}>Memory network</a>
-        <a href="/storage">Storage</a>
         <a href={anchor("how")}>How it works</a>
         <div className="uc-nav-dropdown">
           <button
@@ -115,63 +104,78 @@ export default function Navbar() {
               />
             </svg>
           </button>
-          {open && (
-            <div
-              className="uc-menu"
-              id="usecases-menu"
-              onBlur={(e) => {
-                if (!e.currentTarget.parentElement.contains(e.relatedTarget))
-                  setOpen(false);
-              }}
-            >
-              <a href="/use-cases" className="uc-menu-all">
-                <div>
-                  <small>MEMORY AT WORK</small>
-                  <strong>Explore all use cases</strong>
-                </div>
-                <span aria-hidden="true">→</span>
-              </a>
-              <div className="uc-menu-items">
-                {useCases.map((c) => (
-                  <a
-                    key={c.slug}
-                    href={"/use-cases/" + c.slug}
-                    aria-current={
-                      path === "/use-cases/" + c.slug ? "page" : undefined
-                    }
-                  >
-                    <span className="uc-menu-icon" aria-hidden="true">
-                      <img
-                        src={"/memory/usecase-" + c.slug + ".webp"}
-                        alt=""
-                        width="48"
-                        height="48"
-                      />
-                    </span>
-                    <div className="uc-menu-copy">
-                      <strong>{c.name}</strong>
-                      <small>{summaries[c.slug]}</small>
-                    </div>
-                    <span className="uc-menu-arrow" aria-hidden="true">
-                      →
-                    </span>
-                  </a>
-                ))}
+          {/* Small previews load before the disclosure opens. Hidden links stay out of the tab order. */}
+          <div
+            hidden={!open}
+            className="uc-menu"
+            id="usecases-menu"
+            onBlur={(e) => {
+              if (!e.currentTarget.parentElement.contains(e.relatedTarget))
+                setOpen(false);
+            }}
+          >
+            <a href="/use-cases" className="uc-menu-all">
+              <div>
+                <small>MEMORY USE CASES</small>
+                <strong>Explore all use cases</strong>
               </div>
+            </a>
+            <div className="uc-menu-items">
+              {useCases.map((c) => (
+                <a
+                  key={c.slug}
+                  href={"/use-cases/" + c.slug}
+                  aria-current={
+                    path.replace(/\/$/, "") === "/use-cases/" + c.slug
+                      ? "page"
+                      : undefined
+                  }
+                >
+                  <span className="uc-menu-icon" aria-hidden="true">
+                    <img
+                      src={menuPreview(c.slug, 128)}
+                      srcSet={
+                        [64, 128, 192]
+                          .map(
+                            (size) => `${menuPreview(c.slug, size)} ${size}w`,
+                          )
+                          .join(", ") + `, /assets/usecase-${c.slug}.webp 1254w`
+                      }
+                      sizes="(max-width: 760px) 44px, 53px"
+                      loading="eager"
+                      fetchpriority="low"
+                      decoding="async"
+                      alt=""
+                      width="48"
+                      height="48"
+                    />
+                  </span>
+                  <div className="uc-menu-copy">
+                    <strong>{c.name}</strong>
+                    <small>{summaries[c.slug]}</small>
+                  </div>
+                </a>
+              ))}
             </div>
-          )}
+          </div>
         </div>
-        <a href="/blogs">Blogs</a>
+        <a
+          href="/token"
+          aria-current={path.startsWith("/token") ? "page" : undefined}
+        >
+          Token
+        </a>
+        <a href="/storage">Storage</a>
         <a
           href="https://docs.lighthouse.storage/"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
         >
-          Documentation <MdArrowOutward />
+          Docs
         </a>
       </nav>
-      <a href={anchor("memory")} className="nav-cta">
-        Explore memory <MdArrowOutward />
+      <a href="https://memory.lighthouse.storage/" className="nav-cta">
+        Explore memory
       </a>
     </header>
   );

@@ -1,0 +1,36 @@
+/* A single, quiet link cue across every page. */
+svg.link-arrow {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  vertical-align: -0.12em;
+  overflow: visible;
+  pointer-events: none;
+  transition: translate 0.2s ease;
+}
+
+:where(a:has(> .link-arrow)) {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-cta:has(> .link-arrow) {
+  gap: 15px;
+}
+
+:where(a, button):hover .link-arrow,
+:where(a, button):focus-visible .link-arrow {
+  translate: 1px -1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  svg.link-arrow {
+    transition: none;
+  }
+  :where(a, button):hover .link-arrow,
+  :where(a, button):focus-visible .link-arrow {
+    translate: none;
+  }
+}

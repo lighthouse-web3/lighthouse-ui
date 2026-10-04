@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 export default function AgentNode({
   agent,
@@ -10,7 +10,6 @@ export default function AgentNode({
 }) {
   const drag = useRef(null);
   const dragged = useRef(false);
-  const [imageFailed, setImageFailed] = useState(false);
 
   function move(event) {
     if (!drag.current) return;
@@ -53,17 +52,14 @@ export default function AgentNode({
       }}
     >
       <span className="agent-symbol">
-        {imageFailed ? (
-          agent.symbol
-        ) : (
-          <img
-            src={`/memory/${agent.id}.png`}
-            alt=""
-            loading="lazy"
-            draggable={false}
-            onError={() => setImageFailed(true)}
-          />
-        )}
+        <img
+          src={agent.logo}
+          alt=""
+          width="29"
+          height="29"
+          loading="lazy"
+          draggable={false}
+        />
       </span>
       <span className="agent-name">{agent.name}</span>
     </button>

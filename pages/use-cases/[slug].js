@@ -1,28 +1,12 @@
-import { Metadata } from "../../components";
-import UseCases from "../../containers/MemoryHome/components/UseCases";
-import { useSmoothScroll } from "../../containers/MemoryHome/hooks/useSmoothScroll";
+import MemoryPage from "../../containers/MemoryHome/MemoryPage";
 import { useCases } from "../../containers/MemoryHome/data/usecases";
 
 /**
- * One page per use case. The Vite build wrote a static HTML shell per route
- * through a bundler plugin; here the same routes come from getStaticPaths, so
- * each one is a real prerendered page with its own title and canonical.
+ * One prerendered page per use case. `fallback: false` means an unknown slug
+ * is a real 404 rather than a soft one rendered by the client.
  */
 export default function UseCasePage({ slug }) {
-  useSmoothScroll();
-  const item = useCases.find((c) => c.slug === slug);
-
-  return (
-    <>
-      <Metadata
-        title={item ? `${item.name} | Lighthouse` : "Use cases | Lighthouse"}
-        description={item?.description}
-      />
-      <div className="memory-page">
-        <UseCases slug={slug} />
-      </div>
-    </>
-  );
+  return <MemoryPage path={`/use-cases/${slug}/`} />;
 }
 
 export function getStaticPaths() {

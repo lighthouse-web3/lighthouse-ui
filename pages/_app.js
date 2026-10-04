@@ -1,10 +1,24 @@
 import "../styles/globals.scss";
 import "../styles/tailwind.css";
 
-// Memory landing page styles, ported from the standalone site. Their class
-// selectors were checked against the rest of the site and share no names, and
-// the bare element rules are scoped to .memory-page, so nothing here reaches
-// the storage pages. Import order matches the original entry point.
+// Memory site styles, from the design team's standalone project. The order is
+// that project's own entry point (app/globals.css), which is not alphabetical
+// and matters: later files refine earlier ones. Bare element and html/body
+// rules are scoped to pages that render .memory-page, and the class names were
+// checked against the rest of the site, so nothing here reaches the storage
+// pages. After a new design drop, re-run scripts/scope-memory-css.mjs.
+import "../containers/MemoryHome/host-reset.css";
+import "../containers/MemoryHome/styles/fonts.css";
+import "lenis/dist/lenis.css";
+import "../containers/MemoryHome/styles/footer.css";
+import "../containers/MemoryHome/styles/token-depth.css";
+import "../containers/MemoryHome/styles/token-cinema.css";
+import "../containers/MemoryHome/styles/token-editorial.css";
+import "../containers/MemoryHome/styles/token-service.css";
+import "../containers/MemoryHome/styles/token-refined.css";
+import "../containers/MemoryHome/styles/usecase-experience.css";
+import "../containers/MemoryHome/styles/faq.css";
+import "../containers/MemoryHome/styles/builders.css";
 import "../containers/MemoryHome/styles/base.css";
 import "../containers/MemoryHome/styles/responsive.css";
 import "../containers/MemoryHome/styles/refinements.css";
@@ -12,7 +26,10 @@ import "../containers/MemoryHome/styles/motion.css";
 import "../containers/MemoryHome/styles/foundation.css";
 import "../containers/MemoryHome/styles/usecases.css";
 import "../containers/MemoryHome/styles/portal.css";
-import "../containers/MemoryHome/styles/next-overrides.css";
+import "../containers/MemoryHome/styles/investors.css";
+import "../containers/MemoryHome/styles/token-founders.css";
+import "../containers/MemoryHome/styles/link-arrows.css";
+import "../containers/MemoryHome/styles/agent-selector.css";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";

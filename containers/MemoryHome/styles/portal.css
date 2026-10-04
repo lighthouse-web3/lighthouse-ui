@@ -25,5 +25,6 @@
 .mp-steps:before{content:"";position:absolute;z-index:-1;inset:5px 7% -8px;background:radial-gradient(ellipse at 18% 60%,#bc84f04d,transparent 46%),radial-gradient(ellipse at 82% 45%,#938cf040,transparent 47%);filter:blur(22px);pointer-events:none}
 .mp-steps>div{position:relative;overflow:hidden;background:linear-gradient(135deg,#f5eaff18 0%,#c4a3ee10 45%,#e6daff05 100%);border:1px solid #d3b9f843;border-top-color:#eddbff65;backdrop-filter:blur(24px) saturate(135%);-webkit-backdrop-filter:blur(24px) saturate(135%);box-shadow:inset 0 1px 0 #fff2,inset 0 -1px 0 #b69be517,0 12px 32px #0003;transition:transform .35s ease,border-color .35s ease,background .35s ease}
 .mp-steps>div:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(125deg,transparent 5%,#ffffff0b 35%,transparent 65%)}
-.mp-steps>div:hover{transform:translateY(-4px);border-color:#e3c5ff70;background:linear-gradient(135deg,#f5eaff22,#c4a3ee14 45%,#e6daff08)}:where(.memory-page) html.lenis.lenis-smooth{scroll-behavior:auto!important}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.mp-steps>div{transition:none}.mp-steps>div:hover{transform:none}}
+.mp-steps>div:hover{transform:translateY(-4px);border-color:#e3c5ff70;background:linear-gradient(135deg,#f5eaff22,#c4a3ee14 45%,#e6daff08)}
+html.lenis.lenis-smooth{scroll-behavior:auto!important}
+@media(prefers-reduced-motion:reduce){html:where(:has(.memory-page)){scroll-behavior:auto!important}.mp-steps>div{transition:none}.mp-steps>div:hover{transform:none}}

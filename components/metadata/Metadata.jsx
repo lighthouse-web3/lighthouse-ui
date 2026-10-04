@@ -32,13 +32,16 @@ function Metadata({
   image = "https://gateway.lighthouse.storage/ipfs/Qmd7rR9EPKomhmoRUw2WB7FJAeSWAtC8c1nkKgGZL39LpB",
   siteName = "Lighthouse Storage",
   twitterHandle = "@LighthouseWeb3",
+  schema,
 }) {
   const router = useRouter();
   const canonical = url || canonicalFromRouter(router);
 
   // The Organization node describes Lighthouse, not whichever page is being
-  // rendered, so it stays pinned to the site root.
-  const jsonLd = {
+  // rendered, so it stays pinned to the site root. A page that has its own
+  // graph (the memory pages do) passes `schema` and replaces it outright, so
+  // the document never carries two competing Organization nodes.
+  const jsonLd = schema || {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": siteName,

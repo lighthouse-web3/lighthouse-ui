@@ -1,33 +1,32 @@
-import { MdArrowOutward } from "react-icons/md";
 export default function ClosingCTA() {
   return (
     <section className="closing section reveal">
       <div className="closing-glow" aria-hidden="true"></div>
       <img
         className="tubry wave-tubry"
-        src="/memory/tubry-wave.png"
+        src="/assets/tubry-wave.webp"
         alt="Tubry waving over the edge of the Lighthouse panel"
         width="550"
         height="550"
         loading="lazy"
       />
-      <span className="eyebrow">EVERY GOOD IDEA DESERVES A MEMORY.</span>
+      <span className="eyebrow">START WITH LIGHTHOUSE MEMORY</span>
       <h2>
-        Your next agent.
+        Give your agent a brain.
         <br />
-        <span>Already up to speed.</span>
+        <span>Start with one memory.</span>
       </h2>
       <div className="hero-actions">
         <a
           className="button primary"
-          href="https://docs.lighthouse.storage/"
+          href="https://docs.lighthouse.storage/memory/quick-start"
           target="_blank"
           rel="noopener"
         >
-          Build with Lighthouse <MdArrowOutward />
+          Open the quick start
         </a>
         <a className="text-link" href="mailto:mail@lighthouse.storage">
-          Talk to us <MdArrowOutward />
+          Talk to us
         </a>
       </div>
     </section>
