@@ -54,3 +54,19 @@
     padding-top: 64px;
   }
 }
+
+/*
+ * The install command above each code sample was a single nowrap line with
+ * overflow-x: auto. The Memory SDK command lists four packages and does not
+ * fit, so it scrolled sideways under a default light scrollbar -- the only
+ * one in the editor that was not the dark custom bar the code pane uses. It
+ * wraps instead: the whole command is readable and nothing scrolls. `anywhere`
+ * lets a single long package name break on a narrow phone rather than push
+ * the editor wider than the screen.
+ */
+.build-install code {
+  overflow-x: visible;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
