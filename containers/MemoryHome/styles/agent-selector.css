@@ -1,0 +1,92 @@
+.memory-console {
+  grid-template-columns: minmax(250px, 0.7fr) minmax(0, 1.6fr);
+}
+
+.console-title .small-icon {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+}
+
+.console-title .small-icon img {
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.agent-select-field {
+  flex: 1;
+  min-width: 0;
+}
+
+.memory-console .agent-select-field label {
+  margin: 0 0 5px;
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #b0a1bf;
+}
+
+.agent-select-wrap {
+  position: relative;
+}
+
+.agent-select-wrap select {
+  appearance: none;
+  color-scheme: dark;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 32px 8px 11px;
+  border: 1px solid #ceb4fb2b;
+  border-radius: 9px;
+  background: #19161f;
+  color: #f4f2f7;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.agent-select-wrap select:hover {
+  border-color: #ceb4fb70;
+  background: #211b2a;
+}
+
+.agent-select-wrap select:focus-visible {
+  outline: 2px solid #ceb4fb;
+  outline-offset: 3px;
+}
+
+.agent-select-wrap svg {
+  position: absolute;
+  top: 50%;
+  right: 11px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #ceb4fb;
+  pointer-events: none;
+}
+
+@media (max-width: 1000px) {
+  .memory-console {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .memory-console .console-title {
+    width: 100%;
+    max-width: 340px;
+  }
+  .memory-console .memory-result {
+    grid-column: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agent-select-wrap select {
+    transition: none;
+  }
+}

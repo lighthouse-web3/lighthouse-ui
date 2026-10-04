@@ -1,0 +1,75 @@
+.investors{position:relative;max-width:1360px;margin:0 auto;padding:40px 48px 44px;border-bottom:1px solid var(--line);isolation:isolate}
+.investors-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.investors-top h2{font-size:13px;font-weight:550;letter-spacing:.19em;color:var(--muted);margin:0}
+.investors-toggle{display:flex;align-items:center;gap:9px;border:0;background:transparent;color:var(--muted);font-size:13px;padding:8px;transition:color .2s}
+.investors-toggle[hidden]{display:none}.investors-toggle:hover{color:var(--lavender)}
+.investors-layout{display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:36px}
+.investor-featured{display:flex;align-items:center;gap:16px;padding:21px 18px;border:1px solid rgba(206,180,251,.2);border-radius:18px;background:linear-gradient(120deg,rgba(206,180,251,.09),rgba(206,180,251,.015));box-shadow:inset 0 1px 0 #ffffff08;transition:border-color .25s,background .25s}
+.investor-featured:hover{border-color:rgba(206,180,251,.45);background:rgba(206,180,251,.09)}
+.investor-featured img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.investor-featured div{display:flex;flex-direction:column;gap:5px}.investor-featured div>span{font-size:17px;font-weight:550;letter-spacing:-.025em;white-space:nowrap}.investor-featured small{color:var(--muted);font-size:13px}.investor-link-arrow{margin-left:auto;font-size:16px;color:var(--lavender)}
+.investor-window{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);padding:10px 0;min-width:0}
+.investor-track{display:flex;width:max-content;animation:investor-travel 90s linear infinite;will-change:transform}
+.investor-group{list-style:none;display:flex;align-items:center;gap:54px;margin:0;padding:0 54px 0 0;flex-shrink:0}
+.investor-logo{display:flex;align-items:center;gap:12px;min-height:74px;white-space:nowrap;opacity:.8;transition:opacity .2s}.investor-logo:hover{opacity:1}.investor-logo img{object-fit:contain;flex-shrink:0;border-radius:8px;width:40px;height:40px}.investor-logo span{font-size:17px;font-weight:550;letter-spacing:-.025em}.investor-walrus img{width:100px;height:32px;border-radius:0}.investor-walrus{flex-direction:column;justify-content:center;gap:6px}.investor-walrus span{font-size:12px;letter-spacing:.04em;color:var(--muted)}
+.investor-window:hover .investor-track,.investor-window:focus-within .investor-track,.investor-window.is-paused .investor-track{animation-play-state:paused}
+.investor-window:focus-within{overflow-x:auto;mask-image:none}.investor-window:focus-within .investor-track{animation:none;transform:none}
+@keyframes investor-travel{to{transform:translateX(-50%)}}
+.investors-reduced .investor-window{overflow-x:auto;mask-image:none}.investors-reduced .investor-track{animation:none;transform:none}.investors-reduced .investor-group[aria-hidden="true"]{display:none}
+@media(max-width:900px){.investors{padding:32px 24px 36px}.investors-layout{grid-template-columns:minmax(0,1fr);gap:20px}.investor-featured{padding:16px 12px;gap:12px}.investor-featured img{width:46px;height:46px}.investor-featured div>span{font-size:16px}.investor-group{gap:36px;padding-right:36px}}
+@media(max-width:600px){.investors{padding:28px 20px 32px}.investors-top{margin-bottom:16px}.investors-layout{grid-template-columns:minmax(0,1fr);gap:20px}.investor-featured{max-width:100%;padding:18px 20px}.investor-featured img{width:52px;height:52px}.investor-featured div>span{font-size:18px}.investor-window{margin:0 -10px}.investor-logo span{font-size:16px}.investor-track{animation-duration:100s}}
+@media(prefers-reduced-motion:reduce){.investor-track{animation:none!important}.investor-window{overflow-x:auto;mask-image:none}.investor-group[aria-hidden="true"]{display:none}}
+
+.investor-balaji img{border-radius:50%;width:48px;height:48px}.investor-balaji span{color:var(--lavender);font-size:19px}
+
+/* Backers belong to the first viewport, with natural flow for small screens. */
+.hero.hero-with-backers{min-height:100svh;padding:112px max(32px,calc((100vw - 1280px)/2)) 24px;justify-content:space-between;gap:30px}
+.hero-with-backers .hero-intro{margin:0 auto;flex:1;display:flex;flex-direction:column;justify-content:center;padding:24px 0 18px;transform:none;opacity:1}
+.hero-with-backers h1{font-size:clamp(54px,min(6.8vw,10svh),100px);line-height:1.04;letter-spacing:-.065em;margin:18px auto 20px}
+.hero-with-backers .eyebrow{font-size:12px;letter-spacing:.17em}
+.hero-with-backers .hero-copy{font-size:17px;line-height:1.6;max-width:540px}
+.hero-with-backers .hero-actions{margin-top:28px}
+.hero-investors.investors{width:100%;max-width:1280px;padding:18px 0 0;margin:0 auto;flex:none;border-bottom:0;border-top:1px solid rgba(221,204,255,.16);text-align:left;z-index:2}
+.hero-investors .investors-top{margin-bottom:8px;min-height:25px}
+.hero-investors .investors-top h2{font-size:12px;color:#c4bdcf;font-weight:500;letter-spacing:.18em}
+.hero-investors .investors-toggle{font-size:12px;padding:4px 8px;opacity:.75}
+.hero-investors .investors-layout{grid-template-columns:224px minmax(0,1fr);gap:28px}
+.hero-investor-anchor{display:flex;align-items:center;gap:12px;min-height:58px;padding-right:24px;border-right:1px solid var(--line);font-size:16px;font-weight:500;white-space:nowrap;color:var(--white);transition:color .25s}
+.hero-investor-anchor:hover{color:var(--lavender)}.hero-investor-anchor img{width:38px;height:38px;object-fit:cover;border-radius:50%;border:1px solid #ceb4fb30}
+.hero-investors .investor-window{padding:0;margin:0;mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)}
+.hero-investors .investor-logo{min-height:58px;gap:11px;opacity:.85}.hero-investors .investor-logo span{font-size:16px;font-weight:500}.hero-investors .investor-logo img{width:34px;height:34px;border-radius:7px}.hero-investors .investor-walrus img{width:83px;height:26px;border-radius:0}.hero-investors .investor-walrus{gap:2px}.hero-investors .investor-walrus span{font-size:12px}.hero-investors .investor-group{gap:44px;padding-right:44px}.hero-investors .investor-track{animation-duration:100s}
+@media(min-width:761px) and (max-height:730px){.hero.hero-with-backers{padding-top:108px;padding-bottom:18px;gap:18px}.hero-with-backers .hero-intro{padding:12px 0}.hero-with-backers h1{font-size:clamp(50px,9svh,72px);margin:14px auto 16px}.hero-with-backers .hero-actions{margin-top:20px}.hero-investors.investors{padding-top:12px}}
+@media(max-width:760px){.hero.hero-with-backers{padding:94px 20px 20px;min-height:100svh;gap:24px}.hero-with-backers .hero-intro{padding:18px 0 8px;width:100%}.hero-with-backers h1{font-size:clamp(36px,8.5vw,62px);letter-spacing:-.055em;line-height:1.06;margin:18px auto}.hero-with-backers .eyebrow{font-size:12px;letter-spacing:.1em}.hero-with-backers .hero-copy{font-size:16px;line-height:1.55;max-width:420px}.hero-with-backers .hero-actions{margin-top:24px;gap:18px}.hero-investors.investors{padding-top:14px}.hero-investors .investors-layout{grid-template-columns:1fr;gap:7px}.hero-investor-anchor{border-right:0;padding:0;min-height:42px;font-size:15px}.hero-investor-anchor img{width:30px;height:30px}.hero-investors .investor-logo{min-height:48px}.hero-investors .investor-logo span{font-size:14px}.hero-investors .investor-logo img{width:30px;height:30px}.hero-investors .investor-group{gap:28px;padding-right:28px}.hero-investors .investor-walrus img{width:75px;height:24px}.hero-investors .investor-walrus span{font-size:12px}.hero-investors .investors-top{margin-bottom:5px}}
+@media(prefers-reduced-motion:reduce){.hero-investors .investor-window{mask-image:none;overflow-x:auto}}
+
+/* Every backer shares one continuous carousel. */
+.hero-investors .investors-layout{grid-template-columns:minmax(0,1fr)}
+.hero-investors .investor-balaji img{border-radius:50%}
+.hero-investors .investor-balaji span{color:var(--white)}
+
+/* Quiet monochrome backers, directly on the hero film. */
+.hero-investors.investors{border-top:0;padding-top:14px;position:relative}
+.hero-investors.investors:before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(244,242,247,.17),transparent)}
+.hero-investors .investors-top{justify-content:center;margin-bottom:12px;min-height:20px}
+.hero-investors .investors-top h2{font-size:12px;font-weight:400;letter-spacing:.22em;color:#b7b2c0}
+.hero-investors .investor-window{mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);padding:0 0 4px}
+.hero-investors .investor-group{gap:64px;padding-right:64px}
+.hero-investors .investor-logo{min-height:80px;opacity:.72;transition:opacity .35s ease;color:#fff;gap:12px}
+.hero-investors .investor-logo:hover{opacity:1}
+.hero-investors .investor-logo span{color:#fff;font-size:23px;font-weight:500;letter-spacing:-.025em}
+.hero-investors .investor-logo img{width:auto;height:58px;max-width:200px;border-radius:0;object-fit:contain;filter:grayscale(1) invert(1) contrast(3) brightness(1.5);mix-blend-mode:screen}
+.hero-investors .investor-balaji span{font-size:26px;font-weight:500;letter-spacing:-.035em}
+.hero-investors .investor-protocol-labs img{height:48px}
+.hero-investors .investor-big-brain-holdings img{height:55px;clip-path:circle(42%);filter:grayscale(1) contrast(2) brightness(1.6)}
+.hero-investors :is(.investor-longhash-ventures,.investor-fenbushi-capital,.investor-ngc-ventures,.investor-mask-network,.investor-hashcib) img{height:103px;max-width:188px}
+.hero-investors :is(.investor-longhash-ventures,.investor-fenbushi-capital,.investor-ngc-ventures,.investor-mask-network,.investor-hashcib) span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.hero-investors .investor-walrus{flex-direction:row;gap:10px}.hero-investors .investor-walrus img{width:100px;height:34px;filter:grayscale(1) brightness(0) invert(1);mix-blend-mode:normal}.hero-investors .investor-walrus span{font-size:13px;color:#fff}
+.hero-investors .investor-track{animation-duration:55s}
+@media(max-width:760px){.hero-investors .investor-group{gap:40px;padding-right:40px}.hero-investors .investors-top{margin-bottom:5px}.hero-investors .investor-logo{min-height:75px}.hero-investors .investor-logo span{font-size:20px}.hero-investors .investor-balaji span{font-size:24px}.hero-investors :is(.investor-longhash-ventures,.investor-fenbushi-capital,.investor-ngc-ventures,.investor-mask-network,.investor-hashcib) img{height:90px}.hero-investors .investor-walrus span{font-size:12px}}
+.hero-investors .investor-logo{opacity:1}.hero-investors .investor-logo img{opacity:.78;transition:opacity .35s}.hero-investors .investor-logo:hover img{opacity:1}.hero-investors .investor-logo span{color:#f4f2f7cc}.hero-investors .investor-logo:hover span{color:#fff}
+.hero-investors.investors{isolation:auto}.hero-investors .investor-window{mix-blend-mode:screen}
+.hero-investors .investor-logo img{filter:url(#investor-white);mix-blend-mode:normal}.hero-investors .investor-big-brain-holdings img{filter:url(#investor-white-light)}.hero-investors .investor-walrus img{filter:brightness(0) invert(1)}.hero-investors .investor-window{mix-blend-mode:normal}
+
+/* A single Walrus wordmark, optically aligned with the investor row. */
+.hero-investors .investor-walrus img{width:140px;height:34px;max-width:none}
+@media(max-width:760px){.hero-investors .investor-walrus img{width:125px;height:30px}}

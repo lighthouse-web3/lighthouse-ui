@@ -9,15 +9,13 @@
       "autoPort": true
     },
     {
-      "name": "memory-site",
-      "runtimeExecutable": "npm",
+      "name": "memory-reference",
+      "runtimeExecutable": "sh",
       "runtimeArgs": [
-        "--prefix",
-        "/Users/nanditmehra/Desktop/lighthouse-github-repos/Lighthouse-Website",
-        "run",
-        "dev"
+        "-c",
+        "cd /Users/nanditmehra/Desktop/lighthouse-github-repos/lighthouse-nextjs && PORT=4174 node scripts/serve.mjs"
       ],
-      "port": 4173
+      "port": 4174
     }
   ]
 }

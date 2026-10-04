@@ -7,10 +7,6 @@
   }
 }
 @media (max-width: 1100px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
   .nav {
     width: calc(100% - 40px);
   }
@@ -20,7 +16,8 @@
   .section {
     padding-left: 40px;
     padding-right: 40px;
-  }:where(.memory-page) h1{
+  }
+  :where(.memory-page) h1 {
     letter-spacing: -3px;
   }
   .memory-console {
@@ -93,7 +90,8 @@
   .hero .eyebrow {
     font-size: 9px;
     letter-spacing: 1.4px;
-  }:where(.memory-page) h1{
+  }
+  :where(.memory-page) h1 {
     font-size: clamp(41px, 8.8vw, 65px);
     letter-spacing: -2px;
     line-height: 1.08;
@@ -156,11 +154,8 @@
     letter-spacing: 0.8px;
     padding: 21px 0;
   }
-:where(.memory-page){
-    --section-space: 72px;
-  }
   .section {
-    padding: var(--section-space) 24px;
+    padding: 85px 24px;
   }
   .statement h2 {
     font-size: 48px;
@@ -174,7 +169,7 @@
     letter-spacing: 1.6px;
   }
   .network-section {
-    padding: var(--section-space) 14px;
+    padding: 60px 14px 0;
   }
   .section-heading {
     display: block;
@@ -303,7 +298,7 @@
   .continuity {
     display: flex;
     flex-direction: column;
-    padding-top: var(--section-space);
+    padding-top: 100px;
     gap: 35px;
     align-items: stretch;
   }
@@ -350,7 +345,7 @@
     bottom: 5%;
   }
   .principles {
-    padding-top: var(--section-space);
+    padding-top: 70px;
   }
   .principles .section-heading {
     padding: 0;
@@ -391,35 +386,42 @@
     right: -10px;
     opacity: 1;
   }
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 34px;
+  .footer-top {
+    display: block;
   }
-  .footer-brand p {
+  .footer-top p {
+    margin-top: 15px;
     font-size: 12px;
-  }:where(.memory-page) footer{
+  }
+  .footer-top > div {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 11px;
+    padding-top: 30px;
+  }
+  :where(.memory-page) footer {
     padding: 35px 24px 0;
   }
   .footer-bottom {
-    flex-direction: column;
     font-size: 10px;
     margin-top: 30px;
   }
   .footer-word {
     font-size: 13.4vw;
-    margin: 0 -24px;
   }
-  .footer-brand .brand {
+  .footer-top .brand {
     font-size: 15px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-:where(.memory-page){
+  html:where(:has(.memory-page)) {
     scroll-behavior: auto;
   }
-  *,
-  *::before,
-  *::after {
+  :where(.memory-page) *,
+  :where(.memory-page) *::before,
+  :where(.memory-page) *::after {
     animation: none !important;
     transition: none !important;
   }

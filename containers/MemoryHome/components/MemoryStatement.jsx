@@ -16,7 +16,7 @@ export default function MemoryStatement() {
         <span className="handoff-orbit orbit-one" aria-hidden="true"></span>
         <span className="handoff-orbit orbit-two" aria-hidden="true"></span>
         <img
-          src="/memory/tubry-orb.png"
+          src="/assets/tubry-orb.webp"
           alt="Tubry sitting with a glowing memory orb, fully visible from head to feet"
           width="700"
           height="770"

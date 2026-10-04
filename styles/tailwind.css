@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* The memory UI under containers/MemoryHome brings its own stylesheets and
+ * uses no utilities. Left scannable, Tailwind reads its class names as
+ * utility candidates -- it has a label classed `overline`, which got a real
+ * text-decoration from the utility of the same name. */
+@source not "../containers/MemoryHome";
+
 @theme inline {
   /* Configure your theme variables here */
   --font-display: "Inter", "sans-serif";

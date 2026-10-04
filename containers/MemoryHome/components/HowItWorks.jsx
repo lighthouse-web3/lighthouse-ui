@@ -1,10 +1,9 @@
 import MemoryPortal from "./MemoryPortal";
-import { MdArrowOutward } from "react-icons/md";
 export default function HowItWorks({ motionDisabled }) {
   return (
     <section className="continuity section" id="how">
       <div className="continuity-copy reveal">
-        <span className="eyebrow">02 / KEEP THE THREAD</span>
+        <span className="eyebrow">03 / HOW SHARED MEMORY WORKS</span>
         <h2>
           Pick up
           <br />
@@ -13,11 +12,16 @@ export default function HowItWorks({ motionDisabled }) {
           <span>left off.</span>
         </h2>
         <p>
-          A new model shouldn’t mean another introduction. Give your agents
-          access to the context you choose to carry forward.
+          Give your agent a persistent brain through the Memory SDK or a
+          supported MCP connection. Save the context you choose and retrieve
+          relevant records in later sessions. Each application needs its own
+          connection.
         </p>
-        <a href="#memory" className="text-link">
-          Try the memory network <MdArrowOutward />
+        <a
+          href="https://docs.lighthouse.storage/memory/mcp/overview"
+          className="text-link"
+        >
+          Connect through MCP
         </a>
       </div>
       <MemoryPortal motionDisabled={motionDisabled} />

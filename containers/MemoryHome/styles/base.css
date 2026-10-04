@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&display=swap");
-:root {
+:root:where(:has(.memory-page)) {
   color-scheme: dark;
   --bg: #101012;
   --surface: #17161c;
@@ -7,43 +6,46 @@
   --muted: #a6a1b2;
   --lavender: #ceb4fb;
   --line: rgba(221, 204, 255, 0.13);
-  /* One rhythm for the gaps between major sections. Each section pays half at
-   * the top and half at the bottom, so every boundary is 2x this. The values
-   * used to be hand-set per section and ramped 85 -> 170 -> 250 -> 330px. */
-  --section-space: 110px;
 }
-* {
+:where(.memory-page) * {
   box-sizing: border-box;
-}:where(.memory-page){
+}
+html:where(:has(.memory-page)) {
   scroll-behavior: smooth;
   scroll-padding-top: 110px;
-}:where(.memory-page){
+}
+body:where(:has(.memory-page)) {
   margin: 0;
   background: var(--bg);
   color: var(--white);
   font-family: "DM Sans", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  overflow-x: clip;
-}:where(.memory-page) a{
+  overflow-x: hidden;
+}
+:where(.memory-page) a {
   color: inherit;
   text-decoration: none;
-}:where(.memory-page) button,
-:where(.memory-page) input{
+}
+:where(.memory-page) button,
+:where(.memory-page) input {
   font: inherit;
-}:where(.memory-page) button,
+}
+:where(.memory-page) button,
 :where(.memory-page) a,
-:where(.memory-page) input{
+:where(.memory-page) input {
   -webkit-tap-highlight-color: transparent;
-}:where(.memory-page) button{
+}
+:where(.memory-page) button {
   cursor: pointer;
-}:where(.memory-page) button:focus-visible,
+}
+:where(.memory-page) button:focus-visible,
 :where(.memory-page) a:focus-visible,
-:where(.memory-page) input:focus-visible{
+:where(.memory-page) input:focus-visible {
   outline: 2px solid var(--lavender);
   outline-offset: 5px;
 }
-::selection {
+:where(.memory-page) ::selection {
   background: #ceb4fb;
   color: #141019;
 }
@@ -89,7 +91,7 @@
   width: 41px;
   height: 54px;
   flex-shrink: 0;
-  background-image: url("/memory/lighthouse-mark.svg");
+  background-image: url("/assets/lighthouse-mark.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -101,9 +103,10 @@
   align-items: center;
   color: #bbb5c7;
   font-size: 14px;
-}.nav nav a:hover,
+}
+.nav nav a:hover,
 .text-link:hover,
-:where(.memory-page) footer a:hover{
+:where(.memory-page) footer a:hover {
   color: var(--lavender);
 }
 .nav nav span {
@@ -155,21 +158,24 @@
   border-radius: 50%;
   background: #d5b5ff;
   box-shadow: 0 0 15px #c794ff;
-}:where(.memory-page) h1,
+}
+:where(.memory-page) h1,
 :where(.memory-page) h2,
 :where(.memory-page) h3,
-:where(.memory-page) p{
+:where(.memory-page) p {
   margin: 0;
-}:where(.memory-page) h1{
+}
+:where(.memory-page) h1 {
   font-size: clamp(48px, 6.9vw, 104px);
   font-weight: 500;
   line-height: 1.04;
   letter-spacing: -5px;
   margin: 25px auto;
-}:where(.memory-page) h1 span,
+}
+:where(.memory-page) h1 span,
 .section-heading h2 span,
 .continuity h2 span,
-.closing h2 span{
+.closing h2 span {
   background: linear-gradient(110deg, #e2cdff, #b4a6ec 65%, #9fabdb);
   -webkit-background-clip: text;
   background-clip: text;
@@ -352,7 +358,7 @@
 .network-section {
   max-width: 1400px;
   margin: auto;
-  padding: var(--section-space) 40px;
+  padding: 85px 40px 0;
 }
 .section-heading {
   display: flex;
@@ -649,8 +655,8 @@
   grid-template-columns: 0.9fr 1.1fr;
   gap: 40px;
   align-items: center;
-  padding-top: var(--section-space);
-  padding-bottom: var(--section-space);
+  padding-top: 170px;
+  padding-bottom: 150px;
 }
 .continuity h2 {
   font-size: clamp(60px, 6.5vw, 94px);
@@ -764,8 +770,7 @@
 }
 .principles {
   border-top: 1px solid var(--line);
-  padding-top: var(--section-space);
-  padding-bottom: var(--section-space);
+  padding-top: 100px;
 }
 .principle-grid {
   display: grid;
@@ -859,8 +864,8 @@
   position: relative;
   border: 1px solid var(--line);
   border-radius: 22px;
-  margin: var(--section-space) auto;
-  padding: var(--section-space) 50px;
+  margin: 100px auto 100px;
+  padding: 100px 50px;
   overflow: visible;
   background: linear-gradient(125deg, #211a2b, #141317);
   isolation: isolate;
@@ -897,109 +902,39 @@
   object-fit: contain;
   object-position: bottom;
   z-index: -1;
-}:where(.memory-page) footer{
+}
+:where(.memory-page) footer {
   border-top: 1px solid var(--line);
   padding: 45px max(40px, calc((100vw - 1240px) / 2)) 0;
   overflow: hidden;
 }
-.footer-grid {
+.footer-top {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  grid-template-columns: 1fr 1fr;
   align-items: start;
-  gap: 48px;
+  gap: 15px;
 }
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 18px;
+.footer-top .brand {
+  grid-column: 1;
 }
-.footer-brand p {
+.footer-top p {
+  grid-column: 1;
   color: #8f859c;
   font-size: 14px;
-  max-width: 24ch;
 }
-.footer-socials {
+.footer-top > div {
+  grid-column: 2;
+  grid-row: 1/3;
   display: flex;
-  gap: 18px;
-  font-size: 19px;
-  line-height: 1;
-}
-.footer-socials a {
+  justify-content: flex-end;
+  gap: 25px;
+  font-size: 12px;
   color: #a89db5;
-  display: inline-flex;
-  transition: color 0.2s;
-}
-.footer-socials a:hover {
-  color: var(--lavender);
-}
-.footer-mail,
-.footer-col a {
-  color: #a89db5;
-  font-size: 13px;
-  transition: color 0.2s;
-}
-.footer-mail:hover,
-.footer-col a:hover {
-  color: var(--lavender);
-}
-.footer-col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 13px;
-}
-.footer-col h3 {
-  color: var(--white);
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0 0 3px;
-}
-.footer-col a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.34em;
-}
-.footer-col a > svg {
-  width: 0.85em;
-  height: 0.85em;
-  flex: none;
-}
-.footer-newsletter input {
-  width: 100%;
-  background: var(--surface);
-  border: 1px solid #ddccff33;
-  border-radius: 12px;
-  color: var(--white);
-  font: inherit;
-  font-size: 14px;
-  padding: 12px 15px;
-  transition: border-color 0.2s;
-}
-.footer-newsletter input:focus {
-  outline: none;
-  border-color: var(--lavender);
-}
-.footer-newsletter button {
-  width: 100%;
-  background: var(--lavender);
-  border: 0;
-  border-radius: 12px;
-  color: #470084;
-  cursor: pointer;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  padding: 12px 15px;
-  transition: background 0.2s;
-}
-.footer-newsletter button:hover {
-  background: #c79ef5;
+  padding-top: 20px;
 }
 .footer-bottom {
   display: flex;
   justify-content: space-between;
-  gap: 18px;
   color: #756c80;
   font-size: 11px;
   margin: 45px 0 35px;
@@ -1008,10 +943,7 @@
   font-weight: 600;
   font-size: clamp(55px, 13vw, 195px);
   line-height: 0.9;
-  letter-spacing: 0.05em;
-  /* Pulled out to the viewport edges so the wider tracking has room to breathe
-   * without the footer's own horizontal padding clipping the L and the E. */
-  margin: 0 calc(-1 * max(40px, (100vw - 1240px) / 2));
+  letter-spacing: -0.065em;
   text-align: center;
   color: #ffffff05;
   -webkit-text-stroke: 1px #d4b5ee18;
@@ -1031,8 +963,9 @@
 .js-motion .reveal.visible {
   opacity: 1;
   transform: none;
-}.paused *,
-:where(.memory-page) body.reduced *{
+}
+.paused *,
+body.reduced * {
   animation-play-state: paused !important;
 }
 .paused .ring-two {

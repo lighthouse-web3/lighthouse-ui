@@ -1,0 +1,568 @@
+/* Token page only: architectural light, readable type and transparent data. */
+/* Overlap the final empty viewport of the camera intro with the first chapter. */
+.tp-token.tp-service[data-scene="ready"][data-reduced="false"] .tp-tour {
+  margin-top: -72svh;
+}
+.tp-token.tp-service .tp-chapters > .tp-chapter:first-child {
+  padding-top: 32px;
+}
+.tp-token.tp-service .tp-journey-rail {
+  margin-top: 40px;
+}
+.tp-token.tp-service .tp-flight-progress,
+.tp-token.tp-service .tp-skip-flight {
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s;
+}
+.tp-token.tp-service[data-scene="ready"][data-handoff="details"]
+  :is(.tp-flight-progress, .tp-skip-flight, .tp-hero-copy, .tp-hero-bottom) {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  .tp-token.tp-service .tp-journey-rail {
+    margin-top: 0;
+  }
+  .tp-token.tp-service .tp-chapters > .tp-chapter:first-child {
+    padding-top: 28px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-token.tp-service[data-scene="ready"] .tp-tour {
+    margin-top: 0;
+  }
+  .tp-token.tp-service .tp-flight-progress,
+  .tp-token.tp-service .tp-skip-flight {
+    transition: none;
+  }
+}
+.tp-token.tp-service .tp-hero-copy {
+  width: 57%;
+}
+.tp-token.tp-service .tp-hero h1 {
+  font-size: clamp(58px, 6.1vw, 88px);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 1.04;
+  margin: 22px 0;
+}
+.tp-token.tp-service .tp-hero-copy > p {
+  max-width: 450px;
+  font-size: 18px;
+  line-height: 1.65;
+  color: #cec7d7;
+}
+.token-studio-light {
+  position: absolute;
+  inset: 4% -5% 0 28%;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 66% 32%, #bca1e219, transparent 52%),
+    radial-gradient(ellipse at 73% 74%, #8ba8d20b, transparent 45%);
+  opacity: calc(1 - var(--intro-fade, 0));
+}
+.token-hero-paths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 520px;
+  margin-top: 29px;
+}
+.token-hero-paths > a {
+  padding: 18px 0 0;
+  border-top: 1px solid #ceb4fb38;
+  text-decoration: none;
+  transition: border-color 0.25s;
+}
+.token-hero-paths > a:last-child {
+  border-color: #b3c5f438;
+}
+.token-hero-paths > a:hover {
+  border-color: #e4d3fc;
+}
+.token-hero-paths > a > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #eadbf9;
+  font-size: 14px;
+  font-weight: 500;
+}
+.token-hero-paths > a:last-child > span {
+  color: #cbd8fb;
+}
+.token-hero-paths .link-arrow {
+  width: 13px;
+  height: 13px;
+  margin-left: auto;
+}
+.tp-token.tp-service .token-hero-paths p {
+  margin-top: 10px;
+  max-width: 27ch;
+  color: #b3a8c0;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.tp-token.tp-service .tp-hero .tp-actions {
+  margin-top: 26px;
+}
+.tp-token.tp-service .service-hero-status {
+  margin-top: 17px;
+  color: #afa2bd;
+  font-size: 11px;
+}
+.tp-token.tp-service .tp-chapter-heading h2 {
+  line-height: 1.13;
+  max-width: 18ch;
+  margin-bottom: 18px;
+}
+.tp-token.tp-service .tp-chapter-heading p {
+  max-width: 51ch;
+  color: #c4bdcf;
+}
+.tp-token.tp-service .service-utility-main p {
+  max-width: 43ch;
+  color: #cbc2d5;
+}
+.tp-token.tp-service .service-steps h4 {
+  font-size: 15px;
+}
+.tp-token.tp-service .service-steps p,
+.tp-token.tp-service .service-credit-notes p {
+  color: #bfb4cd;
+  font-size: 14px;
+}
+.tp-token.tp-service .service-utility-note,
+.tp-token.tp-service .service-credit-foot {
+  color: #bfb2cd;
+  font-size: 13px;
+}
+.tp-token.tp-service .service-credit-caption {
+  max-width: 51ch;
+  margin-inline: auto;
+  padding-inline: 18px;
+  color: #bdb0c9;
+  line-height: 1.7;
+}
+.token-credit-services {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 30px 28px;
+}
+.token-credit-services > span {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: #aea0bd;
+}
+.token-credit-services ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.token-credit-services li {
+  padding: 7px 10px;
+  border: 1px solid #d4c3eb1c;
+  border-radius: 6px;
+  color: #ccbddb;
+  background: #c8aff808;
+  font-size: 11px;
+}
+.allocation-composition {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  padding: 26px 30px 33px;
+}
+.allocation-figure {
+  margin: 0;
+  min-width: 0;
+  text-align: center;
+}
+.allocation-orbit {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+.allocation-orbit:before {
+  content: "";
+  position: absolute;
+  inset: 14%;
+  border-radius: 50%;
+  background: #b69acc0a;
+  filter: blur(35px);
+}
+.allocation-pie {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 14px 13px #0005);
+}
+.allocation-guide {
+  fill: none;
+  stroke: #ccb7eb12;
+  stroke-width: 1;
+  stroke-dasharray: 2 7;
+}
+.allocation-inner-guide {
+  fill: none;
+  stroke: #ccb7eb13;
+  stroke-width: 1;
+}
+.allocation-pie-depth {
+  filter: brightness(0.36);
+}
+.allocation-slice {
+  opacity: 0.73;
+  stroke: #ffffff27;
+  stroke-width: 0.7;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    opacity 0.25s;
+  cursor: pointer;
+}
+.allocation-slice[data-active="true"] {
+  opacity: 1;
+  stroke: #ffffff80;
+}
+.allocation-centre {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+.allocation-centre span {
+  font-size: 12px;
+  color: #b4a5c5;
+}
+.allocation-centre strong {
+  margin-top: 8px;
+  font-size: 40px;
+  font-weight: 450;
+  letter-spacing: -0.045em;
+  color: #f0e6fb;
+}
+.allocation-centre i {
+  width: 28px;
+  height: 2px;
+  margin-top: 15px;
+  border-radius: 2px;
+  transition: background 0.25s;
+}
+.allocation-selection {
+  min-height: 57px;
+  padding: 0 8px;
+}
+.allocation-selection > span {
+  font-size: 14px;
+  font-weight: 500;
+}
+.tp-token.tp-service .allocation-selection p {
+  font-size: 11px;
+  margin-top: 7px;
+  color: #aa9bb9;
+  line-height: 1.5;
+}
+.allocation-figure figcaption {
+  font-size: 12px;
+  color: #bdb0cb;
+  line-height: 1.6;
+}
+.allocation-key {
+  min-width: 0;
+}
+.allocation-key-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 11px 14px;
+  color: #a497b5;
+  font-size: 11px;
+}
+.allocation-key button {
+  width: 100%;
+  min-height: 51px;
+  display: grid;
+  grid-template-columns: 6px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 11px;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid #ffffff09;
+  border-radius: 0;
+  color: #c2b6cd;
+  text-align: left;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.4;
+  transition:
+    background 0.25s,
+    color 0.25s;
+  cursor: pointer;
+}
+.allocation-key button i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--allocation-color);
+}
+.allocation-key button strong {
+  color: var(--allocation-color);
+  font-size: 13px;
+  font-weight: 500;
+}
+.allocation-key button[aria-pressed="true"] {
+  color: #f0e8fa;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--allocation-color) 10%, transparent),
+    transparent
+  );
+  border-radius: 8px;
+}
+.allocation-key button:focus-visible {
+  outline: 1px solid #ceb4fb;
+  outline-offset: 3px;
+}
+.tp-token.tp-service .service-token-facts dd {
+  color: #e6d9f6;
+}
+/* The fixed scene must end behind the token page, never above its footer. */
+.tp-token + .site-footer {
+  position: relative;
+  z-index: 3;
+  isolation: isolate;
+  background: #0d0e10;
+  border-top: 1px solid #d6c4ed1c;
+}
+.tp-token + .site-footer .reveal {
+  opacity: 1;
+  transform: none;
+}
+.tp-token + .site-footer .footer-brand p,
+.tp-token + .site-footer .footer-col > a,
+.tp-token + .site-footer .footer-mail {
+  color: #c4bacf;
+}
+.tp-token + .site-footer .footer-col > a:hover,
+.tp-token + .site-footer .footer-mail:hover {
+  color: #eee2fe;
+}
+.tp-token + .site-footer .footer-bottom {
+  color: #a99cb8;
+}
+.tp-token + .site-footer .footer-word {
+  color: #c9b2e808;
+  -webkit-text-stroke-color: #d4b5ee35;
+}
+@media (min-width: 801px) and (max-height: 800px) {
+  .tp-token.tp-service .tp-hero h1 {
+    font-size: clamp(56px, 5.5vw, 78px);
+    margin: 17px 0;
+  }
+  .token-hero-paths {
+    margin-top: 21px;
+  }
+  .tp-token.tp-service .tp-hero-copy > p {
+    font-size: 17px;
+  }
+}
+@media (max-width: 1100px) {
+  .allocation-composition {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .allocation-orbit {
+    max-width: 300px;
+  }
+  .allocation-key {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 18px;
+  }
+  .allocation-key-heading {
+    grid-column: 1 / -1;
+  }
+  .token-credit-services {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+@media (max-width: 800px) {
+  .tp-token.tp-service .tp-hero-copy {
+    width: 60%;
+  }
+  .tp-token.tp-service .tp-hero h1 {
+    font-size: clamp(46px, 7.2vw, 62px);
+  }
+  .token-hero-paths {
+    gap: 13px;
+  }
+  .token-hero-paths > a > span {
+    font-size: 12px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .token-hero-paths > a > span > svg:first-child {
+    width: 16px;
+    height: 16px;
+  }
+  .tp-token.tp-service .token-hero-paths p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 560px) {
+  .tp-token.tp-service .tp-flight-intro .tp-hero {
+    padding-top: 120px;
+  }
+  .tp-token.tp-service .tp-hero-copy {
+    width: 100%;
+    max-width: none;
+  }
+  .tp-token.tp-service .tp-hero h1 {
+    font-size: clamp(43px, 11.6vw, 62px);
+    margin: 17px 0;
+  }
+  .tp-token.tp-service .tp-hero-copy > p {
+    max-width: 31ch;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .token-hero-paths {
+    display: none;
+  }
+  .token-hero-paths > a {
+    padding-top: 13px;
+  }
+  .token-hero-paths > a > span {
+    gap: 6px;
+    font-size: 11px;
+  }
+  .token-hero-paths .link-arrow {
+    display: none;
+  }
+  .tp-token.tp-service .token-hero-paths p {
+    font-size: 11px;
+    margin-top: 8px;
+  }
+  .tp-token.tp-service .tp-hero .tp-actions {
+    margin-top: 23px;
+  }
+  .tp-token.tp-service .service-hero-status {
+    max-width: 32ch;
+    font-size: 10px;
+    margin-top: 15px;
+  }
+  .tp-token.tp-service .tp-chapter-heading h2 {
+    font-size: 34px;
+  }
+  .tp-token.tp-service .tp-chapter-heading p {
+    font-size: 15px;
+  }
+  .tp-token.tp-service .service-steps p,
+  .tp-token.tp-service .service-credit-notes p {
+    font-size: 13px;
+  }
+  .token-credit-services {
+    padding: 0 22px 24px;
+  }
+  .allocation-composition {
+    padding: 20px 18px 25px;
+    gap: 28px;
+  }
+  .allocation-orbit {
+    max-width: 290px;
+  }
+  .allocation-key {
+    display: block;
+  }
+  .allocation-key button {
+    min-height: 49px;
+    font-size: 13px;
+  }
+  .allocation-key button strong {
+    font-size: 13px;
+  }
+  .allocation-centre strong {
+    font-size: 37px;
+  }
+}
+@media (min-width: 561px) and (max-width: 760px) {
+  .tp-token.tp-service .tp-hero-copy {
+    width: 100%;
+  }
+  .token-hero-paths {
+    display: none;
+  }
+}
+/* Keep the token header within the viewport on small tablets. */
+@media (min-width: 761px) and (max-width: 1000px) {
+  .nav:has(+ .tp-token) nav {
+    display: none;
+  }
+  .nav:has(+ .tp-token) .uc-mobile-toggle {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-left: auto;
+    margin-right: 20px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #ceb4fb08;
+    color: #d8bdf6;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .nav:has(+ .tp-token) nav.uc-nav-open {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 9px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 14px;
+    background: #17161cf8;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    max-height: calc(100dvh - 120px);
+    overflow: auto;
+  }
+  .nav:has(+ .tp-token) .uc-nav-open > a {
+    padding: 13px 10px;
+  }
+  .nav:has(+ .tp-token) .uc-nav-dropdown > button {
+    padding: 13px 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .nav:has(+ .tp-token) .uc-menu {
+    position: static;
+    min-width: 0;
+    box-shadow: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .allocation-slice,
+  .allocation-key button,
+  .token-hero-paths > a {
+    transition: none;
+  }
+}
+.tp-token[data-motion="off"] .allocation-slice {
+  transition: none;
+}

@@ -1,0 +1,548 @@
+/* A true 3D camera journey, confined to the token route. */
+.tp-token {
+  --entry-progress: 0;
+  --hero-copy-opacity: 1;
+  --inside-opacity: 0;
+  --scene-shade: 0;
+}
+.tp-token .tp-webgl-scene {
+  position: fixed;
+  inset: 0;
+  height: 100lvh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.tp-token .tp-webgl-scene canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.tp-token .tp-scene-shade {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: var(--scene-shade);
+  background: linear-gradient(90deg, #10101208 0%, #10101230 25%, #101012 42%);
+}
+.tp-token .tp-flight-intro {
+  position: relative;
+  height: 320svh;
+  z-index: 2;
+}
+.tp-token .tp-flight-intro .tp-hero {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 700px;
+  max-height: none;
+  padding-top: 170px;
+  padding-bottom: 120px;
+}
+.tp-token[data-scene="ready"] .tp-hero-visual {
+  visibility: hidden;
+}
+.tp-token .tp-hero-copy,
+.tp-token .tp-hero-bottom {
+  opacity: var(--hero-copy-opacity);
+  transform: translateY(calc(var(--entry-progress) * -80px));
+}
+.tp-token[data-camera="lantern"] .tp-hero-copy,
+.tp-token[data-camera="inside"] .tp-hero-copy,
+.tp-token[data-camera="lantern"] .tp-hero-bottom,
+.tp-token[data-camera="inside"] .tp-hero-bottom {
+  visibility: hidden;
+}
+.tp-token .tp-hero-atmosphere {
+  display: none;
+}
+.tp-token .tp-hero-copy {
+  width: 69%;
+}
+.tp-token .tp-flight-caption {
+  position: absolute;
+  inset: auto auto 125px 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 40px);
+  padding: 21px 32px;
+  border: 1px solid #ceb4fb24;
+  border-radius: 18px;
+  background: linear-gradient(130deg, #221b2bd9, #101012cf);
+  backdrop-filter: blur(18px);
+  text-align: center;
+  pointer-events: none;
+  opacity: var(--inside-opacity);
+  text-shadow:
+    0 2px 24px #101012,
+    0 1px 5px #101012;
+}
+.tp-token .tp-flight-caption > .tp-eyebrow {
+  font-size: 12px;
+}
+.tp-token .tp-flight-words {
+  position: relative;
+  width: min(570px, calc(100vw - 108px));
+  height: 70px;
+  margin-top: 13px;
+}
+.tp-token .tp-flight-words p {
+  position: absolute;
+  inset: 0;
+  font-size: clamp(27px, 3.4vw, 47px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  transition:
+    opacity 0.55s,
+    transform 0.55s;
+}
+.tp-token .tp-caption-inside {
+  opacity: 0;
+  transform: translateY(14px);
+}
+.tp-token[data-camera="inside"] .tp-caption-inside {
+  opacity: 1;
+  transform: none;
+}
+.tp-token[data-camera="inside"] .tp-caption-lantern {
+  opacity: 0;
+  transform: translateY(-14px);
+}
+.tp-token .tp-flight-instruction {
+  font-size: 12px;
+  color: #c3b6d0;
+}
+.tp-token .tp-flight-progress {
+  position: absolute;
+  bottom: 73px;
+  width: 130px;
+  height: 1px;
+  left: calc(50% - 65px);
+  background: #ceb4fb26;
+  opacity: var(--inside-opacity);
+}
+.tp-token .tp-flight-progress span {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: #ceb4fb;
+  transform-origin: left;
+  transform: scaleX(var(--entry-progress));
+}
+.tp-token .tp-skip-flight {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 0;
+  color: #afa2bd;
+  font-size: 12px;
+}
+.tp-token .tp-skip-flight:hover {
+  color: #f4f2f7;
+}
+.tp-token .tp-entry-anchor {
+  position: absolute;
+  top: 120svh;
+  pointer-events: none;
+}
+.tp-token .tp-tour {
+  z-index: 2;
+}
+.tp-token .tp-chapters {
+  position: relative;
+  background: #101012;
+  padding-inline: 30px;
+  border-radius: 22px;
+  box-shadow: -22px 0 55px #101012;
+}
+.tp-token .tp-chapter {
+  padding-block: 95px;
+}
+.tp-token .tp-glass {
+  background: linear-gradient(138deg, #ffffff08, #ceb4fb02 60%), #151318ec;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.tp-token .tp-depth-scene {
+  min-height: 490px;
+}
+.tp-token .tp-depth-meta {
+  padding: 13px 15px;
+  background: #101012f5;
+  border: 1px solid #ceb4fb20;
+  backdrop-filter: blur(16px);
+  border-radius: 12px;
+}
+.tp-token .tp-interior-window {
+  position: absolute;
+  inset: 78px 0 195px;
+  pointer-events: none;
+  border-left: 1px solid #ceb4fb12;
+}
+.tp-token .tp-interior-window > span {
+  position: absolute;
+  left: 15px;
+  bottom: 14px;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  line-height: 1.8;
+  color: #d3c2e7a3;
+}
+.tp-token .tp-depth-readout {
+  padding: 12px 15px;
+  background: #101012f5;
+  backdrop-filter: blur(16px);
+  border-radius: 12px;
+}
+.tp-token .tp-stair-map {
+  padding: 13px 0 0;
+}
+.tp-token .tp-stair-map a {
+  background: #101012f5;
+  backdrop-filter: blur(16px);
+  border-color: #ceb4fb25;
+}
+.tp-token .tp-parameters,
+.tp-token .tp-faq,
+.tp-token .tp-closing {
+  position: relative;
+  z-index: 2;
+}
+.tp-token[data-scene="fallback"] .tp-flight-intro,
+.tp-token[data-reduced="true"] .tp-flight-intro {
+  height: auto;
+}
+.tp-token[data-scene="fallback"] .tp-flight-caption,
+.tp-token[data-scene="fallback"] .tp-flight-progress,
+.tp-token[data-reduced="true"] .tp-flight-caption,
+.tp-token[data-reduced="true"] .tp-flight-progress {
+  display: none;
+}
+.tp-token[data-scene="fallback"] .tp-entry-anchor,
+.tp-token[data-reduced="true"] .tp-entry-anchor {
+  top: auto;
+  bottom: 0;
+}
+.tp-token[data-scene="fallback"] .tp-webgl-scene {
+  display: none;
+}
+.tp-token[data-scene="fallback"] .tp-hero-copy,
+.tp-token[data-scene="fallback"] .tp-hero-bottom,
+.tp-token[data-motion="off"] .tp-hero-copy,
+.tp-token[data-motion="off"] .tp-hero-bottom {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.tp-token[data-motion="off"] .tp-scene-shade {
+  opacity: 1;
+}
+@media (max-width: 1100px) and (min-width: 701px) {
+  .tp-token .tp-flight-intro .tp-hero {
+    min-height: 650px;
+    padding-top: 160px;
+  }
+  .tp-token .tp-hero h1 {
+    font-size: clamp(48px, 6.5vw, 72px);
+  }
+}
+@media (max-width: 700px) {
+  .tp-token .tp-flight-intro {
+    height: 290svh;
+  }
+  .tp-token .tp-flight-intro .tp-hero {
+    height: 100svh;
+    min-height: 750px;
+    padding-top: 125px;
+    padding-bottom: 80px;
+  }
+  .tp-token .tp-hero-copy {
+    width: 100%;
+  }
+  .tp-token .tp-hero h1 {
+    font-size: clamp(38px, 9.6vw, 58px);
+    margin: 18px -5px;
+  }
+  .tp-token .tp-hero-copy > p {
+    font-size: 14px;
+    line-height: 1.65;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+  .tp-token .tp-hero .tp-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+    margin-top: 20px;
+  }
+  .tp-token .tp-hero .tp-button {
+    width: auto;
+    min-height: 44px;
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+  .tp-token .tp-hero .tp-text-link {
+    font-size: 12px;
+  }
+  .tp-token .tp-hero-note {
+    justify-content: center;
+    font-size: 9px;
+    margin-top: 14px;
+  }
+  .tp-token .tp-hero-bottom {
+    bottom: 48px;
+    padding: 0;
+    justify-content: center;
+  }
+  .tp-token .tp-hero-bottom > div {
+    display: none;
+  }
+  .tp-token .tp-descent-cue {
+    font-size: 12px;
+  }
+  .tp-token .tp-skip-flight {
+    right: 0;
+    left: 0;
+    bottom: 8px;
+    justify-content: center;
+    font-size: 11px;
+  }
+  .tp-token .tp-flight-caption {
+    bottom: 105px;
+  }
+  .tp-token .tp-flight-words {
+    height: 66px;
+  }
+  .tp-token .tp-flight-words p {
+    font-size: 26px;
+  }
+  .tp-token .tp-flight-progress {
+    bottom: 66px;
+  }
+  .tp-token .tp-scene-shade {
+    background: linear-gradient(
+      180deg,
+      #10101280,
+      #101012cf 25%,
+      #101012e8 80%
+    );
+  }
+  .tp-token .tp-chapter {
+    padding-block: 85px;
+  }
+  .tp-token .tp-depth-scene {
+    display: none;
+  }
+  .tp-token .tp-chapter-heading {
+    text-shadow: 0 2px 18px #101012;
+  }
+  .tp-token .tp-glass {
+    background-color: #151318f5;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-token .tp-flight-intro {
+    height: auto;
+  }
+  .tp-token .tp-flight-caption,
+  .tp-token .tp-flight-progress {
+    display: none;
+  }
+}
+
+/* Reading surfaces stay opaque and type stays crisp while the camera moves. */
+.tp-token {
+  --tp-muted: #cbc5d2;
+}
+.tp-token .tp-hero-copy::before {
+  content: "";
+  position: absolute;
+  inset: -30px -25px;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse at 30% 50%,
+    #101012f5 25%,
+    #101012b8 65%,
+    transparent 78%
+  );
+  pointer-events: none;
+}
+.tp-token .tp-hero h1 > span,
+.tp-token .tp-hero-copy > p,
+.tp-token .tp-hero .tp-actions {
+  animation: none;
+  filter: none;
+}
+.tp-token .tp-chapters [data-tp-reveal],
+.tp-token .tp-chapters .tp-panel-enter {
+  opacity: 1;
+  transform: none;
+  animation: none;
+  transition: none;
+}
+.tp-token .tp-hero-copy > p {
+  max-width: 420px;
+  color: #ded9e5;
+  font-size: 18px;
+  line-height: 1.65;
+}
+.tp-token .tp-chapter-heading {
+  text-shadow: none;
+}
+.tp-token .tp-chapter-heading h2 {
+  color: #faf8fd;
+}
+.tp-token .tp-eyebrow,
+.tp-token .tp-panel-top .tp-eyebrow,
+.tp-token .tp-settlement-step .tp-eyebrow,
+.tp-token .tp-allocation-detail .tp-eyebrow,
+.tp-token .tp-release-header > .tp-eyebrow {
+  font-size: 12px;
+  color: #d3c1eb;
+  letter-spacing: 0.08em;
+}
+.tp-token .tp-chapter-heading p,
+.tp-token .tp-panel-enter > p:not(.tp-note),
+.tp-token .tp-settlement-step p,
+.tp-token .tp-allocation-detail p,
+.tp-token .tp-release-stages p,
+.tp-token .tp-governance-card p,
+.tp-token .tp-section-intro > p,
+.tp-token .tp-accordion details > p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #cbc5d2;
+}
+.tp-token .tp-panel-enter > p:not(.tp-note) {
+  min-height: 0;
+}
+.tp-token .tp-utility-panel {
+  min-height: 0;
+}
+.tp-token .tp-operation-flow {
+  margin-bottom: 0;
+}
+.tp-token .tp-utility-tabs button {
+  font-size: 13px;
+  color: #c6bed0;
+}
+.tp-token .tp-operation-flow span {
+  font-size: 13px;
+  color: #d8cce5;
+}
+.tp-token .tp-operation-flow small {
+  color: #a995bc;
+  font-size: 11px;
+}
+.tp-token .tp-allocation-list button {
+  font-size: 14px;
+  color: #d6cedf;
+}
+.tp-token .tp-allocation-list strong {
+  font-size: 14px;
+  color: #f5edff;
+}
+.tp-token .tp-allocation-detail {
+  min-height: 0;
+}
+.tp-token .tp-allocation-caption .tp-eyebrow,
+.tp-token .tp-ring-value > span {
+  font-size: 12px;
+  color: #c9b9da;
+}
+.tp-token .tp-allocation-caption p,
+.tp-token .tp-source-link,
+.tp-token .tp-note,
+.tp-token .tp-chapter-footnote,
+.tp-token .tp-governance-note p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #bbb1c7;
+}
+.tp-token .tp-tag,
+.tp-token .tp-tags span,
+.tp-token .tp-segmented button {
+  font-size: 12px;
+  color: #d1c2e0;
+}
+.tp-token .tp-parameter-grid > div {
+  min-height: 82px;
+  padding-block: 19px;
+  gap: 8px;
+}
+.tp-token .tp-parameter-grid dt {
+  font-size: 14px;
+  color: #c2b6cd;
+}
+.tp-token .tp-parameter-grid dd {
+  font-size: 16px;
+  color: #f1eaf8;
+}
+.tp-token .tp-release-table-wrap :is(th, td) {
+  font-size: 14px;
+  color: #d7cddd;
+}
+.tp-token .tp-floor-links a {
+  font-size: 13px;
+  color: #ccc2d8;
+}
+.tp-token .tp-stair-map a {
+  font-size: 13px;
+  color: #c6b8d4;
+}
+.tp-token .tp-depth-meta .tp-eyebrow {
+  font-size: 11px;
+}
+.tp-token .tp-depth-readout .tp-eyebrow {
+  font-size: 12px;
+}
+.tp-token .tp-flight-caption {
+  background: #141217f5;
+  text-shadow: none;
+}
+.tp-token .tp-flight-caption .tp-eyebrow {
+  color: #d7c5eb;
+}
+.tp-token .tp-flight-instruction,
+.tp-token .tp-skip-flight,
+.tp-token .tp-descent-cue {
+  color: #d0c5de;
+}
+@media (max-width: 700px) {
+  .tp-token .tp-chapters {
+    padding-inline: 0;
+    border-radius: 0;
+    box-shadow: 0 0 0 20px #101012;
+  }
+  .tp-token .tp-chapter {
+    padding-block: 65px;
+    min-height: auto;
+  }
+  .tp-token .tp-hero-copy > p {
+    font-size: 16px;
+    max-width: 330px;
+  }
+  .tp-token .tp-hero-copy::before {
+    inset: -18px -18px;
+    background: #101012ec;
+    border-radius: 24px;
+  }
+  .tp-token .tp-chapter-heading p {
+    font-size: 16px;
+  }
+  .tp-token .tp-allocation-caption .tp-eyebrow {
+    font-size: 12px;
+  }
+  .tp-token .tp-allocation-detail {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .tp-token .tp-settlement-step p {
+    font-size: 16px;
+  }
+}

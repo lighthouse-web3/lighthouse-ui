@@ -1,7 +1,14 @@
+import LinkArrow from "./LinkArrow";
 import { useState } from "react";
-import { MdArrowOutward } from "react-icons/md";
 
-export default function MemoryConsole({ agent, memory, status, onSave }) {
+export default function MemoryConsole({
+  agent,
+  agents,
+  onSelectAgent,
+  memory,
+  status,
+  onSave,
+}) {
   const [draft, setDraft] = useState(
     "Keep my answers concise. Use British English.",
   );
@@ -9,14 +16,14 @@ export default function MemoryConsole({ agent, memory, status, onSave }) {
     status === "saved"
       ? "Memory saved to the Lighthouse demo."
       : memory
-        ? `${agent.name} can read the shared memory.`
-        : `Ready to remember with ${agent.name}.`;
+        ? `Shared memory in the ${agent.name} demo.`
+        : `${agent.name} selected for this demo.`;
   const detail =
     status === "saved"
       ? `Now choose another agent to retrieve: “${memory.text}”`
       : memory
         ? `“${memory.text}” · Saved via ${memory.writer} in this demo.`
-        : "Save a sample memory, then select another agent to retrieve it.";
+        : "Sample text stays in this page. Save it, then select another agent.";
 
   function submit(event) {
     event.preventDefault();
@@ -29,12 +36,42 @@ export default function MemoryConsole({ agent, memory, status, onSave }) {
   return (
     <div className="memory-console">
       <div className="console-title">
-        <span className="small-icon">{agent.symbol}</span>
-        <div>
-          <span className="overline">SELECTED AGENT</span>
-          <strong>{agent.name}</strong>
+        <span className="small-icon">
+          <img
+            src={agent.logo}
+            alt={`${agent.name} logo`}
+            width="28"
+            height="28"
+          />
+        </span>
+        <div className="agent-select-field">
+          <label className="overline" htmlFor="memory-agent">
+            Selected agent
+          </label>
+          <div className="agent-select-wrap">
+            <select
+              id="memory-agent"
+              name="agent"
+              value={agent.id}
+              onChange={(event) => onSelectAgent(event.target.value)}
+            >
+              {agents.map((option) => (
+                <option key={option.id} value={option.id}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path
+                d="m4 6 4 4 4-4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
         </div>
-        <span className="demo-pill">Demo session</span>
       </div>
       <form onSubmit={submit}>
         <label htmlFor="memory-input">What should your agents remember?</label>
@@ -51,7 +88,13 @@ export default function MemoryConsole({ agent, memory, status, onSave }) {
             }}
           />
           <button className="button primary" type="submit">
-            {status === "saved" ? ("Saved \u2713") : (<>Save memory <MdArrowOutward /></>)}
+            {status === "saved" ? (
+              "Saved ✓"
+            ) : (
+              <>
+                Save memory <LinkArrow />
+              </>
+            )}
           </button>
         </div>
       </form>

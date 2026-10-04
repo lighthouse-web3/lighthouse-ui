@@ -102,6 +102,11 @@ const nextConfig = {
           destination: "/use-cases.md",
         },
         {
+          source: "/token",
+          has: [markdownAcceptHeader],
+          destination: "/token.md",
+        },
+        {
           source: "/use-cases/:path*",
           has: [markdownAcceptHeader],
           destination: "/use-cases/:path*.md",
@@ -162,6 +167,10 @@ const nextConfig = {
         {
           source: "/use-cases.md",
           destination: "/api/markdown/use-cases",
+        },
+        {
+          source: "/token.md",
+          destination: "/api/markdown/token",
         },
         {
           source: "/use-cases/:path*.md",

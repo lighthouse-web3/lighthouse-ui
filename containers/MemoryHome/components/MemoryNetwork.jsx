@@ -109,11 +109,11 @@ export default function MemoryNetwork({
           </h2>
         </div>
         <p>
-          Connect the dots between your agents.
+          Connected agents can use the same saved context.
           <br />
-          Select a model. Save a memory.
+          Try it in this demo: select an agent and save a sample.
           <br />
-          Pick another and watch it carry over.
+          Select another to see the same memory.
         </p>
       </div>
       <div className="network-wrap reveal">
@@ -218,12 +218,18 @@ export default function MemoryNetwork({
         </div>
         <MemoryConsole
           agent={agents[selected]}
+          agents={agents}
+          onSelectAgent={(id) =>
+            selectAgent(agents.findIndex((agent) => agent.id === id))
+          }
           memory={memory}
           status={status}
           onSave={saveMemory}
         />
         <div className="network-caption">
-          <span>One memory layer. Your choice of agents.</span>
+          <span>
+            Connect supported clients to use shared memory in your own workflow.
+          </span>
         </div>
       </div>
     </section>

@@ -1,0 +1,130 @@
+/*
+ * Gives the memory UI the starting point it was designed against.
+ *
+ * The design drop is built as a standalone site: browser defaults, then its
+ * own stylesheets. In this app two other things get there first -- Tailwind's
+ * preflight and the element rules in styles/globals.scss -- so anything the
+ * design leaves at a browser default (a button's padding, a heading's weight)
+ * renders differently here than in the team's own build.
+ *
+ * This file is not part of the drop. It must be imported after globals.scss
+ * and tailwind.css and before every file in ./styles, so that it undoes the
+ * host and is then overridden by the design.
+ *
+ * It is a property-by-property inverse of node_modules/tailwindcss/preflight.css
+ * rather than `all: revert`, on purpose. `revert` also discards presentational
+ * hints, and `all` would take every one of them: the width/height attributes
+ * on images and the fill/stroke attributes on every inline SVG icon. Only the
+ * properties preflight touches are reverted here, and none of those carry a
+ * hint this UI uses. If Tailwind is upgraded, re-check against its preflight.
+ *
+ * Everything sits under :where(), so it has no specificity and every rule in
+ * ./styles wins; it is unlayered, so it still beats preflight, which is layered.
+ */
+
+:where(.memory-page),
+:where(.memory-page) *,
+:where(.memory-page) ::before,
+:where(.memory-page) ::after,
+:where(.memory-page) ::backdrop,
+:where(.memory-page) ::file-selector-button {
+  box-sizing: revert;
+  margin: revert;
+  padding: revert;
+  border: revert;
+}
+
+:where(.memory-page) hr {
+  height: revert;
+  color: revert;
+  border-top-width: revert;
+}
+
+:where(.memory-page) a {
+  color: revert;
+  text-decoration: revert;
+}
+
+:where(.memory-page) :where(code, kbd, samp, pre) {
+  font-family: revert;
+  font-feature-settings: revert;
+  font-variation-settings: revert;
+  font-size: revert;
+}
+
+:where(.memory-page) small {
+  font-size: revert;
+}
+
+:where(.memory-page) :where(sub, sup) {
+  font-size: revert;
+  line-height: revert;
+  position: revert;
+  vertical-align: revert;
+  top: revert;
+  bottom: revert;
+}
+
+:where(.memory-page) table {
+  text-indent: revert;
+  border-color: revert;
+  border-collapse: revert;
+}
+
+:where(.memory-page) :where(ol, ul, menu) {
+  list-style: revert;
+}
+
+:where(.memory-page) :where(img, svg, video, canvas, audio, iframe, embed, object) {
+  display: revert;
+  vertical-align: revert;
+}
+
+/* preflight also sets height: auto here. That one cannot be reverted without
+ * losing the height attribute along with it, so it is left in place; an image
+ * whose attributes match its real aspect ratio is unaffected. */
+:where(.memory-page) :where(img, video) {
+  max-width: revert;
+}
+
+:where(.memory-page) :where(button, input, select, optgroup, textarea),
+:where(.memory-page) ::file-selector-button {
+  font: revert;
+  font-feature-settings: revert;
+  font-variation-settings: revert;
+  letter-spacing: revert;
+  color: revert;
+  border-radius: revert;
+  background-color: revert;
+  opacity: revert;
+  appearance: revert;
+}
+
+:where(.memory-page) ::placeholder {
+  opacity: revert;
+  color: revert;
+}
+
+:where(.memory-page) textarea {
+  resize: revert;
+}
+
+/* globals.scss styles bare h1-h6 at element specificity, which a :where()
+ * selector cannot outrank, so this one rule carries the specificity of a
+ * single element -- the same as the globals rule, and later in the cascade.
+ * font-size and font-weight are preflight's; the other two are globals'. */
+:where(.memory-page) :is(h1, h2, h3, h4, h5, h6) {
+  font-size: revert;
+  font-weight: revert;
+  letter-spacing: revert;
+  line-height: revert;
+}
+
+/* globals.scss puts overflow-x: clip on <html>. The design puts
+ * overflow-x: hidden on <body> and expects it to propagate to the viewport,
+ * which only happens while <html> is `visible`. Left as clip, <body> becomes
+ * its own scroll container and every position: sticky scene on the token and
+ * use-case pages stops sticking. */
+html:where(:has(.memory-page)) {
+  overflow-x: visible;
+}

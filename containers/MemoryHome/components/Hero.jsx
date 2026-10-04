@@ -1,7 +1,7 @@
-import { MdArrowOutward } from "react-icons/md";
+import Investors from "./Investors";
 export default function Hero() {
   return (
-    <section className="hero" id="home">
+    <section className="hero hero-with-backers" id="home">
       <div className="hero-backdrop" id="hero-video" aria-hidden="true">
         <video
           className="hero-film"
@@ -10,9 +10,9 @@ export default function Hero() {
           loop
           playsInline
           preload="auto"
-          poster="/memory/lighthouse-hero-poster.jpg"
+          poster="/assets/lighthouse-hero-poster.jpg"
         >
-          <source src="/memory/lighthouse-hero-loop.mp4" type="video/mp4" />
+          <source src="/assets/lighthouse-hero-loop.mp4" type="video/mp4" />
         </video>
         <div className="video-film-overlay"></div>
         <div className="hero-grain"></div>
@@ -22,44 +22,27 @@ export default function Hero() {
         <h1>
           Give every agent
           <br />
-          <span>a persistent brain.</span>
+          <span>a persistent brain</span>
         </h1>
         <p className="hero-copy">
-          One verifiable memory layer for the context your agents need to remember,
-          carry and build on.
+          Long-term memory for AI agents. Save project context, preferences and
+          decisions, then retrieve what matters in the next session.
         </p>
         <div className="hero-actions">
-          <a className="button primary" href="#memory">
-            Explore shared memory <MdArrowOutward />
+          <a className="button primary" href="https://memory.lighthouse.storage/">
+            Try the memory demo
           </a>
           <a
             className="text-link"
-            href="https://docs.lighthouse.storage/memory/intro"
+            href="https://docs.lighthouse.storage/memory/quick-start"
             target="_blank"
             rel="noopener"
           >
-            Build on Lighthouse <MdArrowOutward />
+            Read the quick start
           </a>
         </div>
       </div>
-      <div className="hero-foot">
-        <span>
-          <i></i>PERSISTENT CONTEXT
-        </span>
-        <span>
-          <i></i>PORTABLE ACROSS AGENTS
-        </span>
-        <span>
-          <i></i>VERIFIABLE BY DESIGN
-        </span>
-      </div>
-      <a
-        className="video-explore"
-        href="#memory"
-        aria-label="Explore the memory network"
-      >
-        ↓
-      </a>
+      <Investors hero />
     </section>
   );
 }
