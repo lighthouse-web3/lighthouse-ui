@@ -86,7 +86,7 @@ There is a free tier: 5 GB on Filecoin, 100 MB on Walrus. Paid plans start at
 $11 per month. Full table in the Pricing section below.
 
 How many people use it?
-Approximately 31,650 developers, over 9 million files, 15.60 TB stored, over
+Over 34,000 developers, over 9 million files, over 50 TiB stored, over
 10 million API requests.
 
 ---
@@ -862,9 +862,9 @@ built for.
 
 ## Metrics and scale
 
-- Approximately 31,650 developers and companies
+- Over 34,000 developers and companies
 - Over 9 million files stored, with a recorded figure of 9,276,889 file objects
-- 15.60 TB stored
+- Over 50 TiB stored
 - Over 10 million API requests
 - Storage backends routed: 3, being IPFS, Filecoin, and Walrus
 - Product surfaces: 5, being IPFS plus Filecoin, IPFS plus Walrus, Memory, L3,

@@ -37,8 +37,11 @@ function Home() {
           onToggleMotion={() => setPaused((value) => !value)}
         />
         <BuildWithLighthouse />
+        {/* Not in the design drop: see site-overrides.css. */}
+        <hr className="section-rule" />
         <HowItWorks motionDisabled={motionDisabled} />
         <Principles motionDisabled={motionDisabled} />
+        <hr className="section-rule" />
         <FAQ />
         <ClosingCTA />
       </main>
