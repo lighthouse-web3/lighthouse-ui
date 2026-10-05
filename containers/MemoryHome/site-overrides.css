@@ -9,7 +9,7 @@
 
 /*
  * Two section boundaries on the homepage were 260-270px of empty page: under
- * the "Built on Lighthouse" logos, and between the lighthouse and Questions.
+ * the "Trusted By" logos, and between the lighthouse and Questions.
  * Each is now 80px, a rule, then 100px -- the same distance the page already
  * leaves under its other section rules.
  */
@@ -72,27 +72,15 @@
 }
 
 /*
- * The nav has seven links here, one more than the design drop ("Contact us"),
- * and the drop was already at its limit just above the phone breakpoint.
- *
- * 1101-1220px: the links reached the logo and the button. A tighter gap gives
- * the row its margin back; above 1220px there is room for the designed 32px.
+ * 761-840px (tablet portrait): the nav links do not fit beside the logo and
+ * the button, a limit the design drop already had just above its phone
+ * breakpoint. This range uses the menu button the design has for phones. The
+ * rules below mirror the drop's own `@media (max-width: 760px)` nav rules in
+ * usecases.css and responsive.css; if those change in a new drop, change
+ * these to match. Unlike on phones the logo stays, because here there is room
+ * for it. From 841px up the six links have at least 26px clear on each side.
  */
-@media (min-width: 1101px) and (max-width: 1220px) {
-  .nav nav {
-    gap: 22px;
-  }
-}
-
-/*
- * 761-920px (tablet portrait): seven links do not fit beside the logo and the
- * button at any readable size, so this range uses the menu button the design
- * already has for phones. The rules below mirror the drop's own
- * `@media (max-width: 760px)` nav rules in usecases.css and responsive.css;
- * if those change in a new drop, change these to match. Unlike on phones the
- * logo stays, because here there is room for it.
- */
-@media (min-width: 761px) and (max-width: 920px) {
+@media (min-width: 761px) and (max-width: 840px) {
   .nav nav {
     display: none;
   }

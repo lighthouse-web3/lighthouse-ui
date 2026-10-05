@@ -69,8 +69,8 @@ export default function Navbar() {
         aria-label="Main navigation"
       >
         <a href={anchor("memory")}>Memory network</a>
-        <a href={anchor("how")}>How it works</a>
-        {/* Order and the Contact us link differ from the design drop. */}
+        {/* The links differ from the design drop: "How it works" is removed,
+            Storage is moved up, and Contact us is added. */}
         <a href="/storage">Storage</a>
         <div className="uc-nav-dropdown">
           <button

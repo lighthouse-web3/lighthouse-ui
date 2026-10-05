@@ -158,7 +158,7 @@ function ClientCarousel() {
     <div
       className="client-carousel"
       role="region"
-      aria-label="Teams building on Lighthouse"
+      aria-label="Teams that trust Lighthouse"
       tabIndex={0}
     >
       <div className="client-track">
@@ -355,7 +355,8 @@ export default function BuildWithLighthouse() {
         </aside>
       </div>
       <div className="build-client-proof reveal">
-        <span className="build-client-label">Built on Lighthouse</span>
+        {/* The design drop labels this row "Built on Lighthouse". */}
+        <span className="build-client-label">Trusted By</span>
         <ClientCarousel />
       </div>
     </section>
