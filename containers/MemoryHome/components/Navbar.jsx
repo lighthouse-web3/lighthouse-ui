@@ -70,6 +70,8 @@ export default function Navbar() {
       >
         <a href={anchor("memory")}>Memory network</a>
         <a href={anchor("how")}>How it works</a>
+        {/* Order and the Contact us link differ from the design drop. */}
+        <a href="/storage">Storage</a>
         <div className="uc-nav-dropdown">
           <button
             ref={trigger}
@@ -165,13 +167,19 @@ export default function Navbar() {
         >
           Token
         </a>
-        <a href="/storage">Storage</a>
         <a
           href="https://docs.lighthouse.storage/"
           target="_blank"
           rel="noopener"
         >
           Docs
+        </a>
+        <a
+          href="https://airtable.com/shrPFC2TgojuOAYO4"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Contact us
         </a>
       </nav>
       <a href="https://memory.lighthouse.storage/" className="nav-cta">

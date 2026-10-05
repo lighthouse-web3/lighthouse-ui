@@ -70,3 +70,104 @@
   overflow-wrap: anywhere;
   min-width: 0;
 }
+
+/*
+ * The nav has seven links here, one more than the design drop ("Contact us"),
+ * and the drop was already at its limit just above the phone breakpoint.
+ *
+ * 1101-1220px: the links reached the logo and the button. A tighter gap gives
+ * the row its margin back; above 1220px there is room for the designed 32px.
+ */
+@media (min-width: 1101px) and (max-width: 1220px) {
+  .nav nav {
+    gap: 22px;
+  }
+}
+
+/*
+ * 761-920px (tablet portrait): seven links do not fit beside the logo and the
+ * button at any readable size, so this range uses the menu button the design
+ * already has for phones. The rules below mirror the drop's own
+ * `@media (max-width: 760px)` nav rules in usecases.css and responsive.css;
+ * if those change in a new drop, change these to match. Unlike on phones the
+ * logo stays, because here there is room for it.
+ */
+@media (min-width: 761px) and (max-width: 920px) {
+  .nav nav {
+    display: none;
+  }
+  .uc-mobile-toggle {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-left: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #ceb4fb08;
+    color: #d8bdf6;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .nav-cta {
+    margin-left: 12px;
+  }
+  .nav nav.uc-nav-open {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 9px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 14px;
+    background: #17161cf8;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    max-height: calc(100dvh - 110px);
+    overflow: auto;
+  }
+  .uc-nav-open > a {
+    padding: 13px 10px;
+    font-size: 14px;
+  }
+  .uc-nav-dropdown > button {
+    padding: 13px 10px;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+  .uc-menu {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    left: auto;
+    transform: none;
+    max-height: none;
+    margin: 5px 0 9px;
+    border-radius: 14px;
+    box-shadow: inset 0 1px #ffffff0d;
+    background: linear-gradient(145deg, #292130c9, #121017e8);
+  }
+  .uc-menu-items > a {
+    padding: 10px 7px;
+    gap: 10px;
+  }
+  .uc-menu-icon,
+  .uc-menu-icon img {
+    width: 40px;
+    height: 40px;
+  }
+  .uc-menu-copy small {
+    font-size: 12px;
+  }
+  .uc-menu-arrow {
+    display: none;
+  }
+  .uc-menu .uc-menu-all {
+    padding: 13px 8px 17px;
+  }
+  .uc-menu-all small {
+    font-size: 10px;
+  }
+}
