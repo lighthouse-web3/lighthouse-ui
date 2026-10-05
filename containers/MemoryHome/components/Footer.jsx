@@ -192,7 +192,7 @@ export default function Footer() {
             name="memory-newsletter-email"
             autoComplete="email"
           />
-          <button type="submit">Request subscription</button>
+          <button type="submit">Subscribe</button>
           <p className="footer-newsletter-status" role="status">
             {notice}
           </p>
