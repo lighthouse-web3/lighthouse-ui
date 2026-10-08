@@ -426,11 +426,9 @@ export const footerData = {
       path: null,
       link: "https://calendly.com/nanditmehra/30min",
     },
-    {
-      text: "T&C",
-      path: null,
-      link: "https://gateway.lighthouse.storage/ipfs/bafkreidx6qtkebzxqjgcei5vhbfsfk2uf7iyaypppgvmhophv7q255x6x4",
-    },
+    // The "T&C" link is removed for now, pending a revised terms document.
+    // lib/markdown.js looks this entry up by its text; re-add it here with
+    // the new link and /terms-condition.md picks it up again.
   ],
 };
 

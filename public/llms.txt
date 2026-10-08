@@ -26,7 +26,6 @@ Every page on this site is also available as markdown: append `.md` to any path,
 - [Blog index](https://www.lighthouse.storage/blogs.md): posts, each also available at `/blogs/{title}.md`
 - [Markdown sitemap](https://www.lighthouse.storage/sitemap.md): every canonical URL with its `.md` alternate
 - [Terms and conditions](https://www.lighthouse.storage/terms-condition.md): terms of service
-- [Whitepaper](https://www.lighthouse.storage/whitepaper.md): protocol and architecture background
 
 ## AI agents
 
