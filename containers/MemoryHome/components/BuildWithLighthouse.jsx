@@ -349,7 +349,8 @@ export default function BuildWithLighthouse() {
             </h3>
             <h3>
               <strong>50 TiB</strong>
-              <span>Data stored across the network</span>
+              {/* The design drop reads "Data stored across the network". */}
+              <span>Storage consumed</span>
             </h3>
           </div>
         </aside>
