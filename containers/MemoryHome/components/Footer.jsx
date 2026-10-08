@@ -172,13 +172,8 @@ export default function Footer() {
           >
             Book a call
           </a>
-          <a
-            href="https://gateway.lighthouse.storage/ipfs/bafkreidx6qtkebzxqjgcei5vhbfsfk2uf7iyaypppgvmhophv7q255x6x4"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Terms and conditions
-          </a>
+          {/* "Terms and conditions" is removed for now, pending a revised
+              document. The design drop has the link here. */}
         </div>
         <form className="footer-col footer-newsletter" onSubmit={subscribe}>
           <h3>Newsletter</h3>

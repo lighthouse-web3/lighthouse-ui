@@ -72,11 +72,6 @@ const nextConfig = {
           destination: "/terms-condition.md",
         },
         {
-          source: "/whitepaper",
-          has: [markdownAcceptHeader],
-          destination: "/whitepaper.md",
-        },
-        {
           source: "/turby",
           has: [markdownAcceptHeader],
           destination: "/turby.md",
@@ -143,10 +138,6 @@ const nextConfig = {
         {
           source: "/terms-condition.md",
           destination: "/api/markdown/terms-condition",
-        },
-        {
-          source: "/whitepaper.md",
-          destination: "/api/markdown/whitepaper",
         },
         {
           source: "/turby.md",

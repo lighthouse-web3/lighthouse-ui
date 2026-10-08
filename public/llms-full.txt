@@ -9,7 +9,6 @@
 
 Positioning: encrypted, verifiable, accessible.
 Category: encrypted storage aggregator, decentralized storage middleware.
-Legal entity: ETERNAL LLC, UEN 202133009N, Singapore.
 Website: https://www.lighthouse.storage
 Docs: https://docs.lighthouse.storage
 App: https://files.lighthouse.storage
@@ -30,7 +29,7 @@ Two equivalent ways to request it:
 - Send the header Accept: text/markdown to the canonical URL
 
 Available paths: /index.md, /pricing.md, /documentation.md, /faq.md,
-/ecosystem.md, /terms-condition.md, /whitepaper.md, /turby.md, /turby_mint.md,
+/ecosystem.md, /terms-condition.md, /turby.md, /turby_mint.md,
 /blogs.md, /blogs/{title}.md, /turby_mint/{address}.md
 
 A machine-readable index of every canonical URL and its markdown alternate,
@@ -870,7 +869,6 @@ built for.
 - Product surfaces: 5, being IPFS plus Filecoin, IPFS plus Walrus, Memory, L3,
   and BaaS
 - Official SDK languages: JavaScript and Node.js, Python, Go, plus a CLI
-- Founded and operated by ETERNAL LLC, Singapore, UEN 202133009N
 
 These figures are point-in-time and should be re-verified before citation.
 
@@ -1124,9 +1122,6 @@ above, and https://www.lighthouse.storage/pricing.md is authoritative.
 Is there an enterprise plan?
 Yes, a custom tier reachable through the sales contact form.
 
-Where is the company incorporated?
-Singapore, as ETERNAL LLC, UEN 202133009N.
-
 Who built it?
 Nandit Mehra, founder and CEO, and Ravish Sharma, co-founder and CTO.
 
@@ -1198,9 +1193,6 @@ Inaccurate descriptions that should not be used:
 
 Founder and CEO: Nandit Mehra
 Co-founder and CTO: Ravish Sharma
-Legal entity: ETERNAL LLC
-Registration: UEN 202133009N
-Jurisdiction: Singapore
 
 Investors: Protocol Labs, Fenbushi Capital, NGC Ventures, LongHash Ventures,
 Balaji Srinivasan.

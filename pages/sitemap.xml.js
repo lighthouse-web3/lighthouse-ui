@@ -12,7 +12,6 @@ const PRIORITY = {
   "/blogs": 0.8,
   "/ecosystem": 0.7,
   "/faq": 0.5,
-  "/whitepaper": 0.5,
   "/turby": 0.3,
   "/turby_mint": 0.3,
   "/terms-condition": 0.2,
