@@ -1,7 +1,16 @@
 import { useState } from "react";
-import { allocations } from "../data/tokenEconomy";
+import { allocations, tokenFacts } from "../data/tokenEconomy";
 
-const sliceAngle = 360 / allocations.length;
+// Each slice spans its share of the circle. The design drop drew five equal
+// slices while every share was TBD.
+const slices = allocations.reduce((list, a) => {
+  const start = list.length ? list[list.length - 1].end : 0;
+  return [...list, { start, end: start + (a.share / 100) * 360 }];
+}, []);
+
+const formatShare = (share) => `${share}%`;
+const tokenCount = (share) =>
+  Math.round((share / 100) * tokenFacts.totalSupply).toLocaleString("en-GB");
 
 const polar = (radius, angle) => {
   const radians = ((angle - 90) * Math.PI) / 180;
@@ -9,13 +18,14 @@ const polar = (radius, angle) => {
 };
 
 function segment(index) {
-  const start = index * sliceAngle + 3;
-  const end = (index + 1) * sliceAngle - 3;
+  const start = slices[index].start + 3;
+  const end = slices[index].end - 3;
+  const large = end - start > 180 ? 1 : 0;
   const a = polar(142, start),
     b = polar(142, end);
   const c = polar(100, end),
     d = polar(100, start);
-  return `M ${a} A 142 142 0 0 1 ${b} L ${c} A 100 100 0 0 0 ${d} Z`;
+  return `M ${a} A 142 142 0 ${large} 1 ${b} L ${c} A 100 100 0 ${large} 0 ${d} Z`;
 }
 
 export default function TokenAllocation() {
@@ -55,7 +65,8 @@ export default function TokenAllocation() {
               ))}
             </g>
             {allocations.map((a, i) => {
-              const angle = ((i * sliceAngle + sliceAngle / 2 - 90) * Math.PI) / 180;
+              const middle = (slices[i].start + slices[i].end) / 2;
+              const angle = ((middle - 90) * Math.PI) / 180;
               const selected = active === i;
               return (
                 <path
@@ -77,18 +88,21 @@ export default function TokenAllocation() {
           </svg>
           <div className="allocation-centre">
             <span>Allocation</span>
-            <strong>TBD</strong>
+            <strong>{formatShare(item.share)}</strong>
             <i style={{ background: item.color }} />
           </div>
         </div>
         <div className="allocation-selection" aria-live="polite">
           <span style={{ color: item.color }}>{item.name}</span>
-          <p>Share and release schedule TBD</p>
+          <p>
+            {tokenCount(item.share)} tokens of {tokenFacts.totalSupplyLabel}{" "}
+            total supply
+          </p>
         </div>
       </figure>
       <div
         className="allocation-key"
-        aria-label="Allocation categories; all shares TBD"
+        aria-label={`Allocation of the ${tokenFacts.totalSupplyLabel} total supply by category`}
       >
         <div className="allocation-key-heading">
           <span>Category</span>
@@ -106,7 +120,7 @@ export default function TokenAllocation() {
           >
             <i aria-hidden="true" />
             <span>{a.name}</span>
-            <strong>TBD</strong>
+            <strong>{formatShare(a.share)}</strong>
           </button>
         ))}
       </div>

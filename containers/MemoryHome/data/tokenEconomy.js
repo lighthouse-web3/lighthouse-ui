@@ -1,20 +1,36 @@
-// Token utility model. Allocation sizes are TBD.
+// Token facts and allocation. The page, the allocation chart and the
+// /token.md crawler version all read from here.
+export const tokenFacts = {
+  totalSupply: 1_000_000_000,
+  totalSupplyLabel: "1B",
+  network: "Robinhood Chain",
+  launchDate: "14 October 2026",
+  contractAddress: "0xfC5A5c521C80d8e1d6B5Aee6454B8C9483C91BFf",
+  virtualsUrl: "https://app.virtuals.io/virtuals/144804",
+};
+
+// Shares are percentages of total supply and must sum to 100; the chart
+// draws each slice in proportion.
 export const allocations = [
-  { name: "Team", color: "#d8c2f4" },
-  { name: "Private investors & angels", color: "#91b4cf" },
-  { name: "Liquidity pool", color: "#a9cbd0" },
-  { name: "Protocol safeguard", color: "#b59bd0" },
-  { name: "Community & ecosystem", color: "#9799ce" },
+  { name: "Automated Capital Formation (ACF)", share: 25, color: "#b59bd0" },
+  { name: "Team", share: 25, color: "#d8c2f4" },
+  { name: "Investors & advisors", share: 15.69, color: "#91b4cf" },
+  {
+    name: "Ecosystem, staking rewards & market making",
+    share: 10.31,
+    color: "#9799ce",
+  },
+  { name: "Liquidity pools", share: 24, color: "#a9cbd0" },
 ];
 
 export const utilities = [
   {
     id: "lock",
-    name: "Lock for credits",
+    name: "Stake and lock for credits",
     icon: "shield",
-    label: "Tokens are locked",
-    title: "Lock for service credits.",
-    body: "Commit tokens for a defined term and receive a reserved service-credit balance. Your tokens stay locked while you use the credits.",
+    label: "Tokens are staked and locked",
+    title: "Stake and lock for service credits.",
+    body: "Stake and lock tokens for a defined term and receive a reserved service-credit balance. Your tokens stay staked and locked while you use the credits.",
     steps: [
       [
         "Review the terms",
@@ -23,7 +39,7 @@ export const utilities = [
       ["Use the credits", "Spend on eligible services at the published rates."],
       ["At maturity", "Withdraw the committed token amount, or renew."],
     ],
-    note: "Using credits does not reduce your locked token balance. Holding tokens alone does not generate credits.",
+    note: "Using credits does not reduce your staked and locked token balance. Holding tokens alone does not generate credits.",
   },
   {
     id: "pay",

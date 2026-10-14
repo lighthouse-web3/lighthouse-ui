@@ -159,3 +159,91 @@
     font-size: 10px;
   }
 }
+
+/*
+ * Token page tokenomics. The drop had four facts, one of them lock terms;
+ * with lock terms removed the row has three, so the grid matches. On phones
+ * the facts sit two to a row and the third spans both columns.
+ */
+.service-token-facts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 760px) {
+  .service-token-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+  .service-token-facts > div:nth-child(3):last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/*
+ * Contract address, in place of the drop's panel of TBD supply and contract
+ * details. Same strip treatment that panel had: a top rule, a darker band,
+ * 34px side padding.
+ */
+.token-contract {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px 28px;
+  padding: 23px 34px;
+  border-top: 1px solid #ffffff0d;
+  background: #09080e24;
+}
+.token-contract-address {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.token-contract-address span {
+  font-size: 12px;
+  color: #afa3bb;
+}
+.token-contract-address code {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 14px;
+  color: #e6d9f6;
+  overflow-wrap: normal;
+  user-select: all;
+}
+.token-contract-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.token-contract-actions button {
+  padding: 9px 14px;
+  border: 1px solid #ceb4fb38;
+  border-radius: 8px;
+  background: #ceb4fb0d;
+  color: #eadbf9;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.token-contract-actions button:hover {
+  border-color: #ceb4fb70;
+  background: #ceb4fb18;
+}
+.token-contract-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #c9b5e2;
+  font-size: 13px;
+}
+.token-contract-actions a:hover {
+  color: var(--lavender);
+}
+@media (max-width: 760px) {
+  .token-contract {
+    padding: 20px 25px;
+  }
+  .token-contract-address code {
+    font-size: 12px;
+  }
+}

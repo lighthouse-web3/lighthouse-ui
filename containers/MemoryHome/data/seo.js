@@ -53,7 +53,7 @@ export const pages = {
   "/token/": {
     title: "Lighthouse Token: Utility and Tokenomics",
     description:
-      "Read the proposed Lighthouse token model: lock tokens for service credits or pay for memory and storage. Allocation, supply and launch details are TBD.",
+      "The Lighthouse token: stake and lock for service credits, or pay for memory and storage. 1B total supply on Robinhood Chain, with a launch date of 14 October 2026.",
     name: "Lighthouse token",
   },
 };

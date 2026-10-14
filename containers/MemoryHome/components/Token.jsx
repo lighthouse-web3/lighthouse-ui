@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useReducedMotion } from "../hooks/useReducedMotion";
-import { utilities, floors } from "../data/tokenEconomy";
+import { utilities, floors, tokenFacts } from "../data/tokenEconomy";
 import TokenLighthouse3D from "./TokenLighthouse3D";
 import TokenAllocation from "./TokenAllocation";
+import LinkArrow from "./LinkArrow";
 
 
 
@@ -353,16 +354,16 @@ function CreditDetails() {
           <Icon name="shield" size={26} />
           <h3>Funded before issue</h3>
           <p>
-            Each accepted lock reserves its credits against a funded service
-            budget.
+            Each accepted stake and lock reserves its credits against a
+            funded service budget.
           </p>
         </article>
         <article>
           <Icon name="layers" size={26} />
           <h3>Separate balances</h3>
           <p>
-            Locked tokens and service credits are tracked separately. Using
-            credits does not spend locked tokens.
+            Service credits are tracked separately from staked and locked
+            tokens. Using credits does not spend them.
           </p>
         </article>
         <article>
@@ -384,8 +385,52 @@ function CreditDetails() {
         </ul>
       </div>
       <p className="service-credit-foot">
-        Lock-earned credits cannot be transferred or redeemed for cash.
+        Credits earned by staking and locking cannot be transferred or
+        redeemed for cash.
       </p>
+    </div>
+  );
+}
+
+function ContractAddress() {
+  const [copied, setCopied] = useState(false);
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(tokenFacts.contractAddress);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      // Clipboard access can be refused; the address stays selectable.
+    }
+  }
+  return (
+    <div className="token-contract">
+      <div className="token-contract-address">
+        <span>Token contract address</span>
+        {/* One break point in the middle, so a narrow screen splits the
+            address into even halves instead of orphaning its last character.
+            <wbr> adds nothing when the address is copied. */}
+        <code>
+          {tokenFacts.contractAddress.slice(0, 22)}
+          <wbr />
+          {tokenFacts.contractAddress.slice(22)}
+        </code>
+      </div>
+      <div className="token-contract-actions">
+        <button type="button" onClick={copy}>
+          {copied ? "Copied" : "Copy address"}
+        </button>
+        <a
+          href={tokenFacts.virtualsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View on Virtuals <LinkArrow />
+        </a>
+      </div>
+      <span className="build-sr-only" role="status">
+        {copied ? "Contract address copied" : ""}
+      </span>
     </div>
   );
 }
@@ -393,12 +438,13 @@ function CreditDetails() {
 function Tokenomics() {
   return (
     <div className="service-tokenomics tp-glass" data-tp-reveal>
+      {/* Changed from the design drop, which showed four TBD facts (including
+          lock terms) and a panel of ten TBD supply and contract details. */}
       <dl className="service-token-facts">
         {[
-          ["Total supply", "TBD"],
-          ["Network", "TBD"],
-          ["Launch date", "TBD"],
-          ["Lock terms", "TBD"],
+          ["Total supply", tokenFacts.totalSupplyLabel],
+          ["Network", tokenFacts.network],
+          ["Launch date", tokenFacts.launchDate],
         ].map(([label, value]) => (
           <div key={label}>
             <dt>{label}</dt>
@@ -407,31 +453,7 @@ function Tokenomics() {
         ))}
       </dl>
       <TokenAllocation />
-      <details className="service-parameter-details">
-        <summary>
-          <span>Supply, release and contract details</span>
-          <span className="tp-disclosure-plus" aria-hidden="true" />
-        </summary>
-        <dl>
-          {[
-            "Maximum supply",
-            "Initial circulating supply",
-            "Token standard",
-            "Contract address",
-            "Vesting and cliffs",
-            "Unlock schedule",
-            "Emission schedule",
-            "Lock terms and credit rates",
-            "Trading venues",
-            "Buyback or burn policy",
-          ].map((label) => (
-            <div key={label}>
-              <dt>{label}</dt>
-              <dd>TBD</dd>
-            </div>
-          ))}
-        </dl>
-      </details>
+      <ContractAddress />
     </div>
   );
 }
@@ -470,16 +492,17 @@ export default function Token() {
                 <em>token.</em>
               </h1>
               <p>
-                Two proposed uses: lock tokens for service credits, or spend
-                tokens on memory and storage.
+                Two proposed uses: stake and lock tokens for service credits, or
+                spend tokens on memory and storage.
               </p>
               <div className="token-hero-paths">
                 <a href="#token-utility">
                   <span>
-                    <Icon name="shield" size={20} /> Lock for credits{" "}
+                    <Icon name="shield" size={20} /> Stake and lock for
+                    credits{" "}
                   </span>
                   <p>
-                    Use service credits. Withdraw your tokens when the lock
+                    Use service credits. Withdraw your tokens when the term
                     ends.
                   </p>
                 </a>
@@ -495,6 +518,14 @@ export default function Token() {
               <div className="tp-actions">
                 <a className="tp-button" href="#token-utility">
                   How it works
+                </a>
+                <a
+                  className="text-link"
+                  href={tokenFacts.virtualsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View on Virtuals <LinkArrow />
                 </a>
               </div>
             </div>
@@ -533,9 +564,9 @@ export default function Token() {
                 label="Utility"
                 title="Two ways to use the token."
               >
-                The proposed model separates locked tokens from tokens spent on
-                a service. Fiat and supported stablecoin payments remain
-                available.
+                The proposed model separates staked and locked tokens from
+                tokens spent on a service. Fiat and supported stablecoin
+                payments remain available.
               </ChapterHeading>
               <UtilityExplorer />
             </section>
@@ -556,8 +587,8 @@ export default function Token() {
                 label="Tokenomics"
                 title="Token allocation."
               >
-                Explore the allocation categories. Supply, shares and release
-                terms remain TBD.
+                How the {tokenFacts.totalSupplyLabel} total supply is allocated
+                across five categories.
               </ChapterHeading>
               <Tokenomics />
               <div className="service-resources">
