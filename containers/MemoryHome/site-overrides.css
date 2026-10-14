@@ -247,3 +247,23 @@
     font-size: 12px;
   }
 }
+
+/* Token page title: keep "token ($LLL)" on one line, so the ticker never
+ * drops to a line of its own. */
+.tp-token .tp-hero h1 em {
+  white-space: nowrap;
+}
+
+/*
+ * Token page, about 700-900px wide: the decorative glow behind the hero
+ * lighthouse spills past the right edge of the screen, so the page can be
+ * dragged sideways on tablets. Clipped at the page rather than at the hero:
+ * in that range the glow also extends past the hero's own box but is still
+ * on screen, and clipping there would cut a visible edge into it. `clip`,
+ * not `hidden`, because `hidden` would make this a scroll container and stop
+ * the hero and the journey rail from sticking -- the same reason
+ * globals.scss uses clip on <html> and <body>.
+ */
+main.tp-token {
+  overflow-x: clip;
+}
