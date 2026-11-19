@@ -2,6 +2,7 @@
 // /token.md crawler version all read from here.
 export const tokenFacts = {
   totalSupply: 1_000_000_000,
+  ticker: "$LLL",
   totalSupplyLabel: "1B",
   network: "Robinhood Chain",
   launchDate: "14 October 2026",

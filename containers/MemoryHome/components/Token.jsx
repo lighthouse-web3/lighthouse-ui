@@ -486,10 +486,11 @@ export default function Token() {
           <section className="tp-hero tp-shell" id="token-overview">
             <div className="token-studio-light" aria-hidden="true" />
             <div className="tp-hero-copy">
+              {/* The design drop ends the title "token." with no ticker. */}
               <h1>
                 The Lighthouse
                 <br />
-                <em>token.</em>
+                <em>token ({tokenFacts.ticker})</em>
               </h1>
               <p>
                 Two proposed uses: stake and lock tokens for service credits, or
