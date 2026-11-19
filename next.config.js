@@ -1,3 +1,4 @@
+const path = require("path");
 /** @type {import('next').NextConfig} */
 const withTM = require("next-transpile-modules")(["@rainbow-me/rainbowkit"]);
 
@@ -25,6 +26,14 @@ const nextConfig = {
     config.module.rules.push({
       test: /node_modules\/(viem|wagmi|@wagmi)/,
       use: [],
+    });
+
+    // Hand-written markdown served at /index.md and /faq.md. Imported as raw
+    // strings so the files stay plain markdown the team can edit directly.
+    config.module.rules.push({
+      test: /\.md$/,
+      include: path.join(__dirname, "lib/content"),
+      type: "asset/source",
     });
 
     return config;

@@ -1,50 +1,69 @@
-# Lighthouse Storage
+# Lighthouse
 
-> Lighthouse is an encrypted storage aggregator for developers and enterprises. One API and SDK route file storage across IPFS, Filecoin, and Walrus, with client-side threshold encryption and on-chain access control applied before data leaves the client.
+> Lighthouse makes two products. Lighthouse Memory is persistent, verifiable long-term memory for AI agents, shared across sessions, machines and every MCP-capable agent, including Claude Code, Claude Desktop and Cursor. Lighthouse Storage is encrypted decentralized storage: one API and SDK that route files across IPFS, Filecoin and Walrus, with client-side threshold encryption and on-chain access control.
 
-Lighthouse is not a storage network. It is the encryption, access-control, routing, and retrieval layer that sits above storage networks. Files are addressed by CID, encrypted client-side through Kavach (BLS threshold cryptography, so no single key node holds a complete key), and gated on conditions such as token balances, NFT ownership, contract return values, time windows, passkeys, or zkTLS proofs.
+Lighthouse Memory gives agents remember, recall and forget tools through a hosted MCP server or a TypeScript SDK, and stores every memory as a content-addressed blob (CID) on Lighthouse Storage, Walrus, or your own S3-compatible bucket. Lighthouse Storage is used directly by apps for files, NFT media, datasets and backups, with Kavach encryption and token-gated access. Over 34,000 developers use Lighthouse.
 
-Every page on this site is also available as markdown: append `.md` to any path, or send `Accept: text/markdown`. Prefer those over the HTML — they are generated from the same source of truth and carry no navigation chrome. `llms-full.txt` holds the long-form corpus: product detail, backend comparison, competitive positioning, and an extended FAQ.
+Every page on this site is also available as markdown: append `.md` to any path, or send `Accept: text/markdown`. Prefer those over the HTML. `llms-full.txt` holds the long-form corpus: how Memory and Storage work, how each compares with alternatives, pricing and an extended FAQ.
 
-## Core documentation
+## Lighthouse Memory (AI agent memory)
 
-- [Documentation home](https://docs.lighthouse.storage): entry point for all products and SDKs
-- [Quick start](https://docs.lighthouse.storage/quick-start): first upload in a few minutes
-- [Create an API key](https://docs.lighthouse.storage/how-to/create-an-api-key): authentication for every surface
-- [IPFS + Filecoin](https://docs.lighthouse.storage/intro): hot retrieval on IPFS with Filecoin deals underneath for durability
-- [IPFS + Walrus](https://docs.lighthouse.storage/ipfs-walrus/intro): erasure-coded blob storage on Sui, addressed as CIDs
-- [Encryption features](https://docs.lighthouse.storage/how-to/encryption-features/): share, revoke, and condition access to encrypted files
-- [Glossary](https://docs.lighthouse.storage/concepts/glossary): CID, deal, epoch, threshold encryption, and related terms
+- [What is Lighthouse Memory](https://docs.lighthouse.storage/memory/intro): durable, portable long-term memory for AI agents; remember / recall / forget; engines, storage and embedders
+- [Quick start](https://docs.lighthouse.storage/memory/quick-start): store and recall a first memory in minutes, offline first, then durable on Filecoin or Walrus
+- [Connect agents over MCP](https://docs.lighthouse.storage/memory/mcp/overview): hosted MCP server at `https://memory-api.lighthouse.storage/mcp` for Claude Code, Claude Desktop and any MCP client
+- [MCP tools](https://docs.lighthouse.storage/memory/mcp/tools-common): memory_remember, memory_recall, memory_list, memory_get, memory_forget, memory_status and more
+- [Memory dashboard](https://memory.lighthouse.storage): add memories, connect agents, manage storage, encryption, API keys and plans
+- [Encrypt your memories](https://docs.lighthouse.storage/memory/tutorials/dashboard-encryption): per-account key split across 5 key servers, decrypted only inside a Phala enclave; search keeps working
+- [Use your own bucket](https://docs.lighthouse.storage/memory/tutorials/dashboard-own-bucket): keep memories and the search index in Amazon S3, Cloudflare R2, Supabase or MinIO
+- [Encrypted Walrus engine (Memwal)](https://docs.lighthouse.storage/memory/tutorials/memwal-encrypted-memory): SEAL-encrypted memory with relayer-side search
+- [Choose a network](https://docs.lighthouse.storage/memory/how-to/choose-network): local folder, S3, IPFS + Filecoin or Walrus
+- [Rebuild and recovery](https://docs.lighthouse.storage/memory/how-to/rebuild-index): restore a full memory store on a new machine from one snapshot CID
+- [SDK overview](https://docs.lighthouse.storage/memory/sdk/overview): the `@lighthouse-ai/*` packages (core, engine-batched, engine-memwal, storages, embedders, cloud-sync)
+- [Use cases](https://www.lighthouse.storage/use-cases): memory for trading agents, prediction markets, tokenised assets and physical AI
 
 ## Site pages (markdown)
 
-- [Home](https://www.lighthouse.storage/index.md): positioning, key features, and the Lighthouse suite
-- [Pricing](https://www.lighthouse.storage/pricing.md): current plans and add-ons, generated from live site data
+- [Home](https://www.lighthouse.storage/index.md): Lighthouse Memory and Lighthouse Storage
+- [FAQ](https://www.lighthouse.storage/faq.md): Memory and storage questions, including encryption, deletion and limits
+- [Pricing](https://www.lighthouse.storage/pricing.md): Memory allowances and storage plans, generated from live site data
 - [Documentation index](https://www.lighthouse.storage/documentation.md): developer entry points
-- [FAQ](https://www.lighthouse.storage/faq.md): common pre-sales and technical questions
 - [Ecosystem](https://www.lighthouse.storage/ecosystem.md): projects building on Lighthouse
 - [Blog index](https://www.lighthouse.storage/blogs.md): posts, each also available at `/blogs/{title}.md`
 - [Markdown sitemap](https://www.lighthouse.storage/sitemap.md): every canonical URL with its `.md` alternate
 - [Terms and conditions](https://www.lighthouse.storage/terms-condition.md): terms of service
 
-## AI agents
+## Memory guides on the blog
 
-- [Memory](https://docs.lighthouse.storage/memory/intro): durable long-term memory for agents, persisted as verifiable blobs
-- [Connect agents over MCP](https://docs.lighthouse.storage/memory/how-to/mcp-setup): Model Context Protocol server for Claude Code, Claude Desktop, and other MCP runtimes
-- [MCP protocol reference](https://docs.lighthouse.storage/how-to/ai/mcp-protocol): storage as native agent tools
-- [x402 pay-per-use upload](https://docs.lighthouse.storage/tutorials/x402-pay-per-use-file-upload): an agent settles stablecoin payment on Base inline with an HTTP request, with no human approving each transaction
-- [Memory source](https://github.com/lighthouse-web3/memory): implementation, including batching and index rebuild
+- [Give Claude Code persistent memory with Lighthouse MCP](https://www.lighthouse.storage/blogs/Give%20Claude%20Code%20Persistent%20Memory%20with%20Lighthouse%20MCP)
+- [One memory layer shared across every AI model](https://www.lighthouse.storage/blogs/One%20Memory%20Layer%20Shared%20Across%20Every%20AI%20Model)
+- [What is verifiable memory for AI agents](https://www.lighthouse.storage/blogs/What%20Is%20Verifiable%20Memory%20for%20AI%20Agents)
+- [Encrypted memory for AI agents with Memwal and SEAL](https://www.lighthouse.storage/blogs/Encrypted%20Memory%20for%20AI%20Agents%20with%20Memwal%20and%20SEAL)
+- [Lighthouse Memory concepts explained for developers](https://www.lighthouse.storage/blogs/Lighthouse%20Memory%20Concepts%20Explained%20for%20Developers)
+- [Recover agent memory on any machine with snapshots and pointers](https://www.lighthouse.storage/blogs/Recover%20Agent%20Memory%20on%20Any%20Machine%20with%20Snapshots%20and%20Pointers)
+
+## Lighthouse Storage (encrypted decentralized storage)
+
+- [Lighthouse Storage overview](https://www.lighthouse.storage/storage): encrypted storage across IPFS, Filecoin and Walrus
+- [Storage documentation home](https://docs.lighthouse.storage): entry point for all storage products and SDKs
+- [Storage quick start](https://docs.lighthouse.storage/quick-start): first upload in a few minutes
+- [Create an API key](https://docs.lighthouse.storage/how-to/create-an-api-key): one key for Memory and storage
+- [IPFS + Filecoin](https://docs.lighthouse.storage/intro): hot retrieval on IPFS with Filecoin deals underneath for durability
+- [IPFS + Walrus](https://docs.lighthouse.storage/ipfs-walrus/intro): erasure-coded blob storage on Sui, addressed as CIDs
+- [Encryption features](https://docs.lighthouse.storage/how-to/encryption-features/): share, revoke and condition access to encrypted files
+- [MCP protocol reference (storage tools)](https://docs.lighthouse.storage/how-to/ai/mcp-protocol): storage as native agent tools
+- [x402 pay-per-use upload](https://docs.lighthouse.storage/tutorials/x402-pay-per-use-file-upload): an agent pays for storage in stablecoins on Base inline with an HTTP request
+- [Glossary](https://docs.lighthouse.storage/concepts/glossary): CID, deal, epoch, threshold encryption and related terms
 
 ## S3-compatible API (L3)
 
-- [L3 introduction](https://docs.lighthouse.storage/s3/intro): point AWS CLI, boto3, or rclone at Lighthouse storage
+- [L3 introduction](https://docs.lighthouse.storage/s3/intro): point AWS CLI, boto3 or rclone at Lighthouse storage
 - [Create S3 keys](https://docs.lighthouse.storage/s3/how-to/create-s3-keys): exchange a Lighthouse API key for S3 credentials
 - [S3 and IPFS semantics](https://docs.lighthouse.storage/s3/reference/s3-and-ipfs): how mutable S3 operations map onto immutable content addressing
 - [Supported operations](https://docs.lighthouse.storage/s3/reference/supported-operations): buckets, multipart uploads, presigned URLs, pagination
 
 ## SDKs and common operations
 
-- [Upload data](https://docs.lighthouse.storage/how-to/upload-data/): JavaScript, Node, Python, Go, and CLI
+- [Upload data](https://docs.lighthouse.storage/how-to/upload-data/): JavaScript, Node, Python, Go and CLI
 - [Upload encrypted data](https://docs.lighthouse.storage/how-to/upload-encrypted-data/): client-side encryption before upload
 - [Python SDK](https://docs.lighthouse.storage/tutorials/use-python-sdk): installation and usage
 - [Go SDK](https://docs.lighthouse.storage/tutorials/use-go-sdk): installation and usage
@@ -64,10 +83,10 @@ Every page on this site is also available as markdown: append `.md` to any path,
 
 ## Optional
 
-- [Full corpus](https://www.lighthouse.storage/llms-full.txt): long-form reference, including backend comparison, competitive positioning, and terminology guidance
-- [Files app](https://files.lighthouse.storage): dashboard for uploads, keys, and billing
+- [Full corpus](https://www.lighthouse.storage/llms-full.txt): long-form reference, including Memory comparisons, storage backends and terminology guidance
+- [Files app](https://files.lighthouse.storage): storage dashboard for uploads, keys and billing
 - [Explorer](https://explorer.lighthouse.storage/): browse stored content
 - [GitHub](https://github.com/lighthouse-web3): open-source SDKs and tooling
-- [Turby](https://www.lighthouse.storage/turby.md): NFT collection, unrelated to the storage product
+- [Turby](https://www.lighthouse.storage/turby.md): NFT collection, unrelated to Memory and Storage
 - [BaaS, managed database backup](https://www.backupdata.io): separate product for a separate audience
-- [Contact sales](https://airtable.com/shrPFC2TgojuOAYO4): custom volume, retention, and enterprise agreements
+- [Contact sales](https://airtable.com/shrPFC2TgojuOAYO4): custom volume, retention and enterprise agreements
